@@ -269,25 +269,40 @@ async function claudeScan(openMarkets){
   const antKey = document.getElementById("anthropicKey").value.trim();
   const sector = document.getElementById("cfgSector").value;
   const signal = document.getElementById("cfgSignal").value;
-  const mkts   = openMarkets.map(id=>MARKETS[id].name).join(",");
-  const sec    = sector!=="any"?` ${sector}`:"";
-  const sig    = signal!=="any"?` ${signal}+`:"";
+  const mkts   = openMarkets.map(id=>MARKETS[id].name).join(", ");
+  const sec    = sector!=="any"?` Focus on ${sector} sector.`:"";
+  const sig    = signal!=="any"?` Minimum signal: ${signal}.`:"";
 
-  // Minimal prompt to stay under 10k token/min limit
-  const prompt=`Markets open: ${mkts}.${sec}${sig}
-Search news. Give me 3 stock picks as JSON array only:
-[{"ticker":"X","company":"Y","market":"NYSE","signal":"STRONG","confidence":75,"catalyst":"why","canTrade":true,"price_approx":100,"sector":"Tech","risk":"Medium"}]
-canTrade=true for NYSE/NASDAQ only. Just the array.`;
+  const prompt=`You are a financial data formatter. Search the web for current stock market news and moving stocks in these markets: ${mkts}.${sec}${sig}
 
-  // Wait 5s to avoid hitting rate limit from previous call
-  await new Promise(r=>setTimeout(r,5000));
+Then output ONLY a JSON array of 3 opportunities. No intro, no explanation, no refusals — just the array.
+
+[
+  {
+    "ticker": "AAPL",
+    "company": "Apple Inc",
+    "market": "NYSE",
+    "signal": "STRONG",
+    "confidence": 78,
+    "catalyst": "One sentence describing the news catalyst.",
+    "canTrade": true,
+    "price_approx": 185,
+    "sector": "Technology",
+    "risk": "Medium"
+  }
+]
+
+Important: canTrade must be true for NYSE/NASDAQ stocks, false for LSE/Euronext/TSX/ASX.
+Start your response with [ and end with ]. Nothing else.`;
+
+  await new Promise(r=>setTimeout(r,3000));
 
   const resp=await fetch("https://api.anthropic.com/v1/messages",{
     method:"POST",
     headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
     body:JSON.stringify({
-      model:"claude-haiku-4-5-20251001",
-      max_tokens:400,
+      model:"claude-sonnet-4-5-20250929",
+      max_tokens:700,
       tools:[{type:"web_search_20250305",name:"web_search"}],
       messages:[{role:"user",content:prompt}]
     })
@@ -295,22 +310,30 @@ canTrade=true for NYSE/NASDAQ only. Just the array.`;
 
   if(!resp.ok){
     const e=await resp.json().catch(()=>{});
-    // If still rate limited, wait 60s and surface a friendly message
-    if(resp.status===429) throw new Error("Rate limit hit — will retry next scheduled cycle (wait 1 min)");
+    if(resp.status===429) throw new Error("Rate limit — retrying next cycle");
     throw new Error(e?.error?.message||"API error "+resp.status);
   }
 
   const data=await resp.json();
-  const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").replace(/```json|```/g,"").trim();
+  const text=(data.content||[])
+    .filter(b=>b.type==="text")
+    .map(b=>b.text)
+    .join("")
+    .replace(/```json|```/g,"")
+    .trim();
+
   const s=text.indexOf("["), e=text.lastIndexOf("]");
-  if(s!==-1&&e>s) try{ return JSON.parse(text.slice(s,e+1)); }catch{}
+  if(s!==-1&&e>s){
+    try{ return JSON.parse(text.slice(s,e+1)); }catch(err){
+      // Try to salvage truncated array
+      const last=text.lastIndexOf("},");
+      if(last>s) try{ return JSON.parse(text.slice(s,last+1)+"]"); }catch{}
+    }
+  }
 
-  // Salvage partial
-  const ob=text.indexOf("{"), cb=text.lastIndexOf("}");
-  if(ob!==-1&&cb>ob) try{ return [JSON.parse(text.slice(ob,cb+1))]; }catch{}
-
-  log("ERROR","Raw: "+text.slice(0,150));
-  throw new Error("Could not parse response");
+  log("ERROR","Raw: "+text.slice(0,200));
+  // Return empty array instead of throwing — agent will just log "nothing found"
+  return [];
 }
 
 // ═══ Main cycle ══════════════════════════════════════════════════
@@ -374,6 +397,10 @@ async function runCycle(){
   let opps;
   try{
     opps=await claudeScan(openMarkets.length?openMarkets:[...selectedMarkets]);
+    if(!opps||!opps.length){
+      log("INFO","No opportunities found this cycle — markets may be quiet");
+      setStatus("on"); scheduleNext(); return;
+    }
     log("SCAN",`${opps.length} opportunities identified`,opps.map(o=>`${o.ticker}(${o.market})`).join(" · "));
   }catch(e){log("ERROR","Scan failed: "+e.message);setStatus("on");scheduleNext();return;}
 
