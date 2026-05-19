@@ -132,10 +132,27 @@ button.trade-buy:disabled,button.trade-sell:disabled{opacity:0.4;cursor:not-allo
 <body>
 
 <!-- Tab bar (persists across radar/penny views) -->
-<div class="tab-bar" id="mainTabs">
-  <button class="tab-btn on"        id="tabRadar"     onclick="switchTab('radar')">⚡ Radar</button>
-  <button class="tab-btn tab-penny" id="tabPenny"     onclick="switchTab('penny')">🪙 Penny</button>
-  <button class="tab-btn"           id="tabPortfolio" onclick="switchTab('portfolio')">💼 Portfolio</button>
+<div class="tab-bar" id="mainTabs" style="display:flex;align-items:center;gap:0">
+  <button class="tab-btn on"        id="tabRadar"     onclick="switchTab('radar')" style="flex:1">⚡ Radar</button>
+  <button class="tab-btn tab-penny" id="tabPenny"     onclick="switchTab('penny')" style="flex:1">🪙 Penny</button>
+  <button class="tab-btn"           id="tabPortfolio" onclick="switchTab('portfolio')" style="flex:1">💼 Portfolio</button>
+  <button onclick="openSettings()" style="background:none;border:none;color:#444;font-size:16px;padding:8px;cursor:pointer;flex-shrink:0" title="Settings">⚙</button>
+</div>
+
+<!-- Settings modal -->
+<div class="modal-overlay" id="settingsModal" style="display:none">
+  <div class="modal-box">
+    <h2 style="color:#7efff5;margin-bottom:6px">⚙ Settings</h2>
+    <p style="font-size:11px;color:#555;margin-bottom:14px;line-height:1.7">
+      Get your free Anthropic API key at <b style="color:#7efff5">console.anthropic.com</b> → API Keys
+    </p>
+    <div class="trade-label">Anthropic API Key</div>
+    <input class="modal-input" id="anthropicKey" placeholder="sk-ant-…" type="password">
+    <div style="display:flex;gap:8px;margin-top:4px">
+      <button onclick="closeSettings()" style="flex:1;padding:11px;border-radius:8px;background:#0a0a0f;border:1px solid #2a2a40;color:#888;font-family:inherit;cursor:pointer">Cancel</button>
+      <button onclick="saveSettings()" style="flex:2;padding:11px;border-radius:8px;background:linear-gradient(135deg,#7efff5,#a78bfa);border:none;color:#000;font-weight:700;font-family:inherit;cursor:pointer">Save</button>
+    </div>
+  </div>
 </div>
 
 <!-- Alpaca connect modal -->
@@ -592,9 +609,11 @@ function extractJSON(text,bracket){
 }
 
 async function callClaude(prompt){
+  const ANTHROPIC_KEY = window.ANTHROPIC_API_KEY || "";
+  if(!ANTHROPIC_KEY){ throw new Error("No Anthropic API key set — click ⚙ Settings"); }
   const resp=await fetch("https://api.anthropic.com/v1/messages",{
     method:"POST",
-    headers:{"Content-Type":"application/json"},
+    headers:{"Content-Type":"application/json","x-api-key":ANTHROPIC_KEY,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
     body:JSON.stringify({
       model:"claude-sonnet-4-20250514",
       max_tokens:1500,
@@ -834,7 +853,25 @@ function renderDetail(d){
   setTimeout(()=>{ if(d.week52Low&&d.week52High) drawSpark(+d.week52Low,+d.week52High,+d.price); updateDetailAlpacaBar(); },60);
 }
 
-// ═══ Tab switch update ═══════════════════════════════════════════
+function openSettings(){ 
+  document.getElementById("settingsModal").style.display="flex";
+  const k=window.ANTHROPIC_API_KEY||"";
+  document.getElementById("anthropicKey").value=k;
+}
+function closeSettings(){ document.getElementById("settingsModal").style.display="none"; }
+function saveSettings(){
+  const k=document.getElementById("anthropicKey").value.trim();
+  if(!k){ alert("Please enter your Anthropic API key"); return; }
+  window.ANTHROPIC_API_KEY=k;
+  closeSettings();
+}
+
+// Auto-prompt for key on load
+window.addEventListener("load",()=>{
+  if(!window.ANTHROPIC_API_KEY) openSettings();
+});
+
+// ═══ Tab switching ═══════════════════════════════════════════════
 const _origSwitchTab = switchTab;
 // patch switchTab to handle portfolio tab
 function switchTab(tab){
