@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Trading Agent</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0f;color:#e8e8f0;font-family:ui-monospace,monospace;padding:16px;min-height:100vh}
+h1{font-family:system-ui,sans-serif;font-weight:800;font-size:1.4rem;background:linear-gradient(90deg,#4ade80,#7efff5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.03em}
+.card{background:#13131e;border:1px solid #1e1e30;border-radius:12px;padding:16px;margin-bottom:12px}
+.micro{font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#444;margin-bottom:10px}
+input,select{background:#0a0a0f;border:1px solid #2a2a40;color:#e8e8f0;padding:9px 12px;border-radius:8px;font-family:inherit;font-size:12px;width:100%;outline:none}
+input:focus,select:focus{border-color:#4ade80}
+button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;border-radius:8px;font-family:inherit;font-size:12px;cursor:pointer}
+.btn-start{background:linear-gradient(135deg,#16a34a,#4ade80);border:none;color:#000;font-weight:800;font-size:14px;padding:14px;border-radius:10px;width:100%;cursor:pointer;letter-spacing:0.04em}
+.btn-stop{background:linear-gradient(135deg,#dc2626,#f87171);border:none;color:#fff;font-weight:800;font-size:14px;padding:14px;border-radius:10px;width:100%;cursor:pointer;letter-spacing:0.04em}
+.btn-stop:disabled,.btn-start:disabled{opacity:0.4;cursor:not-allowed}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.flabel{font-size:9px;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px}
+.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+.dot-on{background:#4ade80;box-shadow:0 0 8px #4ade80;animation:pulse 1.5s infinite}
+.dot-off{background:#333}
+.dot-scan{background:#fbbf24;box-shadow:0 0 8px #fbbf24;animation:pulse 0.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.spinner{display:inline-block;width:10px;height:10px;border:2px solid #222;border-top-color:#4ade80;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.log-entry{padding:8px 10px;border-bottom:1px solid #0d0d18;font-size:11px;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
+.log-time{color:#333;white-space:nowrap;font-size:10px;margin-top:1px}
+.log-BUY{color:#4ade80}
+.log-SELL{color:#f87171}
+.log-SCAN{color:#7efff5}
+.log-INFO{color:#555}
+.log-ERROR{color:#f87171}
+.log-SKIP{color:#444}
+.trade-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #0d0d18;flex-wrap:wrap;gap:6px}
+.up{color:#4ade80}.dn{color:#f87171}
+.badge{font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase}
+.badge-buy{background:#0d3d2e;color:#4ade80;border:1px solid #16653450}
+.badge-sell{background:#3d1212;color:#f87171;border:1px solid #7f1d1d50}
+.metric{background:#0a0a0f;border-radius:8px;padding:10px;text-align:center}
+.metric-v{font-size:18px;font-weight:700;font-family:system-ui,sans-serif}
+.metric-l{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:0.1em;margin-top:3px}
+.progress{background:#1a1a2e;border-radius:4px;height:4px;margin-top:8px;overflow:hidden}
+.progress-fill{height:4px;background:linear-gradient(90deg,#4ade80,#7efff5);border-radius:4px;transition:width 1s linear}
+.tag{font-size:9px;background:#1a1a2e;border:1px solid #2a2a40;color:#555;padding:2px 7px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+  <div>
+    <h1>AI TRADING AGENT</h1>
+    <div style="font-size:9px;color:#444;letter-spacing:0.12em;text-transform:uppercase">Autonomous · Paper Trading · Alpaca</div>
+  </div>
+  <div id="agentStatus" style="display:flex;align-items:center;font-size:12px;color:#555">
+    <span class="status-dot dot-off" id="statusDot"></span>
+    <span id="statusText">Offline</span>
+  </div>
+</div>
+
+<!-- Account metrics -->
+<div class="grid3" id="acctMetrics" style="margin-bottom:12px">
+  <div class="metric"><div class="metric-v" id="mVal">—</div><div class="metric-l">Portfolio</div></div>
+  <div class="metric"><div class="metric-v" id="mBuy">—</div><div class="metric-l">Buying Power</div></div>
+  <div class="metric"><div class="metric-v" id="mPnl" >—</div><div class="metric-l">Day P&L</div></div>
+</div>
+
+<!-- Config -->
+<div class="card" id="configPanel">
+  <div class="micro">🔗 Connections</div>
+  <div class="grid2">
+    <div><div class="flabel">Alpaca Key ID</div><input id="alpacaKey" placeholder="PK…"></div>
+    <div><div class="flabel">Alpaca Secret</div><input id="alpacaSecret" placeholder="Secret…" type="password"></div>
+  </div>
+  <div class="grid2">
+    <div><div class="flabel">Proxy URL</div><input id="proxyUrl" placeholder="https://alpaca-proxy-alpha.vercel.app" value="https://alpaca-proxy-alpha.vercel.app"></div>
+    <div><div class="flabel">Anthropic API Key</div><input id="anthropicKey" placeholder="sk-ant-…" type="password"></div>
+  </div>
+
+  <div class="micro" style="margin-top:16px">🎯 Strategy Parameters</div>
+  <div class="grid3">
+    <div><div class="flabel">Sectors to watch</div>
+      <select id="cfgSector">
+        <option value="any">All Sectors</option>
+        <option value="technology">Technology</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="energy">Energy</option>
+        <option value="financials">Financials</option>
+        <option value="consumer">Consumer</option>
+      </select>
+    </div>
+    <div><div class="flabel">Min Signal</div>
+      <select id="cfgSignal">
+        <option value="STRONG">Strong only</option>
+        <option value="MODERATE">Moderate+</option>
+        <option value="any">Any signal</option>
+      </select>
+    </div>
+    <div><div class="flabel">Scan interval</div>
+      <select id="cfgInterval">
+        <option value="300000">Every 5 min</option>
+        <option value="600000">Every 10 min</option>
+        <option value="900000">Every 15 min</option>
+        <option value="1800000">Every 30 min</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div><div class="flabel">Max position size ($)</div><input id="cfgSize" type="number" value="500" min="10"></div>
+    <div><div class="flabel">Stop loss (%)</div><input id="cfgSL" type="number" value="3" min="0.5" max="20" step="0.5"></div>
+    <div><div class="flabel">Take profit (%)</div><input id="cfgTP" type="number" value="8" min="1" max="50" step="0.5"></div>
+  </div>
+
+  <div class="grid2">
+    <div><div class="flabel">Max open positions</div><input id="cfgMaxPos" type="number" value="5" min="1" max="20"></div>
+    <div><div class="flabel">Max trades per day</div><input id="cfgMaxDaily" type="number" value="10" min="1" max="50"></div>
+  </div>
+
+  <div style="margin-top:4px">
+    <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:#888;cursor:pointer">
+      <input type="checkbox" id="cfgMarketOnly" checked style="width:auto;accent-color:#4ade80">
+      Only trade during market hours (9:30am–4pm ET)
+    </label>
+  </div>
+</div>
+
+<!-- Next scan countdown -->
+<div class="card" id="scanCountdown" style="display:none">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+    <div class="micro" style="margin:0">Next scan in <span id="countdownText">—</span></div>
+    <button onclick="runCycle()" style="font-size:10px;padding:4px 10px;color:#7efff5;border-color:#7efff5">⚡ Scan now</button>
+  </div>
+  <div class="progress"><div class="progress-fill" id="progressBar" style="width:100%"></div></div>
+</div>
+
+<!-- Controls -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+  <button class="btn-start" id="startBtn" onclick="startAgent()">▶ START AGENT</button>
+  <button class="btn-stop"  id="stopBtn"  onclick="stopAgent()" disabled>■ STOP</button>
+</div>
+
+<!-- Open positions -->
+<div class="card">
+  <div class="micro">Open Positions</div>
+  <div id="positions"><div style="color:#333;font-size:12px">No positions yet.</div></div>
+</div>
+
+<!-- Trade log -->
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <div class="micro" style="margin:0">Activity Log</div>
+    <button onclick="document.getElementById('logEntries').innerHTML=''" style="font-size:10px;padding:3px 8px;color:#444">Clear</button>
+  </div>
+  <div id="logEntries" style="max-height:320px;overflow-y:auto"></div>
+  <div id="logEmpty" style="color:#333;font-size:12px">Agent not started.</div>
+</div>
+
+<p style="margin-top:16px;font-size:10px;color:#1e1e30;text-align:center">⚠ Paper trading only. Not financial advice. Always monitor automated systems.</p>
+
+<script>
+// ═══ State ═══════════════════════════════════════════════════════
+let RUNNING = false;
+let scanTimer = null;
+let countdownTimer = null;
+let nextScanAt = null;
+let dailyTrades = 0;
+let dailyTradeDate = "";
+let agentPositions = new Set(); // tickers we've bought
+
+// ═══ Logging ═════════════════════════════════════════════════════
+function log(type, msg, detail=""){
+  const el = document.getElementById("logEntries");
+  document.getElementById("logEmpty").style.display="none";
+  const time = new Date().toLocaleTimeString("en-GB");
+  const entry = document.createElement("div");
+  entry.className = "log-entry";
+  entry.innerHTML = `<span class="log-time">${time}</span><span class="log-${type}"><b>${type}</b> ${msg}${detail?`<br><span style="color:#333;font-size:10px">${detail}</span>`:""}`;
+  el.insertBefore(entry, el.firstChild);
+  // Cap at 100 entries
+  while(el.children.length > 100) el.removeChild(el.lastChild);
+}
+
+// ═══ Alpaca proxy ════════════════════════════════════════════════
+async function alpaca(method, path, body){
+  const proxy = document.getElementById("proxyUrl").value.trim().replace(/\/$/,"");
+  const key    = document.getElementById("alpacaKey").value.trim();
+  const secret = document.getElementById("alpacaSecret").value.trim();
+  const url    = `${proxy}/api/alpaca?path=${encodeURIComponent(path)}`;
+  const opts   = { method, headers:{ "Content-Type":"application/json", "x-alpaca-key":key, "x-alpaca-secret":secret, "x-alpaca-mode":"paper" }};
+  if(body) opts.body = JSON.stringify(body);
+  const r = await fetch(url, opts);
+  const text = await r.text();
+  try{
+    const json = JSON.parse(text);
+    if(!r.ok) throw new Error(json.message || json.error || `HTTP ${r.status}`);
+    return json;
+  }catch(e){
+    if(!e.message.startsWith("HTTP")) throw e;
+    throw e;
+  }
+}
+
+// ═══ Claude scan ═════════════════════════════════════════════════
+async function claudeScan(sector, minSignal){
+  const antKey = document.getElementById("anthropicKey").value.trim();
+  const sigStr = minSignal !== "any" ? ` Only include stocks with signal ${minSignal} or stronger.` : "";
+  const secStr = sector !== "any" ? ` Focus on ${sector} sector.` : "";
+
+  const prompt = `You are an autonomous trading agent. Search for the latest market news right now and identify the TOP 3 best stock trading opportunities for today.${secStr}${sigStr}
+
+Return ONLY a valid JSON array. Nothing before [ or after ].
+
+Each element:
+{"ticker":"AAPL","company":"Apple Inc.","signal":"STRONG","confidence":85,"catalyst":"Why this is a good trade right now in 1-2 sentences.","entryReason":"Specific technical or fundamental reason to enter now.","sector":"Technology","risk":"Low"}
+
+signal: STRONG | MODERATE | WATCH
+confidence: integer 0-100 (your confidence this is a good trade)
+risk: Low | Medium | High
+
+Output ONLY the JSON array.`;
+
+  const resp = await fetch("https://api.anthropic.com/v1/messages",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
+      "x-api-key": antKey,
+      "anthropic-version":"2023-06-01",
+      "anthropic-dangerous-direct-browser-access":"true"
+    },
+    body: JSON.stringify({
+      model:"claude-sonnet-4-20250514",
+      max_tokens:800,
+      tools:[{type:"web_search_20250305",name:"web_search"}],
+      messages:[{role:"user",content:prompt}]
+    })
+  });
+  if(!resp.ok){ const e=await resp.json().catch(()=>{}); throw new Error(e?.error?.message||"Claude API error "+resp.status); }
+  const data = await resp.json();
+  const text = (data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("");
+  const clean = text.replace(/```json|```/g,"").trim();
+  const match = clean.match(/\[[\s\S]*\]/);
+  if(!match) throw new Error("No JSON in Claude response");
+  return JSON.parse(match[0]);
+}
+
+// ═══ Market hours check ══════════════════════════════════════════
+function isMarketOpen(){
+  const now = new Date();
+  // Convert to ET
+  const et = new Date(now.toLocaleString("en-US",{timeZone:"America/New_York"}));
+  const day = et.getDay(); // 0=Sun, 6=Sat
+  if(day === 0 || day === 6) return false;
+  const h = et.getHours(), m = et.getMinutes();
+  const mins = h*60+m;
+  return mins >= 9*60+30 && mins < 16*60;
+}
+
+// ═══ Get current price ═══════════════════════════════════════════
+async function getQuote(ticker){
+  try{
+    const bars = await alpaca("GET", `/v2/stocks/${ticker}/bars/latest`);
+    return bars?.bar?.c || null;
+  }catch{
+    // Fallback: try quotes endpoint
+    try{
+      const q = await alpaca("GET", `/v2/stocks/${ticker}/quotes/latest`);
+      return q?.quote?.ap || q?.quote?.bp || null;
+    }catch{ return null; }
+  }
+}
+
+// ═══ Main trading cycle ══════════════════════════════════════════
+async function runCycle(){
+  if(!RUNNING) return;
+
+  const cfg = {
+    sector:    document.getElementById("cfgSector").value,
+    signal:    document.getElementById("cfgSignal").value,
+    size:      +document.getElementById("cfgSize").value || 500,
+    sl:        +document.getElementById("cfgSL").value / 100,
+    tp:        +document.getElementById("cfgTP").value / 100,
+    maxPos:    +document.getElementById("cfgMaxPos").value || 5,
+    maxDaily:  +document.getElementById("cfgMaxDaily").value || 10,
+    mktOnly:   document.getElementById("cfgMarketOnly").checked,
+  };
+
+  // Reset daily count if new day
+  const today = new Date().toDateString();
+  if(dailyTradeDate !== today){ dailyTrades = 0; dailyTradeDate = today; }
+
+  // Market hours check
+  if(cfg.mktOnly && !isMarketOpen()){
+    log("INFO", "Market closed — skipping scan", "Will retry at next interval");
+    scheduleNext();
+    return;
+  }
+
+  // Check daily trade limit
+  if(dailyTrades >= cfg.maxDaily){
+    log("INFO", `Daily trade limit reached (${cfg.maxDaily})`, "Will resume tomorrow");
+    scheduleNext();
+    return;
+  }
+
+  // Get account state
+  setStatus("scan");
+  log("SCAN", "Starting market scan…");
+
+  let acct, positions;
+  try{
+    [acct, positions] = await Promise.all([
+      alpaca("GET", "/v2/account"),
+      alpaca("GET", "/v2/positions")
+    ]);
+    updateAccountUI(acct);
+    updatePositionsUI(positions);
+  }catch(e){
+    log("ERROR", "Failed to fetch account: "+e.message);
+    scheduleNext(); return;
+  }
+
+  // Check position limit
+  const openCount = Array.isArray(positions) ? positions.length : 0;
+  if(openCount >= cfg.maxPos){
+    log("INFO", `Max positions reached (${openCount}/${cfg.maxPos})`, "Monitoring existing positions");
+    scheduleNext(); return;
+  }
+
+  const existingTickers = new Set((Array.isArray(positions)?positions:[]).map(p=>p.symbol));
+  const buyingPower = +acct.buying_power || 0;
+
+  if(buyingPower < cfg.size){
+    log("INFO", `Insufficient buying power ($${buyingPower.toFixed(0)} < $${cfg.size})`, "Skipping scan");
+    scheduleNext(); return;
+  }
+
+  // Claude scan
+  let opportunities;
+  try{
+    opportunities = await claudeScan(cfg.sector, cfg.signal);
+    log("SCAN", `Found ${opportunities.length} opportunities`, opportunities.map(o=>o.ticker).join(", "));
+  }catch(e){
+    log("ERROR", "Scan failed: "+e.message);
+    scheduleNext(); return;
+  }
+
+  // Filter and trade
+  let traded = false;
+  for(const opp of opportunities){
+    if(!RUNNING) break;
+    if(existingTickers.has(opp.ticker)){
+      log("SKIP", `${opp.ticker} — already holding position`); continue;
+    }
+    if(agentPositions.has(opp.ticker)){
+      log("SKIP", `${opp.ticker} — already traded today`); continue;
+    }
+
+    // Signal filter
+    const sigRank = {STRONG:3,MODERATE:2,WATCH:1};
+    const minRank = {STRONG:3,MODERATE:2,any:1}[cfg.signal]||1;
+    if((sigRank[opp.signal]||0) < minRank){
+      log("SKIP", `${opp.ticker} — signal too weak (${opp.signal})`); continue;
+    }
+
+    // Get current price
+    let price;
+    try{ price = await getQuote(opp.ticker); }catch{}
+    if(!price){
+      log("SKIP", `${opp.ticker} — could not get price`); continue;
+    }
+
+    const qty = Math.max(1, Math.floor(cfg.size / price));
+    const slPrice = +(price * (1 - cfg.sl)).toFixed(2);
+    const tpPrice = +(price * (1 + cfg.tp)).toFixed(2);
+
+    log("BUY", `Placing order: ${qty}x ${opp.ticker} @ ~$${price.toFixed(2)}`,
+      `SL $${slPrice} | TP $${tpPrice} | Signal: ${opp.signal} | ${opp.catalyst}`);
+
+    try{
+      const order = await alpaca("POST", "/v2/orders", {
+        symbol: opp.ticker,
+        qty: String(qty),
+        side: "buy",
+        type: "market",
+        time_in_force: "day",
+        order_class: "bracket",
+        take_profit: { limit_price: String(tpPrice) },
+        stop_loss:   { stop_price:  String(slPrice)  }
+      });
+
+      if(order.id){
+        log("BUY", `✓ Order placed: ${qty}x ${opp.ticker}`, `ID: ${order.id} | Status: ${order.status}`);
+        agentPositions.add(opp.ticker);
+        dailyTrades++;
+        traded = true;
+        // Refresh positions after trade
+        await new Promise(r=>setTimeout(r,1500));
+        const newPos = await alpaca("GET","/v2/positions");
+        updatePositionsUI(newPos);
+        break; // One trade per cycle to be safe
+      }
+    }catch(e){
+      log("ERROR", `Failed to place order for ${opp.ticker}: ${e.message}`);
+    }
+  }
+
+  if(!traded) log("INFO", "No trades placed this cycle — conditions not met");
+
+  setStatus("on");
+  scheduleNext();
+}
+
+// ═══ Countdown ═══════════════════════════════════════════════════
+function scheduleNext(){
+  const interval = +document.getElementById("cfgInterval").value || 300000;
+  nextScanAt = Date.now() + interval;
+  document.getElementById("scanCountdown").style.display="block";
+  clearInterval(countdownTimer);
+  countdownTimer = setInterval(updateCountdown, 1000);
+}
+
+function updateCountdown(){
+  if(!RUNNING || !nextScanAt){ clearInterval(countdownTimer); return; }
+  const remaining = Math.max(0, nextScanAt - Date.now());
+  const interval  = +document.getElementById("cfgInterval").value || 300000;
+  const secs = Math.ceil(remaining/1000);
+  const m = Math.floor(secs/60), s = secs%60;
+  document.getElementById("countdownText").textContent = `${m}:${s.toString().padStart(2,"0")}`;
+  document.getElementById("progressBar").style.width = (remaining/interval*100)+"%";
+  if(remaining <= 0){ clearInterval(countdownTimer); runCycle(); }
+}
+
+// ═══ UI helpers ══════════════════════════════════════════════════
+function setStatus(state){
+  const dot  = document.getElementById("statusDot");
+  const text = document.getElementById("statusText");
+  if(state==="on"){ dot.className="status-dot dot-on"; text.textContent="Agent Running"; text.style.color="#4ade80"; }
+  else if(state==="scan"){ dot.className="status-dot dot-scan"; text.textContent="Scanning…"; text.style.color="#fbbf24"; }
+  else{ dot.className="status-dot dot-off"; text.textContent="Offline"; text.style.color="#555"; }
+}
+
+function updateAccountUI(acct){
+  const pl = +acct.unrealized_intraday_pl||0;
+  document.getElementById("mVal").textContent = "$"+(+acct.portfolio_value||0).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0});
+  document.getElementById("mBuy").textContent = "$"+(+acct.buying_power||0).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0});
+  document.getElementById("mPnl").textContent = (pl>=0?"+":"")+pl.toFixed(2);
+  document.getElementById("mPnl").className   = "metric-v "+(pl>=0?"up":"dn");
+}
+
+function updatePositionsUI(positions){
+  const el = document.getElementById("positions");
+  const pos = Array.isArray(positions) ? positions : [];
+  if(!pos.length){ el.innerHTML=`<div style="color:#333;font-size:12px">No open positions.</div>`; return; }
+  el.innerHTML = pos.map(p=>{
+    const pl=+p.unrealized_pl||0, pct=(+p.unrealized_plpc||0)*100, isUp=pl>=0;
+    return `<div class="trade-row">
+      <div>
+        <span class="badge ${isUp?"badge-buy":"badge-sell"}">${isUp?"▲":"▼"}</span>
+        <b style="color:#7efff5;margin-left:6px">${p.symbol}</b>
+        <span style="font-size:10px;color:#555;margin-left:6px">${p.qty} shares @ $${(+p.avg_entry_price||0).toFixed(2)}</span>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:13px">$${(+p.current_price||0).toFixed(2)}</div>
+        <div style="font-size:11px;color:${isUp?"#4ade80":"#f87171"}">${isUp?"+":""}$${pl.toFixed(2)} (${pct.toFixed(2)}%)</div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+// ═══ Agent control ═══════════════════════════════════════════════
+async function startAgent(){
+  const key    = document.getElementById("alpacaKey").value.trim();
+  const secret = document.getElementById("alpacaSecret").value.trim();
+  const proxy  = document.getElementById("proxyUrl").value.trim();
+  const antKey = document.getElementById("anthropicKey").value.trim();
+
+  if(!key||!secret||!proxy){ alert("Enter Alpaca key, secret and proxy URL"); return; }
+  if(!antKey){ alert("Enter your Anthropic API key"); return; }
+
+  document.getElementById("startBtn").disabled=true;
+  document.getElementById("statusText").textContent="Connecting…";
+
+  // Verify Alpaca connection
+  try{
+    const acct = await alpaca("GET","/v2/account");
+    updateAccountUI(acct);
+    log("INFO","✓ Connected to Alpaca Paper Trading",`Portfolio: $${(+acct.portfolio_value).toLocaleString()}`);
+  }catch(e){
+    log("ERROR","Failed to connect to Alpaca: "+e.message);
+    document.getElementById("startBtn").disabled=false;
+    return;
+  }
+
+  RUNNING=true;
+  document.getElementById("startBtn").disabled=true;
+  document.getElementById("stopBtn").disabled=false;
+  document.getElementById("configPanel").style.opacity="0.5";
+  document.getElementById("configPanel").style.pointerEvents="none";
+  setStatus("on");
+
+  const interval = +document.getElementById("cfgInterval").value||300000;
+  log("INFO",`Agent started — scanning every ${interval/60000} min`,
+    `Strategy: ${document.getElementById("cfgSignal").value} signals | $${document.getElementById("cfgSize").value}/trade | SL ${document.getElementById("cfgSL").value}% | TP ${document.getElementById("cfgTP").value}%`);
+
+  // Run first cycle immediately
+  await runCycle();
+}
+
+function stopAgent(){
+  RUNNING=false;
+  clearInterval(scanTimer);
+  clearInterval(countdownTimer);
+  document.getElementById("startBtn").disabled=false;
+  document.getElementById("stopBtn").disabled=true;
+  document.getElementById("configPanel").style.opacity="1";
+  document.getElementById("configPanel").style.pointerEvents="auto";
+  document.getElementById("scanCountdown").style.display="none";
+  setStatus("off");
+  log("INFO","Agent stopped","All existing positions remain open on Alpaca");
+}
+</script>
+</body>
+</html>
