@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Radar Pro</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0f;color:#e8e8f0;font-family:ui-monospace,monospace;min-height:100vh;padding:16px}
+h1{font-family:system-ui,sans-serif;font-weight:800;font-size:1.5rem;background:linear-gradient(90deg,#7efff5,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.03em;margin-bottom:2px}
+button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:8px 13px;border-radius:8px;font-family:inherit;font-size:12px;cursor:pointer;transition:all 0.15s}
+button:hover{border-color:#444;color:#ccc}
+button.on{background:#1a1a2e;border-color:#7efff5;color:#7efff5}
+button.primary{background:linear-gradient(135deg,#7efff5,#a78bfa);border:none;color:#000;font-weight:700;letter-spacing:0.06em;font-size:12px;padding:10px 22px}
+button.primary:disabled{background:#1a1a2e;color:#444;cursor:not-allowed}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.card{background:#13131e;border:1px solid #1e1e30;border-radius:12px;padding:16px;margin-bottom:10px}
+.micro{font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#444;margin-bottom:8px}
+.spinner{display:inline-block;width:11px;height:11px;border:2px solid #222;border-top-color:#7efff5;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+#status{font-size:12px;color:#7efff5;min-height:16px;margin-bottom:12px}
+
+/* Sector panel */
+.sector-panel{background:#13131e;border:1px solid #1e1e30;border-radius:12px;padding:14px;margin-bottom:12px}
+.sector-title{font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#444;margin-bottom:10px}
+.sector-grid{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.sec-btn{font-size:11px;padding:7px 12px;border-radius:8px;border:1px solid #2a2a40;background:#0a0a0f;color:#666;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:5px}
+.sec-btn:hover{border-color:#444;color:#ccc}
+.sec-btn.on{background:#1a1a2e;border-color:#7efff5;color:#7efff5}
+.sub-row{display:none;flex-wrap:wrap;gap:6px;padding-top:10px;border-top:1px solid #1a1a2e;margin-top:2px}
+.sub-row.visible{display:flex}
+.sub-btn{font-size:10px;padding:5px 10px;border-radius:6px;border:1px solid #1e1e30;background:#13131e;color:#555;cursor:pointer;transition:all 0.15s;line-height:1.4}
+.sub-btn:hover{border-color:#2a2a40;color:#aaa}
+.sub-btn.on{background:#111827;border-color:#a78bfa;color:#a78bfa}
+.sub-btn small{display:block;font-size:9px;color:#444;margin-top:1px}
+.sub-btn.on small{color:#a78bfa80}
+
+/* Signal filter */
+.sig-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+
+/* Radar cards */
+.stock-card{background:#13131e;border:1px solid #1e1e30;border-radius:12px;padding:16px;margin-bottom:10px;cursor:pointer;transition:border-color 0.2s,transform 0.15s}
+.stock-card:hover{border-color:#7efff550;transform:translateY(-1px)}
+.ticker{font-family:system-ui,sans-serif;font-weight:800;font-size:1.2rem;color:#7efff5}
+.company{font-size:11px;color:#555;margin-top:2px}
+.pill{font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;letter-spacing:0.07em;text-transform:uppercase;white-space:nowrap}
+.s-STRONG  {background:#0d3d2e;color:#4ade80;border:1px solid #16653450}
+.s-MODERATE{background:#1e2d12;color:#a3e635;border:1px solid #3a521850}
+.s-WATCH   {background:#2d2612;color:#fbbf24;border:1px solid #5a401050}
+.s-CAUTION {background:#3d1212;color:#f87171;border:1px solid #7f1d1d50}
+.catalyst{font-size:12px;color:#aaa;line-height:1.6;margin:10px 0;border-left:2px solid #1e1e30;padding-left:10px}
+.tag{font-size:9px;background:#0a0a0f;border:1px solid #1e1e30;color:#555;padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:0.08em}
+.cta{font-size:11px;color:#7efff540;margin-top:12px;text-align:right}
+.earn{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:3px 9px;border-radius:6px;letter-spacing:0.04em}
+.earn-hot {background:#3d1a00;color:#fb923c;border:1px solid #92400e60} /* ≤14 days */
+.earn-soon{background:#2d2600;color:#fbbf24;border:1px solid #78350f60} /* 15–30 days */
+.earn-ok  {background:#0d1f2d;color:#60a5fa;border:1px solid #1e3a5f60} /* 31–60 days */
+.earn-far {background:#131313;color:#555;border:1px solid #2a2a2a}      /* >60 days / unknown */
+
+/* Detail */
+#detail{display:none}
+.back-btn{display:flex;align-items:center;gap:8px;font-size:12px;color:#7efff5;cursor:pointer;margin-bottom:16px;background:none;border:none;padding:0}
+.back-btn:hover{color:#fff}
+.price-num{font-family:system-ui,sans-serif;font-weight:800;font-size:2rem;color:#e8e8f0}
+.chg-line{font-size:13px;margin-top:4px}
+.up{color:#4ade80}.dn{color:#f87171}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.m{background:#0a0a0f;border-radius:8px;padding:10px}
+.ml{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px}
+.mv{font-size:13px;color:#e8e8f0}
+.entry-box{border-radius:10px;padding:14px;margin-top:12px}
+.entry-buy{background:#0d2a1e;border:1px solid #16653460}
+.entry-warn{background:#2a0d0d;border:1px solid #7f1d1d60}
+.bar-row{margin-bottom:9px}
+.bar-lbl{display:flex;justify-content:space-between;font-size:11px;color:#666;margin-bottom:4px}
+.bar-track{background:#0a0a0f;border-radius:4px;height:6px;overflow:hidden}
+.bar-fill{height:6px;border-radius:4px;transition:width 0.6s ease}
+.news-item{border-left:2px solid #1e1e30;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#aaa;line-height:1.6}
+.news-item b{color:#e8e8f0;display:block;margin-bottom:2px}
+
+/* Tab switcher */
+.tab-bar{display:flex;gap:0;margin-bottom:20px;background:#13131e;border:1px solid #1e1e30;border-radius:10px;padding:4px}
+.tab-btn{flex:1;padding:9px 12px;border-radius:7px;border:none;background:transparent;color:#555;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;letter-spacing:0.04em}
+.tab-btn:hover{color:#aaa}
+.tab-btn.on{background:#0a0a0f;color:#e8e8f0;box-shadow:0 1px 4px #00000060}
+.tab-penny.on{background:linear-gradient(135deg,#3d1a0050,#2d260050);color:#fb923c}
+
+/* Penny cards */
+.penny-card{background:#13131e;border:1px solid #2a1a0a;border-radius:12px;padding:16px;margin-bottom:10px;cursor:pointer;transition:border-color 0.2s,transform 0.15s}
+.penny-card:hover{border-color:#fb923c50;transform:translateY(-1px)}
+.penny-price{font-family:system-ui,sans-serif;font-weight:800;font-size:1.4rem;color:#fb923c}
+.penny-mcap{font-size:10px;color:#555;margin-top:2px}
+.momentum-bar{height:4px;border-radius:2px;margin:8px 0;overflow:hidden;background:#1a1a2e}
+.risk-badge{font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:0.08em}
+.risk-HIGH  {background:#3d120a;color:#f87171;border:1px solid #7f1d1d50}
+.risk-MEDIUM{background:#2d2000;color:#fbbf24;border:1px solid #78350f50}
+.risk-LOW   {background:#0d2a1e;color:#4ade80;border:1px solid #16653450}
+.penny-warn{background:#1a0f00;border:1px solid #92400e30;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:11px;color:#fb923c80;line-height:1.6}
+.price-range-btn{font-size:10px;padding:5px 10px;border-radius:6px;border:1px solid #2a1a0a;background:#0a0a0f;color:#555;cursor:pointer}
+.price-range-btn.on{background:#1a0f00;border-color:#fb923c;color:#fb923c}
+
+/* Alpaca trading */
+.alpaca-bar{background:#0d1f12;border:1px solid #16653440;border-radius:10px;padding:12px 14px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.alpaca-bar.disconnected{background:#13131e;border-color:#2a2a40}
+.alpaca-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;display:inline-block;margin-right:6px;box-shadow:0 0 6px #4ade80}
+.alpaca-dot.off{background:#444;box-shadow:none}
+.trade-panel{background:#0a0f0a;border:1px solid #16653450;border-radius:12px;padding:16px;margin-bottom:12px}
+.trade-input{background:#13131e;border:1px solid #2a2a40;color:#e8e8f0;padding:9px 12px;border-radius:8px;font-family:inherit;font-size:13px;width:100%;outline:none}
+.trade-input:focus{border-color:#4ade80}
+.trade-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.trade-label{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px}
+button.trade-buy{background:linear-gradient(135deg,#16a34a,#4ade80);border:none;color:#000;font-weight:800;font-size:14px;padding:14px;border-radius:10px;width:100%;cursor:pointer;letter-spacing:0.04em}
+button.trade-sell{background:linear-gradient(135deg,#dc2626,#f87171);border:none;color:#fff;font-weight:800;font-size:14px;padding:14px;border-radius:10px;width:100%;cursor:pointer;letter-spacing:0.04em}
+button.trade-buy:disabled,button.trade-sell:disabled{opacity:0.4;cursor:not-allowed}
+.order-result{border-radius:10px;padding:12px 14px;margin-top:10px;font-size:12px;line-height:1.7}
+.order-ok  {background:#0d2a1e;border:1px solid #16653460;color:#4ade80}
+.order-err {background:#2a0d0d;border:1px solid #7f1d1d60;color:#f87171}
+.paper-badge{font-size:9px;background:#1a2a1a;color:#4ade8090;border:1px solid #16653440;padding:2px 8px;border-radius:4px;letter-spacing:0.08em}
+.live-badge {font-size:9px;background:#2a0d0d;color:#f8717190;border:1px solid #7f1d1d40;padding:2px 8px;border-radius:4px;letter-spacing:0.08em}
+
+/* Alpaca connect modal */
+.modal-overlay{position:fixed;inset:0;background:#000000cc;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-box{background:#13131e;border:1px solid #2a2a40;border-radius:14px;padding:22px;width:100%;max-width:400px}
+.modal-box h2{font-family:system-ui,sans-serif;font-size:1.1rem;font-weight:800;color:#4ade80;margin-bottom:6px}
+.modal-input{background:#0a0a0f;border:1px solid #2a2a40;color:#e8e8f0;padding:10px 14px;border-radius:8px;font-family:inherit;font-size:13px;width:100%;outline:none;margin-bottom:10px}
+.modal-input:focus{border-color:#4ade80}
+.mode-toggle{display:flex;gap:0;background:#0a0a0f;border:1px solid #1e1e30;border-radius:8px;padding:3px;margin-bottom:14px}
+.mode-btn{flex:1;padding:8px;border-radius:6px;border:none;background:transparent;color:#555;font-family:inherit;font-size:12px;cursor:pointer;font-weight:600}
+.mode-btn.on{background:#13131e;color:#e8e8f0}
+</style>
+</head>
+<body>
+
+<!-- Tab bar (persists across radar/penny views) -->
+<div class="tab-bar" id="mainTabs">
+  <button class="tab-btn on"        id="tabRadar"     onclick="switchTab('radar')">⚡ Radar</button>
+  <button class="tab-btn tab-penny" id="tabPenny"     onclick="switchTab('penny')">🪙 Penny</button>
+  <button class="tab-btn"           id="tabPortfolio" onclick="switchTab('portfolio')">💼 Portfolio</button>
+</div>
+
+<!-- Alpaca connect modal -->
+<div class="modal-overlay" id="alpacaModal" style="display:none">
+  <div class="modal-box">
+    <h2>Connect Alpaca</h2>
+    <p style="font-size:11px;color:#555;margin-bottom:16px;line-height:1.7">Get your API keys from <b style="color:#4ade80">alpaca.markets</b> → Paper Trading → API Keys</p>
+    <div class="mode-toggle">
+      <button class="mode-btn on" id="modePaper" onclick="setMode('paper')">📄 Paper (Safe)</button>
+      <button class="mode-btn"    id="modeLive"  onclick="setMode('live')">🔴 Live</button>
+    </div>
+    <div id="liveWarning" style="display:none;background:#2a0d0d;border:1px solid #7f1d1d40;border-radius:8px;padding:10px;margin-bottom:12px;font-size:11px;color:#f87171;line-height:1.6">⚠ Live mode places REAL orders with REAL money. Use Paper mode to test first.</div>
+    <div class="trade-label">API Key ID</div>
+    <input class="modal-input" id="alpacaKey" placeholder="PK…">
+    <div class="trade-label">Secret Key</div>
+    <input class="modal-input" id="alpacaSecret" placeholder="Secret…" type="password">
+    <div class="trade-label">Proxy URL <span style="color:#333;font-weight:400">(your deployed Vercel URL)</span></div>
+    <input class="modal-input" id="alpacaProxy" placeholder="https://your-proxy.vercel.app">
+    <div style="display:flex;gap:8px;margin-top:4px">
+      <button onclick="closeAlpacaModal()" style="flex:1;padding:11px;border-radius:8px;background:#0a0a0f;border:1px solid #2a2a40;color:#888;font-family:inherit;cursor:pointer">Cancel</button>
+      <button onclick="connectAlpaca()" style="flex:2;padding:11px;border-radius:8px;background:linear-gradient(135deg,#16a34a,#4ade80);border:none;color:#000;font-weight:700;font-family:inherit;cursor:pointer">Connect</button>
+    </div>
+    <div id="alpacaConnErr" style="font-size:11px;color:#f87171;margin-top:8px;min-height:14px"></div>
+  </div>
+</div>
+
+<!-- ═══ RADAR ═══ -->
+<div id="radar">
+  <div style="margin-bottom:14px">
+    <h1>STOCK RADAR</h1>
+    <div style="font-size:9px;color:#444;letter-spacing:0.14em;text-transform:uppercase">AI · Live news · Entry signals</div>
+  </div>
+
+  <!-- Sector + subcategory picker -->
+  <div class="sector-panel">
+    <div class="sector-title">Sector</div>
+    <div class="sector-grid" id="secGrid"></div>
+    <div class="sub-row" id="subRow"></div>
+  </div>
+
+  <!-- Signal filter -->
+  <div style="margin-bottom:14px">
+    <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#444;margin-bottom:8px">Signal</div>
+    <div class="sig-filter" id="sigFilter">
+      <button class="on" onclick="pickSig(this,'any')">All</button>
+      <button onclick="pickSig(this,'STRONG')">🟢 Strong</button>
+      <button onclick="pickSig(this,'MODERATE')">🟡 Moderate</button>
+      <button onclick="pickSig(this,'WATCH')">👁 Watch</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="primary" id="scanBtn" onclick="scan()">⚡ Scan Now</button>
+    <span id="selLabel" style="font-size:11px;color:#555"></span>
+  </div>
+
+  <div id="status"></div>
+  <div id="scanResults">
+    <div style="text-align:center;padding:50px 0;color:#222;font-size:13px">Select a sector and hit Scan.</div>
+  </div>
+</div>
+
+<!-- ═══ PENNY STOCKS ═══ -->
+<div id="penny" style="display:none">
+  <div style="margin-bottom:14px">
+    <h1 style="background:linear-gradient(90deg,#fb923c,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent">PENNY STOCKS</h1>
+    <div style="font-size:9px;color:#444;letter-spacing:0.14em;text-transform:uppercase">High risk · High reward · AI screened</div>
+  </div>
+
+  <div class="penny-warn">
+    ⚠ Penny stocks are highly speculative. They carry elevated risk of loss, low liquidity, and susceptibility to manipulation. Only risk capital you can afford to lose entirely.
+  </div>
+
+  <!-- Price range -->
+  <div style="margin-bottom:12px">
+    <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#444;margin-bottom:8px">Price Range</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="price-range-btn" id="pr-any" onclick="pickPRange(this,'any','any price under $10')">All &lt;$10</button>
+      <button class="price-range-btn on" id="pr-sub1" onclick="pickPRange(this,'sub1','under $1')">Sub $1</button>
+      <button class="price-range-btn" id="pr-1to3" onclick="pickPRange(this,'1to3','$1 to $3')">$1 – $3</button>
+      <button class="price-range-btn" id="pr-3to5" onclick="pickPRange(this,'3to5','$3 to $5')">$3 – $5</button>
+      <button class="price-range-btn" id="pr-5to10" onclick="pickPRange(this,'5to10','$5 to $10')">$5 – $10</button>
+    </div>
+  </div>
+
+  <!-- Penny subcategory -->
+  <div style="margin-bottom:14px">
+    <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#444;margin-bottom:8px">Category</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap" id="pennyCats">
+      <button class="price-range-btn on" id="pc-any"      onclick="pickPCat(this,'any','any sector')">All</button>
+      <button class="price-range-btn"   id="pc-biotech"   onclick="pickPCat(this,'biotech','micro-cap biotech and pharma')">Biotech / Pharma</button>
+      <button class="price-range-btn"   id="pc-mining"    onclick="pickPCat(this,'mining','mining, gold, silver, lithium, rare earths')">Mining &amp; Resources</button>
+      <button class="price-range-btn"   id="pc-tech"      onclick="pickPCat(this,'tech','micro-cap technology')">Tech Micro-cap</button>
+      <button class="price-range-btn"   id="pc-energy"    onclick="pickPCat(this,'energy','micro-cap energy, oil, gas, renewables')">Energy Micro-cap</button>
+      <button class="price-range-btn"   id="pc-cannabis"  onclick="pickPCat(this,'cannabis','cannabis and marijuana sector')">Cannabis</button>
+      <button class="price-range-btn"   id="pc-ev"        onclick="pickPCat(this,'ev','EV, clean tech, battery')">EV / Clean Tech</button>
+      <button class="price-range-btn"   id="pc-fintech"   onclick="pickPCat(this,'fintech','fintech and financial micro-caps')">Fintech</button>
+    </div>
+  </div>
+
+  <!-- Momentum filter -->
+  <div style="margin-bottom:14px">
+    <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#444;margin-bottom:8px">Momentum</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="price-range-btn on" id="pm-any"    onclick="pickPMom(this,'any')">Any</button>
+      <button class="price-range-btn"    id="pm-hot"    onclick="pickPMom(this,'high momentum with recent volume spike')">🔥 Hot</button>
+      <button class="price-range-btn"    id="pm-news"   onclick="pickPMom(this,'recent news catalyst or PR')">📰 News Catalyst</button>
+      <button class="price-range-btn"    id="pm-breakout" onclick="pickPMom(this,'technical breakout pattern')">📈 Breakout</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="primary" id="pennyScanBtn" onclick="pennyScan()" style="background:linear-gradient(135deg,#fb923c,#fbbf24)">🔍 Scan Pennies</button>
+  </div>
+
+  <div id="pennyStatus" style="font-size:12px;color:#fb923c;min-height:16px;margin-bottom:12px"></div>
+  <div id="pennyResults">
+    <div style="text-align:center;padding:50px 0;color:#222;font-size:13px">Set your filters and scan for penny opportunities.</div>
+  </div>
+</div>
+
+<!-- ═══ PORTFOLIO ═══ -->
+<div id="portfolio" style="display:none">
+  <div style="margin-bottom:14px">
+    <h1 style="background:linear-gradient(90deg,#4ade80,#7efff5);-webkit-background-clip:text;-webkit-text-fill-color:transparent">PORTFOLIO</h1>
+    <div style="font-size:9px;color:#444;letter-spacing:0.14em;text-transform:uppercase">Alpaca · Paper &amp; Live trading</div>
+  </div>
+
+  <!-- Connect / account bar -->
+  <div id="portfolioConnBar">
+    <div class="alpaca-bar disconnected" style="flex-direction:column;align-items:flex-start;gap:12px">
+      <div>
+        <span class="alpaca-dot off"></span>
+        <span style="font-size:12px;color:#555">Not connected to Alpaca</span>
+      </div>
+      <button onclick="openAlpacaModal()" style="background:linear-gradient(135deg,#16a34a,#4ade80);border:none;color:#000;font-weight:700;padding:10px 22px;border-radius:8px;font-family:inherit;font-size:12px;cursor:pointer">🔗 Connect Alpaca</button>
+      <p style="font-size:11px;color:#333;line-height:1.6">Free account at <b style="color:#4ade80">alpaca.markets</b> — start with Paper Trading (simulated money, no risk).</p>
+    </div>
+  </div>
+
+  <!-- Account info (shown when connected) -->
+  <div id="accountInfo" style="display:none">
+    <div class="alpaca-bar" style="margin-bottom:12px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="alpaca-dot" id="acctDot"></span>
+        <span style="font-size:12px;color:#e8e8f0" id="acctMode"></span>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button onclick="loadAccount()" style="font-size:11px;padding:6px 12px;background:#0a0a0f;border:1px solid #2a2a40;color:#7efff5;border-radius:6px;cursor:pointer;font-family:inherit">↻ Refresh</button>
+        <button onclick="disconnectAlpaca()" style="font-size:11px;padding:6px 12px;background:#0a0a0f;border:1px solid #2a2a40;color:#555;border-radius:6px;cursor:pointer;font-family:inherit">Disconnect</button>
+      </div>
+    </div>
+
+    <div class="mg" style="margin-bottom:12px" id="acctMetrics"></div>
+
+    <div class="card">
+      <div class="micro">Open Positions</div>
+      <div id="positions"><div style="color:#333;font-size:12px">Loading…</div></div>
+    </div>
+
+    <div class="card">
+      <div class="micro">Recent Orders</div>
+      <div id="recentOrders"><div style="color:#333;font-size:12px">Loading…</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DETAIL ═══ -->
+<div id="detail">
+  <button class="back-btn" onclick="showRadar()">← Back</button>
+  <div id="alpacaDetailBar" style="margin-bottom:12px"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+    <div>
+      <h1 id="dSym">—</h1>
+      <div id="dName" style="font-size:11px;color:#555;margin-top:2px"></div>
+    </div>
+    <div id="dPrice" style="text-align:right;font-family:system-ui,sans-serif"></div>
+  </div>
+  <div id="dStatus" style="font-size:12px;color:#7efff5;min-height:16px;margin-bottom:12px"></div>
+  <div id="dContent"></div>
+</div>
+
+<p style="margin-top:20px;font-size:10px;color:#1a1a2e;text-align:center">⚠ Not financial advice. Always apply your own judgement.</p>
+
+<script>
+// ═══ Tab switching ═══════════════════════════════════════════════
+let currentTab = "radar";
+
+function switchTab(tab){
+  currentTab = tab;
+  document.getElementById("radar").style.display  = tab==="radar" ? "block":"none";
+  document.getElementById("penny").style.display  = tab==="penny" ? "block":"none";
+  document.getElementById("tabRadar").className = "tab-btn"+(tab==="radar"?" on":"");
+  document.getElementById("tabPenny").className = "tab-btn tab-penny"+(tab==="penny"?" on":"");
+}
+
+function showRadar(){
+  document.getElementById("mainTabs").style.display = "flex";
+  document.getElementById("detail").style.display   = "none";
+  switchTab(currentTab);
+}
+
+function openDetail(ticker, company){
+  document.getElementById("mainTabs").style.display = "none";
+  document.getElementById("radar").style.display    = "none";
+  document.getElementById("penny").style.display    = "none";
+  document.getElementById("detail").style.display   = "block";
+  // … rest handled below
+  _openDetail(ticker, company);
+}
+
+// ═══ Penny state ═════════════════════════════════════════════════
+let pennyRange = "sub1", pennyRangeLabel = "under $1";
+let pennyCat   = "any",  pennyCatLabel   = "any sector";
+let pennyMom   = "any";
+
+function pickPRange(btn, id, label){
+  pennyRange=id; pennyRangeLabel=label;
+  document.querySelectorAll("#penny .price-range-btn[id^='pr-']").forEach(b=>b.classList.remove("on"));
+  btn.classList.add("on");
+}
+function pickPCat(btn, id, label){
+  pennyCat=id; pennyCatLabel=label;
+  document.querySelectorAll("#pennyCats .price-range-btn").forEach(b=>b.classList.remove("on"));
+  btn.classList.add("on");
+}
+function pickPMom(btn, val){
+  pennyMom=val;
+  document.querySelectorAll("#penny .price-range-btn[id^='pm-']").forEach(b=>b.classList.remove("on"));
+  btn.classList.add("on");
+}
+
+async function pennyScan(){
+  const btn = document.getElementById("pennyScanBtn");
+  const st  = document.getElementById("pennyStatus");
+  const res = document.getElementById("pennyResults");
+  btn.disabled=true; btn.textContent="Scanning…";
+  st.style.color="#fb923c"; st.innerHTML='<span class="spinner"></span>Scanning penny stocks…';
+  res.innerHTML="";
+
+  const momStr  = pennyMom!=="any" ? ` Focus on stocks with ${pennyMom}.` : "";
+  const catStr  = pennyCat!=="any" ? ` Category: ${pennyCatLabel}.` : "";
+  const rngStr  = `Price range: ${pennyRangeLabel}.`;
+
+  const prompt=`Search for the latest news and activity on penny stocks. ${rngStr}${catStr}${momStr}
+
+Find exactly 5 penny stock opportunities with genuine recent catalysts. These must be real stocks currently trading.
+
+Return ONLY a valid JSON array. Nothing before [ or after ].
+
+Each element:
+{"ticker":"SNDL","company":"SNDL Inc.","price":0.85,"priceRange":"$0.50–$1.00","signal":"STRONG","catalyst":"2-3 sentences on what is moving this stock right now.","tags":["Cannabis","High Volume","Breakout"],"momentum":78,"volumeSpike":true,"mktCap":"$180M","float":"220M shares","catalyst_type":"News","riskLevel":"HIGH","upside":"40%","nextEarnings":"2025-07-15","earningsNote":"Q2 2025","sector":"Cannabis","watchReasons":["Reason 1","Reason 2"]}
+
+signal: STRONG | MODERATE | WATCH | CAUTION
+riskLevel: HIGH | MEDIUM | LOW (most pennies are HIGH)
+momentum: integer 0-100
+volumeSpike: true if unusual volume detected
+catalyst_type: News | Earnings | Technical | Sector | Rumour
+upside: estimated upside % as string e.g. "35%"
+nextEarnings: YYYY-MM-DD or "unknown"
+
+Output ONLY the JSON array.`;
+
+  try{
+    const raw   = await callClaude(prompt);
+    const stocks= extractJSON(raw,"[");
+    st.textContent=`✓ ${stocks.length} penny picks — ${new Date().toLocaleTimeString("en-GB")}`;
+    res.innerHTML = stocks.map(s=>renderPennyCard(s)).join("");
+  }catch(e){
+    st.style.color="#f87171"; st.textContent="✗ "+e.message;
+  }finally{
+    btn.disabled=false; btn.textContent="🔍 Scan Pennies";
+  }
+}
+
+function renderPennyCard(s){
+  const tags=(s.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(" ");
+  const mom = Math.min(100,Math.max(0,+s.momentum||0));
+  const momColor = mom>70?"#f87171":mom>45?"#fbbf24":"#4ade80";
+  const earn = earningsBadge(s.nextEarnings, s.earningsNote);
+  const vs = s.volumeSpike?`<span style="font-size:9px;background:#1a0a00;color:#fb923c;border:1px solid #92400e40;padding:2px 7px;border-radius:4px;font-weight:700">🔥 VOL SPIKE</span>`:"";
+
+  return `<div class="penny-card" onclick="openDetail('${s.ticker}','${(s.company||"").replace(/'/g,"\\'")}')">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+      <div>
+        <span class="ticker">${s.ticker}</span>
+        <div class="penny-mcap">${s.company||""}</div>
+        <div style="font-size:10px;color:#444;margin-top:2px">${s.mktCap||""} · Float: ${s.float||"—"}</div>
+      </div>
+      <div style="text-align:right">
+        <div class="penny-price">$${(+s.price||0).toFixed(4)}</div>
+        <div style="font-size:10px;color:#fb923c80;margin-top:2px">${s.priceRange||""}</div>
+        <div style="margin-top:4px;display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap">
+          <span class="pill s-${s.signal}">${SIGNAL_LABELS[s.signal]||s.signal}</span>
+          <span class="risk-badge risk-${s.riskLevel}">${s.riskLevel}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalyst">${s.catalyst||""}</div>
+
+    <!-- Momentum bar -->
+    <div style="margin:10px 0">
+      <div style="display:flex;justify-content:space-between;font-size:9px;color:#444;margin-bottom:4px">
+        <span>Momentum</span><span style="color:${momColor}">${mom}%</span>
+      </div>
+      <div class="momentum-bar"><div style="height:4px;width:${mom}%;background:${momColor};border-radius:2px;transition:width 0.6s"></div></div>
+    </div>
+
+    <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px">${tags} ${vs}</div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+      <div style="display:flex;gap:12px;font-size:11px;color:#444">
+        <span>🎯 Upside: <b style="color:#fb923c">${s.upside||"?"}</b></span>
+        <span>📌 ${s.catalyst_type||""}</span>
+      </div>
+      ${earn}
+    </div>
+
+    ${(s.watchReasons||[]).length?`<div style="font-size:10px;color:#555;line-height:1.7">${s.watchReasons.map(r=>`• ${r}`).join("<br>")}</div>`:""}
+
+    <div class="cta" style="color:#fb923c40">Tap for full analysis →</div>
+  </div>`;
+}
+
+const SECTORS = [
+  { id:"any", label:"All", icon:"◈", subs:[] },
+  { id:"tech", label:"Tech", icon:"💻", subs:[
+    { id:"storage",       label:"Storage",        tickers:"WDC, STX, SNDK, NTAP" },
+    { id:"semiconductors",label:"Semiconductors", tickers:"NVDA, AMD, QCOM, INTC, TSM, AVGO" },
+    { id:"software",      label:"Software",       tickers:"MSFT, ORCL, SAP, ADBE, CRM" },
+    { id:"cloud",         label:"Cloud / SaaS",   tickers:"AMZN, GOOGL, MSFT, SNOW, DDOG" },
+    { id:"cybersecurity", label:"Cybersecurity",  tickers:"CRWD, PANW, FTNT, ZS, S" },
+    { id:"ai",            label:"AI / ML",        tickers:"NVDA, PLTR, AI, MSFT, GOOG" },
+    { id:"hardware",      label:"Hardware",       tickers:"AAPL, DELL, HPQ, LNVGY" },
+    { id:"networking",    label:"Networking",     tickers:"CSCO, JNPR, ANET, NOK" },
+  ]},
+  { id:"healthcare", label:"Health", icon:"🏥", subs:[
+    { id:"pharma",        label:"Pharma",         tickers:"PFE, LLY, JNJ, ABBV, AZN" },
+    { id:"biotech",       label:"Biotech",        tickers:"MRNA, BNTX, AMGN, GILD, BIIB" },
+    { id:"meddevices",    label:"Med Devices",    tickers:"MDT, SYK, ISRG, BSX, EW" },
+    { id:"insurance",     label:"Health Ins.",    tickers:"UNH, CVS, HUM, CI, ELV" },
+  ]},
+  { id:"energy", label:"Energy", icon:"⚡", subs:[
+    { id:"oilgas",        label:"Oil & Gas",      tickers:"XOM, CVX, BP, SHEL, TTE" },
+    { id:"renewables",    label:"Renewables",     tickers:"ENPH, FSLR, NEE, PLUG, BE" },
+    { id:"utilities",     label:"Utilities",      tickers:"DUK, SO, D, EXC, AEP" },
+    { id:"nuclear",       label:"Nuclear",        tickers:"CCJ, NNE, CEG, VST, SMR" },
+  ]},
+  { id:"financials", label:"Finance", icon:"🏦", subs:[
+    { id:"banks",         label:"Banks",          tickers:"JPM, BAC, GS, MS, WFC" },
+    { id:"fintech",       label:"Fintech",        tickers:"V, MA, SQ, PYPL, ADYEY" },
+    { id:"insurance2",    label:"Insurance",      tickers:"BRK.B, AIG, MET, PRU, AFL" },
+    { id:"assetmgmt",     label:"Asset Mgmt",     tickers:"BLK, SCHW, TROW, IVZ" },
+  ]},
+  { id:"consumer", label:"Consumer", icon:"🛍", subs:[
+    { id:"retail",        label:"Retail",         tickers:"WMT, AMZN, TGT, COST, HD" },
+    { id:"luxury",        label:"Luxury",         tickers:"LVMH, RMS, MC, BRBY, TIF" },
+    { id:"foodbev",       label:"Food & Bev",     tickers:"MCD, SBUX, KO, PEP, MDLZ" },
+    { id:"gaming",        label:"Gaming",         tickers:"MSFT, SONY, EA, TTWO, RBLX" },
+    { id:"travel",        label:"Travel",         tickers:"BKNG, ABNB, MAR, HLT, DAL" },
+  ]},
+  { id:"industrials", label:"Industrial", icon:"🏭", subs:[
+    { id:"aerospace",     label:"Aerospace",      tickers:"BA, LMT, RTX, NOC, GD" },
+    { id:"evmobility",    label:"EV / Mobility",  tickers:"TSLA, RIVN, GM, F, STLA" },
+    { id:"manufacturing", label:"Manufacturing",  tickers:"CAT, DE, GE, HON, MMM" },
+    { id:"logistics",     label:"Logistics",      tickers:"UPS, FDX, XPO, CHRW" },
+  ]},
+  { id:"crypto", label:"Crypto", icon:"₿", subs:[
+    { id:"btc",           label:"Bitcoin plays",  tickers:"MSTR, COIN, MARA, RIOT, CLSK" },
+    { id:"defi",          label:"DeFi / Alt",     tickers:"ETH, SOL, BNB, AAVE, UNI" },
+    { id:"exchanges",     label:"Exchanges",      tickers:"COIN, HOOD, IBKR, CME" },
+  ]},
+];
+
+let selSector = "any";
+let selSub    = null;
+let selSig    = "any";
+
+// Build sector buttons
+const secGrid = document.getElementById("secGrid");
+SECTORS.forEach(sec=>{
+  const b=document.createElement("button");
+  b.className="sec-btn"+(sec.id==="any"?" on":"");
+  b.innerHTML=`<span>${sec.icon}</span><span>${sec.label}</span>`;
+  b.onclick=()=>pickSector(sec.id);
+  b.id="sec-"+sec.id;
+  secGrid.appendChild(b);
+});
+
+function pickSector(id){
+  selSector=id; selSub=null;
+  document.querySelectorAll(".sec-btn").forEach(b=>b.classList.remove("on"));
+  document.getElementById("sec-"+id).classList.add("on");
+  const sec=SECTORS.find(s=>s.id===id);
+  const subRow=document.getElementById("subRow");
+  subRow.innerHTML="";
+  if(sec&&sec.subs.length>0){
+    subRow.classList.add("visible");
+    sec.subs.forEach(sub=>{
+      const b=document.createElement("button");
+      b.className="sub-btn";
+      b.id="sub-"+sub.id;
+      b.innerHTML=`${sub.label}<small>${sub.tickers}</small>`;
+      b.onclick=()=>pickSub(sub.id,sub.label,sub.tickers);
+      subRow.appendChild(b);
+    });
+  } else {
+    subRow.classList.remove("visible");
+  }
+  updateLabel();
+}
+
+function pickSub(id,label,tickers){
+  selSub={id,label,tickers};
+  document.querySelectorAll(".sub-btn").forEach(b=>b.classList.remove("on"));
+  document.getElementById("sub-"+id).classList.add("on");
+  updateLabel();
+}
+
+function pickSig(btn, val){
+  selSig=val;
+  document.querySelectorAll("#sigFilter button").forEach(b=>b.classList.remove("on"));
+  btn.classList.add("on");
+}
+
+function updateLabel(){
+  const sec=SECTORS.find(s=>s.id===selSector);
+  let txt="";
+  if(selSector!=="any") txt=sec?.label||"";
+  if(selSub) txt+=" → "+selSub.label+" ("+selSub.tickers+")";
+  document.getElementById("selLabel").textContent=txt;
+}
+
+// ═══ Helpers ════════════════════════════════════════════════════
+function extractJSON(text,bracket){
+  text=text.replace(/```json|```/g,"").trim();
+  const open=bracket==="{"?"{":"[", close=bracket==="{"?"}":"]";
+  const start=text.indexOf(open);
+  if(start===-1) throw new Error("No JSON found in response");
+  let depth=0,end=-1;
+  for(let i=start;i<text.length;i++){
+    if(text[i]===open) depth++;
+    else if(text[i]===close){depth--;if(depth===0){end=i;break;}}
+  }
+  const chunk=end!==-1?text.slice(start,end+1):text.slice(start);
+  try{return JSON.parse(chunk);}catch{
+    if(bracket==="["){
+      const lb=chunk.lastIndexOf("},");
+      if(lb>0) try{return JSON.parse(chunk.slice(0,lb+1)+"]");}catch{}
+    }
+    throw new Error("Could not parse response — try again");
+  }
+}
+
+async function callClaude(prompt){
+  const resp=await fetch("https://api.anthropic.com/v1/messages",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      model:"claude-sonnet-4-20250514",
+      max_tokens:1500,
+      tools:[{type:"web_search_20250305",name:"web_search"}],
+      messages:[{role:"user",content:prompt}]
+    })
+  });
+  if(!resp.ok){const e=await resp.json().catch(()=>{});throw new Error(e?.error?.message||"API error "+resp.status);}
+  const data=await resp.json();
+  return (data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("");
+}
+
+// ═══ SCAN ════════════════════════════════════════════════════════
+const SIGNAL_LABELS={STRONG:"🟢 Strong Buy",MODERATE:"🟡 Moderate",WATCH:"👁 Watch",CAUTION:"🔴 Caution"};
+
+async function scan(){
+  const btn=document.getElementById("scanBtn");
+  const st=document.getElementById("status");
+  const results=document.getElementById("scanResults");
+
+  btn.disabled=true; btn.textContent="Scanning…";
+  st.style.color="#7efff5";
+  st.innerHTML='<span class="spinner"></span>Searching today\'s market news…';
+  results.innerHTML="";
+
+  // Build context string
+  let focusStr="";
+  if(selSector!=="any"){
+    const sec=SECTORS.find(s=>s.id===selSector);
+    if(selSub){
+      focusStr=`Focus specifically on the ${selSub.label} sub-sector of ${sec?.label}. Prioritise stocks like ${selSub.tickers} and direct competitors.`;
+    } else {
+      focusStr=`Focus on the ${sec?.label} sector broadly.`;
+    }
+  }
+  const sigStr=selSig!=="any"?` Only include stocks with signal: ${selSig}.`:"";
+
+  const prompt=`Search for the latest market news today and identify exactly 5 investable stock opportunities. ${focusStr}${sigStr}
+
+Return ONLY a valid JSON array. Nothing before [ or after ].
+
+Each element:
+{"ticker":"WDC","company":"Western Digital Corp","signal":"STRONG","catalyst":"2-3 sentences explaining the news catalyst and investment thesis.","tags":["Tag1","Tag2","Tag3"],"timeframe":"Short-term","riskLevel":"Medium","sector":"Technology","subsector":"Storage","nextEarnings":"2025-07-24","earningsNote":"Q3 FY2025"}
+
+signal: STRONG | MODERATE | WATCH | CAUTION
+timeframe: Short-term | Medium-term | Long-term
+riskLevel: Low | Medium | High
+nextEarnings: ISO date string YYYY-MM-DD of the next scheduled earnings report, or "unknown"
+earningsNote: short label like "Q2 2025" or "Q3 FY2025"
+
+Output ONLY the JSON array.`;
+
+  try{
+    const raw=await callClaude(prompt);
+    const stocks=extractJSON(raw,"[");
+    st.textContent=`✓ ${stocks.length} opportunities — ${new Date().toLocaleTimeString("en-GB")}`;
+    results.innerHTML=stocks.map(s=>renderCard(s)).join("");
+  }catch(e){
+    st.style.color="#f87171"; st.textContent="✗ "+e.message;
+  }finally{
+    btn.disabled=false; btn.textContent="⚡ Scan Now";
+  }
+}
+
+function earningsBadge(dateStr, note){
+  if(!dateStr||dateStr==="unknown") return `<span class="earn earn-far">📅 Earnings: unknown</span>`;
+  const d = new Date(dateStr);
+  const now = new Date();
+  const days = Math.round((d-now)/(1000*86400));
+  if(isNaN(days)||days<0) return `<span class="earn earn-far">📅 ${note||dateStr}</span>`;
+  let cls="earn-far", urgency="";
+  if(days<=14){cls="earn-hot";urgency=` · ${days}d`;}
+  else if(days<=30){cls="earn-soon";urgency=` · ${days}d`;}
+  else if(days<=60){cls="earn-ok";urgency=` · ${days}d`;}
+  const label=note||dateStr;
+  return `<span class="earn ${cls}">📅 ${label}${urgency}</span>`;
+}
+
+function renderCard(s){
+  const tags=(s.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(" ");
+  const sub=s.subsector?`<span style="font-size:9px;color:#444;margin-left:6px">/ ${s.subsector}</span>`:"";
+  const earn=earningsBadge(s.nextEarnings, s.earningsNote);
+  return `<div class="stock-card" onclick="openDetail('${s.ticker}','${(s.company||"").replace(/'/g,"\\'")}')">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+      <div>
+        <span class="ticker">${s.ticker}</span>${sub}
+        <div class="company">${s.company||""}</div>
+      </div>
+      <div style="text-align:right">
+        <span class="pill s-${s.signal}">${SIGNAL_LABELS[s.signal]||s.signal}</span>
+        <div style="font-size:10px;color:#444;margin-top:4px">${s.sector||""}</div>
+      </div>
+    </div>
+    <div class="catalyst">${s.catalyst||""}</div>
+    <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px">${tags}</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <div style="display:flex;gap:14px;font-size:11px;color:#444">
+        <span>⏱ ${s.timeframe||""}</span><span>⚡ ${s.riskLevel||""} risk</span>
+      </div>
+      ${earn}
+    </div>
+    <div class="cta">Tap for entry points →</div>
+  </div>`;
+}
+
+// ═══ DETAIL ══════════════════════════════════════════════════════
+async function _openDetail(ticker,company){
+  document.getElementById("dSym").textContent=ticker;
+  document.getElementById("dName").textContent=company||"";
+  document.getElementById("dPrice").innerHTML="";
+  document.getElementById("dContent").innerHTML="";
+  const st=document.getElementById("dStatus");
+  st.style.color="#7efff5";
+  st.innerHTML=`<span class="spinner"></span>Loading live data for ${ticker}…`;
+
+  const prompt=`Search the web right now for the latest data on ${ticker} (${company}).
+
+Return ONLY a valid JSON object. Nothing before { or after }.
+
+{"symbol":"${ticker}","name":"Full name","price":123.45,"change":1.23,"changePct":0.89,"open":122.10,"high":124.50,"low":121.80,"volume":"45.2M","mktCap":"2.8T","week52High":199.62,"week52Low":124.17,"pe":28.5,"nextEarnings":"2025-07-24","earningsNote":"Q3 FY2025","signal":"STRONG","signalReason":"One sentence.","entryPrice":123.00,"stopLoss":119.00,"target":130.00,"sentiment":72,"technicalScore":65,"fundamentalScore":70,"catalysts":["Catalyst 1","Catalyst 2","Catalyst 3"],"risks":["Risk 1","Risk 2"],"news":[{"title":"Headline 1","summary":"One sentence."},{"title":"Headline 2","summary":"One sentence."},{"title":"Headline 3","summary":"One sentence."}]}
+
+signal: STRONG | MODERATE | WATCH | CAUTION. All prices = numbers. nextEarnings = YYYY-MM-DD or "unknown". Return ONLY the JSON.`;
+
+  try{
+    const raw=await callClaude(prompt);
+    const d=extractJSON(raw,"{");
+    renderDetail(d);
+    st.textContent=`✓ Live data — ${new Date().toLocaleTimeString("en-GB")}`;
+  }catch(e){
+    st.style.color="#f87171"; st.textContent="✗ "+e.message;
+  }
+}
+
+function bar(label,val,color){
+  const pct=Math.min(100,Math.max(0,+val||0));
+  return `<div class="bar-row">
+    <div class="bar-lbl"><span>${label}</span><span style="color:${color}">${pct}%</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${color}"></div></div>
+  </div>`;
+}
+
+function drawSpark(low,high,current){
+  const c=document.getElementById("spark");
+  if(!c)return;
+  const dpr=window.devicePixelRatio||1;
+  const W=c.parentElement.clientWidth||280, H=28;
+  c.width=W*dpr; c.height=H*dpr;
+  c.style.width=W+"px"; c.style.height=H+"px";
+  const ctx=c.getContext("2d"); ctx.scale(dpr,dpr);
+  const pct=Math.min(1,Math.max(0,(current-low)/(high-low||1)));
+  const x=pct*(W-6)+3;
+  ctx.fillStyle="#1a1a2e"; ctx.beginPath(); ctx.roundRect(0,10,W,8,4); ctx.fill();
+  const g=ctx.createLinearGradient(0,0,x,0);
+  g.addColorStop(0,"#4ade80"); g.addColorStop(1,"#f59e0b");
+  ctx.fillStyle=g; ctx.beginPath(); ctx.roundRect(0,10,x,8,4); ctx.fill();
+  ctx.shadowColor="#fff"; ctx.shadowBlur=8;
+  ctx.fillStyle="#fff"; ctx.beginPath(); ctx.arc(x,14,5,0,Math.PI*2); ctx.fill();
+  ctx.shadowBlur=0;
+  ctx.fillStyle="#444"; ctx.font="9px ui-monospace,monospace";
+  ctx.textAlign="left"; ctx.fillText("$"+(+low).toFixed(2),2,26);
+  ctx.textAlign="right"; ctx.fillText("$"+(+high).toFixed(2),W-2,26);
+}
+
+function renderDetail(d){
+  const isUp=(+d.change||0)>=0;
+  const isBull=d.signal==="STRONG"||d.signal==="MODERATE";
+  const rrRaw=Math.abs((+d.target)-(+d.entryPrice))/Math.abs((+d.entryPrice)-(+d.stopLoss)||1);
+  const rr=isFinite(rrRaw)?rrRaw.toFixed(1):"—";
+  const price=+d.price||0;
+  const dp=price>10?2:4;
+
+  document.getElementById("dPrice").innerHTML=`
+    <div class="price-num">$${price.toFixed(dp)}</div>
+    <div class="chg-line ${isUp?"up":"dn"}">${isUp?"▲":"▼"} $${Math.abs(+d.change||0).toFixed(2)} (${Math.abs(+d.changePct||0).toFixed(2)}%)</div>`;
+
+  document.getElementById("dContent").innerHTML=`
+    <div class="card">
+      <div class="micro">Market Data</div>
+      <div class="mg">
+        <div class="m"><div class="ml">Open</div><div class="mv">$${(+d.open||0).toFixed(dp)}</div></div>
+        <div class="m"><div class="ml">Volume</div><div class="mv">${d.volume||"—"}</div></div>
+        <div class="m"><div class="ml">Day High</div><div class="mv up">$${(+d.high||0).toFixed(dp)}</div></div>
+        <div class="m"><div class="ml">Day Low</div><div class="mv dn">$${(+d.low||0).toFixed(dp)}</div></div>
+        <div class="m"><div class="ml">Mkt Cap</div><div class="mv">${d.mktCap||"—"}</div></div>
+        <div class="m"><div class="ml">P/E</div><div class="mv">${d.pe||"—"}</div></div>
+      </div>
+      <div style="margin-top:12px;padding-top:10px;border-top:1px solid #1a1a2e;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:0.1em">Next Earnings</span>
+        ${earningsBadge(d.nextEarnings, d.earningsNote)}
+        ${d.nextEarnings&&d.nextEarnings!=="unknown"?`<span style="font-size:10px;color:#555">${d.nextEarnings}</span>`:""}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="micro">52-Week Range</div>
+      <canvas id="spark" height="28" style="width:100%;display:block"></canvas>
+      <div style="text-align:center;font-size:11px;color:#555;margin-top:8px">Current <b style="color:#e8e8f0">$${price.toFixed(dp)}</b></div>
+    </div>
+
+    <div class="card">
+      <div class="micro">Signal &amp; Entry</div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+        <span class="pill s-${d.signal}">${SIGNAL_LABELS[d.signal]||d.signal}</span>
+        <span style="font-size:12px;color:#aaa">${d.signalReason||""}</span>
+      </div>
+      <div class="entry-box ${isBull?"entry-buy":"entry-warn"}">
+        <div style="font-size:9px;color:${isBull?"#4ade8080":"#f8717180"};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">${isBull?"Suggested Entry":"Exercise Caution"}</div>
+        <div class="mg">
+          <div class="m"><div class="ml">Entry</div><div class="mv" style="color:${isBull?"#4ade80":"#fbbf24"}">$${(+d.entryPrice||0).toFixed(dp)}</div></div>
+          <div class="m"><div class="ml">Target</div><div class="mv up">$${(+d.target||0).toFixed(dp)}</div></div>
+          <div class="m"><div class="ml">Stop Loss</div><div class="mv dn">$${(+d.stopLoss||0).toFixed(dp)}</div></div>
+          <div class="m"><div class="ml">Risk / Reward</div><div class="mv">${rr}:1</div></div>
+        </div>
+      </div>
+    </div>
+
+    ${tradePanel(d.symbol||'', d.entryPrice, d.stopLoss, d.target, dp)}
+
+    <div class="card">
+      <div class="micro">Scores</div>
+      ${bar("Market Sentiment",d.sentiment||0,"#7efff5")}
+      ${bar("Technical",d.technicalScore||0,"#f59e0b")}
+      ${bar("Fundamental",d.fundamentalScore||0,"#a78bfa")}
+    </div>
+
+    <div class="card">
+      <div class="micro">Catalysts</div>
+      ${(d.catalysts||[]).map(c=>`<div class="news-item">✦ ${c}</div>`).join("")}
+      ${(d.risks||[]).length?`<div class="micro" style="margin-top:12px;color:#f8717160">Risks</div>${(d.risks||[]).map(r=>`<div class="news-item" style="border-color:#f8717130;color:#f87171aa">⚠ ${r}</div>`).join("")}`:""}
+    </div>
+
+    <div class="card">
+      <div class="micro">Latest News</div>
+      ${(d.news||[]).map(n=>`<div class="news-item"><b>${n.title}</b>${n.summary}</div>`).join("")}
+    </div>`;
+
+  setTimeout(()=>{ if(d.week52Low&&d.week52High) drawSpark(+d.week52Low,+d.week52High,+d.price); updateDetailAlpacaBar(); },60);
+}
+
+// ═══ Tab switch update ═══════════════════════════════════════════
+const _origSwitchTab = switchTab;
+// patch switchTab to handle portfolio tab
+function switchTab(tab){
+  currentTab=tab;
+  document.getElementById("radar").style.display      = tab==="radar"?"block":"none";
+  document.getElementById("penny").style.display      = tab==="penny"?"block":"none";
+  document.getElementById("portfolio").style.display  = tab==="portfolio"?"block":"none";
+  document.getElementById("tabRadar").className     = "tab-btn"+(tab==="radar"?" on":"");
+  document.getElementById("tabPenny").className     = "tab-btn tab-penny"+(tab==="penny"?" on":"");
+  document.getElementById("tabPortfolio").className = "tab-btn"+(tab==="portfolio"?" on":"");
+  if(tab==="portfolio"&&ALP.connected) loadAccount();
+}
+
+// ═══ Alpaca state ════════════════════════════════════════════════
+const ALP = { key:"", secret:"", mode:"paper", proxy:"", connected:false };
+
+let alpacaMode = "paper";
+
+function openAlpacaModal(){ document.getElementById("alpacaModal").style.display="flex"; }
+function closeAlpacaModal(){ document.getElementById("alpacaModal").style.display="none"; document.getElementById("alpacaConnErr").textContent=""; }
+
+function setMode(m){
+  alpacaMode=m;
+  document.getElementById("modePaper").className="mode-btn"+(m==="paper"?" on":"");
+  document.getElementById("modeLive").className ="mode-btn"+(m==="live"?" on":"");
+  document.getElementById("liveWarning").style.display = m==="live"?"block":"none";
+}
+
+// ═══ Alpaca via self-hosted proxy ════════════════════════════════
+// Direct browser→Alpaca is blocked by CORS. We use a tiny Vercel
+// function (included in download) as a passthrough proxy.
+
+async function alpacaRequest(method, path, body){
+  const proxyBase = ALP.proxy.replace(/\/$/, "");
+  const url = `${proxyBase}/api/alpaca?path=${encodeURIComponent(path)}`;
+
+  const opts = {
+    method,
+    headers: {
+      "Content-Type":    "application/json",
+      "x-alpaca-key":    ALP.key,
+      "x-alpaca-secret": ALP.secret,
+      "x-alpaca-mode":   ALP.mode,
+    }
+  };
+  if(body) opts.body = JSON.stringify(body);
+
+  const resp = await fetch(url, opts);
+  const text = await resp.text();
+  try {
+    const json = JSON.parse(text);
+    if(!resp.ok) throw new Error(json.message || json.error || `HTTP ${resp.status}`);
+    return json;
+  } catch(e) {
+    if(e.message && !e.message.startsWith("JSON")) throw e;
+    throw new Error(`HTTP ${resp.status}: ${text.slice(0,120)}`);
+  }
+}
+
+async function connectAlpaca(){
+  const k=document.getElementById("alpacaKey").value.trim();
+  const s=document.getElementById("alpacaSecret").value.trim();
+  const p=document.getElementById("alpacaProxy").value.trim();
+  const errEl=document.getElementById("alpacaConnErr");
+  if(!k||!s||!p){ errEl.textContent="All three fields required."; return; }
+  errEl.innerHTML='<span class="spinner"></span>Connecting…';
+  ALP.key=k; ALP.secret=s; ALP.mode=alpacaMode; ALP.proxy=p;
+  try{
+    const acct = await alpacaRequest("GET", "/v2/account");
+    if(acct.code && acct.code >= 400) throw new Error(acct.message || "Auth failed");
+    ALP.connected=true;
+    closeAlpacaModal();
+    loadAccount();
+    updatePortfolioConnBar();
+    updateDetailAlpacaBar();
+  }catch(e){ errEl.textContent="✗ "+e.message; ALP.connected=false; }
+}
+
+async function loadAccount(){
+  if(!ALP.connected) return;
+  try{
+    const [acct, pos, ords] = await Promise.all([
+      alpacaRequest("GET", "/v2/account"),
+      alpacaRequest("GET", "/v2/positions"),
+      alpacaRequest("GET", "/v2/orders?status=all&limit=10")
+    ]);
+
+    document.getElementById("acctMetrics").innerHTML=`
+      <div class="m"><div class="ml">Portfolio Value</div><div class="mv">$${(+acct.portfolio_value||0).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}</div></div>
+      <div class="m"><div class="ml">Buying Power</div><div class="mv up">$${(+acct.buying_power||0).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}</div></div>
+      <div class="m"><div class="ml">Cash</div><div class="mv">$${(+acct.cash||0).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}</div></div>
+      <div class="m"><div class="ml">Day P&amp;L</div><div class="mv ${(+acct.unrealized_intraday_pl||0)>=0?"up":"dn"}">$${(+acct.unrealized_intraday_pl||0).toFixed(2)}</div></div>`;
+
+    const posEl=document.getElementById("positions");
+    const posArr = Array.isArray(pos) ? pos : [];
+    if(!posArr.length){ posEl.innerHTML=`<p style="color:#333;font-size:12px">No open positions.</p>`; }
+    else posEl.innerHTML=posArr.map(p=>{
+      const pl=+p.unrealized_pl||0, plPct=(+p.unrealized_plpc||0)*100, isUp=pl>=0;
+      return `<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #1a1a2e;flex-wrap:wrap;gap:4px">
+        <div><b style="color:#7efff5">${p.symbol}</b> <span style="font-size:10px;color:#555">${p.qty} shares</span></div>
+        <div style="text-align:right">
+          <div style="font-size:13px">$${(+p.current_price||0).toFixed(2)}</div>
+          <div style="font-size:11px;color:${isUp?"#4ade80":"#f87171"}">${isUp?"+":""}$${pl.toFixed(2)} (${plPct.toFixed(2)}%)</div>
+        </div>
+      </div>`; }).join("");
+
+    const ordEl=document.getElementById("recentOrders");
+    const ordsArr = Array.isArray(ords) ? ords : [];
+    if(!ordsArr.length){ ordEl.innerHTML=`<p style="color:#333;font-size:12px">No recent orders.</p>`; }
+    else ordEl.innerHTML=ordsArr.slice(0,8).map(o=>{
+      const col={filled:"#4ade80",canceled:"#555",pending_new:"#fbbf24",new:"#fbbf24",partially_filled:"#a78bfa"}[o.status]||"#888";
+      return `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1a1a2e;flex-wrap:wrap;gap:4px;font-size:12px">
+        <div><b style="color:#e8e8f0">${o.symbol}</b> <span style="color:#555">${o.side} ${o.qty} @ ${o.type}</span></div>
+        <span style="color:${col};font-size:10px;text-transform:uppercase">${o.status}</span>
+      </div>`; }).join("");
+
+  }catch(e){ document.getElementById("positions").innerHTML=`<p style="color:#f87171;font-size:12px">✗ ${e.message}</p>`; }
+}
+
+async function placeOrder(symbol, side){
+  if(!ALP.connected){ openAlpacaModal(); return; }
+  const qty   = document.getElementById("orderQty")?.value||"1";
+  const type  = document.getElementById("orderType")?.value||"market";
+  const sl    = document.getElementById("orderSL")?.value;
+  const tp    = document.getElementById("orderTP")?.value;
+  const limP  = document.getElementById("limitPrice")?.value;
+  const resEl = document.getElementById("orderResult");
+  const buyBtn  = document.getElementById("buyBtn");
+  const sellBtn = document.getElementById("sellBtn");
+
+  if(buyBtn)  buyBtn.disabled=true;
+  if(sellBtn) sellBtn.disabled=true;
+  resEl.innerHTML=`<div class="order-result" style="background:#1a1a2e;color:#7efff5"><span class="spinner"></span>Placing ${side} order via Alpaca…</div>`;
+
+  const body = {
+    symbol: symbol.toUpperCase(),
+    qty: String(qty),
+    side,
+    type,
+    time_in_force: type==="market"?"day":"gtc",
+  };
+  if(type==="limit") body.limit_price = String(limP);
+  if(sl && tp){
+    body.order_class = "bracket";
+    body.take_profit = { limit_price: String(tp) };
+    body.stop_loss   = { stop_price:  String(sl) };
+  }
+
+  try{
+    const data = await alpacaRequest("POST", "/v2/orders", body);
+    if(data.code && data.code >= 400) throw new Error(data.message || JSON.stringify(data));
+    resEl.innerHTML=`<div class="order-result order-ok">
+      ✓ Order placed successfully<br>
+      <b>${(data.side||"").toUpperCase()} ${data.qty} ${data.symbol}</b> @ ${data.type}<br>
+      Status: <span style="color:#4ade80">${data.status}</span><br>
+      <span style="font-size:10px;color:#7efff5">ID: ${data.id}</span>
+    </div>`;
+    setTimeout(loadAccount, 2000);
+  }catch(e){
+    resEl.innerHTML=`<div class="order-result order-err">✗ ${e.message}</div>`;
+  }finally{
+    if(buyBtn)  buyBtn.disabled=false;
+    if(sellBtn) sellBtn.disabled=false;
+  }
+}
+
+function updatePortfolioConnBar(){
+  document.getElementById("portfolioConnBar").style.display = ALP.connected?"none":"block";
+  document.getElementById("accountInfo").style.display      = ALP.connected?"block":"none";
+  if(ALP.connected){
+    document.getElementById("acctDot").className  = "alpaca-dot";
+    document.getElementById("acctMode").innerHTML = `<span class="${ALP.mode==="paper"?"paper-badge":"live-badge"}">${ALP.mode.toUpperCase()}</span>&nbsp; Connected`;
+  }
+}
+
+function updateDetailAlpacaBar(){
+  const el=document.getElementById("alpacaDetailBar");
+  if(!el) return;
+  if(ALP.connected){
+    el.innerHTML=`<div class="alpaca-bar"><div><span class="alpaca-dot"></span><span style="font-size:12px;color:#e8e8f0">Alpaca ${ALP.mode==="paper"?"Paper":"Live"}</span></div><button onclick="switchTab('portfolio');showRadar()" style="font-size:11px;padding:5px 12px;background:#0a0a0f;border:1px solid #2a2a40;color:#7efff5;border-radius:6px;cursor:pointer;font-family:inherit">View Portfolio</button></div>`;
+  } else {
+    el.innerHTML=`<div class="alpaca-bar disconnected"><span class="alpaca-dot off"></span><span style="font-size:11px;color:#444">Alpaca not connected</span><button onclick="openAlpacaModal()" style="font-size:11px;padding:5px 12px;background:#0a0a0f;border:1px solid #2a2a40;color:#4ade80;border-radius:6px;cursor:pointer;font-family:inherit">Connect to Trade</button></div>`;
+  }
+}
+
+function disconnectAlpaca(){
+  ALP.connected=false; ALP.key=""; ALP.secret="";
+  updatePortfolioConnBar();
+  updateDetailAlpacaBar();
+}
+
+// ═══ Trade panel ═════════════════════════════════════════════════
+function tradePanel(symbol, entry, sl, target, dp){
+  const ep=(+entry||0).toFixed(dp||2);
+  const slp=(+sl||0).toFixed(dp||2);
+  const tp=(+target||0).toFixed(dp||2);
+  return `<div class="trade-panel" id="tradePanel">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:6px">
+      <div>
+        <div style="font-size:11px;font-weight:700;color:#4ade80">📤 Place Order — ${symbol}</div>
+        <div style="font-size:9px;color:#444;margin-top:2px">Pre-filled from AI analysis · edit before submitting</div>
+      </div>
+      <div id="tradeModeBadge"></div>
+    </div>
+
+    <div class="trade-row">
+      <div>
+        <div class="trade-label">Order Type</div>
+        <select id="orderType" class="trade-input" onchange="toggleLimitPrice()">
+          <option value="market">Market</option>
+          <option value="limit">Limit</option>
+        </select>
+      </div>
+      <div>
+        <div class="trade-label">Quantity (shares)</div>
+        <input id="orderQty" class="trade-input" type="number" value="1" min="1">
+      </div>
+    </div>
+
+    <div id="limitPriceRow" style="display:none;margin-bottom:10px">
+      <div class="trade-label">Limit Price ($)</div>
+      <input id="limitPrice" class="trade-input" type="number" value="${ep}" step="0.01">
+    </div>
+
+    <div class="trade-row">
+      <div>
+        <div class="trade-label">Stop Loss ($)</div>
+        <input id="orderSL" class="trade-input" type="number" value="${slp}" step="0.01">
+      </div>
+      <div>
+        <div class="trade-label">Take Profit ($)</div>
+        <input id="orderTP" class="trade-input" type="number" value="${tp}" step="0.01">
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+      <button class="trade-buy"  id="buyBtn"  onclick="placeOrder('${symbol}','buy')" >▲ BUY</button>
+      <button class="trade-sell" id="sellBtn" onclick="placeOrder('${symbol}','sell')">▼ SELL</button>
+    </div>
+
+    <div id="orderResult"></div>
+
+    <p style="font-size:9px;color:#333;margin-top:8px;text-align:center">Orders routed via Alpaca. Always verify before placing live orders.</p>
+  </div>`;
+}
+
+function toggleLimitPrice(){
+  const isLimit = document.getElementById("orderType")?.value==="limit";
+  const row = document.getElementById("limitPriceRow");
+  if(row) row.style.display = isLimit?"block":"none";
+}
+
+function updateTradePanelMode(){
+  const el=document.getElementById("tradeModeBadge");
+  if(!el) return;
+  if(ALP.connected) el.innerHTML=`<span class="${ALP.mode==="paper"?"paper-badge":"live-badge"}">${ALP.mode.toUpperCase()}</span>`;
+  else el.innerHTML=`<button onclick="openAlpacaModal()" style="font-size:10px;padding:4px 10px;background:#0a0a0f;border:1px solid #2a2a40;color:#4ade80;border-radius:6px;cursor:pointer;font-family:inherit">Connect Alpaca</button>`;
+}
+
+async function placeOrder(symbol, side){
+  if(!ALP.connected){ openAlpacaModal(); return; }
+  const qty     = document.getElementById("orderQty")?.value||"1";
+  const type    = document.getElementById("orderType")?.value||"market";
+  const sl      = document.getElementById("orderSL")?.value;
+  const tp      = document.getElementById("orderTP")?.value;
+  const limP    = document.getElementById("limitPrice")?.value;
+  const resEl   = document.getElementById("orderResult");
+  const buyBtn  = document.getElementById("buyBtn");
+  const sellBtn = document.getElementById("sellBtn");
+
+  if(buyBtn)  buyBtn.disabled=true;
+  if(sellBtn) sellBtn.disabled=true;
+  resEl.innerHTML=`<div class="order-result" style="background:#1a1a2e;color:#7efff5"><span class="spinner"></span>Placing ${side} order…</div>`;
+
+  const body = {
+    symbol: symbol.toUpperCase(),
+    qty: String(qty),
+    side,
+    type,
+    time_in_force: type==="market"?"day":"gtc",
+    order_class: (sl||tp)?"bracket":"simple",
+  };
+  if(type==="limit") body.limit_price = String(limP);
+  if(sl&&tp){ body.take_profit={limit_price:String(tp)}; body.stop_loss={stop_price:String(sl)}; }
+
+  try{
+    const r = await fetch(ALP.base()+"/v2/orders",{method:"POST",headers:ALP.headers(),body:JSON.stringify(body)});
+    const data = await r.json();
+    if(!r.ok) throw new Error(data.message||JSON.stringify(data));
+    resEl.innerHTML=`<div class="order-result order-ok">
+      ✓ Order placed<br>
+      <b>${data.side?.toUpperCase()} ${data.qty} ${data.symbol}</b> @ ${data.type}<br>
+      ID: <span style="color:#7efff5;font-size:10px">${data.id}</span><br>
+      Status: ${data.status}
+    </div>`;
+    if(ALP.mode==="paper") setTimeout(loadAccount, 1500);
+  }catch(e){
+    resEl.innerHTML=`<div class="order-result order-err">✗ ${e.message}</div>`;
+  }finally{
+    if(buyBtn)  buyBtn.disabled=false;
+    if(sellBtn) sellBtn.disabled=false;
+  }
+}
+</script>
+</body>
+</html>
