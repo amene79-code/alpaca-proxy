@@ -269,59 +269,65 @@ async function claudeScan(openMarkets){
   const antKey  = document.getElementById("anthropicKey").value.trim();
   const sector  = document.getElementById("cfgSector").value;
   const signal  = document.getElementById("cfgSignal").value;
-
   const mktList = openMarkets.map(id=>MARKETS[id].name).join(", ");
-  const secStr  = sector!=="any"?` Sector: ${sector}.`:"";
-  const sigStr  = signal!=="any"?` Min signal: ${signal}.`:"";
+  const secStr  = sector!=="any"?` Focus on ${sector}.`:"";
+  const sigStr  = signal!=="any"?` Only ${signal} signals.`:"";
 
-  const prompt=`Search latest market news. Open markets: ${mktList}.${secStr}${sigStr}
+  // Step 1: search for opportunities (allow free-form response)
+  const searchPrompt=`Search the web for the best stock trading opportunities RIGHT NOW in these open markets: ${mktList}.${secStr}${sigStr} Find 3 specific stocks with strong news catalysts today. For each give: ticker, company, market, signal strength (STRONG/MODERATE/WATCH), approximate price, and one sentence on why.`;
 
-Find 3 stock opportunities. Reply with ONLY a JSON array, nothing else:
-[{"ticker":"AAPL","company":"Apple","market":"NYSE","signal":"STRONG","confidence":80,"catalyst":"one sentence reason","canTrade":true,"price_approx":185,"sector":"Tech","risk":"Low"}]
+  const searchResp=await fetch("https://api.anthropic.com/v1/messages",{
+    method:"POST",
+    headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+    body:JSON.stringify({
+      model:"claude-haiku-4-5-20251001",
+      max_tokens:800,
+      tools:[{type:"web_search_20250305",name:"web_search"}],
+      messages:[{role:"user",content:searchPrompt}]
+    })
+  });
+  if(!searchResp.ok){const e=await searchResp.json().catch(()=>{});throw new Error(e?.error?.message||"API error "+searchResp.status);}
+  const searchData=await searchResp.json();
+  const searchText=(searchData.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("\n");
 
-Rules: canTrade=true only for NYSE/NASDAQ. signal=STRONG|MODERATE|WATCH. No explanation, no markdown, just the array.`;
+  // Step 2: convert to JSON (no tools, pure formatting)
+  const formatPrompt=`Convert this stock analysis into a JSON array. Output ONLY the raw JSON array, no markdown, no explanation.
 
-  const resp=await fetch("https://api.anthropic.com/v1/messages",{
+Analysis:
+${searchText.slice(0,1500)}
+
+Required format:
+[{"ticker":"AAPL","company":"Apple Inc","market":"NYSE","signal":"STRONG","confidence":80,"catalyst":"reason in one sentence","canTrade":true,"price_approx":185,"sector":"Technology","risk":"Medium"}]
+
+Rules:
+- canTrade: true ONLY for NYSE or NASDAQ stocks, false for all others
+- signal: STRONG, MODERATE, or WATCH only
+- confidence: number 0-100
+- Output ONLY the JSON array starting with [ and ending with ]`;
+
+  const formatResp=await fetch("https://api.anthropic.com/v1/messages",{
     method:"POST",
     headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
     body:JSON.stringify({
       model:"claude-haiku-4-5-20251001",
       max_tokens:600,
-      tools:[{type:"web_search_20250305",name:"web_search"}],
-      messages:[{role:"user",content:prompt}]
+      messages:[{role:"user",content:formatPrompt}]
     })
   });
+  if(!formatResp.ok){const e=await formatResp.json().catch(()=>{});throw new Error(e?.error?.message||"Format API error "+formatResp.status);}
+  const formatData=await formatResp.json();
+  const raw=(formatData.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").trim();
+  const clean=raw.replace(/```json/g,"").replace(/```/g,"").trim();
 
-  if(!resp.ok){const e=await resp.json().catch(()=>{});throw new Error(e?.error?.message||"API error "+resp.status);}
-  const data=await resp.json();
-
-  // Collect all text blocks
-  const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("\n");
-
-  // Try multiple extraction strategies
-  const clean = text.replace(/```json/g,"").replace(/```/g,"").trim();
-
-  // Strategy 1: find outermost [ ]
-  const start = clean.indexOf("[");
-  const end   = clean.lastIndexOf("]");
-  if(start!==-1 && end>start){
-    try{ return JSON.parse(clean.slice(start, end+1)); }catch{}
+  const start=clean.indexOf("["), end=clean.lastIndexOf("]");
+  if(start!==-1&&end>start){
+    try{ return JSON.parse(clean.slice(start,end+1)); }catch(e){
+      log("ERROR","JSON parse failed: "+clean.slice(start,start+200));
+      throw new Error("JSON parse error: "+e.message);
+    }
   }
-
-  // Strategy 2: try parsing the whole thing
-  try{ return JSON.parse(clean); }catch{}
-
-  // Strategy 3: salvage partial array
-  const partialMatch = clean.match(/\[\s*\{[\s\S]*?\}\s*(?:,\s*\{[\s\S]*?\}\s*)*\]?/);
-  if(partialMatch){
-    let attempt = partialMatch[0];
-    if(!attempt.endsWith("]")) attempt += "]";
-    try{ return JSON.parse(attempt); }catch{}
-  }
-
-  // Log raw response to help debug
-  log("ERROR","Raw response: "+clean.slice(0,200));
-  throw new Error("Could not parse scan response — retrying next cycle");
+  log("ERROR","Format response: "+clean.slice(0,200));
+  throw new Error("No JSON array in format response");
 }
 
 // ═══ Main cycle ══════════════════════════════════════════════════
