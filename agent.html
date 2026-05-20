@@ -175,6 +175,25 @@ label{color:#a0a8c8}
     <div><div class="fl">Trailing stop (%)</div><input id="cfgTrail" type="number" value="2" min="0.5" max="10" step="0.5" title="Lock in profits: stop loss rises with price, never falls."></div>
     <div><div class="fl">Earnings buffer (days)</div><input id="cfgEarnings" type="number" value="3" min="0" max="14" title="Skip stocks with earnings within this many days."></div>
   </div>
+
+  <div style="background:#0d0d14;border:1px solid #252538;border-radius:10px;padding:12px;margin-top:4px;margin-bottom:10px">
+    <div class="fl" style="margin-bottom:8px">📊 MACD Settings (12 / 26 / 9)</div>
+    <div class="g3" style="margin-bottom:8px">
+      <div><div class="fl">Fast EMA</div><input id="cfgMacdFast" type="number" value="12" min="2" max="50" title="Fast EMA period. Default: 12"></div>
+      <div><div class="fl">Slow EMA</div><input id="cfgMacdSlow" type="number" value="26" min="5" max="100" title="Slow EMA period. Default: 26"></div>
+      <div><div class="fl">Signal EMA</div><input id="cfgMacdSig" type="number" value="9" min="2" max="30" title="Signal line period. Default: 9"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
+        <input type="checkbox" id="cfgMacdBullish" checked style="width:auto;accent-color:#4ade80">
+        Require MACD above signal line (bullish momentum)
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
+        <input type="checkbox" id="cfgMacdCross" style="width:auto;accent-color:#4ade80">
+        Require fresh bullish crossover only (stricter)
+      </label>
+    </div>
+  </div>
   <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:#777;cursor:pointer;margin-top:8px">
     <input type="checkbox" id="cfgMktOnly" checked style="width:auto;accent-color:#4ade80">
     Only scan when at least one selected market is open
@@ -316,20 +335,72 @@ async function yahooFetch(ticker, range="2mo", interval="1d"){
 }
 
 // ═══ Technical indicators ════════════════════════════════════════
-async function getTechnicals(ticker){
+function calcEMA(closes, period){
+  const k = 2 / (period + 1);
+  let ema = closes.slice(0, period).reduce((s,v)=>s+v,0) / period;
+  const result = new Array(period - 1).fill(null);
+  result.push(ema);
+  for(let i = period; i < closes.length; i++){
+    ema = closes[i] * k + ema * (1 - k);
+    result.push(ema);
+  }
+  return result;
+}
+
+function calcMACD(closes, fast=12, slow=26, signal=9){
+  const emaFast = calcEMA(closes, fast);
+  const emaSlow = calcEMA(closes, slow);
+  // MACD line = EMA12 - EMA26
+  const macdLine = closes.map((_,i) =>
+    emaFast[i] != null && emaSlow[i] != null ? emaFast[i] - emaSlow[i] : null
+  );
+  // Signal line = EMA9 of MACD line
+  const validMacd = macdLine.filter(v => v != null);
+  const macdSignal = calcEMA(validMacd, signal);
+  // Rebuild to full length
+  const nullCount = macdLine.filter(v => v == null).length;
+  const signalFull = new Array(nullCount).fill(null).concat(macdSignal);
+  // Histogram = MACD - Signal
+  const histogram = macdLine.map((v,i) =>
+    v != null && signalFull[i] != null ? v - signalFull[i] : null
+  );
+  const last = macdLine.length - 1;
+  const prev = last - 1;
+  // Bullish crossover: MACD crossed above signal line
+  const bullishCross = (
+    macdLine[prev] != null && signalFull[prev] != null &&
+    macdLine[last] != null && signalFull[last] != null &&
+    macdLine[prev] <= signalFull[prev] &&
+    macdLine[last] >  signalFull[last]
+  );
+  // MACD above signal (momentum positive)
+  const bullish = macdLine[last] != null && signalFull[last] != null &&
+                  macdLine[last] > signalFull[last];
+  return {
+    macd:      macdLine[last],
+    signal:    signalFull[last],
+    histogram: histogram[last],
+    prevHistogram: histogram[prev],
+    bullishCross,
+    bullish,
+  };
+}
+
+async function getTechnicals(ticker, macdFast=12, macdSlow=26, macdSig=9){
   try{
-    const json=await yahooFetch(ticker,"2mo","1d");
+    const json=await yahooFetch(ticker,"3mo","1d");
     if(!json) return null;
     const quotes=json?.chart?.result?.[0]?.indicators?.quote?.[0];
     const closes=quotes?.close?.filter(v=>v!=null)||[];
     const volumes=quotes?.volume?.filter(v=>v!=null)||[];
-    if(closes.length<15) return null;
+    if(closes.length<30) return null;
     const rsi      = calcRSI(closes,14);
     const avgVol   = volumes.slice(0,-1).reduce((s,v)=>s+v,0)/Math.min(volumes.length-1,20);
     const volSpike = (volumes[volumes.length-1]||0)/(avgVol||1);
     const sma20    = closes.slice(-20).reduce((s,v)=>s+v,0)/20;
     const price    = closes[closes.length-1];
-    return {rsi, volSpike, sma20, price, avgVol};
+    const macd     = calcMACD(closes, macdFast, macdSlow, macdSig);
+    return {rsi, volSpike, sma20, price, avgVol, macd};
   }catch{ return null; }
 }
 
@@ -384,44 +455,6 @@ async function getSPYTrend(){
   }catch{ return null; }
 }
 
-// ═══ Earnings check ══════════════════════════════════════════════
-async function getNextEarnings(ticker){
-  try{
-    const cal = await alpaca("GET",`/v2/calendar?start=${new Date().toISOString().slice(0,10)}`);
-    // Alpaca doesn't have earnings directly — use a rough heuristic via news
-    // Return null to skip check if unavailable
-    return null;
-  }catch{ return null; }
-}
-
-// Earnings check via Claude (called once per ticker, cached)
-let earningsCache={};
-async function checkEarnings(ticker, antKey, bufferDays){
-  if(earningsCache[ticker]!==undefined) return earningsCache[ticker];
-  try{
-    const resp=await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",
-      headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
-      body:JSON.stringify({
-        model:"claude-haiku-4-5-20251001",
-        max_tokens:80,
-        messages:[{role:"user",content:`When is ${ticker}'s next earnings date? Reply with ONLY the date in YYYY-MM-DD format, or "unknown" if unsure. Nothing else.`}]
-      })
-    });
-    const data=await resp.json();
-    const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").trim();
-    const match=text.match(/\d{4}-\d{2}-\d{2}/);
-    if(match){
-      const daysUntil=Math.ceil((new Date(match[0])-new Date())/(86400000));
-      const tooClose = daysUntil>=0 && daysUntil<=bufferDays;
-      earningsCache[ticker]={date:match[0],daysUntil,tooClose};
-      return earningsCache[ticker];
-    }
-  }catch{}
-  earningsCache[ticker]={date:"unknown",daysUntil:99,tooClose:false};
-  return earningsCache[ticker];
-}
-
 // ═══ Trailing stop management ════════════════════════════════════
 async function manageTrailingStops(positions, cfg){
   const pos=Array.isArray(positions)?positions:[];
@@ -458,21 +491,27 @@ async function manageTrailingStops(positions, cfg){
 }
 
 // ═══ Claude scan ═════════════════════════════════════════════════
+// ═══ Claude scan (earnings check folded in) ══════════════════════
 async function claudeScan(openMarkets, antKey){
   const sector=document.getElementById("cfgSector").value;
   const signal=document.getElementById("cfgSignal").value;
   const mkts=openMarkets.map(id=>MARKETS[id].name).join(", ");
   const sec=sector!=="any"?` ${sector} sector.`:"";
   const sig=signal!=="any"?` ${signal}+ signals only.`:"";
+  const buf=document.getElementById("cfgEarnings").value||3;
 
   const prompt=`You are a financial data formatter. Search web for current stock news in: ${mkts}.${sec}${sig}
 
-Output ONLY this JSON array of 3 stocks, starting with [ ending with ], no other text:
-[{"ticker":"AAPL","company":"Apple Inc","market":"NYSE","signal":"STRONG","confidence":78,"catalyst":"one sentence","canTrade":true,"price_approx":185,"sector":"Technology","risk":"Medium"}]
+Find 3 opportunities. For each, also check when their next earnings date is.
 
-canTrade=true for NYSE/NASDAQ only. Start response with [`;
+Output ONLY this JSON array, starting with [, nothing else:
+[{"ticker":"AAPL","company":"Apple Inc","market":"NYSE","signal":"STRONG","confidence":78,"catalyst":"one sentence","canTrade":true,"price_approx":185,"sector":"Technology","risk":"Medium","nextEarnings":"2025-08-01","earningsDaysAway":72}]
 
-  await new Promise(r=>setTimeout(r,3000));
+canTrade=true for NYSE/NASDAQ only.
+earningsDaysAway: integer days until next earnings, or 999 if unknown.
+Start with [`;
+
+  await new Promise(r=>setTimeout(r,8000)); // 8s gap to avoid rate limit
 
   const resp=await fetch("https://api.anthropic.com/v1/messages",{
     method:"POST",
@@ -531,10 +570,15 @@ async function _runCycle(){
     trail:    +document.getElementById("cfgTrail").value/100,
     earnings: +document.getElementById("cfgEarnings").value||3,
     antKey:   document.getElementById("anthropicKey").value.trim(),
+    macdFast:     +document.getElementById("cfgMacdFast").value||12,
+    macdSlow:     +document.getElementById("cfgMacdSlow").value||26,
+    macdSig:      +document.getElementById("cfgMacdSig").value||9,
+    macdBullish:  document.getElementById("cfgMacdBullish").checked,
+    macdCross:    document.getElementById("cfgMacdCross").checked,
   };
 
   const today=new Date().toDateString();
-  if(dailyDate!==today){dailyTrades=0;dailyDate=today;earningsCache={};}
+  if(dailyDate!==today){dailyTrades=0;dailyDate=today;}
   document.getElementById("mTrades").textContent=dailyTrades;
 
   // Check open markets
@@ -625,9 +669,9 @@ async function _runCycle(){
     if(agentPositions.has(opp.ticker)){log("SKIP",`${opp.ticker} — traded today`);continue;}
     if((sigRank[opp.signal]||0)<minRank){log("SKIP",`${opp.ticker} — signal too weak (${opp.signal})`);continue;}
 
-    // ── Technical checks via Alpaca data ──
+    // ── Technical checks ──
     log("CHECK",`Running technical checks on ${opp.ticker}…`);
-    const tech=await getTechnicals(opp.ticker);
+    const tech=await getTechnicals(opp.ticker, cfg.macdFast, cfg.macdSlow, cfg.macdSig);
 
     if(tech){
       // RSI check
@@ -643,17 +687,36 @@ async function _runCycle(){
         continue;
       }
       log("CHECK",`${opp.ticker} Volume: ${tech.volSpike.toFixed(1)}x avg ✓`);
+
+      // MACD check
+      if(tech.macd){
+        const m = tech.macd;
+        const macdStr = `MACD ${m.macd?.toFixed(3)} / Signal ${m.signal?.toFixed(3)} / Hist ${m.histogram?.toFixed(3)}`;
+
+        if(cfg.macdCross && !m.bullishCross){
+          log("SKIP",`${opp.ticker} — No fresh MACD bullish crossover`,macdStr);
+          continue;
+        } else if(cfg.macdBullish && !cfg.macdCross && !m.bullish){
+          log("SKIP",`${opp.ticker} — MACD below signal line (bearish momentum)`,macdStr);
+          continue;
+        }
+
+        const crossNote = m.bullishCross ? " 🔀 fresh cross" : "";
+        log("CHECK",`${opp.ticker} MACD ${m.bullish?"bullish":"bearish"}${crossNote} ✓`,macdStr);
+      } else {
+        log("CHECK",`${opp.ticker} — MACD unavailable, skipping MACD filter`);
+      }
     }else{
       log("CHECK",`${opp.ticker} — Could not fetch technicals, proceeding on signal only`);
     }
 
-    // ── Earnings check ──
-    const earn=await checkEarnings(opp.ticker,cfg.antKey,cfg.earnings);
-    if(earn.tooClose){
-      log("SKIP",`${opp.ticker} — Earnings in ${earn.daysUntil} days (${earn.date}), buffer is ${cfg.earnings} days`);
+    // ── Earnings check — from scan data (no extra API call) ──
+    const earningsDays = opp.earningsDaysAway ?? 999;
+    if(earningsDays >= 0 && earningsDays <= cfg.earnings){
+      log("SKIP",`${opp.ticker} — earnings in ${earningsDays}d (buffer: ${cfg.earnings}d)`);
       continue;
     }
-    if(earn.date!=="unknown") log("CHECK",`${opp.ticker} Earnings: ${earn.date} (${earn.daysUntil}d away) ✓`);
+    if(earningsDays < 999) log("CHECK",`${opp.ticker} earnings in ${earningsDays}d ✓`);
 
     // ── Always get live price first — skip if unavailable ──
     const livePrice = await getLivePrice(opp.ticker);
@@ -807,7 +870,7 @@ async function startAgent(){
 
   const iv=+document.getElementById("cfgInterval").value||900000;
   log("INFO",`Agent started`,
-    `Filters: RSI<${document.getElementById("cfgRSI").value} | Vol>${document.getElementById("cfgVol").value}x | VIX<${document.getElementById("cfgVIX").value} | Earnings buffer ${document.getElementById("cfgEarnings").value}d | Trail stop ${document.getElementById("cfgTrail").value}%`);
+    `RSI<${document.getElementById("cfgRSI").value} | Vol>${document.getElementById("cfgVol").value}x | VIX<${document.getElementById("cfgVIX").value} | MACD(${document.getElementById("cfgMacdFast").value}/${document.getElementById("cfgMacdSlow").value}/${document.getElementById("cfgMacdSig").value}) ${document.getElementById("cfgMacdCross").checked?"crossover":"bullish"} | Earnings buffer ${document.getElementById("cfgEarnings").value}d | Trail ${document.getElementById("cfgTrail").value}%`);
 
   await runCycle();
 }
