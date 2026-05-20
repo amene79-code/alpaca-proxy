@@ -295,14 +295,19 @@ async function alpaca(method,path,body){
   }catch(e){if(!e.message.startsWith("HTTP")) throw e; throw e;}
 }
 
-// ═══ Technical indicators via Yahoo Finance (free, no key) ═══════
+// ═══ Yahoo Finance via proxy (CORS-safe) ═════════════════════════
+async function yahooFetch(ticker, range="2mo", interval="1d"){
+  const proxy=document.getElementById("proxyUrl").value.trim().replace(/\/$/,"");
+  const resp=await fetch(`${proxy}/api/yahoo?ticker=${encodeURIComponent(ticker)}&range=${range}&interval=${interval}`);
+  if(!resp.ok) return null;
+  return await resp.json();
+}
+
+// ═══ Technical indicators ════════════════════════════════════════
 async function getTechnicals(ticker){
   try{
-    // Try Yahoo Finance for RSI/volume
-    const url=`https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?interval=1d&range=2mo`;
-    const resp=await fetch(url);
-    if(!resp.ok) return null;
-    const json=await resp.json();
+    const json=await yahooFetch(ticker,"2mo","1d");
+    if(!json) return null;
     const quotes=json?.chart?.result?.[0]?.indicators?.quote?.[0];
     const closes=quotes?.close?.filter(v=>v!=null)||[];
     const volumes=quotes?.volume?.filter(v=>v!=null)||[];
@@ -346,21 +351,19 @@ function calcRSI(closes, period=14){
   return 100-100/(1+ag/(al||1e-9));
 }
 
-// ═══ VIX via Yahoo Finance ═══════════════════════════════════════
+// ═══ VIX via Yahoo proxy ═════════════════════════════════════════
 async function getVIX(){
   try{
-    const resp=await fetch("https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?interval=1d&range=5d");
-    const json=await resp.json();
+    const json=await yahooFetch("%5EVIX","5d","1d");
     const closes=json?.chart?.result?.[0]?.indicators?.quote?.[0]?.close?.filter(v=>v!=null)||[];
     return closes.length ? closes[closes.length-1] : null;
   }catch{ return null; }
 }
 
-// ═══ S&P500 trend via Yahoo Finance ══════════════════════════════
+// ═══ S&P500 trend via Yahoo proxy ════════════════════════════════
 async function getSPYTrend(){
   try{
-    const resp=await fetch("https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&range=2mo");
-    const json=await resp.json();
+    const json=await yahooFetch("SPY","3mo","1d");
     const closes=json?.chart?.result?.[0]?.indicators?.quote?.[0]?.close?.filter(v=>v!=null)||[];
     if(closes.length<20) return null;
     const price=closes[closes.length-1];
@@ -640,21 +643,17 @@ async function _runCycle(){
     }
     if(earn.date!=="unknown") log("CHECK",`${opp.ticker} Earnings: ${earn.date} (${earn.daysUntil}d away) ✓`);
 
-    // ── Get live price — prefer Alpaca quote over Claude estimate ──
-    let price = tech?.price || 0;
+    // ── Always get live price first — skip if unavailable ──
     const livePrice = await getLivePrice(opp.ticker);
-    if(livePrice > 0) price = livePrice;
-    else if(!price && opp.price_approx) price = +opp.price_approx;
-    if(!price || price<=0){log("SKIP",`${opp.ticker} — no price`);continue;}
+    const price = livePrice > 0 ? livePrice : (tech?.price || 0);
+    if(!price || price <= 0){
+      log("SKIP",`${opp.ticker} — could not get live price, skipping to avoid SL/TP errors`);
+      continue;
+    }
 
     const qty = Math.max(1, Math.floor(cfg.size / price));
-
-    // Bulletproof SL/TP — ensure strict separation from entry
-    const slRaw = price * (1 - cfg.sl);
-    const tpRaw = price * (1 + cfg.tp);
-    // Round to 2dp and enforce minimum gap of $0.05
-    const slFinal = +Math.min(slRaw, price - 0.05).toFixed(2);
-    const tpFinal = +Math.max(tpRaw, price + 0.05).toFixed(2);
+    const slFinal = +(price - Math.max(price * cfg.sl, 0.10)).toFixed(2);
+    const tpFinal = +(price + Math.max(price * cfg.tp, 0.10)).toFixed(2);
 
     log("BUY",`Placing: ${qty}x ${opp.ticker} @ ~$${price.toFixed(2)}`,
       `SL $${slFinal} | TP $${tpFinal} | RSI ${tech?.rsi?.toFixed(0)||"?"} | Vol ${tech?.volSpike?.toFixed(1)||"?"}x | ${opp.catalyst}`);
