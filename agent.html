@@ -19,10 +19,11 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
 .g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:10px}
 .fl{font-size:9px;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px}
 .status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
-.dot-on  {background:#4ade80;box-shadow:0 0 8px #4ade80;animation:pulse 1.5s infinite}
-.dot-off {background:#333}
+.dot-on{background:#4ade80;box-shadow:0 0 8px #4ade80;animation:pulse 1.5s infinite}
+.dot-off{background:#333}
 .dot-scan{background:#fbbf24;box-shadow:0 0 8px #fbbf24;animation:pulse 0.8s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -30,13 +31,10 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
 .log-entry{padding:7px 10px;border-bottom:1px solid #0d0d18;font-size:11px;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
 .log-time{color:#333;white-space:nowrap;font-size:10px;padding-top:1px}
 .log-BUY{color:#4ade80}.log-SELL{color:#f87171}.log-SCAN{color:#7efff5}
-.log-INFO{color:#666}.log-ERROR{color:#f87171}.log-SKIP{color:#333}
-.log-MARKET{color:#a78bfa}
+.log-INFO{color:#666}.log-ERROR{color:#f87171}.log-SKIP{color:#444}
+.log-MARKET{color:#a78bfa}.log-CHECK{color:#fbbf24}.log-TRAIL{color:#fb923c}
 .trade-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #0d0d18;flex-wrap:wrap;gap:6px;font-size:12px}
 .up{color:#4ade80}.dn{color:#f87171}
-.mkt-pill{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;text-transform:uppercase}
-.mkt-open {background:#0d2a1e;color:#4ade80;border:1px solid #16653440}
-.mkt-closed{background:#1a1a2e;color:#333;border:1px solid #2a2a4040}
 .metric{background:#0a0a0f;border-radius:8px;padding:10px;text-align:center}
 .metric-v{font-size:16px;font-weight:700;font-family:system-ui,sans-serif}
 .metric-l{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:0.1em;margin-top:3px}
@@ -46,6 +44,11 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
 .mkt-toggle.on{border-color:#4ade80;color:#4ade80;background:#0d2a1e}
 .mkt-toggle input{width:auto;accent-color:#4ade80}
 .note-box{background:#1a1a0a;border:1px solid #5a401050;border-radius:8px;padding:10px 12px;font-size:11px;color:#fbbf2490;line-height:1.6;margin-bottom:10px}
+.filter-chip{display:flex;align-items:center;gap:6px;font-size:10px;padding:5px 10px;background:#0a0a0f;border:1px solid #1e1e30;border-radius:6px;color:#555}
+.filter-chip.pass{border-color:#16653440;color:#4ade80;background:#0d2a1e10}
+.filter-chip.fail{border-color:#7f1d1d40;color:#f87171;background:#2a0d0d10}
+.vix-bar{height:6px;border-radius:3px;background:#1a1a2e;margin-top:4px;overflow:hidden}
+.vix-fill{height:6px;border-radius:3px;transition:width 0.5s}
 </style>
 </head>
 <body>
@@ -54,7 +57,7 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
 <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:8px">
   <div>
     <h1>AI TRADING AGENT</h1>
-    <div style="font-size:9px;color:#444;letter-spacing:0.12em;text-transform:uppercase">Autonomous · Multi-market · Paper mode</div>
+    <div style="font-size:9px;color:#444;letter-spacing:0.12em;text-transform:uppercase">RSI · Volume · VIX · Earnings · Trailing Stop</div>
   </div>
   <div style="display:flex;align-items:center;font-size:12px;color:#555">
     <span class="status-dot dot-off" id="statusDot"></span>
@@ -63,14 +66,25 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
 </div>
 
 <!-- Account metrics -->
-<div class="g4" style="margin-bottom:12px">
+<div class="g5" style="margin-bottom:12px">
   <div class="metric"><div class="metric-v" id="mVal">—</div><div class="metric-l">Portfolio</div></div>
   <div class="metric"><div class="metric-v" id="mBuy">—</div><div class="metric-l">Buying Power</div></div>
   <div class="metric"><div class="metric-v" id="mPnl">—</div><div class="metric-l">Day P&L</div></div>
+  <div class="metric"><div class="metric-v" id="mVix" style="color:#fbbf24">—</div><div class="metric-l">VIX</div></div>
   <div class="metric"><div class="metric-v" id="mTrades">0</div><div class="metric-l">Trades Today</div></div>
 </div>
 
-<!-- Live market status -->
+<!-- Market conditions bar -->
+<div class="card" style="padding:12px;margin-bottom:12px">
+  <div class="micro">Market Conditions</div>
+  <div id="conditionChips" style="display:flex;flex-wrap:wrap;gap:6px">
+    <div class="filter-chip" id="chip-vix">⚡ VIX —</div>
+    <div class="filter-chip" id="chip-mkt">📈 S&P500 trend —</div>
+    <div class="filter-chip" id="chip-hours">🕐 Market hours —</div>
+  </div>
+</div>
+
+<!-- Market status -->
 <div class="card" style="padding:12px">
   <div class="micro">Live Market Sessions</div>
   <div id="marketGrid" style="display:flex;flex-wrap:wrap;gap:6px"></div>
@@ -88,9 +102,9 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
     <div><div class="fl">Anthropic API Key</div><input id="anthropicKey" type="password" placeholder="sk-ant-…"></div>
   </div>
 
-  <div class="micro" style="margin-top:16px">🌍 Markets to Trade</div>
-  <div class="note-box">⚠ Alpaca executes <b>US stocks only</b> (NYSE/NASDAQ). Non-US opportunities will be <b>scanned and logged</b> but marked as "monitor only" until you connect a broker that supports them (e.g. Interactive Brokers for LSE).</div>
-  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px" id="marketToggles">
+  <div class="micro" style="margin-top:16px">🌍 Markets</div>
+  <div class="note-box">⚠ Alpaca executes US stocks only. LSE/Euronext/TSX/ASX are scanned and logged as monitor-only.</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px">
     <label class="mkt-toggle on" id="tog-NYSE"><input type="checkbox" checked onchange="toggleMkt('NYSE',this)"> 🇺🇸 NYSE</label>
     <label class="mkt-toggle on" id="tog-NASDAQ"><input type="checkbox" checked onchange="toggleMkt('NASDAQ',this)"> 🇺🇸 NASDAQ</label>
     <label class="mkt-toggle" id="tog-LSE"><input type="checkbox" onchange="toggleMkt('LSE',this)"> 🇬🇧 LSE</label>
@@ -121,13 +135,14 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
     </div>
     <div><div class="fl">Scan every</div>
       <select id="cfgInterval">
-        <option value="300000">5 minutes</option>
-        <option value="600000">10 minutes</option>
-        <option value="900000" selected>15 minutes</option>
-        <option value="1800000">30 minutes</option>
+        <option value="300000">5 min</option>
+        <option value="600000">10 min</option>
+        <option value="900000" selected>15 min</option>
+        <option value="1800000">30 min</option>
       </select>
     </div>
   </div>
+
   <div class="g3">
     <div><div class="fl">Position size ($)</div><input id="cfgSize" type="number" value="500" min="10"></div>
     <div><div class="fl">Stop loss (%)</div><input id="cfgSL" type="number" value="3" min="0.5" max="20" step="0.5"></div>
@@ -137,9 +152,24 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
     <div><div class="fl">Max open positions</div><input id="cfgMaxPos" type="number" value="5" min="1" max="20"></div>
     <div><div class="fl">Max trades/day</div><input id="cfgMaxDaily" type="number" value="10" min="1"></div>
   </div>
-  <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:#777;cursor:pointer;margin-top:4px">
+
+  <div class="micro" style="margin-top:14px">🔬 Technical Filters</div>
+  <div class="g3">
+    <div><div class="fl">Max RSI (oversold entry)</div><input id="cfgRSI" type="number" value="45" min="20" max="70" title="Only buy when RSI is below this value. Lower = more oversold."></div>
+    <div><div class="fl">Min volume spike (×avg)</div><input id="cfgVol" type="number" value="1.5" min="1" step="0.1" title="Only buy when today's volume is this many times the 20-day average."></div>
+    <div><div class="fl">Max VIX (fear index)</div><input id="cfgVIX" type="number" value="25" min="10" max="80" title="Pause trading when VIX exceeds this level. VIX >25 = high fear."></div>
+  </div>
+  <div class="g2">
+    <div><div class="fl">Trailing stop (%)</div><input id="cfgTrail" type="number" value="2" min="0.5" max="10" step="0.5" title="Lock in profits: stop loss rises with price, never falls."></div>
+    <div><div class="fl">Earnings buffer (days)</div><input id="cfgEarnings" type="number" value="3" min="0" max="14" title="Skip stocks with earnings within this many days."></div>
+  </div>
+  <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:#777;cursor:pointer;margin-top:8px">
     <input type="checkbox" id="cfgMktOnly" checked style="width:auto;accent-color:#4ade80">
     Only scan when at least one selected market is open
+  </label>
+  <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:#777;cursor:pointer;margin-top:8px">
+    <input type="checkbox" id="cfgAvoidOpen" checked style="width:auto;accent-color:#4ade80">
+    Skip first 15 min after market open (avoid volatility)
   </label>
 </div>
 
@@ -160,7 +190,7 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
 
 <!-- Positions -->
 <div class="card">
-  <div class="micro">Open Positions</div>
+  <div class="micro">Open Positions <span style="color:#fb923c;font-size:9px" id="trailNote"></span></div>
   <div id="positions"><div style="color:#333;font-size:12px">No positions yet.</div></div>
 </div>
 
@@ -177,123 +207,252 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
 <p style="margin-top:16px;font-size:10px;color:#1e1e30;text-align:center">⚠ Paper trading only. Not financial advice. Always monitor automated systems.</p>
 
 <script>
-// ═══ Market definitions ══════════════════════════════════════════
-const MARKETS = {
-  NYSE:    { name:"NYSE",     flag:"🇺🇸", tz:"America/New_York",  open:[9,30],  close:[16,0],  canTrade:true  },
-  NASDAQ:  { name:"NASDAQ",   flag:"🇺🇸", tz:"America/New_York",  open:[9,30],  close:[16,0],  canTrade:true  },
-  LSE:     { name:"LSE",      flag:"🇬🇧", tz:"Europe/London",     open:[8,0],   close:[16,30], canTrade:false },
-  EURONEXT:{ name:"Euronext", flag:"🇪🇺", tz:"Europe/Paris",      open:[9,0],   close:[17,30], canTrade:false },
-  TSX:     { name:"TSX",      flag:"🇨🇦", tz:"America/Toronto",   open:[9,30],  close:[16,0],  canTrade:false },
-  ASX:     { name:"ASX",      flag:"🇦🇺", tz:"Australia/Sydney",  open:[10,0],  close:[16,0],  canTrade:false },
+// ═══ Markets ═════════════════════════════════════════════════════
+const MARKETS={
+  NYSE:    {name:"NYSE",     flag:"🇺🇸",tz:"America/New_York", open:[9,30], close:[16,0],  canTrade:true},
+  NASDAQ:  {name:"NASDAQ",   flag:"🇺🇸",tz:"America/New_York", open:[9,30], close:[16,0],  canTrade:true},
+  LSE:     {name:"LSE",      flag:"🇬🇧",tz:"Europe/London",    open:[8,0],  close:[16,30], canTrade:false},
+  EURONEXT:{name:"Euronext", flag:"🇪🇺",tz:"Europe/Paris",     open:[9,0],  close:[17,30], canTrade:false},
+  TSX:     {name:"TSX",      flag:"🇨🇦",tz:"America/Toronto",  open:[9,30], close:[16,0],  canTrade:false},
+  ASX:     {name:"ASX",      flag:"🇦🇺",tz:"Australia/Sydney", open:[10,0], close:[16,0],  canTrade:false},
 };
 
-let selectedMarkets = new Set(["NYSE","NASDAQ"]);
+let selectedMarkets=new Set(["NYSE","NASDAQ"]);
 let RUNNING=false, countdownTimer=null, nextScanAt=null;
 let dailyTrades=0, dailyDate="", agentPositions=new Set();
+let trailingStops={}; // ticker -> highest price seen
+let lastVix=0;
 
-function toggleMkt(id, cb){
-  const lbl = document.getElementById("tog-"+id);
-  if(cb.checked){ selectedMarkets.add(id); lbl.classList.add("on"); }
-  else{ selectedMarkets.delete(id); lbl.classList.remove("on"); }
+function toggleMkt(id,cb){
+  const lbl=document.getElementById("tog-"+id);
+  if(cb.checked){selectedMarkets.add(id);lbl.classList.add("on");}
+  else{selectedMarkets.delete(id);lbl.classList.remove("on");}
 }
 
-function isOpen(mktId){
-  const m = MARKETS[mktId];
-  const now = new Date();
-  const local = new Date(now.toLocaleString("en-US",{timeZone:m.tz}));
-  const day = local.getDay();
+function isOpen(id){
+  const m=MARKETS[id];
+  const local=new Date(new Date().toLocaleString("en-US",{timeZone:m.tz}));
+  const day=local.getDay();
   if(day===0||day===6) return false;
-  const mins = local.getHours()*60+local.getMinutes();
-  return mins >= m.open[0]*60+m.open[1] && mins < m.close[0]*60+m.close[1];
+  const mins=local.getHours()*60+local.getMinutes();
+  return mins>=m.open[0]*60+m.open[1]&&mins<m.close[0]*60+m.close[1];
 }
 
-function getOpenSelected(){
-  return [...selectedMarkets].filter(isOpen);
+function isPastOpenBuffer(id){
+  // Skip first 15 min if option checked
+  if(!document.getElementById("cfgAvoidOpen").checked) return true;
+  const m=MARKETS[id];
+  const local=new Date(new Date().toLocaleString("en-US",{timeZone:m.tz}));
+  const mins=local.getHours()*60+local.getMinutes();
+  return mins>=(m.open[0]*60+m.open[1]+15);
 }
 
-function localTime(mktId){
-  const m = MARKETS[mktId];
-  return new Date().toLocaleTimeString("en-GB",{timeZone:m.tz,hour:"2-digit",minute:"2-digit"});
+function getOpenSelected(){return [...selectedMarkets].filter(isOpen);}
+
+function localTime(id){
+  return new Date().toLocaleTimeString("en-GB",{timeZone:MARKETS[id].tz,hour:"2-digit",minute:"2-digit"});
 }
 
 function updateMarketGrid(){
-  const el = document.getElementById("marketGrid");
-  el.innerHTML = Object.entries(MARKETS).map(([id,m])=>{
-    const open = isOpen(id);
-    const sel  = selectedMarkets.has(id);
-    const time = localTime(id);
+  const el=document.getElementById("marketGrid");
+  el.innerHTML=Object.entries(MARKETS).map(([id,m])=>{
+    const open=isOpen(id),sel=selectedMarkets.has(id),time=localTime(id);
     return `<div style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 12px;background:#0a0a0f;border:1px solid ${sel&&open?"#16653450":open?"#2a2a40":"#111"};border-radius:8px;min-width:80px">
       <div style="font-size:14px">${m.flag}</div>
       <div style="font-size:10px;font-weight:700;color:${open?"#e8e8f0":"#333"}">${m.name}</div>
       <div style="font-size:9px;color:${open?"#4ade80":"#333"}">${open?"🟢 "+time:"⚫ Closed"}</div>
-      ${!m.canTrade?`<div style="font-size:8px;color:#555;margin-top:1px">monitor</div>`:`<div style="font-size:8px;color:#4ade8080;margin-top:1px">tradeable</div>`}
+      <div style="font-size:8px;color:${m.canTrade?"#4ade8060":"#555"};margin-top:1px">${m.canTrade?"tradeable":"monitor"}</div>
     </div>`;
   }).join("");
 }
-
-// Update market grid every minute
 updateMarketGrid();
-setInterval(updateMarketGrid, 60000);
+setInterval(updateMarketGrid,60000);
 
 // ═══ Logging ═════════════════════════════════════════════════════
-function log(type, msg, detail=""){
-  const el = document.getElementById("logEntries");
+function log(type,msg,detail=""){
+  const el=document.getElementById("logEntries");
   document.getElementById("logEmpty").style.display="none";
-  const time = new Date().toLocaleTimeString("en-GB");
-  const d = document.createElement("div");
+  const d=document.createElement("div");
   d.className="log-entry";
-  d.innerHTML=`<span class="log-time">${time}</span><span class="log-${type}"><b>${type}</b> ${msg}${detail?`<br><span style="color:#2a2a40;font-size:10px">${detail}</span>`:""}</span>`;
-  el.insertBefore(d, el.firstChild);
+  d.innerHTML=`<span class="log-time">${new Date().toLocaleTimeString("en-GB")}</span><span class="log-${type}"><b>${type}</b> ${msg}${detail?`<br><span style="color:#2a2a40;font-size:10px">${detail}</span>`:""}</span>`;
+  el.insertBefore(d,el.firstChild);
   while(el.children.length>150) el.removeChild(el.lastChild);
 }
 
 // ═══ Alpaca ══════════════════════════════════════════════════════
-async function alpaca(method, path, body){
-  const proxy  = document.getElementById("proxyUrl").value.trim().replace(/\/$/,"");
-  const key    = document.getElementById("alpacaKey").value.trim();
-  const secret = document.getElementById("alpacaSecret").value.trim();
-  const url    = `${proxy}/api/alpaca?path=${encodeURIComponent(path)}`;
-  const opts   = {method, headers:{"Content-Type":"application/json","x-alpaca-key":key,"x-alpaca-secret":secret,"x-alpaca-mode":"paper"}};
+async function alpaca(method,path,body){
+  const proxy=document.getElementById("proxyUrl").value.trim().replace(/\/$/,"");
+  const key=document.getElementById("alpacaKey").value.trim();
+  const secret=document.getElementById("alpacaSecret").value.trim();
+  const opts={method,headers:{"Content-Type":"application/json","x-alpaca-key":key,"x-alpaca-secret":secret,"x-alpaca-mode":"paper"}};
   if(body) opts.body=JSON.stringify(body);
-  const r = await fetch(url, opts);
-  const text = await r.text();
+  const r=await fetch(`${proxy}/api/alpaca?path=${encodeURIComponent(path)}`,opts);
+  const text=await r.text();
   try{
     const json=JSON.parse(text);
     if(!r.ok) throw new Error(json.message||json.error||`HTTP ${r.status}`);
     return json;
-  }catch(e){ if(!e.message.startsWith("HTTP")) throw e; throw e; }
+  }catch(e){if(!e.message.startsWith("HTTP")) throw e; throw e;}
+}
+
+// ═══ Technical indicators from Alpaca bars ════════════════════════
+async function getTechnicals(ticker){
+  try{
+    // Get 30 days of daily bars for RSI + volume
+    const end   = new Date().toISOString();
+    const start = new Date(Date.now()-30*86400000).toISOString();
+    const bars  = await alpaca("GET",`/v2/stocks/${ticker}/bars?timeframe=1Day&start=${start}&end=${end}&limit=30`);
+    const b     = bars?.bars || [];
+    if(b.length < 15) return null;
+
+    const closes  = b.map(x=>x.c);
+    const volumes = b.map(x=>x.v);
+    const latest  = b[b.length-1];
+
+    // RSI(14)
+    const rsi = calcRSI(closes, 14);
+
+    // Volume spike: today vs 20-day avg
+    const avgVol = volumes.slice(0,-1).reduce((s,v)=>s+v,0) / Math.min(volumes.length-1,20);
+    const volSpike = latest.v / (avgVol||1);
+
+    // SMA20
+    const sma20 = closes.slice(-20).reduce((s,v)=>s+v,0)/20;
+
+    return { rsi, volSpike, sma20, price: latest.c, avgVol };
+  }catch{ return null; }
+}
+
+function calcRSI(closes, period=14){
+  if(closes.length < period+1) return 50;
+  let gains=0, losses=0;
+  for(let i=1;i<=period;i++){
+    const d=closes[i]-closes[i-1];
+    d>0?gains+=d:losses-=d;
+  }
+  let ag=gains/period, al=losses/period;
+  for(let i=period+1;i<closes.length;i++){
+    const d=closes[i]-closes[i-1];
+    ag=(ag*(period-1)+Math.max(d,0))/period;
+    al=(al*(period-1)+Math.max(-d,0))/period;
+  }
+  return 100-100/(1+ag/(al||1e-9));
+}
+
+// ═══ VIX check ═══════════════════════════════════════════════════
+async function getVIX(){
+  try{
+    // VIX via Alpaca bars (symbol: VIXY ETF as proxy, or just use Claude scan context)
+    const end   = new Date().toISOString();
+    const start = new Date(Date.now()-2*86400000).toISOString();
+    const bars  = await alpaca("GET",`/v2/stocks/VIXY/bars?timeframe=1Day&start=${start}&end=${end}&limit=2`);
+    const b     = bars?.bars||[];
+    // VIXY ≈ VIX/10 roughly — multiply by 10 as approximation
+    return b.length ? b[b.length-1].c * 10 : null;
+  }catch{ return null; }
+}
+
+// ═══ S&P500 trend ════════════════════════════════════════════════
+async function getSPYTrend(){
+  try{
+    const end   = new Date().toISOString();
+    const start = new Date(Date.now()-30*86400000).toISOString();
+    const bars  = await alpaca("GET",`/v2/stocks/SPY/bars?timeframe=1Day&start=${start}&end=${end}&limit=25`);
+    const b     = bars?.bars||[];
+    if(b.length<20) return null;
+    const price  = b[b.length-1].c;
+    const sma20  = b.slice(-20).map(x=>x.c).reduce((s,v)=>s+v,0)/20;
+    return {price, sma20, aboveSMA: price>=sma20};
+  }catch{ return null; }
+}
+
+// ═══ Earnings check ══════════════════════════════════════════════
+async function getNextEarnings(ticker){
+  try{
+    const cal = await alpaca("GET",`/v2/calendar?start=${new Date().toISOString().slice(0,10)}`);
+    // Alpaca doesn't have earnings directly — use a rough heuristic via news
+    // Return null to skip check if unavailable
+    return null;
+  }catch{ return null; }
+}
+
+// Earnings check via Claude (called once per ticker, cached)
+const earningsCache={};
+async function checkEarnings(ticker, antKey, bufferDays){
+  if(earningsCache[ticker]!==undefined) return earningsCache[ticker];
+  try{
+    const resp=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+      body:JSON.stringify({
+        model:"claude-haiku-4-5-20251001",
+        max_tokens:80,
+        messages:[{role:"user",content:`When is ${ticker}'s next earnings date? Reply with ONLY the date in YYYY-MM-DD format, or "unknown" if unsure. Nothing else.`}]
+      })
+    });
+    const data=await resp.json();
+    const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").trim();
+    const match=text.match(/\d{4}-\d{2}-\d{2}/);
+    if(match){
+      const daysUntil=Math.ceil((new Date(match[0])-new Date())/(86400000));
+      const tooClose = daysUntil>=0 && daysUntil<=bufferDays;
+      earningsCache[ticker]={date:match[0],daysUntil,tooClose};
+      return earningsCache[ticker];
+    }
+  }catch{}
+  earningsCache[ticker]={date:"unknown",daysUntil:99,tooClose:false};
+  return earningsCache[ticker];
+}
+
+// ═══ Trailing stop management ════════════════════════════════════
+async function manageTrailingStops(positions, cfg){
+  const pos=Array.isArray(positions)?positions:[];
+  for(const p of pos){
+    const ticker=p.symbol;
+    const price=+p.current_price||0;
+    if(!price) continue;
+
+    // Track highest price seen
+    if(!trailingStops[ticker]||price>trailingStops[ticker].high){
+      trailingStops[ticker]={high:price};
+    }
+
+    const trailStop=+(trailingStops[ticker].high*(1-cfg.trail)).toFixed(2);
+    const currentSL=+p.unrealized_pl; // placeholder
+
+    // If price has dropped to trailing stop, close position
+    if(price<=trailStop&&trailingStops[ticker].high>+p.avg_entry_price){
+      log("TRAIL",`Trailing stop triggered: ${ticker}`,
+        `Price $${price} hit trail stop $${trailStop} (high was $${trailingStops[ticker].high})`);
+      try{
+        await alpaca("POST","/v2/orders",{
+          symbol:ticker, qty:String(p.qty), side:"sell",
+          type:"market", time_in_force:"day"
+        });
+        log("SELL",`✓ Closed ${ticker} via trailing stop @ ~$${price}`,
+          `Entry $${(+p.avg_entry_price).toFixed(2)} | P&L ${(+p.unrealized_pl)>=0?"+":""}$${(+p.unrealized_pl).toFixed(2)}`);
+        delete trailingStops[ticker];
+      }catch(e){
+        log("ERROR",`Failed to close ${ticker}: ${e.message}`);
+      }
+    }
+  }
 }
 
 // ═══ Claude scan ═════════════════════════════════════════════════
-async function claudeScan(openMarkets){
-  const antKey = document.getElementById("anthropicKey").value.trim();
-  const sector = document.getElementById("cfgSector").value;
-  const signal = document.getElementById("cfgSignal").value;
-  const mkts   = openMarkets.map(id=>MARKETS[id].name).join(", ");
-  const sec    = sector!=="any"?` Focus on ${sector} sector.`:"";
-  const sig    = signal!=="any"?` Minimum signal: ${signal}.`:"";
+async function claudeScan(openMarkets, antKey){
+  const sector=document.getElementById("cfgSector").value;
+  const signal=document.getElementById("cfgSignal").value;
+  const mkts=openMarkets.map(id=>MARKETS[id].name).join(", ");
+  const sec=sector!=="any"?` ${sector} sector.`:"";
+  const sig=signal!=="any"?` ${signal}+ signals only.`:"";
 
-  const prompt=`You are a financial data formatter. Search the web for current stock market news and moving stocks in these markets: ${mkts}.${sec}${sig}
+  const prompt=`You are a financial data formatter. Search web for current stock news in: ${mkts}.${sec}${sig}
 
-Then output ONLY a JSON array of 3 opportunities. No intro, no explanation, no refusals — just the array.
+Output ONLY this JSON array of 3 stocks, starting with [ ending with ], no other text:
+[{"ticker":"AAPL","company":"Apple Inc","market":"NYSE","signal":"STRONG","confidence":78,"catalyst":"one sentence","canTrade":true,"price_approx":185,"sector":"Technology","risk":"Medium"}]
 
-[
-  {
-    "ticker": "AAPL",
-    "company": "Apple Inc",
-    "market": "NYSE",
-    "signal": "STRONG",
-    "confidence": 78,
-    "catalyst": "One sentence describing the news catalyst.",
-    "canTrade": true,
-    "price_approx": 185,
-    "sector": "Technology",
-    "risk": "Medium"
-  }
-]
-
-Important: canTrade must be true for NYSE/NASDAQ stocks, false for LSE/Euronext/TSX/ASX.
-Start your response with [ and end with ]. Nothing else.`;
+canTrade=true for NYSE/NASDAQ only. Start response with [`;
 
   await new Promise(r=>setTimeout(r,3000));
 
@@ -302,7 +461,7 @@ Start your response with [ and end with ]. Nothing else.`;
     headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
     body:JSON.stringify({
       model:"claude-sonnet-4-5-20250929",
-      max_tokens:700,
+      max_tokens:600,
       tools:[{type:"web_search_20250305",name:"web_search"}],
       messages:[{role:"user",content:prompt}]
     })
@@ -315,24 +474,14 @@ Start your response with [ and end with ]. Nothing else.`;
   }
 
   const data=await resp.json();
-  const text=(data.content||[])
-    .filter(b=>b.type==="text")
-    .map(b=>b.text)
-    .join("")
-    .replace(/```json|```/g,"")
-    .trim();
-
-  const s=text.indexOf("["), e=text.lastIndexOf("]");
+  const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").replace(/```json|```/g,"").trim();
+  const s=text.indexOf("["),e=text.lastIndexOf("]");
   if(s!==-1&&e>s){
-    try{ return JSON.parse(text.slice(s,e+1)); }catch(err){
-      // Try to salvage truncated array
+    try{return JSON.parse(text.slice(s,e+1));}catch{
       const last=text.lastIndexOf("},");
-      if(last>s) try{ return JSON.parse(text.slice(s,last+1)+"]"); }catch{}
+      if(last>s) try{return JSON.parse(text.slice(s,last+1)+"]");}catch{}
     }
   }
-
-  log("ERROR","Raw: "+text.slice(0,200));
-  // Return empty array instead of throwing — agent will just log "nothing found"
   return [];
 }
 
@@ -348,97 +497,146 @@ async function runCycle(){
     maxDaily: +document.getElementById("cfgMaxDaily").value||10,
     signal:   document.getElementById("cfgSignal").value,
     mktOnly:  document.getElementById("cfgMktOnly").checked,
+    rsiMax:   +document.getElementById("cfgRSI").value||45,
+    volMin:   +document.getElementById("cfgVol").value||1.5,
+    vixMax:   +document.getElementById("cfgVIX").value||25,
+    trail:    +document.getElementById("cfgTrail").value/100,
+    earnings: +document.getElementById("cfgEarnings").value||3,
+    antKey:   document.getElementById("anthropicKey").value.trim(),
   };
 
-  // Reset daily count
   const today=new Date().toDateString();
-  if(dailyDate!==today){dailyTrades=0;dailyDate=today;}
+  if(dailyDate!==today){dailyTrades=0;dailyDate=today;earningsCache={};}
   document.getElementById("mTrades").textContent=dailyTrades;
 
   // Check open markets
   const openMarkets=getOpenSelected();
   if(cfg.mktOnly&&!openMarkets.length){
-    log("MARKET","No selected markets open — skipping cycle","Next check at scheduled interval");
+    log("MARKET","No selected markets open — skipping");
+    updateConditionChips(null,null,false);
     scheduleNext(); return;
   }
 
-  if(dailyTrades>=cfg.maxDaily){
-    log("INFO",`Daily trade limit (${cfg.maxDaily}) reached`,"Resuming tomorrow");
-    scheduleNext(); return;
-  }
-
-  // Status
   setStatus("scan");
-  const mktNames=openMarkets.map(id=>`${MARKETS[id].flag}${MARKETS[id].name}`).join(" ");
-  log("SCAN",`Scanning ${openMarkets.length} open market(s): ${mktNames}`);
+  log("SCAN",`Scanning ${openMarkets.map(id=>MARKETS[id].flag+MARKETS[id].name).join(" ")}`);
 
-  // Fetch account
-  let acct, positions;
+  // Fetch account + positions
+  let acct,positions;
   try{
     [acct,positions]=await Promise.all([alpaca("GET","/v2/account"),alpaca("GET","/v2/positions")]);
     updateAccountUI(acct);
     updatePositionsUI(positions);
-  }catch(e){log("ERROR","Account fetch failed: "+e.message);scheduleNext();return;}
+  }catch(e){log("ERROR","Account fetch failed: "+e.message);setStatus("on");scheduleNext();return;}
 
+  // Manage trailing stops on existing positions
+  if(Array.isArray(positions)&&positions.length){
+    await manageTrailingStops(positions,cfg);
+    // Refresh positions after any closes
+    try{positions=await alpaca("GET","/v2/positions");updatePositionsUI(positions);}catch{}
+  }
+
+  // ── VIX check ──
+  const vix=await getVIX();
+  lastVix=vix;
+  if(vix) document.getElementById("mVix").textContent=vix.toFixed(1);
+  if(vix&&vix>cfg.vixMax){
+    log("CHECK",`⚡ VIX ${vix.toFixed(1)} > ${cfg.vixMax} — market too fearful, skipping trade`,
+      "Positions still monitored. Trading resumes when VIX normalises.");
+    updateConditionChips(vix,null,openMarkets.length>0);
+    setStatus("on"); scheduleNext(); return;
+  }
+
+  // ── S&P500 trend check ──
+  const spy=await getSPYTrend();
+  if(spy&&!spy.aboveSMA){
+    log("CHECK",`📉 S&P500 below SMA20 ($${spy.price.toFixed(0)} < $${spy.sma20.toFixed(0)}) — broad market downtrend`,
+      "Skipping new entries. Will resume when market recovers above SMA20.");
+    updateConditionChips(vix,spy,openMarkets.length>0);
+    setStatus("on"); scheduleNext(); return;
+  }
+  updateConditionChips(vix,spy,openMarkets.length>0);
+
+  // ── Position/buying power checks ──
   const openCount=Array.isArray(positions)?positions.length:0;
-  if(openCount>=cfg.maxPos){
-    log("INFO",`Position limit reached (${openCount}/${cfg.maxPos})`,`Monitoring ${openCount} open positions`);
-    scheduleNext();return;
-  }
-
-  const existingTickers=new Set((Array.isArray(positions)?positions:[]).map(p=>p.symbol));
+  if(openCount>=cfg.maxPos){log("INFO",`Position limit ${openCount}/${cfg.maxPos} — monitoring only`);setStatus("on");scheduleNext();return;}
+  if(dailyTrades>=cfg.maxDaily){log("INFO",`Daily trade limit reached (${cfg.maxDaily})`);setStatus("on");scheduleNext();return;}
   const buyingPower=+acct.buying_power||0;
-  if(buyingPower<cfg.size){
-    log("INFO",`Low buying power $${buyingPower.toFixed(0)}`,"Need at least $"+cfg.size);
-    scheduleNext();return;
+  if(buyingPower<cfg.size){log("INFO",`Low buying power $${buyingPower.toFixed(0)}`);setStatus("on");scheduleNext();return;}
+
+  // ── Market open buffer ──
+  const tradeableOpen=openMarkets.filter(id=>MARKETS[id].canTrade&&isPastOpenBuffer(id));
+  if(!tradeableOpen.length){
+    log("INFO","Within 15 min of market open — waiting for volatility to settle");
+    setStatus("on"); scheduleNext(); return;
   }
 
-  // Scan
+  // ── Claude scan ──
   let opps;
   try{
-    opps=await claudeScan(openMarkets.length?openMarkets:[...selectedMarkets]);
-    if(!opps||!opps.length){
-      log("INFO","No opportunities found this cycle — markets may be quiet");
-      setStatus("on"); scheduleNext(); return;
-    }
-    log("SCAN",`${opps.length} opportunities identified`,opps.map(o=>`${o.ticker}(${o.market})`).join(" · "));
-  }catch(e){log("ERROR","Scan failed: "+e.message);setStatus("on");scheduleNext();return;}
+    opps=await claudeScan(openMarkets,cfg.antKey);
+    if(!opps||!opps.length){log("INFO","No opportunities found this cycle");setStatus("on");scheduleNext();return;}
+    log("SCAN",`${opps.length} candidates: ${opps.map(o=>o.ticker).join(", ")}`);
+  }catch(e){log("ERROR","Scan: "+e.message);setStatus("on");scheduleNext();return;}
 
-  // Process opportunities
-  let traded=false;
+  // ── Process each opportunity ──
   const sigRank={STRONG:3,MODERATE:2,WATCH:1};
   const minRank={STRONG:3,MODERATE:2,any:1}[cfg.signal]||1;
+  const existingTickers=new Set((Array.isArray(positions)?positions:[]).map(p=>p.symbol));
+  let traded=false;
 
   for(const opp of opps){
-    if(!RUNNING) break;
+    if(!RUNNING||traded) break;
 
-    // Non-tradeable markets — log as monitor only
+    // Non-tradeable market
     if(!opp.canTrade){
-      log("MARKET",`📊 MONITOR: ${opp.ticker} (${opp.market}) — ${opp.signal}`,
-        `${opp.catalyst} | Cannot auto-trade ${opp.market} via Alpaca — note for manual execution`);
+      log("MARKET",`📊 MONITOR ${opp.ticker} (${opp.market}) — ${opp.signal}`,opp.catalyst);
       continue;
     }
 
     if(existingTickers.has(opp.ticker)){log("SKIP",`${opp.ticker} — already holding`);continue;}
-    if(agentPositions.has(opp.ticker)){log("SKIP",`${opp.ticker} — already traded today`);continue;}
+    if(agentPositions.has(opp.ticker)){log("SKIP",`${opp.ticker} — traded today`);continue;}
     if((sigRank[opp.signal]||0)<minRank){log("SKIP",`${opp.ticker} — signal too weak (${opp.signal})`);continue;}
 
-    // Get live price via Alpaca
-    let price = opp.price_approx || null;
-    try{
-      const bars=await alpaca("GET",`/v2/stocks/${opp.ticker}/bars/latest`);
-      price=bars?.bar?.c||price;
-    }catch{}
+    // ── Technical checks via Alpaca data ──
+    log("CHECK",`Running technical checks on ${opp.ticker}…`);
+    const tech=await getTechnicals(opp.ticker);
 
-    if(!price){log("SKIP",`${opp.ticker} — could not get price`);continue;}
+    if(tech){
+      // RSI check
+      if(tech.rsi>cfg.rsiMax){
+        log("SKIP",`${opp.ticker} — RSI ${tech.rsi.toFixed(0)} > max ${cfg.rsiMax} (not oversold enough)`);
+        continue;
+      }
+      log("CHECK",`${opp.ticker} RSI: ${tech.rsi.toFixed(0)} ✓`);
 
-    const qty   = Math.max(1,Math.floor(cfg.size/price));
-    const sl    = +(price*(1-cfg.sl)).toFixed(2);
-    const tp    = +(price*(1+cfg.tp)).toFixed(2);
-    const cost  = (qty*price).toFixed(0);
+      // Volume spike check
+      if(tech.volSpike<cfg.volMin){
+        log("SKIP",`${opp.ticker} — Volume ${tech.volSpike.toFixed(1)}x avg (need ${cfg.volMin}x)`);
+        continue;
+      }
+      log("CHECK",`${opp.ticker} Volume: ${tech.volSpike.toFixed(1)}x avg ✓`);
+    }else{
+      log("CHECK",`${opp.ticker} — Could not fetch technicals, proceeding on signal only`);
+    }
 
-    log("BUY",`Placing: ${qty}x ${opp.ticker} @ ~$${price.toFixed(2)} (≈$${cost})`,
-      `SL $${sl} | TP $${tp} | ${opp.signal} ${opp.confidence}% confidence | ${opp.catalyst}`);
+    // ── Earnings check ──
+    const earn=await checkEarnings(opp.ticker,cfg.antKey,cfg.earnings);
+    if(earn.tooClose){
+      log("SKIP",`${opp.ticker} — Earnings in ${earn.daysUntil} days (${earn.date}), buffer is ${cfg.earnings} days`);
+      continue;
+    }
+    if(earn.date!=="unknown") log("CHECK",`${opp.ticker} Earnings: ${earn.date} (${earn.daysUntil}d away) ✓`);
+
+    // ── Get live price ──
+    let price=tech?.price||opp.price_approx||null;
+    if(!price){log("SKIP",`${opp.ticker} — no price`);continue;}
+
+    const qty=Math.max(1,Math.floor(cfg.size/price));
+    const sl=+(price*(1-cfg.sl)).toFixed(2);
+    const tp=+(price*(1+cfg.tp)).toFixed(2);
+
+    log("BUY",`Placing: ${qty}x ${opp.ticker} @ ~$${price.toFixed(2)}`,
+      `SL $${sl} | TP $${tp} | RSI ${tech?.rsi?.toFixed(0)||"?"} | Vol ${tech?.volSpike?.toFixed(1)||"?"}x | ${opp.catalyst}`);
 
     try{
       const order=await alpaca("POST","/v2/orders",{
@@ -449,7 +647,8 @@ async function runCycle(){
         stop_loss:{stop_price:String(sl)}
       });
       if(order.id){
-        log("BUY",`✓ ORDER PLACED: ${qty}x ${opp.ticker}`,`ID: ${order.id} | Status: ${order.status}`);
+        log("BUY",`✓ ORDER PLACED: ${qty}x ${opp.ticker}`,`ID: ${order.id}`);
+        trailingStops[opp.ticker]={high:price};
         agentPositions.add(opp.ticker);
         dailyTrades++;
         document.getElementById("mTrades").textContent=dailyTrades;
@@ -457,16 +656,34 @@ async function runCycle(){
         await new Promise(r=>setTimeout(r,2000));
         const newPos=await alpaca("GET","/v2/positions");
         updatePositionsUI(newPos);
-        break; // One trade per cycle
       }
-    }catch(e){
-      log("ERROR",`Order failed for ${opp.ticker}: ${e.message}`);
-    }
+    }catch(e){log("ERROR",`Order failed ${opp.ticker}: ${e.message}`);}
   }
 
-  if(!traded) log("INFO","No trades placed this cycle — conditions not met or all tradeable");
+  if(!traded) log("INFO","No trades placed this cycle");
   setStatus("on");
   scheduleNext();
+}
+
+// ═══ Condition chips ═════════════════════════════════════════════
+function updateConditionChips(vix,spy,mktOpen){
+  const vixMax=+document.getElementById("cfgVIX").value||25;
+  const cv=document.getElementById("chip-vix");
+  const cs=document.getElementById("chip-mkt");
+  const ch=document.getElementById("chip-hours");
+  if(vix){
+    const ok=vix<=vixMax;
+    cv.className="filter-chip "+(ok?"pass":"fail");
+    cv.textContent=`⚡ VIX ${vix.toFixed(1)} ${ok?"✓":"✗ Too high"}`;
+  }
+  if(spy){
+    const ok=spy.aboveSMA;
+    cs.className="filter-chip "+(ok?"pass":"fail");
+    cs.textContent=`📈 S&P500 ${ok?"above":"below"} SMA20 ${ok?"✓":"✗"}`;
+  }
+  const mok=mktOpen;
+  ch.className="filter-chip "+(mok?"pass":"fail");
+  ch.textContent=`🕐 Market ${mok?"open ✓":"closed ✗"}`;
 }
 
 // ═══ Countdown ═══════════════════════════════════════════════════
@@ -493,7 +710,7 @@ function setStatus(s){
   else{dot.className="status-dot dot-off";txt.textContent="Offline";txt.style.color="#555";}
 }
 
-function fmt$(n){ return "$"+(+n||0).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0}); }
+function fmt$(n){return "$"+(+n||0).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0});}
 
 function updateAccountUI(acct){
   const pl=+acct.unrealized_intraday_pl||0;
@@ -507,12 +724,19 @@ function updatePositionsUI(positions){
   const el=document.getElementById("positions");
   const pos=Array.isArray(positions)?positions:[];
   if(!pos.length){el.innerHTML=`<div style="color:#333;font-size:12px">No open positions.</div>`;return;}
+  document.getElementById("trailNote").textContent=`· trailing stop active`;
   el.innerHTML=pos.map(p=>{
     const pl=+p.unrealized_pl||0,pct=(+p.unrealized_plpc||0)*100,up=pl>=0;
+    const high=trailingStops[p.symbol]?.high||+p.avg_entry_price;
+    const trailStop=+(high*(1-+document.getElementById("cfgTrail").value/100)).toFixed(2);
     return `<div class="trade-row">
-      <div><b style="color:#7efff5">${p.symbol}</b> <span style="color:#444;font-size:10px">${p.qty} @ $${(+p.avg_entry_price||0).toFixed(2)}</span></div>
+      <div>
+        <b style="color:#7efff5">${p.symbol}</b>
+        <span style="color:#444;font-size:10px"> ${p.qty} @ $${(+p.avg_entry_price||0).toFixed(2)}</span>
+        <div style="font-size:9px;color:#fb923c;margin-top:2px">Trail stop: $${trailStop} | High: $${high.toFixed(2)}</div>
+      </div>
       <div style="text-align:right">
-        <div>$${(+p.current_price||0).toFixed(2)}</div>
+        <div style="font-size:13px">$${(+p.current_price||0).toFixed(2)}</div>
         <div style="font-size:11px;color:${up?"#4ade80":"#f87171"}">${up?"+":""}$${pl.toFixed(2)} (${pct.toFixed(2)}%)</div>
       </div>
     </div>`;
@@ -535,7 +759,8 @@ async function startAgent(){
   try{
     const acct=await alpaca("GET","/v2/account");
     updateAccountUI(acct);
-    log("INFO","✓ Alpaca Paper connected",`Portfolio $${(+acct.portfolio_value).toLocaleString()} | Buying power $${(+acct.buying_power).toLocaleString()}`);
+    log("INFO","✓ Connected to Alpaca Paper",
+      `Portfolio $${(+acct.portfolio_value).toLocaleString()} | Buying power $${(+acct.buying_power).toLocaleString()}`);
   }catch(e){
     log("ERROR","Alpaca connection failed: "+e.message);
     document.getElementById("startBtn").disabled=false;
@@ -549,9 +774,8 @@ async function startAgent(){
   setStatus("on");
 
   const iv=+document.getElementById("cfgInterval").value||900000;
-  const mkts=[...selectedMarkets].join(", ");
-  log("INFO",`Agent started — scanning ${mkts} every ${iv/60000} min`,
-    `$${document.getElementById("cfgSize").value}/trade | SL ${document.getElementById("cfgSL").value}% | TP ${document.getElementById("cfgTP").value}% | Min signal: ${document.getElementById("cfgSignal").value}`);
+  log("INFO",`Agent started`,
+    `Filters: RSI<${document.getElementById("cfgRSI").value} | Vol>${document.getElementById("cfgVol").value}x | VIX<${document.getElementById("cfgVIX").value} | Earnings buffer ${document.getElementById("cfgEarnings").value}d | Trail stop ${document.getElementById("cfgTrail").value}%`);
 
   await runCycle();
 }
@@ -565,7 +789,7 @@ function stopAgent(){
   document.getElementById("configPanel").style.pointerEvents="auto";
   document.getElementById("scanCountdown").style.display="none";
   setStatus("off");
-  log("INFO","Agent stopped","Existing positions remain open on Alpaca");
+  log("INFO","Agent stopped — positions remain open on Alpaca");
 }
 </script>
 </body>
