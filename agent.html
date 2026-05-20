@@ -298,29 +298,24 @@ async function alpaca(method,path,body){
 // ═══ Technical indicators from Alpaca bars ════════════════════════
 async function getTechnicals(ticker){
   try{
-    // Get 30 days of daily bars for RSI + volume
-    const end   = new Date().toISOString();
-    const start = new Date(Date.now()-30*86400000).toISOString();
-    const bars  = await alpaca("GET",`/v2/stocks/${ticker}/bars?timeframe=1Day&start=${start}&end=${end}&limit=30`);
-    const b     = bars?.bars || [];
+    const end   = encodeURIComponent(new Date().toISOString());
+    const start = encodeURIComponent(new Date(Date.now()-35*86400000).toISOString());
+    // Use multi-bar endpoint which returns {bars:{TICKER:[...]}}
+    const resp  = await alpaca("GET",`/v2/stocks/bars?symbols=${ticker}&timeframe=1Day&start=${start}&end=${end}&limit=30&feed=iex`);
+    const b     = resp?.bars?.[ticker] || [];
     if(b.length < 15) return null;
 
     const closes  = b.map(x=>x.c);
     const volumes = b.map(x=>x.v);
     const latest  = b[b.length-1];
 
-    // RSI(14)
-    const rsi = calcRSI(closes, 14);
-
-    // Volume spike: today vs 20-day avg
-    const avgVol = volumes.slice(0,-1).reduce((s,v)=>s+v,0) / Math.min(volumes.length-1,20);
+    const rsi      = calcRSI(closes, 14);
+    const avgVol   = volumes.slice(0,-1).reduce((s,v)=>s+v,0) / Math.min(volumes.length-1,20);
     const volSpike = latest.v / (avgVol||1);
-
-    // SMA20
-    const sma20 = closes.slice(-20).reduce((s,v)=>s+v,0)/20;
+    const sma20    = closes.slice(-20).reduce((s,v)=>s+v,0)/20;
 
     return { rsi, volSpike, sma20, price: latest.c, avgVol };
-  }catch{ return null; }
+  }catch(e){ return null; }
 }
 
 function calcRSI(closes, period=14){
@@ -342,12 +337,10 @@ function calcRSI(closes, period=14){
 // ═══ VIX check ═══════════════════════════════════════════════════
 async function getVIX(){
   try{
-    // VIX via Alpaca bars (symbol: VIXY ETF as proxy, or just use Claude scan context)
-    const end   = new Date().toISOString();
-    const start = new Date(Date.now()-2*86400000).toISOString();
-    const bars  = await alpaca("GET",`/v2/stocks/VIXY/bars?timeframe=1Day&start=${start}&end=${end}&limit=2`);
-    const b     = bars?.bars||[];
-    // VIXY ≈ VIX/10 roughly — multiply by 10 as approximation
+    const end   = encodeURIComponent(new Date().toISOString());
+    const start = encodeURIComponent(new Date(Date.now()-3*86400000).toISOString());
+    const resp  = await alpaca("GET",`/v2/stocks/bars?symbols=VIXY&timeframe=1Day&start=${start}&end=${end}&limit=2&feed=iex`);
+    const b     = resp?.bars?.VIXY||[];
     return b.length ? b[b.length-1].c * 10 : null;
   }catch{ return null; }
 }
@@ -355,13 +348,13 @@ async function getVIX(){
 // ═══ S&P500 trend ════════════════════════════════════════════════
 async function getSPYTrend(){
   try{
-    const end   = new Date().toISOString();
-    const start = new Date(Date.now()-30*86400000).toISOString();
-    const bars  = await alpaca("GET",`/v2/stocks/SPY/bars?timeframe=1Day&start=${start}&end=${end}&limit=25`);
-    const b     = bars?.bars||[];
+    const end   = encodeURIComponent(new Date().toISOString());
+    const start = encodeURIComponent(new Date(Date.now()-35*86400000).toISOString());
+    const resp  = await alpaca("GET",`/v2/stocks/bars?symbols=SPY&timeframe=1Day&start=${start}&end=${end}&limit=25&feed=iex`);
+    const b     = resp?.bars?.SPY||[];
     if(b.length<20) return null;
-    const price  = b[b.length-1].c;
-    const sma20  = b.slice(-20).map(x=>x.c).reduce((s,v)=>s+v,0)/20;
+    const price = b[b.length-1].c;
+    const sma20 = b.slice(-20).map(x=>x.c).reduce((s,v)=>s+v,0)/20;
     return {price, sma20, aboveSMA: price>=sma20};
   }catch{ return null; }
 }
@@ -632,19 +625,22 @@ async function runCycle(){
     if(!price){log("SKIP",`${opp.ticker} — no price`);continue;}
 
     const qty=Math.max(1,Math.floor(cfg.size/price));
-    const sl=+(price*(1-cfg.sl)).toFixed(2);
+    // Ensure SL is strictly below and TP strictly above by at least $0.02
+    const sl=Math.max(+(price*(1-cfg.sl)).toFixed(2), 0.01);
+    const slFinal = +(Math.min(sl, price-0.02)).toFixed(2);
     const tp=+(price*(1+cfg.tp)).toFixed(2);
+    const tpFinal = +(Math.max(tp, price+0.02)).toFixed(2);
 
     log("BUY",`Placing: ${qty}x ${opp.ticker} @ ~$${price.toFixed(2)}`,
-      `SL $${sl} | TP $${tp} | RSI ${tech?.rsi?.toFixed(0)||"?"} | Vol ${tech?.volSpike?.toFixed(1)||"?"}x | ${opp.catalyst}`);
+      `SL $${slFinal} | TP $${tpFinal} | RSI ${tech?.rsi?.toFixed(0)||"?"} | Vol ${tech?.volSpike?.toFixed(1)||"?"}x | ${opp.catalyst}`);
 
     try{
       const order=await alpaca("POST","/v2/orders",{
         symbol:opp.ticker, qty:String(qty), side:"buy",
         type:"market", time_in_force:"day",
         order_class:"bracket",
-        take_profit:{limit_price:String(tp)},
-        stop_loss:{stop_price:String(sl)}
+        take_profit:{limit_price:String(tpFinal)},
+        stop_loss:{stop_price:String(slFinal)}
       });
       if(order.id){
         log("BUY",`✓ ORDER PLACED: ${qty}x ${opp.ticker}`,`ID: ${order.id}`);
