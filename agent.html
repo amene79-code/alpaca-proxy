@@ -155,6 +155,24 @@ label{color:#a0a8c8}
     </div>
   </div>
 
+  <!-- Watchlist -->
+  <div style="background:#0d0d14;border:1px solid #252538;border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+      <div class="fl" style="margin:0">📋 Watchlist — scan these tickers directly</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <button onclick="loadPreset('sp500')"  style="font-size:10px;padding:4px 9px;color:#7efff5;border-color:#7efff5">S&P100</button>
+        <button onclick="loadPreset('nasdaq')" style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa">NASDAQ20</button>
+        <button onclick="loadPreset('uk')"     style="font-size:10px;padding:4px 9px;color:#60a5fa;border-color:#60a5fa">FTSE20</button>
+        <button onclick="loadPreset('clear')"  style="font-size:10px;padding:4px 9px">Clear</button>
+      </div>
+    </div>
+    <textarea id="cfgWatchlist" rows="3" placeholder="Leave empty to use news search. Or enter tickers separated by commas e.g: AAPL, NVDA, MSFT, TSLA, AMZN" style="background:#0a0a0f;border:1px solid #2e2e48;color:#dde1f0;padding:10px;border-radius:8px;font-family:inherit;font-size:12px;width:100%;resize:vertical;outline:none;line-height:1.6"></textarea>
+    <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:#6b6b88">
+      <span id="watchlistCount">0 tickers loaded</span>
+      <span>Technicals checked first → Claude rates sentiment for those that pass</span>
+    </div>
+  </div>
+
   <div class="g3">
     <div><div class="fl">Position size ($)</div><input id="cfgSize" type="number" value="500" min="10"></div>
     <div><div class="fl">Stop loss (%)</div><input id="cfgSL" type="number" value="3" min="0.5" max="20" step="0.5"></div>
@@ -455,7 +473,33 @@ async function getSPYTrend(){
   }catch{ return null; }
 }
 
-// ═══ Trailing stop management ════════════════════════════════════
+// ═══ Watchlist presets ═══════════════════════════════════════════
+const PRESETS = {
+  sp500:  "AAPL,MSFT,NVDA,AMZN,META,GOOGL,TSLA,BRK.B,JPM,UNH,XOM,JNJ,V,PG,MA,HD,CVX,MRK,ABBV,PEP,KO,BAC,PFE,TMO,COST,DIS,CSCO,MCD,ABT,ADBE,ACN,CRM,LLY,AVGO,NFLX,QCOM,TXN,INTC,HON,UPS,IBM,GS,MS,WMT,CAT,BA,RTX,GE,AXP,BLK",
+  nasdaq: "AAPL,MSFT,NVDA,AMZN,META,GOOGL,TSLA,AVGO,COST,ASML,ADBE,CSCO,QCOM,AMD,INTC,NFLX,MRVL,AMAT,LRCX,KLAC,MELI,SNPS,CDNS,REGN,ISRG",
+  uk:     "SHEL,AZN,HSBA,ULVR,BP,GSK,BARC,LLOY,VOD,RIO,BT.A,STAN,LGEN,PRU,AAL,IMB,NG,SGE,EXPN,MNDI",
+};
+
+function loadPreset(name){
+  const el=document.getElementById("cfgWatchlist");
+  if(name==="clear"){ el.value=""; }
+  else { el.value=PRESETS[name]||""; }
+  updateWatchlistCount();
+}
+
+function getWatchlist(){
+  const raw=document.getElementById("cfgWatchlist").value;
+  return raw.split(/[\s,]+/).map(t=>t.trim().toUpperCase()).filter(t=>t.length>0);
+}
+
+function updateWatchlistCount(){
+  const tickers=getWatchlist();
+  document.getElementById("watchlistCount").textContent=
+    tickers.length ? `${tickers.length} tickers loaded` : "0 tickers — using news search mode";
+}
+
+document.getElementById("cfgWatchlist").addEventListener("input", updateWatchlistCount);
+
 async function manageTrailingStops(positions, cfg){
   const pos=Array.isArray(positions)?positions:[];
   for(const p of pos){
@@ -490,15 +534,106 @@ async function manageTrailingStops(positions, cfg){
   }
 }
 
-// ═══ Claude scan ═════════════════════════════════════════════════
-// ═══ Claude scan (earnings check folded in) ══════════════════════
-async function claudeScan(openMarkets, antKey){
-  const sector=document.getElementById("cfgSector").value;
-  const signal=document.getElementById("cfgSignal").value;
+// ═══ Claude scan — two modes ═════════════════════════════════════
+// Mode 1 (watchlist): technicals first → Claude rates sentiment for passing tickers
+// Mode 2 (news):      Claude searches news and finds opportunities (original behaviour)
+
+async function claudeScan(openMarkets, antKey, cfg){
+  const watchlist = getWatchlist();
+  const signal    = document.getElementById("cfgSignal").value;
+  const sector    = document.getElementById("cfgSector").value;
+
+  if(watchlist.length > 0){
+    return await watchlistScan(watchlist, antKey, cfg, signal);
+  } else {
+    return await newsScan(openMarkets, antKey, signal, sector);
+  }
+}
+
+// ── Watchlist mode: screen technicals first, then rate with Claude ──
+async function watchlistScan(watchlist, antKey, cfg, signal){
+  // Shuffle to avoid always scanning same tickers first
+  const shuffled = [...watchlist].sort(()=>Math.random()-0.5);
+  const candidates = [];
+
+  log("SCAN",`Watchlist mode — screening ${shuffled.length} tickers for technicals…`);
+
+  // Screen each ticker — stop once we have 5 candidates or hit all tickers
+  for(const ticker of shuffled){
+    if(candidates.length >= 5) break;
+    try{
+      const tech = await getTechnicals(ticker, cfg.macdFast, cfg.macdSlow, cfg.macdSig);
+      if(!tech) continue;
+
+      // Apply technical filters
+      if(tech.rsi > cfg.rsiMax){ continue; }
+      if(tech.volSpike < cfg.volMin){ continue; }
+      if(cfg.macdBullish && tech.macd && !tech.macd.bullish){ continue; }
+      if(cfg.macdCross  && tech.macd && !tech.macd.bullishCross){ continue; }
+
+      candidates.push({ticker, tech});
+      log("CHECK",`${ticker} passed technicals`,
+        `RSI ${tech.rsi.toFixed(0)} | Vol ${tech.volSpike.toFixed(1)}x | MACD ${tech.macd?.bullish?"bullish":"—"}`);
+    }catch{ continue; }
+  }
+
+  if(!candidates.length){
+    log("INFO","No tickers passed technical filters this cycle");
+    return [];
+  }
+
+  // Ask Claude to rate sentiment for passing tickers only
+  const tickerList = candidates.map(c=>c.ticker).join(", ");
+  log("SCAN",`${candidates.length} passed technicals — getting Claude sentiment for: ${tickerList}`);
+
+  await new Promise(r=>setTimeout(r,8000));
+
+  const prompt=`Search the web for latest news on these specific stocks: ${tickerList}.
+Rate each and return ONLY a JSON array, starting with [:
+[{"ticker":"AAPL","company":"Apple Inc","market":"NYSE","signal":"STRONG","confidence":78,"catalyst":"one sentence on latest news","canTrade":true,"price_approx":185,"sector":"Technology","risk":"Medium","nextEarnings":"2025-08-01","earningsDaysAway":72}]
+Include ALL ${candidates.length} tickers even if news is limited. signal: STRONG|MODERATE|WATCH|CAUTION. canTrade=true for NYSE/NASDAQ. Start with [`;
+
+  const resp=await fetch("https://api.anthropic.com/v1/messages",{
+    method:"POST",
+    headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+    body:JSON.stringify({
+      model:"claude-sonnet-4-5-20250929",
+      max_tokens:800,
+      tools:[{type:"web_search_20250305",name:"web_search"}],
+      messages:[{role:"user",content:prompt}]
+    })
+  });
+
+  if(!resp.ok){
+    const e=await resp.json().catch(()=>{});
+    if(resp.status===429) throw new Error("Rate limit — retrying next cycle");
+    throw new Error(e?.error?.message||"API error "+resp.status);
+  }
+
+  const data=await resp.json();
+  const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").replace(/```json|```/g,"").trim();
+  const s=text.indexOf("["), e=text.lastIndexOf("]");
+  if(s!==-1&&e>s){
+    try{
+      const results = JSON.parse(text.slice(s,e+1));
+      // Attach pre-computed technicals to each result
+      return results.map(r=>{
+        const found = candidates.find(c=>c.ticker===r.ticker);
+        return found ? {...r, _tech: found.tech} : r;
+      });
+    }catch{
+      const last=text.lastIndexOf("},");
+      if(last>s) try{return JSON.parse(text.slice(s,last+1)+"]");}catch{}
+    }
+  }
+  return [];
+}
+
+// ── News mode: original behaviour ──
+async function newsScan(openMarkets, antKey, signal, sector){
   const mkts=openMarkets.map(id=>MARKETS[id].name).join(", ");
   const sec=sector!=="any"?` ${sector} sector.`:"";
   const sig=signal!=="any"?` ${signal}+ signals only.`:"";
-  const buf=document.getElementById("cfgEarnings").value||3;
 
   const prompt=`You are a financial data formatter. Search web for current stock news in: ${mkts}.${sec}${sig}
 
@@ -511,7 +646,7 @@ canTrade=true for NYSE/NASDAQ only.
 earningsDaysAway: integer days until next earnings, or 999 if unknown.
 Start with [`;
 
-  await new Promise(r=>setTimeout(r,8000)); // 8s gap to avoid rate limit
+  await new Promise(r=>setTimeout(r,8000));
 
   const resp=await fetch("https://api.anthropic.com/v1/messages",{
     method:"POST",
@@ -645,7 +780,7 @@ async function _runCycle(){
   // ── Claude scan ──
   let opps;
   try{
-    opps=await claudeScan(openMarkets,cfg.antKey);
+    opps=await claudeScan(openMarkets,cfg.antKey,cfg);
     if(!opps||!opps.length){log("INFO","No opportunities found this cycle");setStatus("on");scheduleNext();return;}
     log("SCAN",`${opps.length} candidates: ${opps.map(o=>o.ticker).join(", ")}`);
   }catch(e){log("ERROR","Scan: "+e.message);setStatus("on");scheduleNext();return;}
@@ -669,9 +804,9 @@ async function _runCycle(){
     if(agentPositions.has(opp.ticker)){log("SKIP",`${opp.ticker} — traded today`);continue;}
     if((sigRank[opp.signal]||0)<minRank){log("SKIP",`${opp.ticker} — signal too weak (${opp.signal})`);continue;}
 
-    // ── Technical checks ──
+    // ── Technical checks — use pre-computed if from watchlist mode ──
     log("CHECK",`Running technical checks on ${opp.ticker}…`);
-    const tech=await getTechnicals(opp.ticker, cfg.macdFast, cfg.macdSlow, cfg.macdSig);
+    const tech = opp._tech || await getTechnicals(opp.ticker, cfg.macdFast, cfg.macdSlow, cfg.macdSig);
 
     if(tech){
       // RSI check
