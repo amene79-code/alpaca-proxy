@@ -370,7 +370,7 @@ async function getNextEarnings(ticker){
 }
 
 // Earnings check via Claude (called once per ticker, cached)
-const earningsCache={};
+let earningsCache={};
 async function checkEarnings(ticker, antKey, bufferDays){
   if(earningsCache[ticker]!==undefined) return earningsCache[ticker];
   try{
@@ -481,6 +481,16 @@ canTrade=true for NYSE/NASDAQ only. Start response with [`;
 // ═══ Main cycle ══════════════════════════════════════════════════
 async function runCycle(){
   if(!RUNNING) return;
+  try {
+    await _runCycle();
+  } catch(e) {
+    log("ERROR","Unhandled error in cycle: "+e.message);
+    setStatus("on");
+    scheduleNext();
+  }
+}
+
+async function _runCycle(){
 
   const cfg={
     size:     +document.getElementById("cfgSize").value||500,
