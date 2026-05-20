@@ -6,13 +6,14 @@
 <title>AI Trading Agent</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0a0f;color:#e8e8f0;font-family:ui-monospace,monospace;padding:16px;min-height:100vh}
+body{background:#0d0d14;color:#dde1f0;font-family:ui-monospace,monospace;padding:16px;min-height:100vh}
 h1{font-family:system-ui,sans-serif;font-weight:800;font-size:1.4rem;background:linear-gradient(90deg,#4ade80,#7efff5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.03em}
-.card{background:#13131e;border:1px solid #1e1e30;border-radius:12px;padding:16px;margin-bottom:12px}
-.micro{font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#444;margin-bottom:10px}
-input,select{background:#0a0a0f;border:1px solid #2a2a40;color:#e8e8f0;padding:9px 12px;border-radius:8px;font-family:inherit;font-size:12px;width:100%;outline:none}
+.card{background:#161622;border:1px solid #252538;border-radius:12px;padding:16px;margin-bottom:12px}
+.micro{font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#6b6b88;margin-bottom:10px}
+input,select{background:#0d0d14;border:1px solid #2e2e48;color:#dde1f0;padding:9px 12px;border-radius:8px;font-family:inherit;font-size:12px;width:100%;outline:none}
 input:focus,select:focus{border-color:#4ade80}
-button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;border-radius:8px;font-family:inherit;font-size:12px;cursor:pointer}
+button{background:#161622;border:1px solid #2e2e48;color:#9999bb;padding:9px 14px;border-radius:8px;font-family:inherit;font-size:12px;cursor:pointer}
+button:hover{border-color:#4a4a6a;color:#dde1f0}
 .btn-start{background:linear-gradient(135deg,#16a34a,#4ade80);border:none;color:#000;font-weight:800;font-size:14px;padding:14px;border-radius:10px;width:100%;cursor:pointer;letter-spacing:0.04em}
 .btn-stop{background:linear-gradient(135deg,#dc2626,#f87171);border:none;color:#fff;font-weight:800;font-size:14px;padding:14px;border-radius:10px;width:100%;cursor:pointer;letter-spacing:0.04em}
 .btn-start:disabled,.btn-stop:disabled{opacity:0.4;cursor:not-allowed}
@@ -20,35 +21,46 @@ button{background:#13131e;border:1px solid #2a2a40;color:#888;padding:9px 14px;b
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
 .g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px}
 .g5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:10px}
-.fl{font-size:9px;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px}
+.fl{font-size:9px;color:#7070a0;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px}
 .status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
 .dot-on{background:#4ade80;box-shadow:0 0 8px #4ade80;animation:pulse 1.5s infinite}
-.dot-off{background:#333}
+.dot-off{background:#444}
 .dot-scan{background:#fbbf24;box-shadow:0 0 8px #fbbf24;animation:pulse 0.8s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
 @keyframes spin{to{transform:rotate(360deg)}}
-.spinner{display:inline-block;width:10px;height:10px;border:2px solid #222;border-top-color:#4ade80;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;margin-right:5px}
-.log-entry{padding:7px 10px;border-bottom:1px solid #0d0d18;font-size:11px;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
-.log-time{color:#333;white-space:nowrap;font-size:10px;padding-top:1px}
-.log-BUY{color:#4ade80}.log-SELL{color:#f87171}.log-SCAN{color:#7efff5}
-.log-INFO{color:#666}.log-ERROR{color:#f87171}.log-SKIP{color:#444}
-.log-MARKET{color:#a78bfa}.log-CHECK{color:#fbbf24}.log-TRAIL{color:#fb923c}
-.trade-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #0d0d18;flex-wrap:wrap;gap:6px;font-size:12px}
+.spinner{display:inline-block;width:10px;height:10px;border:2px solid #333;border-top-color:#4ade80;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;margin-right:5px}
+
+/* ── Activity log ── */
+.log-entry{padding:8px 10px;border-bottom:1px solid #1a1a28;font-size:11px;line-height:1.6;display:flex;gap:10px;align-items:flex-start}
+.log-time{color:#6060a0;white-space:nowrap;font-size:10px;padding-top:1px;min-width:56px}
+.log-BUY   {color:#4ade80}
+.log-SELL  {color:#f87171}
+.log-SCAN  {color:#7efff5}
+.log-INFO  {color:#a0a8c8}
+.log-ERROR {color:#ff6b6b}
+.log-SKIP  {color:#7070a0}
+.log-MARKET{color:#c084fc}
+.log-CHECK {color:#fbbf24}
+.log-TRAIL {color:#fb923c}
+.log-detail{color:#5a5a7a;font-size:10px;margin-top:2px}
+
+.trade-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #1a1a28;flex-wrap:wrap;gap:6px;font-size:12px}
 .up{color:#4ade80}.dn{color:#f87171}
-.metric{background:#0a0a0f;border-radius:8px;padding:10px;text-align:center}
+.metric{background:#0d0d14;border-radius:8px;padding:10px;text-align:center}
 .metric-v{font-size:16px;font-weight:700;font-family:system-ui,sans-serif}
-.metric-l{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:0.1em;margin-top:3px}
-.progress{background:#1a1a2e;border-radius:4px;height:4px;margin-top:8px;overflow:hidden}
+.metric-l{font-size:9px;color:#6060a0;text-transform:uppercase;letter-spacing:0.1em;margin-top:3px}
+.progress{background:#1e1e30;border-radius:4px;height:4px;margin-top:8px;overflow:hidden}
 .progress-fill{height:4px;background:linear-gradient(90deg,#4ade80,#7efff5);border-radius:4px;transition:width 1s linear}
-.mkt-toggle{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#0a0a0f;border:1px solid #1e1e30;border-radius:8px;cursor:pointer;font-size:11px;color:#666;transition:all 0.15s}
+.mkt-toggle{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#0d0d14;border:1px solid #252538;border-radius:8px;cursor:pointer;font-size:11px;color:#8888aa;transition:all 0.15s}
 .mkt-toggle.on{border-color:#4ade80;color:#4ade80;background:#0d2a1e}
 .mkt-toggle input{width:auto;accent-color:#4ade80}
-.note-box{background:#1a1a0a;border:1px solid #5a401050;border-radius:8px;padding:10px 12px;font-size:11px;color:#fbbf2490;line-height:1.6;margin-bottom:10px}
-.filter-chip{display:flex;align-items:center;gap:6px;font-size:10px;padding:5px 10px;background:#0a0a0f;border:1px solid #1e1e30;border-radius:6px;color:#555}
-.filter-chip.pass{border-color:#16653440;color:#4ade80;background:#0d2a1e10}
-.filter-chip.fail{border-color:#7f1d1d40;color:#f87171;background:#2a0d0d10}
-.vix-bar{height:6px;border-radius:3px;background:#1a1a2e;margin-top:4px;overflow:hidden}
+.note-box{background:#1a1508;border:1px solid #5a401060;border-radius:8px;padding:10px 12px;font-size:11px;color:#d4a842;line-height:1.6;margin-bottom:10px}
+.filter-chip{display:flex;align-items:center;gap:6px;font-size:10px;padding:5px 10px;background:#0d0d14;border:1px solid #252538;border-radius:6px;color:#8888aa}
+.filter-chip.pass{border-color:#166534;color:#4ade80;background:#0d2a1e}
+.filter-chip.fail{border-color:#7f1d1d;color:#f87171;background:#2a0d0d}
+.vix-bar{height:6px;border-radius:3px;background:#1e1e30;margin-top:4px;overflow:hidden}
 .vix-fill{height:6px;border-radius:3px;transition:width 0.5s}
+label{color:#a0a8c8}
 </style>
 </head>
 <body>
@@ -274,7 +286,7 @@ function log(type,msg,detail=""){
   document.getElementById("logEmpty").style.display="none";
   const d=document.createElement("div");
   d.className="log-entry";
-  d.innerHTML=`<span class="log-time">${new Date().toLocaleTimeString("en-GB")}</span><span class="log-${type}"><b>${type}</b> ${msg}${detail?`<br><span style="color:#2a2a40;font-size:10px">${detail}</span>`:""}</span>`;
+  d.innerHTML=`<span class="log-time">${new Date().toLocaleTimeString("en-GB")}</span><span class="log-${type}"><b>${type}</b> ${msg}${detail?`<br><span style="color:#7878a8;font-size:10px">${detail}</span>`:""}</span>`;
   el.insertBefore(d,el.firstChild);
   while(el.children.length>150) el.removeChild(el.lastChild);
 }
