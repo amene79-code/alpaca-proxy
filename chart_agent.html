@@ -625,96 +625,133 @@ function findSupportResistance(candles,lookback=20){
 }
 
 // ═══ Candlestick pattern detection ═══════════════════════════════
-function detectPatterns(candles){
-  const patterns=[];
+// Scans last N candles, returns patterns with recency score
+function detectPatterns(candles, lookback=5){
+  const allPatterns=[];
   const n=candles.length;
-  if(n<5) return patterns;
-  const c=candles[n-1];  // current
-  const p=candles[n-2];  // previous
-  const p2=candles[n-3]; // 2 bars ago
+  if(n<5) return allPatterns;
 
-  const body=v=>Math.abs(v.close-v.open);
-  const range=v=>v.high-v.low;
-  const isBull=v=>v.close>v.open;
-  const isBear=v=>v.close<v.open;
-  const upperWick=v=>isBull(v)?v.high-v.close:v.high-v.open;
-  const lowerWick=v=>isBull(v)?v.open-v.low:v.close-v.low;
+  // Scan each of the last `lookback` candles as the "signal" candle
+  const start=Math.max(3, n-lookback);
+  for(let idx=start; idx<n; idx++){
+    const c  = candles[idx];
+    const p  = candles[idx-1];
+    const p2 = candles[idx-2];
+    const barsAgo = n-1-idx; // 0 = current, 1 = one bar ago, etc.
+    const recency = 1 - barsAgo*0.15; // slight penalty for older bars
 
-  // ── Reversal patterns ──
+    const body=v=>Math.abs(v.close-v.open)||0.0001;
+    const range=v=>(v.high-v.low)||0.0001;
+    const isBull=v=>v.close>=v.open;
+    const isBear=v=>v.close<v.open;
+    const upperWick=v=>isBull(v)?v.high-v.close:v.high-v.open;
+    const lowerWick=v=>isBull(v)?v.open-v.low:v.close-v.low;
 
-  // Hammer: small body at top, long lower wick (≥2x body), at bottom of downtrend
-  if(body(c)>0 && lowerWick(c)>=2*body(c) && upperWick(c)<=body(c)*0.3){
-    const downtrend=p.close<p2.close;
-    if(downtrend) patterns.push({name:"Hammer",type:"reversal",direction:"bullish",strength:2,desc:"Small body, long lower wick after downtrend"});
+    const push=(pat)=>allPatterns.push({...pat, barsAgo,
+      strength: Math.round(pat.strength * recency * 10)/10});
+
+    // ── Reversal patterns ──
+
+    // Hammer
+    if(body(c)>0&&lowerWick(c)>=2*body(c)&&upperWick(c)<=body(c)*0.5){
+      if(p.close<p2.close) push({name:"Hammer",type:"reversal",direction:"bullish",strength:2,
+        desc:`Hammer ${barsAgo===0?"(current)":"("+barsAgo+"bar ago)"}`});
+    }
+
+    // Inverted Hammer
+    if(body(c)>0&&upperWick(c)>=2*body(c)&&lowerWick(c)<=body(c)*0.5&&isBull(c)){
+      push({name:"Inverted Hammer",type:"reversal",direction:"bullish",strength:1,
+        desc:`Inverted hammer ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+    }
+
+    // Bullish Engulfing
+    if(isBull(c)&&isBear(p)&&c.open<=p.close&&c.close>=p.open&&body(c)>body(p)){
+      push({name:"Bullish Engulfing",type:"reversal",direction:"bullish",strength:3,
+        desc:`Bullish engulfing ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+    }
+
+    // Bearish Engulfing
+    if(isBear(c)&&isBull(p)&&c.open>=p.close&&c.close<=p.open&&body(c)>body(p)){
+      push({name:"Bearish Engulfing",type:"reversal",direction:"bearish",strength:3,
+        desc:`Bearish engulfing ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+    }
+
+    // Doji
+    if(range(c)>0&&body(c)/range(c)<0.15){
+      push({name:"Doji",type:"reversal",direction:"neutral",strength:1,
+        desc:`Doji ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+    }
+
+    // Morning Star
+    if(idx>=2){
+      if(isBear(p2)&&body(p)<body(p2)*0.4&&isBull(c)&&c.close>(p2.open+p2.close)/2){
+        push({name:"Morning Star",type:"reversal",direction:"bullish",strength:3,
+          desc:`Morning star pattern ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+      }
+    }
+
+    // Evening Star
+    if(idx>=2){
+      if(isBull(p2)&&body(p)<body(p2)*0.4&&isBear(c)&&c.close<(p2.open+p2.close)/2){
+        push({name:"Evening Star",type:"reversal",direction:"bearish",strength:3,
+          desc:`Evening star ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+      }
+    }
+
+    // Piercing Line
+    if(isBear(p)&&isBull(c)&&c.open<p.low&&c.close>(p.open+p.close)/2&&c.close<p.open){
+      push({name:"Piercing Line",type:"reversal",direction:"bullish",strength:2,
+        desc:`Piercing line ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+    }
+
+    // ── Breakout patterns ──
+
+    const slice=candles.slice(Math.max(0,idx-20),idx);
+    if(slice.length<5) continue;
+    const avgVol=slice.reduce((s,x)=>s+x.volume,0)/slice.length;
+    const recentHigh=Math.max(...slice.map(x=>x.high));
+
+    // Volume Breakout
+    if(c.volume>avgVol*2&&c.high>=recentHigh&&isBull(c)){
+      push({name:"Volume Breakout",type:"breakout",direction:"bullish",strength:3,
+        desc:`Vol ${(c.volume/avgVol).toFixed(1)}x avg + 20-bar high ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+    }
+
+    // Bull Flag (simplified)
+    if(idx>=5){
+      const priorBull=candles[idx-4];
+      const flagBears=candles.slice(idx-3,idx).every(x=>isBear(x)||body(x)<body(priorBull)*0.4);
+      if(priorBull&&isBull(priorBull)&&body(priorBull)>range(priorBull)*0.5&&flagBears&&isBull(c)){
+        push({name:"Bull Flag",type:"breakout",direction:"bullish",strength:3,
+          desc:`Bull flag ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+      }
+    }
+
+    // Inside Bar
+    if(c.high<=p.high&&c.low>=p.low){
+      push({name:"Inside Bar",type:"breakout",direction:"neutral",strength:1,
+        desc:`Inside bar ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+    }
+
+    // Gap Up
+    if(c.open>p.close*1.003&&isBull(c)){
+      push({name:"Gap Up",type:"breakout",direction:"bullish",strength:2,
+        desc:`Gap up ${((c.open/p.close-1)*100).toFixed(2)}% ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+    }
+
+    // Gap Down
+    if(c.open<p.close*0.997&&isBear(c)){
+      push({name:"Gap Down",type:"breakout",direction:"bearish",strength:2,
+        desc:`Gap down ${((1-c.open/p.close)*100).toFixed(2)}% ${barsAgo===0?"(current)":"("+barsAgo+" bars ago)"}`});
+    }
   }
 
-  // Inverted Hammer: small body at bottom, long upper wick
-  if(body(c)>0 && upperWick(c)>=2*body(c) && lowerWick(c)<=body(c)*0.3 && isBull(c)){
-    patterns.push({name:"Inverted Hammer",type:"reversal",direction:"bullish",strength:1,desc:"Small body, long upper wick — potential reversal"});
+  // Deduplicate — keep strongest instance of each pattern name
+  const best={};
+  for(const p of allPatterns){
+    if(!best[p.name]||p.strength>best[p.name].strength) best[p.name]=p;
   }
-
-  // Bullish Engulfing: current bull candle fully engulfs previous bear candle
-  if(isBull(c)&&isBear(p)&&c.open<=p.close&&c.close>=p.open&&body(c)>body(p)){
-    patterns.push({name:"Bullish Engulfing",type:"reversal",direction:"bullish",strength:3,desc:"Bull candle fully engulfs prior bear candle"});
-  }
-
-  // Bearish Engulfing
-  if(isBear(c)&&isBull(p)&&c.open>=p.close&&c.close<=p.open&&body(c)>body(p)){
-    patterns.push({name:"Bearish Engulfing",type:"reversal",direction:"bearish",strength:3,desc:"Bear candle fully engulfs prior bull candle"});
-  }
-
-  // Doji: body very small relative to range
-  if(range(c)>0 && body(c)/range(c)<0.1){
-    patterns.push({name:"Doji",type:"reversal",direction:"neutral",strength:1,desc:"Open ≈ Close — indecision/potential reversal"});
-  }
-
-  // Morning Star: 3-candle pattern — bear, small doji/body, bull
-  if(n>=3 && isBear(p2) && body(p)<body(p2)*0.3 && isBull(c) && c.close>p2.open+(p2.open-p2.close)*0.5){
-    patterns.push({name:"Morning Star",type:"reversal",direction:"bullish",strength:3,desc:"3-candle bottom reversal: bear → doji → bull"});
-  }
-
-  // Evening Star (bearish)
-  if(n>=3 && isBull(p2) && body(p)<body(p2)*0.3 && isBear(c) && c.close<p2.close-(p2.close-p2.open)*0.5){
-    patterns.push({name:"Evening Star",type:"reversal",direction:"bearish",strength:3,desc:"3-candle top reversal: bull → doji → bear"});
-  }
-
-  // Piercing Line: bear candle followed by bull that closes above midpoint of bear
-  if(isBear(p)&&isBull(c)&&c.open<p.low&&c.close>(p.open+p.close)/2&&c.close<p.open){
-    patterns.push({name:"Piercing Line",type:"reversal",direction:"bullish",strength:2,desc:"Bull closes above midpoint of prior bear candle"});
-  }
-
-  // ── Breakout patterns ──
-
-  // Volume Breakout: current volume 2x+ average, price making new high
-  const avgVol=candles.slice(-20,-1).reduce((s,x)=>s+x.volume,0)/19;
-  const recentHigh=Math.max(...candles.slice(-20,-1).map(x=>x.high));
-  if(c.volume>avgVol*2&&c.high>recentHigh&&isBull(c)){
-    patterns.push({name:"Volume Breakout",type:"breakout",direction:"bullish",strength:3,desc:`Volume ${(c.volume/avgVol).toFixed(1)}x avg + new 20-bar high`});
-  }
-
-  // Bull Flag: 3+ bear candles after strong bull, then current bull candle
-  const priorBull=candles[n-5];
-  const flagBears=candles.slice(n-4,n-1).every(x=>isBear(x)||body(x)<body(priorBull)*0.3);
-  if(priorBull&&isBull(priorBull)&&body(priorBull)>range(priorBull)*0.6&&flagBears&&isBull(c)){
-    patterns.push({name:"Bull Flag",type:"breakout",direction:"bullish",strength:3,desc:"Strong bull move, tight consolidation, breakout"});
-  }
-
-  // Inside Bar: current bar range within previous bar range
-  if(c.high<=p.high&&c.low>=p.low&&isBull(c)){
-    patterns.push({name:"Inside Bar",type:"breakout",direction:"bullish",strength:1,desc:"Range compression — breakout imminent"});
-  }
-
-  // Gap Up: open significantly higher than previous close
-  if(c.open>p.close*1.005&&isBull(c)){
-    patterns.push({name:"Gap Up",type:"breakout",direction:"bullish",strength:2,desc:`Gapped up ${((c.open/p.close-1)*100).toFixed(2)}% from prior close`});
-  }
-
-  // Gap Down (bearish)
-  if(c.open<p.close*0.995&&isBear(c)){
-    patterns.push({name:"Gap Down",type:"breakout",direction:"bearish",strength:2,desc:`Gapped down ${((1-c.open/p.close)*100).toFixed(2)}% from prior close`});
-  }
-
-  return patterns;
+  return Object.values(best);
 }
 
 // ═══ Full stock analysis ══════════════════════════════════════════
