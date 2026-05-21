@@ -233,9 +233,10 @@ label{color:#9090c0}
     <div><div class="fl">ATR × stop loss</div><input id="cfgATRsl" type="number" value="1.5" min="0.5" max="5" step="0.5"></div>
     <div><div class="fl">ATR × take profit</div><input id="cfgATRtp" type="number" value="3" min="1" max="10" step="0.5"></div>
   </div>
-  <div class="g3">
-    <div><div class="fl">Max positions</div><input id="cfgMaxPos" type="number" value="5" min="1"></div>
-    <div><div class="fl">Max trades/day</div><input id="cfgMaxDaily" type="number" value="10" min="1"></div>
+  <div class="g4">
+    <div><div class="fl">Max positions</div><input id="cfgMaxPos" type="number" value="9" min="1"></div>
+    <div><div class="fl">Max trades/day</div><input id="cfgMaxDaily" type="number" value="12" min="1"></div>
+    <div><div class="fl">Max per cycle</div><input id="cfgMaxCycle" type="number" value="3" min="1" max="5" title="Top N signals to trade per scan cycle"></div>
     <div><div class="fl">Trailing stop (%)</div><input id="cfgTrail" type="number" value="2" min="0.5" max="10" step="0.5"></div>
   </div>
   <div class="g2">
@@ -523,8 +524,11 @@ async function fetchScreener(){
 
     // Show breakdown by tier if available
     if(d.breakdown&&d.breakdown.length){
-      const top=d.breakdown.slice(0,5).map(x=>`${x.ticker}(${x.score})`).join(" · ");
-      el.innerHTML=`✓ <b>${d.count} candidates</b> [${preset}] — Top: <span style="color:#dde1f0">${top}</span>`;
+      const top=d.breakdown.slice(0,6).map(x=>{
+        const stwits=x.sources?.includes("Stocktwits")?"🔥":"";
+        return `${stwits}${x.ticker}(${x.score})`;
+      }).join(" · ");
+      el.innerHTML=`✓ <b>${d.count} candidates</b> [${preset}] — <span style="color:#dde1f0">${top}</span>`;
     } else {
       el.textContent=`✓ ${d.count} candidates [${preset}]`;
     }
@@ -962,8 +966,9 @@ async function _runCycle(){
     atrSL:    +document.getElementById("cfgATRsl").value||1.5,
     atrTP:    +document.getElementById("cfgATRtp").value||3,
     trail:    +document.getElementById("cfgTrail").value/100,
-    maxPos:   +document.getElementById("cfgMaxPos").value||5,
-    maxDaily: +document.getElementById("cfgMaxDaily").value||10,
+    maxPos:   +document.getElementById("cfgMaxPos").value||9,
+    maxDaily: +document.getElementById("cfgMaxDaily").value||12,
+    maxCycle: +document.getElementById("cfgMaxCycle").value||3,
     minScore: +document.getElementById("cfgMinScore").value||1,
     vixMax:   +document.getElementById("cfgVIX").value||35,
     macd:     document.getElementById("cfgMacd").value,
@@ -1029,7 +1034,6 @@ async function _runCycle(){
     document.getElementById("mScanned").textContent=scannedCount;
 
     try{
-      // Quick earnings pre-check from news data if available
       const signal=await analyseStock(ticker,cfg);
       if(!signal) continue;
       const mid=getTickerMarket(ticker);
@@ -1038,7 +1042,8 @@ async function _runCycle(){
       log("PATTERN",`${ticker} [${signal.tf}]${signal.canTrade?"":" 📊 MONITOR"} — ${signal.patterns.map(p=>p.name+"("+p.strength+")").join(", ")}`,
         `Score: ${signal.score} | ${signal.indicators.join(" · ")}`);
       technicalCandidates.push(signal);
-      if(technicalCandidates.length>=5) break; // enough candidates
+      // Keep scanning until we have enough — collect up to 10 candidates
+      if(technicalCandidates.filter(s=>s.canTrade).length>=10) break;
     }catch{continue;}
   }
 
@@ -1105,14 +1110,36 @@ async function _runCycle(){
     setPhase("screen"); setStatus("on"); scheduleNext(); return;
   }
 
-  const best=ranked[0];
-  if(best.newsData) showSignal(best,best.newsData);
-  log("INFO",`Best: ${best.ticker} — total score ${best.totalScore} (tech ${best.score}${best.newsData?` + news ${best.newsData.signal}`:""})`);
+  // Execute top 3 (or fewer if hitting limits)
+  const maxPerCycle=Math.min(cfg.maxCycle, cfg.maxPos-openCount, cfg.maxDaily-dailyTrades);
+  const toTrade=ranked.slice(0,maxPerCycle);
 
-  const placed=await placeOrder(best,cfg,acct);
-  if(placed){
-    dailyTrades++;
-    document.getElementById("mTrades").textContent=dailyTrades;
+  log("INFO",`Executing top ${toTrade.length} of ${ranked.length} candidates`,
+    toTrade.map(s=>`${s.ticker}(${s.totalScore})`).join(" · "));
+
+  // Show best signal on chart
+  if(toTrade[0].newsData) showSignal(toTrade[0],toTrade[0].newsData);
+  else showSignal(toTrade[0],null);
+
+  let tradedCount=0;
+  for(const signal of toTrade){
+    if(!RUNNING) break;
+    // Re-check position limit before each order
+    if(dailyTrades>=cfg.maxDaily){log("INFO","Daily limit reached mid-cycle");break;}
+    const currentPositions=await alpaca("GET","/v2/positions").catch(()=>[]);
+    if((Array.isArray(currentPositions)?currentPositions.length:0)>=cfg.maxPos){
+      log("INFO","Position limit reached mid-cycle");break;
+    }
+    const placed=await placeOrder(signal,cfg,acct);
+    if(placed){
+      dailyTrades++;
+      tradedCount++;
+      document.getElementById("mTrades").textContent=dailyTrades;
+      if(tradedCount<toTrade.length) await new Promise(r=>setTimeout(r,1500));
+    }
+  }
+
+  if(tradedCount>0){
     await new Promise(r=>setTimeout(r,2000));
     const pos=await alpaca("GET","/v2/positions");
     updatePositionsUI(pos);
