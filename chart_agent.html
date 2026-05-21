@@ -1122,7 +1122,7 @@ async function placePatternOrder(ticker,signal,cfg,acct){
   try{
     const order=await alpaca("POST","/v2/orders",{
       symbol:ticker, qty:String(qty), side:"buy",
-      type:"market", time_in_force:"day",
+      type:"market", time_in_force:"gtc",
       order_class:"bracket",
       take_profit:{limit_price:String(tpFinal)},
       stop_loss:{stop_price:String(slFinal)}
