@@ -90,12 +90,17 @@ label{color:#9090c0}
 </div>
 
 <!-- Metrics -->
-<div class="g5">
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:12px">
   <div class="metric"><div class="metric-v" id="mVal">—</div><div class="metric-l">Portfolio</div></div>
   <div class="metric"><div class="metric-v" id="mBuy">—</div><div class="metric-l">Buying Power</div></div>
   <div class="metric"><div class="metric-v" id="mPnl">—</div><div class="metric-l">Day P&L</div></div>
+  <div class="metric"><div class="metric-v" id="mUpl">—</div><div class="metric-l">Open P&L</div></div>
   <div class="metric"><div class="metric-v" id="mScanned" style="color:#818cf8">0</div><div class="metric-l">Scanned</div></div>
   <div class="metric"><div class="metric-v" id="mTrades">0</div><div class="metric-l">Trades Today</div></div>
+</div>
+<!-- Live P&L refresh indicator -->
+<div style="display:flex;justify-content:flex-end;margin-bottom:8px;margin-top:-6px">
+  <span id="plRefreshNote" style="font-size:9px;color:#3a3a5a"></span>
 </div>
 
 <!-- Config -->
@@ -1186,16 +1191,26 @@ function setStatus(s){
   dot.className="status-dot "+cls; txt.textContent=label; txt.style.color=col;
 }
 function fmt$(n){return"$"+(+n||0).toLocaleString("en-US",{maximumFractionDigits:0});}
+function fmtPl(n){const v=+n||0;return(v>=0?"+$":"-$")+Math.abs(v).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+
 function updateAccountUI(a){
   const pl=+a.unrealized_intraday_pl||0;
   document.getElementById("mVal").textContent=fmt$(a.portfolio_value);
   document.getElementById("mBuy").textContent=fmt$(a.buying_power);
-  document.getElementById("mPnl").textContent=(pl>=0?"+":"")+pl.toFixed(2);
+  document.getElementById("mPnl").textContent=fmtPl(pl);
   document.getElementById("mPnl").className="metric-v "+(pl>=0?"up":"dn");
 }
+
 function updatePositionsUI(positions){
   const el=document.getElementById("positions");
   const pos=Array.isArray(positions)?positions:[];
+
+  // Update total open P&L
+  const totalUpl=pos.reduce((s,p)=>s+(+p.unrealized_pl||0),0);
+  const uplEl=document.getElementById("mUpl");
+  uplEl.textContent=pos.length?fmtPl(totalUpl):"—";
+  uplEl.className="metric-v "+(totalUpl>=0?"up":"dn");
+
   if(!pos.length){
     el.innerHTML=`<div style="color:#333;font-size:12px">No open positions.</div>`;
     document.getElementById("trailNote").textContent="";
@@ -1211,7 +1226,7 @@ function updatePositionsUI(positions){
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
           <b style="color:#818cf8">${p.symbol}</b>
           <span style="color:#4a4a7a;font-size:10px">${p.qty} @ $${(+p.avg_entry_price||0).toFixed(2)}</span>
-          <span style="font-size:10px;color:${up?"#4ade80":"#f87171"}">${up?"+":""}$${pl.toFixed(2)} (${pct.toFixed(2)}%)</span>
+          <span style="font-size:10px;color:${up?"#4ade80":"#f87171"}">${fmtPl(pl)} (${pct.toFixed(2)}%)</span>
         </div>
         <div style="font-size:9px;color:#fb923c;margin-top:3px">
           Current $${(+p.current_price||0).toFixed(2)} · Trail stop $${trail} · High $${high.toFixed(2)}
@@ -1223,6 +1238,30 @@ function updatePositionsUI(positions){
       </button>
     </div>`;
   }).join("");
+}
+
+// ── Live P&L refresh (every 30s when agent is running) ────────────
+let plRefreshTimer=null;
+function startPlRefresh(){
+  if(plRefreshTimer) return;
+  plRefreshTimer=setInterval(async()=>{
+    if(!RUNNING) return;
+    try{
+      const [pos,acct]=await Promise.all([
+        alpaca("GET","/v2/positions"),
+        alpaca("GET","/v2/account"),
+      ]);
+      updatePositionsUI(pos);
+      updateAccountUI(acct);
+      const t=new Date().toLocaleTimeString("en-GB");
+      document.getElementById("plRefreshNote").textContent=`P&L updated ${t}`;
+    }catch{}
+  },30000); // every 30 seconds
+}
+function stopPlRefresh(){
+  clearInterval(plRefreshTimer);
+  plRefreshTimer=null;
+  document.getElementById("plRefreshNote").textContent="";
 }
 
 async function closePosition(symbol, qty){
@@ -1290,6 +1329,7 @@ async function startAgent(){
   document.getElementById("configPanel").style.opacity="0.5";
   document.getElementById("configPanel").style.pointerEvents="none";
   setStatus("on");
+  startPlRefresh();
 
   const newsMode=document.getElementById("cfgUseNews").checked?"Technical + News":"Technical only (zero cost)";
   log("INFO","Pro Agent started",
@@ -1297,3 +1337,16 @@ async function startAgent(){
   await runCycle();
 }
 
+function stopAgent(){
+  RUNNING=false; clearInterval(countdownTimer); stopPlRefresh();
+  document.getElementById("startBtn").disabled=false;
+  document.getElementById("stopBtn").disabled=true;
+  document.getElementById("configPanel").style.opacity="1";
+  document.getElementById("configPanel").style.pointerEvents="auto";
+  document.getElementById("scanCountdown").style.display="none";
+  setPhase("screen"); setStatus("off");
+  log("INFO","Agent stopped — open positions remain on Alpaca");
+}
+</script>
+</body>
+</html>
