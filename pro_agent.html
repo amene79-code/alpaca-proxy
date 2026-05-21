@@ -797,7 +797,7 @@ async function placeOrder(signal,cfg,acct){
   try{
     const order=await alpaca("POST","/v2/orders",{
       symbol:signal.ticker, qty:String(qty), side:"buy",
-      type:"market", time_in_force:"day",
+      type:"market", time_in_force:"gtc",
       order_class:"bracket",
       take_profit:{limit_price:String(tpF)},
       stop_loss:{stop_price:String(slF)}
@@ -816,15 +816,25 @@ async function placeOrder(signal,cfg,acct){
 // ═══════════════════════════════════════════════════════════════════
 async function manageTrailingStops(positions,cfg){
   for(const p of Array.isArray(positions)?positions:[]){
-    const price=+p.current_price||0; if(!price) continue;
-    if(!trailingStops[p.symbol]||price>trailingStops[p.symbol].high)
-      trailingStops[p.symbol]={high:price};
-    const stop=+(trailingStops[p.symbol].high*(1-cfg.trail)).toFixed(2);
-    if(price<=stop&&trailingStops[p.symbol].high>+p.avg_entry_price){
-      log("TRAIL",`${p.symbol} trail stop @ $${price}`,`High $${trailingStops[p.symbol].high} → Stop $${stop}`);
+    const price=+p.current_price||0;
+    const entry=+p.avg_entry_price||0;
+    if(!price||!entry) continue;
+
+    // Initialise tracking — use whichever is higher: tracked high or entry price
+    if(!trailingStops[p.symbol]) trailingStops[p.symbol]={high:Math.max(price,entry)};
+    if(price>trailingStops[p.symbol].high) trailingStops[p.symbol].high=price;
+
+    const high=trailingStops[p.symbol].high;
+    const stop=+(high*(1-cfg.trail)).toFixed(2);
+
+    // Trigger if price is below trail stop AND we're in a loss or the stop is below entry
+    if(price<=stop){
+      const pl=+p.unrealized_pl||0;
+      log("TRAIL",`Trailing stop triggered: ${p.symbol} @ $${price}`,
+        `High $${high.toFixed(2)} | Stop $${stop} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
       try{
         await alpaca("POST","/v2/orders",{symbol:p.symbol,qty:String(p.qty),side:"sell",type:"market",time_in_force:"day"});
-        log("SELL",`✓ Closed ${p.symbol}`,`P&L ${+p.unrealized_pl>=0?"+":""}$${(+p.unrealized_pl).toFixed(2)}`);
+        log("SELL",`✓ Closed ${p.symbol}`,`P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
         delete trailingStops[p.symbol];
       }catch(e){log("ERROR",`Close ${p.symbol}: ${e.message}`);}
     }
