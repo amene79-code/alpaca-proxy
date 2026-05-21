@@ -109,13 +109,13 @@ label{color:#a0a8c8}
   <div class="micro" style="margin-top:14px">📋 Watchlist</div>
   <textarea id="cfgWatchlist" rows="2" placeholder="AAPL, NVDA, TSLA, AMZN, META, MSFT, GOOGL, AMD, INTC, QCOM, JPM, BAC, XOM, CVX, NFLX" style="resize:vertical;line-height:1.6;margin-bottom:6px"></textarea>
   <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
-    <button onclick="loadPreset('mega')"    style="font-size:10px;padding:4px 9px;color:#f59e0b;border-color:#f59e0b">Mega Cap</button>
-    <button onclick="loadPreset('tech')"    style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa">Tech</button>
-    <button onclick="loadPreset('finance')" style="font-size:10px;padding:4px 9px;color:#60a5fa;border-color:#60a5fa">Finance</button>
-    <button onclick="loadPreset('volatile')"style="font-size:10px;padding:4px 9px;color:#f87171;border-color:#f87171">Volatile</button>
-    <button onclick="loadPreset('uk')"      style="font-size:10px;padding:4px 9px;color:#60a5fa;border-color:#60a5fa">FTSE</button>
-    <button onclick="loadPreset('eu')"      style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa">Europe</button>
-    <button onclick="loadPreset('clear')"   style="font-size:10px;padding:4px 9px">Clear</button>
+    <button id="preset-mega"     onclick="togglePreset('mega')"    style="font-size:10px;padding:4px 9px;color:#f59e0b;border-color:#f59e0b;opacity:0.45">Mega Cap</button>
+    <button id="preset-tech"     onclick="togglePreset('tech')"    style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa;opacity:0.45">Tech</button>
+    <button id="preset-finance"  onclick="togglePreset('finance')" style="font-size:10px;padding:4px 9px;color:#60a5fa;border-color:#60a5fa;opacity:0.45">Finance</button>
+    <button id="preset-volatile" onclick="togglePreset('volatile')"style="font-size:10px;padding:4px 9px;color:#f87171;border-color:#f87171;opacity:0.45">Volatile</button>
+    <button id="preset-uk"       onclick="togglePreset('uk')"      style="font-size:10px;padding:4px 9px;color:#34d399;border-color:#34d399;opacity:0.45">FTSE</button>
+    <button id="preset-eu"       onclick="togglePreset('eu')"      style="font-size:10px;padding:4px 9px;color:#c084fc;border-color:#c084fc;opacity:0.45">Europe</button>
+    <button                      onclick="togglePreset('clear')"   style="font-size:10px;padding:4px 9px">Clear all</button>
     <span id="watchCount" style="font-size:10px;color:#6b6b88;align-self:center">0 tickers</span>
   </div>
 
@@ -361,7 +361,7 @@ function updateMarketGrid(){
 updateMarketGrid();
 setInterval(updateMarketGrid,60000);
 
-// ═══ Presets ═════════════════════════════════════════════════════
+// ═══ Presets — multi-select ═══════════════════════════════════════
 const PRESETS={
   mega:    "AAPL,MSFT,NVDA,AMZN,META,GOOGL,TSLA,BRK.B,JPM,V,XOM,UNH,JNJ,PG,MA",
   tech:    "NVDA,AMD,INTC,QCOM,AVGO,MU,AMAT,LRCX,KLAC,TSM,ASML,MRVL,ARM,SMCI,DELL",
@@ -371,11 +371,51 @@ const PRESETS={
   eu:      "ASML.PA,TTE.PA,MC.PA,OR.PA,SAN.PA,AIR.PA,BNP.PA,DG.PA,KER.PA,RI.PA",
 };
 
-function loadPreset(n){
-  const el=document.getElementById("cfgWatchlist");
-  el.value=n==="clear"?"":PRESETS[n]||"";
+let activePresets=new Set();
+
+function togglePreset(name){
+  if(name==="clear"){
+    activePresets.clear();
+    document.getElementById("cfgWatchlist").value="";
+    Object.keys(PRESETS).forEach(k=>setPresetBtn(k,false));
+    updateCount(); return;
+  }
+  if(activePresets.has(name)){
+    activePresets.delete(name);
+    setPresetBtn(name,false);
+  } else {
+    activePresets.add(name);
+    setPresetBtn(name,true);
+  }
+  rebuildWatchlist();
+}
+
+function setPresetBtn(name,on){
+  const btn=document.getElementById("preset-"+name);
+  if(!btn) return;
+  btn.style.opacity=on?"1":"0.45";
+  btn.style.fontWeight=on?"700":"400";
+}
+
+function rebuildWatchlist(){
+  // Merge all active preset tickers, deduplicated, preserving manual entries
+  const manualRaw=document.getElementById("cfgWatchlist").value;
+  const manual=manualRaw.split(/[\s,]+/).map(t=>t.trim().toUpperCase()).filter(t=>t&&!isPresetTicker(t));
+  const presetTickers=[];
+  for(const name of activePresets){
+    PRESETS[name].split(",").forEach(t=>presetTickers.push(t.trim()));
+  }
+  const all=[...new Set([...manual,...presetTickers])];
+  document.getElementById("cfgWatchlist").value=all.join(", ");
   updateCount();
 }
+
+function isPresetTicker(t){
+  return Object.values(PRESETS).some(p=>p.split(",").map(x=>x.trim()).includes(t));
+}
+
+// Keep old loadPreset name for compatibility
+function loadPreset(n){ togglePreset(n); }
 
 function getWatchlist(){
   return document.getElementById("cfgWatchlist").value
