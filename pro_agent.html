@@ -141,12 +141,12 @@ label{color:#9090c0}
     </div>
     <div><div class="fl">Filter preset</div>
       <select id="cfgScreenerPreset">
-        <option value="movers">🔥 High volume movers</option>
-        <option value="oversold">📉 Oversold (RSI&lt;35)</option>
-        <option value="breakout">📈 Breakout</option>
-        <option value="gap_up">⬆ Gap ups</option>
-        <option value="smallcap">💎 Small cap movers</option>
-        <option value="momentum">🚀 Momentum</option>
+        <option value="movers">🔥 Volume movers (weighted by cap)</option>
+        <option value="oversold">📉 Oversold bounces (RSI&lt;35)</option>
+        <option value="breakout">📈 Breakout (near 52w high)</option>
+        <option value="gap_up">⬆ Gap ups today</option>
+        <option value="momentum">🚀 Momentum (up 10%+ this week)</option>
+        <option value="catalyst">⚡ Catalyst hunters (any cap, high relvol)</option>
         <option value="all">◈ All combined</option>
       </select>
     </div>
@@ -517,11 +517,18 @@ async function fetchScreener(){
   const preset=document.getElementById("cfgScreenerPreset").value;
   const el=document.getElementById("screenerStatus");
   try{
-    el.textContent="⏳ Fetching live screener…";
+    el.textContent="⏳ Fetching weighted screener…";
     const r=await fetch(`${proxy}/api/screener?market=${market}&preset=${preset}`);
     if(!r.ok) throw new Error(`HTTP ${r.status}`);
     const d=await r.json();
-    el.textContent=`✓ ${d.count} candidates from ${market.toUpperCase()} [${preset}]`;
+
+    // Show breakdown by tier if available
+    if(d.breakdown&&d.breakdown.length){
+      const top=d.breakdown.slice(0,5).map(x=>`${x.ticker}(${x.score})`).join(" · ");
+      el.innerHTML=`✓ <b>${d.count} candidates</b> [${preset}] — Top: <span style="color:#dde1f0">${top}</span>`;
+    } else {
+      el.textContent=`✓ ${d.count} candidates [${preset}]`;
+    }
     el.style.color="#818cf8";
     return d.tickers||[];
   }catch(e){
