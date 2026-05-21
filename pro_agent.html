@@ -297,7 +297,10 @@ label{color:#9090c0}
 
 <!-- Positions -->
 <div class="card">
-  <div class="micro">Open Positions <span id="trailNote" style="color:#fb923c;font-size:9px"></span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <div class="micro" style="margin:0">Open Positions <span id="trailNote" style="color:#fb923c;font-size:9px"></span></div>
+    <button onclick="refreshPositions()" style="font-size:10px;padding:3px 10px;color:#818cf8;border-color:#818cf8">↻ Refresh</button>
+  </div>
   <div id="positions"><div style="color:#333;font-size:12px">No positions yet.</div></div>
 </div>
 
@@ -1187,24 +1190,64 @@ function updateAccountUI(a){
 function updatePositionsUI(positions){
   const el=document.getElementById("positions");
   const pos=Array.isArray(positions)?positions:[];
-  if(!pos.length){el.innerHTML=`<div style="color:#333;font-size:12px">No open positions.</div>`;document.getElementById("trailNote").textContent="";return;}
+  if(!pos.length){
+    el.innerHTML=`<div style="color:#333;font-size:12px">No open positions.</div>`;
+    document.getElementById("trailNote").textContent="";
+    return;
+  }
   document.getElementById("trailNote").textContent="· trailing stop active";
   el.innerHTML=pos.map(p=>{
     const pl=+p.unrealized_pl||0,pct=(+p.unrealized_plpc||0)*100,up=pl>=0;
     const high=trailingStops[p.symbol]?.high||+p.avg_entry_price;
     const trail=+(high*(1-(+document.getElementById("cfgTrail").value/100))).toFixed(2);
     return `<div class="trade-row">
-      <div>
-        <b style="color:#818cf8">${p.symbol}</b>
-        <span style="color:#4a4a7a;font-size:10px"> ${p.qty} @ $${(+p.avg_entry_price||0).toFixed(2)}</span>
-        <div style="font-size:9px;color:#fb923c;margin-top:2px">Trail stop $${trail} | High $${high.toFixed(2)}</div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <b style="color:#818cf8">${p.symbol}</b>
+          <span style="color:#4a4a7a;font-size:10px">${p.qty} @ $${(+p.avg_entry_price||0).toFixed(2)}</span>
+          <span style="font-size:10px;color:${up?"#4ade80":"#f87171"}">${up?"+":""}$${pl.toFixed(2)} (${pct.toFixed(2)}%)</span>
+        </div>
+        <div style="font-size:9px;color:#fb923c;margin-top:3px">
+          Current $${(+p.current_price||0).toFixed(2)} · Trail stop $${trail} · High $${high.toFixed(2)}
+        </div>
       </div>
-      <div style="text-align:right">
-        <div>$${(+p.current_price||0).toFixed(2)}</div>
-        <div style="font-size:11px;color:${up?"#4ade80":"#f87171"}">${up?"+":""}$${pl.toFixed(2)} (${pct.toFixed(2)}%)</div>
-      </div>
+      <button onclick="closePosition('${p.symbol}','${p.qty}')"
+        style="font-size:10px;padding:5px 12px;color:#f87171;border-color:#7f1d1d;background:#1a0505;border-radius:6px;white-space:nowrap;margin-left:8px">
+        ✕ Close
+      </button>
     </div>`;
   }).join("");
+}
+
+async function closePosition(symbol, qty){
+  if(!confirm(`Close ${qty}x ${symbol} at market price?`)) return;
+  try{
+    await alpaca("POST","/v2/orders",{
+      symbol, qty:String(qty), side:"sell",
+      type:"market", time_in_force:"day"
+    });
+    log("SELL",`✓ Manually closed ${symbol}`,`${qty} shares at market`);
+    delete trailingStops[symbol];
+    // Refresh positions after short delay
+    await new Promise(r=>setTimeout(r,1500));
+    const pos=await alpaca("GET","/v2/positions");
+    updatePositionsUI(pos);
+    const acct=await alpaca("GET","/v2/account");
+    updateAccountUI(acct);
+  }catch(e){
+    log("ERROR",`Failed to close ${symbol}: ${e.message}`);
+  }
+}
+
+async function refreshPositions(){
+  try{
+    const [pos,acct]=await Promise.all([
+      alpaca("GET","/v2/positions"),
+      alpaca("GET","/v2/account"),
+    ]);
+    updatePositionsUI(pos);
+    updateAccountUI(acct);
+  }catch(e){log("ERROR","Refresh failed: "+e.message);}
 }
 
 // ═══════════════════════════════════════════════════════════════════
