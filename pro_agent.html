@@ -200,8 +200,9 @@ label{color:#9090c0}
     </div>
     <div><div class="fl">Min ATR%</div><input id="cfgMinATR" type="number" value="0.1" min="0.05" step="0.05"></div>
   </div>
-  <div style="font-size:10px;color:#5a5a8a;line-height:1.7;margin-bottom:8px">
-    RSI and volume are used for confluence scoring only — not hard filters. High RSI is fine for breakout patterns. Low RSI is better for reversal patterns. Both add/subtract from the total score.
+  <div class="g2">
+    <div><div class="fl">Max VIX (pause if above)</div><input id="cfgVIX" type="number" value="35" min="10" max="80"></div>
+    <div style="display:flex;align-items:flex-end;padding-bottom:2px"><div style="font-size:10px;color:#5a5a8a;line-height:1.7">RSI &amp; volume = confluence bonuses only, not hard filters. High RSI fine for breakouts. Low RSI better for reversals.</div></div>
   </div>
 
   <!-- News -->
@@ -960,7 +961,7 @@ async function _runCycle(){
     maxPos:   +document.getElementById("cfgMaxPos").value||5,
     maxDaily: +document.getElementById("cfgMaxDaily").value||10,
     minScore: +document.getElementById("cfgMinScore").value||1,
-    vixMax:   +document.getElementById("cfgVIX").value||30,
+    vixMax:   +document.getElementById("cfgVIX").value||35,
     macd:     document.getElementById("cfgMacd").value,
     minATR:   +document.getElementById("cfgMinATR").value||0.1,
     earnings: +document.getElementById("cfgEarnings").value||3,
