@@ -104,7 +104,10 @@ label{color:#a0a8c8}
 
 <!-- Config -->
 <div class="card" id="configPanel">
-  <div class="micro">🔗 Connections</div>
+  <div class="micro">🔗 Connections
+    <span id="keySavedBadge" style="margin-left:8px;font-size:9px;font-weight:400;letter-spacing:0.06em"></span>
+    <button onclick="clearKeys()" style="float:right;font-size:9px;padding:2px 8px;color:#f87171;border-color:#7f1d1d;background:#2a0d0d">Clear saved keys</button>
+  </div>
   <div class="g2">
     <div><div class="fl">Alpaca Key ID</div><input id="alpacaKey" placeholder="PK…"></div>
     <div><div class="fl">Alpaca Secret</div><input id="alpacaSecret" type="password" placeholder="Secret…"></div>
@@ -973,6 +976,54 @@ function updatePositionsUI(positions){
   }).join("");
 }
 
+// ═══ Key storage ═════════════════════════════════════════════════
+const STORE_KEY = "agent1_keys";
+
+function saveKeys(){
+  try{
+    localStorage.setItem(STORE_KEY, JSON.stringify({
+      alpacaKey:    document.getElementById("alpacaKey").value.trim(),
+      alpacaSecret: document.getElementById("alpacaSecret").value.trim(),
+      proxyUrl:     document.getElementById("proxyUrl").value.trim(),
+      anthropicKey: document.getElementById("anthropicKey").value.trim(),
+    }));
+    showKeySaved(true);
+  }catch(e){ console.warn("Could not save keys",e); }
+}
+
+function loadKeys(){
+  try{
+    const raw=localStorage.getItem(STORE_KEY);
+    if(!raw) return;
+    const d=JSON.parse(raw);
+    if(d.alpacaKey)    document.getElementById("alpacaKey").value=d.alpacaKey;
+    if(d.alpacaSecret) document.getElementById("alpacaSecret").value=d.alpacaSecret;
+    if(d.proxyUrl)     document.getElementById("proxyUrl").value=d.proxyUrl;
+    if(d.anthropicKey) document.getElementById("anthropicKey").value=d.anthropicKey;
+    if(d.alpacaKey)    showKeySaved(false);
+  }catch(e){ console.warn("Could not load keys",e); }
+}
+
+function clearKeys(){
+  if(!confirm("Clear all saved API keys?")) return;
+  localStorage.removeItem(STORE_KEY);
+  document.getElementById("alpacaKey").value="";
+  document.getElementById("alpacaSecret").value="";
+  document.getElementById("anthropicKey").value="";
+  showKeySaved(false,true);
+}
+
+function showKeySaved(justSaved, cleared=false){
+  const el=document.getElementById("keySavedBadge");
+  if(!el) return;
+  if(cleared){ el.textContent="Keys cleared"; el.style.color="#f87171"; }
+  else if(justSaved){ el.textContent="✓ Keys saved"; el.style.color="#4ade80"; }
+  else{ el.textContent="🔑 Keys loaded from storage"; el.style.color="#7efff5"; }
+}
+
+// Auto-load on page open
+window.addEventListener("load", loadKeys);
+
 // ═══ Agent control ═══════════════════════════════════════════════
 async function startAgent(){
   const key=document.getElementById("alpacaKey").value.trim();
@@ -989,6 +1040,8 @@ async function startAgent(){
   try{
     const acct=await alpaca("GET","/v2/account");
     updateAccountUI(acct);
+    // Save keys on successful connection
+    saveKeys();
     log("INFO","✓ Connected to Alpaca Paper",
       `Portfolio $${(+acct.portfolio_value).toLocaleString()} | Buying power $${(+acct.buying_power).toLocaleString()}`);
   }catch(e){
