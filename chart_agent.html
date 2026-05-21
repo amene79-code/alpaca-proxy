@@ -107,7 +107,42 @@ label{color:#a0a8c8}
   </div>
 
   <div class="micro" style="margin-top:14px">📋 Watchlist</div>
-  <textarea id="cfgWatchlist" rows="2" placeholder="AAPL, NVDA, TSLA, AMZN, META, MSFT, GOOGL, AMD, INTC, QCOM, JPM, BAC, XOM, CVX, NFLX" style="resize:vertical;line-height:1.6;margin-bottom:6px"></textarea>
+
+  <!-- Screener -->
+  <div style="background:#0d0d14;border:1px solid #252538;border-radius:10px;padding:12px;margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px">
+      <div class="fl" style="margin:0">🔭 Live Market Screener</div>
+      <label style="display:flex;align-items:center;gap:6px;font-size:11px;cursor:pointer;color:#a0a8c8">
+        <input type="checkbox" id="cfgUseScreener" checked style="width:auto;accent-color:#f59e0b"> Active
+      </label>
+    </div>
+    <div class="g2" style="margin-bottom:8px">
+      <div>
+        <div class="fl">Market</div>
+        <select id="cfgScreenerMarket" style="font-size:11px">
+          <option value="us">🇺🇸 US (Finviz + Yahoo)</option>
+          <option value="uk">🇬🇧 UK (LSE)</option>
+          <option value="eu">🇪🇺 Europe</option>
+          <option value="all">🌍 All markets</option>
+        </select>
+      </div>
+      <div>
+        <div class="fl">Filter</div>
+        <select id="cfgScreenerPreset" style="font-size:11px">
+          <option value="movers">🔥 High volume movers</option>
+          <option value="oversold">📉 Oversold (RSI&lt;35)</option>
+          <option value="breakout">📈 Breakout</option>
+          <option value="gap_up">⬆ Gap ups</option>
+          <option value="smallcap">💎 Small cap</option>
+          <option value="momentum">🚀 Momentum</option>
+          <option value="all">◈ All combined</option>
+        </select>
+      </div>
+    </div>
+    <div id="screenerStatus" style="font-size:10px;color:#4ade80;min-height:14px"></div>
+  </div>
+
+  <textarea id="cfgWatchlist" rows="2" placeholder="Optional fixed tickers (merged with screener results)" style="resize:vertical;line-height:1.6;margin-bottom:6px"></textarea>
   <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
     <button id="preset-mega"     onclick="togglePreset('mega')"    style="font-size:10px;padding:4px 9px;color:#f59e0b;border-color:#f59e0b;opacity:0.45">Mega Cap</button>
     <button id="preset-tech"     onclick="togglePreset('tech')"    style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa;opacity:0.45">Tech</button>
@@ -360,6 +395,28 @@ function updateMarketGrid(){
 }
 updateMarketGrid();
 setInterval(updateMarketGrid,60000);
+
+// ═══ Live screener ════════════════════════════════════════════════
+async function fetchScreener(){
+  if(!document.getElementById("cfgUseScreener").checked) return [];
+  const proxy  = document.getElementById("proxyUrl").value.trim().replace(/\/$/,"");
+  const market = document.getElementById("cfgScreenerMarket").value;
+  const preset = document.getElementById("cfgScreenerPreset").value;
+  const el     = document.getElementById("screenerStatus");
+  try{
+    el.textContent="⏳ Fetching live screener…";
+    const resp = await fetch(`${proxy}/api/screener?market=${market}&preset=${preset}`);
+    if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    el.textContent=`✓ ${data.count} candidates (${preset})`;
+    el.style.color="#4ade80";
+    return data.tickers || [];
+  }catch(e){
+    el.textContent=`✗ ${e.message}`;
+    el.style.color="#f87171";
+    return [];
+  }
+}
 
 // ═══ Presets — multi-select ═══════════════════════════════════════
 const PRESETS={
@@ -874,16 +931,23 @@ async function _runCycle(){
   }
 
   const existingTickers=new Set((Array.isArray(positions)?positions:[]).map(p=>p.symbol));
-  const watchlist=getWatchlist();
-  if(!watchlist.length){
-    log("ERROR","No watchlist — add tickers to scan");
+
+  // Build combined ticker list: screener + fixed watchlist
+  const [screenerTickers, fixedList] = await Promise.all([
+    fetchScreener(),
+    Promise.resolve(getWatchlist()),
+  ]);
+  const combined = [...new Set([...screenerTickers, ...fixedList])];
+
+  if(!combined.length){
+    log("ERROR","No tickers — enable screener or add tickers to watchlist");
     setStatus("on"); scheduleNext(); return;
   }
 
-  // Shuffle watchlist
-  const shuffled=[...watchlist].sort(()=>Math.random()-0.5);
+  // Shuffle combined list
+  const shuffled=[...combined].sort(()=>Math.random()-0.5);
   setStatus("scan");
-  log("SCAN",`Scanning ${shuffled.length} tickers for chart patterns…`);
+  log("SCAN",`${screenerTickers.length} screener + ${fixedList.length} watchlist = ${combined.length} tickers to scan for patterns…`);
 
   let bestSignal=null;
 
