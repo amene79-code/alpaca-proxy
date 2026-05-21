@@ -158,10 +158,47 @@ label{color:#a0a8c8}
     </div>
   </div>
 
+  <!-- Screener -->
+  <div style="background:#0d0d14;border:1px solid #252538;border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+      <div class="fl" style="margin:0">🔭 Live Market Screener — finds candidates automatically</div>
+      <label style="display:flex;align-items:center;gap:6px;font-size:11px;cursor:pointer;color:#a0a8c8">
+        <input type="checkbox" id="cfgUseScreener" checked style="width:auto;accent-color:#4ade80"> Active
+      </label>
+    </div>
+    <div class="g2">
+      <div>
+        <div class="fl">Markets to screen</div>
+        <select id="cfgScreenerMarket" style="font-size:11px">
+          <option value="us">🇺🇸 US (Finviz + Yahoo)</option>
+          <option value="uk">🇬🇧 UK (LSE)</option>
+          <option value="eu">🇪🇺 Europe (Euronext)</option>
+          <option value="all">🌍 All markets</option>
+        </select>
+      </div>
+      <div>
+        <div class="fl">Screener filter</div>
+        <select id="cfgScreenerPreset" style="font-size:11px">
+          <option value="movers">🔥 High volume movers</option>
+          <option value="oversold">📉 Oversold bounces (RSI&lt;35)</option>
+          <option value="breakout">📈 Breakout (near 52w high)</option>
+          <option value="gap_up">⬆ Gap ups today</option>
+          <option value="smallcap">💎 Small cap movers</option>
+          <option value="momentum">🚀 Momentum (strong week)</option>
+          <option value="all">◈ All combined</option>
+        </select>
+      </div>
+    </div>
+    <div style="font-size:10px;color:#6b6b88;line-height:1.7">
+      Screener runs each cycle → returns top movers → merged with your watchlist below → technicals applied to combined list. Finviz covers full NYSE/NASDAQ universe. Results ranked by frequency across multiple lists.
+    </div>
+    <div id="screenerStatus" style="font-size:10px;color:#4ade80;margin-top:6px;min-height:14px"></div>
+  </div>
+
   <!-- Watchlist -->
   <div style="background:#0d0d14;border:1px solid #252538;border-radius:10px;padding:14px;margin-bottom:12px">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
-      <div class="fl" style="margin:0">📋 Watchlist — scan these tickers directly</div>
+      <div class="fl" style="margin:0">📋 Fixed watchlist (always scanned, merged with screener)</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap">
         <button id="preset-sp500"   onclick="togglePreset('sp500')"   style="font-size:10px;padding:4px 9px;color:#7efff5;border-color:#7efff5;opacity:0.45">S&P100</button>
         <button id="preset-nasdaq"  onclick="togglePreset('nasdaq')"  style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa;opacity:0.45">NASDAQ</button>
@@ -172,10 +209,10 @@ label{color:#a0a8c8}
         <button                     onclick="togglePreset('clear')"   style="font-size:10px;padding:4px 9px">Clear all</button>
       </div>
     </div>
-    <textarea id="cfgWatchlist" rows="3" placeholder="Leave empty to use news search. Or enter tickers separated by commas e.g: AAPL, NVDA, MSFT, TSLA, AMZN" style="background:#0a0a0f;border:1px solid #2e2e48;color:#dde1f0;padding:10px;border-radius:8px;font-family:inherit;font-size:12px;width:100%;resize:vertical;outline:none;line-height:1.6"></textarea>
+    <textarea id="cfgWatchlist" rows="2" placeholder="Optional — leave empty to use screener only" style="background:#0a0a0f;border:1px solid #2e2e48;color:#dde1f0;padding:10px;border-radius:8px;font-family:inherit;font-size:12px;width:100%;resize:vertical;outline:none;line-height:1.6"></textarea>
     <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:#6b6b88">
       <span id="watchlistCount">0 tickers loaded</span>
-      <span>Technicals checked first → Claude rates sentiment for those that pass</span>
+      <span>Technicals checked first → Claude rates sentiment for passing tickers</span>
     </div>
   </div>
 
@@ -479,6 +516,28 @@ async function getSPYTrend(){
   }catch{ return null; }
 }
 
+// ═══ Live screener ════════════════════════════════════════════════
+async function fetchScreener(){
+  if(!document.getElementById("cfgUseScreener").checked) return [];
+  const proxy  = document.getElementById("proxyUrl").value.trim().replace(/\/$/,"");
+  const market = document.getElementById("cfgScreenerMarket").value;
+  const preset = document.getElementById("cfgScreenerPreset").value;
+  const el     = document.getElementById("screenerStatus");
+  try{
+    el.textContent="⏳ Fetching live screener…";
+    const resp = await fetch(`${proxy}/api/screener?market=${market}&preset=${preset}`);
+    if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    el.textContent=`✓ Screener: ${data.count} candidates from ${market.toUpperCase()} (${preset})`;
+    el.style.color="#4ade80";
+    return data.tickers || [];
+  }catch(e){
+    el.textContent=`✗ Screener failed: ${e.message}`;
+    el.style.color="#f87171";
+    return [];
+  }
+}
+
 // ═══ Watchlist presets — multi-select ════════════════════════════
 const PRESETS = {
   sp500:   "AAPL,MSFT,NVDA,AMZN,META,GOOGL,TSLA,BRK.B,JPM,UNH,XOM,JNJ,V,PG,MA,HD,CVX,MRK,ABBV,PEP,KO,BAC,PFE,TMO,COST,DIS,CSCO,MCD,ABT,ADBE,ACN,CRM,LLY,AVGO,NFLX,QCOM,TXN,INTC,HON,UPS,IBM,GS,MS,WMT,CAT,BA,RTX,GE,AXP,BLK",
@@ -581,14 +640,20 @@ async function manageTrailingStops(positions, cfg){
 // Mode 2 (news):      Claude searches news and finds opportunities (original behaviour)
 
 async function claudeScan(openMarkets, antKey, cfg){
-  const watchlist = getWatchlist();
-  const signal    = document.getElementById("cfgSignal").value;
-  const sector    = document.getElementById("cfgSector").value;
+  // Get live screener candidates + fixed watchlist
+  const [screenerTickers, fixedWatchlist] = await Promise.all([
+    fetchScreener(),
+    Promise.resolve(getWatchlist()),
+  ]);
 
-  if(watchlist.length > 0){
-    return await watchlistScan(watchlist, antKey, cfg, signal);
+  // Merge: screener first (ranked by market activity), then fixed watchlist
+  const combined = [...new Set([...screenerTickers, ...fixedWatchlist])];
+
+  if(combined.length > 0){
+    log("SCAN",`Combined scan: ${screenerTickers.length} screener + ${fixedWatchlist.length} watchlist = ${combined.length} unique tickers`);
+    return await watchlistScan(combined, antKey, cfg, document.getElementById("cfgSignal").value);
   } else {
-    return await newsScan(openMarkets, antKey, signal, sector);
+    return await newsScan(openMarkets, antKey, document.getElementById("cfgSignal").value, document.getElementById("cfgSector").value);
   }
 }
 
@@ -1116,3 +1181,7 @@ function stopAgent(){
   document.getElementById("scanCountdown").style.display="none";
   setStatus("off");
   log("INFO","Agent stopped — positions remain open on Alpaca");
+}
+</script>
+</body>
+</html>
