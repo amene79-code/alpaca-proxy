@@ -682,9 +682,13 @@ async function analyseStock(ticker,cfg){
     const macd=calcMACD(closes);
     const bb=calcBB(closes,20);
     const vwap=calcVWAP(candles);
-    const volumes=candles.map(c=>c.volume);
-    const avgVol=volumes.slice(0,-1).reduce((s,v)=>s+v,0)/Math.max(volumes.length-1,1);
-    const volSpike=volumes[volumes.length-1]/(avgVol||1);
+    const volumes=candles.map(c=>c.volume).filter(v=>v>0);
+    // Use last COMPLETED bar for volume spike (not current incomplete bar)
+    // For intraday: last bar may be incomplete, so compare last full bar vs avg of prior bars
+    const completedVols=volumes.slice(0,-1); // exclude current bar
+    const avgVol=completedVols.slice(-20).reduce((s,v)=>s+v,0)/Math.max(completedVols.slice(-20).length,1);
+    const lastFullVol=completedVols[completedVols.length-1]||0;
+    const volSpike=lastFullVol/(avgVol||1);
 
     // MACD: only hard filter when explicitly set
     if(cfg.macd==="bullish"&&!macd.bullish){log("SKIP",`${ticker} [${tf}] — MACD filter (not bullish)`);continue;}
@@ -1025,6 +1029,7 @@ async function _runCycle(){
     document.getElementById("mScanned").textContent=scannedCount;
 
     try{
+      // Quick earnings pre-check from news data if available
       const signal=await analyseStock(ticker,cfg);
       if(!signal) continue;
       const mid=getTickerMarket(ticker);
@@ -1088,7 +1093,8 @@ async function _runCycle(){
   const ranked=tradeableCandidates.map(s=>{
     const news=newsMap[s.ticker];
     const newsScore=news?(sigRankMap[news.signal]||0)*2:0;
-    const earningsBlock=news&&news.earningsDaysAway<=cfg.earnings&&news.earningsDaysAway>=0;
+    const earningsBlock=news&&news.earningsDaysAway>=0&&news.earningsDaysAway<=cfg.earnings;
+    if(earningsBlock) log("SKIP",`${s.ticker} — earnings in ${news.earningsDaysAway}d (buffer ${cfg.earnings}d) — blocked`);
     const newsOk=!cfg.useNews||!news||(sigRankMap[news.signal]||0)>=minNewsRank;
     return{...s, newsData:news, totalScore:s.score+newsScore, newsOk, earningsBlock};
   }).filter(s=>s.newsOk&&!s.earningsBlock)
