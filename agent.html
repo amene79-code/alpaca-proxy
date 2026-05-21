@@ -812,12 +812,16 @@ async function _runCycle(){
   const buyingPower=+acct.buying_power||0;
   if(buyingPower<cfg.size){log("INFO",`Low buying power $${buyingPower.toFixed(0)}`);setStatus("on");scheduleNext();return;}
 
-  // ── Market open buffer ──
-  const tradeableOpen=openMarkets.filter(id=>MARKETS[id].canTrade&&isPastOpenBuffer(id));
-  if(!tradeableOpen.length){
-    log("INFO","Within 15 min of market open — waiting for volatility to settle");
-    setStatus("on"); scheduleNext(); return;
+  // ── Market open buffer (only applies to tradeable markets) ──
+  const tradeableMarkets=openMarkets.filter(id=>MARKETS[id].canTrade);
+  if(tradeableMarkets.length>0){
+    const tradeableOpen=tradeableMarkets.filter(id=>isPastOpenBuffer(id));
+    if(!tradeableOpen.length){
+      log("INFO","Within 15 min of NYSE/NASDAQ open — waiting for volatility to settle");
+      setStatus("on"); scheduleNext(); return;
+    }
   }
+  // Non-tradeable markets (LSE, Euronext etc) have no open buffer — always scan
 
   // ── Claude scan ──
   let opps;
@@ -1112,7 +1116,3 @@ function stopAgent(){
   document.getElementById("scanCountdown").style.display="none";
   setStatus("off");
   log("INFO","Agent stopped — positions remain open on Alpaca");
-}
-</script>
-</body>
-</html>
