@@ -58,6 +58,9 @@ button:hover{border-color:#4a4a6a;color:#dde1f0}
 canvas{display:block;border-radius:8px;background:#0d0d14}
 .chart-wrap{position:relative;margin-bottom:8px}
 label{color:#a0a8c8}
+.mkt-toggle{display:flex;align-items:center;gap:6px;padding:6px 10px;background:#0d0d14;border:1px solid #252538;border-radius:8px;cursor:pointer;font-size:11px;color:#6b6b88;transition:all 0.15s}
+.mkt-toggle.on{border-color:#4ade80;color:#4ade80;background:#0d2a1e}
+.mkt-toggle input{width:auto;accent-color:#4ade80}
 </style>
 </head>
 <body>
@@ -110,8 +113,24 @@ label{color:#a0a8c8}
     <button onclick="loadPreset('tech')"    style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa">Tech</button>
     <button onclick="loadPreset('finance')" style="font-size:10px;padding:4px 9px;color:#60a5fa;border-color:#60a5fa">Finance</button>
     <button onclick="loadPreset('volatile')"style="font-size:10px;padding:4px 9px;color:#f87171;border-color:#f87171">Volatile</button>
+    <button onclick="loadPreset('uk')"      style="font-size:10px;padding:4px 9px;color:#60a5fa;border-color:#60a5fa">FTSE</button>
+    <button onclick="loadPreset('eu')"      style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa">Europe</button>
     <button onclick="loadPreset('clear')"   style="font-size:10px;padding:4px 9px">Clear</button>
     <span id="watchCount" style="font-size:10px;color:#6b6b88;align-self:center">0 tickers</span>
+  </div>
+
+  <div class="micro">🌍 Market Sessions</div>
+  <div style="background:#0d0d14;border:1px solid #252538;border-radius:10px;padding:12px;margin-bottom:14px">
+    <div style="font-size:9px;color:#6b6b88;margin-bottom:10px">Only scan markets that are currently open. LSE/EU/TSX/ASX = monitor only (Alpaca executes US only).</div>
+    <div id="marketGrid" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <label class="mkt-toggle on" id="tog-NYSE"><input type="checkbox" checked onchange="toggleMkt('NYSE',this)"> 🇺🇸 NYSE</label>
+      <label class="mkt-toggle on" id="tog-NASDAQ"><input type="checkbox" checked onchange="toggleMkt('NASDAQ',this)"> 🇺🇸 NASDAQ</label>
+      <label class="mkt-toggle" id="tog-LSE"><input type="checkbox" onchange="toggleMkt('LSE',this)"> 🇬🇧 LSE</label>
+      <label class="mkt-toggle" id="tog-EURONEXT"><input type="checkbox" onchange="toggleMkt('EURONEXT',this)"> 🇪🇺 Euronext</label>
+      <label class="mkt-toggle" id="tog-TSX"><input type="checkbox" onchange="toggleMkt('TSX',this)"> 🇨🇦 TSX</label>
+      <label class="mkt-toggle" id="tog-ASX"><input type="checkbox" onchange="toggleMkt('ASX',this)"> 🇦🇺 ASX</label>
+    </div>
   </div>
 
   <div class="micro">📊 Timeframes to analyse</div>
@@ -263,12 +282,93 @@ function showKeySaved(justSaved, cleared=false){
 
 window.addEventListener("load", loadKeys);
 
+// ═══ Market definitions ══════════════════════════════════════════
+const MARKETS={
+  NYSE:    {name:"NYSE",     flag:"🇺🇸",tz:"America/New_York", open:[9,30], close:[16,0],  canTrade:true,  suffix:""},
+  NASDAQ:  {name:"NASDAQ",   flag:"🇺🇸",tz:"America/New_York", open:[9,30], close:[16,0],  canTrade:true,  suffix:""},
+  LSE:     {name:"LSE",      flag:"🇬🇧",tz:"Europe/London",    open:[8,0],  close:[16,30], canTrade:false, suffix:".L"},
+  EURONEXT:{name:"Euronext", flag:"🇪🇺",tz:"Europe/Paris",     open:[9,0],  close:[17,30], canTrade:false, suffix:".PA"},
+  TSX:     {name:"TSX",      flag:"🇨🇦",tz:"America/Toronto",  open:[9,30], close:[16,0],  canTrade:false, suffix:".TO"},
+  ASX:     {name:"ASX",      flag:"🇦🇺",tz:"Australia/Sydney", open:[10,0], close:[16,0],  canTrade:false, suffix:".AX"},
+};
+
+let selectedMarkets=new Set(["NYSE","NASDAQ"]);
+
+function toggleMkt(id,cb){
+  const lbl=document.getElementById("tog-"+id);
+  if(cb.checked){selectedMarkets.add(id);lbl.classList.add("on");}
+  else{selectedMarkets.delete(id);lbl.classList.remove("on");}
+}
+
+function isOpen(id){
+  const m=MARKETS[id];
+  const local=new Date(new Date().toLocaleString("en-US",{timeZone:m.tz}));
+  const day=local.getDay();
+  if(day===0||day===6) return false;
+  const mins=local.getHours()*60+local.getMinutes();
+  return mins>=m.open[0]*60+m.open[1]&&mins<m.close[0]*60+m.close[1];
+}
+
+function isPastOpenBuffer(id){
+  if(!document.getElementById("cfgAvoidOpen").checked) return true;
+  const m=MARKETS[id];
+  const local=new Date(new Date().toLocaleString("en-US",{timeZone:m.tz}));
+  const mins=local.getHours()*60+local.getMinutes();
+  return mins>=(m.open[0]*60+m.open[1]+15);
+}
+
+function isBeforeCloseBuffer(id){
+  if(!document.getElementById("cfgAvoidClose").checked) return true;
+  const m=MARKETS[id];
+  const local=new Date(new Date().toLocaleString("en-US",{timeZone:m.tz}));
+  const mins=local.getHours()*60+local.getMinutes();
+  return mins<=(m.close[0]*60+m.close[1]-30);
+}
+
+function getOpenSelected(){
+  return [...selectedMarkets].filter(isOpen);
+}
+
+function localTime(id){
+  return new Date().toLocaleTimeString("en-GB",{timeZone:MARKETS[id].tz,hour:"2-digit",minute:"2-digit"});
+}
+
+// Detect which market a ticker belongs to based on suffix
+function getTickerMarket(ticker){
+  if(ticker.endsWith(".L"))  return "LSE";
+  if(ticker.endsWith(".PA")) return "EURONEXT";
+  if(ticker.endsWith(".TO")) return "TSX";
+  if(ticker.endsWith(".AX")) return "ASX";
+  return "NYSE"; // default US
+}
+
+// Yahoo Finance needs the suffix as-is
+function yahooTicker(ticker){ return ticker; }
+
+function updateMarketGrid(){
+  const el=document.getElementById("marketGrid");
+  if(!el) return;
+  el.innerHTML=Object.entries(MARKETS).map(([id,m])=>{
+    const open=isOpen(id),sel=selectedMarkets.has(id),time=localTime(id);
+    return `<div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 10px;background:#0a0a0f;border:1px solid ${sel&&open?"#16653450":open?"#2a2a40":"#111"};border-radius:8px;min-width:72px">
+      <div style="font-size:13px">${m.flag}</div>
+      <div style="font-size:10px;font-weight:700;color:${open?"#dde1f0":"#333"}">${m.name}</div>
+      <div style="font-size:9px;color:${open?"#4ade80":"#333"}">${open?"🟢 "+time:"⚫ Closed"}</div>
+      <div style="font-size:8px;color:${m.canTrade?"#4ade8060":"#555"};margin-top:1px">${m.canTrade?"tradeable":"monitor"}</div>
+    </div>`;
+  }).join("");
+}
+updateMarketGrid();
+setInterval(updateMarketGrid,60000);
+
 // ═══ Presets ═════════════════════════════════════════════════════
 const PRESETS={
   mega:    "AAPL,MSFT,NVDA,AMZN,META,GOOGL,TSLA,BRK.B,JPM,V,XOM,UNH,JNJ,PG,MA",
   tech:    "NVDA,AMD,INTC,QCOM,AVGO,MU,AMAT,LRCX,KLAC,TSM,ASML,MRVL,ARM,SMCI,DELL",
   finance: "JPM,BAC,GS,MS,WFC,C,BLK,SCHW,AXP,V,MA,PYPL,SQ,COIN,ICE",
   volatile:"TSLA,NVDA,AMD,MSTR,PLTR,RIVN,LCID,SOFI,GME,AMC,RBLX,HOOD,SNAP,UBER,LYFT",
+  uk:      "SHEL.L,AZN.L,HSBA.L,ULVR.L,BP.L,GSK.L,BARC.L,LLOY.L,VOD.L,RIO.L,BT-A.L,STAN.L,LGEN.L,PRU.L,AAL.L",
+  eu:      "ASML.PA,TTE.PA,MC.PA,OR.PA,SAN.PA,AIR.PA,BNP.PA,DG.PA,KER.PA,RI.PA",
 };
 
 function loadPreset(n){
@@ -704,23 +804,15 @@ async function _runCycle(){
   const today=new Date().toDateString();
   if(dailyDate!==today){dailyTrades=0;dailyDate=today;scannedCount=0;}
 
-  // Market hours (ET)
-  const et=new Date(new Date().toLocaleString("en-US",{timeZone:"America/New_York"}));
-  const etMins=et.getHours()*60+et.getMinutes();
-  const isMarket=et.getDay()>0&&et.getDay()<6&&etMins>=9*60+30&&etMins<16*60;
+  // Check open markets
+  const openMarkets=getOpenSelected();
+  if(!openMarkets.length){
+    log("INFO","No selected markets open — waiting");
+    scheduleNext(); return;
+  }
 
-  if(!isMarket){
-    log("INFO","Market closed — waiting");
-    scheduleNext(); return;
-  }
-  if(cfg.avoidOpen&&etMins<9*60+45){
-    log("INFO","Within 15 min of open — waiting for volatility to settle");
-    scheduleNext(); return;
-  }
-  if(cfg.avoidClose&&etMins>15*60+30){
-    log("INFO","Within 30 min of close — no new positions");
-    scheduleNext(); return;
-  }
+  // Log which markets are open
+  log("SCAN",`Open: ${openMarkets.map(id=>MARKETS[id].flag+MARKETS[id].name).join(" ")}`);
   if(dailyTrades>=cfg.maxDaily){
     log("INFO",`Daily trade limit (${cfg.maxDaily}) reached`);
     scheduleNext(); return;
@@ -758,6 +850,15 @@ async function _runCycle(){
   for(const ticker of shuffled){
     if(!RUNNING) break;
     if(existingTickers.has(ticker)) continue;
+
+    // Check if this ticker's market is open and selected
+    const mktId=getTickerMarket(ticker);
+    const mkt=MARKETS[mktId];
+    if(!selectedMarkets.has(mktId)) continue;
+    if(!isOpen(mktId)) continue;
+    if(!isPastOpenBuffer(mktId)) continue;
+    if(!isBeforeCloseBuffer(mktId)) continue;
+
     scannedCount++;
     document.getElementById("mScanned").textContent=scannedCount;
 
@@ -765,8 +866,12 @@ async function _runCycle(){
       const signal=await analyseStock(ticker,cfg);
       if(!signal) continue;
 
-      log("PATTERN",`${ticker} [${signal.tf}] — ${signal.patterns.map(p=>p.name).join(", ")}`,
-        `Score: ${signal.score} | ${signal.indicators.join(" · ")}`);
+      const mktId=getTickerMarket(ticker);
+      signal.canTrade=MARKETS[mktId]?.canTrade ?? true;
+      signal.market=MARKETS[mktId]?.name||"NYSE";
+
+      log("PATTERN",`${ticker} [${signal.tf}] ${signal.canTrade?"":"📊 MONITOR "} — ${signal.patterns.map(p=>p.name).join(", ")}`,
+        `Score: ${signal.score} | ${signal.indicators.join(" · ")} | ${signal.market}`);
 
       // Show chart for best signal found so far
       if(!bestSignal||signal.score>bestSignal.score){
@@ -776,7 +881,11 @@ async function _runCycle(){
 
       // If strong enough, trade immediately
       if(signal.score>=cfg.minStrength+2){
-        await placePatternOrder(ticker,signal,cfg,acct);
+        if(signal.canTrade){
+          await placePatternOrder(ticker,signal,cfg,acct);
+        } else {
+          log("PATTERN",`📊 MONITOR: ${ticker} strong signal but ${signal.market} not tradeable via Alpaca`);
+        }
         break;
       }
     }catch(e){
@@ -789,7 +898,12 @@ async function _runCycle(){
   if(bestSignal&&dailyTrades<cfg.maxDaily&&openCount<cfg.maxPos){
     const alreadyHolding=existingTickers.has(bestSignal.ticker);
     if(!alreadyHolding&&bestSignal.score>=cfg.minStrength){
-      await placePatternOrder(bestSignal.ticker,bestSignal,cfg,acct);
+      if(!bestSignal.canTrade){
+        log("PATTERN",`📊 MONITOR ONLY: ${bestSignal.ticker} (${bestSignal.market}) — cannot auto-trade via Alpaca`,
+          `Pattern: ${bestSignal.patterns[0]?.name} | Score: ${bestSignal.score} | Consider manual execution`);
+      } else {
+        await placePatternOrder(bestSignal.ticker,bestSignal,cfg,acct);
+      }
     }
   }
 
