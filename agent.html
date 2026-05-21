@@ -606,27 +606,27 @@ async function manageTrailingStops(positions, cfg){
   for(const p of pos){
     const ticker=p.symbol;
     const price=+p.current_price||0;
-    if(!price) continue;
+    const entry=+p.avg_entry_price||0;
+    if(!price||!entry) continue;
 
-    // Track highest price seen
-    if(!trailingStops[ticker]||price>trailingStops[ticker].high){
-      trailingStops[ticker]={high:price};
-    }
+    // Initialise with max of current price and entry — catches positions opened before agent started
+    if(!trailingStops[ticker]) trailingStops[ticker]={high:Math.max(price,entry)};
+    if(price>trailingStops[ticker].high) trailingStops[ticker].high=price;
 
-    const trailStop=+(trailingStops[ticker].high*(1-cfg.trail)).toFixed(2);
-    const currentSL=+p.unrealized_pl; // placeholder
+    const high=trailingStops[ticker].high;
+    const trailStop=+(high*(1-cfg.trail)).toFixed(2);
 
-    // If price has dropped to trailing stop, close position
-    if(price<=trailStop&&trailingStops[ticker].high>+p.avg_entry_price){
+    if(price<=trailStop){
+      const pl=+p.unrealized_pl||0;
       log("TRAIL",`Trailing stop triggered: ${ticker}`,
-        `Price $${price} hit trail stop $${trailStop} (high was $${trailingStops[ticker].high})`);
+        `Price $${price} | High $${high.toFixed(2)} | Stop $${trailStop} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
       try{
         await alpaca("POST","/v2/orders",{
           symbol:ticker, qty:String(p.qty), side:"sell",
           type:"market", time_in_force:"day"
         });
         log("SELL",`✓ Closed ${ticker} via trailing stop @ ~$${price}`,
-          `Entry $${(+p.avg_entry_price).toFixed(2)} | P&L ${(+p.unrealized_pl)>=0?"+":""}$${(+p.unrealized_pl).toFixed(2)}`);
+          `Entry $${entry.toFixed(2)} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
         delete trailingStops[ticker];
       }catch(e){
         log("ERROR",`Failed to close ${ticker}: ${e.message}`);
@@ -982,7 +982,7 @@ async function _runCycle(){
     try{
       const order=await alpaca("POST","/v2/orders",{
         symbol:opp.ticker, qty:String(qty), side:"buy",
-        type:"market", time_in_force:"day",
+        type:"market", time_in_force:"gtc",
         order_class:"bracket",
         take_profit:{limit_price:String(tpFinal)},
         stop_loss:{stop_price:String(slFinal)}
