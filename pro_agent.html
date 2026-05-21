@@ -90,16 +90,27 @@ label{color:#9090c0}
 </div>
 
 <!-- Metrics -->
-<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:12px">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px">
   <div class="metric"><div class="metric-v" id="mVal">—</div><div class="metric-l">Portfolio</div></div>
   <div class="metric"><div class="metric-v" id="mBuy">—</div><div class="metric-l">Buying Power</div></div>
-  <div class="metric"><div class="metric-v" id="mPnl">—</div><div class="metric-l">Day P&L</div></div>
   <div class="metric"><div class="metric-v" id="mUpl">—</div><div class="metric-l">Open P&L</div></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px">
+  <div class="metric">
+    <div class="metric-v" id="mPnl">—</div>
+    <div class="metric-l">Day P&L <span style="color:#3a3a6a;font-size:8px">(realised+open)</span></div>
+  </div>
+  <div class="metric" style="position:relative">
+    <div class="metric-v" id="mOverall">—</div>
+    <div class="metric-l">Overall P&L</div>
+    <div id="overallBaseNote" style="font-size:8px;color:#3a3a6a;margin-top:2px"></div>
+    <button onclick="resetBaseline()" title="Reset baseline" style="position:absolute;top:6px;right:6px;font-size:8px;padding:1px 5px;color:#3a3a6a;border-color:#2a2a45;background:transparent">↺</button>
+  </div>
   <div class="metric"><div class="metric-v" id="mScanned" style="color:#818cf8">0</div><div class="metric-l">Scanned</div></div>
   <div class="metric"><div class="metric-v" id="mTrades">0</div><div class="metric-l">Trades Today</div></div>
 </div>
 <!-- Live P&L refresh indicator -->
-<div style="display:flex;justify-content:flex-end;margin-bottom:8px;margin-top:-6px">
+<div style="display:flex;justify-content:flex-end;margin-bottom:8px">
   <span id="plRefreshNote" style="font-size:9px;color:#3a3a5a"></span>
 </div>
 
@@ -1193,12 +1204,51 @@ function setStatus(s){
 function fmt$(n){return"$"+(+n||0).toLocaleString("en-US",{maximumFractionDigits:0});}
 function fmtPl(n){const v=+n||0;return(v>=0?"+$":"-$")+Math.abs(v).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
 
+// ── Overall P&L tracking ──────────────────────────────────────────
+const PNL_KEY="pro_agent_baseline";
+
+function getBaseline(){
+  try{ return JSON.parse(localStorage.getItem(PNL_KEY)||"null"); }
+  catch{ return null; }
+}
+
+function setBaseline(equity){
+  localStorage.setItem(PNL_KEY, JSON.stringify({equity, date: new Date().toDateString()}));
+}
+
+function resetBaseline(){
+  if(!confirm("Reset overall P&L baseline to current equity?")) return;
+  const val=document.getElementById("mVal").textContent.replace(/[$,]/g,"");
+  const equity=+val||0;
+  if(equity>0){setBaseline(equity);updateOverallPnl(equity);}
+}
+
+function updateOverallPnl(currentEquity){
+  const baseline=getBaseline();
+  const el=document.getElementById("mOverall");
+  if(!baseline||!currentEquity){el.textContent="—";el.className="metric-v";return;}
+  const overall=currentEquity-baseline.equity;
+  el.textContent=fmtPl(overall);
+  el.className="metric-v "+(overall>=0?"up":"dn");
+  document.getElementById("overallBaseNote").textContent=
+    `since ${baseline.date}`;
+}
+
 function updateAccountUI(a){
-  const pl=+a.unrealized_intraday_pl||0;
+  const equity=+a.equity||0;
+  const lastEquity=+a.last_equity||0;
+
+  // True day P&L = equity change from start of day (includes realized + unrealized)
+  const dayPl=equity-lastEquity;
+
   document.getElementById("mVal").textContent=fmt$(a.portfolio_value);
   document.getElementById("mBuy").textContent=fmt$(a.buying_power);
-  document.getElementById("mPnl").textContent=fmtPl(pl);
-  document.getElementById("mPnl").className="metric-v "+(pl>=0?"up":"dn");
+  document.getElementById("mPnl").textContent=fmtPl(dayPl);
+  document.getElementById("mPnl").className="metric-v "+(dayPl>=0?"up":"dn");
+
+  // Set baseline on first connect if not set
+  if(!getBaseline()&&equity>0) setBaseline(equity);
+  updateOverallPnl(equity);
 }
 
 function updatePositionsUI(positions){
