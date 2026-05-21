@@ -163,10 +163,13 @@ label{color:#a0a8c8}
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
       <div class="fl" style="margin:0">📋 Watchlist — scan these tickers directly</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <button onclick="loadPreset('sp500')"  style="font-size:10px;padding:4px 9px;color:#7efff5;border-color:#7efff5">S&P100</button>
-        <button onclick="loadPreset('nasdaq')" style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa">NASDAQ20</button>
-        <button onclick="loadPreset('uk')"     style="font-size:10px;padding:4px 9px;color:#60a5fa;border-color:#60a5fa">FTSE20</button>
-        <button onclick="loadPreset('clear')"  style="font-size:10px;padding:4px 9px">Clear</button>
+        <button id="preset-sp500"   onclick="togglePreset('sp500')"   style="font-size:10px;padding:4px 9px;color:#7efff5;border-color:#7efff5;opacity:0.45">S&P100</button>
+        <button id="preset-nasdaq"  onclick="togglePreset('nasdaq')"  style="font-size:10px;padding:4px 9px;color:#a78bfa;border-color:#a78bfa;opacity:0.45">NASDAQ</button>
+        <button id="preset-uk"      onclick="togglePreset('uk')"      style="font-size:10px;padding:4px 9px;color:#34d399;border-color:#34d399;opacity:0.45">FTSE</button>
+        <button id="preset-eu"      onclick="togglePreset('eu')"      style="font-size:10px;padding:4px 9px;color:#c084fc;border-color:#c084fc;opacity:0.45">Europe</button>
+        <button id="preset-tech"    onclick="togglePreset('tech')"    style="font-size:10px;padding:4px 9px;color:#60a5fa;border-color:#60a5fa;opacity:0.45">Tech</button>
+        <button id="preset-volatile"onclick="togglePreset('volatile')"style="font-size:10px;padding:4px 9px;color:#f87171;border-color:#f87171;opacity:0.45">Volatile</button>
+        <button                     onclick="togglePreset('clear')"   style="font-size:10px;padding:4px 9px">Clear all</button>
       </div>
     </div>
     <textarea id="cfgWatchlist" rows="3" placeholder="Leave empty to use news search. Or enter tickers separated by commas e.g: AAPL, NVDA, MSFT, TSLA, AMZN" style="background:#0a0a0f;border:1px solid #2e2e48;color:#dde1f0;padding:10px;border-radius:8px;font-family:inherit;font-size:12px;width:100%;resize:vertical;outline:none;line-height:1.6"></textarea>
@@ -476,19 +479,55 @@ async function getSPYTrend(){
   }catch{ return null; }
 }
 
-// ═══ Watchlist presets ═══════════════════════════════════════════
+// ═══ Watchlist presets — multi-select ════════════════════════════
 const PRESETS = {
-  sp500:  "AAPL,MSFT,NVDA,AMZN,META,GOOGL,TSLA,BRK.B,JPM,UNH,XOM,JNJ,V,PG,MA,HD,CVX,MRK,ABBV,PEP,KO,BAC,PFE,TMO,COST,DIS,CSCO,MCD,ABT,ADBE,ACN,CRM,LLY,AVGO,NFLX,QCOM,TXN,INTC,HON,UPS,IBM,GS,MS,WMT,CAT,BA,RTX,GE,AXP,BLK",
-  nasdaq: "AAPL,MSFT,NVDA,AMZN,META,GOOGL,TSLA,AVGO,COST,ASML,ADBE,CSCO,QCOM,AMD,INTC,NFLX,MRVL,AMAT,LRCX,KLAC,MELI,SNPS,CDNS,REGN,ISRG",
-  uk:     "SHEL,AZN,HSBA,ULVR,BP,GSK,BARC,LLOY,VOD,RIO,BT.A,STAN,LGEN,PRU,AAL,IMB,NG,SGE,EXPN,MNDI",
+  sp500:   "AAPL,MSFT,NVDA,AMZN,META,GOOGL,TSLA,BRK.B,JPM,UNH,XOM,JNJ,V,PG,MA,HD,CVX,MRK,ABBV,PEP,KO,BAC,PFE,TMO,COST,DIS,CSCO,MCD,ABT,ADBE,ACN,CRM,LLY,AVGO,NFLX,QCOM,TXN,INTC,HON,UPS,IBM,GS,MS,WMT,CAT,BA,RTX,GE,AXP,BLK",
+  nasdaq:  "AAPL,MSFT,NVDA,AMZN,META,GOOGL,TSLA,AVGO,COST,ASML,ADBE,CSCO,QCOM,AMD,INTC,NFLX,MRVL,AMAT,LRCX,KLAC,MELI,SNPS,CDNS,REGN,ISRG",
+  uk:      "SHEL.L,AZN.L,HSBA.L,ULVR.L,BP.L,GSK.L,BARC.L,LLOY.L,VOD.L,RIO.L,BT-A.L,STAN.L,LGEN.L,PRU.L,AAL.L,IMB.L,NG.L,SGE.L,EXPN.L,MNDI.L",
+  eu:      "ASML.PA,TTE.PA,MC.PA,OR.PA,SAN.PA,AIR.PA,BNP.PA,DG.PA,KER.PA,RI.PA",
+  tech:    "NVDA,AMD,INTC,QCOM,AVGO,MU,AMAT,LRCX,KLAC,MRVL,ARM,SMCI,DELL,HPQ,IBM",
+  volatile:"TSLA,NVDA,AMD,MSTR,PLTR,RIVN,SOFI,RBLX,HOOD,SNAP,UBER,LYFT,COIN,GME",
 };
 
-function loadPreset(name){
-  const el=document.getElementById("cfgWatchlist");
-  if(name==="clear"){ el.value=""; }
-  else { el.value=PRESETS[name]||""; }
+let activePresets=new Set();
+
+function togglePreset(name){
+  if(name==="clear"){
+    activePresets.clear();
+    document.getElementById("cfgWatchlist").value="";
+    Object.keys(PRESETS).forEach(k=>setPresetBtn(k,false));
+    updateWatchlistCount(); return;
+  }
+  if(activePresets.has(name)){
+    activePresets.delete(name);
+    setPresetBtn(name,false);
+  } else {
+    activePresets.add(name);
+    setPresetBtn(name,true);
+  }
+  rebuildWatchlist();
+}
+
+function setPresetBtn(name,on){
+  const btn=document.getElementById("preset-"+name);
+  if(!btn) return;
+  btn.style.opacity=on?"1":"0.45";
+  btn.style.fontWeight=on?"700":"400";
+}
+
+function rebuildWatchlist(){
+  const allPresetTickers=new Set(Object.values(PRESETS).flatMap(p=>p.split(",").map(t=>t.trim())));
+  const manualRaw=document.getElementById("cfgWatchlist").value;
+  const manual=manualRaw.split(/[\s,]+/).map(t=>t.trim().toUpperCase()).filter(t=>t&&!allPresetTickers.has(t));
+  const presetTickers=[];
+  for(const name of activePresets) PRESETS[name].split(",").forEach(t=>presetTickers.push(t.trim()));
+  const all=[...new Set([...manual,...presetTickers])];
+  document.getElementById("cfgWatchlist").value=all.join(", ");
   updateWatchlistCount();
 }
+
+// Legacy alias
+function loadPreset(name){ togglePreset(name); }
 
 function getWatchlist(){
   const raw=document.getElementById("cfgWatchlist").value;
