@@ -865,6 +865,12 @@ async function manageTrailingStops(positions,cfg){
       log("TRAIL",`Trailing stop triggered: ${p.symbol} @ $${price}`,
         `High $${high.toFixed(2)} | Stop $${stop} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
       try{
+        // Cancel any existing open orders for this symbol first (e.g. bracket legs)
+        const openOrders=await alpaca("GET",`/v2/orders?status=open&symbols=${p.symbol}`).catch(()=>[]);
+        for(const o of Array.isArray(openOrders)?openOrders:[]){
+          await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
+        }
+        await new Promise(r=>setTimeout(r,500)); // brief pause after cancels
         await alpaca("POST","/v2/orders",{symbol:p.symbol,qty:String(p.qty),side:"sell",type:"market",time_in_force:"day"});
         log("SELL",`✓ Closed ${p.symbol}`,`P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
         delete trailingStops[p.symbol];
@@ -1222,13 +1228,20 @@ function updatePositionsUI(positions){
 async function closePosition(symbol, qty){
   if(!confirm(`Close ${qty}x ${symbol} at market price?`)) return;
   try{
+    // Cancel any open orders first (bracket legs etc)
+    const openOrders=await alpaca("GET",`/v2/orders?status=open&symbols=${symbol}`).catch(()=>[]);
+    for(const o of Array.isArray(openOrders)?openOrders:[]){
+      await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
+    }
+    if((Array.isArray(openOrders)?openOrders:[]).length){
+      await new Promise(r=>setTimeout(r,600));
+    }
     await alpaca("POST","/v2/orders",{
       symbol, qty:String(qty), side:"sell",
       type:"market", time_in_force:"day"
     });
     log("SELL",`✓ Manually closed ${symbol}`,`${qty} shares at market`);
     delete trailingStops[symbol];
-    // Refresh positions after short delay
     await new Promise(r=>setTimeout(r,1500));
     const pos=await alpaca("GET","/v2/positions");
     updatePositionsUI(pos);
@@ -1284,16 +1297,3 @@ async function startAgent(){
   await runCycle();
 }
 
-function stopAgent(){
-  RUNNING=false; clearInterval(countdownTimer);
-  document.getElementById("startBtn").disabled=false;
-  document.getElementById("stopBtn").disabled=true;
-  document.getElementById("configPanel").style.opacity="1";
-  document.getElementById("configPanel").style.pointerEvents="auto";
-  document.getElementById("scanCountdown").style.display="none";
-  setPhase("screen"); setStatus("off");
-  log("INFO","Agent stopped — open positions remain on Alpaca");
-}
-</script>
-</body>
-</html>
