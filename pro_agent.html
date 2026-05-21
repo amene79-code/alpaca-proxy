@@ -186,24 +186,22 @@ label{color:#9090c0}
   <div class="g3">
     <div><div class="fl">Min pattern score</div>
       <select id="cfgMinScore">
-        <option value="1">Any (1+)</option>
-        <option value="2" selected>Moderate (2+)</option>
+        <option value="1" selected>Any (1+)</option>
+        <option value="2">Moderate (2+)</option>
         <option value="3">Strong (3+)</option>
       </select>
     </div>
-    <div><div class="fl">Max RSI (entry)</div><input id="cfgRSI" type="number" value="60" min="20" max="80"></div>
-    <div><div class="fl">Min vol spike (×avg)</div><input id="cfgVol" type="number" value="1.2" min="1" step="0.1"></div>
-  </div>
-  <div class="g3">
-    <div><div class="fl">Max VIX</div><input id="cfgVIX" type="number" value="30" min="10" max="80"></div>
-    <div><div class="fl">MACD required</div>
+    <div><div class="fl">MACD filter</div>
       <select id="cfgMacd">
-        <option value="none">Any direction</option>
+        <option value="none" selected>Any direction</option>
         <option value="bullish">Bullish only</option>
         <option value="cross">Fresh crossover</option>
       </select>
     </div>
     <div><div class="fl">Min ATR%</div><input id="cfgMinATR" type="number" value="0.1" min="0.05" step="0.05"></div>
+  </div>
+  <div style="font-size:10px;color:#5a5a8a;line-height:1.7;margin-bottom:8px">
+    RSI and volume are used for confluence scoring only — not hard filters. High RSI is fine for breakout patterns. Low RSI is better for reversal patterns. Both add/subtract from the total score.
   </div>
 
   <!-- News -->
@@ -650,19 +648,35 @@ async function analyseStock(ticker,cfg){
   const results=[];
   for(const tf of [...activeTFs]){
     const candles=await getCandles(ticker,tf);
-    if(!candles||candles.length<15) continue;
+    if(!candles||candles.length<15){
+      log("SKIP",`${ticker} [${tf}] — no data (${candles?.length||0} bars)`);
+      continue;
+    }
     const closes=candles.map(c=>c.close);
     const price=closes[closes.length-1];
     const atr=calcATR(candles,14);
     const atrPct=atr/price*100;
-    if(atrPct<cfg.minATR) continue;
+    if(atrPct<cfg.minATR){
+      log("SKIP",`${ticker} [${tf}] — ATR ${atrPct.toFixed(2)}% < min ${cfg.minATR}%`);
+      continue;
+    }
 
     const patterns=detectPatterns(candles,5);
     const bullish=patterns.filter(p=>p.direction==="bullish");
     const patScore=bullish.reduce((s,p)=>s+p.strength,0);
-    if(patScore<cfg.minScore) continue;
 
-    // Technicals
+    if(!bullish.length){
+      log("SKIP",`${ticker} [${tf}] — no bullish patterns (${candles.length} bars, ATR ${atrPct.toFixed(2)}%)`);
+      continue;
+    }
+    if(patScore<cfg.minScore){
+      log("SKIP",`${ticker} [${tf}] — score ${patScore.toFixed(1)} < min ${cfg.minScore} | ${bullish.map(p=>p.name).join(", ")}`);
+      continue;
+    }
+
+    log("CHECK",`${ticker} [${tf}] — ${bullish.map(p=>p.name+"("+p.strength.toFixed(1)+")").join(", ")} | score ${patScore.toFixed(1)}`);
+
+    // Technicals — confluence bonuses only, NOT hard filters
     const rsi=calcRSI(closes,14);
     const macd=calcMACD(closes);
     const bb=calcBB(closes,20);
@@ -671,29 +685,28 @@ async function analyseStock(ticker,cfg){
     const avgVol=volumes.slice(0,-1).reduce((s,v)=>s+v,0)/Math.max(volumes.length-1,1);
     const volSpike=volumes[volumes.length-1]/(avgVol||1);
 
-    // RSI filter
-    if(rsi>cfg.rsiMax) continue;
-    // Volume filter
-    if(volSpike<cfg.volMin) continue;
-    // MACD filter
-    if(cfg.macd==="bullish"&&!macd.bullish) continue;
-    if(cfg.macd==="cross"&&!macd.cross) continue;
+    // MACD: only hard filter when explicitly set
+    if(cfg.macd==="bullish"&&!macd.bullish){log("SKIP",`${ticker} [${tf}] — MACD filter (not bullish)`);continue;}
+    if(cfg.macd==="cross"&&!macd.cross){log("SKIP",`${ticker} [${tf}] — MACD filter (no crossover)`);continue;}
 
-    // Indicator confluence score
+    // Confluence scoring
     let conf=0; const indicators=[];
+    // RSI: oversold = big bonus, high = small penalty, mid = neutral
     if(rsi<35){conf+=2;indicators.push(`RSI ${rsi.toFixed(0)} oversold ✓`);}
     else if(rsi<50){conf+=1;indicators.push(`RSI ${rsi.toFixed(0)} ✓`);}
+    else if(rsi>75){conf-=1;indicators.push(`RSI ${rsi.toFixed(0)} high`);}
     else{indicators.push(`RSI ${rsi.toFixed(0)}`);}
 
+    // Bollinger — at upper is good for breakouts, at lower is good for reversals
     if(bb){
       if(price<=bb.lower*1.01){conf+=2;indicators.push("At BB lower ✓");}
-      else if(price>=bb.upper*0.99){conf--;indicators.push("At BB upper");}
+      else if(price>=bb.upper*0.99){conf+=1;indicators.push("BB breakout ✓");}
       else indicators.push(`BB mid $${bb.mid.toFixed(2)}`);
     }
     if(price>vwap){conf+=1;indicators.push("Above VWAP ✓");}
     else indicators.push("Below VWAP");
-    if(volSpike>=2){conf+=2;indicators.push(`Vol ${volSpike.toFixed(1)}x ✓`);}
-    else if(volSpike>=1.2){conf+=1;indicators.push(`Vol ${volSpike.toFixed(1)}x ✓`);}
+    if(volSpike>=3){conf+=2;indicators.push(`Vol ${volSpike.toFixed(1)}x ✓✓`);}
+    else if(volSpike>=1.5){conf+=1;indicators.push(`Vol ${volSpike.toFixed(1)}x ✓`);}
     else indicators.push(`Vol ${volSpike.toFixed(1)}x`);
     if(macd.bullish){conf+=1;indicators.push(`MACD bullish${macd.cross?" 🔀":""}  ✓`);}
 
@@ -946,9 +959,7 @@ async function _runCycle(){
     trail:    +document.getElementById("cfgTrail").value/100,
     maxPos:   +document.getElementById("cfgMaxPos").value||5,
     maxDaily: +document.getElementById("cfgMaxDaily").value||10,
-    minScore: +document.getElementById("cfgMinScore").value||2,
-    rsiMax:   +document.getElementById("cfgRSI").value||60,
-    volMin:   +document.getElementById("cfgVol").value||1.2,
+    minScore: +document.getElementById("cfgMinScore").value||1,
     vixMax:   +document.getElementById("cfgVIX").value||30,
     macd:     document.getElementById("cfgMacd").value,
     minATR:   +document.getElementById("cfgMinATR").value||0.1,
