@@ -485,8 +485,7 @@ function updateCount(){
 }
 document.getElementById("cfgWatchlist").addEventListener("input",updateCount);
 
-// Load default watchlist
-document.getElementById("cfgWatchlist").value=PRESETS.mega;
+// Watchlist starts empty — screener provides candidates
 updateCount();
 
 // ═══ TF toggles ══════════════════════════════════════════════════
@@ -940,7 +939,7 @@ async function _runCycle(){
   const combined = [...new Set([...screenerTickers, ...fixedList])];
 
   if(!combined.length){
-    log("ERROR","No tickers — enable screener or add tickers to watchlist");
+    log("ERROR","No tickers to scan — enable the screener or add tickers to the watchlist");
     setStatus("on"); scheduleNext(); return;
   }
 
@@ -1196,7 +1195,6 @@ async function startAgent(){
   const secret=document.getElementById("alpacaSecret").value.trim();
   const proxy=document.getElementById("proxyUrl").value.trim();
   if(!key||!secret||!proxy){alert("Enter Alpaca credentials and proxy URL");return;}
-  if(!getWatchlist().length){alert("Add tickers to watchlist");return;}
   if(!activeTFs.size){alert("Select at least one timeframe");return;}
 
   document.getElementById("startBtn").disabled=true;
