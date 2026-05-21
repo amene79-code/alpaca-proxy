@@ -100,11 +100,15 @@ label{color:#9090c0}
     <div class="metric-v" id="mPnl">—</div>
     <div class="metric-l">Day P&L <span style="color:#3a3a6a;font-size:8px">(realised+open)</span></div>
   </div>
-  <div class="metric" style="position:relative">
-    <div class="metric-v" id="mOverall">—</div>
-    <div class="metric-l">Overall P&L</div>
-    <div id="overallBaseNote" style="font-size:8px;color:#3a3a6a;margin-top:2px"></div>
-    <button onclick="resetBaseline()" title="Reset baseline" style="position:absolute;top:6px;right:6px;font-size:8px;padding:1px 5px;color:#3a3a6a;border-color:#2a2a45;background:transparent">↺</button>
+  <div class="metric">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <div style="flex:1;text-align:center">
+        <div class="metric-v" id="mOverall">—</div>
+        <div class="metric-l">Overall P&L</div>
+        <div id="overallBaseNote" style="font-size:8px;color:#3a3a6a;margin-top:2px"></div>
+      </div>
+      <button onclick="resetBaseline()" title="Reset baseline" style="font-size:9px;padding:2px 5px;color:#3a3a6a;border-color:#2a2a45;background:transparent;min-width:auto;width:auto">↺</button>
+    </div>
   </div>
   <div class="metric"><div class="metric-v" id="mScanned" style="color:#818cf8">0</div><div class="metric-l">Scanned</div></div>
   <div class="metric"><div class="metric-v" id="mTrades">0</div><div class="metric-l">Trades Today</div></div>
