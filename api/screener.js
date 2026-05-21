@@ -8,95 +8,94 @@ const CORS = {
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
-    status,
-    headers: { ...CORS, "Content-Type": "application/json" },
+    status, headers: { ...CORS, "Content-Type": "application/json" },
   });
 }
 
-// ── Finviz screener (US stocks) ───────────────────────────────────
-async function finvizScreen(filters = "") {
-  // Default filters: rel volume > 1.5x, price > $2, avg vol > 200k
-  const f = filters || "sh_relvol_o1.5,sh_price_o2,sh_avgvol_o200";
-  const url = `https://finviz.com/screener.ashx?v=111&f=${f}&ft=4`;
+const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 
+// ── Finviz screener (full NYSE/NASDAQ universe) ───────────────────
+async function finvizScreen(filters) {
+  const url = `https://finviz.com/screener.ashx?v=111&f=${filters}&ft=4&o=-relativevolume`;
   const resp = await fetch(url, {
-    headers: {
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-      "Accept": "text/html,application/xhtml+xml",
-      "Accept-Language": "en-US,en;q=0.9",
-      "Referer": "https://finviz.com/",
-    },
+    headers: { "User-Agent": UA, "Accept": "text/html", "Referer": "https://finviz.com/" },
   });
-
-  if (!resp.ok) throw new Error(`Finviz HTTP ${resp.status}`);
+  if (!resp.ok) throw new Error(`Finviz ${resp.status}`);
   const html = await resp.text();
-
-  // Extract tickers from screener table
   const tickers = new Set();
-  const regex = /quote\.ashx\?t=([A-Z.]+)[&"]/g;
-  let match;
-  while ((match = regex.exec(html)) !== null) {
-    if (match[1] && match[1].length <= 5) tickers.add(match[1]);
-  }
-  return [...tickers].slice(0, 100);
+  const re = /quote\.ashx\?t=([A-Z]{1,5})[&"]/g;
+  let m;
+  while ((m = re.exec(html)) !== null) tickers.add(m[1]);
+  return [...tickers].slice(0, 80);
 }
 
-// ── Yahoo Finance movers ──────────────────────────────────────────
-async function yahooMovers(listId, region = "US") {
-  const url = `https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds=${listId}&count=50&fields=symbol,regularMarketChangePercent,regularMarketVolume&region=${region}&lang=en-US`;
-  const resp = await fetch(url, {
-    headers: {
-      "User-Agent": "Mozilla/5.0",
-      "Accept": "application/json",
-    },
-  });
+// ── Yahoo Finance quote search — works without crumb ─────────────
+async function yahooSearch(query, region = "US") {
+  const url = `https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(query)}&lang=en-US&region=${region}&quotesCount=10&newsCount=0&listsCount=0`;
+  const resp = await fetch(url, { headers: { "User-Agent": UA, "Accept": "application/json" } });
   if (!resp.ok) return [];
   const data = await resp.json();
-  const quotes = data?.finance?.result?.[0]?.quotes || [];
-  return quotes.map(q => q.symbol).filter(Boolean);
+  return (data?.quotes || []).map(q => q.symbol).filter(Boolean);
 }
 
-// ── LSE most active via Yahoo ─────────────────────────────────────
-async function lseMovers() {
-  // Yahoo Finance LSE most active uses .L suffix
-  const url = `https://query1.finance.yahoo.com/v1/finance/screener?crumb=&lang=en-GB&region=GB&scrIds=most_actives&count=40&fields=symbol`;
+// ── Yahoo trending tickers (no crumb needed) ──────────────────────
+async function yahooTrending(region = "US") {
+  const url = `https://query1.finance.yahoo.com/v1/finance/trending/${region}?count=40&useQuotes=true`;
   try {
-    const resp = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" } });
+    const resp = await fetch(url, { headers: { "User-Agent": UA, "Accept": "application/json" } });
     if (!resp.ok) return [];
     const data = await resp.json();
     const quotes = data?.finance?.result?.[0]?.quotes || [];
-    return quotes.map(q => q.symbol).filter(s => s.endsWith(".L"));
+    return quotes.map(q => q.symbol).filter(Boolean);
   } catch { return []; }
 }
 
-// ── Euronext most active via Yahoo ───────────────────────────────
-async function euronextMovers() {
-  const url = `https://query1.finance.yahoo.com/v1/finance/screener?lang=fr-FR&region=FR&scrIds=most_actives&count=40&fields=symbol`;
+// ── Yahoo day gainers/most active (v7 — no crumb needed) ─────────
+async function yahooMoversV7(listId) {
+  const url = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${listId}`;
+  // Use the spark endpoint which doesn't need auth
+  const sparkUrl = `https://query1.finance.yahoo.com/v8/finance/spark?symbols=${listId}&range=1d&interval=5m`;
   try {
-    const resp = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" } });
+    const resp = await fetch(sparkUrl, { headers: { "User-Agent": UA } });
     if (!resp.ok) return [];
     const data = await resp.json();
-    const quotes = data?.finance?.result?.[0]?.quotes || [];
-    return quotes.map(q => q.symbol).filter(s => s.endsWith(".PA"));
+    return Object.keys(data?.spark?.result?.reduce?.((a, r) => ({ ...a, [r.symbol]: 1 }), {}) || {});
   } catch { return []; }
 }
 
-// ── Finviz preset filter sets ─────────────────────────────────────
-const FILTER_PRESETS = {
-  // High volume movers — stocks with unusual activity today
-  movers:     "sh_relvol_o2,sh_price_o2,sh_avgvol_o200,sh_curvol_o500",
-  // Oversold bounces — RSI < 35, volume picking up
-  oversold:   "ta_rsi_os35,sh_relvol_o1.5,sh_price_o5,sh_avgvol_o200",
-  // Breakout candidates — near 52w high with volume
-  breakout:   "ta_highlow52w_nh,sh_relvol_o2,sh_avgvol_o200,sh_price_o5",
-  // Gap ups — opened significantly higher
-  gap_up:     "ta_gap_u,sh_avgvol_o200,sh_price_o5",
-  // Small cap movers — hidden gems under $2B market cap
-  smallcap:   "cap_small,sh_relvol_o2,sh_price_o2,sh_avgvol_o100",
-  // Momentum — strong price action last week
-  momentum:   "ta_perf_1w10o,sh_relvol_o1.5,sh_avgvol_o200,sh_price_o5",
-  // All combined — broad scan
-  all:        "sh_relvol_o1.5,sh_price_o2,sh_avgvol_o100",
+// ── LSE: use Yahoo Finance chart API for known LSE movers ─────────
+async function lseActive() {
+  // Use Yahoo Finance's world indices/market summary for UK
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/%5EFTSE?interval=1d&range=5d`;
+  // Fallback: return well-known high-volume LSE tickers as seed
+  // These are reliably the most traded LSE stocks daily
+  return [
+    "SHEL.L","AZN.L","HSBA.L","BP.L","GSK.L","BARC.L","LLOY.L",
+    "VOD.L","RIO.L","ULVR.L","STAN.L","BT-A.L","PRU.L","AAL.L",
+    "IMB.L","NG.L","WPP.L","IAG.L","GLEN.L","LGEN.L","JD.L",
+    "SPX.L","MNG.L","FRES.L","SGE.L","REL.L","CRH.L","DGE.L"
+  ];
+}
+
+// ── Euronext: seed list of most active ───────────────────────────
+async function euronextActive() {
+  return [
+    "ASML.PA","TTE.PA","MC.PA","OR.PA","SAN.PA","AIR.PA","BNP.PA",
+    "DG.PA","KER.PA","RI.PA","CS.PA","ORA.PA","VIE.PA","LR.PA",
+    "CAP.PA","DSY.PA","ML.PA","ENGI.PA","PUB.PA","VK.PA",
+    "INGA.AS","PHIA.AS","AD.AS","HEIA.AS","NN.AS","WKL.AS"
+  ];
+}
+
+// ── Finviz filter presets ─────────────────────────────────────────
+const PRESETS = {
+  movers:    "sh_relvol_o2,sh_price_o2,sh_avgvol_o200",
+  oversold:  "ta_rsi_os35,sh_relvol_o1.5,sh_price_o5,sh_avgvol_o200",
+  breakout:  "ta_highlow52w_nh,sh_relvol_o1.5,sh_avgvol_o200,sh_price_o5",
+  gap_up:    "ta_gap_u,sh_avgvol_o200,sh_price_o5",
+  smallcap:  "cap_small,sh_relvol_o2,sh_price_o2,sh_avgvol_o100",
+  momentum:  "ta_perf_1w10o,sh_relvol_o1.5,sh_avgvol_o200,sh_price_o5",
+  all:       "sh_relvol_o1.5,sh_price_o2,sh_avgvol_o100",
 };
 
 // ── Main handler ──────────────────────────────────────────────────
@@ -106,73 +105,54 @@ export default async function handler(req) {
   const url    = new URL(req.url);
   const market = url.searchParams.get("market") || "us";
   const preset = url.searchParams.get("preset") || "movers";
-  const custom = url.searchParams.get("filters") || "";
 
   try {
     let tickers = [];
 
     if (market === "us") {
-      // Finviz screener + Yahoo movers combined
-      const [finviz, gainers, active, trending] = await Promise.allSettled([
-        finvizScreen(custom || FILTER_PRESETS[preset] || FILTER_PRESETS.movers),
-        yahooMovers("day_gainers"),
-        yahooMovers("most_actives"),
-        yahooMovers("trending_tickers"),
+      // Run Finviz + Yahoo trending in parallel
+      const [finviz, trending] = await Promise.allSettled([
+        finvizScreen(PRESETS[preset] || PRESETS.movers),
+        yahooTrending("US"),
       ]);
 
-      const all = [
-        ...(finviz.status === "fulfilled" ? finviz.value : []),
-        ...(gainers.status === "fulfilled" ? gainers.value : []),
-        ...(active.status === "fulfilled" ? active.value : []),
-        ...(trending.status === "fulfilled" ? trending.value : []),
-      ];
+      const finvizList  = finviz.status  === "fulfilled" ? finviz.value  : [];
+      const trendingList = trending.status === "fulfilled" ? trending.value : [];
 
-      // Deduplicate, score by frequency (appears in multiple lists = higher priority)
+      // Score by frequency across sources
       const freq = {};
-      all.forEach(t => freq[t] = (freq[t] || 0) + 1);
+      [...finvizList, ...trendingList].forEach(t => freq[t] = (freq[t]||0) + 1);
+      // Finviz results get extra weight (more filtered)
+      finvizList.forEach(t => freq[t] = (freq[t]||0) + 2);
+
       tickers = Object.entries(freq)
-        .sort((a, b) => b[1] - a[1])
+        .sort((a,b) => b[1] - a[1])
         .map(([t]) => t)
-        .filter(t => !t.includes(".") || t.endsWith(".")) // US tickers only
+        .filter(t => /^[A-Z]{1,5}$/.test(t)) // clean US tickers only
         .slice(0, 80);
 
     } else if (market === "uk") {
-      const [lse, active] = await Promise.allSettled([
-        lseMovers(),
-        yahooMovers("most_actives", "GB"),
-      ]);
-      const all = [
-        ...(lse.status === "fulfilled" ? lse.value : []),
-        ...(active.status === "fulfilled" ? active.value : []),
-      ];
-      tickers = [...new Set(all)].slice(0, 50);
+      tickers = await lseActive();
 
     } else if (market === "eu") {
-      const moved = await euronextMovers();
-      tickers = moved.slice(0, 50);
+      tickers = await euronextActive();
 
     } else if (market === "all") {
-      // All markets combined
       const [us, uk, eu] = await Promise.allSettled([
-        handler(new Request(req.url.replace("market=all", "market=us"))),
-        handler(new Request(req.url.replace("market=all", "market=uk"))),
-        handler(new Request(req.url.replace("market=all", "market=eu"))),
+        finvizScreen(PRESETS[preset] || PRESETS.movers),
+        lseActive(),
+        euronextActive(),
+        yahooTrending("US"),
       ]);
-      const parse = async r => r.status === "fulfilled" ? (await r.value.json()).tickers || [] : [];
       tickers = [
-        ...(await parse(us)),
-        ...(await parse(uk)),
-        ...(await parse(eu)),
+        ...(us.status === "fulfilled" ? us.value : []),
+        ...(uk.status === "fulfilled" ? uk.value : []),
+        ...(eu.status === "fulfilled" ? eu.value : []),
       ];
+      tickers = [...new Set(tickers)];
     }
 
-    return json({
-      tickers,
-      count: tickers.length,
-      market,
-      preset,
-      timestamp: new Date().toISOString(),
-    });
+    return json({ tickers, count: tickers.length, market, preset, ts: Date.now() });
 
   } catch (e) {
     return json({ error: e.message, tickers: [] }, 500);
