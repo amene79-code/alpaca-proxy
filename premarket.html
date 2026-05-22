@@ -584,7 +584,7 @@ function renderWatchlist(items){
             <b style="font-size:14px;color:${item.direction==="bullish"?"#4ade80":"#f87171"}">${item.ticker}</b>
             <span style="font-size:11px;color:#9090c0">${item.company}</span>
             <span style="font-size:9px;padding:2px 7px;border-radius:4px;background:#1c1c30;color:${typeColors[item.type]||"#dde1f0"}">${item.type}</span>
-            ${item.earningsDaysAway<=3?`<span style="font-size:9px;color:#f87171;font-weight:700">⚠ EARNINGS ${item.earningsDaysAway}d</span>`:""}
+            ${item.earningsDaysAway!=null&&item.earningsDaysAway<=7?`<span style="font-size:9px;color:#f87171;font-weight:700">⚠ EARNINGS ${item.earningsDaysAway}d</span>`:""}
           </div>
           <div style="font-size:12px;color:#dde1f0;margin-bottom:6px">${item.catalyst}</div>
           <div style="font-size:11px;color:#818cf8;margin-bottom:6px">📍 ${item.entryStrategy}</div>
