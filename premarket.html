@@ -155,6 +155,17 @@ label{color:#9090c0}
     <div id="earningsToday"></div>
   </div>
 
+  <!-- Pre-market volume spikes -->
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <div class="micro" style="margin:0">📊 Pre-Market Volume Spikes <span style="color:#555580;font-size:8px">(vs expected pre-market volume)</span></div>
+      <span id="volSpikeNote" style="font-size:9px;color:#555580"></span>
+    </div>
+    <div id="volumeSpikes" style="display:flex;flex-wrap:wrap;gap:8px">
+      <span style="color:#333;font-size:12px">Requires Finnhub API key</span>
+    </div>
+  </div>
+
   <!-- Pre-market movers -->
   <div class="card">
     <div class="micro">⚡ Pre-Market Movers (already trading)</div>
@@ -404,6 +415,32 @@ function renderResults(d){
         </div>
       </div>`).join("")
     :`<div style="color:#333;font-size:12px">No earnings data — add Finnhub API key</div>`;
+
+  // Volume spikes
+  const volSpikes=d.volumeSpikes||[];
+  const volEl=document.getElementById("volumeSpikes");
+  if(volSpikes.length){
+    document.getElementById("volSpikeNote").textContent=`${volSpikes.length} stocks with unusual pre-market volume`;
+    volEl.innerHTML=volSpikes.map(v=>{
+      const col=v.spike>=5?"#f87171":v.spike>=3?"#f59e0b":"#4ade80";
+      return `<div style="background:#0c0c18;border:1px solid ${col}40;border-radius:8px;padding:8px 12px;min-width:120px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+          <b style="color:${col};font-size:13px">${v.ticker}</b>
+          <span style="font-size:11px;font-weight:700;color:${col}">${v.spike}x</span>
+        </div>
+        <div style="font-size:9px;color:#555580;margin-top:3px">
+          PM vol: ${(v.pmVolume/1000).toFixed(0)}k · Avg: ${(v.avgPmVolume/1000).toFixed(0)}k
+        </div>
+        <div style="height:3px;background:#1c1c30;border-radius:2px;margin-top:5px;overflow:hidden">
+          <div style="height:3px;background:${col};border-radius:2px;width:${Math.min(100,v.spike*10)}%"></div>
+        </div>
+      </div>`;
+    }).join("");
+  } else if(d.earningsNote||!document.getElementById("finnhubKey").value.trim()){
+    volEl.innerHTML=`<span style="color:#333;font-size:12px">Add Finnhub API key for pre-market volume data</span>`;
+  } else {
+    volEl.innerHTML=`<span style="color:#555580;font-size:12px">No significant volume spikes detected</span>`;
+  }
 
   // Pre-market movers
   document.getElementById("premarketMovers").innerHTML=(d.premarketMovers||[]).length?
