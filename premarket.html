@@ -458,35 +458,17 @@ async function runClaudeSynthesis(){
   const premarket=(scanData.premarketMovers||[]).slice(0,8).join(", ");
   const reddit=(scanData.reddit?.tickers||[]).slice(0,8).map(t=>t.ticker).join(", ");
 
-  const prompt=`You are a pre-market trading analyst. Today's pre-market intelligence:
+  const prompt=`Pre-market intelligence for today's NYSE session:
 
-TOP RANKED TICKERS (combined score): ${ranked}
+TOP RANKED: ${ranked}
 EARNINGS TODAY: ${earnings||"none"}
 PRE-MARKET MOVERS: ${premarket||"none"}
-REDDIT WSB TRENDING: ${reddit||"none"}
+REDDIT WSB: ${reddit||"none"}
 
-Search the web for the latest news on the top 8 tickers. Then produce a ranked watchlist of the best 6-8 opportunities for today's NYSE session.
+Search web for latest news on top 6 tickers. Return ranked watchlist as JSON array starting with [:
+[{"rank":1,"ticker":"NVDA","company":"NVIDIA","type":"momentum","direction":"bullish","catalyst":"one sentence","entryStrategy":"specific tip e.g. wait 15m pullback, enter above VWAP","watchPrice":900,"confidence":80,"risk":"Medium","sources":["Pre-market"],"earningsDaysAway":45}]
 
-Return ONLY a JSON array starting with [:
-[{
-  "rank": 1,
-  "ticker": "NVDA",
-  "company": "NVIDIA Corp",
-  "type": "momentum",
-  "direction": "bullish",
-  "catalyst": "one sentence explaining why this is interesting today",
-  "entryStrategy": "specific entry tip e.g. wait for 15m pullback after open, enter above VWAP on bull flag",
-  "watchPrice": 900,
-  "confidence": 80,
-  "risk": "Medium",
-  "sources": ["Pre-market mover","Reddit WSB"],
-  "earningsDaysAway": 45
-}]
-
-type: earnings | momentum | news | social | insider
-direction: bullish | bearish
-confidence: 0-100
-Start with [`;
+type: earnings|momentum|news|social|insider. Max 6 items. Start with [`;
 
   try{
     await new Promise(r=>setTimeout(r,3000));
@@ -495,7 +477,7 @@ Start with [`;
       headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
       body:JSON.stringify({
         model:"claude-sonnet-4-5-20250929",
-        max_tokens:1200,
+        max_tokens:2000,
         tools:[{type:"web_search_20250305",name:"web_search"}],
         messages:[{role:"user",content:prompt}]
       })
@@ -504,14 +486,38 @@ Start with [`;
     const data=await resp.json();
     const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").replace(/```json|```/g,"").trim();
     const s=text.indexOf("["),e=text.lastIndexOf("]");
+
+    let watchlist=null;
+
+    // Strategy 1: clean parse
     if(s!==-1&&e>s){
-      const watchlist=JSON.parse(text.slice(s,e+1));
-      renderWatchlist(watchlist);
-      setStatus(`✓ AI watchlist generated — ${watchlist.length} opportunities ranked`,"#4ade80");
-      if(document.getElementById("saveToProAgent").checked) saveWatchlist();
-    }else{
-      throw new Error("Could not parse AI response");
+      try{ watchlist=JSON.parse(text.slice(s,e+1)); }catch{}
     }
+
+    // Strategy 2: salvage truncated array — find last complete object
+    if(!watchlist&&s!==-1){
+      const lastClose=text.lastIndexOf("}");
+      if(lastClose>s){
+        try{ watchlist=JSON.parse(text.slice(s,lastClose+1)+"]"); }catch{}
+      }
+    }
+
+    // Strategy 3: extract individual objects
+    if(!watchlist){
+      const objRe=/\{[^{}]*"ticker"[^{}]*\}/g;
+      const objs=[];
+      let m;
+      while((m=objRe.exec(text))!==null){
+        try{objs.push(JSON.parse(m[0]));}catch{}
+      }
+      if(objs.length) watchlist=objs;
+    }
+
+    if(!watchlist||!watchlist.length) throw new Error("Could not parse AI response — try again");
+
+    renderWatchlist(watchlist);
+    setStatus(`✓ AI watchlist generated — ${watchlist.length} opportunities ranked`,"#4ade80");
+    if(document.getElementById("saveToProAgent").checked) saveWatchlist();
   }catch(e){
     setStatus("✗ AI synthesis failed: "+e.message,"#f87171");
   }finally{
