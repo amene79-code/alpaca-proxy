@@ -552,7 +552,7 @@ function renderWatchlist(items){
           <div style="font-size:12px;color:#dde1f0;margin-bottom:6px">${item.catalyst}</div>
           <div style="font-size:11px;color:#818cf8;margin-bottom:6px">📍 ${item.entryStrategy}</div>
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-            <span style="font-size:10px;color:#555580">Watch: <b style="color:#f59e0b">$${item.watchPrice}</b></span>
+            <span style="font-size:10px;color:#555580">Watch: <b style="color:#f59e0b">${item.watchPrice?`$${item.watchPrice}`:"—"}</b></span>
             <span style="font-size:10px;color:#555580">Risk: ${item.risk}</span>
             <div style="display:flex;gap:4px">${(item.sources||[]).map(s=>{
               const cls=s.toLowerCase().includes("earning")?"src-earnings":s.toLowerCase().includes("reddit")?"src-reddit":s.toLowerCase().includes("pre-market")?"src-premarket":s.toLowerCase().includes("stocktwits")?"src-stwits":s.toLowerCase().includes("news")?"src-news":"src-insider";
