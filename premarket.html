@@ -458,19 +458,6 @@ async function runClaudeSynthesis(){
   const premarket=(scanData.premarketMovers||[]).slice(0,8).join(", ");
   const reddit=(scanData.reddit?.tickers||[]).slice(0,8).map(t=>t.ticker).join(", ");
 
-  const prompt=`Pre-market intelligence for today's NYSE session:
-
-TOP RANKED: ${ranked}
-EARNINGS TODAY: ${earnings||"none"}
-PRE-MARKET MOVERS: ${premarket||"none"}
-REDDIT WSB: ${reddit||"none"}
-
-Search web for latest news on top 6 tickers. Return ranked watchlist as JSON array starting with [:
-[{"rank":1,"ticker":"NVDA","company":"NVIDIA","type":"momentum","direction":"bullish","catalyst":"one sentence","entryStrategy":"specific tip e.g. wait 15m pullback, enter above VWAP","watchPrice":900,"confidence":80,"risk":"Medium","sources":["Pre-market"],"earningsDaysAway":45}]
-
-type: earnings|momentum|news|social|insider. Max 6 items. Start with [`;
-
-  try{
   const searchPrompt=`Search the web for latest news on these stocks today: ${ranked.split(",").slice(0,5).join(",")}. For each give: latest catalyst, direction, entry strategy for NYSE open.`;
 
   const formatPrompt=`Based on this pre-market data, create a trading watchlist.
