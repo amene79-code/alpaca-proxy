@@ -173,20 +173,29 @@ async function stocktwitsTrending() {
 
 // ── Finviz pre-market movers ──────────────────────────────────────
 async function finvizPremarket() {
-  // sh_curvol_o10 = current pre-market volume > 10k
-  const url = "https://finviz.com/screener.ashx?v=111&f=sh_curvol_o10,sh_price_o1&ft=4&o=-relativevolume";
-  try {
-    const r = await fetch(url, {
-      headers: { "User-Agent": UA, "Accept": "text/html", "Referer": "https://finviz.com/" },
-    });
-    if (!r.ok) return [];
-    const html = await r.text();
-    const tickers = new Set();
-    const re = /quote\.ashx\?t=([A-Z]{1,5})[&"]/g;
-    let m;
-    while ((m = re.exec(html)) !== null) tickers.add(m[1]);
-    return [...tickers].slice(0, 30);
-  } catch { return []; }
+  // sh_curvol_o5 = current volume > 5k (lower threshold for pre-market)
+  // Try multiple filters from strict to loose
+  const filters = [
+    "sh_curvol_o5,sh_price_o1",
+    "sh_curvol_o1,sh_price_o1",
+    "sh_relvol_o3,sh_price_o1",
+  ];
+  for (const f of filters) {
+    try {
+      const url = `https://finviz.com/screener.ashx?v=111&f=${f}&ft=4&o=-relativevolume`;
+      const r = await fetch(url, {
+        headers: { "User-Agent": UA, "Accept": "text/html", "Referer": "https://finviz.com/" },
+      });
+      if (!r.ok) continue;
+      const html = await r.text();
+      const tickers = new Set();
+      const re = /quote\.ashx\?t=([A-Z]{1,5})[&"]/g;
+      let m;
+      while ((m = re.exec(html)) !== null) tickers.add(m[1]);
+      if (tickers.size > 0) return [...tickers].slice(0, 30);
+    } catch { continue; }
+  }
+  return [];
 }
 
 // ── Main handler ──────────────────────────────────────────────────
