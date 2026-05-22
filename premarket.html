@@ -1,281 +1,547 @@
-export const config = { runtime: "edge" };
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Market Intelligence</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#08080f;color:#dde1f0;font-family:ui-monospace,monospace;padding:16px;min-height:100vh}
+h1{font-family:system-ui,sans-serif;font-weight:800;font-size:1.4rem;background:linear-gradient(90deg,#f59e0b,#ec4899,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.03em}
+.card{background:#10101c;border:1px solid #1c1c30;border-radius:12px;padding:16px;margin-bottom:12px}
+.micro{font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#555580;margin-bottom:10px}
+input,select{background:#08080f;border:1px solid #252540;color:#dde1f0;padding:8px 12px;border-radius:8px;font-family:inherit;font-size:12px;width:100%;outline:none}
+input:focus,select:focus{border-color:#f59e0b}
+button{background:#10101c;border:1px solid #252540;color:#8888bb;padding:9px 14px;border-radius:8px;font-family:inherit;font-size:12px;cursor:pointer;transition:all 0.15s}
+button:hover{border-color:#4a4a6a;color:#dde1f0}
+.btn-scan{background:linear-gradient(135deg,#92400e,#f59e0b);border:none;color:#000;font-weight:800;font-size:14px;padding:14px;border-radius:10px;width:100%;cursor:pointer;letter-spacing:0.04em}
+.btn-claude{background:linear-gradient(135deg,#6d28d9,#8b5cf6);border:none;color:#fff;font-weight:700;font-size:13px;padding:12px;border-radius:10px;width:100%;cursor:pointer;margin-top:10px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.fl{font-size:9px;color:#555580;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{display:inline-block;width:10px;height:10px;border:2px solid #333;border-top-color:#f59e0b;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;margin-right:5px}
 
-const CORS = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, x-finnhub-key",
-};
+/* Ticker chips */
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;cursor:pointer;transition:all 0.15s;border:1px solid transparent}
+.chip:hover{transform:translateY(-1px)}
+.chip-earnings{background:#1a1005;color:#f59e0b;border-color:#92400e50}
+.chip-premarket{background:#0d1a0d;color:#4ade80;border-color:#16653450}
+.chip-reddit{background:#1a0d05;color:#fb923c;border-color:#92400e40}
+.chip-stwits{background:#0d0d1a;color:#818cf8;border-color:#4f46e540}
+.chip-news{background:#1a0d1a;color:#e879f9;border-color:#86198f40}
+.chip-insider{background:#0d1a1a;color:#7efff5;border-color:#0f766e40}
+.chip-combined{background:#1a1205;color:#fbbf24;border-color:#b45309;font-size:12px;padding:7px 13px}
 
-function json(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status, headers: { ...CORS, "Content-Type": "application/json" },
-  });
+/* Earnings table */
+.earn-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #121225;flex-wrap:wrap;gap:6px;font-size:12px}
+.earn-row:last-child{border-bottom:none}
+.surprise-pos{color:#4ade80;font-weight:700}
+.surprise-neg{color:#f87171;font-weight:700}
+.bmo{color:#f59e0b;font-size:10px}
+.amc{color:#818cf8;font-size:10px}
+
+/* News items */
+.news-item{padding:10px 0;border-bottom:1px solid #121225;font-size:12px;line-height:1.5}
+.news-item:last-child{border-bottom:none}
+.news-source{font-size:9px;color:#555580;text-transform:uppercase;letter-spacing:0.08em}
+.news-time{font-size:9px;color:#555580}
+
+/* Watchlist items */
+.wl-item{background:#0c0c18;border:1px solid #1c1c30;border-radius:10px;padding:12px;margin-bottom:8px}
+.wl-rank{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;background:#1c1c30;color:#dde1f0;flex-shrink:0}
+.wl-bull{border-left:3px solid #4ade80}
+.wl-bear{border-left:3px solid #f87171}
+.progress{background:#1a1a2e;border-radius:4px;height:4px;overflow:hidden;margin-top:6px}
+.progress-fill{height:4px;border-radius:4px}
+
+/* Countdown */
+.countdown{font-size:32px;font-weight:800;font-family:system-ui;letter-spacing:-0.04em}
+.countdown-label{font-size:10px;color:#555580;text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
+
+/* Source badges */
+.src{font-size:9px;padding:2px 6px;border-radius:4px;font-weight:600;text-transform:uppercase}
+.src-earnings{background:#1a1005;color:#f59e0b}
+.src-reddit{background:#1a0d05;color:#fb923c}
+.src-premarket{background:#0d1a0d;color:#4ade80}
+.src-stwits{background:#0d0d1a;color:#818cf8}
+.src-news{background:#1a0d1a;color:#e879f9}
+.src-insider{background:#0d1a1a;color:#7efff5}
+
+label{color:#9090c0}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+  <div>
+    <h1>PRE-MARKET INTELLIGENCE</h1>
+    <div style="font-size:9px;color:#555580;letter-spacing:0.12em;text-transform:uppercase">Earnings · News · Reddit · Stocktwits · Pre-market movers</div>
+  </div>
+  <div style="text-align:right">
+    <div class="countdown" id="countdown" style="color:#f59e0b">—</div>
+    <div class="countdown-label" id="countdownLabel">to NYSE open</div>
+  </div>
+</div>
+
+<!-- Config -->
+<div class="card" id="configPanel">
+  <div class="micro">🔗 Config</div>
+  <div class="g2">
+    <div><div class="fl">Proxy URL</div><input id="proxyUrl" value="https://alpaca-proxy-alpha.vercel.app"></div>
+    <div><div class="fl">Anthropic API Key</div><input id="anthropicKey" type="password" placeholder="sk-ant-… (for AI synthesis)"></div>
+  </div>
+  <div class="g2">
+    <div><div class="fl">Finnhub API Key <a href="https://finnhub.io/register" target="_blank" style="color:#f59e0b;font-size:9px;margin-left:4px">get free key →</a></div>
+      <input id="finnhubKey" type="password" placeholder="Free at finnhub.io — earnings calendar + news">
+    </div>
+    <div><div class="fl">Auto-scan time (UK)</div>
+      <input id="autoScanTime" type="time" value="10:00" title="Run automatically at this time every weekday">
+    </div>
+  </div>
+  <div style="display:flex;gap:10px;margin-top:4px;flex-wrap:wrap">
+    <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer">
+      <input type="checkbox" id="autoScan" checked style="width:auto;accent-color:#f59e0b"> Auto-scan on weekdays
+    </label>
+    <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer">
+      <input type="checkbox" id="saveToProAgent" checked style="width:auto;accent-color:#4ade80"> Save watchlist → Pro Agent
+    </label>
+  </div>
+</div>
+
+<!-- Scan button -->
+<button class="btn-scan" id="scanBtn" onclick="runScan()">🔍 RUN PRE-MARKET SCAN</button>
+
+<!-- Status -->
+<div id="scanStatus" style="font-size:11px;color:#555580;text-align:center;margin:8px 0;min-height:16px"></div>
+
+<!-- Results — hidden until scan runs -->
+<div id="results" style="display:none">
+
+  <!-- Ranked watchlist (Claude output) -->
+  <div class="card" id="watchlistCard" style="display:none">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+      <div>
+        <div class="micro" style="margin:0">🎯 Today's Watchlist</div>
+        <div id="watchlistMeta" style="font-size:10px;color:#555580;margin-top:3px"></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button onclick="saveWatchlist()" style="font-size:11px;padding:5px 12px;color:#4ade80;border-color:#166534">💾 Save to Pro Agent</button>
+        <button onclick="clearWatchlist()" style="font-size:11px;padding:5px 12px;color:#f87171;border-color:#7f1d1d">✕ Clear</button>
+      </div>
+    </div>
+    <div id="watchlistItems"></div>
+  </div>
+
+  <!-- AI synthesis button -->
+  <button class="btn-claude" id="claudeBtn" onclick="runClaudeSynthesis()" style="display:none">
+    🤖 Generate AI Watchlist with Entry Strategies
+  </button>
+
+  <!-- Top ranked tickers -->
+  <div class="card">
+    <div class="micro">🏆 Combined Signal Score — all sources</div>
+    <div id="rankedTickers" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+  </div>
+
+  <!-- Today's earnings -->
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <div class="micro" style="margin:0">📅 Earnings Today & Tomorrow</div>
+      <span id="earningsCount" style="font-size:10px;color:#f59e0b"></span>
+    </div>
+    <div id="earningsToday"></div>
+  </div>
+
+  <!-- Pre-market movers -->
+  <div class="card">
+    <div class="micro">⚡ Pre-Market Movers (already trading)</div>
+    <div id="premarketMovers" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+  </div>
+
+  <!-- Social signals -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div class="card">
+      <div class="micro">🔴 Reddit WSB Hot</div>
+      <div id="redditTickers" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+    </div>
+    <div class="card">
+      <div class="micro">💬 Stocktwits Trending</div>
+      <div id="stwTickers" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+    </div>
+  </div>
+
+  <!-- Insider buys -->
+  <div class="card" id="insiderCard" style="display:none">
+    <div class="micro">🏦 Recent Insider Buys</div>
+    <div id="insiderItems"></div>
+  </div>
+
+  <!-- Overnight news -->
+  <div class="card">
+    <div class="micro">📰 Overnight Market News</div>
+    <div id="newsItems"></div>
+  </div>
+
+</div>
+
+<!-- Saved watchlist indicator -->
+<div id="savedIndicator" style="display:none" class="card" style="border-color:#16653440">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <div>
+      <div class="micro" style="margin:0;color:#4ade80">✓ Watchlist saved to Pro Agent</div>
+      <div id="savedList" style="font-size:11px;color:#9090c0;margin-top:4px"></div>
+    </div>
+    <button onclick="clearWatchlist()" style="font-size:10px;padding:3px 8px;color:#f87171;border-color:#7f1d1d">Clear</button>
+  </div>
+</div>
+
+<p style="margin-top:16px;font-size:10px;color:#14142a;text-align:center">⚠ Not financial advice. Pre-market data may be incomplete or delayed.</p>
+
+<script>
+// ═══ Key storage ══════════════════════════════════════════════════
+const SK="premarket_keys";
+function saveKeys(){
+  try{localStorage.setItem(SK,JSON.stringify({
+    proxyUrl:document.getElementById("proxyUrl").value.trim(),
+    anthropicKey:document.getElementById("anthropicKey").value.trim(),
+    finnhubKey:document.getElementById("finnhubKey").value.trim(),
+  }));}catch(e){}
 }
-
-const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
-
-// ── Finnhub earnings calendar ─────────────────────────────────────
-async function finnhubEarnings(apiKey, from, to) {
-  const url = `https://finnhub.io/api/v1/calendar/earnings?from=${from}&to=${to}&token=${apiKey}`;
-  const r = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!r.ok) throw new Error(`Finnhub earnings ${r.status}`);
-  const d = await r.json();
-  return (d.earningsCalendar || []).map(e => ({
-    ticker:   e.symbol,
-    date:     e.date,
-    epsEst:   e.epsEstimate,
-    epsAct:   e.epsActual,
-    revEst:   e.revenueEstimate,
-    revAct:   e.revenueActual,
-    hour:     e.hour, // bmo = before market open, amc = after market close
-    surprise: e.epsEstimate && e.epsActual
-      ? +((e.epsActual - e.epsEstimate) / Math.abs(e.epsEstimate) * 100).toFixed(1)
-      : null,
-  }));
+function loadKeys(){
+  try{
+    // Try premarket keys, fall back to pro agent keys
+    const raw=localStorage.getItem(SK)||localStorage.getItem("pro_agent_keys");
+    if(!raw) return;
+    const d=JSON.parse(raw);
+    if(d.proxyUrl)     document.getElementById("proxyUrl").value=d.proxyUrl;
+    if(d.anthropicKey) document.getElementById("anthropicKey").value=d.anthropicKey;
+    if(d.finnhubKey)   document.getElementById("finnhubKey").value=d.finnhubKey;
+  }catch(e){}
 }
+window.addEventListener("load",()=>{loadKeys();updateCountdown();checkSavedWatchlist();startAutoScan();});
 
-// ── Finnhub market news ───────────────────────────────────────────
-async function finnhubNews(apiKey) {
-  const url = `https://finnhub.io/api/v1/news?category=general&minId=0&token=${apiKey}`;
-  const r = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!r.ok) return [];
-  const items = await r.json();
-  return (items || []).slice(0, 20).map(n => ({
-    headline: n.headline,
-    summary:  n.summary?.slice(0, 200),
-    url:      n.url,
-    source:   n.source,
-    datetime: n.datetime,
-    related:  n.related, // ticker string e.g. "AAPL,MSFT"
-  }));
-}
+// ═══ Countdown ════════════════════════════════════════════════════
+function updateCountdown(){
+  const now=new Date();
+  const et=new Date(now.toLocaleString("en-US",{timeZone:"America/New_York"}));
+  const day=et.getDay();
+  const label=document.getElementById("countdownLabel");
+  const cd=document.getElementById("countdown");
 
-// ── Finnhub insider transactions (unusual buying = bullish signal) ─
-async function finnhubInsiders(apiKey) {
-  const url = `https://finnhub.io/api/v1/stock/insider-transactions?symbol=&token=${apiKey}`;
-  // Use market-wide insider endpoint to find recent buy signals
-  const from = new Date(Date.now() - 3 * 86400000).toISOString().slice(0, 10);
-  const url2 = `https://finnhub.io/api/v1/stock/insider-transactions?from=${from}&token=${apiKey}`;
-  try {
-    const r = await fetch(url2, { headers: { "User-Agent": UA } });
-    if (!r.ok) return [];
-    const d = await r.json();
-    // Filter for buys only
-    return (d.data || [])
-      .filter(t => t.transactionType === "P" || t.transactionType === "Buy")
-      .slice(0, 10)
-      .map(t => ({ ticker: t.symbol, name: t.name, shares: t.share, value: t.value, date: t.date }));
-  } catch { return []; }
-}
-
-// ── Reddit WSB — multiple fallback strategies ─────────────────────
-async function redditWSB() {
-  const blacklist = new Set([
-    "THE","AND","FOR","ARE","BUT","NOT","YOU","ALL","CAN","WAS","ONE","OUR",
-    "OUT","NOW","GOT","GET","PUT","CEO","IPO","SEC","FDA","EPS","ETF","NYSE",
-    "WSB","DD","YOLO","IMO","LOL","OMG","GDP","ATH","ATL","USD","BTC","ETH",
-    "EDIT","TLDR","DRS","SPY","QQQ","IWM","VIX","CALLS","PUTS","ITM","OTM",
-    "ATM","DTE","IV","EV","AI","ML","US","UK","EU","AP","PM","AM","OP","RE",
-    "HOLD","BUY","SELL","LONG","SHORT","THIS","THAT","WITH","FROM","HAVE",
-    "BEEN","WILL","YOUR","THEY","WHEN","WHAT","SOME","MORE","ALSO","INTO",
-  ]);
-
-  function extractTickers(text, mentions) {
-    const re = /\$([A-Z]{1,5})|(?<![A-Za-z])([A-Z]{2,5})(?![A-Za-z])/g;
-    let m;
-    while ((m = re.exec(text)) !== null) {
-      const t = (m[1] || m[2]).toUpperCase();
-      if (!t || blacklist.has(t) || t.length < 2 || t.length > 5) continue;
-      mentions[t] = (mentions[t] || 0) + (m[1] ? 3 : 1);
-    }
+  // Is market open?
+  const mins=et.getHours()*60+et.getMinutes();
+  if(day>0&&day<6&&mins>=9*60+30&&mins<16*60){
+    cd.textContent="OPEN";cd.style.color="#4ade80";
+    label.textContent="NYSE is open";
+    return;
   }
 
-  const mentions = {};
-  let debugInfo = [];
+  // Next open
+  const nextOpen=new Date(et);
+  nextOpen.setHours(9,30,0,0);
+  if(mins>=9*60+30||day===0||day===6){
+    nextOpen.setDate(nextOpen.getDate()+(day===5?3:day===6?2:1));
+  }
+  const diffMs=nextOpen-et;
+  const h=Math.floor(diffMs/3600000);
+  const m=Math.floor((diffMs%3600000)/60000);
+  const s=Math.floor((diffMs%60000)/1000);
+  cd.textContent=`${h}h ${m}m`;
+  cd.style.color=h<2?"#f59e0b":"#818cf8";
+  label.textContent=h<2?"NYSE opens soon — scan now!":"to NYSE open";
+}
+setInterval(updateCountdown,10000);
 
-  // Strategy 1: Reddit RSS
-  try {
-    const r = await fetch("https://www.reddit.com/r/wallstreetbets/hot/.rss?limit=50", {
-      headers: { "User-Agent": "Mozilla/5.0", "Accept": "text/xml, application/xml, */*" },
-    });
-    debugInfo.push(`RSS: ${r.status}`);
-    if (r.ok) {
-      const xml = await r.text();
-      const re = /<title><!\[CDATA\[(.*?)\]\]><\/title>|<title>(.*?)<\/title>/g;
-      let m; let count = 0;
-      while ((m = re.exec(xml)) !== null) {
-        const t = (m[1] || m[2] || "").trim();
-        if (t && !t.toLowerCase().includes("wallstreetbets")) { extractTickers(t, mentions); count++; }
-      }
-      debugInfo.push(`RSS titles: ${count}`);
+// ═══ Auto-scan ════════════════════════════════════════════════════
+let autoTimer=null;
+function startAutoScan(){
+  clearInterval(autoTimer);
+  autoTimer=setInterval(()=>{
+    if(!document.getElementById("autoScan").checked) return;
+    const now=new Date();
+    const et=new Date(now.toLocaleString("en-US",{timeZone:"Europe/London"}));
+    const day=et.getDay();
+    if(day===0||day===6) return;
+    const targetTime=document.getElementById("autoScanTime").value;
+    const [th,tm]=targetTime.split(":").map(Number);
+    if(et.getHours()===th&&et.getMinutes()===tm&&et.getSeconds()<30){
+      runScan();
     }
-  } catch(e) { debugInfo.push(`RSS error: ${e.message}`); }
-
-  // Strategy 2: Reddit JSON with different headers
-  try {
-    const r = await fetch("https://www.reddit.com/r/wallstreetbets/hot.json?limit=25", {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept": "application/json",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Connection": "keep-alive",
-      },
-    });
-    debugInfo.push(`JSON: ${r.status}`);
-    if (r.ok) {
-      const d = await r.json();
-      const posts = d?.data?.children || [];
-      posts.forEach(p => extractTickers(p.data.title || "", mentions));
-      debugInfo.push(`JSON posts: ${posts.length}`);
-    }
-  } catch(e) { debugInfo.push(`JSON error: ${e.message}`); }
-
-  // Strategy 3: Yahoo Finance trending as Reddit fallback
-  // If Reddit is blocked, use Yahoo trending tickers as social proxy
-  try {
-    const r = await fetch("https://query1.finance.yahoo.com/v1/finance/trending/US?count=20", {
-      headers: { "User-Agent": "Mozilla/5.0" },
-    });
-    if (r.ok) {
-      const d = await r.json();
-      const quotes = d?.finance?.result?.[0]?.quotes || [];
-      quotes.forEach(q => {
-        if (q.symbol && /^[A-Z]{1,5}$/.test(q.symbol)) {
-          mentions[q.symbol] = (mentions[q.symbol] || 0) + 1.5;
-        }
-      });
-      debugInfo.push(`Yahoo trending: ${quotes.length}`);
-    }
-  } catch(e) { debugInfo.push(`Yahoo error: ${e.message}`); }
-
-  const tickers = Object.entries(mentions)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 20)
-    .map(([ticker, score]) => ({ ticker, score: Math.round(score * 10) / 10 }));
-
-  return { tickers, posts: [], debug: debugInfo.join(" | ") };
+  },15000);
 }
 
-// ── Stocktwits trending ───────────────────────────────────────────
-async function stocktwitsTrending() {
-  try {
-    const r = await fetch("https://api.stocktwits.com/api/2/trending/symbols/equities.json", {
-      headers: { "User-Agent": UA },
-    });
-    if (!r.ok) return [];
-    const d = await r.json();
-    return (d?.symbols || [])
-      .map(s => ({ ticker: s.symbol, watchlist: s.watchlist_count, title: s.title }))
-      .filter(s => /^[A-Z]{1,5}$/.test(s.ticker))
-      .slice(0, 20);
-  } catch { return []; }
+// ═══ Saved watchlist ══════════════════════════════════════════════
+const WL_KEY="premarket_watchlist";
+function checkSavedWatchlist(){
+  try{
+    const raw=localStorage.getItem(WL_KEY);
+    if(!raw) return;
+    const d=JSON.parse(raw);
+    if(d.tickers&&d.tickers.length){
+      document.getElementById("savedIndicator").style.display="block";
+      document.getElementById("savedList").textContent=
+        `${d.tickers.length} tickers saved ${d.date} · ${d.tickers.map(t=>t.ticker).join(", ")}`;
+    }
+  }catch{}
+}
+function saveWatchlist(){
+  const items=document.querySelectorAll(".wl-ticker");
+  const tickers=[...items].map(el=>({
+    ticker:el.dataset.ticker,
+    strategy:el.dataset.strategy||"",
+    direction:el.dataset.direction||"bullish",
+    confidence:+el.dataset.confidence||50,
+  }));
+  if(!tickers.length){alert("No watchlist generated yet — run AI synthesis first");return;}
+  const data={tickers,date:new Date().toLocaleDateString("en-GB"),ts:Date.now()};
+  localStorage.setItem(WL_KEY,JSON.stringify(data));
+  // Also set for pro agent to read
+  localStorage.setItem("premarket_watchlist_for_pro",JSON.stringify(data));
+  document.getElementById("savedIndicator").style.display="block";
+  document.getElementById("savedList").textContent=
+    `${tickers.length} tickers saved · ${tickers.map(t=>t.ticker).join(", ")}`;
+  setStatus("✓ Watchlist saved — Pro Agent will prioritise these tickers today","#4ade80");
+}
+function clearWatchlist(){
+  localStorage.removeItem(WL_KEY);
+  localStorage.removeItem("premarket_watchlist_for_pro");
+  document.getElementById("savedIndicator").style.display="none";
+  document.getElementById("watchlistCard").style.display="none";
 }
 
-// ── Finviz pre-market movers ──────────────────────────────────────
-async function finvizPremarket() {
-  // sh_curvol_o10 = current pre-market volume > 10k
-  const url = "https://finviz.com/screener.ashx?v=111&f=sh_curvol_o10,sh_price_o1&ft=4&o=-relativevolume";
-  try {
-    const r = await fetch(url, {
-      headers: { "User-Agent": UA, "Accept": "text/html", "Referer": "https://finviz.com/" },
-    });
-    if (!r.ok) return [];
-    const html = await r.text();
-    const tickers = new Set();
-    const re = /quote\.ashx\?t=([A-Z]{1,5})[&"]/g;
-    let m;
-    while ((m = re.exec(html)) !== null) tickers.add(m[1]);
-    return [...tickers].slice(0, 30);
-  } catch { return []; }
-}
+// ═══ Main scan ════════════════════════════════════════════════════
+let scanData=null;
 
-// ── Main handler ──────────────────────────────────────────────────
-export default async function handler(req) {
-  if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
+async function runScan(){
+  saveKeys();
+  const proxy=document.getElementById("proxyUrl").value.trim().replace(/\/$/,"");
+  const fk=document.getElementById("finnhubKey").value.trim();
 
-  const url      = new URL(req.url);
-  const finnhubKey = req.headers.get("x-finnhub-key") || url.searchParams.get("fk") || "";
-  const source   = url.searchParams.get("source") || "all";
+  document.getElementById("scanBtn").disabled=true;
+  document.getElementById("results").style.display="none";
+  setStatus('<span class="spinner"></span>Fetching pre-market intelligence…',"#f59e0b");
 
-  try {
-    const today    = new Date().toISOString().slice(0, 10);
-    const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
-    const nextWeek = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
-
-    const results = {};
-
-    if (source === "all" || source === "earnings") {
-      if (finnhubKey) {
-        const [todayEarnings, upcomingEarnings] = await Promise.allSettled([
-          finnhubEarnings(finnhubKey, today, tomorrow),
-          finnhubEarnings(finnhubKey, today, nextWeek),
-        ]);
-        results.earningsToday    = todayEarnings.status    === "fulfilled" ? todayEarnings.value    : [];
-        results.earningsUpcoming = upcomingEarnings.status === "fulfilled" ? upcomingEarnings.value : [];
-      } else {
-        results.earningsToday    = [];
-        results.earningsUpcoming = [];
-        results.earningsNote     = "Add Finnhub API key for earnings data";
+  try{
+    const r=await fetch(`${proxy}/api/premarket`,{
+      headers:{
+        "Content-Type":"application/json",
+        "x-finnhub-key":fk,
       }
-    }
-
-    if (source === "all" || source === "news") {
-      if (finnhubKey) {
-        const [news, insiders] = await Promise.allSettled([
-          finnhubNews(finnhubKey),
-          finnhubInsiders(finnhubKey),
-        ]);
-        results.news     = news.status     === "fulfilled" ? news.value     : [];
-        results.insiders = insiders.status === "fulfilled" ? insiders.value : [];
-      } else {
-        results.news = []; results.insiders = [];
-      }
-    }
-
-    if (source === "all" || source === "social") {
-      const [wsb, stwits, premarket] = await Promise.allSettled([
-        redditWSB(),
-        stocktwitsTrending(),
-        finvizPremarket(),
-      ]);
-      results.reddit      = wsb.status      === "fulfilled" ? wsb.value      : { tickers: [], posts: [] };
-      results.stocktwits  = stwits.status   === "fulfilled" ? stwits.value   : [];
-      results.premarketMovers = premarket.status === "fulfilled" ? premarket.value : [];
-    }
-
-    // Build combined ticker scores for quick ranking
-    const scores = {};
-    const addScore = (ticker, pts, source) => {
-      if (!/^[A-Z]{1,5}$/.test(ticker)) return;
-      scores[ticker] = scores[ticker] || { score: 0, sources: [] };
-      scores[ticker].score += pts;
-      if (!scores[ticker].sources.includes(source)) scores[ticker].sources.push(source);
-    };
-
-    // Earnings today = highest priority
-    (results.earningsToday || []).forEach(e => addScore(e.ticker, 5, "Earnings Today"));
-    (results.earningsUpcoming || []).slice(0, 10).forEach(e => addScore(e.ticker, 2, "Earnings Soon"));
-    // Pre-market movers = strong signal
-    (results.premarketMovers || []).forEach((t, i) => addScore(t, 3 - i * 0.1, "Pre-market"));
-    // Reddit WSB
-    (results.reddit?.tickers || []).forEach(t => addScore(t.ticker, t.score * 0.5, "Reddit WSB"));
-    // Stocktwits
-    (results.stocktwits || []).forEach((t, i) => addScore(t.ticker, 1.5 - i * 0.05, "Stocktwits"));
-    // News mentions
-    (results.news || []).forEach(n => {
-      if (n.related) n.related.split(",").forEach(t => addScore(t.trim(), 0.5, "News"));
     });
-    // Insider buys
-    (results.insiders || []).forEach(t => addScore(t.ticker, 1, "Insider Buy"));
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    scanData=await r.json();
+    renderResults(scanData);
+    setStatus(`✓ Scan complete — ${scanData.rankedTickers?.length||0} tickers ranked across all sources`,"#4ade80");
 
-    results.rankedTickers = Object.entries(scores)
-      .sort((a, b) => b[1].score - a[1].score)
-      .slice(0, 30)
-      .map(([ticker, data]) => ({ ticker, score: Math.round(data.score * 10) / 10, sources: data.sources }));
+    // Show AI synthesis button if Anthropic key available
+    const antKey=document.getElementById("anthropicKey").value.trim();
+    if(antKey) document.getElementById("claudeBtn").style.display="block";
 
-    return json(results);
-
-  } catch (e) {
-    return json({ error: e.message }, 500);
+  }catch(e){
+    setStatus("✗ Scan failed: "+e.message,"#f87171");
+  }finally{
+    document.getElementById("scanBtn").disabled=false;
   }
 }
+
+function setStatus(msg,color){
+  const el=document.getElementById("scanStatus");
+  el.innerHTML=msg; el.style.color=color||"#dde1f0";
+}
+
+// ═══ Render results ═══════════════════════════════════════════════
+function renderResults(d){
+  document.getElementById("results").style.display="block";
+
+  // Ranked tickers
+  const ranked=document.getElementById("rankedTickers");
+  ranked.innerHTML=(d.rankedTickers||[]).map(t=>{
+    const src=t.sources||[];
+    const cls=src.includes("Earnings Today")?"chip-earnings":src.includes("Pre-market")?"chip-premarket":src.includes("Reddit WSB")?"chip-reddit":"chip-stwits";
+    return `<div class="chip chip-combined ${cls}" onclick="toggleTicker('${t.ticker}',this)" title="${t.sources.join(", ")}">
+      ${t.ticker} <span style="font-size:9px;opacity:0.7">${t.score}</span>
+    </div>`;
+  }).join("");
+
+  // Earnings
+  const earnings=[...(d.earningsToday||[]),...(d.earningsUpcoming||[])];
+  const uniqueEarnings=[...new Map(earnings.map(e=>[e.ticker,e])).values()];
+  document.getElementById("earningsCount").textContent=`${uniqueEarnings.length} companies`;
+  document.getElementById("earningsToday").innerHTML=uniqueEarnings.length?
+    uniqueEarnings.slice(0,15).map(e=>`
+      <div class="earn-row">
+        <div style="display:flex;align-items:center;gap:8px">
+          <b style="color:#f59e0b;font-size:13px">${e.ticker}</b>
+          <span class="${e.hour==="bmo"?"bmo":"amc"}">${e.hour==="bmo"?"☀ Before open":"🌙 After close"}</span>
+          <span style="font-size:10px;color:#555580">${e.date}</span>
+        </div>
+        <div style="text-align:right;font-size:11px">
+          ${e.epsEst!=null?`<span style="color:#9090c0">Est: $${e.epsEst}</span>`:""}
+          ${e.surprise!=null?`<span class="${e.surprise>0?"surprise-pos":"surprise-neg"}"> ${e.surprise>0?"+":""}${e.surprise}%</span>`:""}
+        </div>
+      </div>`).join("")
+    :`<div style="color:#333;font-size:12px">No earnings data — add Finnhub API key</div>`;
+
+  // Pre-market movers
+  document.getElementById("premarketMovers").innerHTML=(d.premarketMovers||[]).length?
+    d.premarketMovers.map(t=>`<span class="chip chip-premarket">${t}</span>`).join("")
+    :`<span style="color:#333;font-size:12px">No pre-market movers detected yet</span>`;
+
+  // Reddit
+  document.getElementById("redditTickers").innerHTML=(d.reddit?.tickers||[]).slice(0,12)
+    .map(t=>`<span class="chip chip-reddit" title="Score: ${t.score}">${t.ticker}</span>`).join("") ||
+    `<span style="color:#333;font-size:12px">No Reddit data${d.reddit?.debug?` (${d.reddit.debug})`:""}</span>`;
+
+  // Stocktwits
+  document.getElementById("stwTickers").innerHTML=(d.stocktwits||[]).slice(0,12)
+    .map(t=>`<span class="chip chip-stwits" title="Watchlist: ${t.watchlist?.toLocaleString()}">${t.ticker}</span>`).join("") ||
+    `<span style="color:#333;font-size:12px">No Stocktwits data</span>`;
+
+  // Insider buys
+  if((d.insiders||[]).length){
+    document.getElementById("insiderCard").style.display="block";
+    document.getElementById("insiderItems").innerHTML=d.insiders.map(i=>`
+      <div class="earn-row">
+        <div><b style="color:#7efff5">${i.ticker}</b> <span style="color:#555580;font-size:10px">${i.name}</span></div>
+        <div style="font-size:11px;color:#4ade80">+${i.shares?.toLocaleString()} shares · $${(i.value/1000).toFixed(0)}k · ${i.date}</div>
+      </div>`).join("");
+  }
+
+  // News
+  document.getElementById("newsItems").innerHTML=(d.news||[]).length?
+    d.news.slice(0,8).map(n=>`
+      <div class="news-item">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+          <span class="news-source">${n.source||""}</span>
+          <span class="news-time">${n.datetime?new Date(n.datetime*1000).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}):""}</span>
+        </div>
+        <div style="color:#dde1f0;margin-bottom:4px">${n.headline}</div>
+        ${n.related?`<div style="display:flex;gap:4px;flex-wrap:wrap">${n.related.split(",").filter(t=>t.trim()).map(t=>`<span class="chip chip-news" style="font-size:9px;padding:2px 6px">${t.trim()}</span>`).join("")}</div>`:""}
+      </div>`).join("")
+    :`<div style="color:#333;font-size:12px">No news data — add Finnhub API key</div>`;
+}
+
+// ═══ Claude AI synthesis ══════════════════════════════════════════
+async function runClaudeSynthesis(){
+  if(!scanData) return;
+  const antKey=document.getElementById("anthropicKey").value.trim();
+  if(!antKey){alert("Enter Anthropic API key for AI synthesis");return;}
+
+  document.getElementById("claudeBtn").disabled=true;
+  setStatus('<span class="spinner"></span>Claude is analysing pre-market intelligence…',"#8b5cf6");
+
+  const ranked=(scanData.rankedTickers||[]).slice(0,15).map(t=>t.ticker).join(", ");
+  const earnings=(scanData.earningsToday||[]).slice(0,5).map(e=>`${e.ticker}(${e.hour==="bmo"?"before open":"after close"})`).join(", ");
+  const premarket=(scanData.premarketMovers||[]).slice(0,8).join(", ");
+  const reddit=(scanData.reddit?.tickers||[]).slice(0,8).map(t=>t.ticker).join(", ");
+
+  const prompt=`You are a pre-market trading analyst. Today's pre-market intelligence:
+
+TOP RANKED TICKERS (combined score): ${ranked}
+EARNINGS TODAY: ${earnings||"none"}
+PRE-MARKET MOVERS: ${premarket||"none"}
+REDDIT WSB TRENDING: ${reddit||"none"}
+
+Search the web for the latest news on the top 8 tickers. Then produce a ranked watchlist of the best 6-8 opportunities for today's NYSE session.
+
+Return ONLY a JSON array starting with [:
+[{
+  "rank": 1,
+  "ticker": "NVDA",
+  "company": "NVIDIA Corp",
+  "type": "momentum",
+  "direction": "bullish",
+  "catalyst": "one sentence explaining why this is interesting today",
+  "entryStrategy": "specific entry tip e.g. wait for 15m pullback after open, enter above VWAP on bull flag",
+  "watchPrice": 900,
+  "confidence": 80,
+  "risk": "Medium",
+  "sources": ["Pre-market mover","Reddit WSB"],
+  "earningsDaysAway": 45
+}]
+
+type: earnings | momentum | news | social | insider
+direction: bullish | bearish
+confidence: 0-100
+Start with [`;
+
+  try{
+    await new Promise(r=>setTimeout(r,3000));
+    const resp=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+      body:JSON.stringify({
+        model:"claude-sonnet-4-5-20250929",
+        max_tokens:1200,
+        tools:[{type:"web_search_20250305",name:"web_search"}],
+        messages:[{role:"user",content:prompt}]
+      })
+    });
+    if(!resp.ok){const e=await resp.json().catch(()=>{});throw new Error(e?.error?.message||"API error");}
+    const data=await resp.json();
+    const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").replace(/```json|```/g,"").trim();
+    const s=text.indexOf("["),e=text.lastIndexOf("]");
+    if(s!==-1&&e>s){
+      const watchlist=JSON.parse(text.slice(s,e+1));
+      renderWatchlist(watchlist);
+      setStatus(`✓ AI watchlist generated — ${watchlist.length} opportunities ranked`,"#4ade80");
+      if(document.getElementById("saveToProAgent").checked) saveWatchlist();
+    }else{
+      throw new Error("Could not parse AI response");
+    }
+  }catch(e){
+    setStatus("✗ AI synthesis failed: "+e.message,"#f87171");
+  }finally{
+    document.getElementById("claudeBtn").disabled=false;
+  }
+}
+
+function renderWatchlist(items){
+  document.getElementById("watchlistCard").style.display="block";
+  document.getElementById("watchlistMeta").textContent=
+    `Generated ${new Date().toLocaleTimeString("en-GB")} · ${items.length} opportunities`;
+
+  const typeColors={earnings:"#f59e0b",momentum:"#4ade80",news:"#e879f9",social:"#fb923c",insider:"#7efff5"};
+
+  document.getElementById("watchlistItems").innerHTML=items.map((item,i)=>`
+    <div class="wl-item ${item.direction==="bullish"?"wl-bull":"wl-bear"} wl-ticker"
+         data-ticker="${item.ticker}" data-strategy="${item.entryStrategy||""}"
+         data-direction="${item.direction}" data-confidence="${item.confidence}">
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div class="wl-rank">${item.rank||i+1}</div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+            <b style="font-size:14px;color:${item.direction==="bullish"?"#4ade80":"#f87171"}">${item.ticker}</b>
+            <span style="font-size:11px;color:#9090c0">${item.company}</span>
+            <span style="font-size:9px;padding:2px 7px;border-radius:4px;background:#1c1c30;color:${typeColors[item.type]||"#dde1f0"}">${item.type}</span>
+            ${item.earningsDaysAway<=3?`<span style="font-size:9px;color:#f87171;font-weight:700">⚠ EARNINGS ${item.earningsDaysAway}d</span>`:""}
+          </div>
+          <div style="font-size:12px;color:#dde1f0;margin-bottom:6px">${item.catalyst}</div>
+          <div style="font-size:11px;color:#818cf8;margin-bottom:6px">📍 ${item.entryStrategy}</div>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <span style="font-size:10px;color:#555580">Watch: <b style="color:#f59e0b">$${item.watchPrice}</b></span>
+            <span style="font-size:10px;color:#555580">Risk: ${item.risk}</span>
+            <div style="display:flex;gap:4px">${(item.sources||[]).map(s=>{
+              const cls=s.toLowerCase().includes("earning")?"src-earnings":s.toLowerCase().includes("reddit")?"src-reddit":s.toLowerCase().includes("pre-market")?"src-premarket":s.toLowerCase().includes("stocktwits")?"src-stwits":s.toLowerCase().includes("news")?"src-news":"src-insider";
+              return `<span class="src ${cls}">${s}</span>`;
+            }).join("")}</div>
+          </div>
+          <div class="progress" style="margin-top:8px">
+            <div class="progress-fill" style="width:${item.confidence}%;background:${item.confidence>70?"#4ade80":item.confidence>50?"#f59e0b":"#f87171"}"></div>
+          </div>
+          <div style="font-size:9px;color:#555580;margin-top:3px">Confidence: ${item.confidence}%</div>
+        </div>
+      </div>
+    </div>`).join("");
+}
+
+// Scroll to top of results on new scan
+function scrollToResults(){
+  document.getElementById("results").scrollIntoView({behavior:"smooth"});
+}
+</script>
+</body>
+</html>
