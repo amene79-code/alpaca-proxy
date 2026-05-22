@@ -471,52 +471,62 @@ Search web for latest news on top 6 tickers. Return ranked watchlist as JSON arr
 type: earnings|momentum|news|social|insider. Max 6 items. Start with [`;
 
   try{
-    await new Promise(r=>setTimeout(r,3000));
-    const resp=await fetch("https://api.anthropic.com/v1/messages",{
+  const searchPrompt=`Search the web for latest news on these stocks today: ${ranked.split(",").slice(0,5).join(",")}. For each give: latest catalyst, direction, entry strategy for NYSE open.`;
+
+  const formatPrompt=`Based on this pre-market data, create a trading watchlist.
+
+RANKED TICKERS: ${ranked}
+EARNINGS TODAY: ${earnings||"none"}
+PRE-MARKET MOVERS: ${premarket||"none"}
+REDDIT WSB: ${reddit||"none"}
+
+Return ONLY a JSON array of 5 stocks, starting with [:
+[{"rank":1,"ticker":"X","company":"Y","type":"momentum","direction":"bullish","catalyst":"why","entryStrategy":"how to enter","watchPrice":100,"confidence":75,"risk":"Medium","sources":["Pre-market"],"earningsDaysAway":99}]
+Start with [`;
+
+  try{
+    // Step 1: quick news search (small, targeted)
+    await new Promise(r=>setTimeout(r,5000));
+    const s1=await fetch("https://api.anthropic.com/v1/messages",{
       method:"POST",
       headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
       body:JSON.stringify({
         model:"claude-sonnet-4-5-20250929",
-        max_tokens:2000,
+        max_tokens:800,
         tools:[{type:"web_search_20250305",name:"web_search"}],
-        messages:[{role:"user",content:prompt}]
+        messages:[{role:"user",content:searchPrompt}]
       })
     });
-    if(!resp.ok){const e=await resp.json().catch(()=>{});throw new Error(e?.error?.message||"API error");}
-    const data=await resp.json();
-    const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").replace(/```json|```/g,"").trim();
+    if(!s1.ok){const e=await s1.json().catch(()=>{});throw new Error(e?.error?.message||"Search API error");}
+    const d1=await s1.json();
+    const newsContext=(d1.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").slice(0,1000);
+
+    // Step 2: format into JSON (no tools, pure formatting — fast and cheap)
+    await new Promise(r=>setTimeout(r,3000));
+    const s2=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","x-api-key":antKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+      body:JSON.stringify({
+        model:"claude-haiku-4-5-20251001",
+        max_tokens:1000,
+        messages:[{role:"user",content:formatPrompt+"\n\nNews context:\n"+newsContext}]
+      })
+    });
+    if(!s2.ok){const e=await s2.json().catch(()=>{});throw new Error(e?.error?.message||"Format API error");}
+    const d2=await s2.json();
+    const text=(d2.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").replace(/```json|```/g,"").trim();
+
     const s=text.indexOf("["),e=text.lastIndexOf("]");
-
     let watchlist=null;
-
-    // Strategy 1: clean parse
-    if(s!==-1&&e>s){
-      try{ watchlist=JSON.parse(text.slice(s,e+1)); }catch{}
-    }
-
-    // Strategy 2: salvage truncated array — find last complete object
-    if(!watchlist&&s!==-1){
-      const lastClose=text.lastIndexOf("}");
-      if(lastClose>s){
-        try{ watchlist=JSON.parse(text.slice(s,lastClose+1)+"]"); }catch{}
-      }
-    }
-
-    // Strategy 3: extract individual objects
+    if(s!==-1&&e>s) try{watchlist=JSON.parse(text.slice(s,e+1));}catch{}
     if(!watchlist){
-      const objRe=/\{[^{}]*"ticker"[^{}]*\}/g;
-      const objs=[];
-      let m;
-      while((m=objRe.exec(text))!==null){
-        try{objs.push(JSON.parse(m[0]));}catch{}
-      }
-      if(objs.length) watchlist=objs;
+      const last=text.lastIndexOf("}");
+      if(last>s) try{watchlist=JSON.parse(text.slice(s,last+1)+"]");}catch{}
     }
-
-    if(!watchlist||!watchlist.length) throw new Error("Could not parse AI response — try again");
+    if(!watchlist||!watchlist.length) throw new Error("Could not parse response — try again");
 
     renderWatchlist(watchlist);
-    setStatus(`✓ AI watchlist generated — ${watchlist.length} opportunities ranked`,"#4ade80");
+    setStatus(`✓ AI watchlist generated — ${watchlist.length} opportunities`,"#4ade80");
     if(document.getElementById("saveToProAgent").checked) saveWatchlist();
   }catch(e){
     setStatus("✗ AI synthesis failed: "+e.message,"#f87171");
