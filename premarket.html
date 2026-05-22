@@ -275,18 +275,35 @@ function startAutoScan(){
 
 // ═══ Saved watchlist ══════════════════════════════════════════════
 const WL_KEY="premarket_watchlist";
+const WL_RENDER_KEY="premarket_watchlist_render";
+
 function checkSavedWatchlist(){
   try{
-    const raw=localStorage.getItem(WL_KEY);
-    if(!raw) return;
-    const d=JSON.parse(raw);
-    if(d.tickers&&d.tickers.length){
-      document.getElementById("savedIndicator").style.display="block";
-      document.getElementById("savedList").textContent=
-        `${d.tickers.length} tickers saved ${d.date} · ${d.tickers.map(t=>t.ticker).join(", ")}`;
+    const today=new Date().toLocaleDateString("en-GB");
+    // Restore full rendered watchlist if from today
+    const raw=localStorage.getItem(WL_RENDER_KEY);
+    if(raw){
+      const d=JSON.parse(raw);
+      if(d.date===today&&d.items?.length){
+        document.getElementById("results").style.display="block";
+        document.getElementById("claudeBtn").style.display="none";
+        renderWatchlist(d.items);
+        setStatus(`✓ Watchlist restored from ${d.time} · ${d.items.length} opportunities · Re-scan or regenerate to refresh`,"#4ade80");
+      }
+    }
+    // Show saved indicator
+    const raw2=localStorage.getItem(WL_KEY);
+    if(raw2){
+      const d=JSON.parse(raw2);
+      if(d.date===today&&d.tickers?.length){
+        document.getElementById("savedIndicator").style.display="block";
+        document.getElementById("savedList").textContent=
+          `${d.tickers.length} tickers · ${d.tickers.map(t=>t.ticker).join(", ")}`;
+      }
     }
   }catch{}
 }
+
 function saveWatchlist(){
   const items=document.querySelectorAll(".wl-ticker");
   const tickers=[...items].map(el=>({
@@ -296,20 +313,23 @@ function saveWatchlist(){
     confidence:+el.dataset.confidence||50,
   }));
   if(!tickers.length){alert("No watchlist generated yet — run AI synthesis first");return;}
-  const data={tickers,date:new Date().toLocaleDateString("en-GB"),ts:Date.now()};
+  const today=new Date().toLocaleDateString("en-GB");
+  const data={tickers,date:today,ts:Date.now()};
   localStorage.setItem(WL_KEY,JSON.stringify(data));
-  // Also set for pro agent to read
   localStorage.setItem("premarket_watchlist_for_pro",JSON.stringify(data));
   document.getElementById("savedIndicator").style.display="block";
   document.getElementById("savedList").textContent=
-    `${tickers.length} tickers saved · ${tickers.map(t=>t.ticker).join(", ")}`;
-  setStatus("✓ Watchlist saved — Pro Agent will prioritise these tickers today","#4ade80");
+    `${tickers.length} tickers · ${tickers.map(t=>t.ticker).join(", ")}`;
+  setStatus("✓ Saved to Pro Agent — these tickers will be prioritised at open","#4ade80");
 }
+
 function clearWatchlist(){
   localStorage.removeItem(WL_KEY);
+  localStorage.removeItem(WL_RENDER_KEY);
   localStorage.removeItem("premarket_watchlist_for_pro");
   document.getElementById("savedIndicator").style.display="none";
   document.getElementById("watchlistCard").style.display="none";
+  setStatus("Watchlist cleared","#9090c0");
 }
 
 // ═══ Main scan ════════════════════════════════════════════════════
@@ -501,8 +521,15 @@ Start with [`;
 
 function renderWatchlist(items){
   document.getElementById("watchlistCard").style.display="block";
+  const time=new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});
   document.getElementById("watchlistMeta").textContent=
-    `Generated ${new Date().toLocaleTimeString("en-GB")} · ${items.length} opportunities`;
+    `Generated ${time} · ${items.length} opportunities`;
+
+  // Persist to localStorage so it survives page refresh
+  const today=new Date().toLocaleDateString("en-GB");
+  try{
+    localStorage.setItem(WL_RENDER_KEY,JSON.stringify({items,date:today,time}));
+  }catch{}
 
   const typeColors={earnings:"#f59e0b",momentum:"#4ade80",news:"#e879f9",social:"#fb923c",insider:"#7efff5"};
 
