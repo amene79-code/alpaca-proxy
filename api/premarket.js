@@ -215,7 +215,65 @@ async function finvizPremarket() {
   return [...tickers].slice(0, 30);
 }
 
-// ── Main handler ──────────────────────────────────────────────────
+// ── Pre-market volume spike via Finnhub candles ───────────────────
+// Compares today's pre-market volume to 20-day average pre-market volume
+// Returns scored list: {ticker, pmVolume, avgPmVolume, spike, score}
+async function premarketVolumeSpikes(apiKey, tickers) {
+  if (!apiKey || !tickers.length) return [];
+
+  const now     = Math.floor(Date.now() / 1000);
+  const today4am = (() => {
+    const d = new Date();
+    d.setHours(4, 0, 0, 0); // 4am local — approximate pre-market start
+    return Math.floor(d.getTime() / 1000);
+  })();
+  // 20 trading days ago for historical average
+  const hist = now - 20 * 86400;
+
+  // Process up to 10 tickers (Finnhub free = 60 calls/min)
+  const topTickers = tickers.slice(0, 10);
+  const results = [];
+
+  await Promise.allSettled(topTickers.map(async ticker => {
+    try {
+      // Today's pre-market candles (1-min resolution, 4am–9:30am ET)
+      const todayUrl = `https://finnhub.io/api/v1/stock/candle?symbol=${ticker}&resolution=60&from=${today4am}&to=${now}&token=${apiKey}`;
+      const r1 = await fetch(todayUrl, { headers: { "User-Agent": UA } });
+      if (!r1.ok) return;
+      const d1 = await r1.json();
+      if (d1.s !== "ok" || !d1.v?.length) return;
+      const pmVolToday = d1.v.reduce((s, v) => s + v, 0);
+
+      // Historical daily candles for average volume baseline
+      const histUrl = `https://finnhub.io/api/v1/stock/candle?symbol=${ticker}&resolution=D&from=${hist}&to=${now}&token=${apiKey}`;
+      const r2 = await fetch(histUrl, { headers: { "User-Agent": UA } });
+      if (!r2.ok) return;
+      const d2 = await r2.json();
+      if (d2.s !== "ok" || !d2.v?.length) return;
+
+      // Average daily volume (rough proxy for expected pre-market volume)
+      // Pre-market is typically ~5-15% of daily volume
+      const avgDailyVol = d2.v.reduce((s, v) => s + v, 0) / d2.v.length;
+      const expectedPmVol = avgDailyVol * 0.08; // ~8% of daily vol in pre-market
+
+      if (expectedPmVol <= 0) return;
+      const spike = pmVolToday / expectedPmVol;
+
+      if (spike >= 1.5) { // only report meaningful spikes
+        results.push({
+          ticker,
+          pmVolume:    Math.round(pmVolToday),
+          avgPmVolume: Math.round(expectedPmVol),
+          spike:       Math.round(spike * 10) / 10,
+          // Score: higher weight for bigger spikes, capped at 5
+          score: Math.min(5, spike >= 10 ? 5 : spike >= 5 ? 3.5 : spike >= 3 ? 2.5 : 1.5),
+        });
+      }
+    } catch { /* skip ticker on error */ }
+  }));
+
+  return results.sort((a, b) => b.spike - a.spike);
+}
 export default async function handler(req) {
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
 
@@ -264,24 +322,46 @@ export default async function handler(req) {
         stocktwitsTrending(),
         finvizPremarket(),
       ]);
-      results.reddit      = wsb.status      === "fulfilled" ? wsb.value      : { tickers: [], posts: [] };
-      results.stocktwits  = stwits.status   === "fulfilled" ? stwits.value   : [];
+      results.reddit          = wsb.status      === "fulfilled" ? wsb.value      : { tickers: [], posts: [] };
+      results.stocktwits      = stwits.status   === "fulfilled" ? stwits.value   : [];
       results.premarketMovers = premarket.status === "fulfilled" ? premarket.value : [];
+    }
+
+    // Pre-market volume spikes — run after we have ranked candidates
+    // Get initial ranked list first, then check volume on top candidates
+    const initialRanked = Object.entries(
+      (() => {
+        const s = {};
+        const add = (t, pts) => { if (/^[A-Z]{1,5}$/.test(t)) { s[t] = s[t] || 0; s[t] += pts; } };
+        (results.earningsToday || []).forEach(e => add(e.ticker, 5));
+        (results.premarketMovers || []).forEach((t, i) => add(t, 3 - i * 0.1));
+        (results.reddit?.tickers || []).forEach(t => add(t.ticker, t.score * 0.5));
+        (results.stocktwits || []).forEach((t, i) => add(t.ticker, 1.5 - i * 0.05));
+        return s;
+      })()
+    ).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([t]) => t);
+
+    // Fetch pre-market volume spikes for top 10 candidates
+    if (finnhubKey && initialRanked.length) {
+      const volSpikes = await premarketVolumeSpikes(finnhubKey, initialRanked);
+      results.volumeSpikes = volSpikes;
+    } else {
+      results.volumeSpikes = [];
     }
 
     // Build combined ticker scores for quick ranking
     const scores = {};
-    const addScore = (ticker, pts, source) => {
+    const addScore = (ticker, pts, src) => {
       if (!/^[A-Z]{1,5}$/.test(ticker)) return;
       scores[ticker] = scores[ticker] || { score: 0, sources: [] };
       scores[ticker].score += pts;
-      if (!scores[ticker].sources.includes(source)) scores[ticker].sources.push(source);
+      if (!scores[ticker].sources.includes(src)) scores[ticker].sources.push(src);
     };
 
     // Earnings today = highest priority
     (results.earningsToday || []).forEach(e => addScore(e.ticker, 5, "Earnings Today"));
     (results.earningsUpcoming || []).slice(0, 10).forEach(e => addScore(e.ticker, 2, "Earnings Soon"));
-    // Pre-market movers = strong signal
+    // Pre-market movers
     (results.premarketMovers || []).forEach((t, i) => addScore(t, 3 - i * 0.1, "Pre-market"));
     // Reddit WSB
     (results.reddit?.tickers || []).forEach(t => addScore(t.ticker, t.score * 0.5, "Reddit WSB"));
@@ -293,6 +373,10 @@ export default async function handler(req) {
     });
     // Insider buys
     (results.insiders || []).forEach(t => addScore(t.ticker, 1, "Insider Buy"));
+    // Pre-market volume spikes — highest scoring addition
+    (results.volumeSpikes || []).forEach(v => {
+      addScore(v.ticker, v.score, `PM Vol ${v.spike}x`);
+    });
 
     results.rankedTickers = Object.entries(scores)
       .sort((a, b) => b[1].score - a[1].score)
