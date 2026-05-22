@@ -539,28 +539,43 @@ async function fetchScreener(){
   const market=document.getElementById("cfgScreenerMarket").value;
   const preset=document.getElementById("cfgScreenerPreset").value;
   const el=document.getElementById("screenerStatus");
+
+  // Check for saved pre-market watchlist from today
+  let premarketTickers=[];
+  try{
+    const raw=localStorage.getItem("premarket_watchlist_for_pro");
+    if(raw){
+      const d=JSON.parse(raw);
+      const today=new Date().toLocaleDateString("en-GB");
+      if(d.date===today&&d.tickers?.length){
+        premarketTickers=d.tickers.map(t=>t.ticker);
+        log("SCAN",`📋 Pre-market watchlist: ${premarketTickers.join(", ")}`,
+          `${premarketTickers.length} tickers from today's pre-market scan — top priority`);
+      }
+    }
+  }catch{}
+
   try{
     el.textContent="⏳ Fetching weighted screener…";
     const r=await fetch(`${proxy}/api/screener?market=${market}&preset=${preset}`);
     if(!r.ok) throw new Error(`HTTP ${r.status}`);
     const d=await r.json();
-
-    // Show breakdown by tier if available
     if(d.breakdown&&d.breakdown.length){
       const top=d.breakdown.slice(0,6).map(x=>{
         const stwits=x.sources?.includes("Stocktwits")?"🔥":"";
         return `${stwits}${x.ticker}(${x.score})`;
       }).join(" · ");
-      el.innerHTML=`✓ <b>${d.count} candidates</b> [${preset}] — <span style="color:#dde1f0">${top}</span>`;
+      el.innerHTML=`✓ <b>${d.count} candidates</b> [${preset}]${premarketTickers.length?` + <b style="color:#4ade80">${premarketTickers.length} pre-market</b>`:""}  — <span style="color:#dde1f0">${top}</span>`;
     } else {
       el.textContent=`✓ ${d.count} candidates [${preset}]`;
     }
     el.style.color="#818cf8";
-    return d.tickers||[];
+    // Pre-market tickers first = highest priority in scan loop
+    return [...new Set([...premarketTickers,...(d.tickers||[])])];
   }catch(e){
-    el.textContent=`⚠ Screener unavailable — using watchlist only`;
+    el.textContent=`⚠ Screener unavailable${premarketTickers.length?` — using pre-market watchlist`:" — using fixed watchlist only"}`;
     el.style.color="#f59e0b";
-    return [];
+    return premarketTickers;
   }
 }
 
