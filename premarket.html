@@ -68,69 +68,92 @@ async function finnhubInsiders(apiKey) {
   } catch { return []; }
 }
 
-// ── Reddit WSB via RSS (more reliable than JSON API) ─────────────
+// ── Reddit WSB — multiple fallback strategies ─────────────────────
 async function redditWSB() {
-  const sources = [
-    // RSS feeds don't require auth and are harder to block
-    { url: "https://www.reddit.com/r/wallstreetbets/hot/.rss?limit=50", type: "rss" },
-    { url: "https://www.reddit.com/r/stocks/hot/.rss?limit=25", type: "rss" },
-    { url: "https://www.reddit.com/r/investing/hot/.rss?limit=25", type: "rss" },
-  ];
-
   const blacklist = new Set([
     "THE","AND","FOR","ARE","BUT","NOT","YOU","ALL","CAN","WAS","ONE","OUR",
     "OUT","NOW","GOT","GET","PUT","CEO","IPO","SEC","FDA","EPS","ETF","NYSE",
     "WSB","DD","YOLO","IMO","LOL","OMG","GDP","ATH","ATL","USD","BTC","ETH",
     "EDIT","TLDR","DRS","SPY","QQQ","IWM","VIX","CALLS","PUTS","ITM","OTM",
     "ATM","DTE","IV","EV","AI","ML","US","UK","EU","AP","PM","AM","OP","RE",
-    "HOLD","BUY","SELL","LONG","SHORT","GAIN","LOSS","YOLO","FOMO","FUD",
-    "THIS","THAT","WITH","FROM","HAVE","BEEN","WILL","YOUR","THEY","WHEN",
-    "WHAT","SOME","MORE","ALSO","INTO","THAN","THEN","DOES","DID","HAS",
+    "HOLD","BUY","SELL","LONG","SHORT","THIS","THAT","WITH","FROM","HAVE",
+    "BEEN","WILL","YOUR","THEY","WHEN","WHAT","SOME","MORE","ALSO","INTO",
   ]);
 
-  const mentions = {};
-  const posts = [];
-
-  for (const source of sources) {
-    try {
-      const r = await fetch(source.url, {
-        headers: {
-          "User-Agent": "Mozilla/5.0 (compatible; RSS reader)",
-          "Accept": "application/rss+xml, application/xml, text/xml, */*",
-        },
-      });
-      if (!r.ok) continue;
-      const xml = await r.text();
-
-      // Parse RSS titles from XML
-      const titleRe = /<title><!\[CDATA\[(.*?)\]\]><\/title>|<title>(.*?)<\/title>/g;
-      let m;
-      while ((m = titleRe.exec(xml)) !== null) {
-        const title = (m[1] || m[2] || "").trim();
-        if (!title || title.toLowerCase().includes("reddit")) continue;
-        posts.push({ title, source: "Reddit" });
-
-        // Extract tickers
-        const tickerRe = /\$([A-Z]{1,5})|(?<![A-Za-z])([A-Z]{2,5})(?![A-Za-z])/g;
-        let t;
-        while ((t = tickerRe.exec(title)) !== null) {
-          const ticker = (t[1] || t[2]).toUpperCase();
-          if (!ticker || blacklist.has(ticker) || ticker.length < 2 || ticker.length > 5) continue;
-          // $TICKER format gets 3x weight — user is explicitly calling out the stock
-          const weight = t[1] ? 3 : 1;
-          mentions[ticker] = (mentions[ticker] || 0) + weight;
-        }
-      }
-    } catch { continue; }
+  function extractTickers(text, mentions) {
+    const re = /\$([A-Z]{1,5})|(?<![A-Za-z])([A-Z]{2,5})(?![A-Za-z])/g;
+    let m;
+    while ((m = re.exec(text)) !== null) {
+      const t = (m[1] || m[2]).toUpperCase();
+      if (!t || blacklist.has(t) || t.length < 2 || t.length > 5) continue;
+      mentions[t] = (mentions[t] || 0) + (m[1] ? 3 : 1);
+    }
   }
 
+  const mentions = {};
+  let debugInfo = [];
+
+  // Strategy 1: Reddit RSS
+  try {
+    const r = await fetch("https://www.reddit.com/r/wallstreetbets/hot/.rss?limit=50", {
+      headers: { "User-Agent": "Mozilla/5.0", "Accept": "text/xml, application/xml, */*" },
+    });
+    debugInfo.push(`RSS: ${r.status}`);
+    if (r.ok) {
+      const xml = await r.text();
+      const re = /<title><!\[CDATA\[(.*?)\]\]><\/title>|<title>(.*?)<\/title>/g;
+      let m; let count = 0;
+      while ((m = re.exec(xml)) !== null) {
+        const t = (m[1] || m[2] || "").trim();
+        if (t && !t.toLowerCase().includes("wallstreetbets")) { extractTickers(t, mentions); count++; }
+      }
+      debugInfo.push(`RSS titles: ${count}`);
+    }
+  } catch(e) { debugInfo.push(`RSS error: ${e.message}`); }
+
+  // Strategy 2: Reddit JSON with different headers
+  try {
+    const r = await fetch("https://www.reddit.com/r/wallstreetbets/hot.json?limit=25", {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept": "application/json",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+      },
+    });
+    debugInfo.push(`JSON: ${r.status}`);
+    if (r.ok) {
+      const d = await r.json();
+      const posts = d?.data?.children || [];
+      posts.forEach(p => extractTickers(p.data.title || "", mentions));
+      debugInfo.push(`JSON posts: ${posts.length}`);
+    }
+  } catch(e) { debugInfo.push(`JSON error: ${e.message}`); }
+
+  // Strategy 3: Yahoo Finance trending as Reddit fallback
+  // If Reddit is blocked, use Yahoo trending tickers as social proxy
+  try {
+    const r = await fetch("https://query1.finance.yahoo.com/v1/finance/trending/US?count=20", {
+      headers: { "User-Agent": "Mozilla/5.0" },
+    });
+    if (r.ok) {
+      const d = await r.json();
+      const quotes = d?.finance?.result?.[0]?.quotes || [];
+      quotes.forEach(q => {
+        if (q.symbol && /^[A-Z]{1,5}$/.test(q.symbol)) {
+          mentions[q.symbol] = (mentions[q.symbol] || 0) + 1.5;
+        }
+      });
+      debugInfo.push(`Yahoo trending: ${quotes.length}`);
+    }
+  } catch(e) { debugInfo.push(`Yahoo error: ${e.message}`); }
+
   const tickers = Object.entries(mentions)
-    .filter(([, score]) => score >= 2) // must appear multiple times or be $-mentioned
     .sort((a, b) => b[1] - a[1])
     .slice(0, 20)
     .map(([ticker, score]) => ({ ticker, score: Math.round(score * 10) / 10 }));
 
-  return { tickers, posts: posts.slice(0, 10) };
+  return { tickers, posts: [], debug: debugInfo.join(" | ") };
 }
 
 // ── Stocktwits trending ───────────────────────────────────────────
