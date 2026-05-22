@@ -171,31 +171,48 @@ async function stocktwitsTrending() {
   } catch { return []; }
 }
 
-// ── Finviz pre-market movers ──────────────────────────────────────
+// ── Pre-market movers via Yahoo Finance ──────────────────────────
 async function finvizPremarket() {
-  // sh_curvol_o5 = current volume > 5k (lower threshold for pre-market)
-  // Try multiple filters from strict to loose
-  const filters = [
-    "sh_curvol_o5,sh_price_o1",
-    "sh_curvol_o1,sh_price_o1",
-    "sh_relvol_o3,sh_price_o1",
+  const tickers = new Set();
+
+  // Yahoo Finance pre-market gainers
+  const sources = [
+    "https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds=day_gainers&count=25&fields=symbol,preMarketChangePercent,preMarketVolume",
+    "https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds=most_actives&count=25&fields=symbol,preMarketChangePercent",
+    "https://query1.finance.yahoo.com/v1/finance/trending/US?count=30&useQuotes=true",
   ];
-  for (const f of filters) {
+
+  for (const url of sources) {
     try {
-      const url = `https://finviz.com/screener.ashx?v=111&f=${f}&ft=4&o=-relativevolume`;
       const r = await fetch(url, {
-        headers: { "User-Agent": UA, "Accept": "text/html", "Referer": "https://finviz.com/" },
+        headers: { "User-Agent": UA, "Accept": "application/json" },
       });
       if (!r.ok) continue;
-      const html = await r.text();
-      const tickers = new Set();
-      const re = /quote\.ashx\?t=([A-Z]{1,5})[&"]/g;
-      let m;
-      while ((m = re.exec(html)) !== null) tickers.add(m[1]);
-      if (tickers.size > 0) return [...tickers].slice(0, 30);
+      const d = await r.json();
+      // Handle trending endpoint
+      const quotes = d?.finance?.result?.[0]?.quotes || [];
+      quotes.forEach(q => {
+        if (q.symbol && /^[A-Z]{1,5}$/.test(q.symbol)) tickers.add(q.symbol);
+      });
     } catch { continue; }
   }
-  return [];
+
+  // Also try Yahoo's spark endpoint for pre-market movers
+  try {
+    const preMarketSymbols = ["SPY","QQQ","AAPL","MSFT","NVDA","TSLA","AMD","META","AMZN","GOOGL"];
+    const sparkUrl = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${preMarketSymbols.join(",")}&fields=symbol,preMarketPrice,preMarketChangePercent,preMarketVolume`;
+    const r = await fetch(sparkUrl, { headers: { "User-Agent": UA } });
+    if (r.ok) {
+      const d = await r.json();
+      const quotes = d?.quoteResponse?.result || [];
+      // Add stocks with significant pre-market moves (>1%)
+      quotes
+        .filter(q => Math.abs(q.preMarketChangePercent || 0) > 1)
+        .forEach(q => tickers.add(q.symbol));
+    }
+  } catch {}
+
+  return [...tickers].slice(0, 30);
 }
 
 // ── Main handler ──────────────────────────────────────────────────
