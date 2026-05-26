@@ -845,7 +845,135 @@ async function getLivePrice(ticker){
 // ORDER PLACEMENT
 // ═══════════════════════════════════════════════════════════════════
 // ═══════════════════════════════════════════════════════════════════
-// DYNAMIC STOP MULTIPLIER
+// DYNAMIC TP MULTIPLIER
+// Calculates take profit based on:
+// 1. Pattern type (each has a natural target)
+// 2. Volatility tier
+// 3. Time of day (runway remaining)
+// 4. RSI (exhaustion check)
+// 5. Support/resistance from candles
+// ═══════════════════════════════════════════════════════════════════
+function calcDynamicTP(signal, price, atr, dynSLmult, cfg){
+  const atrPct    = signal.atrPct || 1.5;
+  const patterns  = signal.patterns || [];
+  const patNames  = patterns.map(p => p.name);
+  const candles   = signal.candles || [];
+  const rsi       = signal.rsi || 50;
+
+  // Base TP multiplier — 2:1 R:R on the dynamic SL
+  let tpMult = dynSLmult * (cfg.atrTP / cfg.atrSL);
+
+  // 1. Pattern-specific target logic
+  if(patNames.includes("Bull Flag") && candles.length >= 6){
+    // Flagpole height = distance of prior strong bull candle
+    const n = candles.length;
+    const flagpole = candles[n-5];
+    if(flagpole) {
+      const poleHeight = flagpole.close - flagpole.open;
+      if(poleHeight > 0){
+        // TP = breakout point + flagpole height
+        const naturalTP = price + poleHeight;
+        const atrTP = price + atr * tpMult;
+        // Take the larger of the two
+        tpMult = Math.max(tpMult, (naturalTP - price) / atr);
+      }
+    }
+  }
+
+  if(patNames.includes("Morning Star") || patNames.includes("Hammer")){
+    // Target = recent swing high before the downtrend
+    if(candles.length >= 20){
+      const recentHighs = candles.slice(-20,-3).map(c => c.high);
+      const swingHigh = Math.max(...recentHighs);
+      if(swingHigh > price){
+        const naturalMult = (swingHigh - price) / atr;
+        tpMult = Math.max(tpMult, naturalMult * 0.9); // 90% of swing high
+      }
+    }
+  }
+
+  if(patNames.includes("Volume Breakout")){
+    // Momentum play — let it run, wider target
+    tpMult *= 1.2;
+  }
+
+  if(patNames.includes("Gap Up") && candles.length >= 5){
+    // Gap fill target — previous close before gap
+    const prevClose = candles[candles.length - 2]?.close;
+    const gapOpen   = candles[candles.length - 1]?.open;
+    if(prevClose && gapOpen && gapOpen > prevClose){
+      // If gap is large, TP can be aggressive
+      const gapSize = gapOpen - prevClose;
+      tpMult = Math.max(tpMult, gapSize / atr * 0.8);
+    }
+  }
+
+  if(patNames.includes("Bullish Engulfing")){
+    // TP = 1.5× the engulfing candle range above entry
+    if(candles.length >= 2){
+      const engulf = candles[candles.length - 1];
+      const engulfRange = engulf.high - engulf.low;
+      tpMult = Math.max(tpMult, (engulfRange * 1.5) / atr);
+    }
+  }
+
+  // 2. Volatility adjustment (high volatility = bigger swings = wider TP)
+  if(atrPct > 4)        tpMult *= 1.15;
+  else if(atrPct > 2.5) tpMult *= 1.05;
+  else if(atrPct < 0.5) tpMult *= 0.9; // calm stocks rarely reach wide targets
+
+  // 3. RSI exhaustion check
+  if(rsi > 80){
+    tpMult *= 0.75; // already overbought — trim target, likely to stall
+  } else if(rsi > 70){
+    tpMult *= 0.90; // elevated — slightly tighter
+  } else if(rsi < 40){
+    tpMult *= 1.10; // oversold — more room to recover
+  }
+
+  // 4. Time of day — critical for intraday
+  const et = new Date(new Date().toLocaleString("en-US",{timeZone:"America/New_York"}));
+  const etMins = et.getHours()*60 + et.getMinutes();
+  const minsAfterOpen = etMins - (9*60+30);
+  const minsToClose   = (16*60) - etMins;
+  let timeNote = "normal session";
+
+  if(minsAfterOpen < 15){
+    tpMult *= 1.25; // open momentum — stocks can run hard
+    timeNote = "open momentum";
+  } else if(minsAfterOpen < 60){
+    tpMult *= 1.1;  // first hour — still active
+    timeNote = "first hour";
+  } else if(minsToClose < 30){
+    tpMult *= 0.55; // last 30 min — close position before EOD, tight target
+    timeNote = "⚠ near close";
+  } else if(minsToClose < 60){
+    tpMult *= 0.75; // last hour — reduce target
+    timeNote = "last hour";
+  } else if(etMins > 11*60 && etMins < 14*60){
+    tpMult *= 0.9;  // midday lull — less momentum
+    timeNote = "midday";
+  }
+
+  // 5. Nearest resistance from candles (don't target through heavy resistance)
+  if(candles.length >= 10){
+    const recentHighs = candles.slice(-10).map(c => c.high);
+    const nearResistance = recentHighs.filter(h => h > price && h < price + atr * tpMult);
+    if(nearResistance.length >= 3){
+      // Multiple touches = strong resistance — cap TP just below it
+      const resistLevel = Math.min(...nearResistance);
+      const cappedMult = (resistLevel * 0.998 - price) / atr;
+      if(cappedMult > 0 && cappedMult < tpMult){
+        tpMult = cappedMult;
+        timeNote += " (capped at resistance)";
+      }
+    }
+  }
+
+  // Minimum 1:1 R:R, maximum 5:1
+  tpMult = Math.max(dynSLmult, Math.min(dynSLmult * 5, tpMult));
+  return { tpMult: Math.round(tpMult * 10) / 10, timeNote };
+}
 // Calculates the right ATR multiplier at order time based on:
 // 1. Stock volatility (ATR% of price)
 // 2. Pattern type (breakout vs reversal)
@@ -910,7 +1038,7 @@ async function placeOrder(signal,cfg,acct){
 
   // Calculate dynamic multipliers
   const dynSLmult = calcDynamicMultiplier(signal, cfg.atrSL);
-  const dynTPmult = dynSLmult * (cfg.atrTP / cfg.atrSL); // keep R:R ratio
+  const { tpMult: dynTPmult, timeNote } = calcDynamicTP(signal, price, atr, dynSLmult, cfg);
 
   const sl=+(price-atr*dynSLmult).toFixed(2);
   const tp=+(price+atr*dynTPmult).toFixed(2);
@@ -920,14 +1048,14 @@ async function placeOrder(signal,cfg,acct){
   const qty=Math.max(1,Math.min(Math.floor((cfg.size*0.02)/riskPS),Math.floor(cfg.size/price)));
   const rr=((tpF-price)/(price-slF)).toFixed(1);
 
-  // Log what the dynamic calculation decided and why
+  // Log dynamic calculation
   const atrPct=signal.atrPct||0;
   const et=new Date(new Date().toLocaleString("en-US",{timeZone:"America/New_York"}));
   const minsAfterOpen=(et.getHours()*60+et.getMinutes())-(9*60+30);
-  const timeNote=minsAfterOpen<15?"open volatile":minsAfterOpen<30?"early session":"normal session";
+  const slTimeNote=minsAfterOpen<15?"open volatile":minsAfterOpen<30?"early session":"normal";
 
   log("BUY",`Placing: ${qty}x ${signal.ticker} @ ~$${price.toFixed(2)} [${signal.tf}]`,
-    `Patterns: ${signal.patterns.map(p=>p.name).join(", ")} | Score: ${signal.score} | ATR ${atrPct.toFixed(2)}% → SL mult ${dynSLmult}× (${timeNote}) | SL $${slF} | TP $${tpF} | R:R ${rr}`);
+    `Patterns: ${signal.patterns.map(p=>p.name).join(", ")} | Score: ${signal.score} | ATR ${atrPct.toFixed(2)}% | SL ${dynSLmult}× (${slTimeNote}) → $${slF} | TP ${dynTPmult}× (${timeNote}) → $${tpF} | R:R ${rr}`);
 
   try{
     const order=await alpaca("POST","/v2/orders",{
@@ -1409,131 +1537,3 @@ function updatePositionsUI(positions){
     </div>`;
   }).join("");
 }
-
-// ── Live P&L refresh (every 30s when agent is running) ────────────
-let plRefreshTimer=null;
-function startPlRefresh(){
-  if(plRefreshTimer) return;
-  plRefreshTimer=setInterval(async()=>{
-    if(!RUNNING) return;
-    try{
-      const [pos,acct]=await Promise.all([
-        alpaca("GET","/v2/positions"),
-        alpaca("GET","/v2/account"),
-      ]);
-      updatePositionsUI(pos);
-      updateAccountUI(acct);
-      const t=new Date().toLocaleTimeString("en-GB");
-      document.getElementById("plRefreshNote").textContent=`P&L updated ${t}`;
-    }catch{}
-  },30000); // every 30 seconds
-}
-function stopPlRefresh(){
-  clearInterval(plRefreshTimer);
-  plRefreshTimer=null;
-  document.getElementById("plRefreshNote").textContent="";
-}
-
-async function closePosition(symbol, qty){
-  if(!confirm(`Close ${qty}x ${symbol} at market price?`)) return;
-  try{
-    // Cancel any open orders first (bracket legs etc)
-    const openOrders=await alpaca("GET",`/v2/orders?status=open&symbols=${symbol}`).catch(()=>[]);
-    for(const o of Array.isArray(openOrders)?openOrders:[]){
-      await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
-    }
-    if((Array.isArray(openOrders)?openOrders:[]).length){
-      await new Promise(r=>setTimeout(r,600));
-    }
-    await alpaca("POST","/v2/orders",{
-      symbol, qty:String(qty), side:"sell",
-      type:"market", time_in_force:"day"
-    });
-    log("SELL",`✓ Manually closed ${symbol}`,`${qty} shares at market`);
-    delete trailingStops[symbol];
-    await new Promise(r=>setTimeout(r,1500));
-    const pos=await alpaca("GET","/v2/positions");
-    updatePositionsUI(pos);
-    const acct=await alpaca("GET","/v2/account");
-    updateAccountUI(acct);
-  }catch(e){
-    log("ERROR",`Failed to close ${symbol}: ${e.message}`);
-  }
-}
-
-async function refreshPositions(){
-  try{
-    const [pos,acct]=await Promise.all([
-      alpaca("GET","/v2/positions"),
-      alpaca("GET","/v2/account"),
-    ]);
-    updatePositionsUI(pos);
-    updateAccountUI(acct);
-  }catch(e){log("ERROR","Refresh failed: "+e.message);}
-}
-
-// ═══════════════════════════════════════════════════════════════════
-// AGENT CONTROL
-// ═══════════════════════════════════════════════════════════════════
-async function startAgent(){
-  const key=document.getElementById("alpacaKey").value.trim();
-  const secret=document.getElementById("alpacaSecret").value.trim();
-  const proxy=document.getElementById("proxyUrl").value.trim();
-  if(!key||!secret||!proxy){alert("Enter Alpaca credentials and proxy URL");return;}
-  if(!activeTFs.size){alert("Select at least one timeframe");return;}
-
-  document.getElementById("startBtn").disabled=true;
-  document.getElementById("statusText").textContent="Connecting…";
-  try{
-    const acct=await alpaca("GET","/v2/account");
-    updateAccountUI(acct); saveKeys();
-
-    // Verify all open positions have active bracket orders
-    const [pos, openOrders] = await Promise.all([
-      alpaca("GET","/v2/positions"),
-      alpaca("GET","/v2/orders?status=open&limit=100"),
-    ]);
-    if(Array.isArray(pos)&&pos.length){
-      const orderedSymbols=new Set((Array.isArray(openOrders)?openOrders:[]).map(o=>o.symbol));
-      const unprotected=pos.filter(p=>!orderedSymbols.has(p.symbol));
-      if(unprotected.length){
-        log("INFO",`⚠ ${unprotected.length} position(s) have no active bracket orders: ${unprotected.map(p=>p.symbol).join(", ")}`,
-          "These positions have no SL/TP protection. Consider closing manually or the agent will manage via trailing stop.");
-      } else {
-        log("INFO",`✓ All ${pos.length} positions have active bracket orders on Alpaca`);
-      }
-    }
-
-    log("INFO","✓ Connected to Alpaca Paper",`Portfolio ${fmt$(acct.portfolio_value)} | Buying power ${fmt$(acct.buying_power)}`);
-  }catch(e){
-    log("ERROR","Connection failed: "+e.message);
-    document.getElementById("startBtn").disabled=false;
-    setStatus("off"); return;
-  }
-
-  RUNNING=true;
-  document.getElementById("stopBtn").disabled=false;
-  document.getElementById("configPanel").style.opacity="0.5";
-  document.getElementById("configPanel").style.pointerEvents="none";
-  setStatus("on");
-  startPlRefresh();
-
-  const newsMode=document.getElementById("cfgUseNews").checked?"Technical + News":"Technical only (zero cost)";
-  log("INFO","Pro Agent started",
-    `Markets: ${[...selectedMarkets].join("+")} | TFs: ${[...activeTFs].join("+")} | Mode: ${newsMode} | Screener: ${document.getElementById("cfgScreenerMarket").value}`);
-  await runCycle();
-}
-
-function stopAgent(){
-  RUNNING=false; clearInterval(countdownTimer); stopPlRefresh();
-  document.getElementById("startBtn").disabled=false;
-  document.getElementById("stopBtn").disabled=true;
-  document.getElementById("configPanel").style.opacity="1";
-  document.getElementById("configPanel").style.pointerEvents="auto";
-  document.getElementById("scanCountdown").style.display="none";
-  setPhase("screen"); setStatus("off");
-  log("INFO","Agent stopped — open positions remain on Alpaca");
-}
-</script>
-</body>
-</html>
