@@ -1110,9 +1110,16 @@ async function manageTrailingStops(positions,cfg){
     const entry=+p.avg_entry_price||0;
     if(!price||!entry) continue;
 
-    // Initialise tracking — use whichever is higher: tracked high or entry price
-    if(!trailingStops[p.symbol]) trailingStops[p.symbol]={high:Math.max(price,entry)};
-    if(price>trailingStops[p.symbol].high) trailingStops[p.symbol].high=price;
+    // Initialise high as max of current price and entry — never use stored TP as high
+    const storedTP=trailingStops[p.symbol]?.tp||0;
+    const currentHigh=trailingStops[p.symbol]?.high||0;
+    // If stored high looks like a TP (well above current), reset it
+    const highIsValid=currentHigh>0&&currentHigh<=price*1.3&&currentHigh!==storedTP;
+    if(!highIsValid){
+      trailingStops[p.symbol]={...trailingStops[p.symbol], high:Math.max(price,entry)};
+    } else if(price>trailingStops[p.symbol].high){
+      trailingStops[p.symbol].high=price;
+    }
 
     const high=trailingStops[p.symbol].high;
     const stop=+(high*(1-cfg.trail)).toFixed(2);
@@ -1742,8 +1749,18 @@ async function closePosition(symbol, qty){
 
 async function restoreBracketOrders(){
   try{
-    const orders=await alpaca("GET","/v2/orders?status=open&limit=200&nested=true");
+    const [orders, positions] = await Promise.all([
+      alpaca("GET","/v2/orders?status=open&limit=200&nested=true"),
+      alpaca("GET","/v2/positions"),
+    ]);
     if(!Array.isArray(orders)) return;
+
+    // Build position price map for accurate "high" initialisation
+    const posMap={};
+    if(Array.isArray(positions)){
+      for(const p of positions) posMap[p.symbol]=+p.current_price||0;
+    }
+
     for(const o of orders){
       if(o.order_class==="bracket"||o.legs?.length){
         const symbol=o.symbol;
@@ -1753,15 +1770,21 @@ async function restoreBracketOrders(){
           if(leg.type==="limit"&&leg.side==="sell") tp=+leg.limit_price||null;
           if(leg.type==="stop"&&leg.side==="sell")  sl=+leg.stop_price||null;
         }
+        const entry=+o.filled_avg_price||0;
+        const current=posMap[symbol]||entry;
+
         if(!trailingStops[symbol]) trailingStops[symbol]={};
-        const entry=+o.filled_avg_price||+o.limit_price||0;
-        if(!trailingStops[symbol].high) trailingStops[symbol].high=entry||+o.filled_avg_price||0;
+        // High = max of current price and entry — NEVER use TP as high
+        if(!trailingStops[symbol].high||trailingStops[symbol].high===trailingStops[symbol].tp){
+          trailingStops[symbol].high=Math.max(current, entry);
+        }
         if(!trailingStops[symbol].entry) trailingStops[symbol].entry=entry;
         if(tp) trailingStops[symbol].tp=tp;
         if(sl) trailingStops[symbol].sl=sl;
       }
     }
-    log("INFO",`🔒 Restored bracket orders for: ${Object.keys(trailingStops).filter(k=>trailingStops[k].tp||trailingStops[k].sl).join(", ")||"none"}`);
+    const restored=Object.keys(trailingStops).filter(k=>trailingStops[k].tp||trailingStops[k].sl);
+    if(restored.length) log("INFO",`🔒 Restored bracket orders: ${restored.join(", ")}`);
   }catch(e){ log("INFO","Could not restore bracket orders: "+e.message); }
 }
 
@@ -1777,26 +1800,3 @@ async function refreshPositions(){
     await restoreBracketOrders();
     const [pos,acct]=await Promise.all([
       alpaca("GET","/v2/positions"),
-      alpaca("GET","/v2/account"),
-    ]);
-    updatePositionsUI(pos);
-    updateAccountUI(acct);
-  }catch(e){log("ERROR","Refresh failed: "+e.message);}
-}
-
-// ═══════════════════════════════════════════════════════════════════
-// AGENT CONTROL
-// ═══════════════════════════════════════════════════════════════════
-async function startAgent(){
-  const key=document.getElementById("alpacaKey").value.trim();
-  const secret=document.getElementById("alpacaSecret").value.trim();
-  const proxy=document.getElementById("proxyUrl").value.trim();
-  if(!key||!secret||!proxy){alert("Enter Alpaca credentials and proxy URL");return;}
-  if(!activeTFs.size){alert("Select at least one timeframe");return;}
-
-  document.getElementById("startBtn").disabled=true;
-  document.getElementById("statusText").textContent="Connecting…";
-  try{
-    const acct=await alpaca("GET","/v2/account");
-    updateAccountUI(acct); saveKeys();
-    await restoreBracketOrders();
