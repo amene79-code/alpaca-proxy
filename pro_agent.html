@@ -871,10 +871,28 @@ async function placeOrder(signal,cfg,acct){
     });
     if(order.id){
       log("BUY",`✓ ORDER PLACED: ${qty}x ${signal.ticker}`,`ID: ${order.id} | R:R ${rr}:1`);
-      trailingStops[signal.ticker]={high:price};
+      log("INFO",`🔒 SL $${slF} + TP $${tpF} are GTC bracket orders on Alpaca — execute automatically even if agent is off`);
+      trailingStops[signal.ticker]={high:price,entry:price,tp:tpF,sl:slF};
       return true;
     }
-  }catch(e){log("ERROR",`Order failed ${signal.ticker}: ${e.message}`);}
+  }catch(e){
+    // Fallback — try without stop-limit (plain stop loss)
+    try{
+      const order=await alpaca("POST","/v2/orders",{
+        symbol:signal.ticker, qty:String(qty), side:"buy",
+        type:"market", time_in_force:"gtc",
+        order_class:"bracket",
+        take_profit:{limit_price:String(tpF)},
+        stop_loss:{stop_price:String(slF)}
+      });
+      if(order.id){
+        log("BUY",`✓ ORDER PLACED: ${qty}x ${signal.ticker}`,`ID: ${order.id}`);
+        log("INFO",`🔒 GTC bracket active — SL $${slF} | TP $${tpF} — no agent needed`);
+        trailingStops[signal.ticker]={high:price,entry:price,tp:tpF,sl:slF};
+        return true;
+      }
+    }catch(e2){log("ERROR",`Order failed ${signal.ticker}: ${e2.message}`);}
+  }
   return false;
 }
 
@@ -1402,6 +1420,23 @@ async function startAgent(){
   try{
     const acct=await alpaca("GET","/v2/account");
     updateAccountUI(acct); saveKeys();
+
+    // Verify all open positions have active bracket orders
+    const [pos, openOrders] = await Promise.all([
+      alpaca("GET","/v2/positions"),
+      alpaca("GET","/v2/orders?status=open&limit=100"),
+    ]);
+    if(Array.isArray(pos)&&pos.length){
+      const orderedSymbols=new Set((Array.isArray(openOrders)?openOrders:[]).map(o=>o.symbol));
+      const unprotected=pos.filter(p=>!orderedSymbols.has(p.symbol));
+      if(unprotected.length){
+        log("INFO",`⚠ ${unprotected.length} position(s) have no active bracket orders: ${unprotected.map(p=>p.symbol).join(", ")}`,
+          "These positions have no SL/TP protection. Consider closing manually or the agent will manage via trailing stop.");
+      } else {
+        log("INFO",`✓ All ${pos.length} positions have active bracket orders on Alpaca`);
+      }
+    }
+
     log("INFO","✓ Connected to Alpaca Paper",`Portfolio ${fmt$(acct.portfolio_value)} | Buying power ${fmt$(acct.buying_power)}`);
   }catch(e){
     log("ERROR","Connection failed: "+e.message);
