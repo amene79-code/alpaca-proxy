@@ -230,7 +230,7 @@ label{color:#9090c0}
   <div style="background:#100a20;border:1px solid #4f46e530;border-radius:10px;padding:12px;margin-bottom:12px">
     <div class="g2" style="margin-bottom:8px">
       <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
-        <input type="checkbox" id="cfgUseNews" checked style="width:auto;accent-color:#818cf8">
+        <input type="checkbox" id="cfgUseNews" style="width:auto;accent-color:#818cf8">
         Enable news confirmation (uses Anthropic API)
       </label>
       <div><div class="fl">Min news signal</div>
@@ -254,9 +254,9 @@ label{color:#9090c0}
     <div><div class="fl">ATR × take profit</div><input id="cfgATRtp" type="number" value="3" min="1" max="10" step="0.5"></div>
   </div>
   <div class="g4">
-    <div><div class="fl">Max positions</div><input id="cfgMaxPos" type="number" value="9" min="1"></div>
-    <div><div class="fl">Max trades/day</div><input id="cfgMaxDaily" type="number" value="12" min="1"></div>
-    <div><div class="fl">Max per cycle</div><input id="cfgMaxCycle" type="number" value="3" min="1" max="5" title="Top N signals to trade per scan cycle"></div>
+    <div><div class="fl">Max positions</div><input id="cfgMaxPos" type="number" value="20" min="1"></div>
+    <div><div class="fl">Max trades/day</div><input id="cfgMaxDaily" type="number" value="20" min="1"></div>
+    <div><div class="fl">Max per cycle</div><input id="cfgMaxCycle" type="number" value="5" min="1" max="5" title="Top N signals to trade per scan cycle"></div>
     <div><div class="fl">Trailing stop (%)</div><input id="cfgTrail" type="number" value="2" min="0.5" max="10" step="0.5"></div>
   </div>
   <div class="g2">
@@ -272,15 +272,15 @@ label{color:#9090c0}
   </div>
   <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
     <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
-      <input type="checkbox" id="cfgAvoidOpen" checked style="width:auto;accent-color:#818cf8">
+      <input type="checkbox" id="cfgAvoidOpen" style="width:auto;accent-color:#818cf8">
       Skip first 15 min after market open
     </label>
     <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
-      <input type="checkbox" id="cfgAvoidClose" checked style="width:auto;accent-color:#818cf8">
+      <input type="checkbox" id="cfgAvoidClose" style="width:auto;accent-color:#818cf8">
       Skip last 30 min before market close
     </label>
     <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer">
-      <input type="checkbox" id="cfgSPYFilter" checked style="width:auto;accent-color:#818cf8">
+      <input type="checkbox" id="cfgSPYFilter" style="width:auto;accent-color:#818cf8">
       Only buy when S&P500 is above SMA20 (broad market uptrend)
     </label>
   </div>
