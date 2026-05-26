@@ -337,7 +337,11 @@ label{color:#9090c0}
 <!-- Trade History -->
 <div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
-    <div class="micro" style="margin:0">📊 Trade History</div>
+    <div style="display:flex;align-items:center;gap:10px;cursor:pointer" onclick="toggleTradeHistory()">
+      <div class="micro" style="margin:0">📊 Trade History</div>
+      <span id="tradeToggleIcon" style="color:#555580;font-size:12px">▼</span>
+      <span id="tradeSummaryBadge" style="font-size:10px;color:#818cf8"></span>
+    </div>
     <div style="display:flex;gap:6px;flex-wrap:wrap">
       <button onclick="loadTradeHistory()" style="font-size:10px;padding:3px 10px;color:#818cf8;border-color:#818cf8">↻ Load from Alpaca</button>
       <button onclick="exportTrades()" style="font-size:10px;padding:3px 10px;color:#4ade80;border-color:#166534">⬇ CSV</button>
@@ -345,44 +349,53 @@ label{color:#9090c0}
     </div>
   </div>
 
-  <!-- Stats bar -->
-  <div id="tradeStats" style="display:none">
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px" id="statsGrid"></div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px" id="statsGrid2"></div>
-  </div>
+  <div id="tradeHistoryBody">
+    <!-- Stats bar -->
+    <div id="tradeStats" style="display:none">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px" id="statsGrid"></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px" id="statsGrid2"></div>
+    </div>
 
-  <!-- Filter -->
-  <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap" id="tradeFilters" style="display:none">
-    <select id="tradeFilter" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
-      <option value="all">All trades</option>
-      <option value="win">Winners only</option>
-      <option value="loss">Losers only</option>
-    </select>
-    <select id="tradePeriod" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
-      <option value="all">All time</option>
-      <option value="today">Today</option>
-      <option value="week">This week</option>
-    </select>
-    <input id="tradeSearch" placeholder="Search ticker…" oninput="renderTradeTable()" style="font-size:10px;padding:4px 8px;width:110px;border-radius:6px">
-  </div>
+    <!-- Filter -->
+    <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap" id="tradeFilters" style="display:none">
+      <select id="tradeFilter" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+        <option value="all">All trades</option>
+        <option value="win">Winners only</option>
+        <option value="loss">Losers only</option>
+      </select>
+      <select id="tradePeriod" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+        <option value="all">All time</option>
+        <option value="today">Today</option>
+        <option value="week">This week</option>
+      </select>
+      <input id="tradeSearch" placeholder="Search ticker…" oninput="renderTradeTable()" style="font-size:10px;padding:4px 8px;width:110px;border-radius:6px">
+      <select id="tradeRows" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+        <option value="20" selected>20 rows</option>
+        <option value="50">50 rows</option>
+        <option value="100">100 rows</option>
+        <option value="all">All rows</option>
+      </select>
+    </div>
 
-  <div id="tradeTableWrap" style="overflow-x:auto">
-    <div id="tradeEmpty" style="color:#333;font-size:12px">Click "Load from Alpaca" to fetch all historical trades.</div>
-    <table id="tradeTable" style="display:none;width:100%;border-collapse:collapse;font-size:11px">
-      <thead>
-        <tr style="color:#555580;font-size:9px;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid #1c1c30">
-          <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('date')">Date ↕</th>
-          <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('symbol')">Ticker ↕</th>
-          <th style="text-align:right;padding:6px 8px">Qty</th>
-          <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('entry')">Entry ↕</th>
-          <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('exit')">Exit ↕</th>
-          <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pl')">P&L ↕</th>
-          <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pct')">% ↕</th>
-          <th style="text-align:left;padding:6px 8px">Result</th>
-        </tr>
-      </thead>
-      <tbody id="tradeTableBody"></tbody>
-    </table>
+    <div id="tradeTableWrap" style="overflow-y:auto;max-height:400px;overflow-x:auto">
+      <div id="tradeEmpty" style="color:#333;font-size:12px">Click "Load from Alpaca" to fetch all historical trades.</div>
+      <table id="tradeTable" style="display:none;width:100%;border-collapse:collapse;font-size:11px">
+        <thead style="position:sticky;top:0;background:#10101c;z-index:1">
+          <tr style="color:#555580;font-size:9px;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid #1c1c30">
+            <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('date')">Date ↕</th>
+            <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('symbol')">Ticker ↕</th>
+            <th style="text-align:right;padding:6px 8px">Qty</th>
+            <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('entry')">Entry ↕</th>
+            <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('exit')">Exit ↕</th>
+            <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pl')">P&L ↕</th>
+            <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pct')">% ↕</th>
+            <th style="text-align:left;padding:6px 8px">Result</th>
+          </tr>
+        </thead>
+        <tbody id="tradeTableBody"></tbody>
+      </table>
+    </div>
+    <div id="tradeRowNote" style="font-size:9px;color:#555580;margin-top:6px;text-align:right"></div>
   </div>
 </div>
 <div class="card">
@@ -1787,16 +1800,3 @@ async function closePosition(symbol, qty){
     });
     log("SELL",`✓ Manually closed ${symbol}`,`${qty} shares at market`);
     delete trailingStops[symbol];
-    await new Promise(r=>setTimeout(r,1500));
-    const pos=await alpaca("GET","/v2/positions");
-    updatePositionsUI(pos);
-    const acct=await alpaca("GET","/v2/account");
-    updateAccountUI(acct);
-  }catch(e){
-    log("ERROR",`Failed to close ${symbol}: ${e.message}`);
-  }
-}
-
-async function restoreBracketOrders(){
-  try{
-    const [orders, positions] = await Promise.all([
