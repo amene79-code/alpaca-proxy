@@ -167,7 +167,7 @@ label{color:#9090c0}
         <option value="gap_up">⬆ Gap ups today</option>
         <option value="momentum">🚀 Momentum (up 10%+ this week)</option>
         <option value="catalyst">⚡ Catalyst hunters (any cap, high relvol)</option>
-        <option value="all">◈ All combined</option>
+        <option value="all" selected>◈ All combined</option>
       </select>
     </div>
   </div>
@@ -190,8 +190,8 @@ label{color:#9090c0}
   <!-- Timeframes -->
   <div class="micro">📊 Phase 2 — Pattern Timeframes</div>
   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
-    <label id="tog-5m"  style="display:flex;align-items:center;gap:6px;padding:6px 12px;background:#12121e;border:1px solid #2a2a45;border-radius:6px;cursor:pointer;color:#6060a0;font-size:11px">
-      <input type="checkbox" id="cb-5m" style="width:auto;accent-color:#818cf8" onchange="toggleTF('5m',this)"> 5m
+    <label id="tog-5m"  style="display:flex;align-items:center;gap:6px;padding:6px 12px;background:#0f0f20;border:1px solid #818cf8;border-radius:6px;cursor:pointer;color:#818cf8;font-size:11px">
+      <input type="checkbox" id="cb-5m" checked style="width:auto;accent-color:#818cf8" onchange="toggleTF('5m',this)"> 5m
     </label>
     <label id="tog-15m" style="display:flex;align-items:center;gap:6px;padding:6px 12px;background:#0f0f20;border:1px solid #818cf8;border-radius:6px;cursor:pointer;color:#818cf8;font-size:11px">
       <input type="checkbox" id="cb-15m" checked style="width:auto;accent-color:#818cf8" onchange="toggleTF('15m',this)"> 15m
@@ -465,7 +465,7 @@ document.getElementById("cfgWatchlist").addEventListener("input",updateWLCount);
 // ═══════════════════════════════════════════════════════════════════
 // TIMEFRAMES
 // ═══════════════════════════════════════════════════════════════════
-let activeTFs=new Set(["15m","1h"]);
+let activeTFs=new Set(["5m","15m","1h"]);
 const TF_CONFIG={"5m":{yi:"5m",yr:"1d"},"15m":{yi:"15m",yr:"5d"},"1h":{yi:"1h",yr:"1mo"}};
 function toggleTF(tf,cb){
   const l=document.getElementById("tog-"+tf);
