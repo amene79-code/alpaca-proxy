@@ -334,7 +334,57 @@ label{color:#9090c0}
   <div id="positions"><div style="color:#333;font-size:12px">No positions yet.</div></div>
 </div>
 
-<!-- Log -->
+<!-- Trade History -->
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+    <div class="micro" style="margin:0">📊 Trade History</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button onclick="loadTradeHistory()" style="font-size:10px;padding:3px 10px;color:#818cf8;border-color:#818cf8">↻ Load from Alpaca</button>
+      <button onclick="exportTrades()" style="font-size:10px;padding:3px 10px;color:#4ade80;border-color:#166534">⬇ CSV</button>
+      <button onclick="clearTradeHistory()" style="font-size:10px;padding:3px 8px;color:#444">Clear</button>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div id="tradeStats" style="display:none">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px" id="statsGrid"></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px" id="statsGrid2"></div>
+  </div>
+
+  <!-- Filter -->
+  <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap" id="tradeFilters" style="display:none">
+    <select id="tradeFilter" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+      <option value="all">All trades</option>
+      <option value="win">Winners only</option>
+      <option value="loss">Losers only</option>
+    </select>
+    <select id="tradePeriod" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+      <option value="all">All time</option>
+      <option value="today">Today</option>
+      <option value="week">This week</option>
+    </select>
+    <input id="tradeSearch" placeholder="Search ticker…" oninput="renderTradeTable()" style="font-size:10px;padding:4px 8px;width:110px;border-radius:6px">
+  </div>
+
+  <div id="tradeTableWrap" style="overflow-x:auto">
+    <div id="tradeEmpty" style="color:#333;font-size:12px">Click "Load from Alpaca" to fetch all historical trades.</div>
+    <table id="tradeTable" style="display:none;width:100%;border-collapse:collapse;font-size:11px">
+      <thead>
+        <tr style="color:#555580;font-size:9px;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid #1c1c30">
+          <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('date')">Date ↕</th>
+          <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('symbol')">Ticker ↕</th>
+          <th style="text-align:right;padding:6px 8px">Qty</th>
+          <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('entry')">Entry ↕</th>
+          <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('exit')">Exit ↕</th>
+          <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pl')">P&L ↕</th>
+          <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pct')">% ↕</th>
+          <th style="text-align:left;padding:6px 8px">Result</th>
+        </tr>
+      </thead>
+      <tbody id="tradeTableBody"></tbody>
+    </table>
+  </div>
+</div>
 <div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
     <div class="micro" style="margin:0">Activity Log</div>
@@ -1750,53 +1800,3 @@ async function closePosition(symbol, qty){
 async function restoreBracketOrders(){
   try{
     const [orders, positions] = await Promise.all([
-      alpaca("GET","/v2/orders?status=open&limit=200&nested=true"),
-      alpaca("GET","/v2/positions"),
-    ]);
-    if(!Array.isArray(orders)) return;
-
-    // Build position price map for accurate "high" initialisation
-    const posMap={};
-    if(Array.isArray(positions)){
-      for(const p of positions) posMap[p.symbol]=+p.current_price||0;
-    }
-
-    for(const o of orders){
-      if(o.order_class==="bracket"||o.legs?.length){
-        const symbol=o.symbol;
-        const legs=o.legs||[];
-        let tp=null, sl=null;
-        for(const leg of legs){
-          if(leg.type==="limit"&&leg.side==="sell") tp=+leg.limit_price||null;
-          if(leg.type==="stop"&&leg.side==="sell")  sl=+leg.stop_price||null;
-        }
-        const entry=+o.filled_avg_price||0;
-        const current=posMap[symbol]||entry;
-
-        if(!trailingStops[symbol]) trailingStops[symbol]={};
-        // High = max of current price and entry — NEVER use TP as high
-        if(!trailingStops[symbol].high||trailingStops[symbol].high===trailingStops[symbol].tp){
-          trailingStops[symbol].high=Math.max(current, entry);
-        }
-        if(!trailingStops[symbol].entry) trailingStops[symbol].entry=entry;
-        if(tp) trailingStops[symbol].tp=tp;
-        if(sl) trailingStops[symbol].sl=sl;
-      }
-    }
-    const restored=Object.keys(trailingStops).filter(k=>trailingStops[k].tp||trailingStops[k].sl);
-    if(restored.length) log("INFO",`🔒 Restored bracket orders: ${restored.join(", ")}`);
-  }catch(e){ log("INFO","Could not restore bracket orders: "+e.message); }
-}
-
-async function resortPositions(){
-  try{
-    const pos=await alpaca("GET","/v2/positions");
-    updatePositionsUI(pos);
-  }catch{}
-}
-
-async function refreshPositions(){
-  try{
-    await restoreBracketOrders();
-    const [pos,acct]=await Promise.all([
-      alpaca("GET","/v2/positions"),
