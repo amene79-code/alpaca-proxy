@@ -1488,6 +1488,9 @@ function updateAccountUI(a){
   updateOverallPnl(equity);
 }
 
+// Track which positions have charts open
+const openCharts={};
+
 function updatePositionsUI(positions){
   const el=document.getElementById("positions");
   const pos=Array.isArray(positions)?positions:[];
@@ -1504,36 +1507,33 @@ function updatePositionsUI(positions){
     return;
   }
   document.getElementById("trailNote").textContent="· trailing stop active";
-  el.innerHTML=pos.map(p=>{
+
+  // Sort by P&L high to low
+  const sorted=[...pos].sort((a,b)=>(+b.unrealized_pl||0)-(+a.unrealized_pl||0));
+
+  el.innerHTML=sorted.map(p=>{
     const pl=+p.unrealized_pl||0,pct=(+p.unrealized_plpc||0)*100,up=pl>=0;
     const entry=+p.avg_entry_price||0;
+    const current=+p.current_price||0;
     const high=trailingStops[p.symbol]?.high||entry;
     const trail=+(high*(1-(+document.getElementById("cfgTrail").value/100))).toFixed(2);
-    // Estimate TP from entry using ATR multiplier
-    // ATR ≈ (trail stop gap / ATR SL multiplier) gives us ATR
-    const atrSL=+document.getElementById("cfgATRsl").value||1.5;
-    const atrTP=+document.getElementById("cfgATRtp").value||3;
-    const slGap=entry*(+document.getElementById("cfgTrail").value/100);
-    const atrEst=slGap/atrSL;
-    const tpTarget=+(entry+atrEst*atrTP).toFixed(2);
-    const current=+p.current_price||0;
-    const toTP=tpTarget>0?((tpTarget-current)/current*100).toFixed(2):null;
-    return `<div class="trade-row">
-      <div style="flex:1">
-        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-          <b style="color:#818cf8">${p.symbol}</b>
-          <span style="color:#4a4a7a;font-size:10px">${p.qty} @ $${entry.toFixed(2)}</span>
-          <span style="font-size:10px;color:${up?"#4ade80":"#f87171"}">${fmtPl(pl)} (${pct.toFixed(2)}%)</span>
-        </div>
-        <div style="font-size:9px;color:#fb923c;margin-top:3px">
-          Current $${current.toFixed(2)} · Trail stop $${trail} · High $${high.toFixed(2)}
-          ${tpTarget?` · <span style="color:#4ade80">TP ~$${tpTarget}${toTP?` (${toTP>0?"+":""}${toTP}% away)`:""}</span>`:""}
-        </div>
-      </div>
-      <button onclick="closePosition('${p.symbol}','${p.qty}')"
-        style="font-size:10px;padding:5px 12px;color:#f87171;border-color:#7f1d1d;background:#1a0505;border-radius:6px;white-space:nowrap;margin-left:8px">
-        ✕ Close
-      </button>
-    </div>`;
-  }).join("");
-}
+    const tpStored=trailingStops[p.symbol]?.tp;
+    const slStored=trailingStops[p.symbol]?.sl;
+    const toTP=tpStored?((tpStored-current)/current*100).toFixed(2):null;
+    const chartOpen=openCharts[p.symbol];
+
+    return `<div style="border-bottom:1px solid #14142a;padding-bottom:10px;margin-bottom:10px">
+      <div style="display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap">
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <b style="color:#818cf8;font-size:13px">${p.symbol}</b>
+            <span style="color:#4a4a7a;font-size:10px">${p.qty} @ $${entry.toFixed(2)}</span>
+            <span style="font-size:11px;color:${up?"#4ade80":"#f87171"};font-weight:700">${fmtPl(pl)} (${pct.toFixed(2)}%)</span>
+          </div>
+          <div style="font-size:9px;color:#fb923c;margin-top:4px;line-height:1.8">
+            Current <b style="color:#dde1f0">$${current.toFixed(2)}</b>
+            · Trail stop <b>$${trail}</b>
+            · High $${high.toFixed(2)}
+            ${slStored?`· <span style="color:#f87171">SL $${slStored}</span>`:""}
+            ${tpStored?`· <span style="color:#4ade80">TP $${tpStored}${toTP?` (${+toTP>0?"+":""}${toTP}% away)`:""}</span>`:""}
+          </div>
