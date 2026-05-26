@@ -844,22 +844,90 @@ async function getLivePrice(ticker){
 // ═══════════════════════════════════════════════════════════════════
 // ORDER PLACEMENT
 // ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
+// DYNAMIC STOP MULTIPLIER
+// Calculates the right ATR multiplier at order time based on:
+// 1. Stock volatility (ATR% of price)
+// 2. Pattern type (breakout vs reversal)
+// 3. Time of day (open volatility vs midday calm)
+// ═══════════════════════════════════════════════════════════════════
+function calcDynamicMultiplier(signal, baseMultiplier){
+  const atrPct = signal.atrPct || 1.5;
+  const patterns = signal.patterns || [];
+  const patternNames = patterns.map(p => p.name);
+
+  // 1. Volatility tier — base multiplier from ATR%
+  let mult;
+  if      (atrPct > 4)   mult = 2.8;  // very volatile (RGTI, QBTS, penny stocks)
+  else if (atrPct > 2.5) mult = 2.2;  // volatile (TSLA, AMD, NVDA)
+  else if (atrPct > 1.5) mult = 1.8;  // moderately volatile
+  else if (atrPct > 0.8) mult = 1.5;  // normal mid cap
+  else if (atrPct > 0.4) mult = 1.2;  // calm large cap
+  else                   mult = 1.0;  // very calm (JNJ, PG etc)
+
+  // 2. Pattern type adjustment
+  const isBreakout = patternNames.some(n =>
+    ["Volume Breakout","Gap Up","Bull Flag"].includes(n));
+  const isReversal = patternNames.some(n =>
+    ["Hammer","Morning Star","Bullish Engulfing","Piercing Line"].includes(n));
+  const isDoji = patternNames.some(n => n === "Doji");
+
+  if (isBreakout && !isReversal) {
+    mult *= 0.85; // tighter — momentum should hold, stop just below breakout level
+  } else if (isReversal && !isBreakout) {
+    mult *= 1.15; // wider — reversal needs room to breathe
+  }
+  // Bull Flag: tighter still — stop below the flag base
+  if (patternNames.includes("Bull Flag")) mult *= 0.9;
+  // Doji: wider — indecision, could go either way
+  if (isDoji) mult *= 1.1;
+
+  // 3. Time of day (ET)
+  const et = new Date(new Date().toLocaleString("en-US",{timeZone:"America/New_York"}));
+  const etMins = et.getHours()*60 + et.getMinutes();
+  const minsAfterOpen = etMins - (9*60+30);
+
+  if (minsAfterOpen < 15) {
+    mult *= 1.35; // first 15 min — very volatile, needs wide stop
+  } else if (minsAfterOpen < 30) {
+    mult *= 1.15; // 15-30 min — still elevated volatility
+  } else if (etMins > 15*60) {
+    mult *= 1.1;  // last hour — volatility picks up again
+  }
+  // Midday 11am-2pm ET is calmest — no adjustment
+
+  // Cap between 0.8 and 3.5
+  mult = Math.max(0.8, Math.min(3.5, mult));
+  return Math.round(mult * 10) / 10;
+}
+
 async function placeOrder(signal,cfg,acct){
   const lp=await getLivePrice(signal.ticker);
   const price=lp>0?lp:signal.price;
   if(!price){log("SKIP",`${signal.ticker} — no price`);return false;}
 
   const atr=signal.atr||price*0.01;
-  const sl=+(price-atr*cfg.atrSL).toFixed(2);
-  const tp=+(price+atr*cfg.atrTP).toFixed(2);
+
+  // Calculate dynamic multipliers
+  const dynSLmult = calcDynamicMultiplier(signal, cfg.atrSL);
+  const dynTPmult = dynSLmult * (cfg.atrTP / cfg.atrSL); // keep R:R ratio
+
+  const sl=+(price-atr*dynSLmult).toFixed(2);
+  const tp=+(price+atr*dynTPmult).toFixed(2);
   const slF=+Math.min(sl,price-0.05).toFixed(2);
   const tpF=+Math.max(tp,price+0.05).toFixed(2);
   const riskPS=price-slF;
   const qty=Math.max(1,Math.min(Math.floor((cfg.size*0.02)/riskPS),Math.floor(cfg.size/price)));
   const rr=((tpF-price)/(price-slF)).toFixed(1);
 
+  // Log what the dynamic calculation decided and why
+  const atrPct=signal.atrPct||0;
+  const et=new Date(new Date().toLocaleString("en-US",{timeZone:"America/New_York"}));
+  const minsAfterOpen=(et.getHours()*60+et.getMinutes())-(9*60+30);
+  const timeNote=minsAfterOpen<15?"open volatile":minsAfterOpen<30?"early session":"normal session";
+
   log("BUY",`Placing: ${qty}x ${signal.ticker} @ ~$${price.toFixed(2)} [${signal.tf}]`,
-    `Patterns: ${signal.patterns.map(p=>p.name).join(", ")} | Score: ${signal.score} | SL $${slF} | TP $${tpF} | R:R ${rr} | ${signal.catalyst||""}`);
+    `Patterns: ${signal.patterns.map(p=>p.name).join(", ")} | Score: ${signal.score} | ATR ${atrPct.toFixed(2)}% → SL mult ${dynSLmult}× (${timeNote}) | SL $${slF} | TP $${tpF} | R:R ${rr}`);
 
   try{
     const order=await alpaca("POST","/v2/orders",{
@@ -871,12 +939,11 @@ async function placeOrder(signal,cfg,acct){
     });
     if(order.id){
       log("BUY",`✓ ORDER PLACED: ${qty}x ${signal.ticker}`,`ID: ${order.id} | R:R ${rr}:1`);
-      log("INFO",`🔒 SL $${slF} + TP $${tpF} are GTC bracket orders on Alpaca — execute automatically even if agent is off`);
+      log("INFO",`🔒 SL $${slF} + TP $${tpF} — GTC on Alpaca, execute without agent`);
       trailingStops[signal.ticker]={high:price,entry:price,tp:tpF,sl:slF};
       return true;
     }
   }catch(e){
-    // Fallback — try without stop-limit (plain stop loss)
     try{
       const order=await alpaca("POST","/v2/orders",{
         symbol:signal.ticker, qty:String(qty), side:"buy",
@@ -887,7 +954,7 @@ async function placeOrder(signal,cfg,acct){
       });
       if(order.id){
         log("BUY",`✓ ORDER PLACED: ${qty}x ${signal.ticker}`,`ID: ${order.id}`);
-        log("INFO",`🔒 GTC bracket active — SL $${slF} | TP $${tpF} — no agent needed`);
+        log("INFO",`🔒 GTC bracket active — SL $${slF} | TP $${tpF}`);
         trailingStops[signal.ticker]={high:price,entry:price,tp:tpF,sl:slF};
         return true;
       }
