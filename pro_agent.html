@@ -319,7 +319,17 @@ label{color:#9090c0}
 <div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
     <div class="micro" style="margin:0">Open Positions <span id="trailNote" style="color:#fb923c;font-size:9px"></span></div>
-    <button onclick="refreshPositions()" style="font-size:10px;padding:3px 10px;color:#818cf8;border-color:#818cf8">↻ Refresh</button>
+    <div style="display:flex;gap:6px;align-items:center">
+      <select id="posSort" onchange="resortPositions()" style="font-size:10px;padding:3px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+        <option value="pl_desc">P&L ↓</option>
+        <option value="pl_asc">P&L ↑</option>
+        <option value="pct_desc">% ↓</option>
+        <option value="pct_asc">% ↑</option>
+        <option value="symbol">A–Z</option>
+        <option value="size">Size ↓</option>
+      </select>
+      <button onclick="refreshPositions()" style="font-size:10px;padding:3px 10px;color:#818cf8;border-color:#818cf8">↻ Refresh</button>
+    </div>
   </div>
   <div id="positions"><div style="color:#333;font-size:12px">No positions yet.</div></div>
 </div>
@@ -1508,8 +1518,19 @@ function updatePositionsUI(positions){
   }
   document.getElementById("trailNote").textContent="· trailing stop active";
 
-  // Sort by P&L high to low
-  const sorted=[...pos].sort((a,b)=>(+b.unrealized_pl||0)-(+a.unrealized_pl||0));
+  // Sort by selected order
+  const sortBy=document.getElementById("posSort")?.value||"pl_desc";
+  const sorted=[...pos].sort((a,b)=>{
+    switch(sortBy){
+      case "pl_desc":  return (+b.unrealized_pl||0)-(+a.unrealized_pl||0);
+      case "pl_asc":   return (+a.unrealized_pl||0)-(+b.unrealized_pl||0);
+      case "pct_desc": return (+b.unrealized_plpc||0)-(+a.unrealized_plpc||0);
+      case "pct_asc":  return (+a.unrealized_plpc||0)-(+b.unrealized_plpc||0);
+      case "symbol":   return a.symbol.localeCompare(b.symbol);
+      case "size":     return (+b.market_value||0)-(+a.market_value||0);
+      default:         return (+b.unrealized_pl||0)-(+a.unrealized_pl||0);
+    }
+  });
 
   el.innerHTML=sorted.map(p=>{
     const pl=+p.unrealized_pl||0,pct=(+p.unrealized_plpc||0)*100,up=pl>=0;
@@ -1537,3 +1558,245 @@ function updatePositionsUI(positions){
             ${slStored?`· <span style="color:#f87171">SL $${slStored}</span>`:""}
             ${tpStored?`· <span style="color:#4ade80">TP $${tpStored}${toTP?` (${+toTP>0?"+":""}${toTP}% away)`:""}</span>`:""}
           </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-shrink:0">
+          <button onclick="togglePositionChart('${p.symbol}')"
+            style="font-size:10px;padding:5px 10px;color:${chartOpen?"#818cf8":"#6060a0"};border-color:${chartOpen?"#818cf8":"#2a2a45"};background:${chartOpen?"#0f0f20":"transparent"};border-radius:6px">
+            ${chartOpen?"▲ Hide":"📈 Chart"}
+          </button>
+          <button onclick="closePosition('${p.symbol}','${p.qty}')"
+            style="font-size:10px;padding:5px 12px;color:#f87171;border-color:#7f1d1d;background:#1a0505;border-radius:6px">
+            ✕ Close
+          </button>
+        </div>
+      </div>
+      ${chartOpen?`<div id="chart-${p.symbol}" style="margin-top:10px">
+        <canvas id="canvas-${p.symbol}" style="width:100%;height:120px;border-radius:8px;background:#0a0a12;display:block"></canvas>
+        <canvas id="vol-${p.symbol}" style="width:100%;height:30px;border-radius:4px;background:#0a0a12;display:block;margin-top:2px"></canvas>
+      </div>`:""}
+    </div>`;
+  }).join("");
+
+  // Render charts for open positions
+  sorted.forEach(p=>{
+    if(openCharts[p.symbol]) renderPositionChart(p.symbol);
+  });
+}
+
+async function togglePositionChart(symbol){
+  openCharts[symbol]=!openCharts[symbol];
+  // Refresh positions to re-render with/without chart
+  try{
+    const pos=await alpaca("GET","/v2/positions");
+    updatePositionsUI(pos);
+  }catch{}
+}
+
+async function renderPositionChart(symbol){
+  // Fetch latest candles for this position
+  try{
+    const proxy=document.getElementById("proxyUrl").value.trim().replace(/\/$/,"");
+    const r=await fetch(`${proxy}/api/yahoo?ticker=${encodeURIComponent(symbol)}&range=1d&interval=5m`);
+    if(!r.ok) return;
+    const json=await r.json();
+    const result=json?.chart?.result?.[0];
+    if(!result) return;
+    const ts=result.timestamp||[];
+    const q=result.indicators?.quote?.[0]||{};
+    const candles=ts.map((t,i)=>({
+      t,open:q.open?.[i],high:q.high?.[i],low:q.low?.[i],close:q.close?.[i],volume:q.volume?.[i]
+    })).filter(c=>c.close!=null);
+    if(candles.length<2) return;
+
+    const cv=document.getElementById("canvas-"+symbol);
+    const vc=document.getElementById("vol-"+symbol);
+    if(!cv||!vc) return;
+
+    const dpr=window.devicePixelRatio||1;
+    const W=cv.parentElement.clientWidth;
+    const H=120, VH=30;
+
+    cv.width=W*dpr; cv.height=H*dpr; cv.style.width=W+"px"; cv.style.height=H+"px";
+    vc.width=W*dpr; vc.height=VH*dpr; vc.style.width=W+"px"; vc.style.height=VH+"px";
+
+    const ctx=cv.getContext("2d"); ctx.scale(dpr,dpr);
+    const vctx=vc.getContext("2d"); vctx.scale(dpr,dpr);
+
+    const recent=candles.slice(-60);
+    const n=recent.length;
+    const pad={l:46,r:6,t:6,b:16};
+    const w=W-pad.l-pad.r, h=H-pad.t-pad.b;
+    const prices=recent.flatMap(c=>[c.high,c.low]);
+    const mn=Math.min(...prices)*0.999, mx=Math.max(...prices)*1.001;
+    const sy=v=>pad.t+(1-(v-mn)/(mx-mn))*h;
+    const cw=Math.max(2,Math.floor(w/n)-1);
+
+    // Grid
+    ctx.strokeStyle="#1a1a2e"; ctx.lineWidth=1;
+    for(let i=0;i<3;i++){
+      const y=pad.t+i*(h/2);
+      ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(pad.l+w,y); ctx.stroke();
+      const v=mx-i*(mx-mn)/2;
+      ctx.fillStyle="#4a4a7a"; ctx.font="8px monospace"; ctx.textAlign="right";
+      ctx.fillText("$"+v.toFixed(v>10?2:3),pad.l-3,y+3);
+    }
+
+    // Entry price line
+    const entryPrice=+trailingStops[symbol]?.entry||0;
+    if(entryPrice>mn&&entryPrice<mx){
+      ctx.strokeStyle="rgba(129,140,248,0.6)"; ctx.lineWidth=1; ctx.setLineDash([4,4]);
+      ctx.beginPath(); ctx.moveTo(pad.l,sy(entryPrice)); ctx.lineTo(pad.l+w,sy(entryPrice)); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle="#818cf8"; ctx.font="8px monospace"; ctx.textAlign="right";
+      ctx.fillText("Entry",pad.l-3,sy(entryPrice)+3);
+    }
+
+    // TP/SL lines
+    const tp=trailingStops[symbol]?.tp;
+    const sl=trailingStops[symbol]?.sl;
+    if(tp&&tp>mn&&tp<mx*1.05){
+      ctx.strokeStyle="rgba(74,222,128,0.5)"; ctx.lineWidth=1; ctx.setLineDash([3,3]);
+      ctx.beginPath(); ctx.moveTo(pad.l,sy(Math.min(tp,mx))); ctx.lineTo(pad.l+w,sy(Math.min(tp,mx))); ctx.stroke();
+      ctx.setLineDash([]);
+    }
+    if(sl&&sl>mn&&sl<mx){
+      ctx.strokeStyle="rgba(248,113,113,0.5)"; ctx.lineWidth=1; ctx.setLineDash([3,3]);
+      ctx.beginPath(); ctx.moveTo(pad.l,sy(sl)); ctx.lineTo(pad.l+w,sy(sl)); ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    // Candles
+    recent.forEach((c,i)=>{
+      const x=pad.l+i*(w/n);
+      const bull=c.close>=c.open;
+      const col=bull?"#4ade80":"#f87171";
+      const bt=sy(Math.max(c.open,c.close)), bb=sy(Math.min(c.open,c.close));
+      const midX=x+cw/2;
+      ctx.strokeStyle=col; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(midX,sy(c.high)); ctx.lineTo(midX,sy(c.low)); ctx.stroke();
+      ctx.fillStyle=col; ctx.fillRect(x,bt,cw,Math.max(1,bb-bt));
+    });
+
+    // Volume bars
+    const maxV=Math.max(...recent.map(c=>c.volume||0));
+    recent.forEach((c,i)=>{
+      const x=pad.l+i*(w/n);
+      const bull=c.close>=c.open;
+      vctx.fillStyle=bull?"rgba(74,222,128,0.4)":"rgba(248,113,113,0.4)";
+      const bh=Math.max(1,((c.volume||0)/maxV)*(VH-4));
+      vctx.fillRect(x,VH-bh,cw,bh);
+    });
+  }catch(e){ console.warn("Chart error",symbol,e); }
+}
+
+// ── Live P&L refresh (every 30s when agent is running) ────────────
+let plRefreshTimer=null;
+function startPlRefresh(){
+  if(plRefreshTimer) return;
+  plRefreshTimer=setInterval(async()=>{
+    if(!RUNNING) return;
+    try{
+      const [pos,acct]=await Promise.all([
+        alpaca("GET","/v2/positions"),
+        alpaca("GET","/v2/account"),
+      ]);
+      updatePositionsUI(pos);
+      updateAccountUI(acct);
+      const t=new Date().toLocaleTimeString("en-GB");
+      document.getElementById("plRefreshNote").textContent=`P&L updated ${t}`;
+    }catch{}
+  },30000); // every 30 seconds
+}
+function stopPlRefresh(){
+  clearInterval(plRefreshTimer);
+  plRefreshTimer=null;
+  document.getElementById("plRefreshNote").textContent="";
+}
+
+async function closePosition(symbol, qty){
+  if(!confirm(`Close ${qty}x ${symbol} at market price?`)) return;
+  try{
+    // Cancel any open orders first (bracket legs etc)
+    const openOrders=await alpaca("GET",`/v2/orders?status=open&symbols=${symbol}`).catch(()=>[]);
+    for(const o of Array.isArray(openOrders)?openOrders:[]){
+      await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
+    }
+    if((Array.isArray(openOrders)?openOrders:[]).length){
+      await new Promise(r=>setTimeout(r,600));
+    }
+    await alpaca("POST","/v2/orders",{
+      symbol, qty:String(qty), side:"sell",
+      type:"market", time_in_force:"day"
+    });
+    log("SELL",`✓ Manually closed ${symbol}`,`${qty} shares at market`);
+    delete trailingStops[symbol];
+    await new Promise(r=>setTimeout(r,1500));
+    const pos=await alpaca("GET","/v2/positions");
+    updatePositionsUI(pos);
+    const acct=await alpaca("GET","/v2/account");
+    updateAccountUI(acct);
+  }catch(e){
+    log("ERROR",`Failed to close ${symbol}: ${e.message}`);
+  }
+}
+
+async function restoreBracketOrders(){
+  try{
+    const orders=await alpaca("GET","/v2/orders?status=open&limit=200&nested=true");
+    if(!Array.isArray(orders)) return;
+    for(const o of orders){
+      if(o.order_class==="bracket"||o.legs?.length){
+        const symbol=o.symbol;
+        const legs=o.legs||[];
+        let tp=null, sl=null;
+        for(const leg of legs){
+          if(leg.type==="limit"&&leg.side==="sell") tp=+leg.limit_price||null;
+          if(leg.type==="stop"&&leg.side==="sell")  sl=+leg.stop_price||null;
+        }
+        if(!trailingStops[symbol]) trailingStops[symbol]={};
+        const entry=+o.filled_avg_price||+o.limit_price||0;
+        if(!trailingStops[symbol].high) trailingStops[symbol].high=entry||+o.filled_avg_price||0;
+        if(!trailingStops[symbol].entry) trailingStops[symbol].entry=entry;
+        if(tp) trailingStops[symbol].tp=tp;
+        if(sl) trailingStops[symbol].sl=sl;
+      }
+    }
+    log("INFO",`🔒 Restored bracket orders for: ${Object.keys(trailingStops).filter(k=>trailingStops[k].tp||trailingStops[k].sl).join(", ")||"none"}`);
+  }catch(e){ log("INFO","Could not restore bracket orders: "+e.message); }
+}
+
+async function resortPositions(){
+  try{
+    const pos=await alpaca("GET","/v2/positions");
+    updatePositionsUI(pos);
+  }catch{}
+}
+
+async function refreshPositions(){
+  try{
+    await restoreBracketOrders();
+    const [pos,acct]=await Promise.all([
+      alpaca("GET","/v2/positions"),
+      alpaca("GET","/v2/account"),
+    ]);
+    updatePositionsUI(pos);
+    updateAccountUI(acct);
+  }catch(e){log("ERROR","Refresh failed: "+e.message);}
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// AGENT CONTROL
+// ═══════════════════════════════════════════════════════════════════
+async function startAgent(){
+  const key=document.getElementById("alpacaKey").value.trim();
+  const secret=document.getElementById("alpacaSecret").value.trim();
+  const proxy=document.getElementById("proxyUrl").value.trim();
+  if(!key||!secret||!proxy){alert("Enter Alpaca credentials and proxy URL");return;}
+  if(!activeTFs.size){alert("Select at least one timeframe");return;}
+
+  document.getElementById("startBtn").disabled=true;
+  document.getElementById("statusText").textContent="Connecting…";
+  try{
+    const acct=await alpaca("GET","/v2/account");
+    updateAccountUI(acct); saveKeys();
+    await restoreBracketOrders();
