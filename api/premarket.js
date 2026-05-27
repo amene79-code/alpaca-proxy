@@ -68,93 +68,74 @@ async function finnhubInsiders(apiKey) {
   } catch { return []; }
 }
 
-// ── Reddit WSB — multiple fallback strategies ─────────────────────
+// ── Apewisdom — WSB/Reddit mention tracker (no auth needed) ──────
 async function redditWSB() {
-  const blacklist = new Set([
-    "THE","AND","FOR","ARE","BUT","NOT","YOU","ALL","CAN","WAS","ONE","OUR",
-    "OUT","NOW","GOT","GET","PUT","CEO","IPO","SEC","FDA","EPS","ETF","NYSE",
-    "WSB","DD","YOLO","IMO","LOL","OMG","GDP","ATH","ATL","USD","BTC","ETH",
-    "EDIT","TLDR","DRS","SPY","QQQ","IWM","VIX","CALLS","PUTS","ITM","OTM",
-    "ATM","DTE","IV","EV","AI","ML","US","UK","EU","AP","PM","AM","OP","RE",
-    "HOLD","BUY","SELL","LONG","SHORT","THIS","THAT","WITH","FROM","HAVE",
-    "BEEN","WILL","YOUR","THEY","WHEN","WHAT","SOME","MORE","ALSO","INTO",
-  ]);
-
-  function extractTickers(text, mentions) {
-    const re = /\$([A-Z]{1,5})|(?<![A-Za-z])([A-Z]{2,5})(?![A-Za-z])/g;
-    let m;
-    while ((m = re.exec(text)) !== null) {
-      const t = (m[1] || m[2]).toUpperCase();
-      if (!t || blacklist.has(t) || t.length < 2 || t.length > 5) continue;
-      mentions[t] = (mentions[t] || 0) + (m[1] ? 3 : 1);
-    }
-  }
-
-  const mentions = {};
-  let debugInfo = [];
-
-  // Strategy 1: Reddit RSS
   try {
-    const r = await fetch("https://www.reddit.com/r/wallstreetbets/hot/.rss?limit=50", {
-      headers: { "User-Agent": "Mozilla/5.0", "Accept": "text/xml, application/xml, */*" },
-    });
-    debugInfo.push(`RSS: ${r.status}`);
-    if (r.ok) {
-      const xml = await r.text();
-      const re = /<title><!\[CDATA\[(.*?)\]\]><\/title>|<title>(.*?)<\/title>/g;
-      let m; let count = 0;
-      while ((m = re.exec(xml)) !== null) {
-        const t = (m[1] || m[2] || "").trim();
-        if (t && !t.toLowerCase().includes("wallstreetbets")) { extractTickers(t, mentions); count++; }
-      }
-      debugInfo.push(`RSS titles: ${count}`);
-    }
-  } catch(e) { debugInfo.push(`RSS error: ${e.message}`); }
+    // Apewisdom aggregates Reddit WSB, stocks, investing mentions
+    const urls = [
+      "https://apewisdom.io/api/v1.0/filter/wallstreetbets/page/1",
+      "https://apewisdom.io/api/v1.0/filter/all-stocks/page/1",
+    ];
 
-  // Strategy 2: Reddit JSON with different headers
-  try {
-    const r = await fetch("https://www.reddit.com/r/wallstreetbets/hot.json?limit=25", {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept": "application/json",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Connection": "keep-alive",
-      },
-    });
-    debugInfo.push(`JSON: ${r.status}`);
-    if (r.ok) {
-      const d = await r.json();
-      const posts = d?.data?.children || [];
-      posts.forEach(p => extractTickers(p.data.title || "", mentions));
-      debugInfo.push(`JSON posts: ${posts.length}`);
-    }
-  } catch(e) { debugInfo.push(`JSON error: ${e.message}`); }
+    const blacklist = new Set([
+      "THE","AND","FOR","ARE","BUT","NOT","YOU","ALL","CAN","WAS","ONE","OUR",
+      "OUT","NOW","GOT","GET","PUT","CEO","IPO","SEC","FDA","EPS","ETF","NYSE",
+      "WSB","DD","YOLO","IMO","LOL","OMG","GDP","ATH","ATL","USD","BTC","ETH",
+      "EDIT","TLDR","DRS","SPY","QQQ","IWM","VIX","CALLS","PUTS","ITM","OTM",
+      "AI","ML","US","UK","EU","AP","PM","AM","OP","RE","HOLD","BUY","SELL",
+    ]);
 
-  // Strategy 3: Yahoo Finance trending as Reddit fallback
-  // If Reddit is blocked, use Yahoo trending tickers as social proxy
-  try {
-    const r = await fetch("https://query1.finance.yahoo.com/v1/finance/trending/US?count=20", {
-      headers: { "User-Agent": "Mozilla/5.0" },
-    });
-    if (r.ok) {
-      const d = await r.json();
-      const quotes = d?.finance?.result?.[0]?.quotes || [];
-      quotes.forEach(q => {
-        if (q.symbol && /^[A-Z]{1,5}$/.test(q.symbol)) {
-          mentions[q.symbol] = (mentions[q.symbol] || 0) + 1.5;
+    const mentions = {};
+    let source = "Apewisdom";
+
+    for (const url of urls) {
+      try {
+        const r = await fetch(url, {
+          headers: { "User-Agent": UA, "Accept": "application/json" },
+        });
+        if (!r.ok) continue;
+        const d = await r.json();
+        const results = d?.results || [];
+        for (const item of results) {
+          const t = (item.ticker || "").toUpperCase();
+          if (!t || blacklist.has(t) || t.length < 2 || t.length > 5) continue;
+          const score = (item.mentions || 1) / 10 + (item.mentions_24h_ago ? (item.mentions - item.mentions_24h_ago) / 20 : 0);
+          mentions[t] = (mentions[t] || 0) + Math.max(0.5, score);
         }
-      });
-      debugInfo.push(`Yahoo trending: ${quotes.length}`);
+        if (results.length) break; // got data, stop trying
+      } catch { continue; }
     }
-  } catch(e) { debugInfo.push(`Yahoo error: ${e.message}`); }
 
-  const tickers = Object.entries(mentions)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 20)
-    .map(([ticker, score]) => ({ ticker, score: Math.round(score * 10) / 10 }));
+    if (Object.keys(mentions).length) {
+      const tickers = Object.entries(mentions)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 20)
+        .map(([ticker, score]) => ({ ticker, score: Math.round(score * 10) / 10 }));
+      return { tickers, posts: [], source: "Apewisdom (WSB)" };
+    }
 
-  return { tickers, posts: [], debug: debugInfo.join(" | ") };
+    // Final fallback: Yahoo trending, but label it clearly
+    try {
+      const r = await fetch("https://query1.finance.yahoo.com/v1/finance/trending/US?count=20", {
+        headers: { "User-Agent": UA },
+      });
+      if (r.ok) {
+        const d = await r.json();
+        const quotes = d?.finance?.result?.[0]?.quotes || [];
+        const tickers = quotes
+          .map(q => ({ ticker: q.symbol, score: 1.0 }))
+          .filter(t => /^[A-Z]{1,5}$/.test(t.ticker))
+          .slice(0, 15);
+        return { tickers, posts: [], source: "Yahoo Trending (Reddit unavailable)" };
+      }
+    } catch {}
+
+    return { tickers: [], posts: [], source: "Unavailable" };
+  } catch {
+    return { tickers: [], posts: [], source: "Unavailable" };
+  }
 }
+
 
 // ── Stocktwits trending ───────────────────────────────────────────
 async function stocktwitsTrending() {
