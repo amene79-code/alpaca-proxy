@@ -142,7 +142,17 @@ label{color:#9090c0}
 
   <!-- Top ranked tickers -->
   <div class="card">
-    <div class="micro">🏆 Combined Signal Score — all sources</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+      <div class="micro" style="margin:0">🏆 Combined Signal Score</div>
+      <div style="display:flex;gap:6px">
+        <select id="rankFilter" onchange="filterRanked()" style="font-size:10px;padding:3px 8px;background:#08080f;border:1px solid #252540;color:#8888bb;border-radius:6px;width:auto">
+          <option value="all">All sources</option>
+          <option value="social">Social only (Reddit + Stocktwits)</option>
+          <option value="premarket">Pre-market movers only</option>
+          <option value="multi">Multi-source only (2+)</option>
+        </select>
+      </div>
+    </div>
     <div id="rankedTickers" style="display:flex;flex-wrap:wrap;gap:8px"></div>
   </div>
 
@@ -380,12 +390,22 @@ function setStatus(msg,color){
 }
 
 // ═══ Render results ═══════════════════════════════════════════════
+function filterRanked(){
+  if(!scanData) return;
+  renderResults(scanData);
+}
+
 function renderResults(d){
   document.getElementById("results").style.display="block";
 
-  // Ranked tickers
+  // Ranked tickers with filter
+  const rankFilter=document.getElementById("rankFilter")?.value||"all";
+  let rankedList=d.rankedTickers||[];
+  if(rankFilter==="social") rankedList=rankedList.filter(t=>t.sources.some(s=>s.includes("Reddit")||s.includes("Stocktwits")));
+  if(rankFilter==="premarket") rankedList=rankedList.filter(t=>t.sources.some(s=>s.includes("Pre-market")));
+  if(rankFilter==="multi") rankedList=rankedList.filter(t=>t.sources.length>=2);
   const ranked=document.getElementById("rankedTickers");
-  ranked.innerHTML=(d.rankedTickers||[]).map(t=>{
+  ranked.innerHTML=(rankedList||[]).map(t=>{
     const src=t.sources||[];
     const cls=src.includes("Earnings Today")?"chip-earnings":src.includes("Pre-market")?"chip-premarket":src.includes("Reddit WSB")?"chip-reddit":"chip-stwits";
     return `<div class="chip chip-combined ${cls}" onclick="toggleTicker('${t.ticker}',this)" title="${t.sources.join(", ")}">
