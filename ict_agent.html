@@ -796,7 +796,7 @@ async function analyzeSetup(ticker){
 
   // Enforce minimum 2:1 R:R — ICT principle
   if(rr<2){
-    log("SKIP",`${ticker} — R:R ${rr} < 2:1 minimum (SL $${sl} TP $${tp})`);
+    log("SKIP",`${ticker} — R:R ${Math.round(rr*10)/10} < 2:1 minimum (SL $${sl} TP $${tp})`);
     return null;
   }
 
@@ -1006,14 +1006,31 @@ async function placeICTOrder(setup, cfg){
         `ID: ${order.id} | Tag: ${tag} | R:R ${rr}:1 | GTC bracket active`);
       trailingStops[ticker]={
         high:price, entry:price, tp, sl, side:setupType,
-        tag, fvgSize:setup.fvg.size, trend:setup.struct.trend,
+        tag, fvgSize:setup.fvg?.size||0, trend:setup.struct.trend,
         killZone:kz.name||"unknown", cvdDiv:setup.cvdDiv,
       };
-      // Save trade metadata for history
       saveICTTradeMeta(ticker, tag, setup, qty, price, sl, tp, rr);
       return true;
     }
-  }catch(e){log("ERROR",`Order failed ${ticker}: ${e.message}`);}
+  }catch(e){
+    // Hard-to-borrow assets require day orders for shorts
+    if(e.message?.includes("hard-to-borrow")&&setupType==="short"){
+      log("INFO",`${ticker} is hard-to-borrow — retrying with day order`);
+      try{
+        const dayOrder=await alpaca("POST","/v2/orders",{
+          ...orderBody, time_in_force:"day"
+        });
+        if(dayOrder.id){
+          log("SHORT",`✓ ORDER PLACED (day): ${qty}x ${ticker}`,`ID: ${dayOrder.id} | Hard-to-borrow`);
+          trailingStops[ticker]={high:price,entry:price,tp,sl,side:setupType,tag};
+          saveICTTradeMeta(ticker,tag,setup,qty,price,sl,tp,rr);
+          return true;
+        }
+      }catch(e2){log("ERROR",`Order failed ${ticker}: ${e2.message}`);}
+    } else {
+      log("ERROR",`Order failed ${ticker}: ${e.message}`);
+    }
+  }
   return false;
 }
 
