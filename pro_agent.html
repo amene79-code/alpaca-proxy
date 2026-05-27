@@ -371,6 +371,11 @@ label{color:#9090c0}
 
     <!-- Filter -->
     <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap" id="tradeFilters" style="display:none">
+      <select id="tradeSource" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+        <option value="all">All agents</option>
+        <option value="PRO">Pro Agent only</option>
+        <option value="ICT">ICT Agent only</option>
+      </select>
       <select id="tradeFilter" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
         <option value="all">All trades</option>
         <option value="win">Winners only</option>
@@ -397,6 +402,7 @@ label{color:#9090c0}
           <tr style="color:#555580;font-size:9px;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid #1c1c30">
             <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('date')">Date ↕</th>
             <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('symbol')">Ticker ↕</th>
+            <th style="text-align:left;padding:6px 8px">Agent</th>
             <th style="text-align:right;padding:6px 8px">Qty</th>
             <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('entry')">Entry ↕</th>
             <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('exit')">Exit ↕</th>
@@ -1223,12 +1229,14 @@ async function manageTrailingStops(positions,cfg){
       log("TRAIL",`Trailing stop triggered: ${p.symbol} @ $${price}`,
         `High $${high.toFixed(2)} | Stop $${stop} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
       try{
-        // Cancel any existing open orders for this symbol first (e.g. bracket legs)
-        const openOrders=await alpaca("GET",`/v2/orders?status=open&symbols=${p.symbol}`).catch(()=>[]);
-        for(const o of Array.isArray(openOrders)?openOrders:[]){
+        // Fetch ALL open orders and cancel any for this symbol
+        const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100").catch(()=>[]);
+        const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===p.symbol);
+        for(const o of symbolOrders){
           await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
+          log("INFO",`Cancelled order ${o.id} for ${p.symbol} (${o.type} ${o.side})`);
         }
-        await new Promise(r=>setTimeout(r,500)); // brief pause after cancels
+        if(symbolOrders.length) await new Promise(r=>setTimeout(r,800));
         await alpaca("POST","/v2/orders",{symbol:p.symbol,qty:String(p.qty),side:"sell",type:"market",time_in_force:"day"});
         log("SELL",`✓ Closed ${p.symbol}`,`P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
         delete trailingStops[p.symbol];
@@ -1818,14 +1826,13 @@ function stopPlRefresh(){
 async function closePosition(symbol, qty){
   if(!confirm(`Close ${qty}x ${symbol} at market price?`)) return;
   try{
-    // Cancel any open orders first (bracket legs etc)
-    const openOrders=await alpaca("GET",`/v2/orders?status=open&symbols=${symbol}`).catch(()=>[]);
-    for(const o of Array.isArray(openOrders)?openOrders:[]){
+    // Fetch ALL open orders and cancel any for this symbol
+    const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100").catch(()=>[]);
+    const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===symbol);
+    for(const o of symbolOrders){
       await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
     }
-    if((Array.isArray(openOrders)?openOrders:[]).length){
-      await new Promise(r=>setTimeout(r,600));
-    }
+    if(symbolOrders.length) await new Promise(r=>setTimeout(r,800));
     await alpaca("POST","/v2/orders",{
       symbol, qty:String(qty), side:"sell",
       type:"market", time_in_force:"day"
@@ -1997,7 +2004,8 @@ function matchTrades(activities, accountEquity=null, startEquity=null){
 
     for(const fill of fills){
       if(fill.side==="buy"){
-        buyQueue.push({qty:fill.qty, price:fill.price, time:fill.transaction_time});
+        buyQueue.push({qty:fill.qty, price:fill.price, time:fill.transaction_time,
+          tag:fill.client_order_id||""});
       } else if(fill.side==="sell"){
         let sellQty=fill.qty;
         while(sellQty>0.001&&buyQueue.length){
@@ -2005,6 +2013,8 @@ function matchTrades(activities, accountEquity=null, startEquity=null){
           const matched=Math.min(sellQty, buy.qty);
           const pl=(fill.price - buy.price)*matched;
           const pct=((fill.price - buy.price)/buy.price)*100;
+          const tag=buy.tag||"";
+          const source=tag.startsWith("ICT-")?"ICT":"PRO";
           trades.push({
             symbol,
             date:fill.transaction_time.slice(0,10),
@@ -2016,6 +2026,7 @@ function matchTrades(activities, accountEquity=null, startEquity=null){
             pct:Math.round(pct*100)/100,
             win:pl>0,
             matched:true,
+            tag, source,
           });
           buy.qty-=matched;
           sellQty-=matched;
@@ -2053,6 +2064,7 @@ function getFilteredTrades(){
   const filter=document.getElementById("tradeFilter")?.value||"all";
   const period=document.getElementById("tradePeriod")?.value||"all";
   const search=(document.getElementById("tradeSearch")?.value||"").toUpperCase();
+  const source=document.getElementById("tradeSource")?.value||"all";
   const now=new Date();
   const startOfWeek=new Date(now);
   startOfWeek.setDate(now.getDate()-now.getDay());
@@ -2065,6 +2077,7 @@ function getFilteredTrades(){
     if(search&&!t.symbol.includes(search)) return false;
     if(period==="today"&&new Date(t.time)<today) return false;
     if(period==="week"&&new Date(t.time)<startOfWeek) return false;
+    if(source!=="all"&&t.source!==source) return false;
     return true;
   });
 }
@@ -2092,7 +2105,12 @@ function renderTradeStats(recon=null){
 
   // Update summary badge — show expectancy not P&L
   const badge=document.getElementById("tradeSummaryBadge");
-  if(badge) badge.textContent=`${t.length} trades · ${winRate}% win · expectancy ${fmtPl(expectancy)}`;
+  const proTrades=tradeHistory.filter(t=>t.source!=="ICT");
+  const ictTrades=tradeHistory.filter(t=>t.source==="ICT");
+  const proWR=proTrades.length?(proTrades.filter(x=>x.win).length/proTrades.length*100).toFixed(0):0;
+  const ictWR=ictTrades.length?(ictTrades.filter(x=>x.win).length/ictTrades.length*100).toFixed(0):0;
+  if(badge) badge.textContent=`${t.length} trades · ${winRate}% win · exp ${fmtPl(expectancy)}` +
+    (ictTrades.length?` | PRO ${proTrades.length}t ${proWR}% · ICT ${ictTrades.length}t ${ictWR}%`:"");
 
   const metric=(v,l,c,sub)=>`<div class="metric">
     <div class="metric-v" style="font-size:14px;color:${c||"#dde1f0"}">${v}</div>
@@ -2165,6 +2183,10 @@ function renderTradeTable(){
     <tr style="border-bottom:1px solid #0f0f1a;${t.win?"":"background:#0d0808"}">
       <td style="padding:6px 8px;color:#555580">${t.date}</td>
       <td style="padding:6px 8px"><b style="color:#818cf8">${t.symbol}</b></td>
+      <td style="padding:6px 8px">
+        <span style="font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;
+          ${t.source==="ICT"?"background:#001a18;color:#00ddcc":"background:#0f0f20;color:#818cf8"}">${t.source||"PRO"}</span>
+      </td>
       <td style="padding:6px 8px;text-align:right;color:#6060a0">${t.qty}</td>
       <td style="padding:6px 8px;text-align:right">$${t.entry.toFixed(2)}</td>
       <td style="padding:6px 8px;text-align:right">$${t.exit.toFixed(2)}</td>
@@ -2205,3 +2227,65 @@ window.addEventListener("load",()=>{ loadTradeHistoryFromStorage(); if(tradeHist
 // AGENT CONTROL
 // ═══════════════════════════════════════════════════════════════════
 async function startAgent(){
+  const key=document.getElementById("alpacaKey").value.trim();
+  const secret=document.getElementById("alpacaSecret").value.trim();
+  const proxy=document.getElementById("proxyUrl").value.trim();
+  if(!key||!secret||!proxy){alert("Enter Alpaca credentials and proxy URL");return;}
+  if(!activeTFs.size){alert("Select at least one timeframe");return;}
+
+  document.getElementById("startBtn").disabled=true;
+  document.getElementById("statusText").textContent="Connecting…";
+  try{
+    const acct=await alpaca("GET","/v2/account");
+    updateAccountUI(acct); saveKeys();
+    await restoreBracketOrders();
+
+    // Verify all open positions have active bracket orders
+    const [pos, openOrders] = await Promise.all([
+      alpaca("GET","/v2/positions"),
+      alpaca("GET","/v2/orders?status=open&limit=100"),
+    ]);
+    if(Array.isArray(pos)&&pos.length){
+      const orderedSymbols=new Set((Array.isArray(openOrders)?openOrders:[]).map(o=>o.symbol));
+      const unprotected=pos.filter(p=>!orderedSymbols.has(p.symbol));
+      if(unprotected.length){
+        log("INFO",`⚠ ${unprotected.length} position(s) have no active bracket orders: ${unprotected.map(p=>p.symbol).join(", ")}`,
+          "These positions have no SL/TP protection. Consider closing manually or the agent will manage via trailing stop.");
+      } else {
+        log("INFO",`✓ All ${pos.length} positions have active bracket orders on Alpaca`);
+      }
+    }
+
+    log("INFO","✓ Connected to Alpaca Paper",`Portfolio ${fmt$(acct.portfolio_value)} | Buying power ${fmt$(acct.buying_power)}`);
+  }catch(e){
+    log("ERROR","Connection failed: "+e.message);
+    document.getElementById("startBtn").disabled=false;
+    setStatus("off"); return;
+  }
+
+  RUNNING=true;
+  document.getElementById("stopBtn").disabled=false;
+  document.getElementById("configPanel").style.opacity="0.5";
+  document.getElementById("configPanel").style.pointerEvents="none";
+  setStatus("on");
+  startPlRefresh();
+
+  const newsMode=document.getElementById("cfgUseNews").checked?"Technical + News":"Technical only (zero cost)";
+  log("INFO","Pro Agent started",
+    `Markets: ${[...selectedMarkets].join("+")} | TFs: ${[...activeTFs].join("+")} | Mode: ${newsMode} | Screener: ${document.getElementById("cfgScreenerMarket").value}`);
+  await runCycle();
+}
+
+function stopAgent(){
+  RUNNING=false; clearInterval(countdownTimer); stopPlRefresh();
+  document.getElementById("startBtn").disabled=false;
+  document.getElementById("stopBtn").disabled=true;
+  document.getElementById("configPanel").style.opacity="1";
+  document.getElementById("configPanel").style.pointerEvents="auto";
+  document.getElementById("scanCountdown").style.display="none";
+  setPhase("screen"); setStatus("off");
+  log("INFO","Agent stopped — open positions remain on Alpaca");
+}
+</script>
+</body>
+</html>
