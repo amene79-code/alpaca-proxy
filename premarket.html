@@ -185,7 +185,7 @@ label{color:#9090c0}
   <!-- Social signals -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
     <div class="card">
-      <div class="micro">🔴 Reddit WSB Hot</div>
+      <div class="micro" id="redditLabel">🔴 Reddit WSB (via Apewisdom)</div>
       <div id="redditTickers" style="display:flex;flex-wrap:wrap;gap:6px"></div>
     </div>
     <div class="card">
@@ -463,10 +463,13 @@ function renderResults(d){
     d.premarketMovers.map(t=>`<span class="chip chip-premarket">${t}</span>`).join("")
     :`<span style="color:#333;font-size:12px">No pre-market movers detected yet</span>`;
 
-  // Reddit
-  document.getElementById("redditTickers").innerHTML=(d.reddit?.tickers||[]).slice(0,12)
+  // Reddit/Apewisdom
+  const redditSource=d.reddit?.source||"Reddit WSB";
+  const redditLabel=document.getElementById("redditLabel");
+  if(redditLabel) redditLabel.textContent=`🔴 ${redditSource}`;
+  document.getElementById("redditTickers").innerHTML=(d.reddit?.tickers||[]).slice(0,15)
     .map(t=>`<span class="chip chip-reddit" title="Score: ${t.score}">${t.ticker}</span>`).join("") ||
-    `<span style="color:#333;font-size:12px">No Reddit data${d.reddit?.debug?` (${d.reddit.debug})`:""}</span>`;
+    `<span style="color:#333;font-size:12px">No data</span>`;
 
   // Stocktwits
   document.getElementById("stwTickers").innerHTML=(d.stocktwits||[]).slice(0,12)
