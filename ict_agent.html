@@ -284,6 +284,85 @@ label{color:#7aaa90;font-size:11px}
   <div id="positions"><div style="color:var(--muted);font-size:11px">No positions.</div></div>
 </div>
 
+<!-- Trade History -->
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+    <div style="display:flex;align-items:center;gap:10px;cursor:pointer" onclick="toggleICTHistory()">
+      <div class="micro" style="margin:0">📊 ICT Trade History</div>
+      <span id="ictToggleIcon" style="color:var(--muted);font-size:12px">▼</span>
+      <span id="ictSummaryBadge" style="font-size:10px;color:var(--teal)"></span>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button onclick="loadICTHistory()" style="font-size:10px;padding:3px 10px;color:var(--teal);border-color:var(--teal)">↻ Load from Alpaca</button>
+      <button onclick="exportICTTrades()" style="font-size:10px;padding:3px 10px;color:var(--green);border-color:var(--green2)">⬇ CSV</button>
+      <button onclick="clearICTHistory()" style="font-size:10px;padding:3px 8px;color:var(--muted)">Clear</button>
+    </div>
+  </div>
+
+  <div id="ictHistoryBody">
+    <!-- Stats -->
+    <div id="ictStats" style="display:none">
+      <!-- Row 1: Core stats -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px" id="ictStatsGrid1"></div>
+      <!-- Row 2: Avg stats -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px" id="ictStatsGrid2"></div>
+      <!-- Row 3: ICT-specific breakdown -->
+      <div id="ictBreakdown" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px"></div>
+      <!-- Reconciliation -->
+      <div id="ictReconNote" style="font-size:10px;color:var(--muted);margin-bottom:10px;padding:8px 10px;background:var(--bg);border-radius:6px;line-height:1.7;display:none"></div>
+    </div>
+
+    <!-- Filters -->
+    <div id="ictFilters" style="display:none;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+      <select id="ictFilterResult" onchange="renderICTTable()" style="font-size:10px;padding:3px 8px;background:var(--bg);border:1px solid var(--border2);color:var(--muted);border-radius:6px;width:auto">
+        <option value="all">All trades</option>
+        <option value="win">Winners</option>
+        <option value="loss">Losers</option>
+      </select>
+      <select id="ictFilterDir" onchange="renderICTTable()" style="font-size:10px;padding:3px 8px;background:var(--bg);border:1px solid var(--border2);color:var(--muted);border-radius:6px;width:auto">
+        <option value="all">Long + Short</option>
+        <option value="long">Long only</option>
+        <option value="short">Short only</option>
+      </select>
+      <select id="ictFilterKZ" onchange="renderICTTable()" style="font-size:10px;padding:3px 8px;background:var(--bg);border:1px solid var(--border2);color:var(--muted);border-radius:6px;width:auto">
+        <option value="all">All kill zones</option>
+        <option value="London">London Open</option>
+        <option value="NY">NY Open</option>
+        <option value="LondonClose">London Close</option>
+      </select>
+      <select id="ictFilterRows" onchange="renderICTTable()" style="font-size:10px;padding:3px 8px;background:var(--bg);border:1px solid var(--border2);color:var(--muted);border-radius:6px;width:auto">
+        <option value="20" selected>20 rows</option>
+        <option value="50">50 rows</option>
+        <option value="all">All</option>
+      </select>
+    </div>
+
+    <!-- Table -->
+    <div style="overflow-y:auto;max-height:380px;overflow-x:auto">
+      <div id="ictEmpty" style="color:var(--muted);font-size:11px">Click Load from Alpaca to fetch ICT trade history.</div>
+      <table id="ictTable" style="display:none;width:100%;border-collapse:collapse;font-size:10px">
+        <thead style="position:sticky;top:0;background:var(--surface)">
+          <tr style="color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:5px 8px">Date</th>
+            <th style="text-align:left;padding:5px 8px">Ticker</th>
+            <th style="text-align:left;padding:5px 8px">Dir</th>
+            <th style="text-align:left;padding:5px 8px">Kill Zone</th>
+            <th style="text-align:left;padding:5px 8px">Trend</th>
+            <th style="text-align:right;padding:5px 8px">Entry</th>
+            <th style="text-align:right;padding:5px 8px">Exit</th>
+            <th style="text-align:right;padding:5px 8px">P&L</th>
+            <th style="text-align:right;padding:5px 8px">%</th>
+            <th style="text-align:right;padding:5px 8px">R:R</th>
+            <th style="text-align:left;padding:5px 8px">Result</th>
+          </tr>
+        </thead>
+        <tbody id="ictTableBody"></tbody>
+      </table>
+    </div>
+    <div id="ictRowNote" style="font-size:9px;color:var(--muted);margin-top:4px;text-align:right"></div>
+  </div>
+</div>
+
 <!-- Log -->
 <div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
@@ -879,12 +958,17 @@ async function placeICTOrder(setup, cfg){
     `Placing ${setupType.toUpperCase()}: ${qty}x ${ticker} @ ~$${price.toFixed(2)}`,
     `FVG $${setup.fvg.bottom.toFixed(2)}-$${setup.fvg.top.toFixed(2)} | SL $${sl} | TP $${tp} | R:R ${rr} | ${setup.setupType==="long"?"CVD "+setup.cvdDiv:""}`);
 
+  // Tag order with ICT prefix + metadata for later filtering
+  const kz=isInKillZone();
+  const tag=`ICT-${setup.setupType[0].toUpperCase()}-${setup.struct.trend[0].toUpperCase()}-${kz.name?.replace(/\s/g,"")||"NA"}-${Date.now()}`;
+
   const orderBody={
     symbol:ticker, qty:String(qty),
     side, time_in_force:"gtc",
     order_class:"bracket",
     take_profit:{limit_price:String(tp)},
     stop_loss:{stop_price:String(sl)},
+    client_order_id:tag,
     ...(useLimit?{type:"limit",limit_price:String(limitPrice)}:{type:"market"})
   };
 
@@ -892,8 +976,14 @@ async function placeICTOrder(setup, cfg){
     const order=await alpaca("POST","/v2/orders",orderBody);
     if(order.id){
       log(setupType==="long"?"LONG":"SHORT",`✓ ORDER PLACED: ${qty}x ${ticker}`,
-        `ID: ${order.id} | R:R ${rr}:1 | GTC bracket active`);
-      trailingStops[ticker]={high:price,entry:price,tp,sl,side:setupType};
+        `ID: ${order.id} | Tag: ${tag} | R:R ${rr}:1 | GTC bracket active`);
+      trailingStops[ticker]={
+        high:price, entry:price, tp, sl, side:setupType,
+        tag, fvgSize:setup.fvg.size, trend:setup.struct.trend,
+        killZone:kz.name||"unknown", cvdDiv:setup.cvdDiv,
+      };
+      // Save trade metadata for history
+      saveICTTradeMeta(ticker, tag, setup, qty, price, sl, tp, rr);
       return true;
     }
   }catch(e){log("ERROR",`Order failed ${ticker}: ${e.message}`);}
@@ -917,9 +1007,10 @@ async function manageTrailingStops(positions, cfg){
       const pl=+p.unrealized_pl||0;
       log("TRAIL",`Trail stop: ${p.symbol} @ $${price}`,`High $${high} → Stop $${stop} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
       try{
-        const open=await alpaca("GET",`/v2/orders?status=open&symbols=${p.symbol}`).catch(()=>[]);
+        const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100").catch(()=>[]);
+        const open=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===p.symbol);
         for(const o of Array.isArray(open)?open:[]) await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
-        await new Promise(r=>setTimeout(r,500));
+        await new Promise(r=>setTimeout(r,800));
         await alpaca("POST","/v2/orders",{symbol:p.symbol,qty:String(p.qty),side:"sell",type:"market",time_in_force:"day"});
         log("SELL",`✓ Closed ${p.symbol}`,`P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
         delete trailingStops[p.symbol];
@@ -1108,9 +1199,10 @@ function updatePositionsUI(positions){
 async function closePosition(symbol,qty){
   if(!confirm(`Close ${qty}x ${symbol}?`)) return;
   try{
-    const open=await alpaca("GET",`/v2/orders?status=open&symbols=${symbol}`).catch(()=>[]);
+    const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100").catch(()=>[]);
+    const open=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===symbol);
     for(const o of Array.isArray(open)?open:[]) await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
-    await new Promise(r=>setTimeout(r,500));
+    await new Promise(r=>setTimeout(r,800));
     await alpaca("POST","/v2/orders",{symbol,qty:String(qty),side:"sell",type:"market",time_in_force:"day"});
     log("SELL",`✓ Closed ${symbol}`);
     delete trailingStops[symbol];
@@ -1163,6 +1255,334 @@ function startPlRefresh(){
   },30000);
 }
 function stopPlRefresh(){clearInterval(plTimer);plTimer=null;}
+
+// ═══════════════════════════════════════════════════════════════════
+// ICT TRADE HISTORY
+// ═══════════════════════════════════════════════════════════════════
+const ICT_TH_KEY="ict_trade_history";
+const ICT_META_KEY="ict_trade_meta";
+let ictTrades=[], ictMeta={};
+let ictHistoryOpen=true, ictSortCol="date", ictSortDir=-1;
+
+function saveICTTradeMeta(ticker, tag, setup, qty, price, sl, tp, rr){
+  try{
+    ictMeta[tag]={
+      ticker, tag, qty, price, sl, tp, rr,
+      setupType: setup.setupType,
+      trend: setup.struct.trend,
+      killZone: isInKillZone().name||"unknown",
+      cvdDiv: setup.cvdDiv,
+      fvgSize: setup.fvg?.size||0,
+      fvgType: setup.fvg?.type||"",
+      hasOB: !!setup.ob,
+      hasSweep: setup.sweeps?.length>0,
+      bos: setup.struct.bos,
+      score: setup.score,
+      date: new Date().toISOString(),
+    };
+    localStorage.setItem(ICT_META_KEY, JSON.stringify(ictMeta));
+  }catch{}
+}
+
+function loadICTMeta(){
+  try{
+    const raw=localStorage.getItem(ICT_META_KEY);
+    if(raw) ictMeta=JSON.parse(raw);
+  }catch{}
+}
+
+function loadICTHistoryFromStorage(){
+  try{
+    const raw=localStorage.getItem(ICT_TH_KEY);
+    if(raw) ictTrades=JSON.parse(raw);
+  }catch{}
+}
+
+function saveICTHistoryToStorage(){
+  try{ localStorage.setItem(ICT_TH_KEY, JSON.stringify(ictTrades)); }catch{}
+}
+
+function toggleICTHistory(){
+  ictHistoryOpen=!ictHistoryOpen;
+  document.getElementById("ictHistoryBody").style.display=ictHistoryOpen?"block":"none";
+  document.getElementById("ictToggleIcon").textContent=ictHistoryOpen?"▼":"▶";
+}
+
+async function loadICTHistory(){
+  const btn=document.querySelector("button[onclick='loadICTHistory()']");
+  if(btn){btn.textContent="⏳ Loading…";btn.disabled=true;}
+  try{
+    let allActivities=[], pageToken=null, pages=0;
+    do{
+      const url=pageToken
+        ?`/v2/account/activities/FILL?page_size=100&page_token=${pageToken}`
+        :"/v2/account/activities/FILL?page_size=100";
+      const batch=await alpaca("GET",url);
+      if(!Array.isArray(batch)||!batch.length) break;
+      allActivities=[...allActivities,...batch];
+      pageToken=batch.length===100?batch[batch.length-1].id:null;
+      pages++;
+    } while(pageToken&&pages<20);
+
+    const acct=await alpaca("GET","/v2/account").catch(()=>null);
+    const currentEquity=acct?+acct.equity:null;
+
+    // Match trades and tag ICT ones
+    const all=matchAllTrades(allActivities);
+    const ict=all.filter(t=>t.tag&&t.tag.startsWith("ICT-"));
+
+    // Enrich with metadata
+    for(const t of ict){
+      const meta=ictMeta[t.tag]||{};
+      t.setupType=meta.setupType||parseTagField(t.tag,1);
+      t.trend=meta.trend||parseTagField(t.tag,2);
+      t.killZone=meta.killZone||parseTagField(t.tag,3);
+      t.cvdDiv=meta.cvdDiv||"—";
+      t.fvgSize=meta.fvgSize||0;
+      t.hasOB=meta.hasOB||false;
+      t.hasSweep=meta.hasSweep||false;
+      t.bos=meta.bos||false;
+      t.score=meta.score||0;
+      t.rr=meta.rr||((t.tp&&t.sl)?(Math.abs(t.tp-t.entry)/Math.abs(t.entry-t.sl)).toFixed(1):"—");
+    }
+
+    ictTrades=ict;
+    saveICTHistoryToStorage();
+    renderICTStats(currentEquity);
+    renderICTTable();
+    log("ICT",`✓ ${ict.length} ICT trades loaded (${all.length} total fills)`);
+  }catch(e){
+    log("ERROR","ICT history failed: "+e.message);
+  }finally{
+    if(btn){btn.textContent="↻ Load from Alpaca";btn.disabled=false;}
+  }
+}
+
+function parseTagField(tag, idx){
+  // ICT-L-B-NYOpen-1234567890
+  const parts=(tag||"").split("-");
+  const map={1:{L:"long",S:"short"},2:{B:"bullish",E:"bearish",N:"neutral"}};
+  return map[idx]?.[parts[idx]]||parts[idx]||"—";
+}
+
+function matchAllTrades(activities){
+  // Merge partial fills
+  const merged=[];
+  const sorted=[...activities].sort((a,b)=>new Date(a.transaction_time)-new Date(b.transaction_time));
+  for(const a of sorted){
+    const last=merged[merged.length-1];
+    const diff=last?new Date(a.transaction_time)-new Date(last.transaction_time):Infinity;
+    if(last&&last.symbol===a.symbol&&last.side===a.side&&diff<5000){
+      const tq=+last.qty + +a.qty;
+      last.price=(+last.price * +last.qty + +a.price * +a.qty)/tq;
+      last.qty=tq;
+    } else {
+      merged.push({...a, qty:+a.qty, price:+a.price,
+        tag:a.client_order_id||""});
+    }
+  }
+  // FIFO match
+  const bySymbol={};
+  for(const a of merged){
+    if(!bySymbol[a.symbol]) bySymbol[a.symbol]=[];
+    bySymbol[a.symbol].push(a);
+  }
+  const trades=[];
+  for(const [symbol, fills] of Object.entries(bySymbol)){
+    fills.sort((a,b)=>new Date(a.transaction_time)-new Date(b.transaction_time));
+    const buyQ=[];
+    for(const f of fills){
+      if(f.side==="buy"){
+        buyQ.push({qty:f.qty,price:f.price,time:f.transaction_time,tag:f.tag});
+      } else if(f.side==="sell"&&buyQ.length){
+        let sq=f.qty;
+        while(sq>0.001&&buyQ.length){
+          const b=buyQ[0];
+          const matched=Math.min(sq,b.qty);
+          const pl=(f.price-b.price)*matched;
+          trades.push({
+            symbol, date:f.transaction_time.slice(0,10),
+            time:f.transaction_time,
+            qty:Math.round(matched*100)/100,
+            entry:Math.round(b.price*100)/100,
+            exit:Math.round(f.price*100)/100,
+            pl:Math.round(pl*100)/100,
+            pct:Math.round(((f.price-b.price)/b.price)*10000)/100,
+            win:pl>0, tag:b.tag||"",
+          });
+          b.qty-=matched; sq-=matched;
+          if(b.qty<0.001) buyQ.shift();
+        }
+      }
+    }
+  }
+  return trades.sort((a,b)=>new Date(b.time)-new Date(a.time));
+}
+
+function getFilteredICT(){
+  const fr=document.getElementById("ictFilterResult")?.value||"all";
+  const fd=document.getElementById("ictFilterDir")?.value||"all";
+  const fk=document.getElementById("ictFilterKZ")?.value||"all";
+  return ictTrades.filter(t=>{
+    if(fr==="win"&&!t.win) return false;
+    if(fr==="loss"&&t.win) return false;
+    if(fd==="long"&&t.setupType!=="long") return false;
+    if(fd==="short"&&t.setupType!=="short") return false;
+    if(fk!=="all"&&!(t.killZone||"").includes(fk)) return false;
+    return true;
+  });
+}
+
+function renderICTStats(currentEquity=null){
+  if(!ictTrades.length) return;
+  document.getElementById("ictStats").style.display="block";
+  document.getElementById("ictFilters").style.display="flex";
+
+  const t=ictTrades;
+  const wins=t.filter(x=>x.win), losses=t.filter(x=>!x.win);
+  const winRate=t.length?(wins.length/t.length*100).toFixed(1):0;
+  const avgWin=wins.length?wins.reduce((s,x)=>s+x.pl,0)/wins.length:0;
+  const avgLoss=losses.length?Math.abs(losses.reduce((s,x)=>s+x.pl,0)/losses.length):0;
+  const pf=avgLoss>0?(avgWin*wins.length)/(avgLoss*losses.length||1):0;
+  const exp=(+winRate/100*avgWin)-((1-winRate/100)*avgLoss);
+  const matchedPL=t.reduce((s,x)=>s+x.pl,0);
+
+  // Badge
+  document.getElementById("ictSummaryBadge").textContent=
+    `${t.length} trades · ${winRate}% win · expectancy ${exp>=0?"+":""}$${exp.toFixed(2)}`;
+
+  const m=(v,l,c,sub)=>`<div class="metric">
+    <div class="metric-v" style="font-size:13px;color:${c||"var(--text)"}">${v}</div>
+    <div class="metric-l">${l}</div>
+    ${sub?`<div style="font-size:8px;color:var(--muted);margin-top:2px">${sub}</div>`:""}
+  </div>`;
+
+  document.getElementById("ictStatsGrid1").innerHTML=
+    m(t.length,"ICT trades","var(--teal)")+
+    m(winRate+"%","Win rate",+winRate>=50?"var(--green)":"var(--red)")+
+    m(pf.toFixed(2)+"×","Profit factor",pf>=1.5?"var(--green)":pf>=1?"var(--amber)":"var(--red)")+
+    m((exp>=0?"+$":"-$")+Math.abs(exp).toFixed(2),"Expectancy/trade",exp>=0?"var(--green)":"var(--red)");
+
+  document.getElementById("ictStatsGrid2").innerHTML=
+    m("$"+avgWin.toFixed(2),"Avg winner","var(--green)")+
+    m("-$"+avgLoss.toFixed(2),"Avg loser","var(--red)")+
+    m(wins.length+" / "+losses.length,"W / L","var(--teal)");
+
+  // ICT-specific breakdown
+  const byKZ={}, byDir={}, byTrend={};
+  for(const tr of t){
+    const kz=tr.killZone||"Unknown";
+    if(!byKZ[kz]) byKZ[kz]={wins:0,total:0,pl:0};
+    byKZ[kz].total++; if(tr.win) byKZ[kz].wins++;
+    byKZ[kz].pl+=tr.pl;
+
+    const dir=tr.setupType||"unknown";
+    if(!byDir[dir]) byDir[dir]={wins:0,total:0,pl:0};
+    byDir[dir].total++; if(tr.win) byDir[dir].wins++;
+    byDir[dir].pl+=tr.pl;
+
+    const trend=tr.trend||"unknown";
+    if(!byTrend[trend]) byTrend[trend]={wins:0,total:0,pl:0};
+    byTrend[trend].total++; if(tr.win) byTrend[trend].wins++;
+    byTrend[trend].pl+=tr.pl;
+  }
+
+  const breakdown=(label, data)=>`<div class="metric">
+    <div class="metric-l" style="margin-bottom:6px">${label}</div>
+    ${Object.entries(data).map(([k,v])=>{
+      const wr=(v.wins/v.total*100).toFixed(0);
+      const col=+wr>=50?"var(--green)":+wr>=40?"var(--amber)":"var(--red)";
+      return `<div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:3px">
+        <span style="color:var(--text)">${k}</span>
+        <span style="color:${col}">${wr}% (${v.total}) ${v.pl>=0?"+":""}$${v.pl.toFixed(0)}</span>
+      </div>`;
+    }).join("")}
+  </div>`;
+
+  document.getElementById("ictBreakdown").innerHTML=
+    breakdown("Kill Zone Performance", byKZ)+
+    breakdown("Direction (Long/Short)", byDir)+
+    breakdown("Market Structure", byTrend);
+
+  // Reconciliation
+  const recon=document.getElementById("ictReconNote");
+  recon.style.display="block";
+  recon.innerHTML=`<b style="color:var(--muted)">Reconciliation</b> — 
+    ICT matched P&L: <b style="color:var(--text)">$${matchedPL.toFixed(2)}</b> · 
+    ${t.filter(x=>x.tag?.startsWith("ICT-")).length} tagged ICT trades · 
+    <span style="color:var(--muted)">Use Overall P&L for total account performance</span>`;
+}
+
+function renderICTTable(){
+  const trades=getFilteredICT();
+  const empty=document.getElementById("ictEmpty");
+  const table=document.getElementById("ictTable");
+  const body=document.getElementById("ictTableBody");
+
+  if(!trades.length){
+    empty.style.display="block";
+    empty.textContent=ictTrades.length?"No trades match filter.":"Click Load from Alpaca.";
+    table.style.display="none"; return;
+  }
+  empty.style.display="none"; table.style.display="table";
+
+  const sorted=[...trades].sort((a,b)=>{
+    const va=ictSortCol==="symbol"?a.symbol:ictSortCol==="date"?new Date(a.time):a[ictSortCol]||0;
+    const vb=ictSortCol==="symbol"?b.symbol:ictSortCol==="date"?new Date(b.time):b[ictSortCol]||0;
+    return ictSortDir*(va>vb?1:va<vb?-1:0);
+  });
+
+  const limit=document.getElementById("ictFilterRows")?.value||"20";
+  const limited=limit==="all"?sorted:sorted.slice(0,+limit);
+  const note=document.getElementById("ictRowNote");
+  if(note) note.textContent=limited.length<sorted.length?`Showing ${limited.length} of ${sorted.length}`:"";
+
+  body.innerHTML=limited.map(t=>{
+    const dirCol=t.setupType==="long"?"var(--green)":"var(--red)";
+    const plCol=t.win?"var(--green)":"var(--red)";
+    return `<tr style="border-bottom:1px solid var(--dim)">
+      <td style="padding:5px 8px;color:var(--muted)">${t.date}</td>
+      <td style="padding:5px 8px"><b style="color:var(--teal)">${t.symbol}</b></td>
+      <td style="padding:5px 8px;color:${dirCol};font-weight:700">${(t.setupType||"?").toUpperCase()}</td>
+      <td style="padding:5px 8px;color:var(--muted);font-size:9px">${t.killZone||"—"}</td>
+      <td style="padding:5px 8px;color:var(--muted);font-size:9px">${t.trend||"—"}</td>
+      <td style="padding:5px 8px;text-align:right">$${t.entry.toFixed(2)}</td>
+      <td style="padding:5px 8px;text-align:right">$${t.exit.toFixed(2)}</td>
+      <td style="padding:5px 8px;text-align:right;color:${plCol};font-weight:700">${t.pl>=0?"+$":"-$"}${Math.abs(t.pl).toFixed(2)}</td>
+      <td style="padding:5px 8px;text-align:right;color:${plCol}">${t.pct>=0?"+":""}${t.pct.toFixed(2)}%</td>
+      <td style="padding:5px 8px;text-align:right;color:var(--muted)">${t.rr||"—"}</td>
+      <td style="padding:5px 8px">
+        <span style="font-size:8px;padding:2px 6px;border-radius:3px;font-weight:700;
+          ${t.win?"background:#001a0a;color:var(--green)":"background:#1a0008;color:var(--red)"}">${t.win?"WIN":"LOSS"}</span>
+      </td>
+    </tr>`;
+  }).join("");
+}
+
+function exportICTTrades(){
+  const t=getFilteredICT();
+  if(!t.length){alert("No trades to export");return;}
+  const h="Date,Symbol,Direction,KillZone,Trend,Entry,Exit,P&L,Pct,RR,Result,CVD,HasOB,Score\n";
+  const rows=t.map(x=>`${x.date},${x.symbol},${x.setupType||""},${x.killZone||""},${x.trend||""},$${x.entry},$${x.exit},${x.pl.toFixed(2)},${x.pct.toFixed(2)}%,${x.rr||""},${x.win?"WIN":"LOSS"},${x.cvdDiv||""},${x.hasOB||false},${x.score||""}`).join("\n");
+  const blob=new Blob([h+rows],{type:"text/csv"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download=`ict_trades_${new Date().toISOString().slice(0,10)}.csv`; a.click();
+}
+
+function clearICTHistory(){
+  if(!confirm("Clear ICT trade history?")) return;
+  ictTrades=[]; localStorage.removeItem(ICT_TH_KEY);
+  document.getElementById("ictStats").style.display="none";
+  document.getElementById("ictFilters").style.display="none";
+  document.getElementById("ictTable").style.display="none";
+  document.getElementById("ictEmpty").style.display="block";
+  document.getElementById("ictSummaryBadge").textContent="";
+}
+
+window.addEventListener("load",()=>{
+  loadKeys(); loadICTMeta(); loadICTHistoryFromStorage();
+  if(ictTrades.length){renderICTStats();renderICTTable();}
+});
 
 // ═══════════════════════════════════════════════════════════════════
 // AGENT CONTROL
