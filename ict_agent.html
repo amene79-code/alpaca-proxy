@@ -774,8 +774,15 @@ async function analyzeSetup(ticker){
   }
   const rr=Math.abs(tp-price)/Math.abs(price-sl);
 
+  // Enforce minimum 2:1 R:R — ICT principle
+  if(rr<2){
+    log("SKIP",`${ticker} — R:R ${rr} < 2:1 minimum (SL $${sl} TP $${tp})`);
+    return null;
+  }
+
   return{
-    ticker, setupType, score, reasons, price,
+    ticker, setupType, score:Math.round(score*10)/10,
+    reasons, price,
     fvg:activeFVG, ob:activeOB, struct, sweeps,
     cvdDiv, fvgs, obs, cvd, candles:etfC,
     sl, tp, rr:Math.round(rr*10)/10, atr:atrApprox,
@@ -811,15 +818,15 @@ function drawSetupChart(setup){
   const n=recent.length;
   const dpr=window.devicePixelRatio||1;
 
-  for(const [id,H,draw] of [
-    ["priceCanvas",200,(cv)=>drawPrice(cv,recent,n,setup,dpr,H)],
-    ["volCanvas",40,(cv)=>drawVolume(cv,recent,n,dpr,40)],
-    ["cvdCanvas",40,(cv)=>drawCVD(cv,setup.cvd.slice(-n),n,dpr,40)],
+  for(const [id,height,draw] of [
+    ["priceCanvas",200,(cv,h)=>drawPrice(cv,recent,n,setup,dpr,h)],
+    ["volCanvas",40,(cv,h)=>drawVolume(cv,recent,n,dpr,h)],
+    ["cvdCanvas",40,(cv,h)=>drawCVD(cv,setup.cvd.slice(-n),n,dpr,h)],
   ]){
     const cv=document.getElementById(id);
     const W=cv.parentElement.clientWidth-4;
-    cv.width=W*dpr; cv.height=H*dpr; cv.style.width=W+"px"; cv.style.height=H+"px";
-    draw(cv);
+    cv.width=W*dpr; cv.height=height*dpr; cv.style.width=W+"px"; cv.style.height=height+"px";
+    draw(cv,height);
   }
 }
 
