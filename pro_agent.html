@@ -1924,7 +1924,7 @@ async function loadTradeHistory(){
   const btn=document.querySelector("button[onclick='loadTradeHistory()']");
   if(btn){btn.textContent="⏳ Loading…";btn.disabled=true;}
   try{
-    // Fetch all fill activities from Alpaca — paginate to get everything
+    // Fetch fills and account equity in parallel
     let allActivities=[];
     let pageToken=null;
     let pages=0;
@@ -1939,15 +1939,23 @@ async function loadTradeHistory(){
       pages++;
     } while(pageToken&&pages<20);
 
+    // Get current equity and baseline for reconciliation
+    const acct=await alpaca("GET","/v2/account").catch(()=>null);
+    const currentEquity=acct?+acct.equity:null;
+    const baseline=getBaseline();
+    const startEquity=baseline?.equity||null;
+
     log("INFO",`Fetched ${allActivities.length} fill activities from Alpaca`);
 
-    // Match buys with sells by symbol to reconstruct round trips
-    const trades=matchTrades(allActivities);
+    const {trades, recon}=matchTrades(allActivities, currentEquity, startEquity);
     tradeHistory=trades;
     saveTradeHistoryToStorage();
-    renderTradeStats();
+    renderTradeStats(recon);
     renderTradeTable();
-    log("INFO",`✓ ${trades.length} completed trades loaded`);
+
+    // Show reconciliation summary in log
+    log("INFO",`✓ ${trades.length} matched trades | P&L $${recon.matchedPL} | ${recon.openPositions} open positions ($${recon.openBuyValue} invested)${recon.gap!=null?` | Gap vs actual: $${recon.gap}`:""}`,
+      recon.gapNote||"");
   }catch(e){
     log("ERROR","Trade history failed: "+e.message);
   }finally{
@@ -1955,60 +1963,90 @@ async function loadTradeHistory(){
   }
 }
 
-function matchTrades(activities){
-  // Group fills by symbol
+function matchTrades(activities, accountEquity=null, startEquity=null){
+  // Step 1: merge partial fills — same symbol, side, within 5 seconds = one fill
+  const merged=[];
+  const sorted=[...activities].sort((a,b)=>new Date(a.transaction_time)-new Date(b.transaction_time));
+
+  for(const a of sorted){
+    const last=merged[merged.length-1];
+    const timeDiff=last?new Date(a.transaction_time)-new Date(last.transaction_time):Infinity;
+    if(last&&last.symbol===a.symbol&&last.side===a.side&&timeDiff<5000){
+      // Merge partial fill — weighted average price
+      const totalQty=+last.qty + +a.qty;
+      last.price=(+last.price * +last.qty + +a.price * +a.qty)/totalQty;
+      last.qty=totalQty;
+    } else {
+      merged.push({...a, qty:+a.qty, price:+a.price});
+    }
+  }
+
+  // Step 2: FIFO matching per symbol
   const bySymbol={};
-  for(const a of activities){
+  for(const a of merged){
     if(!bySymbol[a.symbol]) bySymbol[a.symbol]=[];
     bySymbol[a.symbol].push(a);
   }
 
   const trades=[];
+  const unmatched={buys:[],sells:[]};
+
   for(const [symbol, fills] of Object.entries(bySymbol)){
-    // Sort chronologically
     fills.sort((a,b)=>new Date(a.transaction_time)-new Date(b.transaction_time));
+    const buyQueue=[];
 
-    let buyQueue=[];
     for(const fill of fills){
-      const qty=Math.abs(+fill.qty);
-      const price=+fill.price;
-      const time=fill.transaction_time;
-
       if(fill.side==="buy"){
-        buyQueue.push({qty,price,time});
-      } else if(fill.side==="sell"&&buyQueue.length){
-        // Match against earliest buy (FIFO)
-        let sellQty=qty;
-        while(sellQty>0&&buyQueue.length){
+        buyQueue.push({qty:fill.qty, price:fill.price, time:fill.transaction_time});
+      } else if(fill.side==="sell"){
+        let sellQty=fill.qty;
+        while(sellQty>0.001&&buyQueue.length){
           const buy=buyQueue[0];
           const matched=Math.min(sellQty, buy.qty);
-          const entryPrice=buy.price;
-          const exitPrice=price;
-          const pl=(exitPrice-entryPrice)*matched;
-          const pct=((exitPrice-entryPrice)/entryPrice)*100;
-
+          const pl=(fill.price - buy.price)*matched;
+          const pct=((fill.price - buy.price)/buy.price)*100;
           trades.push({
             symbol,
-            date:time.slice(0,10),
-            time:time,
-            qty:matched,
-            entry:entryPrice,
-            exit:exitPrice,
+            date:fill.transaction_time.slice(0,10),
+            time:fill.transaction_time,
+            qty:Math.round(matched*100)/100,
+            entry:Math.round(buy.price*100)/100,
+            exit:Math.round(fill.price*100)/100,
             pl:Math.round(pl*100)/100,
             pct:Math.round(pct*100)/100,
             win:pl>0,
+            matched:true,
           });
-
           buy.qty-=matched;
           sellQty-=matched;
-          if(buy.qty<=0) buyQueue.shift();
+          if(buy.qty<0.001) buyQueue.shift();
         }
+        if(sellQty>0.001) unmatched.sells.push({symbol,qty:sellQty,price:fill.price,time:fill.transaction_time});
       }
+    }
+    // Remaining buys = open positions
+    for(const b of buyQueue){
+      if(b.qty>0.001) unmatched.buys.push({symbol,qty:b.qty,price:b.price,time:b.time});
     }
   }
 
-  // Sort newest first
-  return trades.sort((a,b)=>new Date(b.time)-new Date(a.time));
+  // Step 3: Reconciliation note
+  const matchedPL=trades.reduce((s,t)=>s+t.pl,0);
+  const openBuyValue=unmatched.buys.reduce((s,b)=>s+b.qty*b.price,0);
+  const reconNote={
+    matchedTrades:trades.length,
+    matchedPL:Math.round(matchedPL*100)/100,
+    openPositions:unmatched.buys.length,
+    openBuyValue:Math.round(openBuyValue*100)/100,
+    unmatchedSells:unmatched.sells.length,
+  };
+  if(accountEquity&&startEquity){
+    reconNote.actualPL=Math.round((accountEquity-startEquity)*100)/100;
+    reconNote.gap=Math.round((reconNote.actualPL-reconNote.matchedPL)*100)/100;
+    reconNote.gapNote=`$${reconNote.gap} gap = open positions ($${reconNote.openBuyValue} invested) + slippage/fees`;
+  }
+
+  return {trades:trades.sort((a,b)=>new Date(b.time)-new Date(a.time)), recon:reconNote};
 }
 
 function getFilteredTrades(){
@@ -2038,7 +2076,7 @@ function toggleTradeHistory(){
   document.getElementById("tradeToggleIcon").textContent=tradeHistoryOpen?"▼":"▶";
 }
 
-function renderTradeStats(){
+function renderTradeStats(recon=null){
   const t=tradeHistory;
   if(!t.length) return;
   document.getElementById("tradeStats").style.display="block";
@@ -2047,27 +2085,51 @@ function renderTradeStats(){
   const wins=t.filter(x=>x.win);
   const losses=t.filter(x=>!x.win);
   const winRate=t.length?(wins.length/t.length*100).toFixed(1):0;
-  const totalPl=t.reduce((s,x)=>s+x.pl,0);
   const avgWin=wins.length?wins.reduce((s,x)=>s+x.pl,0)/wins.length:0;
   const avgLoss=losses.length?Math.abs(losses.reduce((s,x)=>s+x.pl,0)/losses.length):0;
   const profitFactor=avgLoss>0?(avgWin*wins.length)/(avgLoss*losses.length||1):0;
   const expectancy=(+winRate/100*avgWin)-((1-winRate/100)*avgLoss);
 
-  // Update summary badge in header
+  // Update summary badge — show expectancy not P&L
   const badge=document.getElementById("tradeSummaryBadge");
-  if(badge) badge.textContent=`${t.length} trades · ${winRate}% win · ${fmtPl(totalPl)}`;
+  if(badge) badge.textContent=`${t.length} trades · ${winRate}% win · expectancy ${fmtPl(expectancy)}`;
 
-  const metric=(v,l,c)=>`<div class="metric"><div class="metric-v" style="font-size:14px;color:${c||"#dde1f0"}">${v}</div><div class="metric-l">${l}</div></div>`;
+  const metric=(v,l,c,sub)=>`<div class="metric">
+    <div class="metric-v" style="font-size:14px;color:${c||"#dde1f0"}">${v}</div>
+    <div class="metric-l">${l}</div>
+    ${sub?`<div style="font-size:8px;color:#3a3a6a;margin-top:2px">${sub}</div>`:""}
+  </div>`;
+
   document.getElementById("statsGrid").innerHTML=
-    metric(t.length,"Total trades","#818cf8")+
+    metric(t.length,"Matched trades","#818cf8",recon?`${recon.openPositions} positions open`:"")+
     metric(winRate+"%","Win rate",+winRate>=50?"#4ade80":"#f87171")+
-    metric(fmtPl(totalPl),"Total P&L",totalPl>=0?"#4ade80":"#f87171")+
-    metric(profitFactor.toFixed(2)+"×","Profit factor",profitFactor>=1.5?"#4ade80":profitFactor>=1?"#f59e0b":"#f87171");
+    metric(profitFactor.toFixed(2)+"×","Profit factor",profitFactor>=1.5?"#4ade80":profitFactor>=1?"#f59e0b":"#f87171")+
+    metric(fmtPl(expectancy),"Expectancy/trade",expectancy>=0?"#4ade80":"#f87171","see Overall P&L for total");
+
   document.getElementById("statsGrid2").innerHTML=
     metric(fmtPl(avgWin),"Avg winner","#4ade80")+
     metric(fmtPl(-avgLoss),"Avg loser","#f87171")+
-    metric(fmtPl(expectancy),"Expectancy/trade",expectancy>=0?"#4ade80":"#f87171");
+    metric(wins.length+" / "+losses.length,"W / L","#818cf8");
+
+  // Reconciliation note
+  let reconEl=document.getElementById("tradeReconNote");
+  if(!reconEl){
+    reconEl=document.createElement("div");
+    reconEl.id="tradeReconNote";
+    reconEl.style.cssText="font-size:10px;color:#555580;margin-bottom:10px;padding:8px 10px;background:#0a0a12;border-radius:6px;line-height:1.7";
+    document.getElementById("tradeStats").appendChild(reconEl);
+  }
+  if(recon){
+    const gapOk=recon.gap!=null&&Math.abs(recon.gap)<50;
+    reconEl.innerHTML=`
+      <b style="color:#9090c0">Reconciliation</b> —
+      Matched P&L: <b style="color:#dde1f0">${fmtPl(recon.matchedPL)}</b>
+      ${recon.actualPL!=null?` · Actual P&L: <b style="color:#4ade80">${fmtPl(recon.actualPL)}</b>`:""}
+      ${recon.gap!=null?` · Gap: <b style="color:${gapOk?"#4ade80":"#f59e0b"}">${fmtPl(recon.gap)}</b> (${recon.openPositions} open positions + slippage/fees)`:""}
+      <br><span style="color:#3a3a6a">Win rate, expectancy &amp; profit factor are reliable. Use <b style="color:#818cf8">Overall P&L</b> for true total performance.</span>`;
+  }
 }
+
 
 function sortTradeTable(col){
   if(tradeSortCol===col) tradeSortDir*=-1;
@@ -2143,65 +2205,3 @@ window.addEventListener("load",()=>{ loadTradeHistoryFromStorage(); if(tradeHist
 // AGENT CONTROL
 // ═══════════════════════════════════════════════════════════════════
 async function startAgent(){
-  const key=document.getElementById("alpacaKey").value.trim();
-  const secret=document.getElementById("alpacaSecret").value.trim();
-  const proxy=document.getElementById("proxyUrl").value.trim();
-  if(!key||!secret||!proxy){alert("Enter Alpaca credentials and proxy URL");return;}
-  if(!activeTFs.size){alert("Select at least one timeframe");return;}
-
-  document.getElementById("startBtn").disabled=true;
-  document.getElementById("statusText").textContent="Connecting…";
-  try{
-    const acct=await alpaca("GET","/v2/account");
-    updateAccountUI(acct); saveKeys();
-    await restoreBracketOrders();
-
-    // Verify all open positions have active bracket orders
-    const [pos, openOrders] = await Promise.all([
-      alpaca("GET","/v2/positions"),
-      alpaca("GET","/v2/orders?status=open&limit=100"),
-    ]);
-    if(Array.isArray(pos)&&pos.length){
-      const orderedSymbols=new Set((Array.isArray(openOrders)?openOrders:[]).map(o=>o.symbol));
-      const unprotected=pos.filter(p=>!orderedSymbols.has(p.symbol));
-      if(unprotected.length){
-        log("INFO",`⚠ ${unprotected.length} position(s) have no active bracket orders: ${unprotected.map(p=>p.symbol).join(", ")}`,
-          "These positions have no SL/TP protection. Consider closing manually or the agent will manage via trailing stop.");
-      } else {
-        log("INFO",`✓ All ${pos.length} positions have active bracket orders on Alpaca`);
-      }
-    }
-
-    log("INFO","✓ Connected to Alpaca Paper",`Portfolio ${fmt$(acct.portfolio_value)} | Buying power ${fmt$(acct.buying_power)}`);
-  }catch(e){
-    log("ERROR","Connection failed: "+e.message);
-    document.getElementById("startBtn").disabled=false;
-    setStatus("off"); return;
-  }
-
-  RUNNING=true;
-  document.getElementById("stopBtn").disabled=false;
-  document.getElementById("configPanel").style.opacity="0.5";
-  document.getElementById("configPanel").style.pointerEvents="none";
-  setStatus("on");
-  startPlRefresh();
-
-  const newsMode=document.getElementById("cfgUseNews").checked?"Technical + News":"Technical only (zero cost)";
-  log("INFO","Pro Agent started",
-    `Markets: ${[...selectedMarkets].join("+")} | TFs: ${[...activeTFs].join("+")} | Mode: ${newsMode} | Screener: ${document.getElementById("cfgScreenerMarket").value}`);
-  await runCycle();
-}
-
-function stopAgent(){
-  RUNNING=false; clearInterval(countdownTimer); stopPlRefresh();
-  document.getElementById("startBtn").disabled=false;
-  document.getElementById("stopBtn").disabled=true;
-  document.getElementById("configPanel").style.opacity="1";
-  document.getElementById("configPanel").style.pointerEvents="auto";
-  document.getElementById("scanCountdown").style.display="none";
-  setPhase("screen"); setStatus("off");
-  log("INFO","Agent stopped — open positions remain on Alpaca");
-}
-</script>
-</body>
-</html>
