@@ -356,12 +356,8 @@ async function runScan(){
   setStatus('<span class="spinner"></span>Fetching pre-market intelligence…',"#f59e0b");
 
   try{
-    const r=await fetch(`${proxy}/api/premarket`,{
-      headers:{
-        "Content-Type":"application/json",
-        "x-finnhub-key":fk,
-      }
-    });
+    const fkParam=fk?`&fk=${encodeURIComponent(fk)}`:"";
+    const r=await fetch(`${proxy}/api/premarket?source=all${fkParam}`);
     if(!r.ok) throw new Error(`HTTP ${r.status}`);
     scanData=await r.json();
     renderResults(scanData);
