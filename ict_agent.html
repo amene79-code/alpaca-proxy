@@ -985,6 +985,17 @@ async function placeICTOrder(setup, cfg){
     `Placing ${setupType.toUpperCase()}: ${qty}x ${ticker} @ ~$${price.toFixed(2)}`,
     `FVG $${setup.fvg.bottom.toFixed(2)}-$${setup.fvg.top.toFixed(2)} | SL $${sl} | TP $${tp} | R:R ${rr} | ${setup.setupType==="long"?"CVD "+setup.cvdDiv:""}`);
 
+  // For short orders, verify the asset is shortable first
+  if(setupType==="short"){
+    try{
+      const asset=await alpaca("GET",`/v2/assets/${ticker}`);
+      if(!asset.shortable||!asset.easy_to_borrow===false&&asset.status!=="active"){
+        log("SKIP",`${ticker} — not shortable on Alpaca (shortable: ${asset.shortable})`);
+        return false;
+      }
+    }catch{ /* proceed and handle error on order placement */ }
+  }
+
   // Tag order with ICT prefix + metadata for later filtering
   const kz=isInKillZone();
   const tag=`ICT-${setup.setupType[0].toUpperCase()}-${setup.struct.trend[0].toUpperCase()}-${kz.name?.replace(/\s/g,"")||"NA"}-${Date.now()}`;
@@ -1013,7 +1024,12 @@ async function placeICTOrder(setup, cfg){
       return true;
     }
   }catch(e){
-    // Hard-to-borrow assets require day orders for shorts
+    // Non-shortable asset — skip entirely, don't retry
+    if(e.message?.includes("cannot be sold short")||e.message?.includes("not shortable")){
+      log("SKIP",`${ticker} — not shortable on Alpaca, skipping short setup`);
+      return false;
+    }
+    // Hard-to-borrow — retry with day order
     if(e.message?.includes("hard-to-borrow")&&setupType==="short"){
       log("INFO",`${ticker} is hard-to-borrow — retrying with day order`);
       try{
