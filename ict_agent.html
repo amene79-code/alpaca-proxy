@@ -170,7 +170,27 @@ label{color:#7aaa90;font-size:11px}
     </label>
   </div>
 
-  <div class="micro">📋 Watchlist</div>
+  <div class="micro" style="margin-top:14px">🔭 Live Screener (merged with watchlist)</div>
+  <div class="g2" style="margin-bottom:8px">
+    <div><div class="fl">Market universe</div>
+      <select id="cfgScreenerMarket">
+        <option value="us" selected>🇺🇸 US — Finviz + Yahoo</option>
+        <option value="all">🌍 All markets</option>
+        <option value="none">— Watchlist only</option>
+      </select>
+    </div>
+    <div><div class="fl">Filter preset</div>
+      <select id="cfgScreenerPreset">
+        <option value="all" selected>◈ All combined</option>
+        <option value="movers">🔥 Volume movers</option>
+        <option value="momentum">🚀 Momentum</option>
+        <option value="catalyst">⚡ Catalyst hunters</option>
+      </select>
+    </div>
+  </div>
+  <div id="ictScreenerStatus" style="font-size:10px;color:var(--teal);min-height:14px;margin-bottom:10px"></div>
+
+  <div class="micro">📋 Fixed Watchlist (always included)</div>
   <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
     <button id="presetMaj" onclick="setPreset('major')" style="font-size:10px;padding:4px 12px;color:var(--teal);border:1px solid var(--teal);border-radius:6px;opacity:0.5;background:transparent">Major pairs</button>
     <button id="presetTech" onclick="setPreset('tech')" style="font-size:10px;padding:4px 12px;color:var(--green);border:1px solid var(--green2);border-radius:6px;opacity:0.5;background:transparent">Tech</button>
@@ -206,8 +226,8 @@ label{color:#7aaa90;font-size:11px}
   <div class="micro" style="margin-top:4px">⚙ Trade Parameters</div>
   <div class="g4">
     <div><div class="fl">Position size ($)</div><input id="cfgSize" type="number" value="500" min="10"></div>
-    <div><div class="fl">Max positions</div><input id="cfgMaxPos" type="number" value="5" min="1"></div>
-    <div><div class="fl">Max trades/day</div><input id="cfgMaxDaily" type="number" value="6" min="1"></div>
+    <div><div class="fl">Max positions</div><input id="cfgMaxPos" type="number" value="20" min="1"></div>
+    <div><div class="fl">Max trades/day</div><input id="cfgMaxDaily" type="number" value="20" min="1"></div>
     <div><div class="fl">Trailing stop (%)</div><input id="cfgTrail" type="number" value="1.5" min="0.5" step="0.5"></div>
   </div>
   <div class="g3">
@@ -1027,6 +1047,50 @@ async function manageTrailingStops(positions, cfg){
 }
 
 // ═══════════════════════════════════════════════════════════════════
+// SCREENER
+// ═══════════════════════════════════════════════════════════════════
+async function fetchICTScreener(){
+  const market=document.getElementById("cfgScreenerMarket").value;
+  const preset=document.getElementById("cfgScreenerPreset").value;
+  const el=document.getElementById("ictScreenerStatus");
+  const fixedList=document.getElementById("cfgWatchlist").value
+    .split(/[\s,]+/).map(t=>t.trim().toUpperCase()).filter(t=>t);
+
+  if(market==="none"){
+    el.textContent=`Using fixed watchlist only (${fixedList.length} tickers)`;
+    return fixedList;
+  }
+
+  try{
+    el.textContent="⏳ Fetching screener candidates…";
+    const proxy=document.getElementById("proxyUrl").value.trim().replace(/\/$/,"");
+    const r=await fetch(`${proxy}/api/screener?market=${market}&preset=${preset}`);
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    const d=await r.json();
+    const screenerTickers=d.tickers||[];
+
+    // Show top results with scores
+    if(d.breakdown?.length){
+      const top=d.breakdown.slice(0,5).map(x=>{
+        const stwits=x.sources?.includes("Stocktwits")?"🔥":"";
+        return `${stwits}${x.ticker}(${x.score})`;
+      }).join(" · ");
+      el.innerHTML=`✓ <b>${screenerTickers.length}</b> screener + <b>${fixedList.length}</b> watchlist — <span style="color:var(--text)">${top}</span>`;
+    } else {
+      el.textContent=`✓ ${screenerTickers.length} screener + ${fixedList.length} watchlist`;
+    }
+    el.style.color="var(--teal)";
+
+    // Merge — fixed watchlist first (priority), then screener
+    return [...new Set([...fixedList, ...screenerTickers])];
+  }catch(e){
+    el.textContent=`⚠ Screener unavailable — using watchlist only`;
+    el.style.color="var(--amber)";
+    return fixedList;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
 // MAIN CYCLE
 // ═══════════════════════════════════════════════════════════════════
 let RUNNING=false, countdownTimer=null, nextScanAt=null;
@@ -1041,8 +1105,8 @@ async function runCycle(){
 async function _runCycle(){
   const cfg={
     size:      +document.getElementById("cfgSize").value||500,
-    maxPos:    +document.getElementById("cfgMaxPos").value||5,
-    maxDaily:  +document.getElementById("cfgMaxDaily").value||6,
+    maxPos:    +document.getElementById("cfgMaxPos").value||20,
+    maxDaily:  +document.getElementById("cfgMaxDaily").value||20,
     trail:     +document.getElementById("cfgTrail").value/100,
     minScore:  +document.getElementById("cfgMinFVG").value||8,
     earnings:  +document.getElementById("cfgEarnings").value||2,
@@ -1073,10 +1137,9 @@ async function _runCycle(){
   const openCount=Array.isArray(positions)?positions.length:0;
   if(openCount>=cfg.maxPos){log("INFO",`Position limit ${openCount}/${cfg.maxPos}`);scheduleNext();return;}
 
-  // Get watchlist
-  const tickers=document.getElementById("cfgWatchlist").value
-    .split(/[\s,]+/).map(t=>t.trim().toUpperCase()).filter(t=>t);
-  if(!tickers.length){log("ERROR","No tickers in watchlist");scheduleNext();return;}
+  // Get combined ticker list from screener + watchlist
+  const tickers=await fetchICTScreener();
+  if(!tickers.length){log("ERROR","No tickers to scan");scheduleNext();return;}
 
   const existingSymbols=new Set((Array.isArray(positions)?positions:[]).map(p=>p.symbol));
 
