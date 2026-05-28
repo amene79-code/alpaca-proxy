@@ -144,13 +144,16 @@ label{color:#9090c0}
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
       <div class="micro" style="margin:0">🏆 Combined Signal Score</div>
-      <div style="display:flex;gap:6px">
+      <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
         <select id="rankFilter" onchange="filterRanked()" style="font-size:10px;padding:3px 8px;background:#08080f;border:1px solid #252540;color:#8888bb;border-radius:6px;width:auto">
           <option value="all">All sources</option>
           <option value="social">Social only (Reddit + Stocktwits)</option>
           <option value="premarket">Pre-market movers only</option>
           <option value="multi">Multi-source only (2+)</option>
         </select>
+        <button onclick="saveRawToProAgent()" style="font-size:10px;padding:4px 12px;color:#4ade80;border-color:#166534;background:#0d2a1e;border-radius:6px">
+          💾 Save top 10 → Pro Agent (no AI needed)
+        </button>
       </div>
     </div>
     <div id="rankedTickers" style="display:flex;flex-wrap:wrap;gap:8px"></div>
@@ -390,6 +393,34 @@ function setStatus(msg,color){
 }
 
 // ═══ Render results ═══════════════════════════════════════════════
+function saveRawToProAgent(){
+  if(!scanData||!scanData.rankedTickers?.length){
+    alert("Run a scan first");return;
+  }
+  const rankFilter=document.getElementById("rankFilter")?.value||"all";
+  let list=scanData.rankedTickers||[];
+  if(rankFilter==="social") list=list.filter(t=>t.sources.some(s=>s.includes("Reddit")||s.includes("Stocktwits")));
+  if(rankFilter==="premarket") list=list.filter(t=>t.sources.some(s=>s.includes("Pre-market")));
+  if(rankFilter==="multi") list=list.filter(t=>t.sources.length>=2);
+
+  const top=list.slice(0,10).map(t=>({
+    ticker:t.ticker,
+    strategy:`Score ${t.score} — ${t.sources.join(", ")}`,
+    direction:"bullish",
+    confidence:Math.min(90,Math.round(t.score*10)),
+  }));
+
+  const today=new Date().toLocaleDateString("en-GB");
+  const data={tickers:top, date:today, ts:Date.now(), source:"raw_screener"};
+  localStorage.setItem("premarket_watchlist_for_pro", JSON.stringify(data));
+  localStorage.setItem("premarket_watchlist", JSON.stringify(data));
+
+  document.getElementById("savedIndicator").style.display="block";
+  document.getElementById("savedList").textContent=
+    `${top.length} tickers saved (no AI) · ${top.map(t=>t.ticker).join(", ")}`;
+  setStatus(`✓ Top ${top.length} tickers saved to Pro Agent — no Claude credits used`,"#4ade80");
+}
+
 function filterRanked(){
   if(!scanData) return;
   renderResults(scanData);
