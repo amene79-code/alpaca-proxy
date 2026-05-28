@@ -339,6 +339,10 @@ label{color:#7aaa90;font-size:11px}
         <option value="win">Winners</option>
         <option value="loss">Losers</option>
       </select>
+      <select id="ictShowAll" onchange="renderICTTable()" style="font-size:10px;padding:3px 8px;background:var(--bg);border:1px solid var(--border2);color:var(--muted);border-radius:6px;width:auto">
+        <option value="ict">ICT trades only</option>
+        <option value="all">All account trades</option>
+      </select>
       <select id="ictFilterDir" onchange="renderICTTable()" style="font-size:10px;padding:3px 8px;background:var(--bg);border:1px solid var(--border2);color:var(--muted);border-radius:6px;width:auto">
         <option value="all">Long + Short</option>
         <option value="long">Long only</option>
@@ -1430,9 +1434,28 @@ async function loadICTHistory(){
     const acct=await alpaca("GET","/v2/account").catch(()=>null);
     const currentEquity=acct?+acct.equity:null;
 
-    // Match trades and tag ICT ones
+    // Match trades — show ALL trades, tag ICT ones
     const all=matchAllTrades(allActivities);
-    const ict=all.filter(t=>t.tag&&t.tag.startsWith("ICT-"));
+
+    // ICT trades = those with ICT- tag OR those placed while ICT agent was running
+    // Since client_order_id may not always come through in fills, also check ictMeta
+    const metaTickers=new Set(Object.values(ictMeta).map(m=>m.ticker));
+
+    const ict=all.filter(t=>{
+      // Tagged ICT order
+      if(t.tag&&t.tag.startsWith("ICT-")) return true;
+      // In ICT meta (placed by ICT agent but tag didn't come through in fills)
+      if(metaTickers.has(t.symbol)){
+        // Check if the trade time matches any ICT meta entry
+        const metas=Object.values(ictMeta).filter(m=>m.ticker===t.symbol);
+        return metas.some(m=>{
+          const metaTime=new Date(m.date).getTime();
+          const tradeTime=new Date(t.time).getTime();
+          return Math.abs(metaTime-tradeTime)<300000; // within 5 minutes
+        });
+      }
+      return false;
+    });
 
     // Enrich with metadata
     for(const t of ict){
@@ -1450,6 +1473,8 @@ async function loadICTHistory(){
     }
 
     ictTrades=ict;
+    // Also store all trades for "show all" mode
+    window._allTrades=all;
     saveICTHistoryToStorage();
     renderICTStats(currentEquity);
     renderICTTable();
@@ -1523,10 +1548,12 @@ function matchAllTrades(activities){
 }
 
 function getFilteredICT(){
+  const showAll=document.getElementById("ictShowAll")?.value==="all";
+  const base=showAll?(window._allTrades||ictTrades):ictTrades;
   const fr=document.getElementById("ictFilterResult")?.value||"all";
   const fd=document.getElementById("ictFilterDir")?.value||"all";
   const fk=document.getElementById("ictFilterKZ")?.value||"all";
-  return ictTrades.filter(t=>{
+  return base.filter(t=>{
     if(fr==="win"&&!t.win) return false;
     if(fr==="loss"&&t.win) return false;
     if(fd==="long"&&t.setupType!=="long") return false;
