@@ -299,7 +299,14 @@ label{color:#7aaa90;font-size:11px}
 <div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
     <div class="micro" style="margin:0">Open Positions <span id="trailNote" style="color:var(--amber);font-size:9px"></span></div>
-    <button onclick="refreshPositions()" style="font-size:10px;padding:3px 10px;color:var(--teal);border-color:var(--teal)">↻ Refresh</button>
+    <div style="display:flex;gap:6px;align-items:center">
+      <select id="posFilterAgent" onchange="refreshPositions()" style="font-size:10px;padding:3px 8px;background:var(--bg);border:1px solid var(--border2);color:var(--muted);border-radius:6px;width:auto">
+        <option value="all">All positions</option>
+        <option value="ict">ICT only</option>
+        <option value="pro">Other agents</option>
+      </select>
+      <button onclick="refreshPositions()" style="font-size:10px;padding:3px 10px;color:var(--teal);border-color:var(--teal)">↻ Refresh</button>
+    </div>
   </div>
   <div id="positions"><div style="color:var(--muted);font-size:11px">No positions.</div></div>
 </div>
@@ -1024,6 +1031,7 @@ async function placeICTOrder(setup, cfg){
         tag, fvgSize:setup.fvg?.size||0, trend:setup.struct.trend,
         killZone:kz.name||"unknown", cvdDiv:setup.cvdDiv,
       };
+      saveICTPosition(ticker);
       saveICTTradeMeta(ticker, tag, setup, qty, price, sl, tp, rr);
       return true;
     }
@@ -1054,9 +1062,26 @@ async function placeICTOrder(setup, cfg){
   return false;
 }
 
-// ═══════════════════════════════════════════════════════════════════
-// TRAILING STOPS
-// ═══════════════════════════════════════════════════════════════════
+// ── ICT position tracking ─────────────────────────────────────────
+const ICT_POS_KEY="ict_open_positions";
+function saveICTPosition(ticker){
+  try{
+    const raw=localStorage.getItem(ICT_POS_KEY);
+    const pos=raw?JSON.parse(raw):[];
+    if(!pos.includes(ticker)) pos.push(ticker);
+    localStorage.setItem(ICT_POS_KEY,JSON.stringify(pos));
+  }catch{}
+}
+function removeICTPosition(ticker){
+  try{
+    const raw=localStorage.getItem(ICT_POS_KEY);
+    const pos=raw?JSON.parse(raw):[];
+    localStorage.setItem(ICT_POS_KEY,JSON.stringify(pos.filter(t=>t!==ticker)));
+  }catch{}
+}
+function getICTPositions(){
+  try{return JSON.parse(localStorage.getItem(ICT_POS_KEY)||"[]");}catch{return[];}
+}
 let trailingStops={};
 async function manageTrailingStops(positions, cfg){
   for(const p of Array.isArray(positions)?positions:[]){
@@ -1078,6 +1103,7 @@ async function manageTrailingStops(positions, cfg){
         await alpaca("POST","/v2/orders",{symbol:p.symbol,qty:String(p.qty),side:"sell",type:"market",time_in_force:"day"});
         log("SELL",`✓ Closed ${p.symbol}`,`P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
         delete trailingStops[p.symbol];
+        removeICTPosition(p.symbol);
       }catch(e){log("ERROR",`Close ${p.symbol}: ${e.message}`);}
     }
   }
@@ -1269,12 +1295,30 @@ function updateAccountUI(a){
 function updatePositionsUI(positions){
   const el=document.getElementById("positions");
   const pos=Array.isArray(positions)?positions:[];
-  const totalUpl=pos.reduce((s,p)=>s+(+p.unrealized_pl||0),0);
-  document.getElementById("mUpl").textContent=pos.length?fmtPl(totalUpl):"—";
+  const ictPositions=getICTPositions();
+  const agentFilter=document.getElementById("posFilterAgent")?.value||"all";
+
+  const filtered=pos.filter(p=>{
+    const isICT=ictPositions.includes(p.symbol);
+    if(agentFilter==="ict") return isICT;
+    if(agentFilter==="pro") return !isICT;
+    return true;
+  });
+
+  const totalUpl=filtered.reduce((s,p)=>s+(+p.unrealized_pl||0),0);
+  document.getElementById("mUpl").textContent=filtered.length?fmtPl(totalUpl):"—";
   document.getElementById("mUpl").style.color=totalUpl>=0?"var(--green)":"var(--red)";
-  if(!pos.length){el.innerHTML=`<div style="color:var(--muted);font-size:11px">No positions.</div>`;document.getElementById("trailNote").textContent="";return;}
-  document.getElementById("trailNote").textContent="· trailing stop active";
-  const sorted=[...pos].sort((a,b)=>(+b.unrealized_pl||0)-(+a.unrealized_pl||0));
+
+  const ictCount=ictPositions.filter(t=>pos.some(p=>p.symbol===t)).length;
+  const otherCount=pos.length-ictCount;
+  document.getElementById("trailNote").textContent=pos.length?`· ${ictCount} ICT · ${otherCount} other`:"";
+
+  if(!filtered.length){
+    el.innerHTML=`<div style="color:var(--muted);font-size:11px">No ${agentFilter==="ict"?"ICT ":agentFilter==="pro"?"non-ICT ":""}positions.</div>`;
+    return;
+  }
+
+  const sorted=[...filtered].sort((a,b)=>(+b.unrealized_pl||0)-(+a.unrealized_pl||0));
   el.innerHTML=sorted.map(p=>{
     const pl=+p.unrealized_pl||0,pct=(+p.unrealized_plpc||0)*100,up=pl>=0;
     const entry=+p.avg_entry_price||0;
@@ -1282,10 +1326,13 @@ function updatePositionsUI(positions){
     const trail=+(high*(1-(+document.getElementById("cfgTrail").value/100))).toFixed(2);
     const tp=trailingStops[p.symbol]?.tp;
     const sl=trailingStops[p.symbol]?.sl;
-    return `<div class="pos-row">
+    const isICT=ictPositions.includes(p.symbol);
+    return `<div class="pos-row" style="border-left:3px solid ${isICT?"var(--teal)":"#2a2a45"};padding-left:8px">
       <div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-          <b style="color:var(--teal)">${p.symbol}</b>
+          <b style="color:${isICT?"var(--teal)":"#818cf8"}">${p.symbol}</b>
+          <span style="font-size:8px;padding:1px 5px;border-radius:3px;font-weight:700;
+            ${isICT?"background:#001a18;color:var(--teal)":"background:#0f0f20;color:#818cf8"}">${isICT?"ICT":"PRO"}</span>
           <span style="color:var(--muted);font-size:10px">${p.qty} @ $${entry.toFixed(2)}</span>
           <span style="font-size:11px;color:${up?"#00ff88":"#ff4466"};">${fmtPl(pl)} (${pct.toFixed(2)}%)</span>
         </div>
@@ -1313,6 +1360,7 @@ async function closePosition(symbol,qty){
     await alpaca("POST","/v2/orders",{symbol,qty:String(qty),side:"sell",type:"market",time_in_force:"day"});
     log("SELL",`✓ Closed ${symbol}`);
     delete trailingStops[symbol];
+    removeICTPosition(symbol);
     await new Promise(r=>setTimeout(r,1500));
     const pos=await alpaca("GET","/v2/positions");
     updatePositionsUI(pos);
@@ -1478,7 +1526,8 @@ async function loadICTHistory(){
     saveICTHistoryToStorage();
     renderICTStats(currentEquity);
     renderICTTable();
-    log("ICT",`✓ ${ict.length} ICT trades loaded (${all.length} total fills)`);
+    log("ICT",`Fetched ${allActivities.length} fill activities from Alpaca | Pages: ${pages}`);
+    log("ICT",`Matched trades: ${all.length} total | ICT tagged: ${all.filter(t=>t.tag?.startsWith("ICT-")).length} | Meta matches: ${ict.length}`);
   }catch(e){
     log("ERROR","ICT history failed: "+e.message);
   }finally{
