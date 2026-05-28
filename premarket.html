@@ -152,7 +152,7 @@ label{color:#9090c0}
           <option value="multi">Multi-source only (2+)</option>
         </select>
         <button onclick="saveRawToProAgent()" style="font-size:10px;padding:4px 12px;color:#4ade80;border-color:#166534;background:#0d2a1e;border-radius:6px">
-          💾 Save top 10 → Pro Agent (no AI needed)
+          💾 Save all → Pro Agent (no AI needed)
         </button>
       </div>
     </div>
@@ -403,7 +403,7 @@ function saveRawToProAgent(){
   if(rankFilter==="premarket") list=list.filter(t=>t.sources.some(s=>s.includes("Pre-market")));
   if(rankFilter==="multi") list=list.filter(t=>t.sources.length>=2);
 
-  const top=list.slice(0,10).map(t=>({
+  const top=list.map(t=>({
     ticker:t.ticker,
     strategy:`Score ${t.score} — ${t.sources.join(", ")}`,
     direction:"bullish",
@@ -417,8 +417,8 @@ function saveRawToProAgent(){
 
   document.getElementById("savedIndicator").style.display="block";
   document.getElementById("savedList").textContent=
-    `${top.length} tickers saved (no AI) · ${top.map(t=>t.ticker).join(", ")}`;
-  setStatus(`✓ Top ${top.length} tickers saved to Pro Agent — no Claude credits used`,"#4ade80");
+    `${top.length} tickers saved (no AI) · ${top.slice(0,8).map(t=>t.ticker).join(", ")}${top.length>8?"…":""}`;
+  setStatus(`✓ All ${top.length} tickers saved to Pro Agent — no Claude credits used`,"#4ade80");
 }
 
 function filterRanked(){
