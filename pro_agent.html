@@ -363,14 +363,29 @@ label{color:#9090c0}
   </div>
 
   <div id="tradeHistoryBody">
-    <!-- Stats bar -->
-    <div id="tradeStats" style="display:none">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px" id="statsGrid"></div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px" id="statsGrid2"></div>
+    <!-- View tabs -->
+    <div style="display:flex;gap:4px;margin-bottom:12px">
+      <button id="tabStats"  onclick="switchTradeView('stats')"  style="font-size:10px;padding:4px 12px;color:#818cf8;border-color:#818cf8;background:#0f0f20;border-radius:6px">📈 Stats</button>
+      <button id="tabDaily"  onclick="switchTradeView('daily')"  style="font-size:10px;padding:4px 12px;color:#555580;border-color:#2a2a45;border-radius:6px">📅 Daily</button>
+      <button id="tabTrades" onclick="switchTradeView('trades')" style="font-size:10px;padding:4px 12px;color:#555580;border-color:#2a2a45;border-radius:6px">📋 Trades</button>
     </div>
 
-    <!-- Filter -->
-    <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap" id="tradeFilters" style="display:none">
+    <!-- Stats view -->
+    <div id="viewStats">
+      <div id="tradeStats" style="display:none">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px" id="statsGrid"></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px" id="statsGrid2"></div>
+      </div>
+      <div id="tradeReconNote"></div>
+    </div>
+
+    <!-- Daily summary view -->
+    <div id="viewDaily" style="display:none">
+      <div id="dailySummary"></div>
+    </div>
+
+    <!-- Trades view -->
+    <div id="viewTrades" style="display:none">
       <select id="tradeSource" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
         <option value="all">All agents</option>
         <option value="PRO">Pro Agent only</option>
@@ -415,8 +430,9 @@ label{color:#9090c0}
       </table>
     </div>
     <div id="tradeRowNote" style="font-size:9px;color:#555580;margin-top:6px;text-align:right"></div>
-  </div>
-</div>
+    </div><!-- end viewTrades -->
+  </div><!-- end tradeHistoryBody -->
+</div><!-- end card -->
 <div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
     <div class="micro" style="margin:0">Activity Log</div>
@@ -1959,6 +1975,8 @@ async function loadTradeHistory(){
     saveTradeHistoryToStorage();
     renderTradeStats(recon);
     renderTradeTable();
+    // Default to daily view after load
+    switchTradeView('daily');
 
     // Show reconciliation summary in log
     log("INFO",`✓ ${trades.length} matched trades | P&L $${recon.matchedPL} | ${recon.openPositions} open positions ($${recon.openBuyValue} invested)${recon.gap!=null?` | Gap vs actual: $${recon.gap}`:""}`,
@@ -2087,6 +2105,195 @@ function toggleTradeHistory(){
   tradeHistoryOpen=!tradeHistoryOpen;
   document.getElementById("tradeHistoryBody").style.display=tradeHistoryOpen?"block":"none";
   document.getElementById("tradeToggleIcon").textContent=tradeHistoryOpen?"▼":"▶";
+}
+
+function switchTradeView(view){
+  ["stats","daily","trades"].forEach(v=>{
+    const el=document.getElementById("view"+v.charAt(0).toUpperCase()+v.slice(1));
+    if(el) el.style.display=v===view?"block":"none";
+    const btn=document.getElementById("tab"+v.charAt(0).toUpperCase()+v.slice(1));
+    if(btn){
+      btn.style.color=v===view?"#818cf8":"#555580";
+      btn.style.borderColor=v===view?"#818cf8":"#2a2a45";
+      btn.style.background=v===view?"#0f0f20":"transparent";
+    }
+  });
+  if(view==="daily") renderDailySummary();
+  if(view==="trades") renderTradeTable();
+}
+
+function renderDailySummary(){
+  if(!tradeHistory.length){
+    document.getElementById("dailySummary").innerHTML=`<div style="color:#333;font-size:12px">Load trades first.</div>`;
+    return;
+  }
+
+  // Group trades by date and agent
+  const byDate={};
+  for(const t of tradeHistory){
+    if(!byDate[t.date]) byDate[t.date]={date:t.date,trades:[],pro:[],ict:[]};
+    byDate[t.date].trades.push(t);
+    if(t.source==="ICT") byDate[t.date].ict.push(t);
+    else byDate[t.date].pro.push(t);
+  }
+
+  const days=Object.values(byDate).sort((a,b)=>a.date.localeCompare(b.date)); // asc for chart
+
+  // Build cumulative data
+  let cumPL=0;
+  const cumData=days.map(d=>{
+    const pl=d.trades.reduce((s,t)=>s+t.pl,0);
+    cumPL+=pl;
+    return{date:d.date, pl, cumPL, trades:d.trades, pro:d.pro, ict:d.ict};
+  });
+
+  // ── Trend chart ────────────────────────────────────────────────
+  const chartHTML=`<canvas id="trendCanvas" style="width:100%;height:120px;display:block;border-radius:8px;background:#0a0a12;margin-bottom:12px"></canvas>`;
+
+  // ── Table (all days, newest first) ────────────────────────────
+  const rows=[...cumData].reverse().map(d=>{
+    const allW=d.trades.filter(t=>t.win).length;
+    const wr=d.trades.length?(allW/d.trades.length*100).toFixed(0):0;
+    const proW=d.pro.filter(t=>t.win).length;
+    const proPL=d.pro.reduce((s,t)=>s+t.pl,0);
+    const ictW=d.ict.filter(t=>t.win).length;
+    const ictPL=d.ict.reduce((s,t)=>s+t.pl,0);
+    return `<tr style="border-bottom:1px solid #0f0f1a">
+      <td style="padding:7px 8px;color:#555580;font-size:11px;white-space:nowrap">${d.date}</td>
+      <td style="padding:7px 8px;text-align:center;color:#818cf8;font-size:11px">${d.trades.length}</td>
+      <td style="padding:7px 8px;text-align:center;color:${+wr>=50?"#4ade80":"#f87171"};font-size:11px">${wr}%</td>
+      <td style="padding:7px 8px;text-align:right;color:${d.pl>=0?"#4ade80":"#f87171"};font-weight:700;font-size:11px">${d.pl>=0?"+$":"-$"}${Math.abs(d.pl).toFixed(2)}</td>
+      <td style="padding:7px 8px;text-align:right;font-weight:700;font-size:11px;color:${d.cumPL>=0?"#4ade80":"#f87171"}">${d.cumPL>=0?"+$":"-$"}${Math.abs(d.cumPL).toFixed(2)}</td>
+      <td style="padding:7px 8px;font-size:10px">
+        ${d.pro.length?`<span style="color:#818cf8">PRO ${d.pro.length}t ${d.pro.length?(proW/d.pro.length*100).toFixed(0):0}% ${proPL>=0?"+$":"-$"}${Math.abs(proPL).toFixed(2)}</span>`:""}
+        ${d.ict.length?`<span style="color:#00ddcc;margin-left:8px">ICT ${d.ict.length}t ${d.ict.length?(ictW/d.ict.length*100).toFixed(0):0}% ${ictPL>=0?"+$":"-$"}${Math.abs(ictPL).toFixed(2)}</span>`:""}
+      </td>
+    </tr>`;
+  }).join("");
+
+  // Totals
+  const totPL=tradeHistory.reduce((s,t)=>s+t.pl,0);
+  const totW=tradeHistory.filter(t=>t.win).length;
+  const totWR=(totW/tradeHistory.length*100).toFixed(1);
+  const proAll=tradeHistory.filter(t=>t.source!=="ICT");
+  const ictAll=tradeHistory.filter(t=>t.source==="ICT");
+  const proPLAll=proAll.reduce((s,t)=>s+t.pl,0);
+  const ictPLAll=ictAll.reduce((s,t)=>s+t.pl,0);
+  const proWAll=proAll.filter(t=>t.win).length;
+  const ictWAll=ictAll.filter(t=>t.win).length;
+
+  document.getElementById("dailySummary").innerHTML=`
+    ${chartHTML}
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:11px">
+        <thead>
+          <tr style="color:#555580;font-size:9px;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid #1c1c30">
+            <th style="text-align:left;padding:6px 8px">Date</th>
+            <th style="text-align:center;padding:6px 8px">Trades</th>
+            <th style="text-align:center;padding:6px 8px">Win%</th>
+            <th style="text-align:right;padding:6px 8px">Day P&L</th>
+            <th style="text-align:right;padding:6px 8px">Cumulative</th>
+            <th style="text-align:left;padding:6px 8px">By Agent</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+        <tfoot>
+          <tr style="border-top:2px solid #1c1c30;background:#0a0a12">
+            <td style="padding:8px;font-weight:700;color:#dde1f0">TOTAL</td>
+            <td style="padding:8px;text-align:center;font-weight:700;color:#818cf8">${tradeHistory.length}</td>
+            <td style="padding:8px;text-align:center;font-weight:700;color:${+totWR>=50?"#4ade80":"#f87171"}">${totWR}%</td>
+            <td style="padding:8px;text-align:right;font-weight:700;color:${totPL>=0?"#4ade80":"#f87171"}">${totPL>=0?"+$":"-$"}${Math.abs(totPL).toFixed(2)}</td>
+            <td style="padding:8px;text-align:right;font-weight:700;color:${totPL>=0?"#4ade80":"#f87171"}">${totPL>=0?"+$":"-$"}${Math.abs(totPL).toFixed(2)}</td>
+            <td style="padding:8px;font-size:10px">
+              <span style="color:#818cf8">PRO ${proAll.length}t ${proAll.length?(proWAll/proAll.length*100).toFixed(0):0}% ${proPLAll>=0?"+$":"-$"}${Math.abs(proPLAll).toFixed(2)}</span>
+              ${ictAll.length?`<span style="color:#00ddcc;margin-left:8px">ICT ${ictAll.length}t ${ictAll.length?(ictWAll/ictAll.length*100).toFixed(0):0}% ${ictPLAll>=0?"+$":"-$"}${Math.abs(ictPLAll).toFixed(2)}</span>`:""}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>`;
+
+  // Draw trend chart after DOM update
+  setTimeout(()=>drawTrendChart(cumData), 50);
+}
+
+function drawTrendChart(cumData){
+  const cv=document.getElementById("trendCanvas");
+  if(!cv) return;
+  const dpr=window.devicePixelRatio||1;
+  const W=cv.parentElement.clientWidth-4;
+  const H=120;
+  cv.width=W*dpr; cv.height=H*dpr;
+  cv.style.width=W+"px"; cv.style.height=H+"px";
+  const ctx=cv.getContext("2d"); ctx.scale(dpr,dpr);
+
+  const n=cumData.length; if(n<2) return;
+  const pad={l:52,r:16,t:10,b:20};
+  const w=W-pad.l-pad.r, h=H-pad.t-pad.b;
+
+  const vals=cumData.map(d=>d.cumPL);
+  const dayPLs=cumData.map(d=>d.pl);
+  const mn=Math.min(0,...vals)*1.1, mx=Math.max(0,...vals)*1.1||10;
+  const sy=v=>pad.t+(1-(v-mn)/(mx-mn))*h;
+
+  // Grid + zero line
+  ctx.strokeStyle="#1a1a2e"; ctx.lineWidth=1;
+  [0,0.25,0.5,0.75,1].forEach(p=>{
+    const y=pad.t+p*h;
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+w,y);ctx.stroke();
+  });
+  // Zero line highlighted
+  ctx.strokeStyle="#2a2a45"; ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(pad.l,sy(0));ctx.lineTo(pad.l+w,sy(0));ctx.stroke();
+
+  // Y axis labels
+  ctx.fillStyle="#4a4a7a";ctx.font="8px monospace";ctx.textAlign="right";
+  [[0,mn],[0.5,(mn+mx)/2],[1,mx]].forEach(([p,v])=>{
+    ctx.fillText((v>=0?"+$":"-$")+Math.abs(v).toFixed(0),pad.l-3,pad.t+p*h+3);
+  });
+
+  // Day bars (subtle)
+  const bw=Math.max(2,Math.floor(w/n)-2);
+  cumData.forEach((d,i)=>{
+    const x=pad.l+i*(w/(n-1||1))-bw/2;
+    const barH=Math.abs(sy(0)-sy(d.pl));
+    const barY=d.pl>=0?sy(d.pl):sy(0);
+    ctx.fillStyle=d.pl>=0?"rgba(74,222,128,0.15)":"rgba(248,113,113,0.15)";
+    ctx.fillRect(x,barY,bw,Math.max(1,barH));
+  });
+
+  // Cumulative line
+  ctx.strokeStyle="#818cf8";ctx.lineWidth=2.5;
+  ctx.shadowColor="#818cf8";ctx.shadowBlur=6;
+  ctx.beginPath();
+  cumData.forEach((d,i)=>{
+    const x=pad.l+i*(w/(n-1||1));
+    i===0?ctx.moveTo(x,sy(d.cumPL)):ctx.lineTo(x,sy(d.cumPL));
+  });
+  ctx.stroke();ctx.shadowBlur=0;
+
+  // Dots at each day
+  cumData.forEach((d,i)=>{
+    const x=pad.l+i*(w/(n-1||1));
+    ctx.fillStyle=d.cumPL>=0?"#4ade80":"#f87171";
+    ctx.beginPath();ctx.arc(x,sy(d.cumPL),3,0,Math.PI*2);ctx.fill();
+  });
+
+  // Date labels on x axis
+  ctx.fillStyle="#4a4a7a";ctx.font="8px monospace";ctx.textAlign="center";
+  cumData.forEach((d,i)=>{
+    if(n<=7||i%Math.ceil(n/6)===0||i===n-1){
+      const x=pad.l+i*(w/(n-1||1));
+      ctx.fillText(d.date.slice(5),x,H-4); // show MM-DD
+    }
+  });
+
+  // Final value label
+  const last=cumData[n-1];
+  const lx=pad.l+(n-1)*(w/(n-1||1));
+  ctx.fillStyle=last.cumPL>=0?"#4ade80":"#f87171";
+  ctx.font="bold 10px monospace";ctx.textAlign="right";
+  ctx.fillText((last.cumPL>=0?"+$":"-$")+Math.abs(last.cumPL).toFixed(2),W-pad.r,sy(last.cumPL)-6);
 }
 
 function renderTradeStats(recon=null){
