@@ -791,17 +791,36 @@ async function analyzeSetup(ticker){
   // ChoCh warning
   if(struct.choch){score-=2;reasons.push("ChoCh warning (-2)");}
 
-  // SL/TP calculation (ICT-style: SL below FVG low, TP at swing high/low)
+  // SL/TP calculation (ICT-style: SL outside FVG, TP at swing high/low)
   const atrApprox=calcATR(etfC,14);
   let sl, tp;
   if(setupType==="long"){
-    sl=+(activeFVG.bottom-atrApprox*0.3).toFixed(2); // just below FVG
-    const nextHigh=struct.swingHigh;
-    tp=+(Math.min(nextHigh, price+atrApprox*3)).toFixed(2);
+    sl=+(activeFVG.bottom-atrApprox*0.3).toFixed(2);
+    // TP = next swing high above price, or ATR target — must be above entry
+    const swingTarget=struct.swingHigh>price?struct.swingHigh:price+atrApprox*3;
+    tp=+(Math.min(swingTarget, price+atrApprox*4)).toFixed(2);
+    // Safety: ensure TP is always above entry
+    if(tp<=price) tp=+(price+atrApprox*2).toFixed(2);
+    // Safety: ensure SL is below entry
+    if(sl>=price) sl=+(price-atrApprox*1.5).toFixed(2);
   } else {
-    sl=+(activeFVG.top+atrApprox*0.3).toFixed(2); // just above FVG
-    const nextLow=struct.swingLow;
-    tp=+(Math.max(nextLow, price-atrApprox*3)).toFixed(2);
+    sl=+(activeFVG.top+atrApprox*0.3).toFixed(2);
+    // TP = next swing low below price, or ATR target — must be below entry
+    const swingTarget=struct.swingLow<price?struct.swingLow:price-atrApprox*3;
+    tp=+(Math.max(swingTarget, price-atrApprox*4)).toFixed(2);
+    // Safety: ensure TP is below entry
+    if(tp>=price) tp=+(price-atrApprox*2).toFixed(2);
+    // Safety: ensure SL is above entry
+    if(sl<=price) sl=+(price+atrApprox*1.5).toFixed(2);
+  }
+  // Final sanity check — skip if still invalid
+  if(setupType==="long"&&(tp<=price||sl>=price)){
+    log("SKIP",`${ticker} — invalid SL/TP geometry (entry $${price} SL $${sl} TP $${tp})`);
+    return null;
+  }
+  if(setupType==="short"&&(tp>=price||sl<=price)){
+    log("SKIP",`${ticker} — invalid SL/TP geometry (entry $${price} SL $${sl} TP $${tp})`);
+    return null;
   }
   const rr=Math.abs(tp-price)/Math.abs(price-sl);
 
