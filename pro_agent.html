@@ -376,7 +376,7 @@ label{color:#9090c0}
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px" id="statsGrid"></div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px" id="statsGrid2"></div>
       </div>
-      <div id="tradeReconNote"></div>
+      <div id="tradeReconNote" style="font-size:10px;color:#555580;margin-bottom:10px;padding:8px 10px;background:#0a0a12;border-radius:6px;line-height:1.7"></div>
     </div>
 
     <!-- Daily summary view -->
@@ -2118,8 +2118,9 @@ function switchTradeView(view){
       btn.style.background=v===view?"#0f0f20":"transparent";
     }
   });
-  if(view==="daily") renderDailySummary();
+  if(view==="daily") setTimeout(()=>renderDailySummary(),50);
   if(view==="trades") renderTradeTable();
+  if(view==="stats"&&tradeHistory.length) renderTradeStats();
 }
 
 function renderDailySummary(){
@@ -2338,12 +2339,7 @@ function renderTradeStats(recon=null){
 
   // Reconciliation note
   let reconEl=document.getElementById("tradeReconNote");
-  if(!reconEl){
-    reconEl=document.createElement("div");
-    reconEl.id="tradeReconNote";
-    reconEl.style.cssText="font-size:10px;color:#555580;margin-bottom:10px;padding:8px 10px;background:#0a0a12;border-radius:6px;line-height:1.7";
-    document.getElementById("tradeStats").appendChild(reconEl);
-  }
+  if(!reconEl) return;
   if(recon){
     const gapOk=recon.gap!=null&&Math.abs(recon.gap)<50;
     reconEl.innerHTML=`
