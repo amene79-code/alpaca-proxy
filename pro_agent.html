@@ -1246,13 +1246,13 @@ async function manageTrailingStops(positions,cfg){
         `High $${high.toFixed(2)} | Stop $${stop} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
       try{
         // Fetch ALL open orders and cancel any for this symbol
-        const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100").catch(()=>[]);
+        const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100&nested=true").catch(()=>[]);
         const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===p.symbol);
         for(const o of symbolOrders){
           await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
-          log("INFO",`Cancelled order ${o.id} for ${p.symbol} (${o.type} ${o.side})`);
+          if(o.legs) for(const leg of o.legs) await alpaca("DELETE",`/v2/orders/${leg.id}`).catch(()=>{});
         }
-        if(symbolOrders.length) await new Promise(r=>setTimeout(r,800));
+        if(symbolOrders.length) await new Promise(r=>setTimeout(r,1200));
         await alpaca("POST","/v2/orders",{symbol:p.symbol,qty:String(p.qty),side:"sell",type:"market",time_in_force:"day"});
         log("SELL",`✓ Closed ${p.symbol}`,`P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
         delete trailingStops[p.symbol];
@@ -1843,12 +1843,13 @@ async function closePosition(symbol, qty){
   if(!confirm(`Close ${qty}x ${symbol} at market price?`)) return;
   try{
     // Fetch ALL open orders and cancel any for this symbol
-    const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100").catch(()=>[]);
+    const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100&nested=true").catch(()=>[]);
     const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===symbol);
     for(const o of symbolOrders){
       await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
+      if(o.legs) for(const leg of o.legs) await alpaca("DELETE",`/v2/orders/${leg.id}`).catch(()=>{});
     }
-    if(symbolOrders.length) await new Promise(r=>setTimeout(r,800));
+    if(symbolOrders.length) await new Promise(r=>setTimeout(r,1200));
     await alpaca("POST","/v2/orders",{
       symbol, qty:String(qty), side:"sell",
       type:"market", time_in_force:"day"
