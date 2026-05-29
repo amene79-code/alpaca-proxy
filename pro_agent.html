@@ -384,55 +384,55 @@ label{color:#9090c0}
       <div id="dailySummary"></div>
     </div>
 
-    <!-- Trades view -->
+    <!-- Trades view - ALL table elements inside this div -->
     <div id="viewTrades" style="display:none">
-      <select id="tradeSource" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
-        <option value="all">All agents</option>
-        <option value="PRO">Pro Agent only</option>
-        <option value="ICT">ICT Agent only</option>
-      </select>
-      <select id="tradeFilter" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
-        <option value="all">All trades</option>
-        <option value="win">Winners only</option>
-        <option value="loss">Losers only</option>
-      </select>
-      <select id="tradePeriod" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
-        <option value="all">All time</option>
-        <option value="today">Today</option>
-        <option value="week">This week</option>
-      </select>
-      <input id="tradeSearch" placeholder="Search ticker…" oninput="renderTradeTable()" style="font-size:10px;padding:4px 8px;width:110px;border-radius:6px">
-      <select id="tradeRows" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
-        <option value="20" selected>20 rows</option>
-        <option value="50">50 rows</option>
-        <option value="100">100 rows</option>
-        <option value="all">All rows</option>
-      </select>
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap" id="tradeFilters">
+        <select id="tradeSource" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+          <option value="all">All agents</option>
+          <option value="PRO">Pro Agent only</option>
+          <option value="ICT">ICT Agent only</option>
+        </select>
+        <select id="tradeFilter" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+          <option value="all">All trades</option>
+          <option value="win">Winners only</option>
+          <option value="loss">Losers only</option>
+        </select>
+        <select id="tradePeriod" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+          <option value="all">All time</option>
+          <option value="today">Today</option>
+          <option value="week">This week</option>
+        </select>
+        <input id="tradeSearch" placeholder="Search ticker..." oninput="renderTradeTable()" style="font-size:10px;padding:4px 8px;width:110px;border-radius:6px">
+        <select id="tradeRows" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+          <option value="20" selected>20 rows</option>
+          <option value="50">50 rows</option>
+          <option value="100">100 rows</option>
+          <option value="all">All rows</option>
+        </select>
+      </div>
+      <div id="tradeTableWrap" style="overflow-y:auto;max-height:400px;overflow-x:auto">
+        <div id="tradeEmpty" style="color:#333;font-size:12px">Click Load from Alpaca to fetch trades.</div>
+        <table id="tradeTable" style="display:none;width:100%;border-collapse:collapse;font-size:11px">
+          <thead style="position:sticky;top:0;background:#10101c;z-index:1">
+            <tr style="color:#555580;font-size:9px;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid #1c1c30">
+              <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('date')">Date</th>
+              <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('symbol')">Ticker</th>
+              <th style="text-align:left;padding:6px 8px">Agent</th>
+              <th style="text-align:right;padding:6px 8px">Qty</th>
+              <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('entry')">Entry</th>
+              <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('exit')">Exit</th>
+              <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pl')">P&amp;L</th>
+              <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pct')">%</th>
+              <th style="text-align:left;padding:6px 8px">Result</th>
+            </tr>
+          </thead>
+          <tbody id="tradeTableBody"></tbody>
+        </table>
+      </div>
+      <div id="tradeRowNote" style="font-size:9px;color:#555580;margin-top:6px;text-align:right"></div>
     </div>
-
-    <div id="tradeTableWrap" style="overflow-y:auto;max-height:400px;overflow-x:auto">
-      <div id="tradeEmpty" style="color:#333;font-size:12px">Click "Load from Alpaca" to fetch all historical trades.</div>
-      <table id="tradeTable" style="display:none;width:100%;border-collapse:collapse;font-size:11px">
-        <thead style="position:sticky;top:0;background:#10101c;z-index:1">
-          <tr style="color:#555580;font-size:9px;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid #1c1c30">
-            <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('date')">Date ↕</th>
-            <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('symbol')">Ticker ↕</th>
-            <th style="text-align:left;padding:6px 8px">Agent</th>
-            <th style="text-align:right;padding:6px 8px">Qty</th>
-            <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('entry')">Entry ↕</th>
-            <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('exit')">Exit ↕</th>
-            <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pl')">P&L ↕</th>
-            <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('pct')">% ↕</th>
-            <th style="text-align:left;padding:6px 8px">Result</th>
-          </tr>
-        </thead>
-        <tbody id="tradeTableBody"></tbody>
-      </table>
-    </div>
-    <div id="tradeRowNote" style="font-size:9px;color:#555580;margin-top:6px;text-align:right"></div>
-    </div><!-- end viewTrades -->
-  </div><!-- end tradeHistoryBody -->
-</div><!-- end card -->
+  </div>
+</div>
 <div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
     <div class="micro" style="margin:0">Activity Log</div>
@@ -2301,7 +2301,7 @@ function renderTradeStats(recon=null){
   const t=tradeHistory;
   if(!t.length) return;
   document.getElementById("tradeStats").style.display="block";
-  document.getElementById("tradeFilters").style.display="flex";
+  // tradeFilters now always visible inside viewTrades tab
 
   const wins=t.filter(x=>x.win);
   const losses=t.filter(x=>!x.win);
@@ -2363,6 +2363,7 @@ function renderTradeTable(){
   const empty=document.getElementById("tradeEmpty");
   const table=document.getElementById("tradeTable");
   const body=document.getElementById("tradeTableBody");
+  if(!empty||!table||!body) return;
 
   if(!trades.length){
     empty.style.display="block"; empty.textContent=tradeHistory.length?"No trades match filter.":"Click Load from Alpaca to fetch history.";
@@ -2491,4 +2492,3 @@ function stopAgent(){
 }
 </script>
 </body>
-</html>
