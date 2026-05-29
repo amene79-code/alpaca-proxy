@@ -2108,19 +2108,28 @@ function toggleTradeHistory(){
 }
 
 function switchTradeView(view){
-  ["stats","daily","trades"].forEach(v=>{
-    const el=document.getElementById("view"+v.charAt(0).toUpperCase()+v.slice(1));
-    if(el) el.style.display=v===view?"block":"none";
-    const btn=document.getElementById("tab"+v.charAt(0).toUpperCase()+v.slice(1));
-    if(btn){
-      btn.style.color=v===view?"#818cf8":"#555580";
-      btn.style.borderColor=v===view?"#818cf8":"#2a2a45";
-      btn.style.background=v===view?"#0f0f20":"transparent";
-    }
-  });
-  if(view==="daily") setTimeout(()=>renderDailySummary(),50);
-  if(view==="trades") renderTradeTable();
-  if(view==="stats"&&tradeHistory.length) renderTradeStats();
+  try{
+    ["stats","daily","trades"].forEach(v=>{
+      const el=document.getElementById("view"+v.charAt(0).toUpperCase()+v.slice(1));
+      if(el) el.style.display=v===view?"block":"none";
+      const btn=document.getElementById("tab"+v.charAt(0).toUpperCase()+v.slice(1));
+      if(btn){
+        btn.style.color=v===view?"#818cf8":"#555580";
+        btn.style.borderColor=v===view?"#818cf8":"#2a2a45";
+        btn.style.background=v===view?"#0f0f20":"transparent";
+      }
+    });
+    if(view==="daily") setTimeout(()=>{
+      try{ renderDailySummary(); }
+      catch(e){ 
+        console.error("renderDailySummary error:",e);
+        const el=document.getElementById("dailySummary");
+        if(el) el.innerHTML=`<div style="color:#f87171;font-size:11px">Error: ${e.message}</div>`;
+      }
+    },50);
+    if(view==="trades") renderTradeTable();
+    if(view==="stats"&&tradeHistory.length) renderTradeStats();
+  }catch(e){ console.error("switchTradeView error:",e); }
 }
 
 function renderDailySummary(){
