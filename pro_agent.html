@@ -2139,8 +2139,8 @@ function renderDailySummary(){
   const exp=(+winRate/100*avgWin)-((1-winRate/100)*avgLoss);
   const dProAll=t.filter(x=>x.source!=="ICT");
   const dIctAll=t.filter(x=>x.source==="ICT");
-  const proWR=dProAll.length?(dProAll.filter(x=>x.win).length/proAll.length*100).toFixed(0):0;
-  const ictWR=dIctAll.length?(dIctAll.filter(x=>x.win).length/ictAll.length*100).toFixed(0):0;
+  const proWR=dProAll.length?(dProAll.filter(x=>x.win).length/dProAll.length*100).toFixed(0):0;
+  const ictWR=dIctAll.length?(dIctAll.filter(x=>x.win).length/dIctAll.length*100).toFixed(0):0;
   const proPF=()=>{const w=dProAll.filter(x=>x.win),l=dProAll.filter(x=>!x.win);const aw=w.length?w.reduce((s,x)=>s+x.pl,0)/w.length:0;const al=l.length?Math.abs(l.reduce((s,x)=>s+x.pl,0)/l.length):0;return al>0?(aw*w.length)/(al*l.length||1):0;};
   const ictPF=()=>{const w=dIctAll.filter(x=>x.win),l=dIctAll.filter(x=>!x.win);const aw=w.length?w.reduce((s,x)=>s+x.pl,0)/w.length:0;const al=l.length?Math.abs(l.reduce((s,x)=>s+x.pl,0)/l.length):0;return al>0?(aw*w.length)/(al*l.length||1):0;};
 
@@ -2159,11 +2159,11 @@ function renderDailySummary(){
       ${m(wins.length+" / "+losses.length,"W / L","#818cf8",dProAll.length&&dIctAll.length?`PRO ${dProAll.filter(x=>x.win).length}/${dProAll.filter(x=>!x.win).length} · ICT ${dIctAll.filter(x=>x.win).length}/${dIctAll.filter(x=>!x.win).length}`:"")}
     </div>`;
   const byDate={};
-  for(const t of tradeHistory){
-    if(!byDate[t.date]) byDate[t.date]={date:t.date,trades:[],pro:[],ict:[]};
-    byDate[t.date].trades.push(t);
-    if(t.source==="ICT") byDate[t.date].ict.push(t);
-    else byDate[t.date].pro.push(t);
+  for(const trade of tradeHistory){
+    if(!byDate[trade.date]) byDate[trade.date]={date:trade.date,trades:[],pro:[],ict:[]};
+    byDate[trade.date].trades.push(trade);
+    if(trade.source==="ICT") byDate[trade.date].ict.push(trade);
+    else byDate[trade.date].pro.push(trade);
   }
 
   const days=Object.values(byDate).sort((a,b)=>a.date.localeCompare(b.date)); // asc for chart
@@ -2204,12 +2204,12 @@ function renderDailySummary(){
   const totPL=tradeHistory.reduce((s,t)=>s+t.pl,0);
   const totW=tradeHistory.filter(t=>t.win).length;
   const totWR=(totW/tradeHistory.length*100).toFixed(1);
-  const proAll=tradeHistory.filter(t=>t.source!=="ICT");
-  const ictAll=tradeHistory.filter(t=>t.source==="ICT");
-  const proPLAll=proAll.reduce((s,t)=>s+t.pl,0);
-  const ictPLAll=ictAll.reduce((s,t)=>s+t.pl,0);
-  const proWAll=proAll.filter(t=>t.win).length;
-  const ictWAll=ictAll.filter(t=>t.win).length;
+  const tProAll=tradeHistory.filter(t=>t.source!=="ICT");
+  const tIctAll=tradeHistory.filter(t=>t.source==="ICT");
+  const proPLAll=tProAll.reduce((s,t)=>s+t.pl,0);
+  const ictPLAll=tIctAll.reduce((s,t)=>s+t.pl,0);
+  const proWAll=tProAll.filter(t=>t.win).length;
+  const ictWAll=tIctAll.filter(t=>t.win).length;
 
   document.getElementById("dailySummary").innerHTML=`
     ${statsHTML}
@@ -2235,8 +2235,8 @@ function renderDailySummary(){
             <td style="padding:8px;text-align:right;font-weight:700;color:${totPL>=0?"#4ade80":"#f87171"}">${totPL>=0?"+$":"-$"}${Math.abs(totPL).toFixed(2)}</td>
             <td style="padding:8px;text-align:right;font-weight:700;color:${totPL>=0?"#4ade80":"#f87171"}">${totPL>=0?"+$":"-$"}${Math.abs(totPL).toFixed(2)}</td>
             <td style="padding:8px;font-size:10px">
-              <span style="color:#818cf8">PRO ${proAll.length}t ${proAll.length?(proWAll/proAll.length*100).toFixed(0):0}% ${proPLAll>=0?"+$":"-$"}${Math.abs(proPLAll).toFixed(2)}</span>
-              ${ictAll.length?`<span style="color:#00ddcc;margin-left:8px">ICT ${ictAll.length}t ${ictAll.length?(ictWAll/ictAll.length*100).toFixed(0):0}% ${ictPLAll>=0?"+$":"-$"}${Math.abs(ictPLAll).toFixed(2)}</span>`:""}
+              <span style="color:#818cf8">PRO ${tProAll.length}t ${tProAll.length?(proWAll/proAll.length*100).toFixed(0):0}% ${proPLAll>=0?"+$":"-$"}${Math.abs(proPLAll).toFixed(2)}</span>
+              ${tIctAll.length?`<span style="color:#00ddcc;margin-left:8px">ICT ${tIctAll.length}t ${tIctAll.length?(ictWAll/ictAll.length*100).toFixed(0):0}% ${ictPLAll>=0?"+$":"-$"}${Math.abs(ictPLAll).toFixed(2)}</span>`:""}
             </td>
           </tr>
         </tfoot>
@@ -2521,3 +2521,4 @@ function stopAgent(){
 }
 </script>
 </body>
+</html>
