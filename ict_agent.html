@@ -1103,7 +1103,10 @@ function getICTPositions(){
 }
 let trailingStops={};
 async function manageTrailingStops(positions, cfg){
+  const ictPositions=getICTPositions();
   for(const p of Array.isArray(positions)?positions:[]){
+    // Only manage positions opened by the ICT agent
+    if(!ictPositions.includes(p.symbol)) continue;
     const price=+p.current_price||0, entry=+p.avg_entry_price||0;
     if(!price||!entry) continue;
     const side=trailingStops[p.symbol]?.side||"long";
