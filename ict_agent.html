@@ -1115,10 +1115,15 @@ async function manageTrailingStops(positions, cfg){
       const pl=+p.unrealized_pl||0;
       log("TRAIL",`Trail stop: ${p.symbol} @ $${price}`,`High $${high} → Stop $${stop} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
       try{
-        const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100").catch(()=>[]);
-        const open=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===p.symbol);
-        for(const o of Array.isArray(open)?open:[]) await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
-        await new Promise(r=>setTimeout(r,800));
+        // Fetch with nested=true to get bracket legs
+        const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100&nested=true").catch(()=>[]);
+        const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===p.symbol);
+        for(const o of symbolOrders){
+          await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
+          // Also cancel any legs explicitly
+          if(o.legs) for(const leg of o.legs) await alpaca("DELETE",`/v2/orders/${leg.id}`).catch(()=>{});
+        }
+        if(symbolOrders.length) await new Promise(r=>setTimeout(r,1200));
         await alpaca("POST","/v2/orders",{symbol:p.symbol,qty:String(p.qty),side:"sell",type:"market",time_in_force:"day"});
         log("SELL",`✓ Closed ${p.symbol}`,`P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
         delete trailingStops[p.symbol];
@@ -1372,10 +1377,13 @@ function updatePositionsUI(positions){
 async function closePosition(symbol,qty){
   if(!confirm(`Close ${qty}x ${symbol}?`)) return;
   try{
-    const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100").catch(()=>[]);
-    const open=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===symbol);
-    for(const o of Array.isArray(open)?open:[]) await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
-    await new Promise(r=>setTimeout(r,800));
+    const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100&nested=true").catch(()=>[]);
+    const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===symbol);
+    for(const o of symbolOrders){
+      await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
+      if(o.legs) for(const leg of o.legs) await alpaca("DELETE",`/v2/orders/${leg.id}`).catch(()=>{});
+    }
+    if(symbolOrders.length) await new Promise(r=>setTimeout(r,1200));
     await alpaca("POST","/v2/orders",{symbol,qty:String(qty),side:"sell",type:"market",time_in_force:"day"});
     log("SELL",`✓ Closed ${symbol}`);
     delete trailingStops[symbol];
