@@ -1198,22 +1198,22 @@ async function _runCycle(){
   const today=new Date().toDateString();
   if(dailyDate!==today){dailyTrades=0;dailyDate=today;}
 
-  // Kill zone check
-  const kz=isInKillZone();
-  setPhase("screen");
-  if(!kz.active){
-    log("INFO",`Outside kill zones — waiting. Next: check in 10 min`);
-    scheduleNext(); return;
-  }
-  log("ICT",`🟢 ${kz.name} kill zone active — scanning`);
-
-  // Account
+  // Always fetch positions and manage trailing stops — regardless of kill zone
   let acct, positions;
   try{
     [acct, positions]=await Promise.all([alpaca("GET","/v2/account"),alpaca("GET","/v2/positions")]);
     updateAccountUI(acct); updatePositionsUI(positions);
     await manageTrailingStops(positions,cfg);
   }catch(e){log("ERROR","Account: "+e.message);scheduleNext();return;}
+
+  // Kill zone check — only gates NEW entries, not position management
+  const kz=isInKillZone();
+  setPhase("screen");
+  if(!kz.active){
+    log("INFO",`Outside kill zones — monitoring ${Array.isArray(positions)?positions.length:0} open positions. Next check in 10 min`);
+    scheduleNext(); return;
+  }
+  log("ICT",`🟢 ${kz.name} kill zone active — scanning for new entries`);
 
   if(dailyTrades>=cfg.maxDaily){log("INFO",`Daily limit (${cfg.maxDaily})`);scheduleNext();return;}
   const openCount=Array.isArray(positions)?positions.length:0;
