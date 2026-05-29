@@ -2129,7 +2129,35 @@ function renderDailySummary(){
     return;
   }
 
-  // Group trades by date and agent
+  // Overall stats
+  const t=tradeHistory;
+  const wins=t.filter(x=>x.win), losses=t.filter(x=>!x.win);
+  const winRate=(wins.length/t.length*100).toFixed(1);
+  const avgWin=wins.length?wins.reduce((s,x)=>s+x.pl,0)/wins.length:0;
+  const avgLoss=losses.length?Math.abs(losses.reduce((s,x)=>s+x.pl,0)/losses.length):0;
+  const pf=avgLoss>0?(avgWin*wins.length)/(avgLoss*losses.length||1):0;
+  const exp=(+winRate/100*avgWin)-((1-winRate/100)*avgLoss);
+  const dProAll=t.filter(x=>x.source!=="ICT");
+  const dIctAll=t.filter(x=>x.source==="ICT");
+  const proWR=dProAll.length?(dProAll.filter(x=>x.win).length/proAll.length*100).toFixed(0):0;
+  const ictWR=dIctAll.length?(dIctAll.filter(x=>x.win).length/ictAll.length*100).toFixed(0):0;
+  const proPF=()=>{const w=dProAll.filter(x=>x.win),l=dProAll.filter(x=>!x.win);const aw=w.length?w.reduce((s,x)=>s+x.pl,0)/w.length:0;const al=l.length?Math.abs(l.reduce((s,x)=>s+x.pl,0)/l.length):0;return al>0?(aw*w.length)/(al*l.length||1):0;};
+  const ictPF=()=>{const w=dIctAll.filter(x=>x.win),l=dIctAll.filter(x=>!x.win);const aw=w.length?w.reduce((s,x)=>s+x.pl,0)/w.length:0;const al=l.length?Math.abs(l.reduce((s,x)=>s+x.pl,0)/l.length):0;return al>0?(aw*w.length)/(al*l.length||1):0;};
+
+  const m=(v,l,c,sub)=>`<div class="metric"><div class="metric-v" style="font-size:13px;color:${c||"#dde1f0"}">${v}</div><div class="metric-l">${l}</div>${sub?`<div style="font-size:8px;color:#3a3a6a;margin-top:2px">${sub}</div>`:""}</div>`;
+
+  const statsHTML=`
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px">
+      ${m(t.length,"Matched trades","#818cf8",`${t.length-wins.length-losses.length?t.length-wins.length-losses.length+" open":""}`)}
+      ${m(winRate+"%","Win rate",+winRate>=50?"#4ade80":"#f87171",dProAll.length&&dIctAll.length?`PRO ${proWR}% · ICT ${ictWR}%`:"")}
+      ${m(pf.toFixed(2)+"×","Profit factor",pf>=1.5?"#4ade80":pf>=1?"#f59e0b":"#f87171",dProAll.length&&dIctAll.length?`PRO ${proPF().toFixed(2)}× · ICT ${ictPF().toFixed(2)}×`:"")}
+      ${m((exp>=0?"+$":"-$")+Math.abs(exp).toFixed(2),"Expectancy/trade",exp>=0?"#4ade80":"#f87171","see Overall P&L for total")}
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px">
+      ${m((avgWin>=0?"$":"-$")+Math.abs(avgWin).toFixed(2),"Avg winner","#4ade80")}
+      ${m("-$"+avgLoss.toFixed(2),"Avg loser","#f87171")}
+      ${m(wins.length+" / "+losses.length,"W / L","#818cf8",dProAll.length&&dIctAll.length?`PRO ${dProAll.filter(x=>x.win).length}/${dProAll.filter(x=>!x.win).length} · ICT ${dIctAll.filter(x=>x.win).length}/${dIctAll.filter(x=>!x.win).length}`:"")}
+    </div>`;
   const byDate={};
   for(const t of tradeHistory){
     if(!byDate[t.date]) byDate[t.date]={date:t.date,trades:[],pro:[],ict:[]};
@@ -2184,6 +2212,7 @@ function renderDailySummary(){
   const ictWAll=ictAll.filter(t=>t.win).length;
 
   document.getElementById("dailySummary").innerHTML=`
+    ${statsHTML}
     ${chartHTML}
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:11px">
