@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "ADSK": {
-      "high": 242.67,
+      "high": 244.2378,
       "entry": 226.38,
       "tp": 252.28,
       "sl": 219.24
@@ -25,7 +25,7 @@
       "sl": 217.22
     },
     "SPWH": {
-      "high": 1.3200000524520874,
+      "high": 1.335,
       "entry": 1.3200000524520874,
       "tp": 1.37,
       "sl": 1.27
@@ -49,19 +49,49 @@
       "sl": 755.25
     },
     "HOOD": {
-      "high": 87.73999786376953,
+      "high": 89.62,
       "entry": 87.73999786376953,
       "tp": 94.13,
       "sl": 85.13
     },
     "AMD": {
-      "high": 499.94500732421875,
+      "high": 509,
       "entry": 499.94500732421875,
       "tp": 519.26,
       "sl": 491.17
+    },
+    "COOT": {
+      "high": 0.6279000043869019,
+      "entry": 0.6279000043869019,
+      "tp": 0.68,
+      "sl": 0.58
+    },
+    "PICS": {
+      "high": 10.770000457763672,
+      "entry": 10.770000457763672,
+      "tp": 11.17,
+      "sl": 10.55
+    },
+    "MOMO": {
+      "high": 6.110000133514404,
+      "entry": 6.110000133514404,
+      "tp": 6.16,
+      "sl": 6.06
+    },
+    "TLYS": {
+      "high": 4.525000095367432,
+      "entry": 4.525000095367432,
+      "tp": 4.58,
+      "sl": 4.48
+    },
+    "SPCE": {
+      "high": 6.585000038146973,
+      "entry": 6.585000038146973,
+      "tp": 9.84,
+      "sl": 5.16
     }
   },
-  "dailyTrades": 10,
+  "dailyTrades": 15,
   "dailyDate": "2026-06-01",
   "openPositions": [
     "FIVE",
@@ -73,9 +103,14 @@
     "CURR",
     "SPY",
     "HOOD",
-    "AMD"
+    "AMD",
+    "COOT",
+    "PICS",
+    "MOMO",
+    "TLYS",
+    "SPCE"
   ],
-  "lastRun": "2026-06-01T14:24:25.878Z",
+  "lastRun": "2026-06-01T15:09:55.132Z",
   "log": [
     {
       "time": "2026-06-01T11:01:39.613Z",
@@ -922,6 +957,198 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 1x AMD",
       "detail": "ID: 4a581975-9355-4f98-adf5-601a14f37302 | R:R 2.2:1"
+    },
+    {
+      "time": "2026-06-01T15:09:40.955Z",
+      "type": "INFO",
+      "msg": "Account: $100446.72 | 10 positions open | 10 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:09:40.973Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:09:40.973Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: META @ $611.5 | High $633.255 → Stop $620.59 | P&L +$21.75",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:09:41.003Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:09:41.128Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
+    },
+    {
+      "time": "2026-06-01T15:09:41.682Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-01T15:09:41.731Z",
+      "type": "SIGNAL",
+      "msg": "SPCE — score 4 | ATR 7.72% | RSI 31",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T15:09:43.326Z",
+      "type": "SIGNAL",
+      "msg": "COOT — score 7 | ATR 1.62% | RSI 54",
+      "detail": "Bull Flag, Gap Up"
+    },
+    {
+      "time": "2026-06-01T15:09:43.818Z",
+      "type": "SIGNAL",
+      "msg": "DELL — score 4 | ATR 1.08% | RSI 61",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-01T15:09:44.330Z",
+      "type": "SIGNAL",
+      "msg": "ASTS — score 4 | ATR 1.11% | RSI 50",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T15:09:44.834Z",
+      "type": "SIGNAL",
+      "msg": "PICS — score 7 | ATR 1.39% | RSI 50",
+      "detail": "Bullish Engulfing, Gap Up"
+    },
+    {
+      "time": "2026-06-01T15:09:45.104Z",
+      "type": "SIGNAL",
+      "msg": "RMCO — score 4 | ATR 2.61% | RSI 50",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-01T15:09:45.609Z",
+      "type": "SIGNAL",
+      "msg": "JFIN — score 4 | ATR 1.15% | RSI 42",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-01T15:09:46.650Z",
+      "type": "SIGNAL",
+      "msg": "MOMO — score 5 | ATR 0.30% | RSI 62",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T15:09:47.396Z",
+      "type": "SIGNAL",
+      "msg": "TLYS — score 5 | ATR 0.64% | RSI 52",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T15:09:48.138Z",
+      "type": "SIGNAL",
+      "msg": "SIG — score 4 | ATR 0.55% | RSI 33",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T15:09:48.667Z",
+      "type": "SIGNAL",
+      "msg": "ARM — score 4 | ATR 1.23% | RSI 86",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T15:09:49.204Z",
+      "type": "SIGNAL",
+      "msg": "RKLB — score 4 | ATR 1.06% | RSI 36",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T15:09:50.994Z",
+      "type": "SIGNAL",
+      "msg": "SMMT — score 4 | ATR 1.30% | RSI 76",
+      "detail": "Bull Flag"
+    },
+    {
+      "time": "2026-06-01T15:09:51.517Z",
+      "type": "SIGNAL",
+      "msg": "KEEL — score 4 | ATR 1.14% | RSI 78",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T15:09:52.019Z",
+      "type": "SIGNAL",
+      "msg": "NASA — score 4 | ATR 0.67% | RSI 38",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T15:09:52.220Z",
+      "type": "INFO",
+      "msg": "Top signal: COOT (score 7)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:09:52.220Z",
+      "type": "BUY",
+      "msg": "Placing: 208x COOT @ ~$0.63",
+      "detail": "Patterns: Bull Flag, Gap Up | SL 1.8× $0.58 | TP 3.2× $0.68 | R:R 1.1"
+    },
+    {
+      "time": "2026-06-01T15:09:52.452Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 208x COOT",
+      "detail": "ID: ccd50f95-66b8-4f3c-a24d-4f4c71b1d633 | R:R 1.1:1"
+    },
+    {
+      "time": "2026-06-01T15:09:52.953Z",
+      "type": "BUY",
+      "msg": "Placing: 45x PICS @ ~$10.77",
+      "detail": "Patterns: Bullish Engulfing, Gap Up | SL 1.5× $10.55 | TP 2.7× $11.17 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-01T15:09:52.969Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 45x PICS",
+      "detail": "ID: 5f4bc005-aa21-49ff-89c7-6251bafe54bd | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-01T15:09:53.470Z",
+      "type": "BUY",
+      "msg": "Placing: 81x MOMO @ ~$6.11",
+      "detail": "Patterns: Volume Breakout | SL 1.3× $6.06 | TP 2.3× $6.16 | R:R 1.0"
+    },
+    {
+      "time": "2026-06-01T15:09:53.492Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 81x MOMO",
+      "detail": "ID: e2b47d26-cca9-48ce-8383-f6f47e051d5e | R:R 1.0:1"
+    },
+    {
+      "time": "2026-06-01T15:09:53.993Z",
+      "type": "BUY",
+      "msg": "Placing: 110x TLYS @ ~$4.53",
+      "detail": "Patterns: Volume Breakout | SL 1× $4.48 | TP 1.8× $4.58 | R:R 1.2"
+    },
+    {
+      "time": "2026-06-01T15:09:54.009Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 110x TLYS",
+      "detail": "ID: 3f77fd84-f1e9-4434-a6b9-e8a35061f4a6 | R:R 1.2:1"
+    },
+    {
+      "time": "2026-06-01T15:09:54.509Z",
+      "type": "BUY",
+      "msg": "Placing: 7x SPCE @ ~$6.59",
+      "detail": "Patterns: Bullish Engulfing | SL 2.8× $5.16 | TP 6.4× $9.84 | R:R 2.3"
+    },
+    {
+      "time": "2026-06-01T15:09:54.631Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 7x SPCE",
+      "detail": "ID: b03dc7e9-766a-430a-98a0-c968b2d2118c | R:R 2.3:1"
     }
   ]
 }
