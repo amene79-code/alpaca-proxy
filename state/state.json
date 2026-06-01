@@ -109,7 +109,7 @@
       "sl": 91.89
     },
     "MU": {
-      "high": 1033.60498046875,
+      "high": 1034.275,
       "entry": 1033.60498046875,
       "tp": 1044.05,
       "sl": 1027.91
@@ -141,26 +141,8 @@
     "MU",
     "INTC"
   ],
-  "lastRun": "2026-06-01T16:22:21.210Z",
+  "lastRun": "2026-06-01T16:22:39.780Z",
   "log": [
-    {
-      "time": "2026-06-01T13:43:36.605Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T13:43:36.699Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for META",
-      "detail": "Entry $633.25 | High $633.25 | ATR $5.23 | TP $648.96 | SL $625.4"
-    },
-    {
-      "time": "2026-06-01T13:43:36.900Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: META @ $619.08 | High $633.255 → Stop $620.59 | P&L +$14.18",
-      "detail": ""
-    },
     {
       "time": "2026-06-01T13:43:36.920Z",
       "type": "INFO",
@@ -1339,6 +1321,24 @@
     },
     {
       "time": "2026-06-01T16:22:21.210Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:22:39.696Z",
+      "type": "INFO",
+      "msg": "Account: $100412.75 | 20 positions open | 18 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:22:39.779Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:22:39.780Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
