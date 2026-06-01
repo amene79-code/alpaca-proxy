@@ -64,19 +64,26 @@ async function getCandles(ticker, range, interval) {
   } catch { return null; }
 }
 
-// ─── Watchlist from Vercel (saved by pre-market dashboard) ───────────────────
+// ─── Watchlist from repo file (saved by pre-market dashboard) ────────────────
 async function fetchVercelWatchlist() {
   try {
-    const r = await fetch('https://alpaca-proxy-alpha.vercel.app/api/watchlist');
+    // Read watchlist.json committed to the repo by the pre-market dashboard
+    const r = await fetch('https://raw.githubusercontent.com/amene79-code/alpaca-proxy/main/state/watchlist.json?t='+Date.now());
     if (!r.ok) return null;
     const d = await r.json();
     if (!d.tickers?.length) return null;
     // Only use if saved today
     const today = new Date().toISOString().slice(0, 10);
-    const savedDate = d.date ? d.date.split('/').reverse().join('-') : null; // convert DD/MM/YYYY to YYYY-MM-DD
-    if (savedDate && savedDate !== today) return null;
+    const savedDate = d.date ? d.date.split('/').reverse().join('-') : null;
+    if (savedDate && savedDate !== today) {
+      console.log(`Watchlist is from ${d.date} — not today, skipping`);
+      return null;
+    }
     return d.tickers.map(t => t.ticker || t).filter(Boolean);
-  } catch { return null; }
+  } catch (e) {
+    console.log(`Could not fetch watchlist: ${e.message}`);
+    return null;
+  }
 }
 
 
