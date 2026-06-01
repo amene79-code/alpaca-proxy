@@ -55,7 +55,7 @@
       "sl": 265.5
     },
     "GTLB": {
-      "high": 33.36,
+      "high": 33.75,
       "entry": 33.31,
       "tp": 35.19,
       "sl": 32.39
@@ -79,16 +79,10 @@
       "sl": 119.1
     },
     "TWLO": {
-      "high": 221.01,
+      "high": 222.68,
       "entry": 216.36,
       "tp": 229.42,
       "sl": 210.38
-    },
-    "MU": {
-      "high": 1043.4499,
-      "entry": 1033.60498046875,
-      "tp": 1044.05,
-      "sl": 1027.91
     },
     "INTC": {
       "high": 111.22,
@@ -97,7 +91,7 @@
       "sl": 109.99
     },
     "FLNC": {
-      "high": 26.945,
+      "high": 27.01,
       "entry": 26.76,
       "tp": 30.71,
       "sl": 24.83
@@ -108,20 +102,20 @@
       "tp": 18.09,
       "sl": 17.59
     },
-    "NBIS": {
-      "high": 272,
-      "entry": 272,
-      "tp": 298.09,
-      "sl": 258.96
-    },
     "KEEL": {
       "high": 6.155,
       "entry": 6.139999866485596,
       "tp": 6.3,
       "sl": 6.05
+    },
+    "HPE": {
+      "high": 45.599998474121094,
+      "entry": 45.599998474121094,
+      "tp": 46.1,
+      "sl": 45.32
     }
   },
-  "dailyTrades": 19,
+  "dailyTrades": 20,
   "dailyDate": "2026-06-01",
   "openPositions": [
     "FIVE",
@@ -139,118 +133,11 @@
     "PVH",
     "MU",
     "INTC",
-    "KEEL"
+    "KEEL",
+    "HPE"
   ],
-  "lastRun": "2026-06-01T17:00:15.707Z",
+  "lastRun": "2026-06-01T17:10:46.648Z",
   "log": [
-    {
-      "time": "2026-06-01T14:24:09.827Z",
-      "type": "SIGNAL",
-      "msg": "MU — score 3 | ATR 1.42% | RSI 80",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-01T14:24:11.198Z",
-      "type": "SIGNAL",
-      "msg": "VSCO — score 5 | ATR 1.29% | RSI 23",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T14:24:11.808Z",
-      "type": "SIGNAL",
-      "msg": "COOT — score 4 | ATR 1.41% | RSI 43",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T14:24:14.150Z",
-      "type": "SIGNAL",
-      "msg": "RMCO — score 4 | ATR 2.26% | RSI 49",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T14:24:14.778Z",
-      "type": "SIGNAL",
-      "msg": "JFIN — score 3 | ATR 1.24% | RSI 53",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T14:24:15.095Z",
-      "type": "SIGNAL",
-      "msg": "GOTU — score 3 | ATR 0.87% | RSI 83",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T14:24:15.765Z",
-      "type": "SIGNAL",
-      "msg": "CURR — score 5 | ATR 1.15% | RSI 58",
-      "detail": "Bull Flag"
-    },
-    {
-      "time": "2026-06-01T14:24:16.394Z",
-      "type": "SIGNAL",
-      "msg": "MOMO — score 4 | ATR 0.42% | RSI 85",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T14:24:16.751Z",
-      "type": "SIGNAL",
-      "msg": "PVH — score 4 | ATR 0.76% | RSI 38",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-01T14:24:18.150Z",
-      "type": "SIGNAL",
-      "msg": "FIVE — score 3 | ATR 0.67% | RSI 43",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-01T14:24:18.825Z",
-      "type": "SIGNAL",
-      "msg": "SPY — score 5 | ATR 0.11% | RSI 42",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T14:24:19.440Z",
-      "type": "SIGNAL",
-      "msg": "HOOD — score 5 | ATR 1.66% | RSI 28",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T14:24:22.052Z",
-      "type": "SIGNAL",
-      "msg": "AMD — score 5 | ATR 1.17% | RSI 42",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T14:24:22.554Z",
-      "type": "INFO",
-      "msg": "Top signal: VSCO (score 5)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T14:24:22.554Z",
-      "type": "BUY",
-      "msg": "Placing: 9x VSCO @ ~$53.47",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $52.43 | TP 3.6× $55.96 | R:R 2.4"
-    },
-    {
-      "time": "2026-06-01T14:24:22.790Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 9x VSCO",
-      "detail": "ID: a2b23c44-0cba-4382-9cd6-a32be08719d8 | R:R 2.4:1"
-    },
-    {
-      "time": "2026-06-01T14:24:23.291Z",
-      "type": "BUY",
-      "msg": "Placing: 155x CURR @ ~$3.22",
-      "detail": "Patterns: Bull Flag | SL 1.5× $3.16 | TP 3.3× $3.34 | R:R 2.0"
-    },
-    {
-      "time": "2026-06-01T14:24:23.479Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 155x CURR",
-      "detail": "ID: 5ba2aa62-78c7-4a36-af8a-5108cc9a26ae | R:R 2.0:1"
-    },
     {
       "time": "2026-06-01T14:24:23.980Z",
       "type": "BUY",
@@ -1342,6 +1229,114 @@
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:10:35.028Z",
+      "type": "INFO",
+      "msg": "Account: $100436.96 | 18 positions open | 19 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:10:35.039Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:10:35.040Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:10:35.158Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
+    },
+    {
+      "time": "2026-06-01T17:10:35.866Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-01T17:10:36.439Z",
+      "type": "SIGNAL",
+      "msg": "HPE — score 6 | ATR 0.61% | RSI 47",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T17:10:37.461Z",
+      "type": "SIGNAL",
+      "msg": "DELL — score 4 | ATR 0.49% | RSI 66",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-01T17:10:37.985Z",
+      "type": "SIGNAL",
+      "msg": "ASTS — score 4 | ATR 0.61% | RSI 49",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T17:10:38.493Z",
+      "type": "SIGNAL",
+      "msg": "RMCO — score 4 | ATR 2.51% | RSI 50",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-01T17:10:41.253Z",
+      "type": "SIGNAL",
+      "msg": "SIG — score 5 | ATR 0.48% | RSI 79",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T17:10:42.765Z",
+      "type": "SIGNAL",
+      "msg": "NIO — score 5 | ATR 0.36% | RSI 58",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T17:10:43.028Z",
+      "type": "SIGNAL",
+      "msg": "ORCL — score 5 | ATR 0.49% | RSI 55",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T17:10:43.274Z",
+      "type": "SIGNAL",
+      "msg": "BBAI — score 5 | ATR 0.69% | RSI 48",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T17:10:43.521Z",
+      "type": "SIGNAL",
+      "msg": "CMG — score 4 | ATR 0.27% | RSI 45",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T17:10:44.311Z",
+      "type": "SIGNAL",
+      "msg": "NUAI — score 5 | ATR 2.13% | RSI 91",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T17:10:46.103Z",
+      "type": "INFO",
+      "msg": "Top signal: HPE (score 6)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:10:46.103Z",
+      "type": "BUY",
+      "msg": "Placing: 10x HPE @ ~$45.60",
+      "detail": "Patterns: Volume Breakout | SL 1× $45.32 | TP 1.8× $46.1 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-01T17:10:46.147Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 10x HPE",
+      "detail": "ID: f5978f86-f556-4bd6-905a-ceab4a2cd33e | R:R 1.8:1"
     }
   ]
 }
