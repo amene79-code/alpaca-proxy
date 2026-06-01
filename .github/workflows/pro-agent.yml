@@ -12,13 +12,13 @@ jobs:
   run-agent:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # needed to commit state.json back to repo
+      contents: write
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -34,13 +34,13 @@ jobs:
         env:
           ALPACA_KEY:    ${{ secrets.ALPACA_KEY }}
           ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
-          ALPACA_URL:    ${{ secrets.ALPACA_URL }}   # https://paper-api.alpaca.markets or live URL
+          ALPACA_URL:    ${{ secrets.ALPACA_URL }}
         run: node scripts/pro-agent.js
 
       - name: Commit state changes
         run: |
           git config user.name  "Pro Agent Bot"
           git config user.email "bot@pro-agent"
-          git add state/state.json
+          git add state/state.json state/watchlist.json
           git diff --staged --quiet || git commit -m "state: $(date -u '+%Y-%m-%d %H:%M') UTC"
           git push
