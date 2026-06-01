@@ -368,6 +368,53 @@ async function main() {
 
   // ── 2. Manage trailing stops ──────────────────────────────────────────────
   const ictPositions = state.ictPositions || []; // don't touch ICT positions
+
+  // Seed trailing stops for any positions not yet tracked
+  for (const p of positions) {
+    if (ictPositions.includes(p.symbol)) continue;
+    if (!state.trailingStops[p.symbol]) {
+      const price = +p.current_price || 0;
+      const entry = +p.avg_entry_price || 0;
+      // Seed high as max of current price and entry — captures any gains already made
+      state.trailingStops[p.symbol] = {
+        high:  Math.max(price, entry),
+        entry: entry,
+        tp:    null,
+        sl:    null,
+      };
+      addLog(state, 'INFO', `Seeded trailing stop for ${p.symbol}`,
+        `Entry $${entry.toFixed(2)} | Current $${price.toFixed(2)} | High set to $${Math.max(price,entry).toFixed(2)}`);
+    }
+  }
+
+  // ── Restore bracket order TP/SL from Alpaca ───────────────────────────────
+  try {
+    const openOrders = await alpaca('GET', '/v2/orders?status=open&limit=200&nested=true');
+    if (Array.isArray(openOrders)) {
+      for (const o of openOrders) {
+        const sym = o.symbol;
+        if (!state.trailingStops[sym]) continue;
+        const legs = o.legs || [];
+        for (const leg of legs) {
+          if (leg.type === 'limit' && leg.side === 'sell') state.trailingStops[sym].tp = +leg.limit_price;
+          if (leg.type === 'stop'  && leg.side === 'sell') state.trailingStops[sym].sl = +leg.stop_price;
+        }
+      }
+      addLog(state, 'INFO', `Restored bracket orders for ${Object.keys(state.trailingStops).length} positions`);
+    }
+  } catch (e) {
+    addLog(state, 'INFO', `Could not restore bracket orders: ${e.message}`);
+  }
+
+  // Now run trailing stop checks
+  // Clean up trailing stops for positions that no longer exist
+  const activeSymbols = new Set(positions.map(p => p.symbol));
+  for (const sym of Object.keys(state.trailingStops)) {
+    if (!activeSymbols.has(sym)) {
+      delete state.trailingStops[sym];
+    }
+  }
+
   for (const p of positions) {
     if (ictPositions.includes(p.symbol)) continue; // ICT agent manages these
 
