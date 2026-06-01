@@ -76,26 +76,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T19:13:45.131Z",
+  "lastRun": "2026-06-01T19:23:57.800Z",
   "log": [
-    {
-      "time": "2026-06-01T15:43:25.841Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for ARM",
-      "detail": "Entry $418.24 | Current $420.94 | High set to $420.94"
-    },
-    {
-      "time": "2026-06-01T15:43:25.841Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for CEG",
-      "detail": "Entry $270.99 | Current $271.60 | High set to $271.60"
-    },
-    {
-      "time": "2026-06-01T15:43:25.841Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for GOTU",
-      "detail": "Entry $1.90 | Current $1.91 | High set to $1.91"
-    },
     {
       "time": "2026-06-01T15:43:25.841Z",
       "type": "INFO",
@@ -1274,6 +1256,24 @@
     },
     {
       "time": "2026-06-01T19:13:45.131Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T19:23:57.727Z",
+      "type": "INFO",
+      "msg": "Account: $100472.39 | 9 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T19:23:57.800Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T19:23:57.800Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
