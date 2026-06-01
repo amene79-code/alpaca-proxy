@@ -13,7 +13,7 @@
       "sl": 1.27
     },
     "VSCO": {
-      "high": 54.57,
+      "high": 54.65,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -42,12 +42,6 @@
       "tp": 0.68,
       "sl": 0.58
     },
-    "ARM": {
-      "high": 420.94,
-      "entry": 418.24,
-      "tp": 454.23,
-      "sl": 401.6
-    },
     "CEG": {
       "high": 271.95,
       "entry": 270.99,
@@ -55,7 +49,7 @@
       "sl": 265.5
     },
     "GTLB": {
-      "high": 33.75,
+      "high": 33.84,
       "entry": 33.31,
       "tp": 35.19,
       "sl": 32.39
@@ -79,7 +73,7 @@
       "sl": 119.1
     },
     "TWLO": {
-      "high": 222.68,
+      "high": 223.57,
       "entry": 216.36,
       "tp": 229.42,
       "sl": 210.38
@@ -90,12 +84,6 @@
       "tp": 111.87,
       "sl": 109.99
     },
-    "FLNC": {
-      "high": 27.01,
-      "entry": 26.76,
-      "tp": 30.71,
-      "sl": 24.83
-    },
     "HQL": {
       "high": 17.76,
       "entry": 17.76,
@@ -103,13 +91,13 @@
       "sl": 17.59
     },
     "KEEL": {
-      "high": 6.155,
+      "high": 6.179,
       "entry": 6.139999866485596,
       "tp": 6.3,
       "sl": 6.05
     },
     "HPE": {
-      "high": 45.599998474121094,
+      "high": 45.725,
       "entry": 45.599998474121094,
       "tp": 46.1,
       "sl": 45.32
@@ -136,38 +124,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T17:10:46.648Z",
+  "lastRun": "2026-06-01T17:21:03.071Z",
   "log": [
-    {
-      "time": "2026-06-01T14:24:23.980Z",
-      "type": "BUY",
-      "msg": "Placing: 1x SPY @ ~$756.47",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $755.25 | TP 3.3× $759.15 | R:R 2.2"
-    },
-    {
-      "time": "2026-06-01T14:24:24.043Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 1x SPY",
-      "detail": "ID: 6e4a033f-5ca7-4c72-b0ef-65c0767bed30 | R:R 2.2:1"
-    },
-    {
-      "time": "2026-06-01T14:24:24.543Z",
-      "type": "BUY",
-      "msg": "Placing: 3x HOOD @ ~$87.74",
-      "detail": "Patterns: Bullish Engulfing | SL 1.8× $85.13 | TP 4.4× $94.13 | R:R 2.4"
-    },
-    {
-      "time": "2026-06-01T14:24:24.808Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 3x HOOD",
-      "detail": "ID: 10c6d098-5af3-42b4-b9f0-7df16f94140d | R:R 2.4:1"
-    },
-    {
-      "time": "2026-06-01T14:24:25.309Z",
-      "type": "BUY",
-      "msg": "Placing: 1x AMD @ ~$499.95",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $491.17 | TP 3.3× $519.26 | R:R 2.2"
-    },
     {
       "time": "2026-06-01T14:24:25.377Z",
       "type": "BUY",
@@ -1337,6 +1295,36 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 10x HPE",
       "detail": "ID: f5978f86-f556-4bd6-905a-ceab4a2cd33e | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-01T17:21:01.555Z",
+      "type": "INFO",
+      "msg": "Account: $100457.11 | 18 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:21:01.645Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:21:01.645Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: ARM @ $411.9999 | High $420.94 → Stop $412.52 | P&L $-6.24",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:21:03.071Z",
+      "type": "SELL",
+      "msg": "✓ Closed ARM",
+      "detail": "P&L $-6.24"
+    },
+    {
+      "time": "2026-06-01T17:21:03.071Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
     }
   ]
 }
