@@ -1,0 +1,46 @@
+name: Pro Agent
+
+on:
+  schedule:
+    # Every 10 minutes Mon-Fri 13:30-21:00 UTC (covers NYSE 9:30am-4pm ET + pre/after market)
+    - cron: '*/10 13-20 * * 1-5'
+    # Also run at 13:30 exactly for market open
+    - cron: '30 13 * * 1-5'
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit state.json back to repo
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          cd scripts
+          npm install
+
+      - name: Run Pro Agent cycle
+        env:
+          ALPACA_KEY:    ${{ secrets.ALPACA_KEY }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+          ALPACA_URL:    ${{ secrets.ALPACA_URL }}   # https://paper-api.alpaca.markets or live URL
+        run: node scripts/pro-agent.js
+
+      - name: Commit state changes
+        run: |
+          git config user.name  "Pro Agent Bot"
+          git config user.email "bot@pro-agent"
+          git add state/state.json
+          git diff --staged --quiet || git commit -m "state: $(date -u '+%Y-%m-%d %H:%M') UTC"
+          git push
