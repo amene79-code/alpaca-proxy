@@ -37,22 +37,16 @@
       "sl": 32.39
     },
     "MGM": {
-      "high": 51.14,
+      "high": 51.45,
       "entry": 50.55,
       "tp": 53.45,
       "sl": 49.1
     },
     "RVMD": {
-      "high": 164.44,
+      "high": 165.23,
       "entry": 162.09,
       "tp": 169.89,
       "sl": 158.38
-    },
-    "TWLO": {
-      "high": 224.975,
-      "entry": 216.36,
-      "tp": 229.42,
-      "sl": 210.38
     },
     "KEEL": {
       "high": 6.195,
@@ -82,26 +76,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T18:43:06.197Z",
+  "lastRun": "2026-06-01T18:53:21.324Z",
   "log": [
-    {
-      "time": "2026-06-01T15:09:52.953Z",
-      "type": "BUY",
-      "msg": "Placing: 45x PICS @ ~$10.77",
-      "detail": "Patterns: Bullish Engulfing, Gap Up | SL 1.5× $10.55 | TP 2.7× $11.17 | R:R 1.8"
-    },
-    {
-      "time": "2026-06-01T15:09:52.969Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 45x PICS",
-      "detail": "ID: 5f4bc005-aa21-49ff-89c7-6251bafe54bd | R:R 1.8:1"
-    },
-    {
-      "time": "2026-06-01T15:09:53.470Z",
-      "type": "BUY",
-      "msg": "Placing: 81x MOMO @ ~$6.11",
-      "detail": "Patterns: Volume Breakout | SL 1.3× $6.06 | TP 2.3× $6.16 | R:R 1.0"
-    },
     {
       "time": "2026-06-01T15:09:53.492Z",
       "type": "BUY",
@@ -1280,6 +1256,24 @@
     },
     {
       "time": "2026-06-01T18:43:06.197Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:53:21.255Z",
+      "type": "INFO",
+      "msg": "Account: $100476.56 | 9 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:53:21.323Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:53:21.324Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
