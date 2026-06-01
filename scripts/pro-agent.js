@@ -407,24 +407,25 @@ async function main() {
     addLog(state, 'INFO', `Could not restore bracket orders: ${e.message}`);
   }
 
-  // For positions still missing TP/SL, estimate from current price + ATR
+  // For positions missing TP/SL or where TP is below current price (stale estimate)
   for (const p of positions) {
     const ts = state.trailingStops[p.symbol];
-    if (!ts || (ts.tp && ts.sl)) continue;
+    if (!ts) continue;
+    const currentPrice = +p.current_price || 0;
+    const tpStale = ts.tp && ts.tp <= currentPrice; // TP below current = stale
+    if (ts.tp && ts.sl && !tpStale) continue; // valid TP/SL already set
     try {
       const candles = await getCandles(p.symbol, '1mo', '1h');
       if (candles && candles.length > 14) {
-        const atr  = calcATR(candles, 14);
+        const atr   = calcATR(candles, 14);
         const entry = ts.entry || +p.avg_entry_price;
-        const high  = ts.high  || +p.current_price;
-        // TP must always be above current price — use high + ATR×3
-        if (!ts.tp) ts.tp = +(high + atr * 3).toFixed(2);
-        // SL must always be below entry — use entry - ATR×1.5
-        if (!ts.sl) ts.sl = +(entry - atr * 1.5).toFixed(2);
-        addLog(state, 'INFO', `Estimated TP/SL for ${p.symbol}`,
+        const high  = ts.high  || currentPrice;
+        ts.tp = +(high + atr * 3).toFixed(2);
+        ts.sl = +(entry - atr * 1.5).toFixed(2);
+        addLog(state, 'INFO', `${tpStale?'Recalculated':'Estimated'} TP/SL for ${p.symbol}`,
           `Entry $${entry.toFixed(2)} | High $${high.toFixed(2)} | ATR $${atr.toFixed(2)} | TP $${ts.tp} | SL $${ts.sl}`);
       }
-    } catch {}
+    } catch(e) { addLog(state, 'INFO', `TP/SL calc failed for ${p.symbol}: ${e.message}`); }
     await sleep(200);
   }
 
