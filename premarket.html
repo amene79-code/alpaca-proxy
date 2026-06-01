@@ -451,7 +451,7 @@ async function saveWatchlistToGitHub(token, tickers, date){
     if(r.ok){ const d=await r.json(); sha=d.sha; }
 
     // Write new watchlist.json
-    const content=btoa(JSON.stringify({tickers,date,ts:Date.now()},null,2));
+    const content=btoa(unescape(encodeURIComponent(JSON.stringify({tickers,date,ts:Date.now()},null,2))));
     const body={message:`watchlist: ${date} (${tickers.length} tickers)`,content};
     if(sha) body.sha=sha;
 
