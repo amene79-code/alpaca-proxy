@@ -1873,17 +1873,43 @@ async function syncGitHubState(){
     const r=await fetch("https://raw.githubusercontent.com/amene79-code/alpaca-proxy/main/state/state.json?t="+Date.now());
     if(!r.ok) return;
     const state=await r.json();
+
+    // Sync TP/SL for existing positions
     if(state.trailingStops){
-      // Only update TP/SL for positions already tracked locally — don't create new ones
       for(const [sym,ts] of Object.entries(state.trailingStops)){
-        if(!trailingStops[sym]) continue; // skip — not in browser's position list
+        if(!trailingStops[sym]) continue;
         if(ts.tp)    trailingStops[sym].tp=ts.tp;
         if(ts.sl)    trailingStops[sym].sl=ts.sl;
         if(ts.high&&ts.high>trailingStops[sym].high) trailingStops[sym].high=ts.high;
       }
-      document.getElementById("monitorStatus").textContent=
-        `↻ Synced from GitHub · ${Object.keys(state.trailingStops).length} tracked`;
     }
+
+    // Show recent GitHub Actions log entries in activity log
+    if(state.log?.length){
+      const lastSyncKey="gh_last_sync_time";
+      const lastSync=localStorage.getItem(lastSyncKey)||"";
+      const newEntries=state.log.filter(e=>e.time>lastSync).slice(-20);
+      if(newEntries.length){
+        for(const e of newEntries){
+          const t=new Date(e.time).toLocaleTimeString("en-GB");
+          const el=document.getElementById("logEntries");
+          if(el){
+            document.getElementById("logEmpty").style.display="none";
+            const d=document.createElement("div");
+            d.className="log-entry";
+            d.style.opacity="0.7"; // slightly dimmed to distinguish from browser logs
+            d.innerHTML=`<span class="log-time">${t}</span><span class="log-${e.type}" style="font-size:9px">⚙ <b>${e.type}</b> ${e.msg}${e.detail?`<br><span style="color:#333;font-size:9px">${e.detail}</span>`:""}</span>`;
+            el.insertBefore(d,el.firstChild);
+          }
+        }
+        // Update last sync time
+        const latest=newEntries[newEntries.length-1].time;
+        localStorage.setItem(lastSyncKey, latest);
+      }
+    }
+
+    document.getElementById("monitorStatus").textContent=
+      `↻ ${new Date().toLocaleTimeString("en-GB")} · ${Object.keys(state.trailingStops||{}).length} tracked`;
   }catch(e){
     console.warn("GitHub state sync failed:",e.message);
   }
