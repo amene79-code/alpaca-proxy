@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "NVDA": {
-      "high": 221.95,
+      "high": 222.12,
       "entry": 219.61700439453125,
       "tp": 225.6,
       "sl": 217.22
@@ -13,7 +13,7 @@
       "sl": 1.27
     },
     "VSCO": {
-      "high": 54.36,
+      "high": 54.57,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -25,7 +25,7 @@
       "sl": 3.16
     },
     "SPY": {
-      "high": 757.3,
+      "high": 757.87,
       "entry": 756.469970703125,
       "tp": 759.15,
       "sl": 755.25
@@ -79,25 +79,25 @@
       "sl": 119.1
     },
     "TWLO": {
-      "high": 219.5,
+      "high": 221.01,
       "entry": 216.36,
       "tp": 229.42,
       "sl": 210.38
     },
     "MU": {
-      "high": 1037.5,
+      "high": 1043.4499,
       "entry": 1033.60498046875,
       "tp": 1044.05,
       "sl": 1027.91
     },
     "INTC": {
-      "high": 110.615,
+      "high": 111.22,
       "entry": 110.61499786376953,
       "tp": 111.87,
       "sl": 109.99
     },
     "FLNC": {
-      "high": 26.85,
+      "high": 26.945,
       "entry": 26.76,
       "tp": 30.71,
       "sl": 24.83
@@ -115,7 +115,7 @@
       "sl": 258.96
     },
     "KEEL": {
-      "high": 6.139999866485596,
+      "high": 6.155,
       "entry": 6.139999866485596,
       "tp": 6.3,
       "sl": 6.05
@@ -141,26 +141,8 @@
     "INTC",
     "KEEL"
   ],
-  "lastRun": "2026-06-01T16:49:56.378Z",
+  "lastRun": "2026-06-01T17:00:15.707Z",
   "log": [
-    {
-      "time": "2026-06-01T14:24:08.456Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T14:24:08.672Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
-    },
-    {
-      "time": "2026-06-01T14:24:09.366Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
     {
       "time": "2026-06-01T14:24:09.827Z",
       "type": "SIGNAL",
@@ -1342,6 +1324,24 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 81x KEEL",
       "detail": "ID: 9c5644b8-4b26-431c-9353-96e8234975f0 | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-01T17:00:15.628Z",
+      "type": "INFO",
+      "msg": "Account: $100439.21 | 20 positions open | 19 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:00:15.707Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:00:15.707Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
     }
   ]
 }
