@@ -3,14 +3,14 @@
     "ADSK": {
       "high": 238.01,
       "entry": 226.38,
-      "tp": 232.51,
-      "sl": 223.32
+      "tp": 252.28,
+      "sl": 219.24
     },
     "AVGO": {
       "high": 460.45,
       "entry": 438.41,
-      "tp": 444.74,
-      "sl": 435.25
+      "tp": 477.12,
+      "sl": 430.08
     },
     "COST": {
       "high": 957.49,
@@ -25,40 +25,40 @@
       "sl": 142.14
     },
     "MSFT": {
-      "high": 468.79,
+      "high": 469.48,
       "entry": 442.18,
-      "tp": 447.7,
-      "sl": 439.42
+      "tp": 481.32,
+      "sl": 435.92
     },
     "NOW": {
       "high": 138.7,
       "entry": 121.96,
-      "tp": 124.23,
-      "sl": 120.83
+      "tp": 145.89,
+      "sl": 118.37
     },
     "OKTA": {
       "high": 126.72,
       "entry": 116.83,
-      "tp": 120.47,
-      "sl": 115.01
+      "tp": 137.47,
+      "sl": 111.45
     },
     "PLTR": {
       "high": 162.505,
       "entry": 152.7,
-      "tp": 155.12,
-      "sl": 151.49
+      "tp": 170.14,
+      "sl": 148.88
     },
     "HPE": {
       "high": 45.75,
       "entry": 42.985,
-      "tp": 44.17,
-      "sl": 42.39
+      "tp": 48.8,
+      "sl": 41.46
     }
   },
   "dailyTrades": 0,
   "dailyDate": "2026-06-01",
   "openPositions": [],
-  "lastRun": "2026-06-01T11:39:59.681Z",
+  "lastRun": "2026-06-01T11:42:31.167Z",
   "log": [
     {
       "time": "2026-06-01T11:01:39.613Z",
@@ -290,6 +290,72 @@
     },
     {
       "time": "2026-06-01T11:39:59.681Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:42:29.316Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:42:29.372Z",
+      "type": "INFO",
+      "msg": "Account: $100421.61 | 9 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:42:29.383Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:42:29.448Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for ADSK",
+      "detail": "Entry $226.38 | High $238.01 | ATR $4.76 | TP $252.28 | SL $219.24"
+    },
+    {
+      "time": "2026-06-01T11:42:29.693Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for AVGO",
+      "detail": "Entry $438.41 | High $460.45 | ATR $5.56 | TP $477.12 | SL $430.08"
+    },
+    {
+      "time": "2026-06-01T11:42:29.938Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for HPE",
+      "detail": "Entry $42.98 | High $45.75 | ATR $1.02 | TP $48.8 | SL $41.46"
+    },
+    {
+      "time": "2026-06-01T11:42:30.222Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for MSFT",
+      "detail": "Entry $442.18 | High $468.79 | ATR $4.18 | TP $481.32 | SL $435.92"
+    },
+    {
+      "time": "2026-06-01T11:42:30.467Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for NOW",
+      "detail": "Entry $121.96 | High $138.70 | ATR $2.40 | TP $145.89 | SL $118.37"
+    },
+    {
+      "time": "2026-06-01T11:42:30.716Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for OKTA",
+      "detail": "Entry $116.83 | High $126.72 | ATR $3.58 | TP $137.47 | SL $111.45"
+    },
+    {
+      "time": "2026-06-01T11:42:30.966Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for PLTR",
+      "detail": "Entry $152.70 | High $162.50 | ATR $2.54 | TP $170.14 | SL $148.88"
+    },
+    {
+      "time": "2026-06-01T11:42:31.167Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
