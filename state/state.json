@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "NVDA": {
-      "high": 224.11,
+      "high": 224.49,
       "entry": 219.61700439453125,
       "tp": 225.6,
       "sl": 217.22
@@ -13,7 +13,7 @@
       "sl": 1.29
     },
     "VSCO": {
-      "high": 55.475,
+      "high": 55.695,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -55,7 +55,7 @@
       "sl": 49.1
     },
     "RVMD": {
-      "high": 163.82,
+      "high": 164,
       "entry": 162.09,
       "tp": 169.89,
       "sl": 158.38
@@ -100,26 +100,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T18:12:21.061Z",
+  "lastRun": "2026-06-01T18:22:36.297Z",
   "log": [
-    {
-      "time": "2026-06-01T15:09:48.138Z",
-      "type": "SIGNAL",
-      "msg": "SIG — score 4 | ATR 0.55% | RSI 33",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T15:09:48.667Z",
-      "type": "SIGNAL",
-      "msg": "ARM — score 4 | ATR 1.23% | RSI 86",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T15:09:49.204Z",
-      "type": "SIGNAL",
-      "msg": "RKLB — score 4 | ATR 1.06% | RSI 36",
-      "detail": "Bullish Engulfing"
-    },
     {
       "time": "2026-06-01T15:09:50.994Z",
       "type": "SIGNAL",
@@ -1298,6 +1280,24 @@
     },
     {
       "time": "2026-06-01T18:12:21.061Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:22:36.282Z",
+      "type": "INFO",
+      "msg": "Account: $100465.01 | 13 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:22:36.297Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:22:36.297Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
