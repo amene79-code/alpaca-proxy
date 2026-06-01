@@ -330,7 +330,7 @@ function isMarketOpen() {
 }
 
 // ─── Cancel bracket orders then sell ─────────────────────────────────────────
-async function cancelAndSell(symbol, qty) {
+async function cancelAndSell(symbol, qty, side = 'long') {
   try {
     const orders = await alpaca('GET', `/v2/orders?status=open&limit=100&nested=true`);
     const symbolOrders = (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol);
@@ -339,8 +339,10 @@ async function cancelAndSell(symbol, qty) {
       if (o.legs) for (const leg of o.legs) await alpaca('DELETE', `/v2/orders/${leg.id}`).catch(() => {});
     }
     if (symbolOrders.length) await sleep(1200);
+    // Long positions sell to close, short positions buy to close
+    const closeSide = side === 'short' ? 'buy' : 'sell';
     await alpaca('POST', '/v2/orders', {
-      symbol, qty: String(qty), side: 'sell', type: 'market', time_in_force: 'day',
+      symbol, qty: String(qty), side: closeSide, type: 'market', time_in_force: 'day',
     });
     return true;
   } catch (e) {
@@ -462,6 +464,7 @@ async function main() {
 
   for (const p of positions) {
     if (ictPositions.includes(p.symbol)) continue; // ICT agent manages these
+    if (+p.qty < 0) continue; // skip short positions — opened by ICT agent
 
     const price = +p.current_price || 0;
     const entry = +p.avg_entry_price || 0;
@@ -481,11 +484,15 @@ async function main() {
     // Never trigger trailing stop if price is above TP (let bracket handle it)
     if (ts.tp && price >= ts.tp) continue;
 
+    const qty = +p.qty || 0;
+    if (!qty) { console.warn(`Skipping ${p.symbol} — qty is 0`); continue; }
+
     if (price <= stop) {
       addLog(state, 'TRAIL',
         `Trailing stop: ${p.symbol} @ $${price} | High $${ts.high} → Stop $${stop} | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`
       );
-      const closed = await cancelAndSell(p.symbol, p.qty);
+      const posSide = +p.qty < 0 ? 'short' : 'long';
+      const closed = await cancelAndSell(p.symbol, qty, posSide);
       if (closed) {
         addLog(state, 'SELL', `✓ Closed ${p.symbol}`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`);
         delete state.trailingStops[p.symbol];
