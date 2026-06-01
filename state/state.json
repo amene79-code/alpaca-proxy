@@ -1,13 +1,13 @@
 {
   "trailingStops": {
     "ADSK": {
-      "high": 235,
+      "high": 235.59,
       "entry": 226.38,
       "tp": null,
       "sl": null
     },
     "AVGO": {
-      "high": 459.75,
+      "high": 459.94,
       "entry": 438.41,
       "tp": null,
       "sl": null
@@ -31,7 +31,7 @@
       "sl": null
     },
     "MSFT": {
-      "high": 467.11,
+      "high": 467.15,
       "entry": 442.18,
       "tp": null,
       "sl": null
@@ -43,7 +43,7 @@
       "sl": null
     },
     "OKTA": {
-      "high": 126.29,
+      "high": 126.5,
       "entry": 116.83,
       "tp": null,
       "sl": null
@@ -58,7 +58,7 @@
   "dailyTrades": 0,
   "dailyDate": "2026-06-01",
   "openPositions": [],
-  "lastRun": "2026-06-01T11:03:27.213Z",
+  "lastRun": "2026-06-01T11:04:01.277Z",
   "log": [
     {
       "time": "2026-06-01T11:01:39.613Z",
@@ -98,6 +98,24 @@
     },
     {
       "time": "2026-06-01T11:03:27.213Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:04:00.931Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:04:01.277Z",
+      "type": "INFO",
+      "msg": "Account: $100422.96 | 9 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:04:01.277Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
