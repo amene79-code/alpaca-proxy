@@ -1239,6 +1239,8 @@ async function manageTrailingStops(positions,cfg){
   for(const p of Array.isArray(positions)?positions:[]){
     // Skip positions opened by the ICT agent
     if(ictPositions.includes(p.symbol)) continue;
+    // Skip short positions — always opened by ICT agent
+    if(+p.qty<0) continue;
 
     const price=+p.current_price||0;
     const entry=+p.avg_entry_price||0;
@@ -2659,5 +2661,3 @@ function stopAgent(){
   log("INFO","Agent stopped — open positions remain on Alpaca");
 }
 </script>
-</body>
-</html>
