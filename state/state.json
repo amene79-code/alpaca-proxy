@@ -109,7 +109,7 @@
       "sl": 91.89
     },
     "MU": {
-      "high": 1034.275,
+      "high": 1035.6,
       "entry": 1033.60498046875,
       "tp": 1044.05,
       "sl": 1027.91
@@ -141,26 +141,8 @@
     "MU",
     "INTC"
   ],
-  "lastRun": "2026-06-01T16:23:16.194Z",
+  "lastRun": "2026-06-01T16:23:33.071Z",
   "log": [
-    {
-      "time": "2026-06-01T13:43:38.466Z",
-      "type": "SIGNAL",
-      "msg": "MSFT — score 7 | ATR 0.58% | RSI 95",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-01T13:43:38.729Z",
-      "type": "SIGNAL",
-      "msg": "IBM — score 7 | ATR 1.34% | RSI 83",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-01T13:43:38.980Z",
-      "type": "SIGNAL",
-      "msg": "NVDA — score 8 | ATR 0.78% | RSI 56",
-      "detail": "Volume Breakout, Gap Up"
-    },
     {
       "time": "2026-06-01T13:43:39.769Z",
       "type": "SIGNAL",
@@ -1339,6 +1321,24 @@
     },
     {
       "time": "2026-06-01T16:23:16.194Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:23:33.004Z",
+      "type": "INFO",
+      "msg": "Account: $100418.15 | 20 positions open | 18 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:23:33.071Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:23:33.071Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
