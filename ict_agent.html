@@ -1030,12 +1030,16 @@ async function placeICTOrder(setup, cfg){
   const kz=isInKillZone();
   const tag=`ICT-${setup.setupType[0].toUpperCase()}-${setup.struct.trend[0].toUpperCase()}-${kz.name?.replace(/\s/g,"")||"NA"}-${Date.now()}`;
 
+  // Ensure minimum price distances — Alpaca requires TP >= entry + $0.01, SL <= entry - $0.01
+  const tpSafe = +Math.max(tp, price + 0.10).toFixed(2);
+  const slSafe = +Math.min(sl, price - 0.10).toFixed(2);
+
   const orderBody={
     symbol:ticker, qty:String(qty),
     side, time_in_force:"gtc",
     order_class:"bracket",
-    take_profit:{limit_price:String(tp)},
-    stop_loss:{stop_price:String(sl)},
+    take_profit:{limit_price:String(tpSafe)},
+    stop_loss:{stop_price:String(slSafe)},
     client_order_id:tag,
     ...(useLimit?{type:"limit",limit_price:String(limitPrice)}:{type:"market"})
   };
