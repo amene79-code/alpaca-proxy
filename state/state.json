@@ -6,14 +6,8 @@
       "tp": 225.6,
       "sl": 217.22
     },
-    "SPWH": {
-      "high": 1.37,
-      "entry": 1.3200000524520874,
-      "tp": 1.44,
-      "sl": 1.29
-    },
     "VSCO": {
-      "high": 55.695,
+      "high": 55.765,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -36,12 +30,6 @@
       "tp": 0.68,
       "sl": 0.58
     },
-    "CEG": {
-      "high": 271.95,
-      "entry": 270.99,
-      "tp": 282.58,
-      "sl": 265.5
-    },
     "GTLB": {
       "high": 33.84,
       "entry": 33.31,
@@ -49,13 +37,13 @@
       "sl": 32.39
     },
     "MGM": {
-      "high": 50.86,
+      "high": 51.015,
       "entry": 50.55,
       "tp": 53.45,
       "sl": 49.1
     },
     "RVMD": {
-      "high": 164,
+      "high": 164.44,
       "entry": 162.09,
       "tp": 169.89,
       "sl": 158.38
@@ -67,7 +55,7 @@
       "sl": 210.38
     },
     "KEEL": {
-      "high": 6.185,
+      "high": 6.195,
       "entry": 6.139999866485596,
       "tp": 6.3,
       "sl": 6.05
@@ -100,26 +88,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T18:22:36.297Z",
+  "lastRun": "2026-06-01T18:32:49.500Z",
   "log": [
-    {
-      "time": "2026-06-01T15:09:50.994Z",
-      "type": "SIGNAL",
-      "msg": "SMMT — score 4 | ATR 1.30% | RSI 76",
-      "detail": "Bull Flag"
-    },
-    {
-      "time": "2026-06-01T15:09:51.517Z",
-      "type": "SIGNAL",
-      "msg": "KEEL — score 4 | ATR 1.14% | RSI 78",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-01T15:09:52.019Z",
-      "type": "SIGNAL",
-      "msg": "NASA — score 4 | ATR 0.67% | RSI 38",
-      "detail": "Bullish Engulfing"
-    },
     {
       "time": "2026-06-01T15:09:52.220Z",
       "type": "INFO",
@@ -1298,6 +1268,24 @@
     },
     {
       "time": "2026-06-01T18:22:36.297Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:32:49.487Z",
+      "type": "INFO",
+      "msg": "Account: $100474.02 | 11 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:32:49.500Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:32:49.500Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
