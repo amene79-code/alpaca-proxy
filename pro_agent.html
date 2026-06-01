@@ -1874,16 +1874,15 @@ async function syncGitHubState(){
     if(!r.ok) return;
     const state=await r.json();
     if(state.trailingStops){
-      // Merge GitHub state into browser trailingStops
+      // Only update TP/SL for positions already tracked locally — don't create new ones
       for(const [sym,ts] of Object.entries(state.trailingStops)){
-        if(!trailingStops[sym]) trailingStops[sym]={};
+        if(!trailingStops[sym]) continue; // skip — not in browser's position list
         if(ts.tp)    trailingStops[sym].tp=ts.tp;
         if(ts.sl)    trailingStops[sym].sl=ts.sl;
-        if(ts.high)  trailingStops[sym].high=ts.high;
-        if(ts.entry) trailingStops[sym].entry=ts.entry;
+        if(ts.high&&ts.high>trailingStops[sym].high) trailingStops[sym].high=ts.high;
       }
       document.getElementById("monitorStatus").textContent=
-        `↻ Synced from GitHub · ${Object.keys(state.trailingStops).length} positions`;
+        `↻ Synced from GitHub · ${Object.keys(state.trailingStops).length} tracked`;
     }
   }catch(e){
     console.warn("GitHub state sync failed:",e.message);
