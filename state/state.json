@@ -1,19 +1,19 @@
 {
   "trailingStops": {
     "NVDA": {
-      "high": 223.25,
+      "high": 224.11,
       "entry": 219.61700439453125,
       "tp": 225.6,
       "sl": 217.22
     },
     "SPWH": {
-      "high": 1.3699,
+      "high": 1.37,
       "entry": 1.3200000524520874,
-      "tp": 1.37,
-      "sl": 1.27
+      "tp": 1.44,
+      "sl": 1.29
     },
     "VSCO": {
-      "high": 55.17,
+      "high": 55.44,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -49,7 +49,7 @@
       "sl": 32.39
     },
     "MGM": {
-      "high": 50.76,
+      "high": 50.8,
       "entry": 50.55,
       "tp": 53.45,
       "sl": 49.1
@@ -106,32 +106,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T17:51:46.733Z",
+  "lastRun": "2026-06-01T18:02:03.396Z",
   "log": [
-    {
-      "time": "2026-06-01T15:09:43.818Z",
-      "type": "SIGNAL",
-      "msg": "DELL — score 4 | ATR 1.08% | RSI 61",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-01T15:09:44.330Z",
-      "type": "SIGNAL",
-      "msg": "ASTS — score 4 | ATR 1.11% | RSI 50",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T15:09:44.834Z",
-      "type": "SIGNAL",
-      "msg": "PICS — score 7 | ATR 1.39% | RSI 50",
-      "detail": "Bullish Engulfing, Gap Up"
-    },
-    {
-      "time": "2026-06-01T15:09:45.104Z",
-      "type": "SIGNAL",
-      "msg": "RMCO — score 4 | ATR 2.61% | RSI 50",
-      "detail": "Gap Up"
-    },
     {
       "time": "2026-06-01T15:09:45.609Z",
       "type": "SIGNAL",
@@ -1304,6 +1280,30 @@
     },
     {
       "time": "2026-06-01T17:51:46.733Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:02:02.886Z",
+      "type": "INFO",
+      "msg": "Account: $100467.46 | 14 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:02:02.961Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:02:03.195Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for SPWH",
+      "detail": "Entry $1.32 | High $1.37 | ATR $0.02 | TP $1.44 | SL $1.29"
+    },
+    {
+      "time": "2026-06-01T18:02:03.395Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
