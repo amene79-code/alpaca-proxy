@@ -1,16 +1,10 @@
 {
   "trailingStops": {
     "ADSK": {
-      "high": 238.01,
+      "high": 239.86,
       "entry": 226.38,
       "tp": 252.28,
       "sl": 219.24
-    },
-    "AVGO": {
-      "high": 460.45,
-      "entry": 438.41,
-      "tp": 477.12,
-      "sl": 430.08
     },
     "COST": {
       "high": 957.49,
@@ -18,23 +12,53 @@
       "tp": 967.04,
       "sl": 952.72
     },
-    "DTE": {
-      "high": 142.87,
-      "entry": 142.53,
-      "tp": 143.32,
-      "sl": 142.14
+    "META": {
+      "high": 633.255,
+      "entry": 633.255,
+      "tp": 648.96,
+      "sl": 625.4
     },
-    "HPE": {
-      "high": 45.75,
-      "entry": 42.985,
-      "tp": 48.8,
-      "sl": 41.46
+    "FIVE": {
+      "high": 227.30999755859375,
+      "entry": 227.30999755859375,
+      "tp": 231.16,
+      "sl": 225.79
+    },
+    "NVDA": {
+      "high": 219.61700439453125,
+      "entry": 219.61700439453125,
+      "tp": 225.6,
+      "sl": 217.22
+    },
+    "HQL": {
+      "high": 17.729999542236328,
+      "entry": 17.729999542236328,
+      "tp": 18.03,
+      "sl": 17.61
+    },
+    "GOTU": {
+      "high": 1.815000057220459,
+      "entry": 1.815000057220459,
+      "tp": 1.87,
+      "sl": 1.77
+    },
+    "SPWH": {
+      "high": 1.3200000524520874,
+      "entry": 1.3200000524520874,
+      "tp": 1.37,
+      "sl": 1.27
     }
   },
-  "dailyTrades": 0,
+  "dailyTrades": 5,
   "dailyDate": "2026-06-01",
-  "openPositions": [],
-  "lastRun": "2026-06-01T12:41:58.356Z",
+  "openPositions": [
+    "FIVE",
+    "NVDA",
+    "HQL",
+    "GOTU",
+    "SPWH"
+  ],
+  "lastRun": "2026-06-01T13:43:50.709Z",
   "log": [
     {
       "time": "2026-06-01T11:01:39.613Z",
@@ -407,6 +431,300 @@
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-01T13:43:36.593Z",
+      "type": "INFO",
+      "msg": "Account: $100430.80 | 3 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T13:43:36.593Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for META",
+      "detail": "Entry $633.25 | Current $619.08 | High set to $633.25"
+    },
+    {
+      "time": "2026-06-01T13:43:36.605Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T13:43:36.699Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for META",
+      "detail": "Entry $633.25 | High $633.25 | ATR $5.23 | TP $648.96 | SL $625.4"
+    },
+    {
+      "time": "2026-06-01T13:43:36.900Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: META @ $619.08 | High $633.255 → Stop $620.59 | P&L +$14.18",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T13:43:36.920Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T13:43:37.023Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
+    },
+    {
+      "time": "2026-06-01T13:43:37.620Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-01T13:43:37.671Z",
+      "type": "SIGNAL",
+      "msg": "SPCE — score 4 | ATR 4.56% | RSI 74",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:37.923Z",
+      "type": "SIGNAL",
+      "msg": "MU — score 7 | ATR 0.99% | RSI 93",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:38.211Z",
+      "type": "SIGNAL",
+      "msg": "HPE — score 7 | ATR 0.98% | RSI 77",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:38.466Z",
+      "type": "SIGNAL",
+      "msg": "MSFT — score 7 | ATR 0.58% | RSI 95",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:38.729Z",
+      "type": "SIGNAL",
+      "msg": "IBM — score 7 | ATR 1.34% | RSI 83",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:38.980Z",
+      "type": "SIGNAL",
+      "msg": "NVDA — score 8 | ATR 0.78% | RSI 56",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:39.769Z",
+      "type": "SIGNAL",
+      "msg": "COOT — score 6 | ATR 1.26% | RSI 46",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T13:43:40.036Z",
+      "type": "SIGNAL",
+      "msg": "GTLB — score 7 | ATR 0.88% | RSI 91",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:40.283Z",
+      "type": "SIGNAL",
+      "msg": "DELL — score 7 | ATR 1.19% | RSI 89",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:40.536Z",
+      "type": "SIGNAL",
+      "msg": "CRDO — score 7 | ATR 0.95% | RSI 80",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:40.781Z",
+      "type": "SIGNAL",
+      "msg": "ASTS — score 5 | ATR 1.56% | RSI 31",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T13:43:41.052Z",
+      "type": "SIGNAL",
+      "msg": "INTC — score 6 | ATR 1.49% | RSI 25",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T13:43:41.597Z",
+      "type": "SIGNAL",
+      "msg": "RMCO — score 4 | ATR 1.93% | RSI 39",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:41.862Z",
+      "type": "SIGNAL",
+      "msg": "HQL — score 8 | ATR 0.34% | RSI 41",
+      "detail": "Volume Breakout, Hammer"
+    },
+    {
+      "time": "2026-06-01T13:43:42.099Z",
+      "type": "SIGNAL",
+      "msg": "JFIN — score 6 | ATR 0.80% | RSI 68",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:42.333Z",
+      "type": "SIGNAL",
+      "msg": "GOTU — score 8 | ATR 0.74% | RSI 69",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:42.869Z",
+      "type": "SIGNAL",
+      "msg": "CURR — score 4 | ATR 0.73% | RSI 73",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:43.401Z",
+      "type": "SIGNAL",
+      "msg": "MOMO — score 7 | ATR 0.33% | RSI 78",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:44.150Z",
+      "type": "SIGNAL",
+      "msg": "SPWH — score 8 | ATR 0.46% | RSI 39",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:44.680Z",
+      "type": "SIGNAL",
+      "msg": "DG — score 8 | ATR 0.50% | RSI 57",
+      "detail": "Bullish Engulfing, Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T13:43:44.979Z",
+      "type": "SIGNAL",
+      "msg": "FIVE — score 9 | ATR 0.39% | RSI 59",
+      "detail": "Bullish Engulfing, Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T13:43:45.253Z",
+      "type": "SIGNAL",
+      "msg": "SIG — score 5 | ATR 0.86% | RSI 37",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T13:43:45.505Z",
+      "type": "SIGNAL",
+      "msg": "NOW — score 7 | ATR 1.13% | RSI 99",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:45.740Z",
+      "type": "SIGNAL",
+      "msg": "ARM — score 7 | ATR 1.66% | RSI 82",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:46.009Z",
+      "type": "SIGNAL",
+      "msg": "HOOD — score 5 | ATR 1.33% | RSI 29",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T13:43:46.580Z",
+      "type": "SIGNAL",
+      "msg": "ADBE — score 4 | ATR 0.78% | RSI 90",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:46.855Z",
+      "type": "SIGNAL",
+      "msg": "FLNC — score 7 | ATR 3.02% | RSI 93",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:47.100Z",
+      "type": "SIGNAL",
+      "msg": "RVMD — score 4 | ATR 0.76% | RSI 43",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:47.372Z",
+      "type": "SIGNAL",
+      "msg": "MGM — score 7 | ATR 1.11% | RSI 93",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:47.623Z",
+      "type": "SIGNAL",
+      "msg": "PURR — score 7 | ATR 1.82% | RSI 92",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-01T13:43:48.097Z",
+      "type": "INFO",
+      "msg": "Top signal: FIVE (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T13:43:48.097Z",
+      "type": "BUY",
+      "msg": "Placing: 2x FIVE @ ~$227.31",
+      "detail": "Patterns: Bullish Engulfing, Volume Breakout | SL 1.7× $225.79 | TP 4.3× $231.16 | R:R 2.5"
+    },
+    {
+      "time": "2026-06-01T13:43:48.135Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 2x FIVE",
+      "detail": "ID: 93c72a67-40e5-43c7-a8d9-a67f4c7ecc19 | R:R 2.5:1"
+    },
+    {
+      "time": "2026-06-01T13:43:48.636Z",
+      "type": "BUY",
+      "msg": "Placing: 2x NVDA @ ~$219.62",
+      "detail": "Patterns: Volume Breakout, Gap Up | SL 1.4× $217.22 | TP 3.5× $225.6 | R:R 2.5"
+    },
+    {
+      "time": "2026-06-01T13:43:48.652Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 2x NVDA",
+      "detail": "ID: df680645-bd1e-405a-84c1-835ff5d55e6e | R:R 2.5:1"
+    },
+    {
+      "time": "2026-06-01T13:43:49.153Z",
+      "type": "BUY",
+      "msg": "Placing: 28x HQL @ ~$17.73",
+      "detail": "Patterns: Volume Breakout, Hammer | SL 2× $17.61 | TP 5× $18.03 | R:R 2.5"
+    },
+    {
+      "time": "2026-06-01T13:43:49.166Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 28x HQL",
+      "detail": "ID: c5845224-95cf-4b43-8666-98070b1f0dd1 | R:R 2.5:1"
+    },
+    {
+      "time": "2026-06-01T13:43:49.667Z",
+      "type": "BUY",
+      "msg": "Placing: 222x GOTU @ ~$1.82",
+      "detail": "Patterns: Volume Breakout, Gap Up | SL 1.4× $1.77 | TP 3.5× $1.87 | R:R 1.2"
+    },
+    {
+      "time": "2026-06-01T13:43:49.685Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 222x GOTU",
+      "detail": "ID: 90f63dc2-052d-4c1f-ad02-15c95d4b690a | R:R 1.2:1"
+    },
+    {
+      "time": "2026-06-01T13:43:50.186Z",
+      "type": "BUY",
+      "msg": "Placing: 199x SPWH @ ~$1.32",
+      "detail": "Patterns: Volume Breakout, Gap Up | SL 1.4× $1.27 | TP 3.9× $1.37 | R:R 1.0"
+    },
+    {
+      "time": "2026-06-01T13:43:50.208Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 199x SPWH",
+      "detail": "ID: 8fc5258e-4dd5-40d5-8a6d-b9e853a912d8 | R:R 1.0:1"
     }
   ]
 }
