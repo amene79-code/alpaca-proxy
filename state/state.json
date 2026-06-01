@@ -3,56 +3,62 @@
     "ADSK": {
       "high": 238.01,
       "entry": 226.38,
-      "tp": null,
-      "sl": null
+      "tp": 232.51,
+      "sl": 223.32
     },
     "AVGO": {
       "high": 460.45,
       "entry": 438.41,
-      "tp": null,
-      "sl": null
+      "tp": 444.74,
+      "sl": 435.25
     },
     "COST": {
       "high": 957.49,
       "entry": 957.49,
-      "tp": null,
-      "sl": null
+      "tp": 967.04,
+      "sl": 952.72
     },
     "DTE": {
       "high": 142.87,
       "entry": 142.53,
-      "tp": null,
-      "sl": null
+      "tp": 143.32,
+      "sl": 142.14
     },
     "MSFT": {
-      "high": 468.14,
+      "high": 468.68,
       "entry": 442.18,
-      "tp": null,
-      "sl": null
+      "tp": 447.7,
+      "sl": 439.42
     },
     "NOW": {
       "high": 138.7,
       "entry": 121.96,
-      "tp": null,
-      "sl": null
+      "tp": 124.23,
+      "sl": 120.83
     },
     "OKTA": {
-      "high": 126.5,
+      "high": 126.6,
       "entry": 116.83,
-      "tp": null,
-      "sl": null
+      "tp": 120.47,
+      "sl": 115.01
     },
     "PLTR": {
       "high": 162.505,
       "entry": 152.7,
-      "tp": null,
-      "sl": null
+      "tp": 155.12,
+      "sl": 151.49
+    },
+    "HPE": {
+      "high": 45.31,
+      "entry": 42.985,
+      "tp": 44.17,
+      "sl": 42.39
     }
   },
   "dailyTrades": 0,
   "dailyDate": "2026-06-01",
   "openPositions": [],
-  "lastRun": "2026-06-01T11:24:29.352Z",
+  "lastRun": "2026-06-01T11:28:27.235Z",
   "log": [
     {
       "time": "2026-06-01T11:01:39.613Z",
@@ -176,6 +182,90 @@
     },
     {
       "time": "2026-06-01T11:24:29.352Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:28:24.148Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:28:24.360Z",
+      "type": "INFO",
+      "msg": "Account: $100420.70 | 9 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:28:24.361Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for HPE",
+      "detail": "Entry $42.98 | Current $45.31 | High set to $45.31"
+    },
+    {
+      "time": "2026-06-01T11:28:24.421Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:28:24.581Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for ADSK",
+      "detail": "Entry $226.38 | ATR $2.04 | TP $232.51 | SL $223.32"
+    },
+    {
+      "time": "2026-06-01T11:28:24.876Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for AVGO",
+      "detail": "Entry $438.41 | ATR $2.11 | TP $444.74 | SL $435.25"
+    },
+    {
+      "time": "2026-06-01T11:28:25.201Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for COST",
+      "detail": "Entry $957.49 | ATR $3.18 | TP $967.04 | SL $952.72"
+    },
+    {
+      "time": "2026-06-01T11:28:25.520Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for DTE",
+      "detail": "Entry $142.53 | ATR $0.26 | TP $143.32 | SL $142.14"
+    },
+    {
+      "time": "2026-06-01T11:28:25.812Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for HPE",
+      "detail": "Entry $42.98 | ATR $0.39 | TP $44.17 | SL $42.39"
+    },
+    {
+      "time": "2026-06-01T11:28:26.127Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for MSFT",
+      "detail": "Entry $442.18 | ATR $1.84 | TP $447.7 | SL $439.42"
+    },
+    {
+      "time": "2026-06-01T11:28:26.410Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for NOW",
+      "detail": "Entry $121.96 | ATR $0.76 | TP $124.23 | SL $120.83"
+    },
+    {
+      "time": "2026-06-01T11:28:26.720Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for OKTA",
+      "detail": "Entry $116.83 | ATR $1.21 | TP $120.47 | SL $115.01"
+    },
+    {
+      "time": "2026-06-01T11:28:27.034Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for PLTR",
+      "detail": "Entry $152.70 | ATR $0.81 | TP $155.12 | SL $151.49"
+    },
+    {
+      "time": "2026-06-01T11:28:27.235Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
