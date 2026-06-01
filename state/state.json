@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "NVDA": {
-      "high": 222.79,
+      "high": 223.25,
       "entry": 219.61700439453125,
       "tp": 225.6,
       "sl": 217.22
@@ -13,7 +13,7 @@
       "sl": 1.27
     },
     "VSCO": {
-      "high": 54.8934,
+      "high": 55.17,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -23,12 +23,6 @@
       "entry": 3.2200000286102295,
       "tp": 3.34,
       "sl": 3.16
-    },
-    "SPY": {
-      "high": 758.71,
-      "entry": 756.469970703125,
-      "tp": 759.15,
-      "sl": 755.25
     },
     "AMD": {
       "high": 514.15,
@@ -55,7 +49,7 @@
       "sl": 32.39
     },
     "MGM": {
-      "high": 50.645,
+      "high": 50.76,
       "entry": 50.55,
       "tp": 53.45,
       "sl": 49.1
@@ -65,12 +59,6 @@
       "entry": 162.09,
       "tp": 169.89,
       "sl": 158.38
-    },
-    "SAIC": {
-      "high": 122.94,
-      "entry": 122.7,
-      "tp": 129.89,
-      "sl": 119.1
     },
     "TWLO": {
       "high": 224.79,
@@ -91,7 +79,7 @@
       "sl": 6.05
     },
     "HPE": {
-      "high": 45.795,
+      "high": 45.99,
       "entry": 45.599998474121094,
       "tp": 46.1,
       "sl": 45.32
@@ -118,26 +106,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T17:41:32.112Z",
+  "lastRun": "2026-06-01T17:51:46.733Z",
   "log": [
-    {
-      "time": "2026-06-01T15:09:41.682Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-01T15:09:41.731Z",
-      "type": "SIGNAL",
-      "msg": "SPCE — score 4 | ATR 7.72% | RSI 31",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T15:09:43.326Z",
-      "type": "SIGNAL",
-      "msg": "COOT — score 7 | ATR 1.62% | RSI 54",
-      "detail": "Bull Flag, Gap Up"
-    },
     {
       "time": "2026-06-01T15:09:43.818Z",
       "type": "SIGNAL",
@@ -1316,6 +1286,24 @@
     },
     {
       "time": "2026-06-01T17:41:32.112Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:51:46.707Z",
+      "type": "INFO",
+      "msg": "Account: $100462.05 | 14 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:51:46.732Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:51:46.733Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
