@@ -43,7 +43,7 @@
       "sl": 491.17
     },
     "COOT": {
-      "high": 0.6279000043869019,
+      "high": 0.628,
       "entry": 0.6279000043869019,
       "tp": 0.68,
       "sl": 0.58
@@ -71,12 +71,6 @@
       "entry": 270.99,
       "tp": 282.58,
       "sl": 265.5
-    },
-    "GOTU": {
-      "high": 1.905,
-      "entry": 1.9,
-      "tp": 2,
-      "sl": 1.85
     },
     "GTLB": {
       "high": 33.36,
@@ -108,26 +102,19 @@
       "tp": 229.42,
       "sl": 210.38
     },
-    "GNTA": {
-      "high": 1.894285,
-      "entry": 1.894285,
-      "tp": 2.46,
-      "sl": 1.61
-    },
-    "META": {
-      "high": 633.255,
-      "entry": 633.255,
-      "tp": 651.19,
-      "sl": 624.29
+    "PVH": {
+      "high": 92.09500122070312,
+      "entry": 92.09500122070312,
+      "tp": 92.47,
+      "sl": 91.89
     }
   },
-  "dailyTrades": 15,
+  "dailyTrades": 16,
   "dailyDate": "2026-06-01",
   "openPositions": [
     "FIVE",
     "NVDA",
     "HQL",
-    "GOTU",
     "SPWH",
     "VSCO",
     "CURR",
@@ -137,136 +124,11 @@
     "COOT",
     "PICS",
     "MOMO",
-    "TLYS"
+    "TLYS",
+    "PVH"
   ],
-  "lastRun": "2026-06-01T16:09:19.249Z",
+  "lastRun": "2026-06-01T16:21:26.127Z",
   "log": [
-    {
-      "time": "2026-06-01T11:28:24.360Z",
-      "type": "INFO",
-      "msg": "Account: $100420.70 | 9 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:28:24.361Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for HPE",
-      "detail": "Entry $42.98 | Current $45.31 | High set to $45.31"
-    },
-    {
-      "time": "2026-06-01T11:28:24.421Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:28:24.581Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for ADSK",
-      "detail": "Entry $226.38 | ATR $2.04 | TP $232.51 | SL $223.32"
-    },
-    {
-      "time": "2026-06-01T11:28:24.876Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for AVGO",
-      "detail": "Entry $438.41 | ATR $2.11 | TP $444.74 | SL $435.25"
-    },
-    {
-      "time": "2026-06-01T11:28:25.201Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for COST",
-      "detail": "Entry $957.49 | ATR $3.18 | TP $967.04 | SL $952.72"
-    },
-    {
-      "time": "2026-06-01T11:28:25.520Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for DTE",
-      "detail": "Entry $142.53 | ATR $0.26 | TP $143.32 | SL $142.14"
-    },
-    {
-      "time": "2026-06-01T11:28:25.812Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for HPE",
-      "detail": "Entry $42.98 | ATR $0.39 | TP $44.17 | SL $42.39"
-    },
-    {
-      "time": "2026-06-01T11:28:26.127Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for MSFT",
-      "detail": "Entry $442.18 | ATR $1.84 | TP $447.7 | SL $439.42"
-    },
-    {
-      "time": "2026-06-01T11:28:26.410Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for NOW",
-      "detail": "Entry $121.96 | ATR $0.76 | TP $124.23 | SL $120.83"
-    },
-    {
-      "time": "2026-06-01T11:28:26.720Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for OKTA",
-      "detail": "Entry $116.83 | ATR $1.21 | TP $120.47 | SL $115.01"
-    },
-    {
-      "time": "2026-06-01T11:28:27.034Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for PLTR",
-      "detail": "Entry $152.70 | ATR $0.81 | TP $155.12 | SL $151.49"
-    },
-    {
-      "time": "2026-06-01T11:28:27.235Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:39:59.616Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:39:59.667Z",
-      "type": "INFO",
-      "msg": "Account: $100421.73 | 9 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:39:59.681Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:39:59.681Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:42:29.316Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:42:29.372Z",
-      "type": "INFO",
-      "msg": "Account: $100421.61 | 9 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:42:29.383Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:42:29.448Z",
-      "type": "INFO",
-      "msg": "Recalculated TP/SL for ADSK",
-      "detail": "Entry $226.38 | High $238.01 | ATR $4.76 | TP $252.28 | SL $219.24"
-    },
     {
       "time": "2026-06-01T11:42:29.693Z",
       "type": "INFO",
@@ -1340,6 +1202,132 @@
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:21:09.440Z",
+      "type": "INFO",
+      "msg": "Account: $100418.16 | 19 positions open | 15 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:21:09.486Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:21:09.486Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: GNTA @ $1.845 | High $1.894285 → Stop $1.86 | P&L $-2.07",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:21:10.829Z",
+      "type": "SELL",
+      "msg": "✓ Closed GNTA",
+      "detail": "P&L $-2.07"
+    },
+    {
+      "time": "2026-06-01T16:21:10.829Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: GOTU @ $1.865 | High $1.905 → Stop $1.87 | P&L $-5.81",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:21:12.197Z",
+      "type": "SELL",
+      "msg": "✓ Closed GOTU",
+      "detail": "P&L $-5.81"
+    },
+    {
+      "time": "2026-06-01T16:21:12.198Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:21:12.351Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
+    },
+    {
+      "time": "2026-06-01T16:21:13.206Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-01T16:21:13.591Z",
+      "type": "SIGNAL",
+      "msg": "MU — score 5 | ATR 0.45% | RSI 55",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T16:21:15.174Z",
+      "type": "SIGNAL",
+      "msg": "DELL — score 4 | ATR 0.60% | RSI 31",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T16:21:16.066Z",
+      "type": "SIGNAL",
+      "msg": "INTC — score 5 | ATR 0.47% | RSI 38",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T16:21:16.390Z",
+      "type": "SIGNAL",
+      "msg": "RMCO — score 4 | ATR 2.42% | RSI 50",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-01T16:21:18.286Z",
+      "type": "SIGNAL",
+      "msg": "PVH — score 7 | ATR 0.15% | RSI 66",
+      "detail": "Hammer, Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T16:21:18.617Z",
+      "type": "SIGNAL",
+      "msg": "ODD — score 5 | ATR 0.48% | RSI 50",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-01T16:21:18.882Z",
+      "type": "SIGNAL",
+      "msg": "DG — score 4 | ATR 0.35% | RSI 84",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T16:21:19.473Z",
+      "type": "SIGNAL",
+      "msg": "SIG — score 4 | ATR 0.32% | RSI 69",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-01T16:21:21.026Z",
+      "type": "SIGNAL",
+      "msg": "FLNC — score 5 | ATR 1.53% | RSI 66",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-01T16:21:25.479Z",
+      "type": "INFO",
+      "msg": "Top signal: PVH (score 7)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:21:25.479Z",
+      "type": "BUY",
+      "msg": "Placing: 5x PVH @ ~$92.10",
+      "detail": "Patterns: Hammer, Volume Breakout | SL 1.5× $91.89 | TP 2.7× $92.47 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-01T16:21:25.627Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 5x PVH",
+      "detail": "ID: f179376d-a891-44d2-9978-457278723bed | R:R 1.8:1"
     }
   ]
 }
