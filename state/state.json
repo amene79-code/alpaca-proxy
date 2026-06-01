@@ -109,7 +109,7 @@
       "sl": 91.89
     },
     "MU": {
-      "high": 1035.6,
+      "high": 1036.5,
       "entry": 1033.60498046875,
       "tp": 1044.05,
       "sl": 1027.91
@@ -141,26 +141,8 @@
     "MU",
     "INTC"
   ],
-  "lastRun": "2026-06-01T16:23:33.071Z",
+  "lastRun": "2026-06-01T16:23:49.738Z",
   "log": [
-    {
-      "time": "2026-06-01T13:43:39.769Z",
-      "type": "SIGNAL",
-      "msg": "COOT — score 6 | ATR 1.26% | RSI 46",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-01T13:43:40.036Z",
-      "type": "SIGNAL",
-      "msg": "GTLB — score 7 | ATR 0.88% | RSI 91",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-01T13:43:40.283Z",
-      "type": "SIGNAL",
-      "msg": "DELL — score 7 | ATR 1.19% | RSI 89",
-      "detail": "Volume Breakout, Gap Up"
-    },
     {
       "time": "2026-06-01T13:43:40.536Z",
       "type": "SIGNAL",
@@ -1339,6 +1321,24 @@
     },
     {
       "time": "2026-06-01T16:23:33.071Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:23:49.725Z",
+      "type": "INFO",
+      "msg": "Account: $100419.00 | 20 positions open | 18 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:23:49.738Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:23:49.738Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
