@@ -115,7 +115,7 @@
       "sl": 119.1
     },
     "TWLO": {
-      "high": 217.92,
+      "high": 218.03,
       "entry": 216.36,
       "tp": 229.42,
       "sl": 210.38
@@ -140,26 +140,8 @@
     "TLYS",
     "SPCE"
   ],
-  "lastRun": "2026-06-01T15:55:52.791Z",
+  "lastRun": "2026-06-01T15:59:04.204Z",
   "log": [
-    {
-      "time": "2026-06-01T11:03:27.127Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:03:27.213Z",
-      "type": "INFO",
-      "msg": "Account: $100423.72 | 9 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:03:27.213Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
     {
       "time": "2026-06-01T11:04:00.931Z",
       "type": "INFO",
@@ -1338,6 +1320,24 @@
     },
     {
       "time": "2026-06-01T15:55:52.791Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:59:04.160Z",
+      "type": "INFO",
+      "msg": "Account: $100443.31 | 20 positions open | 15 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:59:04.204Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:59:04.204Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
