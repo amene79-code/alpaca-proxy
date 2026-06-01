@@ -16,8 +16,8 @@ const STATE_FILE = path.join(__dirname, '..', 'state', 'state.json');
 const CFG = {
   size:        500,   // $ per position
   maxPos:      20,    // max open positions
-  maxDaily:    20,    // max trades per day
-  maxPerCycle: 5,     // max new trades per cycle
+  maxDaily:    40,    // max trades per day
+  maxPerCycle: 10,     // max new trades per cycle
   atrSL:       1.5,   // ATR × SL multiplier
   atrTP:       3.0,   // ATR × TP multiplier
   trail:       0.02,  // 2% trailing stop
@@ -25,7 +25,7 @@ const CFG = {
   maxATRpct:   0.1,   // min ATR%
   earningsBuf: 3,     // days buffer around earnings
   skipFirst15: false, // skip first 15 min after market open (9:30-9:45 ET)
-  skipLast30:  false, // skip last 30 min before close (3:30-4:00 ET)
+  skipLast30:  true, // skip last 30 min before close (3:30-4:00 ET)
 };
 
 // ─── Alpaca API ───────────────────────────────────────────────────────────────
