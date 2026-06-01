@@ -1040,15 +1040,39 @@ async function placeICTOrder(setup, cfg){
     ? +Math.min(sl, price - 0.10).toFixed(2)
     : +Math.max(sl, price + 0.10).toFixed(2);
 
-  const orderBody={
-    symbol:ticker, qty:String(qty),
-    side, time_in_force:"gtc",
-    order_class:"bracket",
-    take_profit:{limit_price:String(tpSafe)},
-    stop_loss:{stop_price:String(slSafe)},
-    client_order_id:tag,
-    ...(useLimit?{type:"limit",limit_price:String(limitPrice)}:{type:"market"})
-  };
+  // Check if market is open or extended hours
+  const nowET=new Date(new Date().toLocaleString("en-US",{timeZone:"America/New_York"}));
+  const etMins=nowET.getHours()*60+nowET.getMinutes();
+  const isRegularHours=etMins>=570&&etMins<960; // 9:30am-4pm ET
+  const isExtendedHours=etMins>=240&&etMins<1200; // 4am-8pm ET
+
+  let orderBody;
+  if(isRegularHours){
+    // Full bracket order during regular hours
+    orderBody={
+      symbol:ticker, qty:String(qty),
+      side, time_in_force:"gtc",
+      order_class:"bracket",
+      take_profit:{limit_price:String(tpSafe)},
+      stop_loss:{stop_price:String(slSafe)},
+      client_order_id:tag,
+      ...(useLimit?{type:"limit",limit_price:String(limitPrice)}:{type:"market"})
+    };
+  } else if(isExtendedHours){
+    // Extended hours — limit only, no bracket (Alpaca restriction)
+    log("INFO",`${ticker} — extended hours: limit order only (no bracket)`);
+    orderBody={
+      symbol:ticker, qty:String(qty),
+      side, type:"limit",
+      time_in_force:"day",
+      limit_price:String(limitPrice||tpSafe),
+      extended_hours:true,
+      client_order_id:tag,
+    };
+  } else {
+    log("SKIP",`${ticker} — market closed (outside extended hours)`);
+    return false;
+  }
 
   try{
     const order=await alpaca("POST","/v2/orders",orderBody);
@@ -1816,27 +1840,3 @@ async function startAgent(){
     updateAccountUI(acct); saveKeys();
     log("ICT",`✓ Connected | Portfolio ${fmt$(acct.portfolio_value)}`);
   }catch(e){
-    log("ERROR","Connection failed: "+e.message);
-    document.getElementById("startBtn").disabled=false; return;
-  }
-  RUNNING=true;
-  document.getElementById("stopBtn").disabled=false;
-  document.getElementById("configPanel").style.opacity="0.5";
-  document.getElementById("configPanel").style.pointerEvents="none";
-  document.getElementById("statusPill").className="kz-active";
-  document.getElementById("statusText").textContent="Running";
-  startPlRefresh();
-  log("ICT","ICT Agent started",
-    `Kill zones: ${[...document.querySelectorAll("[id^='kz']:checked")].map(el=>el.id).join("+")} | Min score: ${document.getElementById("cfgMinFVG").value} | Direction: ${document.getElementById("cfgDirection").value}`);
-  await runCycle();
-}
-
-function stopAgent(){
-  RUNNING=false; clearInterval(countdownTimer); stopPlRefresh();
-  document.getElementById("startBtn").disabled=false;
-  document.getElementById("stopBtn").disabled=true;
-  document.getElementById("configPanel").style.opacity="1";
-  document.getElementById("configPanel").style.pointerEvents="auto";
-  document.getElementById("scanCountdown").style.display="none";
-  document.getElementById("statusPill").className="kz-inactive";
-  document.getElementById("statusText").textContent="Offline";
