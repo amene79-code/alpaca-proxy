@@ -16,14 +16,16 @@ const STATE_FILE = path.join(__dirname, '..', 'state', 'state.json');
 const CFG = {
   size:        500,   // $ per position
   maxPos:      20,    // max open positions
-  maxDaily:    40,    // max trades per day
-  maxPerCycle: 10,     // max new trades per cycle
+  maxDaily:    20,    // max trades per day
+  maxPerCycle: 5,     // max new trades per cycle
   atrSL:       1.5,   // ATR × SL multiplier
   atrTP:       3.0,   // ATR × TP multiplier
   trail:       0.02,  // 2% trailing stop
   minScore:    2,     // min pattern score
   maxATRpct:   0.1,   // min ATR%
   earningsBuf: 3,     // days buffer around earnings
+  skipFirst15: false, // skip first 15 min after market open (9:30-9:45 ET)
+  skipLast30:  false, // skip last 30 min before close (3:30-4:00 ET)
 };
 
 // ─── Alpaca API ───────────────────────────────────────────────────────────────
@@ -505,6 +507,23 @@ async function main() {
   // ── 3. Check if we should scan for new entries ────────────────────────────
   if (!isMarketOpen()) {
     addLog(state, 'INFO', 'Outside market hours — skipping new entries');
+    saveState(state);
+    return;
+  }
+
+  // Fine-grained time checks
+  const etNow = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
+  const etMins = etNow.getHours()*60 + etNow.getMinutes();
+  const minsAfterOpen = etMins - (9*60+30);
+  const minsToClose   = (16*60) - etMins;
+
+  if (CFG.skipFirst15 && minsAfterOpen < 15) {
+    addLog(state, 'INFO', `Skipping — first 15 min after open (${minsAfterOpen.toFixed(0)} min in)`);
+    saveState(state);
+    return;
+  }
+  if (CFG.skipLast30 && minsToClose < 30) {
+    addLog(state, 'INFO', `Skipping — last 30 min before close (${minsToClose.toFixed(0)} min left)`);
     saveState(state);
     return;
   }
