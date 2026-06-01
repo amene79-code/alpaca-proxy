@@ -1,8 +1,6 @@
 name: Pro Agent
 
 on:
-  schedule:
-    - cron: '*/10 * * * *'
   workflow_dispatch:
   push:
     branches:
@@ -37,27 +35,20 @@ jobs:
           ALPACA_URL:    ${{ secrets.ALPACA_URL }}
         run: node scripts/pro-agent.js
 
-      - name: Wait or exit based on market hours
-        run: |
-          HOUR=$(date -u +%H)
-          DAY=$(date -u +%u)
-          if [ "$DAY" -le 5 ] && [ "$HOUR" -ge 13 ] && [ "$HOUR" -lt 21 ]; then
-            echo "Market hours — sleeping 10 minutes before next cycle"
-            sleep 600
-          else
-            echo "Outside market hours — stopping loop"
-          fi
+      - name: Sleep 10 minutes
+        run: sleep 600
 
-      - name: Commit state and trigger next cycle
+      - name: Commit and continue loop (market hours only)
         run: |
           HOUR=$(date -u +%H)
           DAY=$(date -u +%u)
           git config user.name  "Pro Agent Bot"
           git config user.email "bot@pro-agent"
           git add state/state.json state/watchlist.json
-          if [ "$DAY" -le 5 ] && [ "$HOUR" -ge 13 ] && [ "$HOUR" -lt 21 ]; then
+          if [ "$DAY" -le 5 ] && [ "$HOUR" -ge 12 ] && [ "$HOUR" -lt 20 ]; then
             git diff --staged --quiet || git commit -m "state: $(date -u '+%Y-%m-%d %H:%M') UTC"
             git push
+            echo "Loop continues"
           else
-            echo "Outside market hours — not committing to avoid infinite loop"
+            echo "Outside market hours — chain stops"
           fi
