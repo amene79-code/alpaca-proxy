@@ -1142,6 +1142,15 @@ function getICTPositions(){
 let trailingStops={};
 async function manageTrailingStops(positions, cfg){
   const ictPositions=getICTPositions();
+  // Clean up ICT positions that no longer exist in Alpaca
+  const activeSymbols=new Set((Array.isArray(positions)?positions:[]).map(p=>p.symbol));
+  for(const sym of [...ictPositions]){
+    if(!activeSymbols.has(sym)){
+      removeICTPosition(sym);
+      delete trailingStops[sym];
+      log("INFO",`Cleaned up closed position: ${sym}`);
+    }
+  }
   for(const p of Array.isArray(positions)?positions:[]){
     // Only manage positions opened by the ICT agent
     if(!ictPositions.includes(p.symbol)) continue;
