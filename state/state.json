@@ -103,7 +103,7 @@
       "sl": 210.38
     },
     "PVH": {
-      "high": 92.1,
+      "high": 92.11,
       "entry": 92.09500122070312,
       "tp": 92.47,
       "sl": 91.89
@@ -141,26 +141,8 @@
     "MU",
     "INTC"
   ],
-  "lastRun": "2026-06-01T16:21:58.295Z",
+  "lastRun": "2026-06-01T16:22:21.210Z",
   "log": [
-    {
-      "time": "2026-06-01T12:41:58.356Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T13:43:36.593Z",
-      "type": "INFO",
-      "msg": "Account: $100430.80 | 3 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T13:43:36.593Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for META",
-      "detail": "Entry $633.25 | Current $619.08 | High set to $633.25"
-    },
     {
       "time": "2026-06-01T13:43:36.605Z",
       "type": "INFO",
@@ -1342,6 +1324,24 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 4x INTC",
       "detail": "ID: e572cf42-acf3-4736-abf0-f7cf97098804 | R:R 2.0:1"
+    },
+    {
+      "time": "2026-06-01T16:22:21.143Z",
+      "type": "INFO",
+      "msg": "Account: $100409.89 | 20 positions open | 18 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:22:21.210Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:22:21.210Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
     }
   ]
 }
