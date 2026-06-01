@@ -1,17 +1,5 @@
 {
   "trailingStops": {
-    "ADSK": {
-      "high": 244.2378,
-      "entry": 226.38,
-      "tp": 252.28,
-      "sl": 219.24
-    },
-    "COST": {
-      "high": 957.49,
-      "entry": 957.49,
-      "tp": 967.04,
-      "sl": 952.72
-    },
     "META": {
       "high": 633.255,
       "entry": 633.255,
@@ -31,7 +19,7 @@
       "sl": 1.27
     },
     "VSCO": {
-      "high": 53.470001220703125,
+      "high": 54.09,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -43,19 +31,19 @@
       "sl": 3.16
     },
     "SPY": {
-      "high": 756.469970703125,
+      "high": 757.3,
       "entry": 756.469970703125,
       "tp": 759.15,
       "sl": 755.25
     },
     "HOOD": {
-      "high": 89.62,
+      "high": 91.4699,
       "entry": 87.73999786376953,
       "tp": 94.13,
       "sl": 85.13
     },
     "AMD": {
-      "high": 509,
+      "high": 513.57,
       "entry": 499.94500732421875,
       "tp": 519.26,
       "sl": 491.17
@@ -67,28 +55,70 @@
       "sl": 0.58
     },
     "PICS": {
-      "high": 10.770000457763672,
+      "high": 10.99,
       "entry": 10.770000457763672,
       "tp": 11.17,
       "sl": 10.55
     },
-    "MOMO": {
-      "high": 6.110000133514404,
-      "entry": 6.110000133514404,
-      "tp": 6.16,
-      "sl": 6.06
-    },
     "TLYS": {
-      "high": 4.525000095367432,
+      "high": 4.55,
       "entry": 4.525000095367432,
       "tp": 4.58,
       "sl": 4.48
     },
     "SPCE": {
-      "high": 6.585000038146973,
+      "high": 7.35,
       "entry": 6.585000038146973,
       "tp": 9.84,
       "sl": 5.16
+    },
+    "ARM": {
+      "high": 420.94,
+      "entry": 418.24,
+      "tp": 454.23,
+      "sl": 401.6
+    },
+    "CEG": {
+      "high": 271.6,
+      "entry": 270.99,
+      "tp": 282.58,
+      "sl": 265.5
+    },
+    "GOTU": {
+      "high": 1.905,
+      "entry": 1.9,
+      "tp": 2,
+      "sl": 1.85
+    },
+    "GTLB": {
+      "high": 33.35,
+      "entry": 33.31,
+      "tp": 35.19,
+      "sl": 32.39
+    },
+    "MGM": {
+      "high": 50.55,
+      "entry": 50.55,
+      "tp": 53.45,
+      "sl": 49.1
+    },
+    "RVMD": {
+      "high": 162.475,
+      "entry": 162.09,
+      "tp": 169.89,
+      "sl": 158.38
+    },
+    "SAIC": {
+      "high": 122.7,
+      "entry": 122.7,
+      "tp": 129.89,
+      "sl": 119.1
+    },
+    "TWLO": {
+      "high": 217.455,
+      "entry": 216.36,
+      "tp": 229.42,
+      "sl": 210.38
     }
   },
   "dailyTrades": 15,
@@ -110,7 +140,7 @@
     "TLYS",
     "SPCE"
   ],
-  "lastRun": "2026-06-01T15:09:55.132Z",
+  "lastRun": "2026-06-01T15:43:28.184Z",
   "log": [
     {
       "time": "2026-06-01T11:01:39.613Z",
@@ -1149,6 +1179,126 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 7x SPCE",
       "detail": "ID: b03dc7e9-766a-430a-98a0-c968b2d2118c | R:R 2.3:1"
+    },
+    {
+      "time": "2026-06-01T15:43:25.841Z",
+      "type": "INFO",
+      "msg": "Account: $100463.05 | 20 positions open | 15 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:43:25.841Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for ARM",
+      "detail": "Entry $418.24 | Current $420.94 | High set to $420.94"
+    },
+    {
+      "time": "2026-06-01T15:43:25.841Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for CEG",
+      "detail": "Entry $270.99 | Current $271.60 | High set to $271.60"
+    },
+    {
+      "time": "2026-06-01T15:43:25.841Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for GOTU",
+      "detail": "Entry $1.90 | Current $1.91 | High set to $1.91"
+    },
+    {
+      "time": "2026-06-01T15:43:25.841Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for GTLB",
+      "detail": "Entry $33.31 | Current $33.35 | High set to $33.35"
+    },
+    {
+      "time": "2026-06-01T15:43:25.841Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for MGM",
+      "detail": "Entry $50.55 | Current $50.09 | High set to $50.55"
+    },
+    {
+      "time": "2026-06-01T15:43:25.841Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for RVMD",
+      "detail": "Entry $162.09 | Current $162.47 | High set to $162.47"
+    },
+    {
+      "time": "2026-06-01T15:43:25.841Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for SAIC",
+      "detail": "Entry $122.70 | Current $122.28 | High set to $122.70"
+    },
+    {
+      "time": "2026-06-01T15:43:25.841Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for TWLO",
+      "detail": "Entry $216.36 | Current $217.46 | High set to $217.46"
+    },
+    {
+      "time": "2026-06-01T15:43:25.918Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:43:25.982Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for ARM",
+      "detail": "Entry $418.24 | High $420.94 | ATR $11.10 | TP $454.23 | SL $401.6"
+    },
+    {
+      "time": "2026-06-01T15:43:26.282Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for CEG",
+      "detail": "Entry $270.99 | High $271.60 | ATR $3.66 | TP $282.58 | SL $265.5"
+    },
+    {
+      "time": "2026-06-01T15:43:26.529Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for GOTU",
+      "detail": "Entry $1.90 | High $1.91 | ATR $0.03 | TP $2 | SL $1.85"
+    },
+    {
+      "time": "2026-06-01T15:43:26.822Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for GTLB",
+      "detail": "Entry $33.31 | High $33.35 | ATR $0.61 | TP $35.19 | SL $32.39"
+    },
+    {
+      "time": "2026-06-01T15:43:27.068Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for MGM",
+      "detail": "Entry $50.55 | High $50.55 | ATR $0.97 | TP $53.45 | SL $49.1"
+    },
+    {
+      "time": "2026-06-01T15:43:27.319Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for RVMD",
+      "detail": "Entry $162.09 | High $162.47 | ATR $2.47 | TP $169.89 | SL $158.38"
+    },
+    {
+      "time": "2026-06-01T15:43:27.578Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for SAIC",
+      "detail": "Entry $122.70 | High $122.70 | ATR $2.40 | TP $129.89 | SL $119.1"
+    },
+    {
+      "time": "2026-06-01T15:43:27.826Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for TWLO",
+      "detail": "Entry $216.36 | High $217.46 | ATR $3.99 | TP $229.42 | SL $210.38"
+    },
+    {
+      "time": "2026-06-01T15:43:28.027Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: META @ $613.36 | High $633.255 → Stop $620.59 | P&L +$19.89",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T15:43:28.184Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
     }
   ]
 }
