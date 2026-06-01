@@ -103,16 +103,22 @@
       "sl": 158.38
     },
     "SAIC": {
-      "high": 122.7,
+      "high": 122.81,
       "entry": 122.7,
       "tp": 129.89,
       "sl": 119.1
     },
     "TWLO": {
-      "high": 218.23,
+      "high": 219.5,
       "entry": 216.36,
       "tp": 229.42,
       "sl": 210.38
+    },
+    "GNTA": {
+      "high": 1.894285,
+      "entry": 1.894285,
+      "tp": 2.46,
+      "sl": 1.61
     }
   },
   "dailyTrades": 15,
@@ -133,38 +139,8 @@
     "MOMO",
     "TLYS"
   ],
-  "lastRun": "2026-06-01T16:02:22.418Z",
+  "lastRun": "2026-06-01T16:08:15.957Z",
   "log": [
-    {
-      "time": "2026-06-01T11:10:28.972Z",
-      "type": "INFO",
-      "msg": "Restored bracket orders for 9 positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:10:28.972Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:24:27.340Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:24:27.849Z",
-      "type": "INFO",
-      "msg": "Account: $100423.10 | 9 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:24:27.928Z",
-      "type": "INFO",
-      "msg": "DEBUG ADSK order_class:bracket legs:0",
-      "detail": ""
-    },
     {
       "time": "2026-06-01T11:24:27.928Z",
       "type": "INFO",
@@ -1331,6 +1307,36 @@
     },
     {
       "time": "2026-06-01T16:02:22.418Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:08:15.624Z",
+      "type": "INFO",
+      "msg": "Account: $100438.69 | 20 positions open | 15 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:08:15.624Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for GNTA",
+      "detail": "Entry $1.89 | Current $1.88 | High set to $1.89"
+    },
+    {
+      "time": "2026-06-01T16:08:15.670Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:08:15.757Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for GNTA",
+      "detail": "Entry $1.89 | High $1.89 | ATR $0.19 | TP $2.46 | SL $1.61"
+    },
+    {
+      "time": "2026-06-01T16:08:15.957Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
