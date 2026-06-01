@@ -64,7 +64,22 @@ async function getCandles(ticker, range, interval) {
   } catch { return null; }
 }
 
-// ─── Screener ─────────────────────────────────────────────────────────────────
+// ─── Watchlist from Vercel (saved by pre-market dashboard) ───────────────────
+async function fetchVercelWatchlist() {
+  try {
+    const r = await fetch('https://alpaca-proxy-alpha.vercel.app/api/watchlist');
+    if (!r.ok) return null;
+    const d = await r.json();
+    if (!d.tickers?.length) return null;
+    // Only use if saved today
+    const today = new Date().toISOString().slice(0, 10);
+    const savedDate = d.date ? d.date.split('/').reverse().join('-') : null; // convert DD/MM/YYYY to YYYY-MM-DD
+    if (savedDate && savedDate !== today) return null;
+    return d.tickers.map(t => t.ticker || t).filter(Boolean);
+  } catch { return null; }
+}
+
+
 async function runScreener() {
   const tickers = new Map(); // ticker -> score
 
@@ -491,12 +506,23 @@ async function main() {
     return;
   }
 
-  // ── 4. Run screener ───────────────────────────────────────────────────────
-  addLog(state, 'INFO', 'Running screener...');
-  const candidates = await runScreener();
+  // ── 4. Run screener + merge with pre-market watchlist ────────────────────
+  addLog(state, 'INFO', 'Fetching watchlist and screener...');
+
+  // Try pre-market watchlist saved by dashboard first
+  const savedWatchlist = await fetchVercelWatchlist();
+  if (savedWatchlist?.length) {
+    addLog(state, 'INFO', `Pre-market watchlist loaded: ${savedWatchlist.length} tickers`,
+      savedWatchlist.slice(0, 8).join(', ') + (savedWatchlist.length > 8 ? '…' : ''));
+  }
+
+  const screenerTickers = await runScreener();
+  // Merge: saved watchlist first (priority), then screener
+  const allCandidates = [...new Set([...(savedWatchlist||[]), ...screenerTickers])];
   const existingSymbols = new Set(positions.map(p => p.symbol));
-  const toScan = candidates.filter(t => !existingSymbols.has(t)).slice(0, 30);
-  addLog(state, 'INFO', `Screener found ${candidates.length} candidates — scanning top ${toScan.length}`);
+  const toScan = allCandidates.filter(t => !existingSymbols.has(t)).slice(0, 40);
+  addLog(state, 'INFO', `Scanning ${toScan.length} candidates`,
+    `${savedWatchlist?.length||0} from watchlist + ${screenerTickers.length} from screener`);
 
   // ── 5. Analyze signals ────────────────────────────────────────────────────
   const signals = [];
