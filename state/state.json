@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "ADSK": {
-      "high": 237.25,
+      "high": 238.01,
       "entry": 226.38,
       "tp": null,
       "sl": null
@@ -24,12 +24,6 @@
       "tp": null,
       "sl": null
     },
-    "HPE": {
-      "high": 46.46,
-      "entry": 42.985,
-      "tp": null,
-      "sl": null
-    },
     "MSFT": {
       "high": 468.14,
       "entry": 442.18,
@@ -37,7 +31,7 @@
       "sl": null
     },
     "NOW": {
-      "high": 137.42,
+      "high": 138.7,
       "entry": 121.96,
       "tp": null,
       "sl": null
@@ -49,7 +43,7 @@
       "sl": null
     },
     "PLTR": {
-      "high": 162.19,
+      "high": 162.505,
       "entry": 152.7,
       "tp": null,
       "sl": null
@@ -58,7 +52,7 @@
   "dailyTrades": 0,
   "dailyDate": "2026-06-01",
   "openPositions": [],
-  "lastRun": "2026-06-01T11:10:28.972Z",
+  "lastRun": "2026-06-01T11:24:29.352Z",
   "log": [
     {
       "time": "2026-06-01T11:01:39.613Z",
@@ -140,6 +134,48 @@
     },
     {
       "time": "2026-06-01T11:10:28.972Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:24:27.340Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:24:27.849Z",
+      "type": "INFO",
+      "msg": "Account: $100423.10 | 9 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:24:27.928Z",
+      "type": "INFO",
+      "msg": "DEBUG ADSK order_class:bracket legs:0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:24:27.928Z",
+      "type": "INFO",
+      "msg": "Restored bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:24:27.928Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: HPE @ $45.4 | High $46.46 → Stop $45.53 | P&L +$14.49",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:24:29.352Z",
+      "type": "SELL",
+      "msg": "✓ Closed HPE",
+      "detail": "P&L +$14.49"
+    },
+    {
+      "time": "2026-06-01T11:24:29.352Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
