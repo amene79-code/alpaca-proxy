@@ -7,7 +7,7 @@
       "sl": 217.22
     },
     "VSCO": {
-      "high": 55.765,
+      "high": 55.769,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -37,7 +37,7 @@
       "sl": 32.39
     },
     "MGM": {
-      "high": 51.015,
+      "high": 51.14,
       "entry": 50.55,
       "tp": 53.45,
       "sl": 49.1
@@ -59,12 +59,6 @@
       "entry": 6.139999866485596,
       "tp": 6.3,
       "sl": 6.05
-    },
-    "HPE": {
-      "high": 46.02,
-      "entry": 45.599998474121094,
-      "tp": 46.1,
-      "sl": 45.32
     }
   },
   "dailyTrades": 20,
@@ -88,26 +82,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T18:32:49.500Z",
+  "lastRun": "2026-06-01T18:43:06.197Z",
   "log": [
-    {
-      "time": "2026-06-01T15:09:52.220Z",
-      "type": "INFO",
-      "msg": "Top signal: COOT (score 7)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T15:09:52.220Z",
-      "type": "BUY",
-      "msg": "Placing: 208x COOT @ ~$0.63",
-      "detail": "Patterns: Bull Flag, Gap Up | SL 1.8× $0.58 | TP 3.2× $0.68 | R:R 1.1"
-    },
-    {
-      "time": "2026-06-01T15:09:52.452Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 208x COOT",
-      "detail": "ID: ccd50f95-66b8-4f3c-a24d-4f4c71b1d633 | R:R 1.1:1"
-    },
     {
       "time": "2026-06-01T15:09:52.953Z",
       "type": "BUY",
@@ -1286,6 +1262,24 @@
     },
     {
       "time": "2026-06-01T18:32:49.500Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:43:06.172Z",
+      "type": "INFO",
+      "msg": "Account: $100471.21 | 10 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:43:06.197Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:43:06.197Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
