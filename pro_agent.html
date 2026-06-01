@@ -1856,10 +1856,36 @@ async function startMonitor(){
   document.getElementById("monitorBtn").style.color="#f87171";
   document.getElementById("monitorBtn").style.borderColor="#7f1d1d";
   saveKeys();
-  // Run immediately then on interval
+  // Sync state from GitHub on start
+  await syncGitHubState();
   await monitorRefresh();
   const iv=+document.getElementById("monitorInterval").value*1000;
-  monitorTimer=setInterval(monitorRefresh, iv);
+  monitorTimer=setInterval(async()=>{
+    await syncGitHubState();
+    await monitorRefresh();
+  }, iv);
+}
+
+async function syncGitHubState(){
+  try{
+    const r=await fetch("https://raw.githubusercontent.com/amene79-code/alpaca-proxy/main/state/state.json?t="+Date.now());
+    if(!r.ok) return;
+    const state=await r.json();
+    if(state.trailingStops){
+      // Merge GitHub state into browser trailingStops
+      for(const [sym,ts] of Object.entries(state.trailingStops)){
+        if(!trailingStops[sym]) trailingStops[sym]={};
+        if(ts.tp)    trailingStops[sym].tp=ts.tp;
+        if(ts.sl)    trailingStops[sym].sl=ts.sl;
+        if(ts.high)  trailingStops[sym].high=ts.high;
+        if(ts.entry) trailingStops[sym].entry=ts.entry;
+      }
+      document.getElementById("monitorStatus").textContent=
+        `↻ Synced from GitHub · ${Object.keys(state.trailingStops).length} positions`;
+    }
+  }catch(e){
+    console.warn("GitHub state sync failed:",e.message);
+  }
 }
 
 function stopMonitor(){
