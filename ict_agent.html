@@ -1096,15 +1096,19 @@ async function placeICTOrder(setup, cfg){
     }
     // Hard-to-borrow — retry with day order
     if(e.message?.includes("hard-to-borrow")&&setupType==="short"){
-      log("INFO",`${ticker} is hard-to-borrow — retrying with day order`);
+      log("INFO",`${ticker} is hard-to-borrow — retrying with GTC limit (no bracket)`);
       try{
-        const dayOrder=await alpaca("POST","/v2/orders",{
-          ...orderBody, time_in_force:"day"
+        const htbOrder=await alpaca("POST","/v2/orders",{
+          symbol:ticker, qty:String(qty), side,
+          type:"limit", limit_price:String(limitPrice),
+          time_in_force:"gtc",
         });
-        if(dayOrder.id){
-          log("SHORT",`✓ ORDER PLACED (day): ${qty}x ${ticker}`,`ID: ${dayOrder.id} | Hard-to-borrow`);
-          trailingStops[ticker]={high:price,entry:price,tp,sl,side:setupType,tag};
-          saveICTTradeMeta(ticker,tag,setup,qty,price,sl,tp,rr);
+        if(htbOrder.id){
+          log("SHORT",`✓ ORDER PLACED (HTB/GTC): ${qty}x ${ticker}`,
+            `ID: ${htbOrder.id} | No bracket — trailing stop manages exit`);
+          trailingStops[ticker]={high:price,entry:price,tp:tpSafe,sl:slSafe,side:setupType,tag};
+          saveICTPosition(ticker);
+          saveICTTradeMeta(ticker,tag,setup,qty,price,slSafe,tpSafe,rr);
           return true;
         }
       }catch(e2){log("ERROR",`Order failed ${ticker}: ${e2.message}`);}
