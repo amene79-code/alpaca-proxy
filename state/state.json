@@ -13,7 +13,7 @@
       "sl": 1.29
     },
     "VSCO": {
-      "high": 55.44,
+      "high": 55.475,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -49,28 +49,22 @@
       "sl": 32.39
     },
     "MGM": {
-      "high": 50.8,
+      "high": 50.86,
       "entry": 50.55,
       "tp": 53.45,
       "sl": 49.1
     },
     "RVMD": {
-      "high": 163.6,
+      "high": 163.82,
       "entry": 162.09,
       "tp": 169.89,
       "sl": 158.38
     },
     "TWLO": {
-      "high": 224.79,
+      "high": 224.975,
       "entry": 216.36,
       "tp": 229.42,
       "sl": 210.38
-    },
-    "INTC": {
-      "high": 111.22,
-      "entry": 110.61499786376953,
-      "tp": 111.87,
-      "sl": 109.99
     },
     "KEEL": {
       "high": 6.185,
@@ -79,7 +73,7 @@
       "sl": 6.05
     },
     "HPE": {
-      "high": 45.99,
+      "high": 46.02,
       "entry": 45.599998474121094,
       "tp": 46.1,
       "sl": 45.32
@@ -106,26 +100,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T18:02:03.396Z",
+  "lastRun": "2026-06-01T18:12:21.061Z",
   "log": [
-    {
-      "time": "2026-06-01T15:09:45.609Z",
-      "type": "SIGNAL",
-      "msg": "JFIN — score 4 | ATR 1.15% | RSI 42",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T15:09:46.650Z",
-      "type": "SIGNAL",
-      "msg": "MOMO — score 5 | ATR 0.30% | RSI 62",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-01T15:09:47.396Z",
-      "type": "SIGNAL",
-      "msg": "TLYS — score 5 | ATR 0.64% | RSI 52",
-      "detail": "Volume Breakout"
-    },
     {
       "time": "2026-06-01T15:09:48.138Z",
       "type": "SIGNAL",
@@ -1304,6 +1280,24 @@
     },
     {
       "time": "2026-06-01T18:02:03.395Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:12:21.034Z",
+      "type": "INFO",
+      "msg": "Account: $100468.54 | 13 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:12:21.061Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T18:12:21.061Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
