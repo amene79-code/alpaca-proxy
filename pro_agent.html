@@ -309,9 +309,21 @@ label{color:#9090c0}
 </div>
 
 <!-- Controls -->
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
   <button class="btn-start" id="startBtn" onclick="startAgent()">▶ START PRO AGENT</button>
   <button class="btn-stop"  id="stopBtn"  onclick="stopAgent()" disabled>■ STOP</button>
+</div>
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+  <button id="monitorBtn" onclick="toggleMonitor()"
+    style="flex:1;font-size:11px;padding:8px;border-radius:8px;border:1px solid #2a2a45;color:#4ade80;background:#0d2a1e;font-weight:600">
+    👁 Monitor Mode (GitHub Actions running)
+  </button>
+  <select id="monitorInterval" style="font-size:10px;padding:7px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+    <option value="30">Every 30s</option>
+    <option value="60" selected>Every 1 min</option>
+    <option value="300">Every 5 min</option>
+  </select>
+  <span id="monitorStatus" style="font-size:10px;color:#555580"></span>
 </div>
 
 <!-- Best signal chart -->
@@ -1824,6 +1836,63 @@ async function renderPositionChart(symbol){
 
 // ── Live P&L refresh (every 30s when agent is running) ────────────
 let plRefreshTimer=null;
+// ═══════════════════════════════════════════════════════════════════
+// MONITOR MODE — for use when GitHub Actions is running the agent
+// ═══════════════════════════════════════════════════════════════════
+let monitorTimer=null, monitorRunning=false;
+
+function toggleMonitor(){
+  if(monitorRunning) stopMonitor();
+  else startMonitor();
+}
+
+async function startMonitor(){
+  const key=document.getElementById("alpacaKey").value.trim();
+  const secret=document.getElementById("alpacaSecret").value.trim();
+  if(!key||!secret){alert("Enter Alpaca credentials first");return;}
+  monitorRunning=true;
+  document.getElementById("monitorBtn").textContent="⏹ Stop Monitor";
+  document.getElementById("monitorBtn").style.background="#1a0505";
+  document.getElementById("monitorBtn").style.color="#f87171";
+  document.getElementById("monitorBtn").style.borderColor="#7f1d1d";
+  saveKeys();
+  // Run immediately then on interval
+  await monitorRefresh();
+  const iv=+document.getElementById("monitorInterval").value*1000;
+  monitorTimer=setInterval(monitorRefresh, iv);
+}
+
+function stopMonitor(){
+  monitorRunning=false;
+  clearInterval(monitorTimer); monitorTimer=null;
+  document.getElementById("monitorBtn").textContent="👁 Monitor Mode (GitHub Actions running)";
+  document.getElementById("monitorBtn").style.background="#0d2a1e";
+  document.getElementById("monitorBtn").style.color="#4ade80";
+  document.getElementById("monitorBtn").style.borderColor="#2a2a45";
+  document.getElementById("monitorStatus").textContent="";
+}
+
+async function monitorRefresh(){
+  try{
+    const [pos,acct]=await Promise.all([
+      alpaca("GET","/v2/positions"),
+      alpaca("GET","/v2/account"),
+    ]);
+    await restoreBracketOrders();
+    updatePositionsUI(pos);
+    updateAccountUI(acct);
+    const t=new Date().toLocaleTimeString("en-GB");
+    document.getElementById("monitorStatus").textContent=`↻ ${t}`;
+    document.getElementById("monitorStatus").style.color="#4ade80";
+  }catch(e){
+    document.getElementById("monitorStatus").textContent=`⚠ ${e.message}`;
+    document.getElementById("monitorStatus").style.color="#f87171";
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// P&L REFRESH
+// ═══════════════════════════════════════════════════════════════════
 function startPlRefresh(){
   if(plRefreshTimer) return;
   plRefreshTimer=setInterval(async()=>{
