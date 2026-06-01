@@ -30,12 +30,6 @@
       "tp": 759.15,
       "sl": 755.25
     },
-    "HOOD": {
-      "high": 91.4699,
-      "entry": 87.73999786376953,
-      "tp": 94.13,
-      "sl": 85.13
-    },
     "AMD": {
       "high": 514.15,
       "entry": 499.94500732421875,
@@ -131,7 +125,6 @@
     "VSCO",
     "CURR",
     "SPY",
-    "HOOD",
     "AMD",
     "COOT",
     "PICS",
@@ -141,38 +134,8 @@
     "MU",
     "INTC"
   ],
-  "lastRun": "2026-06-01T16:24:19.837Z",
+  "lastRun": "2026-06-01T16:26:15.639Z",
   "log": [
-    {
-      "time": "2026-06-01T13:43:42.333Z",
-      "type": "SIGNAL",
-      "msg": "GOTU — score 8 | ATR 0.74% | RSI 69",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-01T13:43:42.869Z",
-      "type": "SIGNAL",
-      "msg": "CURR — score 4 | ATR 0.73% | RSI 73",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T13:43:43.401Z",
-      "type": "SIGNAL",
-      "msg": "MOMO — score 7 | ATR 0.33% | RSI 78",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-01T13:43:44.150Z",
-      "type": "SIGNAL",
-      "msg": "SPWH — score 8 | ATR 0.46% | RSI 39",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-01T13:43:44.680Z",
-      "type": "SIGNAL",
-      "msg": "DG — score 8 | ATR 0.50% | RSI 57",
-      "detail": "Bullish Engulfing, Volume Breakout"
-    },
     {
       "time": "2026-06-01T13:43:44.979Z",
       "type": "SIGNAL",
@@ -1339,6 +1302,36 @@
     },
     {
       "time": "2026-06-01T16:24:19.837Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:26:14.364Z",
+      "type": "INFO",
+      "msg": "Account: $100419.19 | 20 positions open | 18 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:26:14.387Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:26:14.388Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: HOOD @ $89.4899 | High $91.4699 → Stop $89.64 | P&L +$5.37",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:26:15.639Z",
+      "type": "SELL",
+      "msg": "✓ Closed HOOD",
+      "detail": "P&L +$5.37"
+    },
+    {
+      "time": "2026-06-01T16:26:15.639Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
