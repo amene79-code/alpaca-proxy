@@ -25,7 +25,7 @@
       "sl": 142.14
     },
     "MSFT": {
-      "high": 468.68,
+      "high": 468.79,
       "entry": 442.18,
       "tp": 447.7,
       "sl": 439.42
@@ -37,7 +37,7 @@
       "sl": 120.83
     },
     "OKTA": {
-      "high": 126.6,
+      "high": 126.72,
       "entry": 116.83,
       "tp": 120.47,
       "sl": 115.01
@@ -49,7 +49,7 @@
       "sl": 151.49
     },
     "HPE": {
-      "high": 45.31,
+      "high": 45.75,
       "entry": 42.985,
       "tp": 44.17,
       "sl": 42.39
@@ -58,7 +58,7 @@
   "dailyTrades": 0,
   "dailyDate": "2026-06-01",
   "openPositions": [],
-  "lastRun": "2026-06-01T11:28:27.235Z",
+  "lastRun": "2026-06-01T11:39:59.681Z",
   "log": [
     {
       "time": "2026-06-01T11:01:39.613Z",
@@ -266,6 +266,30 @@
     },
     {
       "time": "2026-06-01T11:28:27.235Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:39:59.616Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:39:59.667Z",
+      "type": "INFO",
+      "msg": "Account: $100421.73 | 9 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:39:59.681Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:39:59.681Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
