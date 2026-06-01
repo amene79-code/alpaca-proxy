@@ -1,8 +1,88 @@
 {
-  "trailingStops": {},
+  "trailingStops": {
+    "ADSK": {
+      "high": 235,
+      "entry": 226.38,
+      "tp": null,
+      "sl": null
+    },
+    "AVGO": {
+      "high": 458.64,
+      "entry": 438.41,
+      "tp": null,
+      "sl": null
+    },
+    "COST": {
+      "high": 957.49,
+      "entry": 957.49,
+      "tp": null,
+      "sl": null
+    },
+    "DTE": {
+      "high": 142.87,
+      "entry": 142.53,
+      "tp": null,
+      "sl": null
+    },
+    "HPE": {
+      "high": 46.14,
+      "entry": 42.985,
+      "tp": null,
+      "sl": null
+    },
+    "MSFT": {
+      "high": 465.1,
+      "entry": 442.18,
+      "tp": null,
+      "sl": null
+    },
+    "NOW": {
+      "high": 136.4984,
+      "entry": 121.96,
+      "tp": null,
+      "sl": null
+    },
+    "OKTA": {
+      "high": 126.22,
+      "entry": 116.83,
+      "tp": null,
+      "sl": null
+    },
+    "PLTR": {
+      "high": 161.61,
+      "entry": 152.7,
+      "tp": null,
+      "sl": null
+    }
+  },
   "dailyTrades": 0,
-  "dailyDate": "",
+  "dailyDate": "2026-06-01",
   "openPositions": [],
-  "lastRun": null,
-  "log": []
+  "lastRun": "2026-06-01T11:01:40.082Z",
+  "log": [
+    {
+      "time": "2026-06-01T11:01:39.613Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:01:39.613Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:01:40.082Z",
+      "type": "INFO",
+      "msg": "Account: $100419.34 | 9 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T11:01:40.082Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    }
+  ]
 }
