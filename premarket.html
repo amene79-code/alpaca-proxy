@@ -91,6 +91,7 @@ label{color:#9090c0}
   <div class="micro">🔗 Config</div>
   <div class="g2">
     <div><div class="fl">Proxy URL</div><input id="proxyUrl" value="https://alpaca-proxy-alpha.vercel.app"></div>
+    <div><div class="fl">GitHub Token (for reliable watchlist sync)</div><input id="ghToken" type="password" placeholder="ghp_… (Settings → Developer → Tokens → Contents write)"></div>
     <div><div class="fl">Anthropic API Key</div><input id="anthropicKey" type="password" placeholder="sk-ant-… (for AI synthesis)"></div>
   </div>
   <div class="g2">
@@ -415,27 +416,61 @@ function saveRawToProAgent(){
   const today=new Date().toLocaleDateString("en-GB");
   const data={tickers, date:today, ts:Date.now(), source:"raw_screener"};
 
-  // Save to localStorage for browser agent
+  // 1. Save to localStorage for browser agent
   localStorage.setItem("premarket_watchlist_for_pro", JSON.stringify(data));
   localStorage.setItem("premarket_watchlist", JSON.stringify(data));
 
-  // Save to Vercel endpoint for GitHub Actions agent
+  // 2. Save to Vercel endpoint (best effort)
   const proxy=document.getElementById("proxyUrl")?.value?.trim().replace(/\/$/,"")||"https://alpaca-proxy-alpha.vercel.app";
   fetch(`${proxy}/api/watchlist`,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify(data),
-  }).then(r=>r.json()).then(d=>{
-    if(d.ok){
-      setStatus(`✓ ${tickers.length} tickers saved — localStorage + Vercel (GitHub Actions will pick up at 13:30)`, "#4ade80");
-    }
-  }).catch(()=>{
-    setStatus(`✓ ${tickers.length} tickers saved to localStorage (Vercel sync failed — GitHub Actions will use screener)`, "#f59e0b");
-  });
+  }).catch(()=>{});
 
-  document.getElementById("savedIndicator").style.display="block";
-  document.getElementById("savedList").textContent=
-    `${tickers.length} tickers · ${tickers.slice(0,8).map(t=>t.ticker).join(", ")}${tickers.length>8?"…":""}`;
+  // 3. Save to GitHub repo via API (most reliable — persists in state.json)
+  const ghToken=document.getElementById("ghToken")?.value?.trim();
+  if(ghToken){
+    saveWatchlistToGitHub(ghToken, tickers, today);
+  } else {
+    document.getElementById("savedIndicator").style.display="block";
+    document.getElementById("savedList").textContent=
+      `${tickers.length} tickers · ${tickers.slice(0,8).map(t=>t.ticker).join(", ")}${tickers.length>8?"…":""}`;
+    setStatus(`✓ ${tickers.length} tickers saved to localStorage + Vercel | Add GitHub token for reliable GitHub Actions sync`,"#f59e0b");
+  }
+}
+
+async function saveWatchlistToGitHub(token, tickers, date){
+  try{
+    setStatus("⏳ Saving watchlist to GitHub…","#818cf8");
+    // Read current state.json
+    const r=await fetch("https://api.github.com/repos/amene79-code/alpaca-proxy/contents/state/watchlist.json",{
+      headers:{"Authorization":`token ${token}`,"Accept":"application/vnd.github.v3+json"}
+    });
+    let sha=null;
+    if(r.ok){ const d=await r.json(); sha=d.sha; }
+
+    // Write new watchlist.json
+    const content=btoa(JSON.stringify({tickers,date,ts:Date.now()},null,2));
+    const body={message:`watchlist: ${date} (${tickers.length} tickers)`,content};
+    if(sha) body.sha=sha;
+
+    const w=await fetch("https://api.github.com/repos/amene79-code/alpaca-proxy/contents/state/watchlist.json",{
+      method:"PUT",
+      headers:{"Authorization":`token ${token}`,"Accept":"application/vnd.github.v3+json","Content-Type":"application/json"},
+      body:JSON.stringify(body),
+    });
+    if(w.ok){
+      document.getElementById("savedIndicator").style.display="block";
+      document.getElementById("savedList").textContent=
+        `${tickers.length} tickers · ${tickers.slice(0,8).map(t=>t.ticker).join(", ")}${tickers.length>8?"…":""}`;
+      setStatus(`✓ ${tickers.length} tickers saved to GitHub (state/watchlist.json) — GitHub Actions will use this`,"#4ade80");
+    } else {
+      throw new Error(`GitHub API ${w.status}`);
+    }
+  }catch(e){
+    setStatus(`✓ Saved locally | GitHub sync failed: ${e.message}`,"#f59e0b");
+  }
 }
 
 function filterRanked(){
