@@ -1942,9 +1942,33 @@ function stopPlRefresh(){
 }
 
 async function closePosition(symbol, qty){
-  if(!confirm(`Close ${qty}x ${symbol} at market price?`)) return;
+  // Check if market is open (ET 9:30am-4pm)
+  const now=new Date();
+  const et=new Date(now.toLocaleString("en-US",{timeZone:"America/New_York"}));
+  const etMins=et.getHours()*60+et.getMinutes();
+  const marketOpen=etMins>=570&&etMins<960; // 9:30am-4pm
+  const extendedHours=etMins>=240&&etMins<1200; // 4am-8pm ET
+
+  let orderType="market", limitPrice=null, tif="day";
+
+  if(!marketOpen){
+    if(!extendedHours){
+      alert(`Market is closed (${et.getHours()}:${String(et.getMinutes()).padStart(2,"0")} ET).\nExtended hours: 4am-8pm ET only.`);
+      return;
+    }
+    // Extended hours — need limit order at current price
+    const pos=await alpaca("GET","/v2/positions").catch(()=>[]);
+    const p=(Array.isArray(pos)?pos:[]).find(x=>x.symbol===symbol);
+    const currentPrice=+p?.current_price||0;
+    if(!currentPrice){alert("Could not get current price");return;}
+    limitPrice=+(currentPrice*0.999).toFixed(2); // 0.1% below current to ensure fill
+    orderType="limit"; tif="day";
+    if(!confirm(`Extended hours order:\nClose ${qty}x ${symbol} @ limit $${limitPrice}\n(0.1% below current $${currentPrice})`)) return;
+  } else {
+    if(!confirm(`Close ${qty}x ${symbol} at market price?`)) return;
+  }
+
   try{
-    // Fetch ALL open orders and cancel any for this symbol
     const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100&nested=true").catch(()=>[]);
     const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===symbol);
     for(const o of symbolOrders){
@@ -1952,11 +1976,14 @@ async function closePosition(symbol, qty){
       if(o.legs) for(const leg of o.legs) await alpaca("DELETE",`/v2/orders/${leg.id}`).catch(()=>{});
     }
     if(symbolOrders.length) await new Promise(r=>setTimeout(r,1200));
-    await alpaca("POST","/v2/orders",{
-      symbol, qty:String(qty), side:"sell",
-      type:"market", time_in_force:"day"
-    });
-    log("SELL",`✓ Manually closed ${symbol}`,`${qty} shares at market`);
+
+    const orderBody={symbol, qty:String(qty), side:"sell", type:orderType, time_in_force:tif};
+    if(limitPrice) orderBody.limit_price=String(limitPrice);
+    if(!marketOpen) orderBody.extended_hours=true;
+
+    await alpaca("POST","/v2/orders",orderBody);
+    log("SELL",`✓ Manually closed ${symbol}`,
+      `${qty} shares ${marketOpen?"at market":"extended hours @ $"+limitPrice}`);
     delete trailingStops[symbol];
     await new Promise(r=>setTimeout(r,1500));
     const pos=await alpaca("GET","/v2/positions");
