@@ -5,7 +5,7 @@ on:
     # Every 10 minutes Mon-Fri 13:30-21:00 UTC (covers NYSE 9:30am-4pm ET + pre/after market)
     - cron: '*/10 13-20 * * 1-5'
     # Also run at 13:30 exactly for market open
-    - cron: '30 13 * * 1-5'
+    - cron: '*/10 * * * *'
   workflow_dispatch:  # Allow manual trigger from GitHub UI
 
 jobs:
