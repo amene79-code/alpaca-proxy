@@ -103,7 +103,7 @@
       "sl": 210.38
     },
     "PVH": {
-      "high": 92.11,
+      "high": 92.2,
       "entry": 92.09500122070312,
       "tp": 92.47,
       "sl": 91.89
@@ -141,26 +141,8 @@
     "MU",
     "INTC"
   ],
-  "lastRun": "2026-06-01T16:22:58.506Z",
+  "lastRun": "2026-06-01T16:23:16.194Z",
   "log": [
-    {
-      "time": "2026-06-01T13:43:37.671Z",
-      "type": "SIGNAL",
-      "msg": "SPCE — score 4 | ATR 4.56% | RSI 74",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T13:43:37.923Z",
-      "type": "SIGNAL",
-      "msg": "MU — score 7 | ATR 0.99% | RSI 93",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-01T13:43:38.211Z",
-      "type": "SIGNAL",
-      "msg": "HPE — score 7 | ATR 0.98% | RSI 77",
-      "detail": "Volume Breakout, Gap Up"
-    },
     {
       "time": "2026-06-01T13:43:38.466Z",
       "type": "SIGNAL",
@@ -1339,6 +1321,24 @@
     },
     {
       "time": "2026-06-01T16:22:58.506Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:23:16.128Z",
+      "type": "INFO",
+      "msg": "Account: $100414.32 | 20 positions open | 18 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:23:16.193Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:23:16.194Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
