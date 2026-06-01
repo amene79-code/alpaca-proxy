@@ -141,26 +141,8 @@
     "MU",
     "INTC"
   ],
-  "lastRun": "2026-06-01T16:22:39.780Z",
+  "lastRun": "2026-06-01T16:22:58.506Z",
   "log": [
-    {
-      "time": "2026-06-01T13:43:36.920Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T13:43:37.023Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
-    },
-    {
-      "time": "2026-06-01T13:43:37.620Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
     {
       "time": "2026-06-01T13:43:37.671Z",
       "type": "SIGNAL",
@@ -1339,6 +1321,24 @@
     },
     {
       "time": "2026-06-01T16:22:39.780Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:22:58.484Z",
+      "type": "INFO",
+      "msg": "Account: $100410.94 | 20 positions open | 18 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:22:58.506Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:22:58.506Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
