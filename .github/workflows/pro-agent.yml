@@ -37,6 +37,9 @@ jobs:
           ALPACA_URL:    ${{ secrets.ALPACA_URL }}
         run: node scripts/pro-agent.js
 
+      - name: Wait 10 minutes before next cycle
+        run: sleep 600
+
       - name: Commit state changes
         run: |
           git config user.name  "Pro Agent Bot"
