@@ -1,13 +1,13 @@
 {
   "trailingStops": {
     "NVDA": {
-      "high": 222.12,
+      "high": 222.79,
       "entry": 219.61700439453125,
       "tp": 225.6,
       "sl": 217.22
     },
     "SPWH": {
-      "high": 1.365,
+      "high": 1.3699,
       "entry": 1.3200000524520874,
       "tp": 1.37,
       "sl": 1.27
@@ -25,7 +25,7 @@
       "sl": 3.16
     },
     "SPY": {
-      "high": 758.43,
+      "high": 758.71,
       "entry": 756.469970703125,
       "tp": 759.15,
       "sl": 755.25
@@ -84,12 +84,6 @@
       "tp": 111.87,
       "sl": 109.99
     },
-    "HQL": {
-      "high": 17.76,
-      "entry": 17.76,
-      "tp": 18.09,
-      "sl": 17.59
-    },
     "KEEL": {
       "high": 6.185,
       "entry": 6.139999866485596,
@@ -97,7 +91,7 @@
       "sl": 6.05
     },
     "HPE": {
-      "high": 45.725,
+      "high": 45.795,
       "entry": 45.599998474121094,
       "tp": 46.1,
       "sl": 45.32
@@ -124,26 +118,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T17:31:20.648Z",
+  "lastRun": "2026-06-01T17:41:32.112Z",
   "log": [
-    {
-      "time": "2026-06-01T15:09:40.973Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: META @ $611.5 | High $633.255 → Stop $620.59 | P&L +$21.75",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T15:09:41.003Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T15:09:41.128Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
-    },
     {
       "time": "2026-06-01T15:09:41.682Z",
       "type": "INFO",
@@ -1322,6 +1298,24 @@
     },
     {
       "time": "2026-06-01T17:31:20.648Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:41:32.058Z",
+      "type": "INFO",
+      "msg": "Account: $100454.78 | 16 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:41:32.112Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:41:32.112Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
