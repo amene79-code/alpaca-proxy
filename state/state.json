@@ -1,6 +1,5 @@
 {
   "trailingStops": {
-    
     "NVDA": {
       "high": 221.95,
       "entry": 219.61700439453125,
@@ -98,7 +97,7 @@
       "sl": 158.38
     },
     "SAIC": {
-      "high": 122.81,
+      "high": 122.94,
       "entry": 122.7,
       "tp": 129.89,
       "sl": 119.1
@@ -114,6 +113,12 @@
       "entry": 1.894285,
       "tp": 2.46,
       "sl": 1.61
+    },
+    "META": {
+      "high": 633.255,
+      "entry": 633.255,
+      "tp": 651.19,
+      "sl": 624.29
     }
   },
   "dailyTrades": 15,
@@ -134,38 +139,8 @@
     "MOMO",
     "TLYS"
   ],
-  "lastRun": "2026-06-01T16:08:15.957Z",
+  "lastRun": "2026-06-01T16:09:19.249Z",
   "log": [
-    {
-      "time": "2026-06-01T11:24:27.928Z",
-      "type": "INFO",
-      "msg": "Restored bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:24:27.928Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: HPE @ $45.4 | High $46.46 → Stop $45.53 | P&L +$14.49",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:24:29.352Z",
-      "type": "SELL",
-      "msg": "✓ Closed HPE",
-      "detail": "P&L +$14.49"
-    },
-    {
-      "time": "2026-06-01T11:24:29.352Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:28:24.148Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
     {
       "time": "2026-06-01T11:28:24.360Z",
       "type": "INFO",
@@ -1332,6 +1307,36 @@
     },
     {
       "time": "2026-06-01T16:08:15.957Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:09:18.799Z",
+      "type": "INFO",
+      "msg": "Account: $100436.48 | 20 positions open | 15 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:09:18.799Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for META",
+      "detail": "Entry $633.25 | Current $613.67 | High set to $633.25"
+    },
+    {
+      "time": "2026-06-01T16:09:18.843Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:09:19.049Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for META",
+      "detail": "Entry $633.25 | High $633.25 | ATR $5.98 | TP $651.19 | SL $624.29"
+    },
+    {
+      "time": "2026-06-01T16:09:19.249Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
