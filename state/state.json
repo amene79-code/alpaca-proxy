@@ -7,13 +7,13 @@
       "sl": 217.22
     },
     "SPWH": {
-      "high": 1.345,
+      "high": 1.365,
       "entry": 1.3200000524520874,
       "tp": 1.37,
       "sl": 1.27
     },
     "VSCO": {
-      "high": 54.65,
+      "high": 54.8934,
       "entry": 53.470001220703125,
       "tp": 55.96,
       "sl": 52.43
@@ -25,7 +25,7 @@
       "sl": 3.16
     },
     "SPY": {
-      "high": 757.87,
+      "high": 758.43,
       "entry": 756.469970703125,
       "tp": 759.15,
       "sl": 755.25
@@ -55,7 +55,7 @@
       "sl": 32.39
     },
     "MGM": {
-      "high": 50.55,
+      "high": 50.645,
       "entry": 50.55,
       "tp": 53.45,
       "sl": 49.1
@@ -73,7 +73,7 @@
       "sl": 119.1
     },
     "TWLO": {
-      "high": 223.57,
+      "high": 224.79,
       "entry": 216.36,
       "tp": 229.42,
       "sl": 210.38
@@ -91,7 +91,7 @@
       "sl": 17.59
     },
     "KEEL": {
-      "high": 6.179,
+      "high": 6.185,
       "entry": 6.139999866485596,
       "tp": 6.3,
       "sl": 6.05
@@ -124,26 +124,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T17:21:03.071Z",
+  "lastRun": "2026-06-01T17:31:20.648Z",
   "log": [
-    {
-      "time": "2026-06-01T14:24:25.377Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 1x AMD",
-      "detail": "ID: 4a581975-9355-4f98-adf5-601a14f37302 | R:R 2.2:1"
-    },
-    {
-      "time": "2026-06-01T15:09:40.955Z",
-      "type": "INFO",
-      "msg": "Account: $100446.72 | 10 positions open | 10 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T15:09:40.973Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
     {
       "time": "2026-06-01T15:09:40.973Z",
       "type": "TRAIL",
@@ -1322,6 +1304,24 @@
     },
     {
       "time": "2026-06-01T17:21:03.071Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:31:20.632Z",
+      "type": "INFO",
+      "msg": "Account: $100468.49 | 17 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:31:20.648Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T17:31:20.648Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
