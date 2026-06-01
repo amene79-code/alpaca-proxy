@@ -399,26 +399,43 @@ function saveRawToProAgent(){
   }
   const rankFilter=document.getElementById("rankFilter")?.value||"all";
   let list=scanData.rankedTickers||[];
-  if(rankFilter==="social") list=list.filter(t=>t.sources.some(s=>s.includes("Reddit")||s.includes("Stocktwits")));
+  if(rankFilter==="social")    list=list.filter(t=>t.sources.some(s=>s.includes("Reddit")||s.includes("Stocktwits")));
   if(rankFilter==="premarket") list=list.filter(t=>t.sources.some(s=>s.includes("Pre-market")));
-  if(rankFilter==="multi") list=list.filter(t=>t.sources.length>=2);
+  if(rankFilter==="multi")     list=list.filter(t=>t.sources.length>=2);
 
-  const top=list.map(t=>({
-    ticker:t.ticker,
-    strategy:`Score ${t.score} — ${t.sources.join(", ")}`,
-    direction:"bullish",
-    confidence:Math.min(90,Math.round(t.score*10)),
+  const tickers=list.map(t=>({
+    ticker:     t.ticker,
+    score:      t.score,
+    sources:    t.sources,
+    strategy:   `Score ${t.score} — ${t.sources.join(", ")}`,
+    direction:  "bullish",
+    confidence: Math.min(90, Math.round(t.score*10)),
   }));
 
   const today=new Date().toLocaleDateString("en-GB");
-  const data={tickers:top, date:today, ts:Date.now(), source:"raw_screener"};
+  const data={tickers, date:today, ts:Date.now(), source:"raw_screener"};
+
+  // Save to localStorage for browser agent
   localStorage.setItem("premarket_watchlist_for_pro", JSON.stringify(data));
   localStorage.setItem("premarket_watchlist", JSON.stringify(data));
 
+  // Save to Vercel endpoint for GitHub Actions agent
+  const proxy=document.getElementById("proxyUrl")?.value?.trim().replace(/\/$/,"")||"https://alpaca-proxy-alpha.vercel.app";
+  fetch(`${proxy}/api/watchlist`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify(data),
+  }).then(r=>r.json()).then(d=>{
+    if(d.ok){
+      setStatus(`✓ ${tickers.length} tickers saved — localStorage + Vercel (GitHub Actions will pick up at 13:30)`, "#4ade80");
+    }
+  }).catch(()=>{
+    setStatus(`✓ ${tickers.length} tickers saved to localStorage (Vercel sync failed — GitHub Actions will use screener)`, "#f59e0b");
+  });
+
   document.getElementById("savedIndicator").style.display="block";
   document.getElementById("savedList").textContent=
-    `${top.length} tickers saved (no AI) · ${top.slice(0,8).map(t=>t.ticker).join(", ")}${top.length>8?"…":""}`;
-  setStatus(`✓ All ${top.length} tickers saved to Pro Agent — no Claude credits used`,"#4ade80");
+    `${tickers.length} tickers · ${tickers.slice(0,8).map(t=>t.ticker).join(", ")}${tickers.length>8?"…":""}`;
 }
 
 function filterRanked(){
