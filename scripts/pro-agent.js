@@ -14,15 +14,16 @@ const STATE_FILE = path.join(__dirname, '..', 'state', 'state.json');
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 const CFG = {
-  size:       500,    // $ per position
-  maxPos:     20,     // max open positions
-  maxDaily:   40,     // max trades per day
-  atrSL:      1.5,    // ATR × SL multiplier
-  atrTP:      3.0,    // ATR × TP multiplier
-  trail:      0.02,   // 2% trailing stop
-  minScore:   2,      // min pattern score
-  maxATRpct:  0.1,    // min ATR%
-  earningsBuf:3,      // days buffer around earnings
+  size:        500,   // $ per position
+  maxPos:      20,    // max open positions
+  maxDaily:    40,    // max trades per day
+  maxPerCycle: 10,     // max new trades per cycle
+  atrSL:       1.5,   // ATR × SL multiplier
+  atrTP:       3.0,   // ATR × TP multiplier
+  trail:       0.02,  // 2% trailing stop
+  minScore:    2,     // min pattern score
+  maxATRpct:   0.1,   // min ATR%
+  earningsBuf: 3,     // days buffer around earnings
 };
 
 // ─── Alpaca API ───────────────────────────────────────────────────────────────
@@ -570,7 +571,7 @@ async function main() {
   const slotsAvailable = Math.min(
     CFG.maxPos - positions.length,
     CFG.maxDaily - state.dailyTrades,
-    5 // max per cycle
+    CFG.maxPerCycle
   );
 
   for (const signal of signals.slice(0, slotsAvailable)) {
