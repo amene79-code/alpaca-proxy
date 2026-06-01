@@ -407,19 +407,22 @@ async function main() {
     addLog(state, 'INFO', `Could not restore bracket orders: ${e.message}`);
   }
 
-  // For positions still missing TP/SL, estimate from entry + ATR
+  // For positions still missing TP/SL, estimate from current price + ATR
   for (const p of positions) {
     const ts = state.trailingStops[p.symbol];
     if (!ts || (ts.tp && ts.sl)) continue;
     try {
-      const candles = await getCandles(p.symbol, '5d', '15m');
+      const candles = await getCandles(p.symbol, '1mo', '1h');
       if (candles && candles.length > 14) {
-        const atr = calcATR(candles, 14);
+        const atr  = calcATR(candles, 14);
         const entry = ts.entry || +p.avg_entry_price;
-        if (!ts.tp) ts.tp = +(entry + atr * CFG.atrTP).toFixed(2);
-        if (!ts.sl) ts.sl = +(entry - atr * CFG.atrSL).toFixed(2);
+        const high  = ts.high  || +p.current_price;
+        // TP must always be above current price — use high + ATR×3
+        if (!ts.tp) ts.tp = +(high + atr * 3).toFixed(2);
+        // SL must always be below entry — use entry - ATR×1.5
+        if (!ts.sl) ts.sl = +(entry - atr * 1.5).toFixed(2);
         addLog(state, 'INFO', `Estimated TP/SL for ${p.symbol}`,
-          `Entry $${entry.toFixed(2)} | ATR $${atr.toFixed(2)} | TP $${ts.tp} | SL $${ts.sl}`);
+          `Entry $${entry.toFixed(2)} | High $${high.toFixed(2)} | ATR $${atr.toFixed(2)} | TP $${ts.tp} | SL $${ts.sl}`);
       }
     } catch {}
     await sleep(200);
@@ -451,6 +454,9 @@ async function main() {
 
     const stop = +(ts.high * (1 - CFG.trail)).toFixed(2);
     const pl   = +p.unrealized_pl || 0;
+
+    // Never trigger trailing stop if price is above TP (let bracket handle it)
+    if (ts.tp && price >= ts.tp) continue;
 
     if (price <= stop) {
       addLog(state, 'TRAIL',
