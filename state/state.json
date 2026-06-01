@@ -66,12 +66,6 @@
       "tp": 4.81,
       "sl": 4.4
     },
-    "SPCE": {
-      "high": 7.4302,
-      "entry": 6.585000038146973,
-      "tp": 9.84,
-      "sl": 5.16
-    },
     "ARM": {
       "high": 420.94,
       "entry": 418.24,
@@ -115,7 +109,7 @@
       "sl": 119.1
     },
     "TWLO": {
-      "high": 218.03,
+      "high": 218.23,
       "entry": 216.36,
       "tp": 229.42,
       "sl": 210.38
@@ -137,41 +131,10 @@
     "COOT",
     "PICS",
     "MOMO",
-    "TLYS",
-    "SPCE"
+    "TLYS"
   ],
-  "lastRun": "2026-06-01T15:59:04.204Z",
+  "lastRun": "2026-06-01T16:02:22.418Z",
   "log": [
-    {
-      "time": "2026-06-01T11:04:00.931Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:04:01.277Z",
-      "type": "INFO",
-      "msg": "Account: $100422.96 | 9 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:04:01.277Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:10:28.447Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T11:10:28.911Z",
-      "type": "INFO",
-      "msg": "Account: $100425.58 | 9 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-01T11:10:28.972Z",
       "type": "INFO",
@@ -1338,6 +1301,36 @@
     },
     {
       "time": "2026-06-01T15:59:04.204Z",
+      "type": "INFO",
+      "msg": "Position limit reached (20/20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:02:21.110Z",
+      "type": "INFO",
+      "msg": "Account: $100444.54 | 20 positions open | 15 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:02:21.139Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:02:21.139Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: SPCE @ $7.235 | High $7.4302 → Stop $7.28 | P&L +$4.30",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T16:02:22.418Z",
+      "type": "SELL",
+      "msg": "✓ Closed SPCE",
+      "detail": "P&L +$4.30"
+    },
+    {
+      "time": "2026-06-01T16:02:22.418Z",
       "type": "INFO",
       "msg": "Position limit reached (20/20)",
       "detail": ""
