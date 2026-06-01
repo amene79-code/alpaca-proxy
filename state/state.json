@@ -6,12 +6,6 @@
       "tp": 225.6,
       "sl": 217.22
     },
-    "VSCO": {
-      "high": 55.769,
-      "entry": 53.470001220703125,
-      "tp": 55.96,
-      "sl": 52.43
-    },
     "CURR": {
       "high": 3.2200000286102295,
       "entry": 3.2200000286102295,
@@ -31,7 +25,7 @@
       "sl": 0.58
     },
     "GTLB": {
-      "high": 33.84,
+      "high": 33.87,
       "entry": 33.31,
       "tp": 35.19,
       "sl": 32.39
@@ -62,7 +56,6 @@
     "NVDA",
     "HQL",
     "SPWH",
-    "VSCO",
     "CURR",
     "SPY",
     "AMD",
@@ -76,38 +69,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-01T19:23:57.800Z",
+  "lastRun": "2026-06-01T19:34:11.208Z",
   "log": [
-    {
-      "time": "2026-06-01T15:43:25.841Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for GTLB",
-      "detail": "Entry $33.31 | Current $33.35 | High set to $33.35"
-    },
-    {
-      "time": "2026-06-01T15:43:25.841Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for MGM",
-      "detail": "Entry $50.55 | Current $50.09 | High set to $50.55"
-    },
-    {
-      "time": "2026-06-01T15:43:25.841Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for RVMD",
-      "detail": "Entry $162.09 | Current $162.47 | High set to $162.47"
-    },
-    {
-      "time": "2026-06-01T15:43:25.841Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for SAIC",
-      "detail": "Entry $122.70 | Current $122.28 | High set to $122.70"
-    },
-    {
-      "time": "2026-06-01T15:43:25.841Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for TWLO",
-      "detail": "Entry $216.36 | Current $217.46 | High set to $217.46"
-    },
     {
       "time": "2026-06-01T15:43:25.918Z",
       "type": "INFO",
@@ -1274,6 +1237,36 @@
     },
     {
       "time": "2026-06-01T19:23:57.800Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T19:34:09.664Z",
+      "type": "INFO",
+      "msg": "Account: $100466.45 | 9 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T19:34:09.751Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T19:34:09.751Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: VSCO @ $54.485 | High $55.769 → Stop $54.65 | P&L +$8.69",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T19:34:11.208Z",
+      "type": "SELL",
+      "msg": "✓ Closed VSCO",
+      "detail": "P&L +$8.69"
+    },
+    {
+      "time": "2026-06-01T19:34:11.208Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
