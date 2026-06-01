@@ -391,16 +391,22 @@ async function main() {
   try {
     const openOrders = await alpaca('GET', '/v2/orders?status=open&limit=200&nested=true');
     if (Array.isArray(openOrders)) {
+      let tpFound = 0, slFound = 0;
       for (const o of openOrders) {
         const sym = o.symbol;
         if (!state.trailingStops[sym]) continue;
         const legs = o.legs || [];
+        // Debug: log first order's structure
+        if (sym === Object.keys(state.trailingStops)[0]) {
+          addLog(state, 'INFO', `DEBUG ${sym} order_class:${o.order_class} legs:${legs.length}`,
+            legs.map(l=>`type:${l.type} side:${l.side} limit:${l.limit_price} stop:${l.stop_price}`).join(' | '));
+        }
         for (const leg of legs) {
-          if (leg.type === 'limit' && leg.side === 'sell') state.trailingStops[sym].tp = +leg.limit_price;
-          if (leg.type === 'stop'  && leg.side === 'sell') state.trailingStops[sym].sl = +leg.stop_price;
+          if (leg.type === 'limit' && leg.side === 'sell') { state.trailingStops[sym].tp = +leg.limit_price; tpFound++; }
+          if (leg.type === 'stop'  && leg.side === 'sell') { state.trailingStops[sym].sl = +leg.stop_price; slFound++; }
         }
       }
-      addLog(state, 'INFO', `Restored bracket orders for ${Object.keys(state.trailingStops).length} positions`);
+      addLog(state, 'INFO', `Restored bracket orders — TP found: ${tpFound}, SL found: ${slFound}`);
     }
   } catch (e) {
     addLog(state, 'INFO', `Could not restore bracket orders: ${e.message}`);
