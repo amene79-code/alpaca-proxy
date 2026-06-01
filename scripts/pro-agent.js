@@ -396,20 +396,33 @@ async function main() {
         const sym = o.symbol;
         if (!state.trailingStops[sym]) continue;
         const legs = o.legs || [];
-        // Debug: log first order's structure
-        if (sym === Object.keys(state.trailingStops)[0]) {
-          addLog(state, 'INFO', `DEBUG ${sym} order_class:${o.order_class} legs:${legs.length}`,
-            legs.map(l=>`type:${l.type} side:${l.side} limit:${l.limit_price} stop:${l.stop_price}`).join(' | '));
-        }
         for (const leg of legs) {
           if (leg.type === 'limit' && leg.side === 'sell') { state.trailingStops[sym].tp = +leg.limit_price; tpFound++; }
-          if (leg.type === 'stop'  && leg.side === 'sell') { state.trailingStops[sym].sl = +leg.stop_price; slFound++; }
+          if (leg.type === 'stop'  && leg.side === 'sell') { state.trailingStops[sym].sl = +leg.stop_price;  slFound++; }
         }
       }
-      addLog(state, 'INFO', `Restored bracket orders — TP found: ${tpFound}, SL found: ${slFound}`);
+      addLog(state, 'INFO', `Bracket orders — TP found: ${tpFound}, SL found: ${slFound}`);
     }
   } catch (e) {
     addLog(state, 'INFO', `Could not restore bracket orders: ${e.message}`);
+  }
+
+  // For positions still missing TP/SL, estimate from entry + ATR
+  for (const p of positions) {
+    const ts = state.trailingStops[p.symbol];
+    if (!ts || (ts.tp && ts.sl)) continue;
+    try {
+      const candles = await getCandles(p.symbol, '5d', '15m');
+      if (candles && candles.length > 14) {
+        const atr = calcATR(candles, 14);
+        const entry = ts.entry || +p.avg_entry_price;
+        if (!ts.tp) ts.tp = +(entry + atr * CFG.atrTP).toFixed(2);
+        if (!ts.sl) ts.sl = +(entry - atr * CFG.atrSL).toFixed(2);
+        addLog(state, 'INFO', `Estimated TP/SL for ${p.symbol}`,
+          `Entry $${entry.toFixed(2)} | ATR $${atr.toFixed(2)} | TP $${ts.tp} | SL $${ts.sl}`);
+      }
+    } catch {}
+    await sleep(200);
   }
 
   // Now run trailing stop checks
