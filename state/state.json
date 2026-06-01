@@ -34,7 +34,7 @@
   "dailyTrades": 0,
   "dailyDate": "2026-06-01",
   "openPositions": [],
-  "lastRun": "2026-06-01T12:37:50.037Z",
+  "lastRun": "2026-06-01T12:41:58.356Z",
   "log": [
     {
       "time": "2026-06-01T11:01:39.613Z",
@@ -380,6 +380,30 @@
     },
     {
       "time": "2026-06-01T12:37:50.037Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T12:41:58.117Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T12:41:58.328Z",
+      "type": "INFO",
+      "msg": "Account: $100419.54 | 5 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T12:41:58.356Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-01T12:41:58.356Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
