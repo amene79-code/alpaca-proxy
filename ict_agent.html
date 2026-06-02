@@ -1268,6 +1268,13 @@ async function _runCycle(){
   if(!tickers.length){log("ERROR","No tickers to scan");scheduleNext();return;}
 
   const existingSymbols=new Set((Array.isArray(positions)?positions:[]).map(p=>p.symbol));
+  // Also skip tickers with pending orders
+  try{
+    const pending=await alpaca("GET","/v2/orders?status=open&limit=100");
+    if(Array.isArray(pending)) pending.forEach(o=>existingSymbols.add(o.symbol));
+  }catch{}
+  // Also skip tickers already in ICT positions list
+  getICTPositions().forEach(t=>existingSymbols.add(t));
 
   donePhase("screen"); setPhase("struct");
   log("ICT",`Scanning ${tickers.length} tickers for ICT setups`);
@@ -1590,7 +1597,7 @@ async function loadICTHistory(){
         return metas.some(m=>{
           const metaTime=new Date(m.date).getTime();
           const tradeTime=new Date(t.time).getTime();
-          return Math.abs(metaTime-tradeTime)<300000; // within 5 minutes
+          return Math.abs(metaTime-tradeTime)<7200000; // within 2 hours
         });
       }
       return false;
@@ -1916,18 +1923,3 @@ async function startAgent(){
   await runCycle();
 }
 
-function stopAgent(){
-  RUNNING=false; clearInterval(countdownTimer); stopPlRefresh();
-  document.getElementById("startBtn").disabled=false;
-  document.getElementById("stopBtn").disabled=true;
-  document.getElementById("configPanel").style.opacity="1";
-  document.getElementById("configPanel").style.pointerEvents="auto";
-  document.getElementById("scanCountdown").style.display="none";
-  document.getElementById("statusPill").className="kz-inactive";
-  document.getElementById("statusText").textContent="Offline";
-  setPhase("screen");
-  log("INFO","Agent stopped");
-}
-</script>
-</body>
-</html>
