@@ -16,8 +16,8 @@ const STATE_FILE = path.join(__dirname, '..', 'state', 'state.json');
 const CFG = {
   size:        500,   // $ per position
   maxPos:      50,    // max open positions
-  maxDaily:    100,    // max trades per day
-  maxPerCycle: 10,     // max new trades per cycle
+  maxDaily:    100,   // max trades per day
+  maxPerCycle: 10,    // max new trades per cycle
   atrSL:       1.5,   // ATR × SL multiplier
   atrTP:       3.0,   // ATR × TP multiplier
   trail:       0.02,  // 2% trailing stop
@@ -25,7 +25,7 @@ const CFG = {
   maxATRpct:   0.1,   // min ATR%
   earningsBuf: 3,     // days buffer around earnings
   skipFirst15: false, // skip first 15 min after market open (9:30-9:45 ET)
-  skipLast30:  true, // skip last 30 min before close (3:30-4:00 ET)
+  skipLast30:  true,  // skip last 30 min before close (3:30-4:00 ET)
 };
 
 // ─── Alpaca API ───────────────────────────────────────────────────────────────
@@ -164,6 +164,16 @@ function calcRSI(candles, period = 14) {
   return 100 - 100 / (1 + rs);
 }
 
+function calcEMA(closes, period) {
+  if (closes.length < period) return closes[closes.length - 1] || 0;
+  const k = 2 / (period + 1);
+  let ema = closes.slice(0, period).reduce((s, v) => s + v, 0) / period;
+  for (let i = period; i < closes.length; i++) {
+    ema = closes[i] * k + ema * (1 - k);
+  }
+  return ema;
+}
+
 function calcVWAP(candles) {
   let cumTPV = 0, cumVol = 0;
   const today = new Date().toDateString();
@@ -239,6 +249,29 @@ async function analyzeSignal(ticker) {
   const price  = candles[candles.length - 1].close;
   const atr    = calcATR(candles, 14);
   const atrPct = atr / price * 100;
+
+  // ── Filter 1: Minimum price $5 ──────────────────────────────────────────
+  if (price < 5) return null;
+
+  // ── Filter 2: Minimum average daily volume 1M ───────────────────────────
+  // Use daily candles for volume check
+  const dailyCandles = await getCandles(ticker, '1mo', '1d');
+  if (!dailyCandles || dailyCandles.length < 5) return null;
+  const avgDailyVol = dailyCandles.slice(-20).reduce((s, c) => s + (c.volume || 0), 0) / 
+                      Math.min(20, dailyCandles.length);
+  if (avgDailyVol < 1_000_000) return null;
+
+  // ── Filter 3: Relative volume > 2× ──────────────────────────────────────
+  const todayVol = dailyCandles[dailyCandles.length - 1]?.volume || 0;
+  const relVol   = avgDailyVol > 0 ? todayVol / avgDailyVol : 0;
+  if (relVol < 1.5) return null; // at least 1.5× avg volume today
+
+  // ── Filter 4: EMA alignment — price above 9 EMA and 20 EMA ─────────────
+  const closes = candles.map(c => c.close);
+  const ema9  = calcEMA(closes, 9);
+  const ema20 = calcEMA(closes, 20);
+  if (price < ema9 || price < ema20 || ema9 < ema20) return null; // must be in uptrend
+
   if (atrPct < CFG.maxATRpct) return null;
 
   const rsi      = calcRSI(candles, 14);
@@ -251,13 +284,10 @@ async function analyzeSignal(ticker) {
   let score = bullish.reduce((s, p) => s + p.strength, 0);
   if (rsi < 70) score += 1;
   if (price > vwap) score += 1;
+  if (relVol > 2)   score += 1; // bonus for strong relative volume
+  if (relVol > 3)   score += 1; // extra bonus for very strong volume
 
-  // Average volume check
-  const recentVol = candles.slice(-5).reduce((s, c) => s + (c.volume || 0), 0) / 5;
-  const avgVol    = candles.slice(-30).reduce((s, c) => s + (c.volume || 0), 0) / 30;
-  if (recentVol > avgVol * 1.5) score += 1;
-
-  return { ticker, price, atr, atrPct, rsi, vwap, patterns: bullish, score };
+  return { ticker, price, atr, atrPct, rsi, vwap, patterns: bullish, score, relVol };
 }
 
 // ─── Dynamic SL/TP ────────────────────────────────────────────────────────────
@@ -605,7 +635,7 @@ async function main() {
       const signal = await analyzeSignal(ticker);
       if (signal && signal.score >= CFG.minScore) {
         addLog(state, 'SIGNAL',
-          `${ticker} — score ${signal.score} | ATR ${signal.atrPct.toFixed(2)}% | RSI ${signal.rsi.toFixed(0)}`,
+          `${ticker} — score ${signal.score} | ATR ${signal.atrPct.toFixed(2)}% | RSI ${signal.rsi.toFixed(0)} | RelVol ${(signal.relVol||0).toFixed(1)}×`,
           signal.patterns.map(p => p.name).join(', ')
         );
         signals.push(signal);
