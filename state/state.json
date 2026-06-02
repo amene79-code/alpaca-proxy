@@ -56,13 +56,13 @@
       "sl": 104.64
     },
     "BSX": {
-      "high": 47.685,
+      "high": 47.695,
       "entry": 47.5099983215332,
       "tp": 48.38,
       "sl": 47.19
     },
     "AMZN": {
-      "high": 256.86,
+      "high": 257.4618,
       "entry": 255.46,
       "tp": 263.23,
       "sl": 251.58
@@ -79,12 +79,6 @@
       "tp": 462.73,
       "sl": 438.41
     },
-    "MSTR": {
-      "high": 138.92,
-      "entry": 138.92,
-      "tp": 151.74,
-      "sl": 132.51
-    },
     "YB": {
       "high": 15.39,
       "entry": 15.39,
@@ -92,7 +86,7 @@
       "sl": 14.74
     },
     "LPTH": {
-      "high": 15.45,
+      "high": 15.58,
       "entry": 15.210000038146973,
       "tp": 16.59,
       "sl": 14.65
@@ -140,26 +134,8 @@
     "LPTH",
     "RKLB"
   ],
-  "lastRun": "2026-06-02T14:12:50.919Z",
+  "lastRun": "2026-06-02T14:23:07.538Z",
   "log": [
-    {
-      "time": "2026-06-02T13:10:19.890Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: SPCE @ $6.6885 | High $7.380833 → Stop $7.23 | P&L $-11.77",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T13:10:21.312Z",
-      "type": "SELL",
-      "msg": "✓ Closed SPCE",
-      "detail": "P&L $-11.77"
-    },
-    {
-      "time": "2026-06-02T13:10:21.312Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T13:20:42.922Z",
       "type": "INFO",
@@ -1341,6 +1317,24 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 3x RKLB",
       "detail": "ID: afda06c5-e72c-40d4-8f1c-99a003bccff5 | R:R 2.2:1"
+    },
+    {
+      "time": "2026-06-02T14:23:07.485Z",
+      "type": "INFO",
+      "msg": "Account: $99708.45 | 16 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T14:23:07.507Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T14:23:07.538Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
     }
   ]
 }
