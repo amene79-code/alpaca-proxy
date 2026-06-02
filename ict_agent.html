@@ -1549,14 +1549,22 @@ async function loadICTHistory(){
     const currentEquity=acct?+acct.equity:null;
 
     // Match trades — show ALL trades, tag ICT ones
-    // Fetch orders to get client_order_id — not available in fills
+    // Fetch ALL orders to get client_order_id — paginate
     let orderMap={};
     try{
-      const orders=await alpaca("GET","/v2/orders?status=all&limit=500&nested=false");
-      if(Array.isArray(orders)){
-        for(const o of orders) orderMap[o.id]=o.client_order_id||"";
-        log("ICT",`Fetched ${orders.length} orders for tag lookup`);
-      }
+      let allOrders=[], orderToken=null, orderPages=0;
+      do{
+        const url=orderToken
+          ?`/v2/orders?status=all&limit=500&after=${orderToken}&nested=false`
+          :"/v2/orders?status=all&limit=500&nested=false";
+        const batch=await alpaca("GET",url);
+        if(!Array.isArray(batch)||!batch.length) break;
+        for(const o of batch) orderMap[o.id]=o.client_order_id||"";
+        orderToken=batch.length===500?batch[batch.length-1].submitted_at:null;
+        orderPages++;
+        allOrders=[...allOrders,...batch];
+      } while(orderToken&&orderPages<10);
+      log("ICT",`Fetched ${allOrders.length} orders for tag lookup (${orderPages} pages)`);
     }catch(e){ log("ICT","Could not fetch orders: "+e.message); }
 
     // Enrich activities with client_order_id from order lookup
