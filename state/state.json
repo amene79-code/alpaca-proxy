@@ -14,7 +14,7 @@
       "sl": 0.61
     },
     "AVGO": {
-      "high": 482.53,
+      "high": 483.7861,
       "entry": 479.4800109863281,
       "tp": 493.09,
       "sl": 473.43
@@ -25,12 +25,6 @@
       "tp": 12.75,
       "sl": 11.76
     },
-    "ASTS": {
-      "high": 116.3319,
-      "entry": 113.4800033569336,
-      "tp": 117.73,
-      "sl": 111.22
-    },
     "SMCI": {
       "high": 50.5,
       "entry": 49.38999938964844,
@@ -38,7 +32,7 @@
       "sl": 48.32
     },
     "DG": {
-      "high": 107.83,
+      "high": 108,
       "entry": 106.83999633789062,
       "tp": 112.93,
       "sl": 104.64
@@ -74,7 +68,7 @@
       "sl": 15.14
     },
     "NOW": {
-      "high": 126.33,
+      "high": 126.98,
       "entry": 125.3311996459961,
       "tp": 127.76,
       "sl": 124.21
@@ -91,12 +85,6 @@
       "tp": 439.66,
       "sl": 415.85
     },
-    "RENT": {
-      "high": 3.880000114440918,
-      "entry": 3.880000114440918,
-      "tp": 3.94,
-      "sl": 3.83
-    },
     "TE": {
       "high": 12.0861,
       "entry": 11.959799766540527,
@@ -104,7 +92,7 @@
       "sl": 11.7
     },
     "MU": {
-      "high": 1041.8805,
+      "high": 1043.0569,
       "entry": 1041.6099853515625,
       "tp": 1067.19,
       "sl": 1028.82
@@ -116,7 +104,7 @@
       "sl": 7.64
     },
     "AEHR": {
-      "high": 112.30000305175781,
+      "high": 113.4995,
       "entry": 112.30000305175781,
       "tp": 116,
       "sl": 110.25
@@ -134,13 +122,13 @@
       "sl": 262.47
     },
     "WMT": {
-      "high": 113.2289,
+      "high": 113.245,
       "entry": 113.13500213623047,
       "tp": 113.79,
       "sl": 112.77
     },
     "CMG": {
-      "high": 29.205,
+      "high": 29.235,
       "entry": 29.17289924621582,
       "tp": 29.44,
       "sl": 29.03
@@ -174,7 +162,6 @@
     "NBIS",
     "NU",
     "NVDA",
-    "ASTS",
     "SMCI",
     "DG",
     "BSX",
@@ -200,38 +187,8 @@
     "CMG",
     "GOOGL"
   ],
-  "lastRun": "2026-06-02T15:50:01.106Z",
+  "lastRun": "2026-06-02T16:00:21.906Z",
   "log": [
-    {
-      "time": "2026-06-02T14:02:05.397Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for ALOT",
-      "detail": "Entry $15.47 | High $15.47 | ATR $0.25 | TP $16.21 | SL $15.1"
-    },
-    {
-      "time": "2026-06-02T14:02:05.668Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for AMZN",
-      "detail": "Entry $255.46 | High $255.46 | ATR $2.59 | TP $263.23 | SL $251.58"
-    },
-    {
-      "time": "2026-06-02T14:02:05.947Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for KEN",
-      "detail": "Entry $87.20 | High $87.20 | ATR $0.73 | TP $89.4 | SL $86.1"
-    },
-    {
-      "time": "2026-06-02T14:02:06.224Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for MSFT",
-      "detail": "Entry $446.52 | High $446.52 | ATR $5.40 | TP $462.73 | SL $438.41"
-    },
-    {
-      "time": "2026-06-02T14:02:06.557Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for MSTR",
-      "detail": "Entry $138.92 | High $138.92 | ATR $4.27 | TP $151.74 | SL $132.51"
-    },
     {
       "time": "2026-06-02T14:02:06.829Z",
       "type": "INFO",
@@ -1398,6 +1355,36 @@
     },
     {
       "time": "2026-06-02T15:50:01.106Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (50)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:00:20.254Z",
+      "type": "INFO",
+      "msg": "Account: $99623.84 | 23 positions open | 50 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:00:20.343Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:00:20.343Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: ASTS @ $113.79 | High $116.3319 → Stop $114.01 | P&L $-2.06",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:00:21.868Z",
+      "type": "SELL",
+      "msg": "✓ Closed ASTS",
+      "detail": "P&L $-2.06"
+    },
+    {
+      "time": "2026-06-02T16:00:21.905Z",
       "type": "INFO",
       "msg": "Daily limit reached (50)",
       "detail": ""
