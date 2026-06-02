@@ -123,26 +123,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T18:44:07.954Z",
+  "lastRun": "2026-06-02T18:54:22.085Z",
   "log": [
-    {
-      "time": "2026-06-02T15:18:29.386Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:18:29.386Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: BJDX @ $5.6001 | High $5.795000076293945 → Stop $5.68 | P&L $-2.20",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:18:30.877Z",
-      "type": "SELL",
-      "msg": "✓ Closed BJDX",
-      "detail": "P&L $-2.20"
-    },
     {
       "time": "2026-06-02T15:18:30.877Z",
       "type": "TRAIL",
@@ -1321,6 +1303,24 @@
     },
     {
       "time": "2026-06-02T18:44:07.954Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:54:22.034Z",
+      "type": "INFO",
+      "msg": "Account: $99507.04 | 10 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:54:22.047Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:54:22.085Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
       "detail": ""
