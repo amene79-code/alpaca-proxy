@@ -25,12 +25,6 @@
       "tp": 127.76,
       "sl": 124.21
     },
-    "GLSI": {
-      "high": 25.37,
-      "entry": 23.610000610351562,
-      "tp": 25.52,
-      "sl": 22.66
-    },
     "COHR": {
       "high": 428.73,
       "entry": 424.2799987792969,
@@ -38,7 +32,7 @@
       "sl": 415.85
     },
     "MU": {
-      "high": 1058.32,
+      "high": 1059.8,
       "entry": 1041.6099853515625,
       "tp": 1067.19,
       "sl": 1028.82
@@ -123,26 +117,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T19:04:40.285Z",
+  "lastRun": "2026-06-02T19:14:57.862Z",
   "log": [
-    {
-      "time": "2026-06-02T15:18:32.637Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
-    },
-    {
-      "time": "2026-06-02T15:18:33.417Z",
-      "type": "INFO",
-      "msg": "Scanning 30 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-02T15:18:33.497Z",
-      "type": "SIGNAL",
-      "msg": "SPCE — score 3 | ATR 2.63% | RSI 35",
-      "detail": "Hammer"
-    },
     {
       "time": "2026-06-02T15:18:33.776Z",
       "type": "SIGNAL",
@@ -1321,6 +1297,24 @@
     },
     {
       "time": "2026-06-02T19:04:40.285Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:14:57.821Z",
+      "type": "INFO",
+      "msg": "Account: $99514.04 | 9 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:14:57.833Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:14:57.862Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
       "detail": ""
