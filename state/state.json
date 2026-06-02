@@ -67,152 +67,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-02T12:49:33.933Z",
+  "lastRun": "2026-06-02T12:59:55.309Z",
   "log": [
-    {
-      "time": "2026-06-01T16:21:21.026Z",
-      "type": "SIGNAL",
-      "msg": "FLNC — score 5 | ATR 1.53% | RSI 66",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:25.479Z",
-      "type": "INFO",
-      "msg": "Top signal: PVH (score 7)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:25.479Z",
-      "type": "BUY",
-      "msg": "Placing: 5x PVH @ ~$92.10",
-      "detail": "Patterns: Hammer, Volume Breakout | SL 1.5× $91.89 | TP 2.7× $92.47 | R:R 1.8"
-    },
-    {
-      "time": "2026-06-01T16:21:25.627Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 5x PVH",
-      "detail": "ID: f179376d-a891-44d2-9978-457278723bed | R:R 1.8:1"
-    },
-    {
-      "time": "2026-06-01T16:21:45.912Z",
-      "type": "INFO",
-      "msg": "Account: $100415.03 | 18 positions open | 16 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:45.930Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:45.930Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:46.066Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
-    },
-    {
-      "time": "2026-06-01T16:21:46.614Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-01T16:21:46.924Z",
-      "type": "SIGNAL",
-      "msg": "MU — score 5 | ATR 0.46% | RSI 56",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:48.214Z",
-      "type": "SIGNAL",
-      "msg": "DELL — score 4 | ATR 0.61% | RSI 32",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:48.971Z",
-      "type": "SIGNAL",
-      "msg": "INTC — score 5 | ATR 0.47% | RSI 37",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:49.213Z",
-      "type": "SIGNAL",
-      "msg": "RMCO — score 4 | ATR 2.42% | RSI 50",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T16:21:51.017Z",
-      "type": "SIGNAL",
-      "msg": "ODD — score 5 | ATR 0.48% | RSI 50",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-01T16:21:51.272Z",
-      "type": "SIGNAL",
-      "msg": "DG — score 4 | ATR 0.35% | RSI 84",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:51.804Z",
-      "type": "SIGNAL",
-      "msg": "SIG — score 3 | ATR 0.34% | RSI 74",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-01T16:21:53.098Z",
-      "type": "SIGNAL",
-      "msg": "FLNC — score 5 | ATR 1.53% | RSI 64",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:56.991Z",
-      "type": "INFO",
-      "msg": "Top signal: MU (score 5)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:56.992Z",
-      "type": "BUY",
-      "msg": "Placing: 1x MU @ ~$1033.60",
-      "detail": "Patterns: Bullish Engulfing | SL 1.2× $1027.91 | TP 2.2× $1044.05 | R:R 1.8"
-    },
-    {
-      "time": "2026-06-01T16:21:57.274Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 1x MU",
-      "detail": "ID: 46fc181f-8ad8-4305-b28c-02c88c2c99f0 | R:R 1.8:1"
-    },
-    {
-      "time": "2026-06-01T16:21:57.775Z",
-      "type": "BUY",
-      "msg": "Placing: 4x INTC @ ~$110.61",
-      "detail": "Patterns: Bullish Engulfing | SL 1.2× $109.99 | TP 2.4× $111.87 | R:R 2.0"
-    },
-    {
-      "time": "2026-06-01T16:21:57.794Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 4x INTC",
-      "detail": "ID: e572cf42-acf3-4736-abf0-f7cf97098804 | R:R 2.0:1"
-    },
-    {
-      "time": "2026-06-01T16:22:21.143Z",
-      "type": "INFO",
-      "msg": "Account: $100409.89 | 20 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:22:21.210Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
     {
       "time": "2026-06-01T16:22:21.210Z",
       "type": "INFO",
@@ -1265,6 +1121,150 @@
     },
     {
       "time": "2026-06-02T12:49:33.933Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:59:46.626Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:59:46.843Z",
+      "type": "INFO",
+      "msg": "Account: $100035.93 | 13 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:59:46.843Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for COOT",
+      "detail": "Entry $0.63 | Current $0.61 | High set to $0.63"
+    },
+    {
+      "time": "2026-06-02T12:59:46.844Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for CRDO",
+      "detail": "Entry $227.11 | Current $219.84 | High set to $227.11"
+    },
+    {
+      "time": "2026-06-02T12:59:46.844Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for CURR",
+      "detail": "Entry $3.23 | Current $3.08 | High set to $3.23"
+    },
+    {
+      "time": "2026-06-02T12:59:46.844Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for GTLB",
+      "detail": "Entry $33.31 | Current $32.15 | High set to $33.31"
+    },
+    {
+      "time": "2026-06-02T12:59:46.844Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for SPCE",
+      "detail": "Entry $7.38 | Current $6.77 | High set to $7.38"
+    },
+    {
+      "time": "2026-06-02T12:59:46.909Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:59:47.035Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for COOT",
+      "detail": "Entry $0.63 | High $0.63 | ATR $0.01 | TP $0.66 | SL $0.61"
+    },
+    {
+      "time": "2026-06-02T12:59:47.311Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for CRDO",
+      "detail": "Entry $227.11 | High $227.11 | ATR $5.68 | TP $244.16 | SL $218.58"
+    },
+    {
+      "time": "2026-06-02T12:59:47.584Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for CURR",
+      "detail": "Entry $3.23 | High $3.23 | ATR $0.04 | TP $3.36 | SL $3.16"
+    },
+    {
+      "time": "2026-06-02T12:59:47.857Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for GTLB",
+      "detail": "Entry $33.31 | High $33.31 | ATR $0.59 | TP $35.07 | SL $32.43"
+    },
+    {
+      "time": "2026-06-02T12:59:48.132Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for SPCE",
+      "detail": "Entry $7.38 | High $7.38 | ATR $0.79 | TP $9.76 | SL $6.19"
+    },
+    {
+      "time": "2026-06-02T12:59:48.332Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: COOT @ $0.61 | High $0.628 → Stop $0.62 | P&L $-3.74",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:59:49.727Z",
+      "type": "SELL",
+      "msg": "✓ Closed COOT",
+      "detail": "P&L $-3.74"
+    },
+    {
+      "time": "2026-06-02T12:59:49.727Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: CRDO @ $219.8424 | High $227.11 → Stop $222.57 | P&L $-14.54",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:59:51.121Z",
+      "type": "SELL",
+      "msg": "✓ Closed CRDO",
+      "detail": "P&L $-14.54"
+    },
+    {
+      "time": "2026-06-02T12:59:51.121Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: CURR @ $3.08 | High $3.23 → Stop $3.17 | P&L $-23.25",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:59:52.520Z",
+      "type": "SELL",
+      "msg": "✓ Closed CURR",
+      "detail": "P&L $-23.25"
+    },
+    {
+      "time": "2026-06-02T12:59:52.520Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: GTLB @ $32.15 | High $33.31 → Stop $32.64 | P&L $-11.60",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:59:53.915Z",
+      "type": "SELL",
+      "msg": "✓ Closed GTLB",
+      "detail": "P&L $-11.60"
+    },
+    {
+      "time": "2026-06-02T12:59:53.915Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: SPCE @ $6.7664 | High $7.380833 → Stop $7.23 | P&L $-10.45",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:59:55.309Z",
+      "type": "SELL",
+      "msg": "✓ Closed SPCE",
+      "detail": "P&L $-10.45"
+    },
+    {
+      "time": "2026-06-02T12:59:55.309Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
