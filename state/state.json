@@ -20,7 +20,7 @@
       "sl": 473.43
     },
     "DG": {
-      "high": 108.49,
+      "high": 108.73,
       "entry": 106.83999633789062,
       "tp": 112.93,
       "sl": 104.64
@@ -86,16 +86,10 @@
       "sl": 5.52
     },
     "DXST": {
-      "high": 4.28,
+      "high": 4.38,
       "entry": 4.034999847412109,
       "tp": 4.54,
       "sl": 3.75
-    },
-    "SPCE": {
-      "high": 4.745,
-      "entry": 4.625,
-      "tp": 4.89,
-      "sl": 4.49
     },
     "BMNR": {
       "high": 17.875,
@@ -116,16 +110,10 @@
       "sl": 85.1
     },
     "ASTC": {
-      "high": 54.02,
+      "high": 55.235,
       "entry": 53.93,
       "tp": 74.78,
       "sl": 43.55
-    },
-    "MSTR": {
-      "high": 137.903333,
-      "entry": 137.903333,
-      "tp": 151.05,
-      "sl": 131.33
     }
   },
   "dailyTrades": 63,
@@ -190,26 +178,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T17:42:12.054Z",
+  "lastRun": "2026-06-02T17:52:27.613Z",
   "log": [
-    {
-      "time": "2026-06-02T15:08:06.713Z",
-      "type": "SIGNAL",
-      "msg": "GXAI — score 4 | ATR 5.35% | RSI 47",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T15:08:06.955Z",
-      "type": "SIGNAL",
-      "msg": "PMI — score 4 | ATR 5.33% | RSI 45",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T15:08:07.155Z",
-      "type": "INFO",
-      "msg": "Top signal: KEEL (score 5)",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T15:08:07.155Z",
       "type": "BUY",
@@ -1388,6 +1358,24 @@
     },
     {
       "time": "2026-06-02T17:42:12.054Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:52:27.549Z",
+      "type": "INFO",
+      "msg": "Account: $99535.84 | 19 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:52:27.585Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:52:27.613Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
       "detail": ""
