@@ -14,7 +14,7 @@
       "sl": 0.61
     },
     "AVGO": {
-      "high": 483.7861,
+      "high": 484.2775,
       "entry": 479.4800109863281,
       "tp": 493.09,
       "sl": 473.43
@@ -55,12 +55,6 @@
       "tp": 462.73,
       "sl": 438.41
     },
-    "YB": {
-      "high": 15.655,
-      "entry": 15.39,
-      "tp": 16.68,
-      "sl": 14.74
-    },
     "ALOT": {
       "high": 15.6377,
       "entry": 15.40999984741211,
@@ -68,13 +62,13 @@
       "sl": 15.14
     },
     "NOW": {
-      "high": 126.98,
+      "high": 127.05,
       "entry": 125.3311996459961,
       "tp": 127.76,
       "sl": 124.21
     },
     "GLSI": {
-      "high": 24.22,
+      "high": 25.37,
       "entry": 23.610000610351562,
       "tp": 25.52,
       "sl": 22.66
@@ -98,7 +92,7 @@
       "sl": 1028.82
     },
     "LFVN": {
-      "high": 9.32,
+      "high": 9.5099,
       "entry": 9.020000457763672,
       "tp": 12.17,
       "sl": 7.64
@@ -122,7 +116,7 @@
       "sl": 262.47
     },
     "WMT": {
-      "high": 113.245,
+      "high": 113.33,
       "entry": 113.13500213623047,
       "tp": 113.79,
       "sl": 112.77
@@ -187,38 +181,8 @@
     "CMG",
     "GOOGL"
   ],
-  "lastRun": "2026-06-02T16:00:21.906Z",
+  "lastRun": "2026-06-02T16:10:39.642Z",
   "log": [
-    {
-      "time": "2026-06-02T14:02:06.829Z",
-      "type": "INFO",
-      "msg": "Recalculated TP/SL for NVDA",
-      "detail": "Entry $225.54 | High $225.54 | ATR $3.33 | TP $235.54 | SL $220.54"
-    },
-    {
-      "time": "2026-06-02T14:02:07.096Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for RENT",
-      "detail": "Entry $4.04 | High $4.04 | ATR $0.06 | TP $4.23 | SL $3.95"
-    },
-    {
-      "time": "2026-06-02T14:02:07.651Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for YB",
-      "detail": "Entry $15.39 | High $15.39 | ATR $0.43 | TP $16.68 | SL $14.74"
-    },
-    {
-      "time": "2026-06-02T14:02:07.852Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: ALOT @ $15 | High $15.47 → Stop $15.16 | P&L $-15.51",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:02:09.341Z",
-      "type": "SELL",
-      "msg": "✓ Closed ALOT",
-      "detail": "P&L $-15.51"
-    },
     {
       "time": "2026-06-02T14:02:09.341Z",
       "type": "INFO",
@@ -1385,6 +1349,36 @@
     },
     {
       "time": "2026-06-02T16:00:21.905Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (50)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:10:38.059Z",
+      "type": "INFO",
+      "msg": "Account: $99621.65 | 22 positions open | 50 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:10:38.129Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:10:38.129Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: YB @ $15.245 | High $15.655 → Stop $15.34 | P&L $-3.33",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:10:39.610Z",
+      "type": "SELL",
+      "msg": "✓ Closed YB",
+      "detail": "P&L $-3.33"
+    },
+    {
+      "time": "2026-06-02T16:10:39.642Z",
       "type": "INFO",
       "msg": "Daily limit reached (50)",
       "detail": ""
