@@ -1620,41 +1620,75 @@ function matchAllTrades(activities){
       last.price=(+last.price * +last.qty + +a.price * +a.qty)/tq;
       last.qty=tq;
     } else {
-      merged.push({...a, qty:+a.qty, price:+a.price,
-        tag:a.client_order_id||""});
+      merged.push({...a, qty:+a.qty, price:+a.price, tag:a.client_order_id||""});
     }
   }
-  // FIFO match
+
+  // FIFO match — handles both long (buy→sell) and short (sell→buy)
   const bySymbol={};
   for(const a of merged){
     if(!bySymbol[a.symbol]) bySymbol[a.symbol]=[];
     bySymbol[a.symbol].push(a);
   }
+
   const trades=[];
   for(const [symbol, fills] of Object.entries(bySymbol)){
     fills.sort((a,b)=>new Date(a.transaction_time)-new Date(b.transaction_time));
-    const buyQ=[];
+    const longQ=[];  // open long positions (bought, waiting for sell)
+    const shortQ=[]; // open short positions (sold, waiting for buy-to-close)
+
     for(const f of fills){
       if(f.side==="buy"){
-        buyQ.push({qty:f.qty,price:f.price,time:f.transaction_time,tag:f.tag});
-      } else if(f.side==="sell"&&buyQ.length){
-        let sq=f.qty;
-        while(sq>0.001&&buyQ.length){
-          const b=buyQ[0];
-          const matched=Math.min(sq,b.qty);
-          const pl=(f.price-b.price)*matched;
-          trades.push({
-            symbol, date:f.transaction_time.slice(0,10),
-            time:f.transaction_time,
-            qty:Math.round(matched*100)/100,
-            entry:Math.round(b.price*100)/100,
-            exit:Math.round(f.price*100)/100,
-            pl:Math.round(pl*100)/100,
-            pct:Math.round(((f.price-b.price)/b.price)*10000)/100,
-            win:pl>0, tag:b.tag||"",
-          });
-          b.qty-=matched; sq-=matched;
-          if(b.qty<0.001) buyQ.shift();
+        if(shortQ.length){
+          // Buy closes a short position
+          let sq=f.qty;
+          while(sq>0.001&&shortQ.length){
+            const s=shortQ[0];
+            const matched=Math.min(sq,s.qty);
+            const pl=(s.price-f.price)*matched; // profit = sold high, bought back low
+            trades.push({
+              symbol, date:f.transaction_time.slice(0,10),
+              time:f.transaction_time,
+              qty:Math.round(matched*100)/100,
+              entry:Math.round(s.price*100)/100,  // short entry = sell price
+              exit:Math.round(f.price*100)/100,   // short exit = buy-to-close price
+              pl:Math.round(pl*100)/100,
+              pct:Math.round(((s.price-f.price)/s.price)*10000)/100,
+              win:pl>0, tag:s.tag||"",
+              setupType:"short",
+            });
+            s.qty-=matched; sq-=matched;
+            if(s.qty<0.001) shortQ.shift();
+          }
+        } else {
+          // Buy opens a long position
+          longQ.push({qty:f.qty,price:f.price,time:f.transaction_time,tag:f.tag});
+        }
+      } else if(f.side==="sell"){
+        if(longQ.length){
+          // Sell closes a long position
+          let sq=f.qty;
+          while(sq>0.001&&longQ.length){
+            const b=longQ[0];
+            const matched=Math.min(sq,b.qty);
+            const pl=(f.price-b.price)*matched;
+            trades.push({
+              symbol, date:f.transaction_time.slice(0,10),
+              time:f.transaction_time,
+              qty:Math.round(matched*100)/100,
+              entry:Math.round(b.price*100)/100,
+              exit:Math.round(f.price*100)/100,
+              pl:Math.round(pl*100)/100,
+              pct:Math.round(((f.price-b.price)/b.price)*10000)/100,
+              win:pl>0, tag:b.tag||"",
+              setupType:"long",
+            });
+            b.qty-=matched; sq-=matched;
+            if(b.qty<0.001) longQ.shift();
+          }
+        } else {
+          // Sell opens a short position
+          shortQ.push({qty:f.qty,price:f.price,time:f.transaction_time,tag:f.tag});
         }
       }
     }
