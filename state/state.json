@@ -19,14 +19,8 @@
       "tp": 439.66,
       "sl": 415.85
     },
-    "MU": {
-      "high": 1062.185,
-      "entry": 1041.6099853515625,
-      "tp": 1067.19,
-      "sl": 1028.82
-    },
     "MRVL": {
-      "high": 285.76,
+      "high": 288.05,
       "entry": 278.2650146484375,
       "tp": 288.39,
       "sl": 272.71
@@ -103,26 +97,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T19:35:29.593Z",
+  "lastRun": "2026-06-02T19:45:47.665Z",
   "log": [
-    {
-      "time": "2026-06-02T15:18:40.955Z",
-      "type": "SIGNAL",
-      "msg": "DXST — score 4 | ATR 6.10% | RSI 51",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-02T15:18:41.719Z",
-      "type": "INFO",
-      "msg": "Top signal: MU (score 5)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:18:41.719Z",
-      "type": "BUY",
-      "msg": "Placing: 1x MU @ ~$1041.61",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $1028.82 | TP 3× $1067.19 | R:R 2.0"
-    },
     {
       "time": "2026-06-02T15:18:41.915Z",
       "type": "BUY",
@@ -1303,6 +1279,24 @@
       "time": "2026-06-02T19:35:29.593Z",
       "type": "INFO",
       "msg": "Skipping — last 30 min before close (25 min left)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:45:47.620Z",
+      "type": "INFO",
+      "msg": "Account: $99528.05 | 6 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:45:47.632Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:45:47.665Z",
+      "type": "INFO",
+      "msg": "Skipping — last 30 min before close (15 min left)",
       "detail": ""
     }
   ]
