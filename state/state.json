@@ -44,7 +44,7 @@
       "sl": 47.19
     },
     "KEN": {
-      "high": 87.75,
+      "high": 87.79,
       "entry": 87.2,
       "tp": 89.4,
       "sl": 86.1
@@ -79,12 +79,6 @@
       "tp": 439.66,
       "sl": 415.85
     },
-    "TE": {
-      "high": 12.0861,
-      "entry": 11.959799766540527,
-      "tp": 12.39,
-      "sl": 11.7
-    },
     "MU": {
       "high": 1043.0569,
       "entry": 1041.6099853515625,
@@ -92,37 +86,37 @@
       "sl": 1028.82
     },
     "LFVN": {
-      "high": 9.5099,
+      "high": 9.54,
       "entry": 9.020000457763672,
       "tp": 12.17,
       "sl": 7.64
     },
     "AEHR": {
-      "high": 113.4995,
+      "high": 113.9,
       "entry": 112.30000305175781,
       "tp": 116,
       "sl": 110.25
     },
     "MRVL": {
-      "high": 283.92,
+      "high": 284.8,
       "entry": 278.2650146484375,
       "tp": 288.39,
       "sl": 272.71
     },
     "NBIS": {
-      "high": 266.739990234375,
+      "high": 267.435,
       "entry": 266.739990234375,
       "tp": 275.28,
       "sl": 262.47
     },
     "WMT": {
-      "high": 113.33,
+      "high": 113.6,
       "entry": 113.13500213623047,
       "tp": 113.79,
       "sl": 112.77
     },
     "CMG": {
-      "high": 29.235,
+      "high": 29.265,
       "entry": 29.17289924621582,
       "tp": 29.44,
       "sl": 29.03
@@ -169,7 +163,6 @@
     "ODD",
     "COHR",
     "RENT",
-    "TE",
     "LAC",
     "MU",
     "LFVN",
@@ -181,38 +174,8 @@
     "CMG",
     "GOOGL"
   ],
-  "lastRun": "2026-06-02T16:10:39.642Z",
+  "lastRun": "2026-06-02T16:20:58.792Z",
   "log": [
-    {
-      "time": "2026-06-02T14:02:09.341Z",
-      "type": "INFO",
-      "msg": "⚠ VSXY SHORT has no SL — trailing stop only at $79.11",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:02:09.341Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop (SHORT): VSXY @ $80.34 | Low $77.56 → Stop $79.11 | P&L $-228.06",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:02:09.556Z",
-      "type": "SELL",
-      "msg": "✓ Closed SHORT VSXY",
-      "detail": "P&L $-228.06"
-    },
-    {
-      "time": "2026-06-02T14:02:09.588Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:02:09.620Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
-    },
     {
       "time": "2026-06-02T14:02:10.497Z",
       "type": "INFO",
@@ -1379,6 +1342,36 @@
     },
     {
       "time": "2026-06-02T16:10:39.642Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (50)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:20:57.234Z",
+      "type": "INFO",
+      "msg": "Account: $99615.47 | 21 positions open | 50 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:20:57.302Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:20:57.302Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: TE @ $11.7601 | High $12.0861 → Stop $11.84 | P&L $-7.98",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:20:58.765Z",
+      "type": "SELL",
+      "msg": "✓ Closed TE",
+      "detail": "P&L $-7.98"
+    },
+    {
+      "time": "2026-06-02T16:20:58.792Z",
       "type": "INFO",
       "msg": "Daily limit reached (50)",
       "detail": ""
