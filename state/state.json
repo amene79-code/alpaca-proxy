@@ -26,7 +26,7 @@
       "sl": 11.76
     },
     "ASTS": {
-      "high": 116.157,
+      "high": 116.3319,
       "entry": 113.4800033569336,
       "tp": 117.73,
       "sl": 111.22
@@ -44,13 +44,13 @@
       "sl": 104.64
     },
     "BSX": {
-      "high": 47.76,
+      "high": 47.87,
       "entry": 47.5099983215332,
       "tp": 48.38,
       "sl": 47.19
     },
     "AMZN": {
-      "high": 258.2328,
+      "high": 258.96,
       "entry": 255.46,
       "tp": 263.23,
       "sl": 251.58
@@ -74,13 +74,13 @@
       "sl": 14.74
     },
     "LPTH": {
-      "high": 15.9,
+      "high": 16.1,
       "entry": 15.210000038146973,
       "tp": 16.59,
       "sl": 14.65
     },
     "RKLB": {
-      "high": 127.27999877929688,
+      "high": 127.3841,
       "entry": 127.27999877929688,
       "tp": 133.63,
       "sl": 124.36
@@ -122,26 +122,8 @@
     "LPTH",
     "RKLB"
   ],
-  "lastRun": "2026-06-02T14:33:29.139Z",
+  "lastRun": "2026-06-02T14:43:45.661Z",
   "log": [
-    {
-      "time": "2026-06-02T13:20:43.302Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for COOT",
-      "detail": "Entry $0.63 | Current $0.61 | High set to $0.63"
-    },
-    {
-      "time": "2026-06-02T13:20:43.302Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for CRDO",
-      "detail": "Entry $227.11 | Current $218.50 | High set to $227.11"
-    },
-    {
-      "time": "2026-06-02T13:20:43.302Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for CURR",
-      "detail": "Entry $3.23 | Current $3.08 | High set to $3.23"
-    },
     {
       "time": "2026-06-02T13:20:43.302Z",
       "type": "INFO",
@@ -1320,6 +1302,24 @@
     },
     {
       "time": "2026-06-02T14:33:29.139Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T14:43:45.621Z",
+      "type": "INFO",
+      "msg": "Account: $99701.64 | 14 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T14:43:45.635Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T14:43:45.661Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
