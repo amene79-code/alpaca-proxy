@@ -19,12 +19,6 @@
       "tp": 112.93,
       "sl": 104.64
     },
-    "MSFT": {
-      "high": 446.76,
-      "entry": 446.52,
-      "tp": 462.73,
-      "sl": 438.41
-    },
     "NOW": {
       "high": 127.05,
       "entry": 125.3311996459961,
@@ -44,7 +38,7 @@
       "sl": 415.85
     },
     "MU": {
-      "high": 1053.19,
+      "high": 1054.22,
       "entry": 1041.6099853515625,
       "tp": 1067.19,
       "sl": 1028.82
@@ -68,16 +62,10 @@
       "sl": 3.69
     },
     "KEN": {
-      "high": 86.5,
+      "high": 86.58,
       "entry": 86.15010070800781,
       "tp": 88.25,
       "sl": 85.1
-    },
-    "ASTC": {
-      "high": 58.1311,
-      "entry": 53.93,
-      "tp": 74.78,
-      "sl": 43.55
     }
   },
   "dailyTrades": 63,
@@ -141,38 +129,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T18:23:26.346Z",
+  "lastRun": "2026-06-02T18:33:50.401Z",
   "log": [
-    {
-      "time": "2026-06-02T15:08:10.000Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 184x PMI",
-      "detail": "ID: b1035d0d-e0dd-4d0b-9a59-7c4e3248b587 | R:R 1.8:1"
-    },
-    {
-      "time": "2026-06-02T15:08:10.500Z",
-      "type": "BUY",
-      "msg": "Placing: 128x RENT @ ~$3.88",
-      "detail": "Patterns: Gap Up | SL 1.2× $3.83 | TP 2.2× $3.94 | R:R 1.2"
-    },
-    {
-      "time": "2026-06-02T15:08:10.532Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 128x RENT",
-      "detail": "ID: adfea84c-65f5-4d52-b450-3fa07d103058 | R:R 1.2:1"
-    },
-    {
-      "time": "2026-06-02T15:08:11.033Z",
-      "type": "BUY",
-      "msg": "Placing: 38x TE @ ~$11.96",
-      "detail": "Patterns: Hammer | SL 1.7× $11.7 | TP 2.8× $12.39 | R:R 1.7"
-    },
-    {
-      "time": "2026-06-02T15:08:11.064Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 38x TE",
-      "detail": "ID: 712d9ad7-9751-449c-b5c7-07371b809cd4 | R:R 1.7:1"
-    },
     {
       "time": "2026-06-02T15:08:11.565Z",
       "type": "BUY",
@@ -1339,6 +1297,36 @@
     },
     {
       "time": "2026-06-02T18:23:26.346Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:33:48.632Z",
+      "type": "INFO",
+      "msg": "Account: $99515.90 | 12 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:33:48.695Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:33:48.695Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: ASTC @ $56.5 | High $58.1311 → Stop $56.97 | P&L +$2.57",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:33:50.135Z",
+      "type": "SELL",
+      "msg": "✓ Closed ASTC",
+      "detail": "P&L +$2.57"
+    },
+    {
+      "time": "2026-06-02T18:33:50.401Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
       "detail": ""
