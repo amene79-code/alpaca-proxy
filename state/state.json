@@ -32,7 +32,7 @@
       "sl": 104.64
     },
     "BSX": {
-      "high": 48.105,
+      "high": 48.135,
       "entry": 47.5099983215332,
       "tp": 48.38,
       "sl": 47.19
@@ -74,7 +74,7 @@
       "sl": 415.85
     },
     "MU": {
-      "high": 1043.0569,
+      "high": 1048.81,
       "entry": 1041.6099853515625,
       "tp": 1067.19,
       "sl": 1028.82
@@ -97,18 +97,6 @@
       "tp": 29.44,
       "sl": 29.03
     },
-    "BMNR": {
-      "high": 17.91,
-      "entry": 17.91,
-      "tp": 19.17,
-      "sl": 17.28
-    },
-    "DELL": {
-      "high": 444.5,
-      "entry": 444.5,
-      "tp": 476.99,
-      "sl": 428.25
-    },
     "LAC": {
       "high": 5.9499,
       "entry": 5.89,
@@ -127,20 +115,8 @@
       "tp": 4.04,
       "sl": 3.69
     },
-    "RKLB": {
-      "high": 124.05,
-      "entry": 123.58,
-      "tp": 136.68,
-      "sl": 117.27
-    },
-    "SMR": {
-      "high": 14.04,
-      "entry": 14.04,
-      "tp": 15.41,
-      "sl": 13.35
-    },
     "SOXX": {
-      "high": 598.33,
+      "high": 599.21,
       "entry": 597.3499755859375,
       "tp": 600.87,
       "sl": 595.39
@@ -158,7 +134,7 @@
       "sl": 363.78
     },
     "OPEN": {
-      "high": 5.565000057220459,
+      "high": 5.6199,
       "entry": 5.565000057220459,
       "tp": 5.66,
       "sl": 5.52
@@ -170,13 +146,37 @@
       "sl": 367.19
     },
     "DXST": {
-      "high": 4.034999847412109,
+      "high": 4.09,
       "entry": 4.034999847412109,
       "tp": 4.54,
       "sl": 3.75
+    },
+    "SPCE": {
+      "high": 4.625,
+      "entry": 4.625,
+      "tp": 4.89,
+      "sl": 4.49
+    },
+    "NTSK": {
+      "high": 12.494999885559082,
+      "entry": 12.494999885559082,
+      "tp": 12.59,
+      "sl": 12.44
+    },
+    "BMNR": {
+      "high": 17.81730079650879,
+      "entry": 17.81730079650879,
+      "tp": 18,
+      "sl": 17.72
+    },
+    "YB": {
+      "high": 15.239999771118164,
+      "entry": 15.239999771118164,
+      "tp": 15.86,
+      "sl": 14.9
     }
   },
-  "dailyTrades": 56,
+  "dailyTrades": 60,
   "dailyDate": "2026-06-02",
   "openPositions": [
     "FIVE",
@@ -230,118 +230,14 @@
     "GOOG",
     "OPEN",
     "GOOGL",
-    "DXST"
+    "DXST",
+    "SPCE",
+    "NTSK",
+    "BMNR",
+    "YB"
   ],
-  "lastRun": "2026-06-02T16:53:41.897Z",
+  "lastRun": "2026-06-02T17:04:08.458Z",
   "log": [
-    {
-      "time": "2026-06-02T14:57:23.067Z",
-      "type": "SIGNAL",
-      "msg": "ALOT — score 4 | ATR 1.17% | RSI 48",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-02T14:57:23.850Z",
-      "type": "SIGNAL",
-      "msg": "NOW — score 4 | ATR 0.74% | RSI 36",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T14:57:24.137Z",
-      "type": "SIGNAL",
-      "msg": "ABVX — score 5 | ATR 2.60% | RSI 59",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T14:57:25.172Z",
-      "type": "SIGNAL",
-      "msg": "TNXP — score 3 | ATR 0.60% | RSI 49",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-02T14:57:27.368Z",
-      "type": "SIGNAL",
-      "msg": "GLSI — score 4 | ATR 2.25% | RSI 46",
-      "detail": "Bull Flag"
-    },
-    {
-      "time": "2026-06-02T14:57:27.627Z",
-      "type": "SIGNAL",
-      "msg": "SIDU — score 4 | ATR 1.52% | RSI 61",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-02T14:57:27.873Z",
-      "type": "SIGNAL",
-      "msg": "LAC — score 3 | ATR 1.25% | RSI 35",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-02T14:57:28.119Z",
-      "type": "SIGNAL",
-      "msg": "BJDX — score 6 | ATR 4.90% | RSI 34",
-      "detail": "Hammer, Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T14:57:28.320Z",
-      "type": "INFO",
-      "msg": "Top signal: BJDX (score 6)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:57:28.320Z",
-      "type": "BUY",
-      "msg": "Placing: 11x BJDX @ ~$5.80",
-      "detail": "Patterns: Hammer, Bullish Engulfing | SL 3.2× $4.89 | TP 8.1× $8.1 | R:R 2.5"
-    },
-    {
-      "time": "2026-06-02T14:57:28.366Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 11x BJDX",
-      "detail": "ID: f10ed9cb-d85c-46e9-81b2-b7d5502c0984 | R:R 2.5:1"
-    },
-    {
-      "time": "2026-06-02T14:57:28.867Z",
-      "type": "BUY",
-      "msg": "Placing: 219x DXLG @ ~$0.72",
-      "detail": "Patterns: Hammer, Gap Up | SL 2.1× $0.67 | TP 4.2× $0.77 | R:R 1.2"
-    },
-    {
-      "time": "2026-06-02T14:57:28.886Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 219x DXLG",
-      "detail": "ID: eced0abb-e904-4a3f-9a3c-3371c05dd3d5 | R:R 1.2:1"
-    },
-    {
-      "time": "2026-06-02T14:57:29.387Z",
-      "type": "BUY",
-      "msg": "Placing: 2x ABVX @ ~$79.22",
-      "detail": "Patterns: Bullish Engulfing | SL 2.2× $74.69 | TP 4.4× $88.27 | R:R 2.0"
-    },
-    {
-      "time": "2026-06-02T14:57:29.404Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 2x ABVX",
-      "detail": "ID: 7239c868-d18b-4c79-b007-7a5a7119f7a2 | R:R 2.0:1"
-    },
-    {
-      "time": "2026-06-02T14:57:29.905Z",
-      "type": "BUY",
-      "msg": "Placing: 8x HPE @ ~$58.88",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $57.77 | TP 3× $61.1 | R:R 2.0"
-    },
-    {
-      "time": "2026-06-02T14:57:29.924Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 8x HPE",
-      "detail": "ID: f5375778-8013-4a7d-a591-086f95217d34 | R:R 2.0:1"
-    },
-    {
-      "time": "2026-06-02T14:57:30.425Z",
-      "type": "BUY",
-      "msg": "Placing: 32x ALOT @ ~$15.41",
-      "detail": "Patterns: Gap Up | SL 1.5× $15.14 | TP 3× $15.95 | R:R 2.0"
-    },
     {
       "time": "2026-06-02T14:57:30.443Z",
       "type": "BUY",
@@ -1433,6 +1329,114 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 35x DXST",
       "detail": "ID: 4696108f-c7af-45c4-9628-3d855bc2f867 | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-02T17:03:57.509Z",
+      "type": "INFO",
+      "msg": "Account: $99568.26 | 25 positions open | 56 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:03:57.523Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:03:57.549Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:03:57.659Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
+    },
+    {
+      "time": "2026-06-02T17:03:58.007Z",
+      "type": "INFO",
+      "msg": "Scanning 33 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-02T17:03:58.053Z",
+      "type": "SIGNAL",
+      "msg": "SPCE — score 4 | ATR 1.62% | RSI 38",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T17:03:59.639Z",
+      "type": "SIGNAL",
+      "msg": "NTSK — score 4 | ATR 0.29% | RSI 55",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T17:04:00.890Z",
+      "type": "SIGNAL",
+      "msg": "YB — score 3 | ATR 1.32% | RSI 45",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-02T17:04:03.644Z",
+      "type": "SIGNAL",
+      "msg": "BMNR — score 4 | ATR 0.46% | RSI 63",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T17:04:06.371Z",
+      "type": "INFO",
+      "msg": "Top signal: SPCE (score 4)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:04:06.372Z",
+      "type": "BUY",
+      "msg": "Placing: 74x SPCE @ ~$4.63",
+      "detail": "Patterns: Bullish Engulfing | SL 1.8× $4.49 | TP 3.6× $4.89 | R:R 2.0"
+    },
+    {
+      "time": "2026-06-02T17:04:06.401Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 74x SPCE",
+      "detail": "ID: 4c7e2b48-eacf-4d7a-84e2-397322d3a9f2 | R:R 2.0:1"
+    },
+    {
+      "time": "2026-06-02T17:04:06.902Z",
+      "type": "BUY",
+      "msg": "Placing: 40x NTSK @ ~$12.49",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $12.44 | TP 2.7× $12.59 | R:R 1.7"
+    },
+    {
+      "time": "2026-06-02T17:04:06.922Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 40x NTSK",
+      "detail": "ID: d885c1f6-3453-4a8a-9125-32950d3225c5 | R:R 1.7:1"
+    },
+    {
+      "time": "2026-06-02T17:04:07.423Z",
+      "type": "BUY",
+      "msg": "Placing: 28x BMNR @ ~$17.82",
+      "detail": "Patterns: Bullish Engulfing | SL 1.2× $17.72 | TP 2.2× $18 | R:R 1.9"
+    },
+    {
+      "time": "2026-06-02T17:04:07.442Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 28x BMNR",
+      "detail": "ID: 70fedaff-f4c6-4c07-a1b3-de6738002c5e | R:R 1.9:1"
+    },
+    {
+      "time": "2026-06-02T17:04:07.942Z",
+      "type": "BUY",
+      "msg": "Placing: 29x YB @ ~$15.24",
+      "detail": "Patterns: Hammer | SL 1.7× $14.9 | TP 3.1× $15.86 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-02T17:04:07.957Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 29x YB",
+      "detail": "ID: 86007288-a84d-46b0-ba60-be1b2a618b08 | R:R 1.8:1"
     }
   ]
 }
