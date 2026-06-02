@@ -1597,7 +1597,9 @@ async function loadICTHistory(){
         return metas.some(m=>{
           const metaTime=new Date(m.date).getTime();
           const tradeTime=new Date(t.time).getTime();
-          return Math.abs(metaTime-tradeTime)<7200000; // within 2 hours
+          const timeMatch=Math.abs(metaTime-tradeTime)<7200000; // within 2 hours
+          const priceMatch=Math.abs((m.price||0)-t.entry)/t.entry<0.05; // within 5%
+          return timeMatch&&priceMatch;
         });
       }
       return false;
@@ -1605,17 +1607,23 @@ async function loadICTHistory(){
 
     // Enrich with metadata
     for(const t of ict){
-      const meta=ictMeta[t.tag]||{};
-      t.setupType=meta.setupType||parseTagField(t.tag,1);
-      t.trend=meta.trend||parseTagField(t.tag,2);
-      t.killZone=meta.killZone||parseTagField(t.tag,3);
-      t.cvdDiv=meta.cvdDiv||"—";
-      t.fvgSize=meta.fvgSize||0;
-      t.hasOB=meta.hasOB||false;
-      t.hasSweep=meta.hasSweep||false;
-      t.bos=meta.bos||false;
-      t.score=meta.score||0;
-      t.rr=meta.rr||((t.tp&&t.sl)?(Math.abs(t.tp-t.entry)/Math.abs(t.entry-t.sl)).toFixed(1):"—");
+      const metas=Object.values(ictMeta).filter(m=>m.ticker===t.symbol);
+      // Find best matching meta by time + price proximity
+      const bestMeta=metas.sort((a,b)=>{
+        const aScore=Math.abs(new Date(a.date)-new Date(t.time))/1000 + Math.abs((a.price||0)-t.entry)*100;
+        const bScore=Math.abs(new Date(b.date)-new Date(t.time))/1000 + Math.abs((b.price||0)-t.entry)*100;
+        return aScore-bScore;
+      })[0]||{};
+      t.setupType=bestMeta.setupType||parseTagField(t.tag,1);
+      t.trend=bestMeta.trend||parseTagField(t.tag,2);
+      t.killZone=bestMeta.killZone||parseTagField(t.tag,3);
+      t.cvdDiv=bestMeta.cvdDiv||"—";
+      t.fvgSize=bestMeta.fvgSize||0;
+      t.hasOB=bestMeta.hasOB||false;
+      t.hasSweep=bestMeta.hasSweep||false;
+      t.bos=bestMeta.bos||false;
+      t.score=bestMeta.score||0;
+      t.rr=bestMeta.rr||"—";
     }
 
     ictTrades=ict;
@@ -1915,11 +1923,3 @@ async function startAgent(){
   document.getElementById("stopBtn").disabled=false;
   document.getElementById("configPanel").style.opacity="0.5";
   document.getElementById("configPanel").style.pointerEvents="none";
-  document.getElementById("statusPill").className="kz-active";
-  document.getElementById("statusText").textContent="Running";
-  startPlRefresh();
-  log("ICT","ICT Agent started",
-    `Kill zones: ${[...document.querySelectorAll("[id^='kz']:checked")].map(el=>el.id).join("+")} | Min score: ${document.getElementById("cfgMinFVG").value} | Direction: ${document.getElementById("cfgDirection").value}`);
-  await runCycle();
-}
-
