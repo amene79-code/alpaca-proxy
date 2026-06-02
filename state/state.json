@@ -14,13 +14,13 @@
       "sl": 0.61
     },
     "AVGO": {
-      "high": 482.37,
+      "high": 482.53,
       "entry": 479.4800109863281,
       "tp": 493.09,
       "sl": 473.43
     },
     "NU": {
-      "high": 12.125,
+      "high": 12.165,
       "entry": 12.024999618530273,
       "tp": 12.75,
       "sl": 11.76
@@ -74,7 +74,7 @@
       "sl": 15.14
     },
     "NOW": {
-      "high": 126.01,
+      "high": 126.33,
       "entry": 125.3311996459961,
       "tp": 127.76,
       "sl": 124.21
@@ -133,26 +133,14 @@
       "tp": 275.28,
       "sl": 262.47
     },
-    "DELL": {
-      "high": 447.215,
-      "entry": 446.5199890136719,
-      "tp": 455.06,
-      "sl": 442.25
-    },
     "WMT": {
-      "high": 113.13500213623047,
+      "high": 113.2289,
       "entry": 113.13500213623047,
       "tp": 113.79,
       "sl": 112.77
     },
-    "SPCE": {
-      "high": 4.769899845123291,
-      "entry": 4.769899845123291,
-      "tp": 5.4,
-      "sl": 4.46
-    },
     "CMG": {
-      "high": 29.195,
+      "high": 29.205,
       "entry": 29.17289924621582,
       "tp": 29.44,
       "sl": 29.03
@@ -209,42 +197,11 @@
     "NBIS",
     "DELL",
     "WMT",
-    "SPCE",
     "CMG",
     "GOOGL"
   ],
-  "lastRun": "2026-06-02T15:39:40.568Z",
+  "lastRun": "2026-06-02T15:50:01.106Z",
   "log": [
-    {
-      "time": "2026-06-02T14:02:05.202Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for MSFT",
-      "detail": "Entry $446.52 | Current $445.07 | High set to $446.52"
-    },
-    {
-      "time": "2026-06-02T14:02:05.202Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for MSTR",
-      "detail": "Entry $138.92 | Current $137.94 | High set to $138.92"
-    },
-    {
-      "time": "2026-06-02T14:02:05.202Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for RENT",
-      "detail": "Entry $4.04 | Current $3.97 | High set to $4.04"
-    },
-    {
-      "time": "2026-06-02T14:02:05.202Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for YB",
-      "detail": "Entry $15.39 | Current $15.23 | High set to $15.39"
-    },
-    {
-      "time": "2026-06-02T14:02:05.270Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T14:02:05.397Z",
       "type": "INFO",
@@ -1411,6 +1368,36 @@
     },
     {
       "time": "2026-06-02T15:39:40.568Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (50)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:49:59.484Z",
+      "type": "INFO",
+      "msg": "Account: $99616.27 | 25 positions open | 50 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:49:59.551Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:49:59.551Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: SPCE @ $4.635 | High $4.769899845123291 → Stop $4.67 | P&L $-4.56",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:50:01.075Z",
+      "type": "SELL",
+      "msg": "✓ Closed SPCE",
+      "detail": "P&L $-4.56"
+    },
+    {
+      "time": "2026-06-02T15:50:01.106Z",
       "type": "INFO",
       "msg": "Daily limit reached (50)",
       "detail": ""
