@@ -151,7 +151,7 @@ label{color:#7aaa90;font-size:11px}
   </div>
   <div class="g2">
     <div><div class="fl">Proxy URL</div><input id="proxyUrl" value="https://alpaca-proxy-alpha.vercel.app"></div>
-    <div><div class="fl">Anthropic Key (optional)</div><input id="anthropicKey" type="password" placeholder="sk-ant-…"></div>
+    <div><div class="fl">GitHub Token (for trade metadata persistence)</div><input id="ghToken" type="password" placeholder="ghp_…"></div>
   </div>
 
   <div class="micro" style="margin-top:14px">⏰ Kill Zones (NYSE session)</div>
@@ -469,7 +469,7 @@ function saveKeys(){
     alpacaKey:document.getElementById("alpacaKey").value.trim(),
     alpacaSecret:document.getElementById("alpacaSecret").value.trim(),
     proxyUrl:document.getElementById("proxyUrl").value.trim(),
-    anthropicKey:document.getElementById("anthropicKey").value.trim(),
+    ghToken:document.getElementById("ghToken").value.trim(),
   }));}catch{}
 }
 function loadKeys(){
@@ -480,7 +480,7 @@ function loadKeys(){
     if(d.alpacaKey)    document.getElementById("alpacaKey").value=d.alpacaKey;
     if(d.alpacaSecret) document.getElementById("alpacaSecret").value=d.alpacaSecret;
     if(d.proxyUrl)     document.getElementById("proxyUrl").value=d.proxyUrl;
-    if(d.anthropicKey) document.getElementById("anthropicKey").value=d.anthropicKey;
+    if(d.ghToken)      document.getElementById("ghToken").value=d.ghToken;
   }catch{}
 }
 function clearKeys(){ localStorage.removeItem(SK); }
@@ -1509,13 +1509,55 @@ function saveICTTradeMeta(ticker, tag, setup, qty, price, sl, tp, rr){
       date: new Date().toISOString(),
     };
     localStorage.setItem(ICT_META_KEY, JSON.stringify(ictMeta));
+    // Also persist to GitHub repo so it survives browser refresh
+    saveICTMetaToGitHub();
   }catch{}
+}
+
+async function saveICTMetaToGitHub(){
+  try{
+    const ghToken=document.getElementById("ghToken")?.value?.trim();
+    if(!ghToken||!ghToken.startsWith("ghp_")) return;
+    const content=btoa(unescape(encodeURIComponent(JSON.stringify(ictMeta,null,2))));
+    const r=await fetch("https://api.github.com/repos/amene79-code/alpaca-proxy/contents/state/ict_meta.json",{
+      headers:{"Authorization":`token ${ghToken}`,"Accept":"application/vnd.github.v3+json"}
+    });
+    let sha=null;
+    if(r.ok){const d=await r.json();sha=d.sha;}
+    const body={message:`ict_meta: ${new Date().toISOString().slice(0,16)}`,content};
+    if(sha) body.sha=sha;
+    await fetch("https://api.github.com/repos/amene79-code/alpaca-proxy/contents/state/ict_meta.json",{
+      method:"PUT",
+      headers:{"Authorization":`token ${ghToken}`,"Accept":"application/vnd.github.v3+json","Content-Type":"application/json"},
+      body:JSON.stringify(body),
+    });
+    log("ICT",`✓ Trade metadata saved to GitHub`);
+  }catch(e){
+    log("INFO",`GitHub meta save failed: ${e.message} (localStorage still updated)`);
+  }
 }
 
 function loadICTMeta(){
   try{
     const raw=localStorage.getItem(ICT_META_KEY);
     if(raw) ictMeta=JSON.parse(raw);
+  }catch{}
+}
+
+async function loadICTMetaFromGitHub(){
+  try{
+    const r=await fetch("https://raw.githubusercontent.com/amene79-code/alpaca-proxy/main/state/ict_meta.json?t="+Date.now());
+    if(!r.ok) return;
+    const remote=await r.json();
+    // Merge remote into local — remote wins for entries not in local
+    let changed=false;
+    for(const [tag,meta] of Object.entries(remote)){
+      if(!ictMeta[tag]){ictMeta[tag]=meta;changed=true;}
+    }
+    if(changed){
+      localStorage.setItem(ICT_META_KEY,JSON.stringify(ictMeta));
+      log("ICT",`Loaded ${Object.keys(remote).length} trade metadata entries from GitHub`);
+    }
   }catch{}
 }
 
@@ -1900,6 +1942,7 @@ function clearICTHistory(){
 
 window.addEventListener("load",()=>{
   loadKeys(); loadICTMeta(); loadICTHistoryFromStorage();
+  loadICTMetaFromGitHub(); // merge any remote metadata
   if(ictTrades.length){renderICTStats();renderICTTable();}
 });
 
@@ -1923,3 +1966,26 @@ async function startAgent(){
   document.getElementById("stopBtn").disabled=false;
   document.getElementById("configPanel").style.opacity="0.5";
   document.getElementById("configPanel").style.pointerEvents="none";
+  document.getElementById("statusPill").className="kz-active";
+  document.getElementById("statusText").textContent="Running";
+  startPlRefresh();
+  log("ICT","ICT Agent started",
+    `Kill zones: ${[...document.querySelectorAll("[id^='kz']:checked")].map(el=>el.id).join("+")} | Min score: ${document.getElementById("cfgMinFVG").value} | Direction: ${document.getElementById("cfgDirection").value}`);
+  await runCycle();
+}
+
+function stopAgent(){
+  RUNNING=false; clearInterval(countdownTimer); stopPlRefresh();
+  document.getElementById("startBtn").disabled=false;
+  document.getElementById("stopBtn").disabled=true;
+  document.getElementById("configPanel").style.opacity="1";
+  document.getElementById("configPanel").style.pointerEvents="auto";
+  document.getElementById("scanCountdown").style.display="none";
+  document.getElementById("statusPill").className="kz-inactive";
+  document.getElementById("statusText").textContent="Offline";
+  setPhase("screen");
+  log("INFO","Agent stopped");
+}
+</script>
+</body>
+</html>
