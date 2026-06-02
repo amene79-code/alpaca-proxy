@@ -19,12 +19,6 @@
       "tp": 112.93,
       "sl": 104.64
     },
-    "NOW": {
-      "high": 127.05,
-      "entry": 125.3311996459961,
-      "tp": 127.76,
-      "sl": 124.21
-    },
     "COHR": {
       "high": 428.73,
       "entry": 424.2799987792969,
@@ -32,7 +26,7 @@
       "sl": 415.85
     },
     "MU": {
-      "high": 1059.8,
+      "high": 1061.91,
       "entry": 1041.6099853515625,
       "tp": 1067.19,
       "sl": 1028.82
@@ -117,26 +111,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T19:14:57.862Z",
+  "lastRun": "2026-06-02T19:25:14.465Z",
   "log": [
-    {
-      "time": "2026-06-02T15:18:33.776Z",
-      "type": "SIGNAL",
-      "msg": "MU — score 5 | ATR 0.82% | RSI 32",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T15:18:34.327Z",
-      "type": "SIGNAL",
-      "msg": "MRVL — score 4 | ATR 1.17% | RSI 53",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-02T15:18:35.442Z",
-      "type": "SIGNAL",
-      "msg": "NBIS — score 4 | ATR 1.07% | RSI 20",
-      "detail": "Bullish Engulfing"
-    },
     {
       "time": "2026-06-02T15:18:36.878Z",
       "type": "SIGNAL",
@@ -1315,6 +1291,24 @@
     },
     {
       "time": "2026-06-02T19:14:57.862Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:25:14.346Z",
+      "type": "INFO",
+      "msg": "Account: $99518.98 | 8 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:25:14.427Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:25:14.465Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
       "detail": ""
