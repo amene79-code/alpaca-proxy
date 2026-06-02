@@ -13,12 +13,6 @@
       "tp": 0.66,
       "sl": 0.61
     },
-    "DG": {
-      "high": 108.73,
-      "entry": 106.83999633789062,
-      "tp": 112.93,
-      "sl": 104.64
-    },
     "COHR": {
       "high": 428.73,
       "entry": 424.2799987792969,
@@ -26,13 +20,13 @@
       "sl": 415.85
     },
     "MU": {
-      "high": 1061.91,
+      "high": 1062.185,
       "entry": 1041.6099853515625,
       "tp": 1067.19,
       "sl": 1028.82
     },
     "MRVL": {
-      "high": 285.0701,
+      "high": 285.76,
       "entry": 278.2650146484375,
       "tp": 288.39,
       "sl": 272.71
@@ -44,7 +38,7 @@
       "sl": 29.03
     },
     "KEN": {
-      "high": 86.81,
+      "high": 86.89,
       "entry": 86.15010070800781,
       "tp": 88.25,
       "sl": 85.1
@@ -69,7 +63,6 @@
     "MU",
     "AVGO",
     "MRVL",
-    "DG",
     "META",
     "NTSK",
     "MU",
@@ -78,7 +71,6 @@
     "NBIS",
     "NVDA",
     "SMCI",
-    "DG",
     "BSX",
     "RKLB",
     "HPE",
@@ -111,38 +103,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T19:25:14.465Z",
+  "lastRun": "2026-06-02T19:35:29.593Z",
   "log": [
-    {
-      "time": "2026-06-02T15:18:36.878Z",
-      "type": "SIGNAL",
-      "msg": "DELL — score 4 | ATR 0.80% | RSI 31",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T15:18:39.855Z",
-      "type": "SIGNAL",
-      "msg": "CMG — score 3 | ATR 0.29% | RSI 46",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-02T15:18:40.134Z",
-      "type": "SIGNAL",
-      "msg": "WMT — score 4 | ATR 0.22% | RSI 56",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T15:18:40.409Z",
-      "type": "SIGNAL",
-      "msg": "LFVN — score 5 | ATR 4.79% | RSI 31",
-      "detail": "Hammer, Gap Up"
-    },
-    {
-      "time": "2026-06-02T15:18:40.688Z",
-      "type": "SIGNAL",
-      "msg": "AEHR — score 5 | ATR 1.22% | RSI 66",
-      "detail": "Bullish Engulfing"
-    },
     {
       "time": "2026-06-02T15:18:40.955Z",
       "type": "SIGNAL",
@@ -1311,6 +1273,36 @@
       "time": "2026-06-02T19:25:14.465Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:35:28.250Z",
+      "type": "INFO",
+      "msg": "Account: $99520.93 | 8 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:35:28.275Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:35:28.275Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: DG @ $106.16 | High $108.73 → Stop $106.56 | P&L $-8.72",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:35:29.582Z",
+      "type": "SELL",
+      "msg": "✓ Closed DG",
+      "detail": "P&L $-8.72"
+    },
+    {
+      "time": "2026-06-02T19:35:29.593Z",
+      "type": "INFO",
+      "msg": "Skipping — last 30 min before close (25 min left)",
       "detail": ""
     }
   ]
