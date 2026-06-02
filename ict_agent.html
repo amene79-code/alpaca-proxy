@@ -1550,6 +1550,7 @@ async function loadICTHistory(){
 
     // Match trades — show ALL trades, tag ICT ones
     const all=matchAllTrades(allActivities);
+    log("ICT",`Debug: ${allActivities.length} fills | ${all.length} matched trades | symbols: ${[...new Set(allActivities.map(a=>a.symbol))].slice(0,10).join(",")}`);
 
     // ICT trades = those with ICT- tag OR those placed while ICT agent was running
     // Since client_order_id may not always come through in fills, also check ictMeta
