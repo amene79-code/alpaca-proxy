@@ -21,8 +21,8 @@
     "MOMO": {
       "high": 6.35,
       "entry": 6.135,
-      "tp": 6.33,
-      "sl": 6.06
+      "tp": 6.54,
+      "sl": 6.04
     },
     "NOK": {
       "high": 16.75,
@@ -42,20 +42,86 @@
       "tp": 53.52,
       "sl": 49.07
     },
-    "AMD": {
-      "high": 504,
-      "entry": 500.55,
-      "tp": 528.04,
-      "sl": 488.53
-    },
     "GTLB": {
       "high": 33.31,
       "entry": 33.31,
       "tp": 35.07,
       "sl": 32.43
+    },
+    "COOT": {
+      "high": 0.628,
+      "entry": 0.628,
+      "tp": 0.66,
+      "sl": 0.61
+    },
+    "CRDO": {
+      "high": 230.11,
+      "entry": 227.11,
+      "tp": 247.58,
+      "sl": 218.38
+    },
+    "SPCE": {
+      "high": 7.380833,
+      "entry": 7.380833,
+      "tp": 9.9,
+      "sl": 6.12
+    },
+    "VSXY": {
+      "high": 77.56,
+      "entry": 55,
+      "tp": null,
+      "sl": null
+    },
+    "GRRR": {
+      "high": 22.689899444580078,
+      "entry": 22.689899444580078,
+      "tp": 23.79,
+      "sl": 22.11
+    },
+    "RKLB": {
+      "high": 127.0999984741211,
+      "entry": 127.0999984741211,
+      "tp": 130.64,
+      "sl": 125.68
+    },
+    "MU": {
+      "high": 1031.1600341796875,
+      "entry": 1031.1600341796875,
+      "tp": 1050.82,
+      "sl": 1023.29
+    },
+    "AVGO": {
+      "high": 484.3599853515625,
+      "entry": 484.3599853515625,
+      "tp": 493.14,
+      "sl": 479.63
+    },
+    "MRVL": {
+      "high": 256.54998779296875,
+      "entry": 256.54998779296875,
+      "tp": 271.96,
+      "sl": 248.25
+    },
+    "DG": {
+      "high": 114.23999786376953,
+      "entry": 114.23999786376953,
+      "tp": 116.23,
+      "sl": 113.17
+    },
+    "META": {
+      "high": 601.594970703125,
+      "entry": 601.594970703125,
+      "tp": 610.22,
+      "sl": 598.48
+    },
+    "NTSK": {
+      "high": 12.720000267028809,
+      "entry": 12.720000267028809,
+      "tp": 13.2,
+      "sl": 12.55
     }
   },
-  "dailyTrades": 0,
+  "dailyTrades": 8,
   "dailyDate": "2026-06-02",
   "openPositions": [
     "FIVE",
@@ -70,364 +136,18 @@
     "MU",
     "INTC",
     "KEEL",
-    "HPE"
+    "HPE",
+    "GRRR",
+    "RKLB",
+    "MU",
+    "AVGO",
+    "MRVL",
+    "DG",
+    "META",
+    "NTSK"
   ],
-  "lastRun": "2026-06-02T13:20:50.245Z",
+  "lastRun": "2026-06-02T13:31:30.574Z",
   "log": [
-    {
-      "time": "2026-06-01T16:49:55.877Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 81x KEEL",
-      "detail": "ID: 9c5644b8-4b26-431c-9353-96e8234975f0 | R:R 1.8:1"
-    },
-    {
-      "time": "2026-06-01T17:00:15.628Z",
-      "type": "INFO",
-      "msg": "Account: $100439.21 | 20 positions open | 19 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:00:15.707Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:00:15.707Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:10:35.028Z",
-      "type": "INFO",
-      "msg": "Account: $100436.96 | 18 positions open | 19 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:10:35.039Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:10:35.040Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:10:35.158Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
-    },
-    {
-      "time": "2026-06-01T17:10:35.866Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-01T17:10:36.439Z",
-      "type": "SIGNAL",
-      "msg": "HPE — score 6 | ATR 0.61% | RSI 47",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-01T17:10:37.461Z",
-      "type": "SIGNAL",
-      "msg": "DELL — score 4 | ATR 0.49% | RSI 66",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-01T17:10:37.985Z",
-      "type": "SIGNAL",
-      "msg": "ASTS — score 4 | ATR 0.61% | RSI 49",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T17:10:38.493Z",
-      "type": "SIGNAL",
-      "msg": "RMCO — score 4 | ATR 2.51% | RSI 50",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T17:10:41.253Z",
-      "type": "SIGNAL",
-      "msg": "SIG — score 5 | ATR 0.48% | RSI 79",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T17:10:42.765Z",
-      "type": "SIGNAL",
-      "msg": "NIO — score 5 | ATR 0.36% | RSI 58",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T17:10:43.028Z",
-      "type": "SIGNAL",
-      "msg": "ORCL — score 5 | ATR 0.49% | RSI 55",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T17:10:43.274Z",
-      "type": "SIGNAL",
-      "msg": "BBAI — score 5 | ATR 0.69% | RSI 48",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T17:10:43.521Z",
-      "type": "SIGNAL",
-      "msg": "CMG — score 4 | ATR 0.27% | RSI 45",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-01T17:10:44.311Z",
-      "type": "SIGNAL",
-      "msg": "NUAI — score 5 | ATR 2.13% | RSI 91",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-01T17:10:46.103Z",
-      "type": "INFO",
-      "msg": "Top signal: HPE (score 6)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:10:46.103Z",
-      "type": "BUY",
-      "msg": "Placing: 10x HPE @ ~$45.60",
-      "detail": "Patterns: Volume Breakout | SL 1× $45.32 | TP 1.8× $46.1 | R:R 1.8"
-    },
-    {
-      "time": "2026-06-01T17:10:46.147Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 10x HPE",
-      "detail": "ID: f5978f86-f556-4bd6-905a-ceab4a2cd33e | R:R 1.8:1"
-    },
-    {
-      "time": "2026-06-01T17:21:01.555Z",
-      "type": "INFO",
-      "msg": "Account: $100457.11 | 18 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:21:01.645Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:21:01.645Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: ARM @ $411.9999 | High $420.94 → Stop $412.52 | P&L $-6.24",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:21:03.071Z",
-      "type": "SELL",
-      "msg": "✓ Closed ARM",
-      "detail": "P&L $-6.24"
-    },
-    {
-      "time": "2026-06-01T17:21:03.071Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:31:20.632Z",
-      "type": "INFO",
-      "msg": "Account: $100468.49 | 17 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:31:20.648Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:31:20.648Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:41:32.058Z",
-      "type": "INFO",
-      "msg": "Account: $100454.78 | 16 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:41:32.112Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:41:32.112Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:51:46.707Z",
-      "type": "INFO",
-      "msg": "Account: $100462.05 | 14 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:51:46.732Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T17:51:46.733Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:02:02.886Z",
-      "type": "INFO",
-      "msg": "Account: $100467.46 | 14 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:02:02.961Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:02:03.195Z",
-      "type": "INFO",
-      "msg": "Recalculated TP/SL for SPWH",
-      "detail": "Entry $1.32 | High $1.37 | ATR $0.02 | TP $1.44 | SL $1.29"
-    },
-    {
-      "time": "2026-06-01T18:02:03.395Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:12:21.034Z",
-      "type": "INFO",
-      "msg": "Account: $100468.54 | 13 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:12:21.061Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:12:21.061Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:22:36.282Z",
-      "type": "INFO",
-      "msg": "Account: $100465.01 | 13 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:22:36.297Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:22:36.297Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:32:49.487Z",
-      "type": "INFO",
-      "msg": "Account: $100474.02 | 11 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:32:49.500Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:32:49.500Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:43:06.172Z",
-      "type": "INFO",
-      "msg": "Account: $100471.21 | 10 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:43:06.197Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:43:06.197Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:53:21.255Z",
-      "type": "INFO",
-      "msg": "Account: $100476.56 | 9 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:53:21.323Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T18:53:21.324Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T19:03:32.363Z",
-      "type": "INFO",
-      "msg": "Account: $100479.73 | 9 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T19:03:32.376Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T19:03:32.376Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T19:13:45.055Z",
-      "type": "INFO",
-      "msg": "Account: $100472.85 | 9 positions open | 20 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-01T19:13:45.131Z",
       "type": "INFO",
@@ -1273,6 +993,360 @@
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:31:06.460Z",
+      "type": "INFO",
+      "msg": "Account: $99834.04 | 12 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:31:06.460Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for COOT",
+      "detail": "Entry $0.63 | Current $0.61 | High set to $0.63"
+    },
+    {
+      "time": "2026-06-02T13:31:06.460Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for CRDO",
+      "detail": "Entry $227.11 | Current $230.11 | High set to $230.11"
+    },
+    {
+      "time": "2026-06-02T13:31:06.460Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for SPCE",
+      "detail": "Entry $7.38 | Current $6.22 | High set to $7.38"
+    },
+    {
+      "time": "2026-06-02T13:31:06.460Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for VSXY",
+      "detail": "Entry $55.00 | Current $77.56 | High set to $77.56"
+    },
+    {
+      "time": "2026-06-02T13:31:06.534Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:31:06.691Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for COOT",
+      "detail": "Entry $0.63 | High $0.63 | ATR $0.01 | TP $0.66 | SL $0.61"
+    },
+    {
+      "time": "2026-06-02T13:31:06.962Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for CRDO",
+      "detail": "Entry $227.11 | High $230.11 | ATR $5.82 | TP $247.58 | SL $218.38"
+    },
+    {
+      "time": "2026-06-02T13:31:07.230Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for MOMO",
+      "detail": "Entry $6.13 | High $6.35 | ATR $0.06 | TP $6.54 | SL $6.04"
+    },
+    {
+      "time": "2026-06-02T13:31:07.507Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for SPCE",
+      "detail": "Entry $7.38 | High $7.38 | ATR $0.84 | TP $9.9 | SL $6.12"
+    },
+    {
+      "time": "2026-06-02T13:31:08.015Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: COOT @ $0.6143 | High $0.628 → Stop $0.62 | P&L $-2.85",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:31:09.429Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: GTLB @ $32.6 | High $33.31 → Stop $32.64 | P&L $-7.10",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:31:10.845Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: RVMD @ $160.375 | High $168.8 → Stop $165.42 | P&L $-5.14",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:31:12.253Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: SPCE @ $6.2201 | High $7.380833 → Stop $7.23 | P&L $-19.73",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:31:13.692Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:31:13.911Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
+    },
+    {
+      "time": "2026-06-02T13:31:14.511Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-02T13:31:14.593Z",
+      "type": "SIGNAL",
+      "msg": "HPE — score 4 | ATR 2.51% | RSI 95",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:14.878Z",
+      "type": "SIGNAL",
+      "msg": "MU — score 7 | ATR 0.54% | RSI 49",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:15.159Z",
+      "type": "SIGNAL",
+      "msg": "AVGO — score 7 | ATR 0.70% | RSI 83",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:15.436Z",
+      "type": "SIGNAL",
+      "msg": "ASTS — score 4 | ATR 0.95% | RSI 64",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:15.715Z",
+      "type": "SIGNAL",
+      "msg": "MRVL — score 7 | ATR 1.54% | RSI 86",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:16.262Z",
+      "type": "SIGNAL",
+      "msg": "RKLB — score 8 | ATR 0.80% | RSI 62",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:16.544Z",
+      "type": "SIGNAL",
+      "msg": "META — score 6 | ATR 0.30% | RSI 36",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-02T13:31:16.827Z",
+      "type": "SIGNAL",
+      "msg": "GOOG — score 5 | ATR 0.40% | RSI 9",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T13:31:17.105Z",
+      "type": "SIGNAL",
+      "msg": "NBIS — score 5 | ATR 0.84% | RSI 52",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:17.916Z",
+      "type": "SIGNAL",
+      "msg": "NTSK — score 6 | ATR 0.80% | RSI 15",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-02T13:31:18.189Z",
+      "type": "SIGNAL",
+      "msg": "DXLG — score 4 | ATR 0.64% | RSI 34",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:18.739Z",
+      "type": "SIGNAL",
+      "msg": "ODD — score 5 | ATR 4.35% | RSI 7",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-02T13:31:19.310Z",
+      "type": "SIGNAL",
+      "msg": "SMCI — score 3 | ATR 0.90% | RSI 78",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:19.587Z",
+      "type": "SIGNAL",
+      "msg": "RENT — score 4 | ATR 0.60% | RSI 38",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:19.857Z",
+      "type": "SIGNAL",
+      "msg": "YB — score 4 | ATR 1.31% | RSI 46",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:21.062Z",
+      "type": "SIGNAL",
+      "msg": "ALOT — score 4 | ATR 0.48% | RSI 51",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:22.182Z",
+      "type": "SIGNAL",
+      "msg": "NOW — score 5 | ATR 0.67% | RSI 21",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-02T13:31:22.455Z",
+      "type": "SIGNAL",
+      "msg": "ABVX — score 5 | ATR 5.41% | RSI 1",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-02T13:31:22.737Z",
+      "type": "SIGNAL",
+      "msg": "NU — score 5 | ATR 1.09% | RSI 6",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-02T13:31:23.016Z",
+      "type": "SIGNAL",
+      "msg": "DG — score 7 | ATR 0.67% | RSI 83",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:23.293Z",
+      "type": "SIGNAL",
+      "msg": "WMT — score 5 | ATR 0.20% | RSI 44",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-02T13:31:24.116Z",
+      "type": "SIGNAL",
+      "msg": "IBM — score 5 | ATR 0.72% | RSI 28",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-02T13:31:24.748Z",
+      "type": "SIGNAL",
+      "msg": "GRRR — score 9 | ATR 1.28% | RSI 86",
+      "detail": "Hammer, Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:25.024Z",
+      "type": "SIGNAL",
+      "msg": "BSX — score 5 | ATR 0.31% | RSI 67",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-02T13:31:25.301Z",
+      "type": "SIGNAL",
+      "msg": "LPTH — score 4 | ATR 1.51% | RSI 13",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T13:31:25.775Z",
+      "type": "INFO",
+      "msg": "Top signal: GRRR (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:31:25.775Z",
+      "type": "BUY",
+      "msg": "Placing: 17x GRRR @ ~$22.69",
+      "detail": "Patterns: Hammer, Volume Breakout, Gap Up | SL 2× $22.11 | TP 3.8× $23.79 | R:R 1.9"
+    },
+    {
+      "time": "2026-06-02T13:31:25.977Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 17x GRRR",
+      "detail": "ID: f15a2cb8-a63a-4965-bef4-ce439d0d998b | R:R 1.9:1"
+    },
+    {
+      "time": "2026-06-02T13:31:26.478Z",
+      "type": "BUY",
+      "msg": "Placing: 3x RKLB @ ~$127.10",
+      "detail": "Patterns: Volume Breakout, Gap Up | SL 1.4× $125.68 | TP 3.5× $130.64 | R:R 2.5"
+    },
+    {
+      "time": "2026-06-02T13:31:26.549Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 3x RKLB",
+      "detail": "ID: 1a0eb3ed-1c89-4a0c-ae0c-4e0e1dd7a19c | R:R 2.5:1"
+    },
+    {
+      "time": "2026-06-02T13:31:27.050Z",
+      "type": "BUY",
+      "msg": "Placing: 1x MU @ ~$1031.16",
+      "detail": "Patterns: Volume Breakout, Gap Up | SL 1.4× $1023.29 | TP 3.5× $1050.82 | R:R 2.5"
+    },
+    {
+      "time": "2026-06-02T13:31:27.121Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x MU",
+      "detail": "ID: 4305a8ef-af70-467e-a5fd-cbe069c674e7 | R:R 2.5:1"
+    },
+    {
+      "time": "2026-06-02T13:31:27.621Z",
+      "type": "BUY",
+      "msg": "Placing: 1x AVGO @ ~$484.36",
+      "detail": "Patterns: Volume Breakout, Gap Up | SL 1.4× $479.63 | TP 2.6× $493.14 | R:R 1.9"
+    },
+    {
+      "time": "2026-06-02T13:31:27.691Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x AVGO",
+      "detail": "ID: 6d273996-1416-4256-aeac-44c54ac7befd | R:R 1.9:1"
+    },
+    {
+      "time": "2026-06-02T13:31:28.192Z",
+      "type": "BUY",
+      "msg": "Placing: 1x MRVL @ ~$256.55",
+      "detail": "Patterns: Volume Breakout, Gap Up | SL 2.1× $248.25 | TP 3.9× $271.96 | R:R 1.9"
+    },
+    {
+      "time": "2026-06-02T13:31:28.303Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x MRVL",
+      "detail": "ID: 8df0136b-db89-4e2a-b613-6511dad5cf7f | R:R 1.9:1"
+    },
+    {
+      "time": "2026-06-02T13:31:28.804Z",
+      "type": "BUY",
+      "msg": "Placing: 4x DG @ ~$114.24",
+      "detail": "Patterns: Volume Breakout, Gap Up | SL 1.4× $113.17 | TP 2.6× $116.23 | R:R 1.9"
+    },
+    {
+      "time": "2026-06-02T13:31:28.889Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 4x DG",
+      "detail": "ID: 8bfa955b-750b-49f4-b7d6-5804ae4c0cb4 | R:R 1.9:1"
+    },
+    {
+      "time": "2026-06-02T13:31:29.390Z",
+      "type": "BUY",
+      "msg": "Placing: 1x META @ ~$601.59",
+      "detail": "Patterns: Volume Breakout | SL 1.7× $598.48 | TP 4.7× $610.22 | R:R 2.8"
+    },
+    {
+      "time": "2026-06-02T13:31:29.465Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x META",
+      "detail": "ID: e27bf0d2-672e-4fa0-98a6-c0ea8cda263c | R:R 2.8:1"
+    },
+    {
+      "time": "2026-06-02T13:31:29.965Z",
+      "type": "BUY",
+      "msg": "Placing: 39x NTSK @ ~$12.72",
+      "detail": "Patterns: Volume Breakout | SL 1.7× $12.55 | TP 4.7× $13.2 | R:R 2.8"
+    },
+    {
+      "time": "2026-06-02T13:31:30.074Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 39x NTSK",
+      "detail": "ID: 5278407d-4b2d-4116-ae32-d9ba1990d417 | R:R 2.8:1"
     }
   ]
 }
