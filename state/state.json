@@ -67,12 +67,6 @@
       "tp": 4.04,
       "sl": 3.69
     },
-    "DXST": {
-      "high": 4.38,
-      "entry": 4.034999847412109,
-      "tp": 4.54,
-      "sl": 3.75
-    },
     "KEN": {
       "high": 86.5,
       "entry": 86.15010070800781,
@@ -80,7 +74,7 @@
       "sl": 85.1
     },
     "ASTC": {
-      "high": 56.89,
+      "high": 58.1311,
       "entry": 53.93,
       "tp": 74.78,
       "sl": 43.55
@@ -147,26 +141,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T18:13:04.032Z",
+  "lastRun": "2026-06-02T18:23:26.346Z",
   "log": [
-    {
-      "time": "2026-06-02T15:08:09.438Z",
-      "type": "BUY",
-      "msg": "Placing: 37x GXAI @ ~$1.78",
-      "detail": "Patterns: Bullish Engulfing | SL 2.8× $1.52 | TP 5.8× $2.34 | R:R 2.1"
-    },
-    {
-      "time": "2026-06-02T15:08:09.468Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 37x GXAI",
-      "detail": "ID: 75037241-8bb5-4551-bc41-d9e09a374bf5 | R:R 2.1:1"
-    },
-    {
-      "time": "2026-06-02T15:08:09.968Z",
-      "type": "BUY",
-      "msg": "Placing: 184x PMI @ ~$0.32",
-      "detail": "Patterns: Bullish Engulfing | SL 2.8× $0.27 | TP 5.8× $0.42 | R:R 1.8"
-    },
     {
       "time": "2026-06-02T15:08:10.000Z",
       "type": "BUY",
@@ -1345,6 +1321,24 @@
     },
     {
       "time": "2026-06-02T18:13:04.031Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:23:25.991Z",
+      "type": "INFO",
+      "msg": "Account: $99517.42 | 13 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:23:26.051Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:23:26.346Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
       "detail": ""
