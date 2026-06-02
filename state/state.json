@@ -79,14 +79,8 @@
       "tp": 1067.19,
       "sl": 1028.82
     },
-    "AEHR": {
-      "high": 113.9,
-      "entry": 112.30000305175781,
-      "tp": 116,
-      "sl": 110.25
-    },
     "MRVL": {
-      "high": 284.8,
+      "high": 285.0701,
       "entry": 278.2650146484375,
       "tp": 288.39,
       "sl": 272.71
@@ -96,12 +90,6 @@
       "entry": 266.739990234375,
       "tp": 275.28,
       "sl": 262.47
-    },
-    "WMT": {
-      "high": 113.7399,
-      "entry": 113.13500213623047,
-      "tp": 113.79,
-      "sl": 112.77
     },
     "CMG": {
       "high": 29.385,
@@ -145,12 +133,6 @@
       "tp": 136.68,
       "sl": 117.27
     },
-    "SHAK": {
-      "high": 55.62,
-      "entry": 55.48,
-      "tp": 59.1,
-      "sl": 53.74
-    },
     "SMR": {
       "high": 14.04,
       "entry": 14.04,
@@ -158,7 +140,7 @@
       "sl": 13.35
     },
     "SOXX": {
-      "high": 597.3499755859375,
+      "high": 598.33,
       "entry": 597.3499755859375,
       "tp": 600.87,
       "sl": 595.39
@@ -168,9 +150,33 @@
       "entry": 1.9249999523162842,
       "tp": 2.27,
       "sl": 1.7
+    },
+    "GOOG": {
+      "high": 364.927490234375,
+      "entry": 364.927490234375,
+      "tp": 366.99,
+      "sl": 363.78
+    },
+    "OPEN": {
+      "high": 5.565000057220459,
+      "entry": 5.565000057220459,
+      "tp": 5.66,
+      "sl": 5.52
+    },
+    "GOOGL": {
+      "high": 368.3450012207031,
+      "entry": 368.3450012207031,
+      "tp": 370.43,
+      "sl": 367.19
+    },
+    "DXST": {
+      "high": 4.034999847412109,
+      "entry": 4.034999847412109,
+      "tp": 4.54,
+      "sl": 3.75
     }
   },
-  "dailyTrades": 52,
+  "dailyTrades": 56,
   "dailyDate": "2026-06-02",
   "openPositions": [
     "FIVE",
@@ -213,7 +219,6 @@
     "LAC",
     "MU",
     "LFVN",
-    "AEHR",
     "MRVL",
     "NBIS",
     "DELL",
@@ -221,130 +226,14 @@
     "CMG",
     "GOOGL",
     "SOXX",
-    "LASE"
+    "LASE",
+    "GOOG",
+    "OPEN",
+    "GOOGL",
+    "DXST"
   ],
-  "lastRun": "2026-06-02T16:43:16.564Z",
+  "lastRun": "2026-06-02T16:53:41.897Z",
   "log": [
-    {
-      "time": "2026-06-02T14:23:07.485Z",
-      "type": "INFO",
-      "msg": "Account: $99708.45 | 16 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:23:07.507Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:23:07.538Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:33:29.009Z",
-      "type": "INFO",
-      "msg": "Account: $99698.52 | 14 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:33:29.109Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:33:29.139Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:43:45.621Z",
-      "type": "INFO",
-      "msg": "Account: $99701.64 | 14 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:43:45.635Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:43:45.661Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:57:15.568Z",
-      "type": "INFO",
-      "msg": "Account: $99714.19 | 13 positions open | 20 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:57:15.587Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:57:15.588Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: LPTH @ $15.74 | High $16.1 → Stop $15.78 | P&L +$9.01",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:57:16.859Z",
-      "type": "SELL",
-      "msg": "✓ Closed LPTH",
-      "detail": "P&L +$9.01"
-    },
-    {
-      "time": "2026-06-02T14:57:16.890Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:57:17.047Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
-    },
-    {
-      "time": "2026-06-02T14:57:17.691Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-02T14:57:17.750Z",
-      "type": "SIGNAL",
-      "msg": "SPCE — score 3 | ATR 3.30% | RSI 30",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-02T14:57:18.004Z",
-      "type": "SIGNAL",
-      "msg": "HPE — score 4 | ATR 1.26% | RSI 55",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T14:57:20.712Z",
-      "type": "SIGNAL",
-      "msg": "DXLG — score 5 | ATR 1.50% | RSI 48",
-      "detail": "Hammer, Gap Up"
-    },
-    {
-      "time": "2026-06-02T14:57:22.107Z",
-      "type": "SIGNAL",
-      "msg": "RENT — score 3 | ATR 0.67% | RSI 49",
-      "detail": "Gap Up"
-    },
     {
       "time": "2026-06-02T14:57:23.067Z",
       "type": "SIGNAL",
@@ -1424,6 +1313,126 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 44x LASE",
       "detail": "ID: 50336357-6c4d-4006-b1ab-6702ae9dc45e | R:R 1.5:1"
+    },
+    {
+      "time": "2026-06-02T16:53:29.936Z",
+      "type": "INFO",
+      "msg": "Account: $99566.50 | 26 positions open | 52 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:53:29.951Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:53:29.951Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: AEHR @ $111.29 | High $113.9 → Stop $111.62 | P&L $-5.13",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:53:31.206Z",
+      "type": "SELL",
+      "msg": "✓ Closed AEHR",
+      "detail": "P&L $-5.13"
+    },
+    {
+      "time": "2026-06-02T16:53:31.238Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:53:31.325Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
+    },
+    {
+      "time": "2026-06-02T16:53:31.858Z",
+      "type": "INFO",
+      "msg": "Scanning 31 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-02T16:53:32.982Z",
+      "type": "SIGNAL",
+      "msg": "GOOG — score 5 | ATR 0.21% | RSI 63",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T16:53:33.237Z",
+      "type": "SIGNAL",
+      "msg": "OPEN — score 5 | ATR 0.74% | RSI 69",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T16:53:34.247Z",
+      "type": "SIGNAL",
+      "msg": "GOOGL — score 5 | ATR 0.21% | RSI 63",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T16:53:39.112Z",
+      "type": "SIGNAL",
+      "msg": "DXST — score 4 | ATR 3.70% | RSI 46",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-02T16:53:39.804Z",
+      "type": "INFO",
+      "msg": "Top signal: GOOG (score 5)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T16:53:39.805Z",
+      "type": "BUY",
+      "msg": "Placing: 1x GOOG @ ~$364.93",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $363.78 | TP 2.7× $366.99 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-02T16:53:39.835Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x GOOG",
+      "detail": "ID: 7ad87467-b83a-4640-974e-675b419cdc6f | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-02T16:53:40.336Z",
+      "type": "BUY",
+      "msg": "Placing: 89x OPEN @ ~$5.57",
+      "detail": "Patterns: Bullish Engulfing | SL 1.2× $5.52 | TP 2.2× $5.66 | R:R 2.1"
+    },
+    {
+      "time": "2026-06-02T16:53:40.360Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 89x OPEN",
+      "detail": "ID: cc3e1e50-dca9-4bca-95ea-7290d2ef9245 | R:R 2.1:1"
+    },
+    {
+      "time": "2026-06-02T16:53:40.861Z",
+      "type": "BUY",
+      "msg": "Placing: 1x GOOGL @ ~$368.35",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $367.19 | TP 2.7× $370.43 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-02T16:53:40.876Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x GOOGL",
+      "detail": "ID: 522b295b-1f66-4bb8-b07d-bc57e5bda6bd | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-02T16:53:41.376Z",
+      "type": "BUY",
+      "msg": "Placing: 35x DXST @ ~$4.03",
+      "detail": "Patterns: Volume Breakout | SL 1.9× $3.75 | TP 3.4× $4.54 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-02T16:53:41.396Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 35x DXST",
+      "detail": "ID: 4696108f-c7af-45c4-9628-3d855bc2f867 | R:R 1.8:1"
     }
   ]
 }
