@@ -62,16 +62,10 @@
       "sl": 438.41
     },
     "YB": {
-      "high": 15.4,
+      "high": 15.655,
       "entry": 15.39,
       "tp": 16.68,
       "sl": 14.74
-    },
-    "BJDX": {
-      "high": 5.795000076293945,
-      "entry": 5.795000076293945,
-      "tp": 8.1,
-      "sl": 4.89
     },
     "DXLG": {
       "high": 0.7155,
@@ -80,7 +74,7 @@
       "sl": 0.67
     },
     "HPE": {
-      "high": 58.880001068115234,
+      "high": 59.045,
       "entry": 58.880001068115234,
       "tp": 61.1,
       "sl": 57.77
@@ -92,52 +86,46 @@
       "sl": 15.14
     },
     "NOW": {
-      "high": 125.52,
+      "high": 125.7,
       "entry": 125.3311996459961,
       "tp": 127.76,
       "sl": 124.21
     },
     "GLSI": {
-      "high": 23.73,
+      "high": 23.8575,
       "entry": 23.610000610351562,
       "tp": 25.52,
       "sl": 22.66
     },
     "KEEL": {
-      "high": 6.379899978637695,
+      "high": 6.385,
       "entry": 6.379899978637695,
       "tp": 6.54,
       "sl": 6.29
     },
     "ODD": {
-      "high": 9.550000190734863,
+      "high": 9.67,
       "entry": 9.550000190734863,
       "tp": 9.89,
       "sl": 9.36
     },
     "GRRR": {
-      "high": 21.969999313354492,
+      "high": 22.23,
       "entry": 21.969999313354492,
       "tp": 23.63,
       "sl": 21.14
     },
     "COHR": {
-      "high": 424.2799987792969,
+      "high": 427.38,
       "entry": 424.2799987792969,
       "tp": 439.66,
       "sl": 415.85
     },
     "GXAI": {
-      "high": 1.784999966621399,
+      "high": 1.8399,
       "entry": 1.784999966621399,
       "tp": 2.34,
       "sl": 1.52
-    },
-    "PMI": {
-      "high": 0.32420000433921814,
-      "entry": 0.32420000433921814,
-      "tp": 0.42,
-      "sl": 0.27
     },
     "RENT": {
       "high": 3.880000114440918,
@@ -146,7 +134,7 @@
       "sl": 3.83
     },
     "TE": {
-      "high": 11.959799766540527,
+      "high": 12.025,
       "entry": 11.959799766540527,
       "tp": 12.39,
       "sl": 11.7
@@ -156,9 +144,69 @@
       "entry": 6.069900035858154,
       "tp": 6.28,
       "sl": 5.96
+    },
+    "MU": {
+      "high": 1041.6099853515625,
+      "entry": 1041.6099853515625,
+      "tp": 1067.19,
+      "sl": 1028.82
+    },
+    "LFVN": {
+      "high": 9.020000457763672,
+      "entry": 9.020000457763672,
+      "tp": 12.17,
+      "sl": 7.64
+    },
+    "AEHR": {
+      "high": 112.30000305175781,
+      "entry": 112.30000305175781,
+      "tp": 116,
+      "sl": 110.25
+    },
+    "MRVL": {
+      "high": 278.2650146484375,
+      "entry": 278.2650146484375,
+      "tp": 288.39,
+      "sl": 272.71
+    },
+    "NBIS": {
+      "high": 266.739990234375,
+      "entry": 266.739990234375,
+      "tp": 275.28,
+      "sl": 262.47
+    },
+    "DELL": {
+      "high": 446.5199890136719,
+      "entry": 446.5199890136719,
+      "tp": 455.06,
+      "sl": 442.25
+    },
+    "WMT": {
+      "high": 113.13500213623047,
+      "entry": 113.13500213623047,
+      "tp": 113.79,
+      "sl": 112.77
+    },
+    "DXST": {
+      "high": 4.659999847412109,
+      "entry": 4.659999847412109,
+      "tp": 6.31,
+      "sl": 3.86
+    },
+    "SPCE": {
+      "high": 4.769899845123291,
+      "entry": 4.769899845123291,
+      "tp": 5.4,
+      "sl": 4.46
+    },
+    "CMG": {
+      "high": 29.17289924621582,
+      "entry": 29.17289924621582,
+      "tp": 29.44,
+      "sl": 29.03
     }
   },
-  "dailyTrades": 39,
+  "dailyTrades": 49,
   "dailyDate": "2026-06-02",
   "openPositions": [
     "FIVE",
@@ -192,7 +240,6 @@
     "DG",
     "BSX",
     "RKLB",
-    "BJDX",
     "DXLG",
     "HPE",
     "ALOT",
@@ -204,253 +251,22 @@
     "GRRR",
     "COHR",
     "GXAI",
-    "PMI",
     "RENT",
     "TE",
-    "LAC"
+    "LAC",
+    "MU",
+    "LFVN",
+    "AEHR",
+    "MRVL",
+    "NBIS",
+    "DELL",
+    "WMT",
+    "DXST",
+    "SPCE",
+    "CMG"
   ],
-  "lastRun": "2026-06-02T15:08:12.103Z",
+  "lastRun": "2026-06-02T15:18:47.636Z",
   "log": [
-    {
-      "time": "2026-06-02T13:41:50.112Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: GTLB @ $32.615 | High $33.31 → Stop $32.64 | P&L $-6.95",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T13:41:50.190Z",
-      "type": "SELL",
-      "msg": "✓ Closed GTLB",
-      "detail": "P&L $-6.95"
-    },
-    {
-      "time": "2026-06-02T13:41:50.190Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: MOMO @ $6.115 | High $6.35 → Stop $6.22 | P&L $-0.14",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T13:41:51.506Z",
-      "type": "SELL",
-      "msg": "✓ Closed MOMO",
-      "detail": "P&L $-0.14"
-    },
-    {
-      "time": "2026-06-02T13:41:51.506Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: RVMD @ $155.37 | High $168.8 → Stop $165.42 | P&L $-20.16",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T13:41:51.574Z",
-      "type": "SELL",
-      "msg": "✓ Closed RVMD",
-      "detail": "P&L $-20.16"
-    },
-    {
-      "time": "2026-06-02T13:41:51.574Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: SPCE @ $5.615 | High $7.380833 → Stop $7.23 | P&L $-30.02",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T13:41:51.644Z",
-      "type": "SELL",
-      "msg": "✓ Closed SPCE",
-      "detail": "P&L $-30.02"
-    },
-    {
-      "time": "2026-06-02T13:41:51.932Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T13:41:52.120Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
-    },
-    {
-      "time": "2026-06-02T13:41:52.792Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-02T13:41:52.931Z",
-      "type": "SIGNAL",
-      "msg": "HPE — score 6 | ATR 2.97% | RSI 81",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:41:53.203Z",
-      "type": "SIGNAL",
-      "msg": "MU — score 9 | ATR 0.62% | RSI 46",
-      "detail": "Volume Breakout, Gap Up, Hammer"
-    },
-    {
-      "time": "2026-06-02T13:41:53.570Z",
-      "type": "SIGNAL",
-      "msg": "AVGO — score 8 | ATR 0.79% | RSI 72",
-      "detail": "Volume Breakout, Hammer, Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:41:53.922Z",
-      "type": "SIGNAL",
-      "msg": "NVDA — score 7 | ATR 0.46% | RSI 56",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:41:54.226Z",
-      "type": "SIGNAL",
-      "msg": "ASTS — score 7 | ATR 1.17% | RSI 81",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:41:54.493Z",
-      "type": "SIGNAL",
-      "msg": "MSFT — score 5 | ATR 0.51% | RSI 11",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:41:54.761Z",
-      "type": "SIGNAL",
-      "msg": "RKLB — score 8 | ATR 1.05% | RSI 62",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:41:55.039Z",
-      "type": "SIGNAL",
-      "msg": "META — score 5 | ATR 0.36% | RSI 21",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:41:55.654Z",
-      "type": "SIGNAL",
-      "msg": "NBIS — score 8 | ATR 0.99% | RSI 58",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:41:56.557Z",
-      "type": "SIGNAL",
-      "msg": "NTSK — score 5 | ATR 0.92% | RSI 16",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:41:56.816Z",
-      "type": "SIGNAL",
-      "msg": "DXLG — score 4 | ATR 0.79% | RSI 42",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:41:57.704Z",
-      "type": "SIGNAL",
-      "msg": "DELL — score 4 | ATR 0.78% | RSI 25",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-02T13:41:58.055Z",
-      "type": "SIGNAL",
-      "msg": "CRDO — score 5 | ATR 2.91% | RSI 32",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:41:58.372Z",
-      "type": "SIGNAL",
-      "msg": "SMCI — score 7 | ATR 1.28% | RSI 61",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:41:58.645Z",
-      "type": "SIGNAL",
-      "msg": "RENT — score 3 | ATR 0.65% | RSI 46",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:41:58.903Z",
-      "type": "SIGNAL",
-      "msg": "YB — score 4 | ATR 1.31% | RSI 46",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:42:00.184Z",
-      "type": "SIGNAL",
-      "msg": "ALOT — score 6 | ATR 0.66% | RSI 56",
-      "detail": "Gap Up, Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:42:01.746Z",
-      "type": "SIGNAL",
-      "msg": "ABVX — score 6 | ATR 5.89% | RSI 8",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:42:02.057Z",
-      "type": "SIGNAL",
-      "msg": "NU — score 8 | ATR 1.09% | RSI 14",
-      "detail": "Volume Breakout, Hammer"
-    },
-    {
-      "time": "2026-06-02T13:42:02.324Z",
-      "type": "SIGNAL",
-      "msg": "DG — score 7 | ATR 1.21% | RSI 30",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:42:02.620Z",
-      "type": "SIGNAL",
-      "msg": "WMT — score 6 | ATR 0.22% | RSI 54",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:42:02.890Z",
-      "type": "SIGNAL",
-      "msg": "MSTR — score 6 | ATR 0.96% | RSI 13",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:42:03.472Z",
-      "type": "SIGNAL",
-      "msg": "IBM — score 6 | ATR 0.85% | RSI 51",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:42:03.734Z",
-      "type": "SIGNAL",
-      "msg": "GRRR — score 6 | ATR 1.81% | RSI 71",
-      "detail": "Volume Breakout, Gap Up"
-    },
-    {
-      "time": "2026-06-02T13:42:04.019Z",
-      "type": "SIGNAL",
-      "msg": "BSX — score 7 | ATR 0.42% | RSI 39",
-      "detail": "Volume Breakout, Hammer"
-    },
-    {
-      "time": "2026-06-02T13:42:04.336Z",
-      "type": "SIGNAL",
-      "msg": "LPTH — score 6 | ATR 1.63% | RSI 16",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T13:42:04.869Z",
-      "type": "INFO",
-      "msg": "Top signal: MU (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T13:42:04.869Z",
-      "type": "BUY",
-      "msg": "Placing: 1x MU @ ~$1030.85",
-      "detail": "Patterns: Volume Breakout, Gap Up, Hammer | SL 1.6× $1020.62 | TP 4× $1056.44 | R:R 2.5"
-    },
-    {
-      "time": "2026-06-02T13:42:05.019Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 1x MU",
-      "detail": "ID: 6458b883-d02d-4062-b8d0-73c27ded58dd | R:R 2.5:1"
-    },
     {
       "time": "2026-06-02T13:42:05.520Z",
       "type": "BUY",
@@ -1410,6 +1226,246 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 82x LAC",
       "detail": "ID: 2744df0e-19f9-45cd-ac08-df2be4ce7789 | R:R 1.9:1"
+    },
+    {
+      "time": "2026-06-02T15:18:29.315Z",
+      "type": "INFO",
+      "msg": "Account: $99675.92 | 26 positions open | 39 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:18:29.386Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:18:29.386Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: BJDX @ $5.6001 | High $5.795000076293945 → Stop $5.68 | P&L $-2.20",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:18:30.877Z",
+      "type": "SELL",
+      "msg": "✓ Closed BJDX",
+      "detail": "P&L $-2.20"
+    },
+    {
+      "time": "2026-06-02T15:18:30.877Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: PMI @ $0.3137 | High $0.32420000433921814 → Stop $0.32 | P&L $-2.04",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:18:32.374Z",
+      "type": "SELL",
+      "msg": "✓ Closed PMI",
+      "detail": "P&L $-2.04"
+    },
+    {
+      "time": "2026-06-02T15:18:32.414Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:18:32.637Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
+    },
+    {
+      "time": "2026-06-02T15:18:33.417Z",
+      "type": "INFO",
+      "msg": "Scanning 30 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-02T15:18:33.497Z",
+      "type": "SIGNAL",
+      "msg": "SPCE — score 3 | ATR 2.63% | RSI 35",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-02T15:18:33.776Z",
+      "type": "SIGNAL",
+      "msg": "MU — score 5 | ATR 0.82% | RSI 32",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T15:18:34.327Z",
+      "type": "SIGNAL",
+      "msg": "MRVL — score 4 | ATR 1.17% | RSI 53",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-02T15:18:35.442Z",
+      "type": "SIGNAL",
+      "msg": "NBIS — score 4 | ATR 1.07% | RSI 20",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T15:18:36.878Z",
+      "type": "SIGNAL",
+      "msg": "DELL — score 4 | ATR 0.80% | RSI 31",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T15:18:39.855Z",
+      "type": "SIGNAL",
+      "msg": "CMG — score 3 | ATR 0.29% | RSI 46",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-02T15:18:40.134Z",
+      "type": "SIGNAL",
+      "msg": "WMT — score 4 | ATR 0.22% | RSI 56",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T15:18:40.409Z",
+      "type": "SIGNAL",
+      "msg": "LFVN — score 5 | ATR 4.79% | RSI 31",
+      "detail": "Hammer, Gap Up"
+    },
+    {
+      "time": "2026-06-02T15:18:40.688Z",
+      "type": "SIGNAL",
+      "msg": "AEHR — score 5 | ATR 1.22% | RSI 66",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T15:18:40.955Z",
+      "type": "SIGNAL",
+      "msg": "DXST — score 4 | ATR 6.10% | RSI 51",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T15:18:41.719Z",
+      "type": "INFO",
+      "msg": "Top signal: MU (score 5)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:18:41.719Z",
+      "type": "BUY",
+      "msg": "Placing: 1x MU @ ~$1041.61",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $1028.82 | TP 3× $1067.19 | R:R 2.0"
+    },
+    {
+      "time": "2026-06-02T15:18:41.915Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x MU",
+      "detail": "ID: 76b69d2d-33b2-4b7f-a3f8-81401e782aad | R:R 2.0:1"
+    },
+    {
+      "time": "2026-06-02T15:18:42.416Z",
+      "type": "BUY",
+      "msg": "Placing: 7x LFVN @ ~$9.02",
+      "detail": "Patterns: Hammer, Gap Up | SL 3.2× $7.64 | TP 7.3× $12.17 | R:R 2.3"
+    },
+    {
+      "time": "2026-06-02T15:18:42.488Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 7x LFVN",
+      "detail": "ID: 77257cb6-9990-4a49-b93b-411bef1b2d10 | R:R 2.3:1"
+    },
+    {
+      "time": "2026-06-02T15:18:42.989Z",
+      "type": "BUY",
+      "msg": "Placing: 4x AEHR @ ~$112.30",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $110.25 | TP 2.7× $116 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-02T15:18:43.066Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 4x AEHR",
+      "detail": "ID: 8ec287fc-5d83-4df4-9e0a-5f50328bd2f6 | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-02T15:18:43.566Z",
+      "type": "BUY",
+      "msg": "Placing: 1x MRVL @ ~$278.27",
+      "detail": "Patterns: Hammer | SL 1.7× $272.71 | TP 3.1× $288.39 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-02T15:18:43.656Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x MRVL",
+      "detail": "ID: 28376c71-16ca-4966-a89b-db7d88d7fab2 | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-02T15:18:44.157Z",
+      "type": "BUY",
+      "msg": "Placing: 1x NBIS @ ~$266.74",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $262.47 | TP 3× $275.28 | R:R 2.0"
+    },
+    {
+      "time": "2026-06-02T15:18:44.230Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x NBIS",
+      "detail": "ID: 8b58d2a2-c33f-4446-9b5f-d9eb57aff2a3 | R:R 2.0:1"
+    },
+    {
+      "time": "2026-06-02T15:18:44.731Z",
+      "type": "BUY",
+      "msg": "Placing: 1x DELL @ ~$446.52",
+      "detail": "Patterns: Bullish Engulfing | SL 1.2× $442.25 | TP 2.4× $455.06 | R:R 2.0"
+    },
+    {
+      "time": "2026-06-02T15:18:44.807Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x DELL",
+      "detail": "ID: 1e0cf33f-6fde-46e1-8302-4d34a27e35bc | R:R 2.0:1"
+    },
+    {
+      "time": "2026-06-02T15:18:45.307Z",
+      "type": "BUY",
+      "msg": "Placing: 4x WMT @ ~$113.14",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $112.77 | TP 2.7× $113.79 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-02T15:18:45.412Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 4x WMT",
+      "detail": "ID: e079a3a4-048b-486f-a3a5-a77d276b20a1 | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-02T15:18:45.913Z",
+      "type": "BUY",
+      "msg": "Placing: 12x DXST @ ~$4.66",
+      "detail": "Patterns: Gap Up | SL 2.8× $3.86 | TP 5.8× $6.31 | R:R 2.1"
+    },
+    {
+      "time": "2026-06-02T15:18:45.999Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 12x DXST",
+      "detail": "ID: dcaae8d1-f206-4847-93a5-eec440b16ba9 | R:R 2.1:1"
+    },
+    {
+      "time": "2026-06-02T15:18:46.500Z",
+      "type": "BUY",
+      "msg": "Placing: 32x SPCE @ ~$4.77",
+      "detail": "Patterns: Hammer | SL 2.5× $4.46 | TP 5× $5.4 | R:R 2.0"
+    },
+    {
+      "time": "2026-06-02T15:18:46.566Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 32x SPCE",
+      "detail": "ID: 14cbb279-3f58-4317-8138-b85c266c63fb | R:R 2.0:1"
+    },
+    {
+      "time": "2026-06-02T15:18:47.067Z",
+      "type": "BUY",
+      "msg": "Placing: 17x CMG @ ~$29.17",
+      "detail": "Patterns: Hammer | SL 1.7× $29.03 | TP 3.1× $29.44 | R:R 1.9"
+    },
+    {
+      "time": "2026-06-02T15:18:47.136Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 17x CMG",
+      "detail": "ID: 48059d90-169f-4bea-8b33-ac5534c03467 | R:R 1.9:1"
     }
   ]
 }
