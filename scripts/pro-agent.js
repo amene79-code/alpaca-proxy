@@ -15,9 +15,9 @@ const STATE_FILE = path.join(__dirname, '..', 'state', 'state.json');
 // ─── Config ──────────────────────────────────────────────────────────────────
 const CFG = {
   size:        500,   // $ per position
-  maxPos:      50,    // max open positions
-  maxDaily:    100,   // max trades per day
-  maxPerCycle: 10,    // max new trades per cycle
+  maxPos:      20,    // max open positions
+  maxDaily:    30,   // max trades per day
+  maxPerCycle: 5,    // max new trades per cycle
   atrSL:       1.5,   // ATR × SL multiplier
   atrTP:       3.0,   // ATR × TP multiplier
   trail:       0.02,  // 2% trailing stop
