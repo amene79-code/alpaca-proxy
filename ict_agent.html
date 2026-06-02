@@ -1015,17 +1015,6 @@ async function placeICTOrder(setup, cfg){
     `Placing ${setupType.toUpperCase()}: ${qty}x ${ticker} @ ~$${price.toFixed(2)}`,
     `FVG $${setup.fvg.bottom.toFixed(2)}-$${setup.fvg.top.toFixed(2)} | SL $${sl} | TP $${tp} | R:R ${rr} | ${setup.setupType==="long"?"CVD "+setup.cvdDiv:""}`);
 
-  // For short orders, verify the asset is shortable first
-  if(setupType==="short"){
-    try{
-      const asset=await alpaca("GET",`/v2/assets/${ticker}`);
-      if(!asset.shortable||!asset.easy_to_borrow===false&&asset.status!=="active"){
-        log("SKIP",`${ticker} — not shortable on Alpaca (shortable: ${asset.shortable})`);
-        return false;
-      }
-    }catch{ /* proceed and handle error on order placement */ }
-  }
-
   // Tag order with ICT prefix + metadata for later filtering
   const kz=isInKillZone();
   const tag=`ICT-${setup.setupType[0].toUpperCase()}-${setup.struct.trend[0].toUpperCase()}-${kz.name?.replace(/\s/g,"")||"NA"}-${Date.now()}`;
@@ -1853,3 +1842,33 @@ async function startAgent(){
     updateAccountUI(acct); saveKeys();
     log("ICT",`✓ Connected | Portfolio ${fmt$(acct.portfolio_value)}`);
   }catch(e){
+    log("ERROR","Connection failed: "+e.message);
+    document.getElementById("startBtn").disabled=false; return;
+  }
+  RUNNING=true;
+  document.getElementById("stopBtn").disabled=false;
+  document.getElementById("configPanel").style.opacity="0.5";
+  document.getElementById("configPanel").style.pointerEvents="none";
+  document.getElementById("statusPill").className="kz-active";
+  document.getElementById("statusText").textContent="Running";
+  startPlRefresh();
+  log("ICT","ICT Agent started",
+    `Kill zones: ${[...document.querySelectorAll("[id^='kz']:checked")].map(el=>el.id).join("+")} | Min score: ${document.getElementById("cfgMinFVG").value} | Direction: ${document.getElementById("cfgDirection").value}`);
+  await runCycle();
+}
+
+function stopAgent(){
+  RUNNING=false; clearInterval(countdownTimer); stopPlRefresh();
+  document.getElementById("startBtn").disabled=false;
+  document.getElementById("stopBtn").disabled=true;
+  document.getElementById("configPanel").style.opacity="1";
+  document.getElementById("configPanel").style.pointerEvents="auto";
+  document.getElementById("scanCountdown").style.display="none";
+  document.getElementById("statusPill").className="kz-inactive";
+  document.getElementById("statusText").textContent="Offline";
+  setPhase("screen");
+  log("INFO","Agent stopped");
+}
+</script>
+</body>
+</html>
