@@ -19,26 +19,14 @@
       "tp": 493.09,
       "sl": 473.43
     },
-    "NBIS": {
-      "high": 276,
-      "entry": 273.489990234375,
-      "tp": 285.13,
-      "sl": 268.89
-    },
     "NU": {
       "high": 12.024999618530273,
       "entry": 12.024999618530273,
       "tp": 12.75,
       "sl": 11.76
     },
-    "NVDA": {
-      "high": 231.41,
-      "entry": 225.5399932861328,
-      "tp": 235.54,
-      "sl": 220.54
-    },
     "ASTS": {
-      "high": 115.3,
+      "high": 116.157,
       "entry": 113.4800033569336,
       "tp": 117.73,
       "sl": 111.22
@@ -56,13 +44,13 @@
       "sl": 104.64
     },
     "BSX": {
-      "high": 47.695,
+      "high": 47.76,
       "entry": 47.5099983215332,
       "tp": 48.38,
       "sl": 47.19
     },
     "AMZN": {
-      "high": 257.4618,
+      "high": 258.2328,
       "entry": 255.46,
       "tp": 263.23,
       "sl": 251.58
@@ -86,7 +74,7 @@
       "sl": 14.74
     },
     "LPTH": {
-      "high": 15.58,
+      "high": 15.9,
       "entry": 15.210000038146973,
       "tp": 16.59,
       "sl": 14.65
@@ -134,26 +122,8 @@
     "LPTH",
     "RKLB"
   ],
-  "lastRun": "2026-06-02T14:23:07.538Z",
+  "lastRun": "2026-06-02T14:33:29.139Z",
   "log": [
-    {
-      "time": "2026-06-02T13:20:42.922Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T13:20:43.301Z",
-      "type": "INFO",
-      "msg": "Account: $100032.67 | 13 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T13:20:43.302Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for AMD",
-      "detail": "Entry $500.55 | Current $504.00 | High set to $504.00"
-    },
     {
       "time": "2026-06-02T13:20:43.302Z",
       "type": "INFO",
@@ -1332,6 +1302,24 @@
     },
     {
       "time": "2026-06-02T14:23:07.538Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (20)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T14:33:29.009Z",
+      "type": "INFO",
+      "msg": "Account: $99698.52 | 14 positions open | 20 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T14:33:29.109Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T14:33:29.139Z",
       "type": "INFO",
       "msg": "Daily limit reached (20)",
       "detail": ""
