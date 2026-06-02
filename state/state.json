@@ -19,35 +19,17 @@
       "tp": 493.09,
       "sl": 473.43
     },
-    "SMCI": {
-      "high": 50.5,
-      "entry": 49.38999938964844,
-      "tp": 52.11,
-      "sl": 48.32
-    },
     "DG": {
       "high": 108.49,
       "entry": 106.83999633789062,
       "tp": 112.93,
       "sl": 104.64
     },
-    "BSX": {
-      "high": 48.245,
-      "entry": 47.5099983215332,
-      "tp": 48.38,
-      "sl": 47.19
-    },
     "MSFT": {
       "high": 446.76,
       "entry": 446.52,
       "tp": 462.73,
       "sl": 438.41
-    },
-    "ALOT": {
-      "high": 15.6377,
-      "entry": 15.40999984741211,
-      "tp": 15.95,
-      "sl": 15.14
     },
     "NOW": {
       "high": 127.05,
@@ -103,29 +85,11 @@
       "tp": 600.87,
       "sl": 595.39
     },
-    "LASE": {
-      "high": 1.932,
-      "entry": 1.9249999523162842,
-      "tp": 2.27,
-      "sl": 1.7
-    },
-    "GOOG": {
-      "high": 364.927490234375,
-      "entry": 364.927490234375,
-      "tp": 366.99,
-      "sl": 363.78
-    },
     "OPEN": {
       "high": 5.6199,
       "entry": 5.565000057220459,
       "tp": 5.66,
       "sl": 5.52
-    },
-    "GOOGL": {
-      "high": 368.3450012207031,
-      "entry": 368.3450012207031,
-      "tp": 370.43,
-      "sl": 367.19
     },
     "DXST": {
       "high": 4.28,
@@ -134,19 +98,13 @@
       "sl": 3.75
     },
     "SPCE": {
-      "high": 4.666,
+      "high": 4.6801,
       "entry": 4.625,
       "tp": 4.89,
       "sl": 4.49
     },
-    "NTSK": {
-      "high": 12.494999885559082,
-      "entry": 12.494999885559082,
-      "tp": 12.59,
-      "sl": 12.44
-    },
     "BMNR": {
-      "high": 17.825,
+      "high": 17.875,
       "entry": 17.81730079650879,
       "tp": 18,
       "sl": 17.72
@@ -157,23 +115,29 @@
       "tp": 15.86,
       "sl": 14.9
     },
-    "AVEX": {
-      "high": 32.2400016784668,
-      "entry": 32.2400016784668,
-      "tp": 33.13,
-      "sl": 31.79
-    },
-    "SHAK": {
-      "high": 56.72999954223633,
-      "entry": 56.72999954223633,
-      "tp": 57.15,
-      "sl": 56.43
-    },
     "KEN": {
       "high": 86.15010070800781,
       "entry": 86.15010070800781,
       "tp": 88.25,
       "sl": 85.1
+    },
+    "ASTC": {
+      "high": 54.02,
+      "entry": 53.93,
+      "tp": 74.78,
+      "sl": 43.55
+    },
+    "MSTR": {
+      "high": 137.903333,
+      "entry": 137.903333,
+      "tp": 151.05,
+      "sl": 131.33
+    },
+    "RKLB": {
+      "high": 124.4992,
+      "entry": 123.59,
+      "tp": 136.88,
+      "sl": 117.4
     }
   },
   "dailyTrades": 63,
@@ -208,7 +172,6 @@
     "BSX",
     "RKLB",
     "HPE",
-    "ALOT",
     "NOW",
     "GLSI",
     "RENT",
@@ -239,74 +202,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T17:14:39.367Z",
+  "lastRun": "2026-06-02T17:31:56.501Z",
   "log": [
-    {
-      "time": "2026-06-02T15:07:53.781Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: SIDU @ $4.9634 | High $5.085000038146973 → Stop $4.98 | P&L $-7.60",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:07:55.079Z",
-      "type": "SELL",
-      "msg": "✓ Closed SIDU",
-      "detail": "P&L $-7.60"
-    },
-    {
-      "time": "2026-06-02T15:07:55.079Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: SPCE @ $4.74 | High $4.840000152587891 → Stop $4.74 | P&L $-2.16",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:07:56.401Z",
-      "type": "SELL",
-      "msg": "✓ Closed SPCE",
-      "detail": "P&L $-2.16"
-    },
-    {
-      "time": "2026-06-02T15:07:56.431Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:07:56.593Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
-    },
-    {
-      "time": "2026-06-02T15:07:57.213Z",
-      "type": "INFO",
-      "msg": "Scanning 35 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-02T15:08:00.469Z",
-      "type": "SIGNAL",
-      "msg": "ODD — score 4 | ATR 1.30% | RSI 44",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T15:08:01.272Z",
-      "type": "SIGNAL",
-      "msg": "RENT — score 3 | ATR 0.75% | RSI 40",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-02T15:08:04.104Z",
-      "type": "SIGNAL",
-      "msg": "GRRR — score 4 | ATR 2.10% | RSI 31",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T15:08:04.675Z",
-      "type": "SIGNAL",
-      "msg": "TE — score 3 | ATR 1.29% | RSI 76",
-      "detail": "Hammer"
-    },
     {
       "time": "2026-06-02T15:08:05.550Z",
       "type": "SIGNAL",
@@ -1440,6 +1337,72 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 5x KEN",
       "detail": "ID: d8871e87-8667-495e-aab6-a16289731332 | R:R 2.0:1"
+    },
+    {
+      "time": "2026-06-02T17:31:54.461Z",
+      "type": "INFO",
+      "msg": "Account: $99528.34 | 24 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:31:54.461Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for ASTC",
+      "detail": "Entry $53.93 | Current $54.02 | High set to $54.02"
+    },
+    {
+      "time": "2026-06-02T17:31:54.461Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for MSTR",
+      "detail": "Entry $137.90 | Current $137.85 | High set to $137.90"
+    },
+    {
+      "time": "2026-06-02T17:31:54.461Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for RKLB",
+      "detail": "Entry $123.59 | Current $124.50 | High set to $124.50"
+    },
+    {
+      "time": "2026-06-02T17:31:54.482Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:31:54.538Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for ASTC",
+      "detail": "Entry $53.93 | High $54.02 | ATR $6.92 | TP $74.78 | SL $43.55"
+    },
+    {
+      "time": "2026-06-02T17:31:54.781Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for MSTR",
+      "detail": "Entry $137.90 | High $137.90 | ATR $4.38 | TP $151.05 | SL $131.33"
+    },
+    {
+      "time": "2026-06-02T17:31:55.027Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for RKLB",
+      "detail": "Entry $123.59 | High $124.50 | ATR $4.13 | TP $136.88 | SL $117.4"
+    },
+    {
+      "time": "2026-06-02T17:31:55.227Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: ALOT @ $15.19 | High $15.6377 → Stop $15.32 | P&L $-20.80",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:31:56.474Z",
+      "type": "SELL",
+      "msg": "✓ Closed ALOT",
+      "detail": "P&L $-20.80"
+    },
+    {
+      "time": "2026-06-02T17:31:56.501Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
     }
   ]
 }
