@@ -67,23 +67,11 @@
       "tp": 29.44,
       "sl": 29.03
     },
-    "LAC": {
-      "high": 5.9499,
-      "entry": 5.89,
-      "tp": 6.46,
-      "sl": 5.64
-    },
     "RENT": {
       "high": 3.82,
       "entry": 3.8,
       "tp": 4.04,
       "sl": 3.69
-    },
-    "OPEN": {
-      "high": 5.6199,
-      "entry": 5.565000057220459,
-      "tp": 5.66,
-      "sl": 5.52
     },
     "DXST": {
       "high": 4.38,
@@ -110,7 +98,7 @@
       "sl": 85.1
     },
     "ASTC": {
-      "high": 55.235,
+      "high": 56.89,
       "entry": 53.93,
       "tp": 74.78,
       "sl": 43.55
@@ -178,26 +166,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T17:52:27.613Z",
+  "lastRun": "2026-06-02T18:02:45.645Z",
   "log": [
-    {
-      "time": "2026-06-02T15:08:07.155Z",
-      "type": "BUY",
-      "msg": "Placing: 78x KEEL @ ~$6.38",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $6.29 | TP 2.7× $6.54 | R:R 1.8"
-    },
-    {
-      "time": "2026-06-02T15:08:07.308Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 78x KEEL",
-      "detail": "ID: 81af8d50-6c17-4a07-b0f7-7f6202952d23 | R:R 1.8:1"
-    },
-    {
-      "time": "2026-06-02T15:08:07.809Z",
-      "type": "BUY",
-      "msg": "Placing: 52x ODD @ ~$9.55",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $9.36 | TP 2.7× $9.89 | R:R 1.8"
-    },
     {
       "time": "2026-06-02T15:08:07.868Z",
       "type": "BUY",
@@ -1376,6 +1346,24 @@
     },
     {
       "time": "2026-06-02T17:52:27.613Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:02:45.580Z",
+      "type": "INFO",
+      "msg": "Account: $99518.94 | 17 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:02:45.612Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:02:45.645Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
       "detail": ""
