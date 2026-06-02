@@ -16,8 +16,8 @@ const STATE_FILE = path.join(__dirname, '..', 'state', 'state.json');
 const CFG = {
   size:        500,   // $ per position
   maxPos:      20,    // max open positions
-  maxDaily:    40,    // max trades per day
-  maxPerCycle: 10,     // max new trades per cycle
+  maxDaily:    20,    // max trades per day
+  maxPerCycle: 5,     // max new trades per cycle
   atrSL:       1.5,   // ATR × SL multiplier
   atrTP:       3.0,   // ATR × TP multiplier
   trail:       0.02,  // 2% trailing stop
@@ -25,7 +25,7 @@ const CFG = {
   maxATRpct:   0.1,   // min ATR%
   earningsBuf: 3,     // days buffer around earnings
   skipFirst15: false, // skip first 15 min after market open (9:30-9:45 ET)
-  skipLast30:  true, // skip last 30 min before close (3:30-4:00 ET)
+  skipLast30:  false, // skip last 30 min before close (3:30-4:00 ET)
 };
 
 // ─── Alpaca API ───────────────────────────────────────────────────────────────
@@ -342,10 +342,17 @@ async function cancelAndSell(symbol, qty, side = 'long') {
       if (o.legs) for (const leg of o.legs) await alpaca('DELETE', `/v2/orders/${leg.id}`).catch(() => {});
     }
     if (symbolOrders.length) await sleep(1200);
-    // Long positions sell to close, short positions buy to close
+    // Verify exact qty from position to avoid overselling
+    const positions = await alpaca('GET', '/v2/positions').catch(() => []);
+    const position = (Array.isArray(positions) ? positions : []).find(p => p.symbol === symbol);
+    const actualQty = position ? Math.abs(+position.qty) : qty;
+    if (!actualQty) {
+      console.warn(`${symbol} — no position found, skipping sell`);
+      return false;
+    }
     const closeSide = side === 'short' ? 'buy' : 'sell';
     await alpaca('POST', '/v2/orders', {
-      symbol, qty: String(qty), side: closeSide, type: 'market', time_in_force: 'day',
+      symbol, qty: String(actualQty), side: closeSide, type: 'market', time_in_force: 'day',
     });
     return true;
   } catch (e) {
@@ -467,39 +474,72 @@ async function main() {
 
   for (const p of positions) {
     if (ictPositions.includes(p.symbol)) continue; // ICT agent manages these
-    if (+p.qty < 0) continue; // skip short positions — opened by ICT agent
 
-    const price = +p.current_price || 0;
-    const entry = +p.avg_entry_price || 0;
-    if (!price || !entry) continue;
+    const price  = +p.current_price || 0;
+    const entry  = +p.avg_entry_price || 0;
+    const qty    = Math.abs(+p.qty) || 0;
+    const isShort = +p.qty < 0;
+    if (!price || !entry || !qty) continue;
 
+    // Initialise trailing stop state
     if (!state.trailingStops[p.symbol]) {
-      state.trailingStops[p.symbol] = { high: Math.max(price, entry), entry, tp: null, sl: null };
+      state.trailingStops[p.symbol] = {
+        high:  isShort ? price : Math.max(price, entry),
+        low:   isShort ? Math.min(price, entry) : price,
+        entry, tp: null, sl: null, side: isShort ? 'short' : 'long',
+      };
     }
 
     const ts = state.trailingStops[p.symbol];
-    // Update high if price moved up — but never set high to TP price
-    if (price > ts.high && price !== ts.tp) ts.high = price;
+    const pl = +p.unrealized_pl || 0;
 
-    const stop = +(ts.high * (1 - CFG.trail)).toFixed(2);
-    const pl   = +p.unrealized_pl || 0;
+    if (isShort) {
+      // SHORT: track the LOW — trailing stop triggers when price rises above low + trail%
+      if (price < (ts.low || entry) && price !== ts.tp) ts.low = price;
+      const stop = +((ts.low || entry) * (1 + CFG.trail)).toFixed(2);
 
-    // Never trigger trailing stop if price is above TP (let bracket handle it)
-    if (ts.tp && price >= ts.tp) continue;
+      // Alert if no SL set
+      if (!ts.sl) {
+        addLog(state, 'INFO', `⚠ ${p.symbol} SHORT has no SL — trailing stop only at $${stop}`);
+      }
 
-    const qty = +p.qty || 0;
-    if (!qty) { console.warn(`Skipping ${p.symbol} — qty is 0`); continue; }
+      // Never trigger if price is below TP (bracket handles it)
+      if (ts.tp && price <= ts.tp) continue;
 
-    if (price <= stop) {
-      addLog(state, 'TRAIL',
-        `Trailing stop: ${p.symbol} @ $${price} | High $${ts.high} → Stop $${stop} | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`
-      );
-      const posSide = +p.qty < 0 ? 'short' : 'long';
-      const closed = await cancelAndSell(p.symbol, qty, posSide);
-      if (closed) {
-        addLog(state, 'SELL', `✓ Closed ${p.symbol}`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`);
-        delete state.trailingStops[p.symbol];
-        state.openPositions = (state.openPositions || []).filter(t => t !== p.symbol);
+      if (price >= stop) {
+        addLog(state, 'TRAIL',
+          `Trailing stop (SHORT): ${p.symbol} @ $${price} | Low $${ts.low} → Stop $${stop} | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`
+        );
+        const closed = await cancelAndSell(p.symbol, qty, 'short');
+        if (closed) {
+          addLog(state, 'SELL', `✓ Closed SHORT ${p.symbol}`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`);
+          delete state.trailingStops[p.symbol];
+          state.openPositions = (state.openPositions || []).filter(t => t !== p.symbol);
+        }
+      }
+    } else {
+      // LONG: track the HIGH — trailing stop triggers when price drops below high - trail%
+      if (price > ts.high && price !== ts.tp) ts.high = price;
+      const stop = +(ts.high * (1 - CFG.trail)).toFixed(2);
+
+      // Alert if no SL set
+      if (!ts.sl) {
+        addLog(state, 'INFO', `⚠ ${p.symbol} LONG has no SL — trailing stop only at $${stop}`);
+      }
+
+      // Never trigger if price is above TP (bracket handles it)
+      if (ts.tp && price >= ts.tp) continue;
+
+      if (price <= stop) {
+        addLog(state, 'TRAIL',
+          `Trailing stop: ${p.symbol} @ $${price} | High $${ts.high} → Stop $${stop} | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`
+        );
+        const closed = await cancelAndSell(p.symbol, qty, 'long');
+        if (closed) {
+          addLog(state, 'SELL', `✓ Closed ${p.symbol}`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`);
+          delete state.trailingStops[p.symbol];
+          state.openPositions = (state.openPositions || []).filter(t => t !== p.symbol);
+        }
       }
     }
   }
