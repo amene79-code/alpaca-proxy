@@ -38,7 +38,7 @@
       "sl": 415.85
     },
     "MU": {
-      "high": 1054.22,
+      "high": 1058.32,
       "entry": 1041.6099853515625,
       "tp": 1067.19,
       "sl": 1028.82
@@ -123,26 +123,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T18:54:22.085Z",
+  "lastRun": "2026-06-02T19:04:40.285Z",
   "log": [
-    {
-      "time": "2026-06-02T15:18:30.877Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: PMI @ $0.3137 | High $0.32420000433921814 → Stop $0.32 | P&L $-2.04",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:18:32.374Z",
-      "type": "SELL",
-      "msg": "✓ Closed PMI",
-      "detail": "P&L $-2.04"
-    },
-    {
-      "time": "2026-06-02T15:18:32.414Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T15:18:32.637Z",
       "type": "INFO",
@@ -1321,6 +1303,24 @@
     },
     {
       "time": "2026-06-02T18:54:22.085Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:04:40.226Z",
+      "type": "INFO",
+      "msg": "Account: $99517.65 | 10 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:04:40.253Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T19:04:40.285Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
       "detail": ""
