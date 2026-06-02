@@ -25,7 +25,7 @@
       "sl": 17.56
     },
     "MOMO": {
-      "high": 6.19,
+      "high": 6.35,
       "entry": 6.135,
       "tp": 6.33,
       "sl": 6.06
@@ -41,6 +41,12 @@
       "entry": 16.85,
       "tp": 18.06,
       "sl": 16.31
+    },
+    "MGM": {
+      "high": 50.55,
+      "entry": 50.55,
+      "tp": 53.52,
+      "sl": 49.07
     }
   },
   "dailyTrades": 0,
@@ -61,170 +67,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-02T12:39:09.952Z",
+  "lastRun": "2026-06-02T12:49:33.933Z",
   "log": [
-    {
-      "time": "2026-06-01T16:08:15.624Z",
-      "type": "INFO",
-      "msg": "Account: $100438.69 | 20 positions open | 15 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:08:15.624Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for GNTA",
-      "detail": "Entry $1.89 | Current $1.88 | High set to $1.89"
-    },
-    {
-      "time": "2026-06-01T16:08:15.670Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:08:15.757Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for GNTA",
-      "detail": "Entry $1.89 | High $1.89 | ATR $0.19 | TP $2.46 | SL $1.61"
-    },
-    {
-      "time": "2026-06-01T16:08:15.957Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:09:18.799Z",
-      "type": "INFO",
-      "msg": "Account: $100436.48 | 20 positions open | 15 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:09:18.799Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for META",
-      "detail": "Entry $633.25 | Current $613.67 | High set to $633.25"
-    },
-    {
-      "time": "2026-06-01T16:09:18.843Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:09:19.049Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for META",
-      "detail": "Entry $633.25 | High $633.25 | ATR $5.98 | TP $651.19 | SL $624.29"
-    },
-    {
-      "time": "2026-06-01T16:09:19.249Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:09.440Z",
-      "type": "INFO",
-      "msg": "Account: $100418.16 | 19 positions open | 15 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:09.486Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:09.486Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: GNTA @ $1.845 | High $1.894285 → Stop $1.86 | P&L $-2.07",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:10.829Z",
-      "type": "SELL",
-      "msg": "✓ Closed GNTA",
-      "detail": "P&L $-2.07"
-    },
-    {
-      "time": "2026-06-01T16:21:10.829Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: GOTU @ $1.865 | High $1.905 → Stop $1.87 | P&L $-5.81",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:12.197Z",
-      "type": "SELL",
-      "msg": "✓ Closed GOTU",
-      "detail": "P&L $-5.81"
-    },
-    {
-      "time": "2026-06-01T16:21:12.198Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:21:12.351Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MU, HPE, MSFT, IBM, NVDA, VSCO, CUEN…"
-    },
-    {
-      "time": "2026-06-01T16:21:13.206Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-01T16:21:13.591Z",
-      "type": "SIGNAL",
-      "msg": "MU — score 5 | ATR 0.45% | RSI 55",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:15.174Z",
-      "type": "SIGNAL",
-      "msg": "DELL — score 4 | ATR 0.60% | RSI 31",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:16.066Z",
-      "type": "SIGNAL",
-      "msg": "INTC — score 5 | ATR 0.47% | RSI 38",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:16.390Z",
-      "type": "SIGNAL",
-      "msg": "RMCO — score 4 | ATR 2.42% | RSI 50",
-      "detail": "Gap Up"
-    },
-    {
-      "time": "2026-06-01T16:21:18.286Z",
-      "type": "SIGNAL",
-      "msg": "PVH — score 7 | ATR 0.15% | RSI 66",
-      "detail": "Hammer, Volume Breakout"
-    },
-    {
-      "time": "2026-06-01T16:21:18.617Z",
-      "type": "SIGNAL",
-      "msg": "ODD — score 5 | ATR 0.48% | RSI 50",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-01T16:21:18.882Z",
-      "type": "SIGNAL",
-      "msg": "DG — score 4 | ATR 0.35% | RSI 84",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-01T16:21:19.473Z",
-      "type": "SIGNAL",
-      "msg": "SIG — score 4 | ATR 0.32% | RSI 69",
-      "detail": "Hammer"
-    },
     {
       "time": "2026-06-01T16:21:21.026Z",
       "type": "SIGNAL",
@@ -1259,6 +1103,168 @@
     },
     {
       "time": "2026-06-02T12:39:09.951Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:49:25.723Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:49:25.984Z",
+      "type": "INFO",
+      "msg": "Account: $100041.32 | 13 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:49:25.985Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for COOT",
+      "detail": "Entry $0.63 | Current $0.61 | High set to $0.63"
+    },
+    {
+      "time": "2026-06-02T12:49:25.985Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for CRDO",
+      "detail": "Entry $227.11 | Current $217.60 | High set to $227.11"
+    },
+    {
+      "time": "2026-06-02T12:49:25.985Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for CURR",
+      "detail": "Entry $3.23 | Current $3.08 | High set to $3.23"
+    },
+    {
+      "time": "2026-06-02T12:49:25.985Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for GTLB",
+      "detail": "Entry $33.31 | Current $32.40 | High set to $33.31"
+    },
+    {
+      "time": "2026-06-02T12:49:25.985Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for MGM",
+      "detail": "Entry $50.55 | Current $50.18 | High set to $50.55"
+    },
+    {
+      "time": "2026-06-02T12:49:25.985Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for SPCE",
+      "detail": "Entry $7.38 | Current $6.68 | High set to $7.38"
+    },
+    {
+      "time": "2026-06-02T12:49:25.996Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:49:26.098Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for COOT",
+      "detail": "Entry $0.63 | High $0.63 | ATR $0.01 | TP $0.66 | SL $0.61"
+    },
+    {
+      "time": "2026-06-02T12:49:26.340Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for CRDO",
+      "detail": "Entry $227.11 | High $227.11 | ATR $5.65 | TP $244.05 | SL $218.64"
+    },
+    {
+      "time": "2026-06-02T12:49:26.588Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for CURR",
+      "detail": "Entry $3.23 | High $3.23 | ATR $0.04 | TP $3.36 | SL $3.17"
+    },
+    {
+      "time": "2026-06-02T12:49:26.831Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for GTLB",
+      "detail": "Entry $33.31 | High $33.31 | ATR $0.59 | TP $35.07 | SL $32.43"
+    },
+    {
+      "time": "2026-06-02T12:49:27.080Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for MGM",
+      "detail": "Entry $50.55 | High $50.55 | ATR $0.99 | TP $53.52 | SL $49.07"
+    },
+    {
+      "time": "2026-06-02T12:49:27.323Z",
+      "type": "INFO",
+      "msg": "Recalculated TP/SL for MOMO",
+      "detail": "Entry $6.13 | High $6.19 | ATR $0.05 | TP $6.33 | SL $6.06"
+    },
+    {
+      "time": "2026-06-02T12:49:27.569Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for SPCE",
+      "detail": "Entry $7.38 | High $7.38 | ATR $0.79 | TP $9.76 | SL $6.19"
+    },
+    {
+      "time": "2026-06-02T12:49:27.770Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: COOT @ $0.61 | High $0.628 → Stop $0.62 | P&L $-3.74",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:49:29.006Z",
+      "type": "SELL",
+      "msg": "✓ Closed COOT",
+      "detail": "P&L $-3.74"
+    },
+    {
+      "time": "2026-06-02T12:49:29.006Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: CRDO @ $217.6 | High $227.11 → Stop $222.57 | P&L $-19.02",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:49:30.240Z",
+      "type": "SELL",
+      "msg": "✓ Closed CRDO",
+      "detail": "P&L $-19.02"
+    },
+    {
+      "time": "2026-06-02T12:49:30.240Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: CURR @ $3.08 | High $3.23 → Stop $3.17 | P&L $-23.25",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:49:31.469Z",
+      "type": "SELL",
+      "msg": "✓ Closed CURR",
+      "detail": "P&L $-23.25"
+    },
+    {
+      "time": "2026-06-02T12:49:31.469Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: GTLB @ $32.4 | High $33.31 → Stop $32.64 | P&L $-9.10",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:49:32.699Z",
+      "type": "SELL",
+      "msg": "✓ Closed GTLB",
+      "detail": "P&L $-9.10"
+    },
+    {
+      "time": "2026-06-02T12:49:32.699Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: SPCE @ $6.6773 | High $7.380833 → Stop $7.23 | P&L $-11.96",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T12:49:33.933Z",
+      "type": "SELL",
+      "msg": "✓ Closed SPCE",
+      "detail": "P&L $-11.96"
+    },
+    {
+      "time": "2026-06-02T12:49:33.933Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
