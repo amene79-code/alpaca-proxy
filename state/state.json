@@ -55,14 +55,8 @@
       "tp": 29.44,
       "sl": 29.03
     },
-    "RENT": {
-      "high": 3.82,
-      "entry": 3.8,
-      "tp": 4.04,
-      "sl": 3.69
-    },
     "KEN": {
-      "high": 86.58,
+      "high": 86.81,
       "entry": 86.15010070800781,
       "tp": 88.25,
       "sl": 85.1
@@ -129,26 +123,8 @@
     "SHAK",
     "KEN"
   ],
-  "lastRun": "2026-06-02T18:33:50.401Z",
+  "lastRun": "2026-06-02T18:44:07.954Z",
   "log": [
-    {
-      "time": "2026-06-02T15:08:11.565Z",
-      "type": "BUY",
-      "msg": "Placing: 82x LAC @ ~$6.07",
-      "detail": "Patterns: Hammer | SL 1.7× $5.96 | TP 3.1× $6.28 | R:R 1.9"
-    },
-    {
-      "time": "2026-06-02T15:08:11.603Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 82x LAC",
-      "detail": "ID: 2744df0e-19f9-45cd-ac08-df2be4ce7789 | R:R 1.9:1"
-    },
-    {
-      "time": "2026-06-02T15:18:29.315Z",
-      "type": "INFO",
-      "msg": "Account: $99675.92 | 26 positions open | 39 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T15:18:29.386Z",
       "type": "INFO",
@@ -1327,6 +1303,24 @@
     },
     {
       "time": "2026-06-02T18:33:50.401Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (30)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:44:07.906Z",
+      "type": "INFO",
+      "msg": "Account: $99506.51 | 10 positions open | 63 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:44:07.923Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T18:44:07.954Z",
       "type": "INFO",
       "msg": "Daily limit reached (30)",
       "detail": ""
