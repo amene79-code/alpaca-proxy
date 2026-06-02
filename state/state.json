@@ -32,16 +32,10 @@
       "sl": 104.64
     },
     "BSX": {
-      "high": 48.135,
+      "high": 48.245,
       "entry": 47.5099983215332,
       "tp": 48.38,
       "sl": 47.19
-    },
-    "KEN": {
-      "high": 87.79,
-      "entry": 87.2,
-      "tp": 89.4,
-      "sl": 86.1
     },
     "MSFT": {
       "high": 446.76,
@@ -85,12 +79,6 @@
       "tp": 288.39,
       "sl": 272.71
     },
-    "NBIS": {
-      "high": 267.435,
-      "entry": 266.739990234375,
-      "tp": 275.28,
-      "sl": 262.47
-    },
     "CMG": {
       "high": 29.385,
       "entry": 29.17289924621582,
@@ -102,12 +90,6 @@
       "entry": 5.89,
       "tp": 6.46,
       "sl": 5.64
-    },
-    "META": {
-      "high": 607.675,
-      "entry": 607.64,
-      "tp": 626.74,
-      "sl": 598.11
     },
     "RENT": {
       "high": 3.82,
@@ -122,7 +104,7 @@
       "sl": 595.39
     },
     "LASE": {
-      "high": 1.9249999523162842,
+      "high": 1.932,
       "entry": 1.9249999523162842,
       "tp": 2.27,
       "sl": 1.7
@@ -146,13 +128,13 @@
       "sl": 367.19
     },
     "DXST": {
-      "high": 4.09,
+      "high": 4.28,
       "entry": 4.034999847412109,
       "tp": 4.54,
       "sl": 3.75
     },
     "SPCE": {
-      "high": 4.625,
+      "high": 4.666,
       "entry": 4.625,
       "tp": 4.89,
       "sl": 4.49
@@ -164,19 +146,37 @@
       "sl": 12.44
     },
     "BMNR": {
-      "high": 17.81730079650879,
+      "high": 17.825,
       "entry": 17.81730079650879,
       "tp": 18,
       "sl": 17.72
     },
     "YB": {
-      "high": 15.239999771118164,
+      "high": 15.26,
       "entry": 15.239999771118164,
       "tp": 15.86,
       "sl": 14.9
+    },
+    "AVEX": {
+      "high": 32.2400016784668,
+      "entry": 32.2400016784668,
+      "tp": 33.13,
+      "sl": 31.79
+    },
+    "SHAK": {
+      "high": 56.72999954223633,
+      "entry": 56.72999954223633,
+      "tp": 57.15,
+      "sl": 56.43
+    },
+    "KEN": {
+      "high": 86.15010070800781,
+      "entry": 86.15010070800781,
+      "tp": 88.25,
+      "sl": 85.1
     }
   },
-  "dailyTrades": 60,
+  "dailyTrades": 63,
   "dailyDate": "2026-06-02",
   "openPositions": [
     "FIVE",
@@ -234,100 +234,13 @@
     "SPCE",
     "NTSK",
     "BMNR",
-    "YB"
+    "YB",
+    "AVEX",
+    "SHAK",
+    "KEN"
   ],
-  "lastRun": "2026-06-02T17:04:08.458Z",
+  "lastRun": "2026-06-02T17:14:39.367Z",
   "log": [
-    {
-      "time": "2026-06-02T14:57:30.443Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 32x ALOT",
-      "detail": "ID: dea74699-c0cb-477b-b843-e4b5fb456041 | R:R 2.0:1"
-    },
-    {
-      "time": "2026-06-02T14:57:30.944Z",
-      "type": "BUY",
-      "msg": "Placing: 3x NOW @ ~$125.33",
-      "detail": "Patterns: Bullish Engulfing | SL 1.2× $124.21 | TP 2.6× $127.76 | R:R 2.2"
-    },
-    {
-      "time": "2026-06-02T14:57:30.961Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 3x NOW",
-      "detail": "ID: ffeef204-4c47-4203-bb21-0a7c79126de4 | R:R 2.2:1"
-    },
-    {
-      "time": "2026-06-02T14:57:31.462Z",
-      "type": "BUY",
-      "msg": "Placing: 10x GLSI @ ~$23.61",
-      "detail": "Patterns: Bull Flag | SL 1.8× $22.66 | TP 3.6× $25.52 | R:R 2.0"
-    },
-    {
-      "time": "2026-06-02T14:57:31.481Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 10x GLSI",
-      "detail": "ID: 93fa09f6-7d3c-4aeb-8dca-3554de02005b | R:R 2.0:1"
-    },
-    {
-      "time": "2026-06-02T14:57:31.981Z",
-      "type": "BUY",
-      "msg": "Placing: 60x SIDU @ ~$5.09",
-      "detail": "Patterns: Hammer | SL 2.1× $4.92 | TP 4.2× $5.41 | R:R 2.0"
-    },
-    {
-      "time": "2026-06-02T14:57:31.999Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 60x SIDU",
-      "detail": "ID: d0cb3079-3e82-400e-a436-09db26815cde | R:R 2.0:1"
-    },
-    {
-      "time": "2026-06-02T14:57:32.500Z",
-      "type": "BUY",
-      "msg": "Placing: 24x SPCE @ ~$4.84",
-      "detail": "Patterns: Hammer | SL 2.5× $4.44 | TP 5.5× $5.72 | R:R 2.2"
-    },
-    {
-      "time": "2026-06-02T14:57:32.525Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 24x SPCE",
-      "detail": "ID: 1c4b947d-9b06-4ade-8fe1-b1f20d8bbc9d | R:R 2.2:1"
-    },
-    {
-      "time": "2026-06-02T14:57:33.025Z",
-      "type": "BUY",
-      "msg": "Placing: 127x RENT @ ~$3.91",
-      "detail": "Patterns: Gap Up | SL 1.2× $3.86 | TP 2.4× $3.97 | R:R 1.2"
-    },
-    {
-      "time": "2026-06-02T14:57:33.052Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 127x RENT",
-      "detail": "ID: 1569506e-d505-4c3f-9a8a-feef90c1151d | R:R 1.2:1"
-    },
-    {
-      "time": "2026-06-02T15:07:52.447Z",
-      "type": "INFO",
-      "msg": "Account: $99644.03 | 20 positions open | 30 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:07:52.472Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:07:52.472Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: ABVX @ $76.48 | High $79.22000122070312 → Stop $77.64 | P&L $-5.67",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:07:53.781Z",
-      "type": "SELL",
-      "msg": "✓ Closed ABVX",
-      "detail": "P&L $-5.67"
-    },
     {
       "time": "2026-06-02T15:07:53.781Z",
       "type": "TRAIL",
@@ -1437,6 +1350,96 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 29x YB",
       "detail": "ID: 86007288-a84d-46b0-ba60-be1b2a618b08 | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-02T17:14:25.243Z",
+      "type": "INFO",
+      "msg": "Account: $99558.61 | 26 positions open | 60 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:14:25.286Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:14:25.334Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:14:25.556Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
+    },
+    {
+      "time": "2026-06-02T17:14:26.217Z",
+      "type": "INFO",
+      "msg": "Scanning 34 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-02T17:14:31.506Z",
+      "type": "SIGNAL",
+      "msg": "KEN — score 3 | ATR 0.81% | RSI 32",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-02T17:14:34.746Z",
+      "type": "SIGNAL",
+      "msg": "AVEX — score 4 | ATR 0.92% | RSI 38",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-02T17:14:37.119Z",
+      "type": "SIGNAL",
+      "msg": "SHAK — score 4 | ATR 0.53% | RSI 81",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-02T17:14:37.650Z",
+      "type": "INFO",
+      "msg": "Top signal: AVEX (score 4)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T17:14:37.651Z",
+      "type": "BUY",
+      "msg": "Placing: 15x AVEX @ ~$32.24",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $31.79 | TP 3× $33.13 | R:R 2.0"
+    },
+    {
+      "time": "2026-06-02T17:14:37.775Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 15x AVEX",
+      "detail": "ID: 825671bc-6b07-41b7-811f-c7d109bfa384 | R:R 2.0:1"
+    },
+    {
+      "time": "2026-06-02T17:14:38.276Z",
+      "type": "BUY",
+      "msg": "Placing: 8x SHAK @ ~$56.73",
+      "detail": "Patterns: Volume Breakout | SL 1× $56.43 | TP 1.4× $57.15 | R:R 1.4"
+    },
+    {
+      "time": "2026-06-02T17:14:38.318Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 8x SHAK",
+      "detail": "ID: b7ac86d1-30da-456a-81ab-94b5157d4072 | R:R 1.4:1"
+    },
+    {
+      "time": "2026-06-02T17:14:38.819Z",
+      "type": "BUY",
+      "msg": "Placing: 5x KEN @ ~$86.15",
+      "detail": "Patterns: Gap Up | SL 1.5× $85.1 | TP 3× $88.25 | R:R 2.0"
+    },
+    {
+      "time": "2026-06-02T17:14:38.866Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 5x KEN",
+      "detail": "ID: d8871e87-8667-495e-aab6-a16289731332 | R:R 2.0:1"
     }
   ]
 }
