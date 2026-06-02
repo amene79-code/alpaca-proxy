@@ -20,7 +20,7 @@
       "sl": 473.43
     },
     "NU": {
-      "high": 12.024999618530273,
+      "high": 12.125,
       "entry": 12.024999618530273,
       "tp": 12.75,
       "sl": 11.76
@@ -67,12 +67,6 @@
       "tp": 16.68,
       "sl": 14.74
     },
-    "HPE": {
-      "high": 59.045,
-      "entry": 58.880001068115234,
-      "tp": 61.1,
-      "sl": 57.77
-    },
     "ALOT": {
       "high": 15.6377,
       "entry": 15.40999984741211,
@@ -80,7 +74,7 @@
       "sl": 15.14
     },
     "NOW": {
-      "high": 125.7,
+      "high": 126.01,
       "entry": 125.3311996459961,
       "tp": 127.76,
       "sl": 124.21
@@ -91,29 +85,11 @@
       "tp": 25.52,
       "sl": 22.66
     },
-    "KEEL": {
-      "high": 6.385,
-      "entry": 6.379899978637695,
-      "tp": 6.54,
-      "sl": 6.29
-    },
-    "GRRR": {
-      "high": 22.3,
-      "entry": 21.969999313354492,
-      "tp": 23.63,
-      "sl": 21.14
-    },
     "COHR": {
-      "high": 427.38,
+      "high": 428.73,
       "entry": 424.2799987792969,
       "tp": 439.66,
       "sl": 415.85
-    },
-    "GXAI": {
-      "high": 1.9645,
-      "entry": 1.784999966621399,
-      "tp": 2.34,
-      "sl": 1.52
     },
     "RENT": {
       "high": 3.880000114440918,
@@ -127,20 +103,14 @@
       "tp": 12.39,
       "sl": 11.7
     },
-    "LAC": {
-      "high": 6.069900035858154,
-      "entry": 6.069900035858154,
-      "tp": 6.28,
-      "sl": 5.96
-    },
     "MU": {
-      "high": 1041.6099853515625,
+      "high": 1041.8805,
       "entry": 1041.6099853515625,
       "tp": 1067.19,
       "sl": 1028.82
     },
     "LFVN": {
-      "high": 9.185,
+      "high": 9.32,
       "entry": 9.020000457763672,
       "tp": 12.17,
       "sl": 7.64
@@ -152,7 +122,7 @@
       "sl": 110.25
     },
     "MRVL": {
-      "high": 280.75,
+      "high": 283.92,
       "entry": 278.2650146484375,
       "tp": 288.39,
       "sl": 272.71
@@ -182,16 +152,10 @@
       "sl": 4.46
     },
     "CMG": {
-      "high": 29.17289924621582,
+      "high": 29.195,
       "entry": 29.17289924621582,
       "tp": 29.44,
       "sl": 29.03
-    },
-    "GOOGL": {
-      "high": 369.67999267578125,
-      "entry": 369.67999267578125,
-      "tp": 372.62,
-      "sl": 368.04
     }
   },
   "dailyTrades": 50,
@@ -209,7 +173,6 @@
     "INTC",
     "KEEL",
     "HPE",
-    "GRRR",
     "RKLB",
     "MU",
     "AVGO",
@@ -235,9 +198,7 @@
     "RENT",
     "KEEL",
     "ODD",
-    "GRRR",
     "COHR",
-    "GXAI",
     "RENT",
     "TE",
     "LAC",
@@ -252,50 +213,8 @@
     "CMG",
     "GOOGL"
   ],
-  "lastRun": "2026-06-02T15:29:20.178Z",
+  "lastRun": "2026-06-02T15:39:40.568Z",
   "log": [
-    {
-      "time": "2026-06-02T13:42:09.445Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 4x DG",
-      "detail": "ID: 6356aa0b-0db1-45fd-8a64-f26419ddf92b | R:R 2.8:1"
-    },
-    {
-      "time": "2026-06-02T13:42:09.945Z",
-      "type": "BUY",
-      "msg": "Placing: 10x BSX @ ~$47.51",
-      "detail": "Patterns: Volume Breakout, Hammer | SL 1.6× $47.19 | TP 4.4× $48.38 | R:R 2.7"
-    },
-    {
-      "time": "2026-06-02T13:42:09.998Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 10x BSX",
-      "detail": "ID: d61b2f4f-47fa-4a4d-a3be-66dac4936d21 | R:R 2.7:1"
-    },
-    {
-      "time": "2026-06-02T14:02:05.201Z",
-      "type": "INFO",
-      "msg": "Account: $99713.45 | 19 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T14:02:05.201Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for ALOT",
-      "detail": "Entry $15.47 | Current $15.00 | High set to $15.47"
-    },
-    {
-      "time": "2026-06-02T14:02:05.201Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for AMZN",
-      "detail": "Entry $255.46 | Current $255.38 | High set to $255.46"
-    },
-    {
-      "time": "2026-06-02T14:02:05.201Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for KEN",
-      "detail": "Entry $87.20 | Current $86.75 | High set to $87.20"
-    },
     {
       "time": "2026-06-02T14:02:05.202Z",
       "type": "INFO",
@@ -1453,6 +1372,48 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 1x GOOGL",
       "detail": "ID: 7846c1ca-30b4-49fe-9a16-0c6b2ef77719 | R:R 1.8:1"
+    },
+    {
+      "time": "2026-06-02T15:39:37.511Z",
+      "type": "INFO",
+      "msg": "Account: $99638.95 | 28 positions open | 50 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:39:37.601Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:39:37.601Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: GRRR @ $21.75 | High $22.3 → Stop $21.85 | P&L $-3.72",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:39:39.086Z",
+      "type": "SELL",
+      "msg": "✓ Closed GRRR",
+      "detail": "P&L $-3.72"
+    },
+    {
+      "time": "2026-06-02T15:39:39.086Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: GXAI @ $1.86 | High $1.9645 → Stop $1.93 | P&L +$2.96",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T15:39:40.559Z",
+      "type": "SELL",
+      "msg": "✓ Closed GXAI",
+      "detail": "P&L +$2.96"
+    },
+    {
+      "time": "2026-06-02T15:39:40.568Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (50)",
+      "detail": ""
     }
   ]
 }
