@@ -6,12 +6,6 @@
       "tp": 233.33,
       "sl": 215.2
     },
-    "AMD": {
-      "high": 514.15,
-      "entry": 499.94500732421875,
-      "tp": 519.26,
-      "sl": 491.17
-    },
     "RVMD": {
       "high": 168.8,
       "entry": 162.09,
@@ -57,7 +51,6 @@
     "HQL",
     "SPWH",
     "SPY",
-    "AMD",
     "PICS",
     "MOMO",
     "TLYS",
@@ -67,164 +60,8 @@
     "KEEL",
     "HPE"
   ],
-  "lastRun": "2026-06-02T12:59:55.309Z",
+  "lastRun": "2026-06-02T13:10:21.312Z",
   "log": [
-    {
-      "time": "2026-06-01T16:22:21.210Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:22:39.696Z",
-      "type": "INFO",
-      "msg": "Account: $100412.75 | 20 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:22:39.779Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:22:39.780Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:22:58.484Z",
-      "type": "INFO",
-      "msg": "Account: $100410.94 | 20 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:22:58.506Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:22:58.506Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:23:16.128Z",
-      "type": "INFO",
-      "msg": "Account: $100414.32 | 20 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:23:16.193Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:23:16.194Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:23:33.004Z",
-      "type": "INFO",
-      "msg": "Account: $100418.15 | 20 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:23:33.071Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:23:33.071Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:23:49.725Z",
-      "type": "INFO",
-      "msg": "Account: $100419.00 | 20 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:23:49.738Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:23:49.738Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:24:03.287Z",
-      "type": "INFO",
-      "msg": "Account: $100418.48 | 20 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:24:03.314Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:24:03.314Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:24:19.777Z",
-      "type": "INFO",
-      "msg": "Account: $100419.96 | 20 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:24:19.837Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:24:19.837Z",
-      "type": "INFO",
-      "msg": "Position limit reached (20/20)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:26:14.364Z",
-      "type": "INFO",
-      "msg": "Account: $100419.19 | 20 positions open | 18 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:26:14.387Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:26:14.388Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: HOOD @ $89.4899 | High $91.4699 → Stop $89.64 | P&L +$5.37",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-01T16:26:15.639Z",
-      "type": "SELL",
-      "msg": "✓ Closed HOOD",
-      "detail": "P&L +$5.37"
-    },
     {
       "time": "2026-06-01T16:26:15.639Z",
       "type": "INFO",
@@ -1265,6 +1102,162 @@
     },
     {
       "time": "2026-06-02T12:59:55.309Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:11.007Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:11.400Z",
+      "type": "INFO",
+      "msg": "Account: $100022.50 | 13 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:11.400Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for COOT",
+      "detail": "Entry $0.63 | Current $0.61 | High set to $0.63"
+    },
+    {
+      "time": "2026-06-02T13:10:11.400Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for CRDO",
+      "detail": "Entry $227.11 | Current $216.00 | High set to $227.11"
+    },
+    {
+      "time": "2026-06-02T13:10:11.400Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for CURR",
+      "detail": "Entry $3.23 | Current $3.08 | High set to $3.23"
+    },
+    {
+      "time": "2026-06-02T13:10:11.401Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for GTLB",
+      "detail": "Entry $33.31 | Current $32.01 | High set to $33.31"
+    },
+    {
+      "time": "2026-06-02T13:10:11.401Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for SPCE",
+      "detail": "Entry $7.38 | Current $6.69 | High set to $7.38"
+    },
+    {
+      "time": "2026-06-02T13:10:11.477Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:11.538Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for COOT",
+      "detail": "Entry $0.63 | High $0.63 | ATR $0.01 | TP $0.66 | SL $0.61"
+    },
+    {
+      "time": "2026-06-02T13:10:11.792Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for CRDO",
+      "detail": "Entry $227.11 | High $227.11 | ATR $5.68 | TP $244.16 | SL $218.58"
+    },
+    {
+      "time": "2026-06-02T13:10:12.043Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for CURR",
+      "detail": "Entry $3.23 | High $3.23 | ATR $0.04 | TP $3.36 | SL $3.16"
+    },
+    {
+      "time": "2026-06-02T13:10:12.294Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for GTLB",
+      "detail": "Entry $33.31 | High $33.31 | ATR $0.59 | TP $35.07 | SL $32.43"
+    },
+    {
+      "time": "2026-06-02T13:10:12.553Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for SPCE",
+      "detail": "Entry $7.38 | High $7.38 | ATR $0.79 | TP $9.76 | SL $6.19"
+    },
+    {
+      "time": "2026-06-02T13:10:12.754Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: AMD @ $503.5 | High $514.15 → Stop $503.87 | P&L +$2.95",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:14.185Z",
+      "type": "SELL",
+      "msg": "✓ Closed AMD",
+      "detail": "P&L +$2.95"
+    },
+    {
+      "time": "2026-06-02T13:10:14.185Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: COOT @ $0.61 | High $0.628 → Stop $0.62 | P&L $-3.74",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:15.610Z",
+      "type": "SELL",
+      "msg": "✓ Closed COOT",
+      "detail": "P&L $-3.74"
+    },
+    {
+      "time": "2026-06-02T13:10:15.610Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: CRDO @ $216 | High $227.11 → Stop $222.57 | P&L $-22.22",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:17.031Z",
+      "type": "SELL",
+      "msg": "✓ Closed CRDO",
+      "detail": "P&L $-22.22"
+    },
+    {
+      "time": "2026-06-02T13:10:17.031Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: CURR @ $3.08 | High $3.23 → Stop $3.17 | P&L $-23.25",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:18.461Z",
+      "type": "SELL",
+      "msg": "✓ Closed CURR",
+      "detail": "P&L $-23.25"
+    },
+    {
+      "time": "2026-06-02T13:10:18.461Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: GTLB @ $32.01 | High $33.31 → Stop $32.64 | P&L $-13.00",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:19.890Z",
+      "type": "SELL",
+      "msg": "✓ Closed GTLB",
+      "detail": "P&L $-13.00"
+    },
+    {
+      "time": "2026-06-02T13:10:19.890Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: SPCE @ $6.6885 | High $7.380833 → Stop $7.23 | P&L $-11.77",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-02T13:10:21.312Z",
+      "type": "SELL",
+      "msg": "✓ Closed SPCE",
+      "detail": "P&L $-11.77"
+    },
+    {
+      "time": "2026-06-02T13:10:21.312Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
