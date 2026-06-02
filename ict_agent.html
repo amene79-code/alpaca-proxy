@@ -1549,10 +1549,24 @@ async function loadICTHistory(){
     const currentEquity=acct?+acct.equity:null;
 
     // Match trades — show ALL trades, tag ICT ones
+    // Fetch orders to get client_order_id — not available in fills
+    let orderMap={};
+    try{
+      const orders=await alpaca("GET","/v2/orders?status=all&limit=500&nested=false");
+      if(Array.isArray(orders)){
+        for(const o of orders) orderMap[o.id]=o.client_order_id||"";
+        log("ICT",`Fetched ${orders.length} orders for tag lookup`);
+      }
+    }catch(e){ log("ICT","Could not fetch orders: "+e.message); }
+
+    // Enrich activities with client_order_id from order lookup
+    for(const a of allActivities){
+      if(a.order_id&&orderMap[a.order_id]) a.client_order_id=orderMap[a.order_id];
+    }
+
     const all=matchAllTrades(allActivities);
-    const sample=allActivities[0];
-    log("ICT",`Debug: ${allActivities.length} fills | ${all.length} matched trades | symbols: ${[...new Set(allActivities.map(a=>a.symbol))].slice(0,10).join(",")}`,
-      `Sample fill fields: ${Object.keys(sample||{}).join(", ")} | client_order_id: ${sample?.client_order_id||"MISSING"}`);
+    const ictTagged=all.filter(t=>t.tag?.startsWith("ICT-")).length;
+    log("ICT",`Debug: ${allActivities.length} fills | ${all.length} matched | ICT tagged after enrichment: ${ictTagged}`);
 
     // ICT trades = those with ICT- tag OR those placed while ICT agent was running
     // Since client_order_id may not always come through in fills, also check ictMeta
