@@ -5,12 +5,6 @@
       "entry": 0.628,
       "tp": 0.66,
       "sl": 0.61
-    },
-    "COHR": {
-      "high": 432,
-      "entry": 424.2799987792969,
-      "tp": 439.66,
-      "sl": 415.85
     }
   },
   "dailyTrades": 0,
@@ -70,44 +64,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T13:20:59.357Z",
+  "lastRun": "2026-06-03T13:31:27.085Z",
   "log": [
-    {
-      "time": "2026-06-02T16:43:03.600Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:43:03.694Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for BMNR",
-      "detail": "Entry $17.91 | High $17.91 | ATR $0.42 | TP $19.17 | SL $17.28"
-    },
-    {
-      "time": "2026-06-02T16:43:03.937Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for DELL",
-      "detail": "Entry $444.50 | High $444.50 | ATR $10.83 | TP $476.99 | SL $428.25"
-    },
-    {
-      "time": "2026-06-02T16:43:04.180Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for LAC",
-      "detail": "Entry $5.89 | High $5.95 | ATR $0.17 | TP $6.46 | SL $5.64"
-    },
-    {
-      "time": "2026-06-02T16:43:04.453Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for META",
-      "detail": "Entry $607.64 | High $607.67 | ATR $6.36 | TP $626.74 | SL $598.11"
-    },
-    {
-      "time": "2026-06-02T16:43:04.691Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for RENT",
-      "detail": "Entry $3.80 | High $3.82 | ATR $0.07 | TP $4.04 | SL $3.69"
-    },
     {
       "time": "2026-06-02T16:43:04.935Z",
       "type": "INFO",
@@ -1270,6 +1228,42 @@
       "time": "2026-06-03T13:20:59.357Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:31:12.539Z",
+      "type": "INFO",
+      "msg": "Account: $100213.89 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:31:12.549Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:31:12.575Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:31:12.720Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T13:31:13.189Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T13:31:27.085Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
       "detail": ""
     }
   ]
