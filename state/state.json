@@ -7,7 +7,7 @@
       "sl": 0.61
     },
     "COHR": {
-      "high": 428.73,
+      "high": 432,
       "entry": 424.2799987792969,
       "tp": 439.66,
       "sl": 415.85
@@ -70,32 +70,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T13:10:42.125Z",
+  "lastRun": "2026-06-03T13:20:59.357Z",
   "log": [
-    {
-      "time": "2026-06-02T16:43:03.587Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for RENT",
-      "detail": "Entry $3.80 | Current $3.82 | High set to $3.82"
-    },
-    {
-      "time": "2026-06-02T16:43:03.587Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for RKLB",
-      "detail": "Entry $123.58 | Current $124.05 | High set to $124.05"
-    },
-    {
-      "time": "2026-06-02T16:43:03.587Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for SHAK",
-      "detail": "Entry $55.48 | Current $55.62 | High set to $55.62"
-    },
-    {
-      "time": "2026-06-02T16:43:03.587Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for SMR",
-      "detail": "Entry $14.04 | Current $13.93 | High set to $14.04"
-    },
     {
       "time": "2026-06-02T16:43:03.600Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-06-03T13:10:42.124Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:20:59.084Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:20:59.284Z",
+      "type": "INFO",
+      "msg": "Account: $100217.53 | 2 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:20:59.344Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:20:59.357Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
