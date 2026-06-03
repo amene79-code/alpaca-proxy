@@ -1,12 +1,5 @@
 {
-  "trailingStops": {
-    "COOT": {
-      "high": 0.628,
-      "entry": 0.628,
-      "tp": 0.66,
-      "sl": 0.61
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 0,
   "dailyDate": "2026-06-03",
   "openPositions": [
@@ -64,56 +57,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T13:42:03.487Z",
+  "lastRun": "2026-06-03T13:52:33.275Z",
   "log": [
-    {
-      "time": "2026-06-02T16:43:07.006Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
-    },
-    {
-      "time": "2026-06-02T16:43:07.367Z",
-      "type": "INFO",
-      "msg": "Scanning 32 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-02T16:43:13.290Z",
-      "type": "SIGNAL",
-      "msg": "SOXX — score 5 | ATR 0.22% | RSI 41",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T16:43:14.316Z",
-      "type": "SIGNAL",
-      "msg": "LASE — score 5 | ATR 4.83% | RSI 81",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-02T16:43:15.506Z",
-      "type": "INFO",
-      "msg": "Top signal: SOXX (score 5)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:43:15.506Z",
-      "type": "BUY",
-      "msg": "Placing: 1x SOXX @ ~$597.35",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $595.39 | TP 2.7× $600.87 | R:R 1.8"
-    },
-    {
-      "time": "2026-06-02T16:43:15.545Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 1x SOXX",
-      "detail": "ID: 2fad7c58-480f-410c-952a-d3b37a233175 | R:R 1.8:1"
-    },
-    {
-      "time": "2026-06-02T16:43:16.046Z",
-      "type": "BUY",
-      "msg": "Placing: 44x LASE @ ~$1.92",
-      "detail": "Patterns: Volume Breakout | SL 2.4× $1.7 | TP 3.7× $2.27 | R:R 1.5"
-    },
     {
       "time": "2026-06-02T16:43:16.063Z",
       "type": "BUY",
@@ -1262,6 +1207,54 @@
     },
     {
       "time": "2026-06-03T13:42:03.487Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:52:17.796Z",
+      "type": "INFO",
+      "msg": "Account: $100213.15 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:52:17.811Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:52:18.132Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: COOT @ $0.6194 | High $0.628 → Stop $0.62 | P&L $-1.19",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:52:19.489Z",
+      "type": "SELL",
+      "msg": "✓ Closed COOT",
+      "detail": "P&L $-1.19"
+    },
+    {
+      "time": "2026-06-03T13:52:19.489Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:52:19.612Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T13:52:20.117Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T13:52:33.275Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
