@@ -72,44 +72,8 @@
     "MRVL",
     "GTLB"
   ],
-  "lastRun": "2026-06-03T16:51:28.242Z",
+  "lastRun": "2026-06-03T17:01:58.009Z",
   "log": [
-    {
-      "time": "2026-06-03T11:55:24.901Z",
-      "type": "INFO",
-      "msg": "⚠ VSXY LONG has no SL — trailing stop only at $78.81",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T11:55:24.901Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: VSXY @ $78.5 | High $80.42 → Stop $78.81 | P&L $-17.28",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T11:55:26.248Z",
-      "type": "SELL",
-      "msg": "✓ Closed VSXY",
-      "detail": "P&L $-17.28"
-    },
-    {
-      "time": "2026-06-03T11:55:26.248Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T12:05:39.568Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T12:05:39.786Z",
-      "type": "INFO",
-      "msg": "Account: $100215.34 | 6 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T12:05:39.787Z",
       "type": "INFO",
@@ -1273,6 +1237,42 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 16x GTLB",
       "detail": "ID: cae043e0-aac7-4772-bb0c-517a2251ee00 | R:R 1.4:1"
+    },
+    {
+      "time": "2026-06-03T17:01:42.200Z",
+      "type": "INFO",
+      "msg": "Account: $100192.00 | 2 positions open | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T17:01:42.243Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T17:01:42.270Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T17:01:42.650Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T17:01:43.326Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T17:01:58.008Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ]
 }
