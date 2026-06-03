@@ -57,44 +57,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T13:52:33.275Z",
+  "lastRun": "2026-06-03T14:03:01.660Z",
   "log": [
-    {
-      "time": "2026-06-02T16:43:16.063Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 44x LASE",
-      "detail": "ID: 50336357-6c4d-4006-b1ab-6702ae9dc45e | R:R 1.5:1"
-    },
-    {
-      "time": "2026-06-02T16:53:29.936Z",
-      "type": "INFO",
-      "msg": "Account: $99566.50 | 26 positions open | 52 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:53:29.951Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:53:29.951Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: AEHR @ $111.29 | High $113.9 → Stop $111.62 | P&L $-5.13",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:53:31.206Z",
-      "type": "SELL",
-      "msg": "✓ Closed AEHR",
-      "detail": "P&L $-5.13"
-    },
-    {
-      "time": "2026-06-02T16:53:31.238Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T16:53:31.325Z",
       "type": "INFO",
@@ -1255,6 +1219,42 @@
     },
     {
       "time": "2026-06-03T13:52:33.275Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T14:02:48.509Z",
+      "type": "INFO",
+      "msg": "Account: $100212.39 | 0 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T14:02:48.583Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T14:02:48.620Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T14:02:48.843Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T14:02:49.565Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T14:03:01.660Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
