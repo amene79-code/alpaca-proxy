@@ -70,32 +70,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T13:00:29.168Z",
+  "lastRun": "2026-06-03T13:10:42.125Z",
   "log": [
-    {
-      "time": "2026-06-02T16:43:03.587Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for BMNR",
-      "detail": "Entry $17.91 | Current $17.84 | High set to $17.91"
-    },
-    {
-      "time": "2026-06-02T16:43:03.587Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for DELL",
-      "detail": "Entry $444.50 | Current $443.27 | High set to $444.50"
-    },
-    {
-      "time": "2026-06-02T16:43:03.587Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for LAC",
-      "detail": "Entry $5.89 | Current $5.95 | High set to $5.95"
-    },
-    {
-      "time": "2026-06-02T16:43:03.587Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for META",
-      "detail": "Entry $607.64 | Current $607.67 | High set to $607.67"
-    },
     {
       "time": "2026-06-02T16:43:03.587Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-06-03T13:00:29.168Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:10:41.752Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:10:42.079Z",
+      "type": "INFO",
+      "msg": "Account: $100211.13 | 2 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:10:42.093Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:10:42.124Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
