@@ -72,44 +72,8 @@
     "MRVL",
     "GTLB"
   ],
-  "lastRun": "2026-06-03T17:01:58.009Z",
+  "lastRun": "2026-06-03T17:12:32.025Z",
   "log": [
-    {
-      "time": "2026-06-03T12:05:39.787Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for KEN",
-      "detail": "Entry $87.14 | Current $82.80 | High set to $87.14"
-    },
-    {
-      "time": "2026-06-03T12:05:39.787Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for VSXY",
-      "detail": "Entry $80.42 | Current $78.62 | High set to $80.42"
-    },
-    {
-      "time": "2026-06-03T12:05:39.852Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T12:05:39.978Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for KEN",
-      "detail": "Entry $87.14 | High $87.14 | ATR $0.78 | TP $89.47 | SL $85.97"
-    },
-    {
-      "time": "2026-06-03T12:05:40.450Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: KEN @ $82.8 | High $87.135 → Stop $85.39 | P&L $-21.68",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T12:05:42.039Z",
-      "type": "SELL",
-      "msg": "✓ Closed KEN",
-      "detail": "P&L $-21.68"
-    },
     {
       "time": "2026-06-03T12:05:42.040Z",
       "type": "INFO",
@@ -1270,6 +1234,42 @@
     },
     {
       "time": "2026-06-03T17:01:58.008Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T17:12:13.845Z",
+      "type": "INFO",
+      "msg": "Account: $100189.97 | 2 positions open | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T17:12:13.890Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T17:12:14.138Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T17:12:14.322Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T17:12:15.224Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T17:12:32.025Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
