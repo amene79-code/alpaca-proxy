@@ -5,12 +5,6 @@
       "entry": 13.399999618530273,
       "tp": 14.19,
       "sl": 12.97
-    },
-    "MRVL": {
-      "high": 308.0398864746094,
-      "entry": 308.0398864746094,
-      "tp": 315.66,
-      "sl": 303.05
     }
   },
   "dailyTrades": 7,
@@ -75,44 +69,8 @@
     "ALOY",
     "MRVL"
   ],
-  "lastRun": "2026-06-03T19:08:19.518Z",
+  "lastRun": "2026-06-03T19:18:46.019Z",
   "log": [
-    {
-      "time": "2026-06-03T14:02:49.565Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T14:03:01.660Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T14:13:17.691Z",
-      "type": "INFO",
-      "msg": "Account: $100212.39 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T14:13:17.714Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T14:13:17.746Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T14:13:17.929Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
     {
       "time": "2026-06-03T14:13:18.398Z",
       "type": "INFO",
@@ -1276,6 +1234,42 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 1x MRVL",
       "detail": "ID: ee2dd853-89c4-436c-9257-e07e29b08291 | R:R 1.5:1"
+    },
+    {
+      "time": "2026-06-03T19:18:33.600Z",
+      "type": "INFO",
+      "msg": "Account: $100176.09 | 1 positions open | 7 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T19:18:33.610Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T19:18:33.842Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T19:18:33.970Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T19:18:34.436Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T19:18:46.019Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ]
 }
