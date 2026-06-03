@@ -1422,22 +1422,49 @@ function updatePositionsUI(positions){
 
 async function closePosition(symbol,qty){
   if(!confirm(`Close ${qty}x ${symbol}?`)) return;
+  // Determine side — short positions need buy-to-close
+  const positions=await alpaca("GET","/v2/positions").catch(()=>[]);
+  const pos=(Array.isArray(positions)?positions:[]).find(p=>p.symbol===symbol);
+  const isShort=pos&&+pos.qty<0;
+  const closeSide=isShort?"buy":"sell";
+  const actualQty=pos?Math.abs(+pos.qty):qty;
+
   try{
-    const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100&nested=true").catch(()=>[]);
-    const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===symbol);
-    for(const o of symbolOrders){
-      await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
-      if(o.legs) for(const leg of o.legs) await alpaca("DELETE",`/v2/orders/${leg.id}`).catch(()=>{});
+    // Step 1: try placing closing order first
+    let order;
+    try{
+      order=await alpaca("POST","/v2/orders",{symbol,qty:String(actualQty),side:closeSide,type:"market",time_in_force:"day"});
+    }catch(e){
+      // If rejected due to existing orders, cancel brackets and retry
+      if(e.message?.includes("insufficient")||e.message?.includes("conflict")||e.message?.includes("open order")){
+        log("INFO",`${symbol} — cancelling bracket orders and retrying`);
+        const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100&nested=true").catch(()=>[]);
+        const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===symbol);
+        for(const o of symbolOrders){
+          await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
+          if(o.legs) for(const leg of o.legs) await alpaca("DELETE",`/v2/orders/${leg.id}`).catch(()=>{});
+        }
+        if(symbolOrders.length) await new Promise(r=>setTimeout(r,1200));
+        order=await alpaca("POST","/v2/orders",{symbol,qty:String(actualQty),side:closeSide,type:"market",time_in_force:"day"});
+      } else { throw e; }
     }
-    if(symbolOrders.length) await new Promise(r=>setTimeout(r,1200));
-    await alpaca("POST","/v2/orders",{symbol,qty:String(qty),side:"sell",type:"market",time_in_force:"day"});
-    log("SELL",`✓ Closed ${symbol}`);
-    delete trailingStops[symbol];
-    removeICTPosition(symbol);
-    await new Promise(r=>setTimeout(r,1500));
-    const pos=await alpaca("GET","/v2/positions");
-    updatePositionsUI(pos);
-  }catch(e){log("ERROR",`Close ${symbol}: ${e.message}`);}
+
+    // Step 2: only if successful, cancel remaining bracket orders
+    if(order?.id){
+      const allOrders=await alpaca("GET","/v2/orders?status=open&limit=100&nested=true").catch(()=>[]);
+      const symbolOrders=(Array.isArray(allOrders)?allOrders:[]).filter(o=>o.symbol===symbol&&o.id!==order.id);
+      for(const o of symbolOrders){
+        await alpaca("DELETE",`/v2/orders/${o.id}`).catch(()=>{});
+        if(o.legs) for(const leg of o.legs) await alpaca("DELETE",`/v2/orders/${leg.id}`).catch(()=>{});
+      }
+      log("SELL",`✓ Closed ${symbol}`);
+      delete trailingStops[symbol];
+      removeICTPosition(symbol);
+      await new Promise(r=>setTimeout(r,1500));
+      const p=await alpaca("GET","/v2/positions");
+      updatePositionsUI(p);
+    }
+  }catch(e){log("ERROR",`Close ${symbol}: ${e.message} — bracket orders preserved`);}
 }
 
 async function refreshPositions(){
