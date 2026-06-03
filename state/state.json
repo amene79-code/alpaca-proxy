@@ -5,12 +5,6 @@
       "entry": 306.5,
       "tp": 313.74,
       "sl": 302.48
-    },
-    "GTLB": {
-      "high": 30.940000534057617,
-      "entry": 30.940000534057617,
-      "tp": 31.4,
-      "sl": 30.73
     }
   },
   "dailyTrades": 5,
@@ -73,44 +67,8 @@
     "GTLB",
     "GTLB"
   ],
-  "lastRun": "2026-06-03T18:05:09.422Z",
+  "lastRun": "2026-06-03T18:15:43.176Z",
   "log": [
-    {
-      "time": "2026-06-03T12:50:12.883Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T12:50:13.298Z",
-      "type": "INFO",
-      "msg": "Account: $100213.64 | 3 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T12:50:13.312Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T12:50:13.323Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:00:27.405Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:00:27.573Z",
-      "type": "INFO",
-      "msg": "Account: $100207.93 | 3 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T13:00:27.624Z",
       "type": "INFO",
@@ -1274,6 +1232,42 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 16x GTLB",
       "detail": "ID: 1248178d-3e01-44cd-860b-100583bc694c | R:R 2.2:1"
+    },
+    {
+      "time": "2026-06-03T18:15:29.547Z",
+      "type": "INFO",
+      "msg": "Account: $100185.51 | 1 positions open | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:15:29.621Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:15:29.632Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:15:29.890Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T18:15:30.512Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T18:15:43.176Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ]
 }
