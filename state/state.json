@@ -77,56 +77,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T12:29:42.240Z",
+  "lastRun": "2026-06-03T12:39:57.002Z",
   "log": [
-    {
-      "time": "2026-06-02T15:50:01.075Z",
-      "type": "SELL",
-      "msg": "✓ Closed SPCE",
-      "detail": "P&L $-4.56"
-    },
-    {
-      "time": "2026-06-02T15:50:01.106Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (50)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:00:20.254Z",
-      "type": "INFO",
-      "msg": "Account: $99623.84 | 23 positions open | 50 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:00:20.343Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:00:20.343Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: ASTS @ $113.79 | High $116.3319 → Stop $114.01 | P&L $-2.06",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:00:21.868Z",
-      "type": "SELL",
-      "msg": "✓ Closed ASTS",
-      "detail": "P&L $-2.06"
-    },
-    {
-      "time": "2026-06-02T16:00:21.905Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (50)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:10:38.059Z",
-      "type": "INFO",
-      "msg": "Account: $99621.65 | 22 positions open | 50 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T16:10:38.129Z",
       "type": "INFO",
@@ -1275,6 +1227,54 @@
     },
     {
       "time": "2026-06-03T12:29:42.240Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:39:54.262Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:39:54.863Z",
+      "type": "INFO",
+      "msg": "Account: $100211.13 | 4 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:39:54.863Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for VSXY",
+      "detail": "Entry $80.42 | Current $78.03 | High set to $80.42"
+    },
+    {
+      "time": "2026-06-03T12:39:54.928Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:39:55.429Z",
+      "type": "INFO",
+      "msg": "⚠ VSXY LONG has no SL — trailing stop only at $78.81",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:39:55.429Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: VSXY @ $78.03 | High $80.42 → Stop $78.81 | P&L $-21.51",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:39:57.002Z",
+      "type": "SELL",
+      "msg": "✓ Closed VSXY",
+      "detail": "P&L $-21.51"
+    },
+    {
+      "time": "2026-06-03T12:39:57.002Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
