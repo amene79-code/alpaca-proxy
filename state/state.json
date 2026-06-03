@@ -57,44 +57,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T15:48:13.609Z",
+  "lastRun": "2026-06-03T15:58:50.070Z",
   "log": [
-    {
-      "time": "2026-06-02T17:42:12.043Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T17:42:12.054Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (30)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T17:52:27.549Z",
-      "type": "INFO",
-      "msg": "Account: $99535.84 | 19 positions open | 63 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T17:52:27.585Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T17:52:27.613Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (30)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T18:02:45.580Z",
-      "type": "INFO",
-      "msg": "Account: $99518.94 | 17 positions open | 63 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T18:02:45.612Z",
       "type": "INFO",
@@ -1255,6 +1219,42 @@
     },
     {
       "time": "2026-06-03T15:48:13.609Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T15:58:32.586Z",
+      "type": "INFO",
+      "msg": "Account: $100212.39 | 0 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T15:58:32.651Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T15:58:32.859Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T15:58:33.026Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T15:58:33.903Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T15:58:50.069Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
