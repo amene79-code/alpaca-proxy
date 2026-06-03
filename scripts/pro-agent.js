@@ -352,6 +352,18 @@ function addLog(state, type, msg, detail = '') {
 }
 
 // ─── Market hours check ───────────────────────────────────────────────────────
+function isRegularHours() {
+  const et = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
+  const m = et.getHours()*60 + et.getMinutes();
+  return m >= 570 && m < 960; // 9:30am-4pm ET
+}
+
+function isExtendedHours() {
+  const et = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
+  const m = et.getHours()*60 + et.getMinutes();
+  return m >= 240 && m < 1200; // 4am-8pm ET
+}
+
 function isMarketOpen() {
   const now = new Date();
   const day = now.getUTCDay(); // 0=Sun, 6=Sat
@@ -365,20 +377,34 @@ function isMarketOpen() {
 // ─── Cancel bracket orders then sell ─────────────────────────────────────────
 async function cancelAndSell(symbol, qty, side = 'long') {
   const closeSide = side === 'short' ? 'buy' : 'sell';
+  const regular   = isRegularHours();
+
   try {
-    // Step 1: try placing the closing order first
     const positions = await alpaca('GET', '/v2/positions').catch(() => []);
-    const position = (Array.isArray(positions) ? positions : []).find(p => p.symbol === symbol);
+    const position  = (Array.isArray(positions) ? positions : []).find(p => p.symbol === symbol);
     const actualQty = position ? Math.abs(+position.qty) : qty;
     if (!actualQty) { console.warn(`${symbol} — no position found`); return false; }
+    const currentPrice = +position?.current_price || 0;
+
+    // Build order — limit with extended_hours outside regular hours
+    const buildOrder = (price) => {
+      if (regular || !price) {
+        return { symbol, qty: String(actualQty), side: closeSide, type: 'market', time_in_force: 'day' };
+      }
+      const limitPrice = closeSide === 'sell'
+        ? +(price * 0.999).toFixed(2)
+        : +(price * 1.001).toFixed(2);
+      return {
+        symbol, qty: String(actualQty), side: closeSide,
+        type: 'limit', limit_price: String(limitPrice),
+        time_in_force: 'day', extended_hours: true,
+      };
+    };
 
     let order;
     try {
-      order = await alpaca('POST', '/v2/orders', {
-        symbol, qty: String(actualQty), side: closeSide, type: 'market', time_in_force: 'day',
-      });
+      order = await alpaca('POST', '/v2/orders', buildOrder(currentPrice));
     } catch (e) {
-      // If rejected due to existing orders, cancel brackets and retry once
       if (e.message?.includes('insufficient') || e.message?.includes('conflict') || e.message?.includes('open order')) {
         const orders = await alpaca('GET', `/v2/orders?status=open&limit=100&nested=true`).catch(() => []);
         const symbolOrders = (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol);
@@ -387,13 +413,10 @@ async function cancelAndSell(symbol, qty, side = 'long') {
           if (o.legs) for (const leg of o.legs) await alpaca('DELETE', `/v2/orders/${leg.id}`).catch(() => {});
         }
         if (symbolOrders.length) await sleep(1200);
-        order = await alpaca('POST', '/v2/orders', {
-          symbol, qty: String(actualQty), side: closeSide, type: 'market', time_in_force: 'day',
-        });
+        order = await alpaca('POST', '/v2/orders', buildOrder(currentPrice));
       } else { throw e; }
     }
 
-    // Step 2: only if sell succeeded, cancel remaining bracket orders
     if (order?.id) {
       const orders = await alpaca('GET', `/v2/orders?status=open&limit=100&nested=true`).catch(() => []);
       const symbolOrders = (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol && o.id !== order.id);
@@ -521,6 +544,8 @@ async function main() {
     }
   }
 
+  const regular = isRegularHours();
+
   for (const p of positions) {
     if (ictPositions.includes(p.symbol)) continue; // ICT agent manages these
 
@@ -552,8 +577,15 @@ async function main() {
         addLog(state, 'INFO', `⚠ ${p.symbol} SHORT has no SL — trailing stop only at $${stop}`);
       }
 
-      // Never trigger if price is below TP (bracket handles it)
-      if (ts.tp && price <= ts.tp) continue;
+      // TP hit in extended hours for SHORT
+      if (ts.tp && !regular && price <= ts.tp) {
+        addLog(state, 'TRAIL', `TP hit (SHORT/ext hours): ${p.symbol} @ $${price} ≤ TP $${ts.tp}`);
+        await cancelAndSell(p.symbol, qty, 'short');
+        delete state.trailingStops[p.symbol];
+        continue;
+      }
+      // Never trigger trailing stop if price is below TP
+      if (ts.tp && price <= ts.tp && (regular || price > ts.tp * 0.99)) continue;
 
       if (price >= stop) {
         addLog(state, 'TRAIL',
@@ -576,8 +608,15 @@ async function main() {
         addLog(state, 'INFO', `⚠ ${p.symbol} LONG has no SL — trailing stop only at $${stop}`);
       }
 
-      // Never trigger if price is above TP (bracket handles it)
-      if (ts.tp && price >= ts.tp) continue;
+      // TP hit in extended hours for LONG
+      if (ts.tp && !regular && price >= ts.tp) {
+        addLog(state, 'TRAIL', `TP hit (ext hours): ${p.symbol} @ $${price} ≥ TP $${ts.tp}`);
+        const closed = await cancelAndSell(p.symbol, qty, 'long');
+        if (closed) { delete state.trailingStops[p.symbol]; }
+        continue;
+      }
+      // Regular hours: bracket handles TP
+      if (ts.tp && regular && price >= ts.tp) continue;
 
       if (price <= stop) {
         addLog(state, 'TRAIL',
