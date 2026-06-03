@@ -77,32 +77,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T12:39:57.002Z",
+  "lastRun": "2026-06-03T12:50:13.323Z",
   "log": [
-    {
-      "time": "2026-06-02T16:10:38.129Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:10:38.129Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: YB @ $15.245 | High $15.655 → Stop $15.34 | P&L $-3.33",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:10:39.610Z",
-      "type": "SELL",
-      "msg": "✓ Closed YB",
-      "detail": "P&L $-3.33"
-    },
-    {
-      "time": "2026-06-02T16:10:39.642Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (50)",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T16:20:57.234Z",
       "type": "INFO",
@@ -1275,6 +1251,30 @@
     },
     {
       "time": "2026-06-03T12:39:57.002Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:50:12.883Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:50:13.298Z",
+      "type": "INFO",
+      "msg": "Account: $100213.64 | 3 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:50:13.312Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:50:13.323Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
