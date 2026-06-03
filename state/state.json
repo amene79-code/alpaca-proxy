@@ -84,80 +84,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T11:55:26.248Z",
+  "lastRun": "2026-06-03T12:05:43.625Z",
   "log": [
-    {
-      "time": "2026-06-02T15:18:45.307Z",
-      "type": "BUY",
-      "msg": "Placing: 4x WMT @ ~$113.14",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $112.77 | TP 2.7× $113.79 | R:R 1.8"
-    },
-    {
-      "time": "2026-06-02T15:18:45.412Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 4x WMT",
-      "detail": "ID: e079a3a4-048b-486f-a3a5-a77d276b20a1 | R:R 1.8:1"
-    },
-    {
-      "time": "2026-06-02T15:18:45.913Z",
-      "type": "BUY",
-      "msg": "Placing: 12x DXST @ ~$4.66",
-      "detail": "Patterns: Gap Up | SL 2.8× $3.86 | TP 5.8× $6.31 | R:R 2.1"
-    },
-    {
-      "time": "2026-06-02T15:18:45.999Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 12x DXST",
-      "detail": "ID: dcaae8d1-f206-4847-93a5-eec440b16ba9 | R:R 2.1:1"
-    },
-    {
-      "time": "2026-06-02T15:18:46.500Z",
-      "type": "BUY",
-      "msg": "Placing: 32x SPCE @ ~$4.77",
-      "detail": "Patterns: Hammer | SL 2.5× $4.46 | TP 5× $5.4 | R:R 2.0"
-    },
-    {
-      "time": "2026-06-02T15:18:46.566Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 32x SPCE",
-      "detail": "ID: 14cbb279-3f58-4317-8138-b85c266c63fb | R:R 2.0:1"
-    },
-    {
-      "time": "2026-06-02T15:18:47.067Z",
-      "type": "BUY",
-      "msg": "Placing: 17x CMG @ ~$29.17",
-      "detail": "Patterns: Hammer | SL 1.7× $29.03 | TP 3.1× $29.44 | R:R 1.9"
-    },
-    {
-      "time": "2026-06-02T15:18:47.136Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 17x CMG",
-      "detail": "ID: 48059d90-169f-4bea-8b33-ac5534c03467 | R:R 1.9:1"
-    },
-    {
-      "time": "2026-06-02T15:29:05.056Z",
-      "type": "INFO",
-      "msg": "Account: $99662.02 | 33 positions open | 49 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:29:05.100Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:29:05.100Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: DXLG @ $0.7 | High $0.7155 → Stop $0.7 | P&L $-6.57",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T15:29:06.533Z",
-      "type": "SELL",
-      "msg": "✓ Closed DXLG",
-      "detail": "P&L $-6.57"
-    },
     {
       "time": "2026-06-02T15:29:06.534Z",
       "type": "TRAIL",
@@ -1282,6 +1210,78 @@
     },
     {
       "time": "2026-06-03T11:55:26.248Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:05:39.568Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:05:39.786Z",
+      "type": "INFO",
+      "msg": "Account: $100215.34 | 6 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:05:39.787Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for KEN",
+      "detail": "Entry $87.14 | Current $82.80 | High set to $87.14"
+    },
+    {
+      "time": "2026-06-03T12:05:39.787Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for VSXY",
+      "detail": "Entry $80.42 | Current $78.62 | High set to $80.42"
+    },
+    {
+      "time": "2026-06-03T12:05:39.852Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:05:39.978Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for KEN",
+      "detail": "Entry $87.14 | High $87.14 | ATR $0.78 | TP $89.47 | SL $85.97"
+    },
+    {
+      "time": "2026-06-03T12:05:40.450Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: KEN @ $82.8 | High $87.135 → Stop $85.39 | P&L $-21.68",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:05:42.039Z",
+      "type": "SELL",
+      "msg": "✓ Closed KEN",
+      "detail": "P&L $-21.68"
+    },
+    {
+      "time": "2026-06-03T12:05:42.040Z",
+      "type": "INFO",
+      "msg": "⚠ VSXY LONG has no SL — trailing stop only at $78.81",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:05:42.040Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: VSXY @ $78.62 | High $80.42 → Stop $78.81 | P&L $-16.20",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T12:05:43.625Z",
+      "type": "SELL",
+      "msg": "✓ Closed VSXY",
+      "detail": "P&L $-16.20"
+    },
+    {
+      "time": "2026-06-03T12:05:43.625Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
