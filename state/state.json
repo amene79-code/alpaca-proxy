@@ -57,44 +57,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T14:34:26.971Z",
+  "lastRun": "2026-06-03T14:44:58.736Z",
   "log": [
-    {
-      "time": "2026-06-02T17:03:57.659Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, HPE, MU, AVGO, NVDA, ASTS, MRVL, MSFT…"
-    },
-    {
-      "time": "2026-06-02T17:03:58.007Z",
-      "type": "INFO",
-      "msg": "Scanning 33 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-02T17:03:58.053Z",
-      "type": "SIGNAL",
-      "msg": "SPCE — score 4 | ATR 1.62% | RSI 38",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T17:03:59.639Z",
-      "type": "SIGNAL",
-      "msg": "NTSK — score 4 | ATR 0.29% | RSI 55",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-02T17:04:00.890Z",
-      "type": "SIGNAL",
-      "msg": "YB — score 3 | ATR 1.32% | RSI 45",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-02T17:04:03.644Z",
-      "type": "SIGNAL",
-      "msg": "BMNR — score 4 | ATR 0.46% | RSI 63",
-      "detail": "Bullish Engulfing"
-    },
     {
       "time": "2026-06-02T17:04:06.371Z",
       "type": "INFO",
@@ -1255,6 +1219,42 @@
     },
     {
       "time": "2026-06-03T14:34:26.971Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T14:44:45.718Z",
+      "type": "INFO",
+      "msg": "Account: $100212.39 | 0 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T14:44:45.796Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T14:44:45.841Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T14:44:46.121Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T14:44:46.577Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T14:44:58.736Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
