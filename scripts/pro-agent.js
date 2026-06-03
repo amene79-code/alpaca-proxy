@@ -364,29 +364,48 @@ function isMarketOpen() {
 
 // ─── Cancel bracket orders then sell ─────────────────────────────────────────
 async function cancelAndSell(symbol, qty, side = 'long') {
+  const closeSide = side === 'short' ? 'buy' : 'sell';
   try {
-    const orders = await alpaca('GET', `/v2/orders?status=open&limit=100&nested=true`);
-    const symbolOrders = (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol);
-    for (const o of symbolOrders) {
-      await alpaca('DELETE', `/v2/orders/${o.id}`).catch(() => {});
-      if (o.legs) for (const leg of o.legs) await alpaca('DELETE', `/v2/orders/${leg.id}`).catch(() => {});
-    }
-    if (symbolOrders.length) await sleep(1200);
-    // Verify exact qty from position to avoid overselling
+    // Step 1: try placing the closing order first
     const positions = await alpaca('GET', '/v2/positions').catch(() => []);
     const position = (Array.isArray(positions) ? positions : []).find(p => p.symbol === symbol);
     const actualQty = position ? Math.abs(+position.qty) : qty;
-    if (!actualQty) {
-      console.warn(`${symbol} — no position found, skipping sell`);
-      return false;
+    if (!actualQty) { console.warn(`${symbol} — no position found`); return false; }
+
+    let order;
+    try {
+      order = await alpaca('POST', '/v2/orders', {
+        symbol, qty: String(actualQty), side: closeSide, type: 'market', time_in_force: 'day',
+      });
+    } catch (e) {
+      // If rejected due to existing orders, cancel brackets and retry once
+      if (e.message?.includes('insufficient') || e.message?.includes('conflict') || e.message?.includes('open order')) {
+        const orders = await alpaca('GET', `/v2/orders?status=open&limit=100&nested=true`).catch(() => []);
+        const symbolOrders = (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol);
+        for (const o of symbolOrders) {
+          await alpaca('DELETE', `/v2/orders/${o.id}`).catch(() => {});
+          if (o.legs) for (const leg of o.legs) await alpaca('DELETE', `/v2/orders/${leg.id}`).catch(() => {});
+        }
+        if (symbolOrders.length) await sleep(1200);
+        order = await alpaca('POST', '/v2/orders', {
+          symbol, qty: String(actualQty), side: closeSide, type: 'market', time_in_force: 'day',
+        });
+      } else { throw e; }
     }
-    const closeSide = side === 'short' ? 'buy' : 'sell';
-    await alpaca('POST', '/v2/orders', {
-      symbol, qty: String(actualQty), side: closeSide, type: 'market', time_in_force: 'day',
-    });
-    return true;
+
+    // Step 2: only if sell succeeded, cancel remaining bracket orders
+    if (order?.id) {
+      const orders = await alpaca('GET', `/v2/orders?status=open&limit=100&nested=true`).catch(() => []);
+      const symbolOrders = (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol && o.id !== order.id);
+      for (const o of symbolOrders) {
+        await alpaca('DELETE', `/v2/orders/${o.id}`).catch(() => {});
+        if (o.legs) for (const leg of o.legs) await alpaca('DELETE', `/v2/orders/${leg.id}`).catch(() => {});
+      }
+      return true;
+    }
+    return false;
   } catch (e) {
-    console.error(`Failed to close ${symbol}: ${e.message}`);
+    console.error(`Failed to close ${symbol}: ${e.message} — bracket orders preserved`);
     return false;
   }
 }
