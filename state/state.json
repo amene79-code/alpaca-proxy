@@ -67,44 +67,8 @@
     "GTLB",
     "GTLB"
   ],
-  "lastRun": "2026-06-03T18:15:43.176Z",
+  "lastRun": "2026-06-03T18:26:14.486Z",
   "log": [
-    {
-      "time": "2026-06-03T13:00:27.624Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:00:27.667Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: CMG @ $28.7 | High $29.385 → Stop $28.8 | P&L $-8.16",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:00:29.168Z",
-      "type": "SELL",
-      "msg": "✓ Closed CMG",
-      "detail": "P&L $-8.16"
-    },
-    {
-      "time": "2026-06-03T13:00:29.168Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:10:41.752Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:10:42.079Z",
-      "type": "INFO",
-      "msg": "Account: $100211.13 | 2 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T13:10:42.093Z",
       "type": "INFO",
@@ -1265,6 +1229,42 @@
     },
     {
       "time": "2026-06-03T18:15:43.176Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:25:58.951Z",
+      "type": "INFO",
+      "msg": "Account: $100188.36 | 1 positions open | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:25:59.039Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:25:59.225Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:25:59.549Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T18:26:00.252Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T18:26:14.486Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
