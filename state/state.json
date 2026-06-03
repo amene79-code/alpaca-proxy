@@ -64,44 +64,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T13:31:27.085Z",
+  "lastRun": "2026-06-03T13:42:03.487Z",
   "log": [
-    {
-      "time": "2026-06-02T16:43:04.935Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for RKLB",
-      "detail": "Entry $123.58 | High $124.05 | ATR $4.21 | TP $136.68 | SL $117.27"
-    },
-    {
-      "time": "2026-06-02T16:43:05.181Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for SHAK",
-      "detail": "Entry $55.48 | High $55.62 | ATR $1.16 | TP $59.1 | SL $53.74"
-    },
-    {
-      "time": "2026-06-02T16:43:05.421Z",
-      "type": "INFO",
-      "msg": "Estimated TP/SL for SMR",
-      "detail": "Entry $14.04 | High $14.04 | ATR $0.46 | TP $15.41 | SL $13.35"
-    },
-    {
-      "time": "2026-06-02T16:43:05.622Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: NU @ $11.92 | High $12.165 → Stop $11.92 | P&L $-4.07",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:43:06.872Z",
-      "type": "SELL",
-      "msg": "✓ Closed NU",
-      "detail": "P&L $-4.07"
-    },
-    {
-      "time": "2026-06-02T16:43:06.904Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T16:43:07.006Z",
       "type": "INFO",
@@ -1262,6 +1226,42 @@
     },
     {
       "time": "2026-06-03T13:31:27.085Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:41:45.018Z",
+      "type": "INFO",
+      "msg": "Account: $100213.91 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:41:45.079Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:41:45.263Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:41:45.578Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T13:41:46.499Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T13:42:03.487Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
