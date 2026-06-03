@@ -11,12 +11,6 @@
       "entry": 424.2799987792969,
       "tp": 439.66,
       "sl": 415.85
-    },
-    "CMG": {
-      "high": 29.385,
-      "entry": 29.17289924621582,
-      "tp": 29.44,
-      "sl": 29.03
     }
   },
   "dailyTrades": 0,
@@ -63,7 +57,6 @@
     "NBIS",
     "DELL",
     "WMT",
-    "CMG",
     "GOOGL",
     "SOXX",
     "LASE",
@@ -77,44 +70,8 @@
     "AVEX",
     "SHAK"
   ],
-  "lastRun": "2026-06-03T12:50:13.323Z",
+  "lastRun": "2026-06-03T13:00:29.168Z",
   "log": [
-    {
-      "time": "2026-06-02T16:20:57.234Z",
-      "type": "INFO",
-      "msg": "Account: $99615.47 | 21 positions open | 50 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:20:57.302Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:20:57.302Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: TE @ $11.7601 | High $12.0861 → Stop $11.84 | P&L $-7.98",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:20:58.765Z",
-      "type": "SELL",
-      "msg": "✓ Closed TE",
-      "detail": "P&L $-7.98"
-    },
-    {
-      "time": "2026-06-02T16:20:58.792Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (50)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T16:43:03.587Z",
-      "type": "INFO",
-      "msg": "Account: $99581.05 | 27 positions open | 50 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T16:43:03.587Z",
       "type": "INFO",
@@ -1275,6 +1232,42 @@
     },
     {
       "time": "2026-06-03T12:50:13.323Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:00:27.405Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:00:27.573Z",
+      "type": "INFO",
+      "msg": "Account: $100207.93 | 3 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:00:27.624Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:00:27.667Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: CMG @ $28.7 | High $29.385 → Stop $28.8 | P&L $-8.16",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T13:00:29.168Z",
+      "type": "SELL",
+      "msg": "✓ Closed CMG",
+      "detail": "P&L $-8.16"
+    },
+    {
+      "time": "2026-06-03T13:00:29.168Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
