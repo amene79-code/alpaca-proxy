@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "MRVL": {
-      "high": 306.5,
+      "high": 306.7999,
       "entry": 306.5,
       "tp": 313.74,
       "sl": 302.48
@@ -73,50 +73,8 @@
     "NVTS",
     "NVTS"
   ],
-  "lastRun": "2026-06-03T16:19:51.063Z",
+  "lastRun": "2026-06-03T16:30:24.975Z",
   "log": [
-    {
-      "time": "2026-06-02T19:04:40.226Z",
-      "type": "INFO",
-      "msg": "Account: $99517.65 | 10 positions open | 63 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T19:04:40.253Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T19:04:40.285Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (30)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T19:14:57.821Z",
-      "type": "INFO",
-      "msg": "Account: $99514.04 | 9 positions open | 63 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T19:14:57.833Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T19:14:57.862Z",
-      "type": "INFO",
-      "msg": "Daily limit reached (30)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-02T19:25:14.346Z",
-      "type": "INFO",
-      "msg": "Account: $99518.98 | 8 positions open | 63 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-02T19:25:14.427Z",
       "type": "INFO",
@@ -1274,6 +1232,48 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 9x NVTS",
       "detail": "ID: 2fcd9f17-1628-4cdb-8ded-0c9c67dd444e | R:R 1.6:1"
+    },
+    {
+      "time": "2026-06-03T16:30:07.474Z",
+      "type": "INFO",
+      "msg": "Account: $100194.69 | 2 positions open | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T16:30:07.550Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T16:30:07.578Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: NVTS @ $31.92 | High $32.78499984741211 → Stop $32.13 | P&L $-7.74",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T16:30:09.134Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T16:30:09.468Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T16:30:10.603Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T16:30:24.975Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ]
 }
