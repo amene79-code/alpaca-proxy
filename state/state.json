@@ -1,6 +1,13 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 5,
+  "trailingStops": {
+    "ALOY": {
+      "high": 13.399999618530273,
+      "entry": 13.399999618530273,
+      "tp": 14.19,
+      "sl": 12.97
+    }
+  },
+  "dailyTrades": 6,
   "dailyDate": "2026-06-03",
   "openPositions": [
     "FIVE",
@@ -58,64 +65,11 @@
     "SHAK",
     "MRVL",
     "GTLB",
-    "GTLB"
+    "GTLB",
+    "ALOY"
   ],
-  "lastRun": "2026-06-03T18:47:19.996Z",
+  "lastRun": "2026-06-03T18:57:49.809Z",
   "log": [
-    {
-      "time": "2026-06-03T13:41:45.018Z",
-      "type": "INFO",
-      "msg": "Account: $100213.91 | 1 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:41:45.079Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:41:45.263Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:41:45.578Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
-    {
-      "time": "2026-06-03T13:41:46.499Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T13:42:03.487Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:52:17.796Z",
-      "type": "INFO",
-      "msg": "Account: $100213.15 | 1 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:52:17.811Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T13:52:18.132Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: COOT @ $0.6194 | High $0.628 → Stop $0.62 | P&L $-1.19",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T13:52:19.489Z",
       "type": "SELL",
@@ -1261,6 +1215,60 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:57:36.441Z",
+      "type": "INFO",
+      "msg": "Account: $100181.96 | 0 positions open | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:57:36.459Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:57:36.488Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:57:36.583Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
+    },
+    {
+      "time": "2026-06-03T18:57:37.295Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-03T18:57:48.167Z",
+      "type": "SIGNAL",
+      "msg": "ALOY — score 3 | ATR 1.55% | RSI 74 | RelVol 1.9×",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-03T18:57:49.262Z",
+      "type": "INFO",
+      "msg": "Top signal: ALOY (score 3)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T18:57:49.263Z",
+      "type": "BUY",
+      "msg": "Placing: 23x ALOY @ ~$13.40",
+      "detail": "Patterns: Hammer | SL 2.1× $12.97 | TP 3.8× $14.19 | R:R 1.8"
+    },
+    {
+      "time": "2026-06-03T18:57:49.308Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 23x ALOY",
+      "detail": "ID: 1d669d93-93ee-4fee-80a5-7b0439d21c39 | R:R 1.8:1"
     }
   ]
 }
