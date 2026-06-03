@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "ALOY": {
-      "high": 13.49,
+      "high": 13.65,
       "entry": 13.399999618530273,
       "tp": 14.19,
       "sl": 12.97
@@ -69,26 +69,8 @@
     "ALOY",
     "MRVL"
   ],
-  "lastRun": "2026-06-03T19:29:13.991Z",
+  "lastRun": "2026-06-03T19:39:29.221Z",
   "log": [
-    {
-      "time": "2026-06-03T14:23:48.001Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T14:24:00.320Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T14:34:14.273Z",
-      "type": "INFO",
-      "msg": "Account: $100212.39 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T14:34:14.291Z",
       "type": "INFO",
@@ -1269,6 +1251,24 @@
       "time": "2026-06-03T19:29:13.991Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T19:39:29.098Z",
+      "type": "INFO",
+      "msg": "Account: $100182.64 | 1 positions open | 7 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T19:39:29.175Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-03T19:39:29.220Z",
+      "type": "INFO",
+      "msg": "Skipping — last 30 min before close (21 min left)",
       "detail": ""
     }
   ]
