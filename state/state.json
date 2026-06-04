@@ -6,20 +6,20 @@
       "tp": 10.83,
       "sl": 10.39
     },
-    "AVGO": {
-      "high": 424.7099,
-      "entry": 422.57501220703125,
-      "tp": 426.37,
-      "sl": 419.73
-    },
     "MRVL": {
       "high": 318.925,
       "entry": 316.3699035644531,
       "tp": 321.4,
       "sl": 313.63
+    },
+    "CIEN": {
+      "high": 531.9000244140625,
+      "entry": 531.9000244140625,
+      "tp": 539.71,
+      "sl": 527.99
     }
   },
-  "dailyTrades": 5,
+  "dailyTrades": 6,
   "dailyDate": "2026-06-04",
   "openPositions": [
     "FIVE",
@@ -84,64 +84,11 @@
     "AVGO",
     "AVGO",
     "AVGO",
-    "MRVL"
+    "MRVL",
+    "CIEN"
   ],
-  "lastRun": "2026-06-04T18:12:29.457Z",
+  "lastRun": "2026-06-04T18:22:56.875Z",
   "log": [
-    {
-      "time": "2026-06-03T19:18:34.436Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T19:18:46.019Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T19:29:01.360Z",
-      "type": "INFO",
-      "msg": "Account: $100178.96 | 1 positions open | 7 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T19:29:01.387Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T19:29:01.429Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T19:29:01.544Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
-    {
-      "time": "2026-06-03T19:29:01.994Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T19:29:13.991Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T19:39:29.098Z",
-      "type": "INFO",
-      "msg": "Account: $100182.64 | 1 positions open | 7 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T19:39:29.175Z",
       "type": "INFO",
@@ -1287,6 +1234,60 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:22:39.801Z",
+      "type": "INFO",
+      "msg": "Account: $100182.37 | 2 positions open | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:22:39.870Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:22:39.898Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:22:40.135Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T18:22:40.983Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T18:22:54.481Z",
+      "type": "SIGNAL",
+      "msg": "CIEN — score 6 | ATR 0.61% | RSI 60 | RelVol 2.5×",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-04T18:22:56.166Z",
+      "type": "INFO",
+      "msg": "Top signal: CIEN (score 6)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:22:56.166Z",
+      "type": "BUY",
+      "msg": "Placing: 1x CIEN @ ~$531.90",
+      "detail": "Patterns: Bullish Engulfing | SL 1.2× $527.99 | TP 2.4× $539.71 | R:R 2.0"
+    },
+    {
+      "time": "2026-06-04T18:22:56.374Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x CIEN",
+      "detail": "ID: d7bbffd3-2cd3-4836-a9f5-b5a62917799b | R:R 2.0:1"
     }
   ]
 }
