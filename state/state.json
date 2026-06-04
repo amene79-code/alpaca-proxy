@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "CRWD": {
-      "high": 719.33,
+      "high": 719.68,
       "entry": 715.3800048828125,
       "tp": 721.7,
       "sl": 712.22
@@ -85,26 +85,8 @@
     "BB",
     "MRVL"
   ],
-  "lastRun": "2026-06-04T19:35:58.545Z",
+  "lastRun": "2026-06-04T19:46:17.195Z",
   "log": [
-    {
-      "time": "2026-06-04T14:41:33.677Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:41:33.976Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:41:34.192Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
     {
       "time": "2026-06-04T14:41:35.074Z",
       "type": "INFO",
@@ -1285,6 +1267,24 @@
       "time": "2026-06-04T19:35:58.545Z",
       "type": "INFO",
       "msg": "Skipping — last 30 min before close (25 min left)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:46:16.933Z",
+      "type": "INFO",
+      "msg": "Account: $100182.56 | 2 positions open | 10 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:46:16.997Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:46:17.195Z",
+      "type": "INFO",
+      "msg": "Skipping — last 30 min before close (14 min left)",
       "detail": ""
     }
   ]
