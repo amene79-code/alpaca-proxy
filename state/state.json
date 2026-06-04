@@ -62,44 +62,8 @@
     "ALOY",
     "MRVL"
   ],
-  "lastRun": "2026-06-04T13:59:46.127Z",
+  "lastRun": "2026-06-04T14:10:15.437Z",
   "log": [
-    {
-      "time": "2026-06-03T15:26:58.685Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T15:26:59.034Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T15:26:59.150Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
-    {
-      "time": "2026-06-03T15:26:59.613Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T15:27:11.830Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T15:37:24.956Z",
-      "type": "INFO",
-      "msg": "Account: $100212.39 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T15:37:24.997Z",
       "type": "INFO",
@@ -1260,6 +1224,42 @@
     },
     {
       "time": "2026-06-04T13:59:46.127Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T14:10:00.640Z",
+      "type": "INFO",
+      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T14:10:00.719Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T14:10:00.751Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T14:10:00.929Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T14:10:01.371Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T14:10:15.437Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
