@@ -90,44 +90,8 @@
     "CIEN",
     "BB"
   ],
-  "lastRun": "2026-06-04T19:04:47.176Z",
+  "lastRun": "2026-06-04T19:15:16.885Z",
   "log": [
-    {
-      "time": "2026-06-04T14:10:00.719Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:10:00.751Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:10:00.929Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T14:10:01.371Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T14:10:15.437Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:20:31.999Z",
-      "type": "INFO",
-      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-04T14:20:32.018Z",
       "type": "INFO",
@@ -1291,6 +1255,42 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 46x BB",
       "detail": "ID: 74e1948a-ecb9-4b46-9c45-d863738f7839 | R:R 1.5:1"
+    },
+    {
+      "time": "2026-06-04T19:15:03.349Z",
+      "type": "INFO",
+      "msg": "Account: $100177.69 | 3 positions open | 9 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:15:03.432Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:15:03.466Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:15:03.651Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T19:15:04.136Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T19:15:16.885Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ]
 }
