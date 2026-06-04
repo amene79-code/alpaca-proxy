@@ -6,20 +6,8 @@
       "tp": 721.7,
       "sl": 712.22
     },
-    "CIEN": {
-      "high": 536.74,
-      "entry": 533.0449829101562,
-      "tp": 539.16,
-      "sl": 528.97
-    },
-    "BB": {
-      "high": 10.850000381469727,
-      "entry": 10.850000381469727,
-      "tp": 11.03,
-      "sl": 10.73
-    },
     "MRVL": {
-      "high": 317.2449951171875,
+      "high": 319.785,
       "entry": 317.2449951171875,
       "tp": 323.24,
       "sl": 313.34
@@ -97,26 +85,8 @@
     "BB",
     "MRVL"
   ],
-  "lastRun": "2026-06-04T19:25:48.118Z",
+  "lastRun": "2026-06-04T19:35:58.545Z",
   "log": [
-    {
-      "time": "2026-06-04T14:31:03.234Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T14:31:15.695Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:41:33.625Z",
-      "type": "INFO",
-      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-04T14:41:33.677Z",
       "type": "INFO",
@@ -1298,6 +1268,24 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 1x MRVL",
       "detail": "ID: f803c1b3-3c46-4bb5-a17d-bfc3651089c4 | R:R 1.5:1"
+    },
+    {
+      "time": "2026-06-04T19:35:58.500Z",
+      "type": "INFO",
+      "msg": "Account: $100184.35 | 2 positions open | 10 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:35:58.514Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:35:58.545Z",
+      "type": "INFO",
+      "msg": "Skipping — last 30 min before close (25 min left)",
+      "detail": ""
     }
   ]
 }
