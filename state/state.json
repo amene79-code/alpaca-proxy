@@ -7,7 +7,7 @@
       "sl": 712.22
     },
     "CIEN": {
-      "high": 533.0449829101562,
+      "high": 536.74,
       "entry": 533.0449829101562,
       "tp": 539.16,
       "sl": 528.97
@@ -17,9 +17,15 @@
       "entry": 10.850000381469727,
       "tp": 11.03,
       "sl": 10.73
+    },
+    "MRVL": {
+      "high": 317.2449951171875,
+      "entry": 317.2449951171875,
+      "tp": 323.24,
+      "sl": 313.34
     }
   },
-  "dailyTrades": 9,
+  "dailyTrades": 10,
   "dailyDate": "2026-06-04",
   "openPositions": [
     "FIVE",
@@ -88,64 +94,11 @@
     "CIEN",
     "CRWD",
     "CIEN",
-    "BB"
+    "BB",
+    "MRVL"
   ],
-  "lastRun": "2026-06-04T19:15:16.885Z",
+  "lastRun": "2026-06-04T19:25:48.118Z",
   "log": [
-    {
-      "time": "2026-06-04T14:20:32.018Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:20:32.312Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:20:32.427Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T14:20:33.157Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T14:20:45.923Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:31:02.356Z",
-      "type": "INFO",
-      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:31:02.378Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:31:02.648Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:31:02.797Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
     {
       "time": "2026-06-04T14:31:03.234Z",
       "type": "INFO",
@@ -1291,6 +1244,60 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:25:34.258Z",
+      "type": "INFO",
+      "msg": "Account: $100184.90 | 3 positions open | 9 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:25:34.271Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:25:34.524Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:25:34.615Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T19:25:35.117Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T19:25:35.992Z",
+      "type": "SIGNAL",
+      "msg": "MRVL — score 5 | ATR 0.82% | RSI 49 | RelVol 1.8×",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-04T19:25:47.593Z",
+      "type": "INFO",
+      "msg": "Top signal: MRVL (score 5)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T19:25:47.593Z",
+      "type": "BUY",
+      "msg": "Placing: 1x MRVL @ ~$317.24",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $313.34 | TP 2.3× $323.24 | R:R 1.5"
+    },
+    {
+      "time": "2026-06-04T19:25:47.617Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x MRVL",
+      "detail": "ID: f803c1b3-3c46-4bb5-a17d-bfc3651089c4 | R:R 1.5:1"
     }
   ]
 }
