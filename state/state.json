@@ -62,44 +62,8 @@
     "ALOY",
     "MRVL"
   ],
-  "lastRun": "2026-06-04T15:23:52.010Z",
+  "lastRun": "2026-06-04T15:34:26.111Z",
   "log": [
-    {
-      "time": "2026-06-03T16:30:09.468Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
-    {
-      "time": "2026-06-03T16:30:10.603Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T16:30:24.975Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T16:40:41.947Z",
-      "type": "INFO",
-      "msg": "Account: $100194.06 | 2 positions open | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T16:40:42.005Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T16:40:42.036Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: NVTS @ $31.75 | High $32.78499984741211 → Stop $32.13 | P&L $-9.27",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T16:40:42.229Z",
       "type": "SELL",
@@ -1260,6 +1224,42 @@
     },
     {
       "time": "2026-06-04T15:23:52.010Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T15:34:06.809Z",
+      "type": "INFO",
+      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T15:34:06.881Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T15:34:06.893Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T15:34:07.075Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T15:34:07.776Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T15:34:26.110Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
