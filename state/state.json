@@ -6,20 +6,20 @@
       "tp": 10.83,
       "sl": 10.39
     },
-    "MRVL": {
-      "high": 318.925,
-      "entry": 316.3699035644531,
-      "tp": 321.4,
-      "sl": 313.63
-    },
     "CIEN": {
       "high": 531.9000244140625,
       "entry": 531.9000244140625,
       "tp": 539.71,
       "sl": 527.99
+    },
+    "CRWD": {
+      "high": 715.3800048828125,
+      "entry": 715.3800048828125,
+      "tp": 721.7,
+      "sl": 712.22
     }
   },
-  "dailyTrades": 6,
+  "dailyTrades": 7,
   "dailyDate": "2026-06-04",
   "openPositions": [
     "FIVE",
@@ -85,64 +85,11 @@
     "AVGO",
     "AVGO",
     "MRVL",
-    "CIEN"
+    "CIEN",
+    "CRWD"
   ],
-  "lastRun": "2026-06-04T18:33:22.689Z",
+  "lastRun": "2026-06-04T18:43:50.523Z",
   "log": [
-    {
-      "time": "2026-06-04T13:15:23.667Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:15:23.755Z",
-      "type": "INFO",
-      "msg": "Account: $100194.78 | 1 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:15:23.785Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:15:23.817Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:28:16.394Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:28:16.439Z",
-      "type": "INFO",
-      "msg": "Account: $100192.94 | 1 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:28:16.449Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:28:16.754Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:38:33.343Z",
-      "type": "INFO",
-      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-04T13:38:33.423Z",
       "type": "INFO",
@@ -1288,6 +1235,60 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:43:36.171Z",
+      "type": "INFO",
+      "msg": "Account: $100173.67 | 2 positions open | 6 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:43:36.255Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:43:36.295Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:43:36.478Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T18:43:37.088Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T18:43:39.471Z",
+      "type": "SIGNAL",
+      "msg": "CRWD — score 5 | ATR 0.29% | RSI 67 | RelVol 1.5×",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-04T18:43:49.789Z",
+      "type": "INFO",
+      "msg": "Top signal: CRWD (score 5)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:43:49.790Z",
+      "type": "BUY",
+      "msg": "Placing: 1x CRWD @ ~$715.38",
+      "detail": "Patterns: Bullish Engulfing | SL 1.5× $712.22 | TP 3× $721.7 | R:R 2.0"
+    },
+    {
+      "time": "2026-06-04T18:43:50.022Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x CRWD",
+      "detail": "ID: 7cee3af8-a279-4ba4-981f-24d7b80608ba | R:R 2.0:1"
     }
   ]
 }
