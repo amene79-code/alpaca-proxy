@@ -1,14 +1,14 @@
 {
   "trailingStops": {
     "ALOY": {
-      "high": 13.75,
+      "high": 14.18,
       "entry": 13.399999618530273,
       "tp": 14.19,
       "sl": 12.97
     }
   },
-  "dailyTrades": 7,
-  "dailyDate": "2026-06-03",
+  "dailyTrades": 0,
+  "dailyDate": "2026-06-04",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -69,38 +69,8 @@
     "ALOY",
     "MRVL"
   ],
-  "lastRun": "2026-06-03T19:49:44.532Z",
+  "lastRun": "2026-06-04T13:15:23.817Z",
   "log": [
-    {
-      "time": "2026-06-03T14:34:14.903Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T14:34:26.971Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T14:44:45.718Z",
-      "type": "INFO",
-      "msg": "Account: $100212.39 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T14:44:45.796Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T14:44:45.841Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T14:44:46.121Z",
       "type": "INFO",
@@ -1269,6 +1239,36 @@
       "time": "2026-06-03T19:49:44.532Z",
       "type": "INFO",
       "msg": "Skipping — last 30 min before close (11 min left)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T13:15:23.667Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T13:15:23.667Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T13:15:23.755Z",
+      "type": "INFO",
+      "msg": "Account: $100194.78 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T13:15:23.785Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T13:15:23.817Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
       "detail": ""
     }
   ]
