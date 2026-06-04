@@ -1,19 +1,19 @@
 {
   "trailingStops": {
     "BB": {
-      "high": 10.745,
+      "high": 10.775,
       "entry": 10.545000076293945,
       "tp": 10.83,
       "sl": 10.39
     },
     "AVGO": {
-      "high": 418.87,
-      "entry": 417.69000244140625,
-      "tp": 421.34,
-      "sl": 415
+      "high": 419.6650085449219,
+      "entry": 419.6650085449219,
+      "tp": 423.02,
+      "sl": 417.15
     }
   },
-  "dailyTrades": 2,
+  "dailyTrades": 3,
   "dailyDate": "2026-06-04",
   "openPositions": [
     "FIVE",
@@ -75,64 +75,11 @@
     "ALOY",
     "MRVL",
     "BB",
+    "AVGO",
     "AVGO"
   ],
-  "lastRun": "2026-06-04T17:20:06.238Z",
+  "lastRun": "2026-06-04T17:30:32.499Z",
   "log": [
-    {
-      "time": "2026-06-03T18:25:59.039Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T18:25:59.225Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T18:25:59.549Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
-    {
-      "time": "2026-06-03T18:26:00.252Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T18:26:14.486Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T18:36:28.303Z",
-      "type": "INFO",
-      "msg": "Account: $100181.96 | 0 positions open | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T18:36:28.457Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T18:36:28.712Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T18:36:28.896Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
     {
       "time": "2026-06-03T18:36:29.789Z",
       "type": "INFO",
@@ -1278,6 +1225,60 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:30:17.943Z",
+      "type": "INFO",
+      "msg": "Account: $100184.49 | 1 positions open | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:30:17.954Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:30:17.987Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:30:18.062Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T17:30:18.745Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T17:30:18.850Z",
+      "type": "SIGNAL",
+      "msg": "AVGO — score 5 | ATR 0.50% | RSI 81 | RelVol 2.2×",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-04T17:30:31.760Z",
+      "type": "INFO",
+      "msg": "Top signal: AVGO (score 5)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:30:31.761Z",
+      "type": "BUY",
+      "msg": "Placing: 1x AVGO @ ~$419.67",
+      "detail": "Patterns: Bullish Engulfing | SL 1.2× $417.15 | TP 1.6× $423.02 | R:R 1.3"
+    },
+    {
+      "time": "2026-06-04T17:30:31.998Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x AVGO",
+      "detail": "ID: 7d4473d1-467c-48cb-bcc7-e009af02e1a7 | R:R 1.3:1"
     }
   ]
 }
