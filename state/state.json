@@ -62,44 +62,8 @@
     "ALOY",
     "MRVL"
   ],
-  "lastRun": "2026-06-04T15:34:26.111Z",
+  "lastRun": "2026-06-04T15:44:55.341Z",
   "log": [
-    {
-      "time": "2026-06-03T16:40:42.229Z",
-      "type": "SELL",
-      "msg": "✓ Closed NVTS",
-      "detail": "P&L $-9.27"
-    },
-    {
-      "time": "2026-06-03T16:40:42.230Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T16:40:42.399Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
-    {
-      "time": "2026-06-03T16:40:43.160Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T16:40:59.734Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T16:51:14.305Z",
-      "type": "INFO",
-      "msg": "Account: $100196.54 | 1 positions open | 3 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T16:51:14.355Z",
       "type": "INFO",
@@ -1260,6 +1224,42 @@
     },
     {
       "time": "2026-06-04T15:34:26.110Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T15:44:41.162Z",
+      "type": "INFO",
+      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T15:44:41.176Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T15:44:41.208Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T15:44:41.315Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T15:44:41.930Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T15:44:55.341Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
