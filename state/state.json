@@ -69,32 +69,8 @@
     "ALOY",
     "MRVL"
   ],
-  "lastRun": "2026-06-04T13:15:23.817Z",
+  "lastRun": "2026-06-04T13:28:16.754Z",
   "log": [
-    {
-      "time": "2026-06-03T14:44:46.121Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
-    {
-      "time": "2026-06-03T14:44:46.577Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T14:44:58.736Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T14:55:17.863Z",
-      "type": "INFO",
-      "msg": "Account: $100212.39 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T14:55:17.915Z",
       "type": "INFO",
@@ -1267,6 +1243,30 @@
     },
     {
       "time": "2026-06-04T13:15:23.817Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T13:28:16.394Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T13:28:16.439Z",
+      "type": "INFO",
+      "msg": "Account: $100192.94 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T13:28:16.449Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T13:28:16.754Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
