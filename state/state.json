@@ -1,13 +1,19 @@
 {
   "trailingStops": {
     "BB": {
-      "high": 10.7,
+      "high": 10.745,
       "entry": 10.545000076293945,
       "tp": 10.83,
       "sl": 10.39
+    },
+    "AVGO": {
+      "high": 417.69000244140625,
+      "entry": 417.69000244140625,
+      "tp": 421.34,
+      "sl": 415
     }
   },
-  "dailyTrades": 1,
+  "dailyTrades": 2,
   "dailyDate": "2026-06-04",
   "openPositions": [
     "FIVE",
@@ -68,64 +74,11 @@
     "GTLB",
     "ALOY",
     "MRVL",
-    "BB"
+    "BB",
+    "AVGO"
   ],
-  "lastRun": "2026-06-04T16:59:02.881Z",
+  "lastRun": "2026-06-04T17:09:36.925Z",
   "log": [
-    {
-      "time": "2026-06-03T18:04:54.860Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T18:04:54.893Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T18:04:55.010Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "SPCE, MRVL, MU, OPEN, AVGO, MSFT, NVDA, BB…"
-    },
-    {
-      "time": "2026-06-03T18:04:55.504Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-03T18:05:00.917Z",
-      "type": "SIGNAL",
-      "msg": "GTLB — score 4 | ATR 0.48% | RSI 39 | RelVol 1.9×",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-03T18:05:08.821Z",
-      "type": "INFO",
-      "msg": "Top signal: GTLB (score 4)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-03T18:05:08.822Z",
-      "type": "BUY",
-      "msg": "Placing: 16x GTLB @ ~$30.94",
-      "detail": "Patterns: Hammer | SL 1.4× $30.73 | TP 3.1× $31.4 | R:R 2.2"
-    },
-    {
-      "time": "2026-06-03T18:05:08.921Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 16x GTLB",
-      "detail": "ID: 1248178d-3e01-44cd-860b-100583bc694c | R:R 2.2:1"
-    },
-    {
-      "time": "2026-06-03T18:15:29.547Z",
-      "type": "INFO",
-      "msg": "Account: $100185.51 | 1 positions open | 5 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-03T18:15:29.621Z",
       "type": "INFO",
@@ -1271,6 +1224,60 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:09:17.590Z",
+      "type": "INFO",
+      "msg": "Account: $100179.33 | 1 positions open | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:09:17.652Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:09:17.689Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:09:17.889Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T17:09:18.773Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T17:09:19.003Z",
+      "type": "SIGNAL",
+      "msg": "AVGO — score 4 | ATR 0.46% | RSI 82 | RelVol 2.1×",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-06-04T17:09:36.239Z",
+      "type": "INFO",
+      "msg": "Top signal: AVGO (score 4)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T17:09:36.240Z",
+      "type": "BUY",
+      "msg": "Placing: 1x AVGO @ ~$417.69",
+      "detail": "Patterns: Hammer | SL 1.4× $415 | TP 1.9× $421.34 | R:R 1.4"
+    },
+    {
+      "time": "2026-06-04T17:09:36.425Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 1x AVGO",
+      "detail": "ID: df4baf65-9321-4cb1-b6fa-40e1f1b02325 | R:R 1.4:1"
     }
   ]
 }
