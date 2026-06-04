@@ -1,11 +1,5 @@
 {
   "trailingStops": {
-    "BB": {
-      "high": 10.785,
-      "entry": 10.545000076293945,
-      "tp": 10.83,
-      "sl": 10.39
-    },
     "CIEN": {
       "high": 531.9000244140625,
       "entry": 531.9000244140625,
@@ -13,7 +7,7 @@
       "sl": 527.99
     },
     "CRWD": {
-      "high": 715.3800048828125,
+      "high": 719.33,
       "entry": 715.3800048828125,
       "tp": 721.7,
       "sl": 712.22
@@ -88,44 +82,8 @@
     "CIEN",
     "CRWD"
   ],
-  "lastRun": "2026-06-04T18:43:50.523Z",
+  "lastRun": "2026-06-04T18:54:15.167Z",
   "log": [
-    {
-      "time": "2026-06-04T13:38:33.423Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:38:33.644Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:38:33.867Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T13:38:34.637Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T13:38:49.151Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T13:49:03.299Z",
-      "type": "INFO",
-      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-04T13:49:03.338Z",
       "type": "INFO",
@@ -1289,6 +1247,42 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 1x CRWD",
       "detail": "ID: 7cee3af8-a279-4ba4-981f-24d7b80608ba | R:R 2.0:1"
+    },
+    {
+      "time": "2026-06-04T18:54:01.315Z",
+      "type": "INFO",
+      "msg": "Account: $100183.92 | 2 positions open | 7 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:54:01.331Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:54:01.357Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-04T18:54:01.445Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
+    },
+    {
+      "time": "2026-06-04T18:54:02.061Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-04T18:54:15.167Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ]
 }
