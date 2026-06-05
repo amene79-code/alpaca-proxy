@@ -5,9 +5,15 @@
       "entry": 715.3800048828125,
       "tp": 721.7,
       "sl": 712.22
+    },
+    "MRLN": {
+      "high": 9.130000114440918,
+      "entry": 9.130000114440918,
+      "tp": 9.95,
+      "sl": 8.69
     }
   },
-  "dailyTrades": 0,
+  "dailyTrades": 1,
   "dailyDate": "2026-06-05",
   "openPositions": [
     "FIVE",
@@ -71,70 +77,11 @@
     "CIEN",
     "CRWD",
     "CIEN",
-    "BB"
+    "BB",
+    "MRLN"
   ],
-  "lastRun": "2026-06-05T11:36:29.696Z",
+  "lastRun": "2026-06-05T13:30:37.167Z",
   "log": [
-    {
-      "time": "2026-06-04T15:02:31.099Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T15:02:31.681Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T15:02:46.930Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T15:13:08.017Z",
-      "type": "INFO",
-      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T15:13:08.092Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T15:13:08.469Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T15:13:08.705Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T15:13:09.389Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T15:13:27.152Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T15:23:38.703Z",
-      "type": "INFO",
-      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-04T15:23:38.720Z",
       "type": "INFO",
@@ -1274,6 +1221,66 @@
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-05T13:30:15.555Z",
+      "type": "INFO",
+      "msg": "Account: $100154.42 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T13:30:15.643Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T13:30:15.873Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: CRWD @ $703 | High $719.68 → Stop $705.29 | P&L $-12.72",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T13:30:17.406Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T13:30:17.701Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 30 tickers",
+      "detail": "MU, LULU, RDDT, SPCX, MSFT, PL, NVDA, TSLA…"
+    },
+    {
+      "time": "2026-06-05T13:30:18.363Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "30 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-05T13:30:32.750Z",
+      "type": "SIGNAL",
+      "msg": "MRLN — score 5 | ATR 2.00% | RSI 91 | RelVol 3.6×",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-05T13:30:36.292Z",
+      "type": "INFO",
+      "msg": "Top signal: MRLN (score 5)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T13:30:36.292Z",
+      "type": "BUY",
+      "msg": "Placing: 22x MRLN @ ~$9.13",
+      "detail": "Patterns: Gap Up | SL 2.4× $8.69 | TP 4.5× $9.95 | R:R 1.9"
+    },
+    {
+      "time": "2026-06-05T13:30:36.666Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 22x MRLN",
+      "detail": "ID: 101a558f-cef2-4dd7-bf2d-b118b644cd83 | R:R 1.9:1"
     }
   ]
 }
