@@ -2141,7 +2141,6 @@ async function loadTradeHistory(){
   const btn=document.querySelector("button[onclick='loadTradeHistory()']");
   if(btn){btn.textContent="⏳ Loading…";btn.disabled=true;}
   try{
-    // Fetch fills and account equity in parallel
     let allActivities=[];
     let pageToken=null;
     let pages=0;
@@ -2150,12 +2149,14 @@ async function loadTradeHistory(){
     const baseline=getBaseline();
     const startEquity=baseline?.equity||null;
 
-    // Use trading start date to filter fills (set once, never changes)
+    // Use trading start date to filter fills
     const tradingStart=getTradingStart()
       || document.getElementById("tradingStartInput")?.value
       || null;
+
+    // Step 1: Fetch all fills
     do{
-      let url=pageToken
+      const url=pageToken
         ?`/v2/account/activities/FILL?page_size=100&page_token=${pageToken}`
         :"/v2/account/activities/FILL?page_size=100";
       const batch=await alpaca("GET",url);
@@ -2165,32 +2166,71 @@ async function loadTradeHistory(){
       pages++;
     } while(pageToken&&pages<20);
 
-    // Filter client-side by trading start date
+    // Filter by trading start date
     if(tradingStart){
-      log("INFO",`Filtering fills from ${tradingStart} | Sample time: ${allActivities[0]?.transaction_time||'none'}`);
-      allActivities=allActivities.filter(a=>(a.transaction_time||a.date||"")>=tradingStart);
-      log("INFO",`After date filter: ${allActivities.length} fills remain`);
+      allActivities=allActivities.filter(a=>(a.transaction_time||"")>=tradingStart);
+      log("INFO",`Filtered to ${allActivities.length} fills from ${tradingStart}`);
     }
 
-    // Get current equity for reconciliation
+    // Step 2: Fetch all orders to identify buy-to-close fills
+    // A buy fill is a "close short" if its order_id belongs to a bracket leg
+    // OR if the order has a parent_id (meaning it's a child leg of a bracket)
+    log("INFO","Fetching orders to identify short closes...");
+    const buyToCloseIds=new Set();
+    let orderPage=null, orderPages=0;
+    do{
+      const url=orderPage
+        ?`/v2/orders?status=all&limit=500&nested=false&after=2026-01-01&page_token=${orderPage}`
+        :"/v2/orders?status=all&limit=500&nested=false&after=2026-01-01";
+      const orders=await alpaca("GET",url).catch(()=>[]);
+      if(!Array.isArray(orders)||!orders.length) break;
+      for(const o of orders){
+        // A buy order that has a parent_id is a bracket leg (stop-loss on a short, or TP on a long)
+        // A buy order with order_class='simple' and no parent = real long entry
+        // Buy bracket legs that are stop or limit to close a short:
+        if(o.side==="buy" && o.legs && o.legs.length>0){
+          // This is a short entry with bracket legs — not a close
+        }
+        if(o.side==="buy" && !o.legs && o.order_class==="simple" && o.type==="stop"){
+          // Stop buy with no legs = bracket stop-loss closing a short
+          buyToCloseIds.add(o.id);
+        }
+        if(o.side==="buy" && !o.legs && o.order_class==="simple" && o.type==="limit" && o.extended_hours){
+          // Extended hours limit buy = could be closing a short
+          // Only flag if there's no corresponding open position at that time
+          // For now, check if it has a client_order_id starting with ICT- (ICT short close)
+          if((o.client_order_id||"").includes("close")||(o.client_order_id||"").includes("CLOSE")){
+            buyToCloseIds.add(o.id);
+          }
+        }
+      }
+      orderPage=orders.length===500?orders[orders.length-1].id:null;
+      orderPages++;
+    } while(orderPage&&orderPages<10);
+
+    log("INFO",`Identified ${buyToCloseIds.size} buy-to-close order IDs`);
+
+    // Tag fills that are buy-to-close
+    allActivities=allActivities.map(a=>{
+      if(a.side==="buy" && buyToCloseIds.has(a.order_id)){
+        return {...a, side:"buy_to_close"};
+      }
+      return a;
+    });
+
+    // Get current equity
     const acct=await alpaca("GET","/v2/account").catch(()=>null);
     const currentEquity=acct?+acct.equity:null;
 
-    log("INFO",`Fetched ${allActivities.length} fill activities from Alpaca`);
-    // Debug: log the last 3 fills to verify field mapping
-    allActivities.slice(0,3).forEach(a=>{
-      log("INFO",`DEBUG FILL: ${a.symbol} ${a.side} qty:${a.qty} price:${a.price} net:${a.net_amount} cum_qty:${a.cum_qty}`);
-    });
+    log("INFO",`Processing ${allActivities.length} fills...`);
 
     const {trades, recon}=matchTrades(allActivities, currentEquity, startEquity);
     tradeHistory=trades;
     saveTradeHistoryToStorage();
     renderTradeStats(recon);
     renderTradeTable();
-    // Default to daily view after load
     switchTradeView('daily');
 
-    // Show reconciliation summary in log
     log("INFO",`✓ ${trades.length} matched trades | P&L $${recon.matchedPL} | ${recon.openPositions} open positions ($${recon.openBuyValue} invested)${recon.gap!=null?` | Gap vs actual: $${recon.gap}`:""}`,
       recon.gapNote||"");
     if(recon.phantomNote) log("WARN",`⚠ ${recon.phantomNote}`);
@@ -2235,7 +2275,28 @@ function matchTrades(activities, accountEquity=null, startEquity=null){
     const sellQueue=[]; // short sells waiting for a buy-to-close
 
     for(const fill of fills){
-      if(fill.side==="buy"){
+      if(fill.side==="buy_to_close"){
+        // Explicitly tagged as closing a short — match against sellQueue only
+        if(sellQueue.length){
+          const short=sellQueue[0];
+          const matched=Math.min(fill.qty, short.qty);
+          const pl=(short.price - fill.price)*matched;
+          const pct=((short.price - fill.price)/short.price)*100;
+          const tag=short.tag||"";
+          const source=tag.startsWith("ICT-")?"ICT":"PRO";
+          trades.push({
+            symbol, date:fill.transaction_time.slice(0,10),
+            time:fill.transaction_time, qty:Math.round(matched*100)/100,
+            entry:Math.round(short.price*100)/100,
+            exit:Math.round(fill.price*100)/100,
+            pl:Math.round(pl*100)/100, pct:Math.round(pct*100)/100,
+            win:pl>0, matched:true, tag, source, direction:"short",
+          });
+          short.qty-=matched;
+          if(short.qty<0.001) sellQueue.shift();
+        }
+        // If no open short, this is a phantom — ignore entirely (don't add to buyQueue)
+      } else if(fill.side==="buy"){
         if(sellQueue.length){
           // This buy closes a short position
           const short=sellQueue[0];
