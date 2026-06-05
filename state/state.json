@@ -1,12 +1,5 @@
 {
-  "trailingStops": {
-    "STI": {
-      "high": 37.31,
-      "entry": 34.630001068115234,
-      "tp": 43.28,
-      "sl": 30.86
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 4,
   "dailyDate": "2026-06-05",
   "openPositions": [
@@ -73,47 +66,10 @@
     "BB",
     "MRLN",
     "MRLN",
-    "MRLN",
-    "STI"
+    "MRLN"
   ],
-  "lastRun": "2026-06-05T20:13:00.067Z",
+  "lastRun": "2026-06-05T21:49:47.652Z",
   "log": [
-    {
-      "time": "2026-06-04T17:09:36.240Z",
-      "type": "BUY",
-      "msg": "Placing: 1x AVGO @ ~$417.69",
-      "detail": "Patterns: Hammer | SL 1.4× $415 | TP 1.9× $421.34 | R:R 1.4"
-    },
-    {
-      "time": "2026-06-04T17:09:36.425Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 1x AVGO",
-      "detail": "ID: df4baf65-9321-4cb1-b6fa-40e1f1b02325 | R:R 1.4:1"
-    },
-    {
-      "time": "2026-06-04T17:19:52.631Z",
-      "type": "INFO",
-      "msg": "Account: $100174.44 | 2 positions open | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:19:52.646Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:19:52.991Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:19:53.099Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
     {
       "time": "2026-06-04T17:19:53.577Z",
       "type": "INFO",
@@ -1274,6 +1230,42 @@
     },
     {
       "time": "2026-06-05T20:13:00.067Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T21:49:45.348Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T21:49:45.879Z",
+      "type": "INFO",
+      "msg": "Account: $100102.67 | 1 positions open | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T21:49:45.954Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T21:49:45.987Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: STI @ $31.08 | High $37.31 → Stop $36.56 | P&L $-7.46",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T21:49:47.651Z",
+      "type": "SELL",
+      "msg": "✓ Closed STI",
+      "detail": "P&L $-7.46"
+    },
+    {
+      "time": "2026-06-05T21:49:47.652Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
