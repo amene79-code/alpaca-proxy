@@ -2362,17 +2362,17 @@ function matchTrades(activities, accountEquity=null, startEquity=null){
   // Step 3: Reconciliation — detect phantom buys
   const matchedPL=trades.reduce((s,t)=>s+t.pl,0);
   const openBuyValue=unmatched.buys.reduce((s,b)=>s+b.qty*b.price,0);
-  const phantomNote=unmatched.buys.length?
-    `Unmatched buys (check these): ${[...new Set(unmatched.buys.map(b=>b.symbol))].join(", ")}`:"";
-  const reconNote={
+  const openSymbols=[...new Set(unmatched.buys.map(b=>b.symbol))];
+  const phantomNote=openSymbols.length?
+    `Unmatched buys (check these): ${openSymbols.join(", ")}`:"";  const reconNote={
     matchedTrades:trades.length,
     matchedPL:Math.round(matchedPL*100)/100,
-    openPositions:unmatched.buys.length,
+    openPositions:openSymbols.length,
     openBuyValue:Math.round(openBuyValue*100)/100,
     unmatchedSells:unmatched.sells.length,
     unmatchedBuys:unmatched.buys,
     phantomNote,
-    unmatchedBuySymbols:[...new Set(unmatched.buys.map(b=>b.symbol))],
+    unmatchedBuySymbols:openSymbols,
   };
   if(accountEquity&&startEquity){
     reconNote.actualPL=Math.round((accountEquity-startEquity)*100)/100;
