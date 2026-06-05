@@ -2156,11 +2156,16 @@ async function loadTradeHistory(){
       || null;
     if(tradingStart) log("INFO",`Filtering fills from ${tradingStart}`);
 
+    // Filter client-side by trading start date
+    if(tradingStart){
+      allActivities=allActivities.filter(a=>a.transaction_time>=tradingStart);
+      log("INFO",`After date filter: ${allActivities.length} fills from ${tradingStart}`);
+    }
+
     do{
       let url=pageToken
         ?`/v2/account/activities/FILL?page_size=100&page_token=${pageToken}`
         :"/v2/account/activities/FILL?page_size=100";
-      if(tradingStart&&!pageToken) url+=`&after=${tradingStart}T00:00:00Z`;
       const batch=await alpaca("GET",url);
       if(!Array.isArray(batch)||!batch.length) break;
       allActivities=[...allActivities,...batch];
