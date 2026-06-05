@@ -1607,7 +1607,7 @@ function getBaseline(){
 }
 
 function setBaseline(equity){
-  localStorage.setItem(PNL_KEY, JSON.stringify({equity, date: new Date().toDateString()}));
+  localStorage.setItem(PNL_KEY, JSON.stringify({equity, date: new Date().toISOString().slice(0,10)}));
 }
 
 function resetBaseline(){
@@ -2129,10 +2129,19 @@ async function loadTradeHistory(){
     let allActivities=[];
     let pageToken=null;
     let pages=0;
+
+    // Only load fills from baseline date to avoid stale FIFO mismatches
+    const baseline=getBaseline();
+    const startEquity=baseline?.equity||null;
+    const afterDate=baseline?.date
+      ? new Date(baseline.date).toISOString().slice(0,10)
+      : null;
+
     do{
-      const url=pageToken
+      let url=pageToken
         ?`/v2/account/activities/FILL?page_size=100&page_token=${pageToken}`
         :"/v2/account/activities/FILL?page_size=100";
+      if(afterDate&&!pageToken) url+=`&after=${afterDate}T00:00:00Z`;
       const batch=await alpaca("GET",url);
       if(!Array.isArray(batch)||!batch.length) break;
       allActivities=[...allActivities,...batch];
@@ -2140,11 +2149,9 @@ async function loadTradeHistory(){
       pages++;
     } while(pageToken&&pages<20);
 
-    // Get current equity and baseline for reconciliation
+    // Get current equity for reconciliation
     const acct=await alpaca("GET","/v2/account").catch(()=>null);
     const currentEquity=acct?+acct.equity:null;
-    const baseline=getBaseline();
-    const startEquity=baseline?.equity||null;
 
     log("INFO",`Fetched ${allActivities.length} fill activities from Alpaca`);
     // Debug: log the last 3 fills to verify field mapping
