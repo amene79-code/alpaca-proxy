@@ -1182,7 +1182,18 @@ async function placeOrder(signal,cfg,acct){
   const slF=+Math.min(sl,price-0.05).toFixed(2);
   const tpF=+Math.max(tp,price+0.05).toFixed(2);
   const riskPS=price-slF;
-  const qty=Math.max(1,Math.min(Math.floor((cfg.size*0.02)/riskPS),Math.floor(cfg.size/price)));
+
+  // Position sizing — scale down for cheap volatile stocks
+  // Base: risk 2% of position size per trade
+  // Cap qty based on price: cheap stocks (<$20) are more volatile, use smaller $
+  const effectiveSize = price < 5   ? Math.min(cfg.size, 100)  // max $100 on penny stocks
+                      : price < 10  ? Math.min(cfg.size, 200)  // max $200 on <$10 stocks
+                      : price < 20  ? Math.min(cfg.size, 300)  // max $300 on <$20 stocks
+                      : cfg.size;                               // full size otherwise
+  const qty=Math.max(1,Math.min(
+    Math.floor((effectiveSize*0.02)/riskPS),
+    Math.floor(effectiveSize/price)
+  ));
   const rr=((tpF-price)/(price-slF)).toFixed(1);
 
   // Log dynamic calculation
@@ -1549,18 +1560,30 @@ async function _runCycle(){
   else showSignal(toTrade[0],null);
 
   let tradedCount=0;
+  const tradedThisCycle=new Set(); // track what we've bought this cycle
   for(const signal of toTrade){
     if(!RUNNING) break;
-    // Re-check position limit before each order
     if(dailyTrades>=cfg.maxDaily){log("INFO","Daily limit reached mid-cycle");break;}
+
+    // Re-fetch positions and check BOTH count AND symbol to prevent duplicates
     const currentPositions=await alpaca("GET","/v2/positions").catch(()=>[]);
+    const currentSymbols=new Set((Array.isArray(currentPositions)?currentPositions:[]).map(p=>p.symbol));
+
     if((Array.isArray(currentPositions)?currentPositions.length:0)>=cfg.maxPos){
       log("INFO","Position limit reached mid-cycle");break;
     }
+    if(currentSymbols.has(signal.ticker)){
+      log("SKIP",`${signal.ticker} — already have an open position`);continue;
+    }
+    if(tradedThisCycle.has(signal.ticker)){
+      log("SKIP",`${signal.ticker} — already traded this cycle`);continue;
+    }
+
     const placed=await placeOrder(signal,cfg,acct);
     if(placed){
       dailyTrades++;
       tradedCount++;
+      tradedThisCycle.add(signal.ticker);
       document.getElementById("mTrades").textContent=dailyTrades;
       if(tradedCount<toTrade.length) await new Promise(r=>setTimeout(r,1500));
     }
