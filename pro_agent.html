@@ -2147,6 +2147,10 @@ async function loadTradeHistory(){
     const startEquity=baseline?.equity||null;
 
     log("INFO",`Fetched ${allActivities.length} fill activities from Alpaca`);
+    // Debug: log the last 3 fills to verify field mapping
+    allActivities.slice(0,3).forEach(a=>{
+      log("INFO",`DEBUG FILL: ${a.symbol} ${a.side} qty:${a.qty} price:${a.price} net:${a.net_amount} cum_qty:${a.cum_qty}`);
+    });
 
     const {trades, recon}=matchTrades(allActivities, currentEquity, startEquity);
     tradeHistory=trades;
