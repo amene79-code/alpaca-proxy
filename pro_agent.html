@@ -117,7 +117,7 @@ label{color:#9090c0}
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap">
   <span style="font-size:9px;color:#3a3a6a">Trade history from:</span>
   <input type="date" id="tradingStartInput" style="font-size:9px;padding:2px 6px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:4px"
-    onchange="setTradingStart(this.value);localStorage.setItem(TRADING_START_KEY,this.value)">
+    onchange="setTradingStart(this.value);log('INFO','Trading start date set to '+this.value)">
   <button onclick="document.getElementById('tradingStartInput').value='';localStorage.removeItem(TRADING_START_KEY)"
     style="font-size:9px;padding:2px 5px;color:#3a3a6a;border-color:#2a2a45;background:transparent;min-width:auto;width:auto">✕ All time</button>
 </div>
@@ -2151,7 +2151,10 @@ async function loadTradeHistory(){
     const startEquity=baseline?.equity||null;
 
     // Use trading start date to filter fills (set once, never changes)
-    const tradingStart=getTradingStart(); // e.g. "2026-05-01"
+    const tradingStart=getTradingStart()
+      || document.getElementById("tradingStartInput")?.value
+      || null;
+    if(tradingStart) log("INFO",`Filtering fills from ${tradingStart}`);
 
     do{
       let url=pageToken
