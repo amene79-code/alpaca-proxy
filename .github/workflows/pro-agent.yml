@@ -1,20 +1,26 @@
 name: Pro Agent
 
 on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/pro-agent.js'
+      - 'state/watchlist.json'
   schedule:
-    # Early morning check — 08:00-09:30 UTC (4am-5:30am ET, pre-market opens at 4am ET)
+    # Early morning check — 08:00-09:59 UTC (4am-5:59am ET)
     - cron: '*/10 8-9 * * 1-5'
     # Market hours — every 10 min 13:30-20:00 UTC (9:30am-4pm ET)
     - cron: '*/10 13-20 * * 1-5'
     # Exact market open
     - cron: '30 13 * * 1-5'
-  workflow_dispatch:
 
 jobs:
   run-agent:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
     permissions:
-      contents: write   # needed to commit state.json back to repo
+      contents: write
 
     steps:
       - name: Checkout repo
@@ -28,21 +34,35 @@ jobs:
           node-version: '24'
 
       - name: Install dependencies
-        run: |
-          cd scripts
-          npm install
+        run: cd scripts && npm install
 
       - name: Run Pro Agent cycle
         env:
           ALPACA_KEY:    ${{ secrets.ALPACA_KEY }}
           ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
-          ALPACA_URL:    ${{ secrets.ALPACA_URL }}   # https://paper-api.alpaca.markets or live URL
+          ALPACA_URL:    ${{ secrets.ALPACA_URL }}
         run: node scripts/pro-agent.js
 
       - name: Commit state changes
         run: |
           git config user.name  "Pro Agent Bot"
           git config user.email "bot@pro-agent"
-          git add state/state.json
+          git add state/state.json state/watchlist.json
           git diff --staged --quiet || git commit -m "state: $(date -u '+%Y-%m-%d %H:%M') UTC"
           git push
+
+      - name: sleep 600
+        run: sleep 600
+
+      - name: Schedule next or stop
+        run: |
+          HOUR=$(date -u +%H)
+          DOW=$(date -u +%u)
+          if [ "$DOW" -le 5 ] && [ "$HOUR" -ge 8 ] && [ "$HOUR" -lt 20 ]; then
+            echo "Market hours — triggering next cycle"
+            gh workflow run pro-agent.yml --ref main
+          else
+            echo "Outside market hours — chain stops"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
