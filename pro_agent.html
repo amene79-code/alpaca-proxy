@@ -2154,7 +2154,17 @@ async function loadTradeHistory(){
       || document.getElementById("tradingStartInput")?.value
       || null;
 
-    // Step 1: Fetch all fills
+    // Step 1: Fetch fills + account + positions in parallel
+    const [acct, positions]=await Promise.all([
+      alpaca("GET","/v2/account").catch(()=>null),
+      alpaca("GET","/v2/positions").catch(()=>[]),
+    ]);
+    const currentEquity=acct?+acct.equity:null;
+    // Build set of symbols currently held — these are legitimate open positions
+    const actualOpenSymbols=new Set((Array.isArray(positions)?positions:[]).map(p=>p.symbol));
+    log("INFO",`Actual open positions: ${[...actualOpenSymbols].join(", ")||"none"}`);
+
+    // Step 2: Fetch all fills
     do{
       const url=pageToken
         ?`/v2/account/activities/FILL?page_size=100&page_token=${pageToken}`
@@ -2172,68 +2182,53 @@ async function loadTradeHistory(){
       log("INFO",`Filtered to ${allActivities.length} fills from ${tradingStart}`);
     }
 
-    // Step 2: Fetch all orders to identify buy-to-close fills
-    // A buy fill is a "close short" if its order_id belongs to a bracket leg
-    // OR if the order has a parent_id (meaning it's a child leg of a bracket)
-    log("INFO","Fetching orders to identify short closes...");
-    const buyToCloseIds=new Set();
-    let orderPage=null, orderPages=0;
-    do{
-      const url=orderPage
-        ?`/v2/orders?status=all&limit=500&nested=false&after=2026-01-01&page_token=${orderPage}`
-        :"/v2/orders?status=all&limit=500&nested=false&after=2026-01-01";
-      const orders=await alpaca("GET",url).catch(()=>[]);
-      if(!Array.isArray(orders)||!orders.length) break;
-      for(const o of orders){
-        // A buy order that has a parent_id is a bracket leg (stop-loss on a short, or TP on a long)
-        // A buy order with order_class='simple' and no parent = real long entry
-        // Buy bracket legs that are stop or limit to close a short:
-        if(o.side==="buy" && o.legs && o.legs.length>0){
-          // This is a short entry with bracket legs — not a close
-        }
-        if(o.side==="buy" && !o.legs && o.order_class==="simple" && o.type==="stop"){
-          // Stop buy with no legs = bracket stop-loss closing a short
-          buyToCloseIds.add(o.id);
-        }
-        if(o.side==="buy" && !o.legs && o.order_class==="simple" && o.type==="limit" && o.extended_hours){
-          // Extended hours limit buy = could be closing a short
-          // Only flag if there's no corresponding open position at that time
-          // For now, check if it has a client_order_id starting with ICT- (ICT short close)
-          if((o.client_order_id||"").includes("close")||(o.client_order_id||"").includes("CLOSE")){
-            buyToCloseIds.add(o.id);
-          }
-        }
-      }
-      orderPage=orders.length===500?orders[orders.length-1].id:null;
-      orderPages++;
-    } while(orderPage&&orderPages<10);
-
-    log("INFO",`Identified ${buyToCloseIds.size} buy-to-close order IDs`);
-
-    // Tag fills that are buy-to-close
-    allActivities=allActivities.map(a=>{
-      if(a.side==="buy" && buyToCloseIds.has(a.order_id)){
-        return {...a, side:"buy_to_close"};
-      }
-      return a;
-    });
-
-    // Get current equity
-    const acct=await alpaca("GET","/v2/account").catch(()=>null);
-    const currentEquity=acct?+acct.equity:null;
-
     log("INFO",`Processing ${allActivities.length} fills...`);
 
+    // Step 3: FIFO match
     const {trades, recon}=matchTrades(allActivities, currentEquity, startEquity);
-    tradeHistory=trades;
-    saveTradeHistoryToStorage();
-    renderTradeStats(recon);
-    renderTradeTable();
-    switchTradeView('daily');
 
-    log("INFO",`✓ ${trades.length} matched trades | P&L $${recon.matchedPL} | ${recon.openPositions} open positions ($${recon.openBuyValue} invested)${recon.gap!=null?` | Gap vs actual: $${recon.gap}`:""}`,
-      recon.gapNote||"");
-    if(recon.phantomNote) log("WARN",`⚠ ${recon.phantomNote}`);
+    // Step 4: Fix phantom buys — remove trades where unmatched buy is NOT a real open position
+    // The recon.unmatchedBuySymbols tells us which symbols have orphaned buys
+    // For each phantom symbol: remove its most recent "open" buy from matched trades
+    // by re-running FIFO but forcing extra sells to consume phantom buys
+    const phantomSymbols=(recon.unmatchedBuySymbols||[]).filter(s=>!actualOpenSymbols.has(s));
+    if(phantomSymbols.length){
+      log("WARN",`Phantom buys detected for: ${phantomSymbols.join(", ")} — fixing...`);
+      // Add synthetic sell fills at the same price as the phantom buy (zero P&L)
+      // This consumes the phantom buy without distorting P&L
+      for(const sym of phantomSymbols){
+        const phantomBuys=recon.unmatchedBuys?.filter(b=>b.symbol===sym)||[];
+        for(const b of phantomBuys){
+          allActivities.push({
+            symbol:sym, side:"sell",
+            qty:b.qty, price:b.price,
+            transaction_time:b.time,
+            client_order_id:"__phantom_fix__",
+            _phantom:true,
+          });
+          log("INFO",`Added phantom fix sell for ${sym} qty:${b.qty} @ $${b.price}`);
+        }
+      }
+      // Re-run FIFO with phantom fixes — exclude the synthetic trades from output
+      const {trades:fixedTrades, recon:fixedRecon}=matchTrades(allActivities, currentEquity, startEquity);
+      const cleanTrades=fixedTrades.filter(t=>t.tag!=="__phantom_fix__"&&!t._phantom);
+      tradeHistory=cleanTrades;
+      saveTradeHistoryToStorage();
+      renderTradeStats(fixedRecon);
+      renderTradeTable();
+      switchTradeView('daily');
+      log("INFO",`✓ ${cleanTrades.length} matched trades (after phantom fix) | P&L $${fixedRecon.matchedPL} | ${fixedRecon.openPositions} open positions`,fixedRecon.gapNote||"");
+      if(fixedRecon.phantomNote) log("WARN",`⚠ Remaining phantoms: ${fixedRecon.phantomNote}`);
+    } else {
+      tradeHistory=trades;
+      saveTradeHistoryToStorage();
+      renderTradeStats(recon);
+      renderTradeTable();
+      switchTradeView('daily');
+      log("INFO",`✓ ${trades.length} matched trades | P&L $${recon.matchedPL} | ${recon.openPositions} open positions ($${recon.openBuyValue} invested)${recon.gap!=null?` | Gap vs actual: $${recon.gap}`:""}`,recon.gapNote||"");
+      if(recon.phantomNote) log("WARN",`⚠ ${recon.phantomNote}`);
+    }
+
   }catch(e){
     log("ERROR","Trade history failed: "+e.message);
   }finally{
@@ -2368,6 +2363,7 @@ function matchTrades(activities, accountEquity=null, startEquity=null){
     openPositions:unmatched.buys.length,
     openBuyValue:Math.round(openBuyValue*100)/100,
     unmatchedSells:unmatched.sells.length,
+    unmatchedBuys:unmatched.buys,
     phantomNote,
     unmatchedBuySymbols:[...new Set(unmatched.buys.map(b=>b.symbol))],
   };
