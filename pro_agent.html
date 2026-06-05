@@ -2193,6 +2193,7 @@ async function loadTradeHistory(){
     // Show reconciliation summary in log
     log("INFO",`✓ ${trades.length} matched trades | P&L $${recon.matchedPL} | ${recon.openPositions} open positions ($${recon.openBuyValue} invested)${recon.gap!=null?` | Gap vs actual: $${recon.gap}`:""}`,
       recon.gapNote||"");
+    if(recon.phantomNote) log("WARN",`⚠ ${recon.phantomNote}`);
   }catch(e){
     log("ERROR","Trade history failed: "+e.message);
   }finally{
@@ -2295,15 +2296,19 @@ function matchTrades(activities, accountEquity=null, startEquity=null){
     for(const s of sellQueue) if(s.qty>0.001) unmatched.sells.push({symbol,qty:s.qty,price:s.price,time:s.time});
   }
 
-  // Step 3: Reconciliation note
+  // Step 3: Reconciliation — detect phantom buys
   const matchedPL=trades.reduce((s,t)=>s+t.pl,0);
   const openBuyValue=unmatched.buys.reduce((s,b)=>s+b.qty*b.price,0);
+  const phantomNote=unmatched.buys.length?
+    `Unmatched buys (check these): ${[...new Set(unmatched.buys.map(b=>b.symbol))].join(", ")}`:"";
   const reconNote={
     matchedTrades:trades.length,
     matchedPL:Math.round(matchedPL*100)/100,
     openPositions:unmatched.buys.length,
     openBuyValue:Math.round(openBuyValue*100)/100,
     unmatchedSells:unmatched.sells.length,
+    phantomNote,
+    unmatchedBuySymbols:[...new Set(unmatched.buys.map(b=>b.symbol))],
   };
   if(accountEquity&&startEquity){
     reconNote.actualPL=Math.round((accountEquity-startEquity)*100)/100;
@@ -2621,6 +2626,7 @@ function renderTradeStats(recon=null){
       Matched P&L: <b style="color:#dde1f0">${fmtPl(recon.matchedPL)}</b>
       ${recon.actualPL!=null?` · Actual P&L: <b style="color:#4ade80">${fmtPl(recon.actualPL)}</b>`:""}
       ${recon.gap!=null?` · Gap: <b style="color:${gapOk?"#4ade80":"#f59e0b"}">${fmtPl(recon.gap)}</b> (${recon.openPositions} open positions + slippage/fees)`:""}
+      ${recon.phantomNote?`<br><b style="color:#f87171">⚠ Phantom buys detected — these tickers may have wrong P&L:<br>${recon.unmatchedBuySymbols.join(", ")}</b>`:""}
       <br><span style="color:#3a3a6a">Win rate, expectancy &amp; profit factor are reliable. Use <b style="color:#818cf8">Overall P&L</b> for true total performance.</span>`;
   }
 }
