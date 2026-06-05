@@ -1,13 +1,7 @@
 {
   "trailingStops": {
-    "MRLN": {
-      "high": 9.17,
-      "entry": 9.135000228881836,
-      "tp": 9.85,
-      "sl": 8.74
-    },
     "STI": {
-      "high": 34.630001068115234,
+      "high": 37.31,
       "entry": 34.630001068115234,
       "tp": 43.28,
       "sl": 30.86
@@ -82,32 +76,8 @@
     "MRLN",
     "STI"
   ],
-  "lastRun": "2026-06-05T18:07:23.526Z",
+  "lastRun": "2026-06-05T20:13:00.067Z",
   "log": [
-    {
-      "time": "2026-06-04T17:09:17.889Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T17:09:18.773Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T17:09:19.003Z",
-      "type": "SIGNAL",
-      "msg": "AVGO — score 4 | ATR 0.46% | RSI 82 | RelVol 2.1×",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-06-04T17:09:36.239Z",
-      "type": "INFO",
-      "msg": "Top signal: AVGO (score 4)",
-      "detail": ""
-    },
     {
       "time": "2026-06-04T17:09:36.240Z",
       "type": "BUY",
@@ -1283,6 +1253,30 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 2x STI",
       "detail": "ID: 98dcd336-c623-4119-b65e-f7578f2efec3 | R:R 2.3:1"
+    },
+    {
+      "time": "2026-06-05T20:12:59.695Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T20:12:59.951Z",
+      "type": "INFO",
+      "msg": "Account: $100115.13 | 1 positions open | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T20:13:00.039Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T20:13:00.067Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
     }
   ]
 }
