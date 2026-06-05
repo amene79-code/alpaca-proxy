@@ -113,6 +113,14 @@ label{color:#9090c0}
   <div class="metric"><div class="metric-v" id="mScanned" style="color:#818cf8">0</div><div class="metric-l">Scanned</div></div>
   <div class="metric"><div class="metric-v" id="mTrades">0</div><div class="metric-l">Trades Today</div></div>
 </div>
+<!-- Trading start date for history filter -->
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+  <span style="font-size:9px;color:#3a3a6a">Trade history from:</span>
+  <input type="date" id="tradingStartInput" style="font-size:9px;padding:2px 6px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:4px"
+    onchange="setTradingStart(this.value);localStorage.setItem(TRADING_START_KEY,this.value)">
+  <button onclick="document.getElementById('tradingStartInput').value='';localStorage.removeItem(TRADING_START_KEY)"
+    style="font-size:9px;padding:2px 5px;color:#3a3a6a;border-color:#2a2a45;background:transparent;min-width:auto;width:auto">✕ All time</button>
+</div>
 <!-- Live P&L refresh indicator -->
 <div style="display:flex;justify-content:flex-end;margin-bottom:8px">
   <span id="plRefreshNote" style="font-size:9px;color:#3a3a5a"></span>
@@ -1600,6 +1608,14 @@ function fmtPl(n){const v=+n||0;return(v>=0?"+$":"-$")+Math.abs(v).toLocaleStrin
 
 // ── Overall P&L tracking ──────────────────────────────────────────
 const PNL_KEY="pro_agent_baseline";
+const TRADING_START_KEY="pro_agent_trading_start";
+
+function getTradingStart(){
+  return localStorage.getItem(TRADING_START_KEY)||null;
+}
+function setTradingStart(date){
+  localStorage.setItem(TRADING_START_KEY, date);
+}
 
 function getBaseline(){
   try{ return JSON.parse(localStorage.getItem(PNL_KEY)||"null"); }
@@ -2130,18 +2146,18 @@ async function loadTradeHistory(){
     let pageToken=null;
     let pages=0;
 
-    // Only load fills from baseline date to avoid stale FIFO mismatches
+    // Get baseline for equity reconciliation
     const baseline=getBaseline();
     const startEquity=baseline?.equity||null;
-    const afterDate=baseline?.date
-      ? new Date(baseline.date).toISOString().slice(0,10)
-      : null;
+
+    // Use trading start date to filter fills (set once, never changes)
+    const tradingStart=getTradingStart(); // e.g. "2026-05-01"
 
     do{
       let url=pageToken
         ?`/v2/account/activities/FILL?page_size=100&page_token=${pageToken}`
         :"/v2/account/activities/FILL?page_size=100";
-      if(afterDate&&!pageToken) url+=`&after=${afterDate}T00:00:00Z`;
+      if(tradingStart&&!pageToken) url+=`&after=${tradingStart}T00:00:00Z`;
       const batch=await alpaca("GET",url);
       if(!Array.isArray(batch)||!batch.length) break;
       allActivities=[...allActivities,...batch];
@@ -2652,7 +2668,13 @@ function clearTradeHistory(){
   document.getElementById("tradeEmpty").textContent="Click Load from Alpaca to fetch history.";
 }
 
-window.addEventListener("load",()=>{ loadTradeHistoryFromStorage(); if(tradeHistory.length){renderTradeStats();renderTradeTable();} });
+window.addEventListener("load",()=>{
+  loadTradeHistoryFromStorage();
+  if(tradeHistory.length){renderTradeStats();renderTradeTable();}
+  // Restore trading start date
+  const ts=getTradingStart();
+  if(ts){ const el=document.getElementById("tradingStartInput"); if(el) el.value=ts; }
+});
 
 // ═══════════════════════════════════════════════════════════════════
 // AGENT CONTROL
