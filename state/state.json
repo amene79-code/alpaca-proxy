@@ -5,16 +5,10 @@
       "entry": 715.3800048828125,
       "tp": 721.7,
       "sl": 712.22
-    },
-    "MRVL": {
-      "high": 319.785,
-      "entry": 317.2449951171875,
-      "tp": 323.24,
-      "sl": 313.34
     }
   },
-  "dailyTrades": 10,
-  "dailyDate": "2026-06-04",
+  "dailyTrades": 0,
+  "dailyDate": "2026-06-05",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -31,7 +25,6 @@
     "RKLB",
     "MU",
     "AVGO",
-    "MRVL",
     "META",
     "NTSK",
     "MU",
@@ -53,7 +46,6 @@
     "LAC",
     "MU",
     "LFVN",
-    "MRVL",
     "NBIS",
     "DELL",
     "WMT",
@@ -69,66 +61,20 @@
     "BMNR",
     "AVEX",
     "SHAK",
-    "MRVL",
     "GTLB",
     "GTLB",
     "ALOY",
-    "MRVL",
     "BB",
     "AVGO",
     "AVGO",
     "AVGO",
-    "MRVL",
     "CIEN",
     "CRWD",
     "CIEN",
-    "BB",
-    "MRVL"
+    "BB"
   ],
-  "lastRun": "2026-06-04T19:46:17.195Z",
+  "lastRun": "2026-06-05T08:10:55.543Z",
   "log": [
-    {
-      "time": "2026-06-04T14:41:35.074Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T14:41:51.112Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:52:03.913Z",
-      "type": "INFO",
-      "msg": "Account: $100170.16 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:52:03.928Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:52:03.958Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T14:52:04.065Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T14:52:04.896Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
     {
       "time": "2026-06-04T14:52:17.428Z",
       "type": "INFO",
@@ -1285,6 +1231,48 @@
       "time": "2026-06-04T19:46:17.195Z",
       "type": "INFO",
       "msg": "Skipping — last 30 min before close (14 min left)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T08:10:53.597Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T08:10:53.597Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T08:10:53.817Z",
+      "type": "INFO",
+      "msg": "Account: $100160.55 | 2 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T08:10:53.895Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T08:10:53.906Z",
+      "type": "TRAIL",
+      "msg": "Trailing stop: MRVL @ $304.75 | High $319.785 → Stop $313.39 | P&L $-13.10",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-05T08:10:55.543Z",
+      "type": "SELL",
+      "msg": "✓ Closed MRVL",
+      "detail": "P&L $-13.10"
+    },
+    {
+      "time": "2026-06-05T08:10:55.543Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
       "detail": ""
     }
   ]
