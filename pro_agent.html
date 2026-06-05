@@ -2213,6 +2213,20 @@ async function loadTradeHistory(){
       iteration++;
     }
 
+    // Ensure fixedTrades/fixedRecon are populated even if no phantoms found
+    if(!fixedRecon){
+      const r=matchTrades(fixActivities, currentEquity, startEquity);
+      fixedTrades=r.trades; fixedRecon=r.recon;
+    }
+
+    const cleanTrades=(fixedTrades||[]).filter(t=>t.tag!=="__phantom_fix__"&&!t._phantom);
+    const stillPhantom=(fixedRecon?.unmatchedBuySymbols||[]).filter(s=>!actualOpenSymbols.has(s));
+    if(stillPhantom.length){
+      (fixedRecon.unmatchedBuys||[]).filter(b=>!actualOpenSymbols.has(b.symbol)).forEach(b=>{
+        log("WARN",`⚠ Unresolved phantom: ${b.symbol} qty:${b.qty} @ $${b.price} on ${b.time?.slice(0,10)}`);
+      });
+    }
+
     tradeHistory=cleanTrades;
     saveTradeHistoryToStorage();
     renderTradeStats(fixedRecon);
