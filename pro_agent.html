@@ -2154,11 +2154,11 @@ async function loadTradeHistory(){
     const tradingStart=getTradingStart()
       || document.getElementById("tradingStartInput")?.value
       || null;
-    if(tradingStart) log("INFO",`Filtering fills from ${tradingStart}`);
+    if(tradingStart) log("INFO",`Filtering fills from ${tradingStart} | Sample time: ${allActivities[0]?.transaction_time||'none'}`);
 
     // Filter client-side by trading start date
     if(tradingStart){
-      allActivities=allActivities.filter(a=>a.transaction_time>=tradingStart);
+      allActivities=allActivities.filter(a=>(a.transaction_time||a.date||"")>=tradingStart);
       log("INFO",`After date filter: ${allActivities.length} fills from ${tradingStart}`);
     }
 
