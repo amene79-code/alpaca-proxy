@@ -374,6 +374,8 @@ function isMarketOpen() {
   return utcMins >= 13 * 60 + 30 && utcMins < 20 * 60;
 }
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 // ─── Cancel bracket orders then sell ─────────────────────────────────────────
 async function cancelAndSell(symbol, qty, side = 'long') {
   const closeSide = side === 'short' ? 'buy' : 'sell';
@@ -433,9 +435,7 @@ async function cancelAndSell(symbol, qty, side = 'long') {
   }
 }
 
-const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-// ─── Main cycle ───────────────────────────────────────────────────────────────
 async function main() {
   console.log(`\n${'='.repeat(60)}`);
   console.log(`Pro Agent — ${new Date().toISOString()}`);
