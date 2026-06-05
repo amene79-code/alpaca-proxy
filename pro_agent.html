@@ -2187,57 +2187,38 @@ async function loadTradeHistory(){
     // Step 3: FIFO match
     const {trades, recon}=matchTrades(allActivities, currentEquity, startEquity);
 
-    // Step 4: Fix phantom buys — remove trades where unmatched buy is NOT a real open position
-    // The recon.unmatchedBuySymbols tells us which symbols have orphaned buys
-    // For each phantom symbol: remove its most recent "open" buy from matched trades
-    // by re-running FIFO but forcing extra sells to consume phantom buys
-    const phantomSymbols=(recon.unmatchedBuySymbols||[]).filter(s=>!actualOpenSymbols.has(s));
-    if(phantomSymbols.length){
-      log("WARN",`Phantom buys detected for: ${phantomSymbols.join(", ")} — fixing...`);
-      // Add synthetic sell fills at the same price as the phantom buy (zero P&L)
-      // This consumes the phantom buy without distorting P&L
+    // Step 4: Iteratively fix phantom buys until only real open positions remain
+    let fixActivities=[...allActivities];
+    let iteration=0;
+    let fixedTrades, fixedRecon;
+
+    while(iteration<5){
+      const {trades:ft, recon:fr}=matchTrades(fixActivities, currentEquity, startEquity);
+      fixedTrades=ft; fixedRecon=fr;
+      const phantomSymbols=(fr.unmatchedBuySymbols||[]).filter(s=>!actualOpenSymbols.has(s));
+      if(!phantomSymbols.length) break; // all clean
+      log("INFO",`Iteration ${iteration+1}: fixing phantoms for ${phantomSymbols.join(", ")}`);
       for(const sym of phantomSymbols){
-        const phantomBuys=recon.unmatchedBuys?.filter(b=>b.symbol===sym)||[];
+        const phantomBuys=(fr.unmatchedBuys||[]).filter(b=>b.symbol===sym);
         for(const b of phantomBuys){
-          allActivities.push({
+          fixActivities.push({
             symbol:sym, side:"sell",
             qty:b.qty, price:b.price,
             transaction_time:b.time,
             client_order_id:"__phantom_fix__",
             _phantom:true,
           });
-          log("INFO",`Added phantom fix sell for ${sym} qty:${b.qty} @ $${b.price}`);
         }
       }
-      // Re-run FIFO with phantom fixes — exclude the synthetic trades from output
-      const {trades:fixedTrades, recon:fixedRecon}=matchTrades(allActivities, currentEquity, startEquity);
-      const cleanTrades=fixedTrades.filter(t=>t.tag!=="__phantom_fix__"&&!t._phantom);
-
-      // After fix, remaining unmatched buys should only be real open positions
-      const stillPhantom=(fixedRecon.unmatchedBuySymbols||[]).filter(s=>!actualOpenSymbols.has(s));
-      if(stillPhantom.length){
-        log("WARN",`⚠ Still phantom after fix: ${stillPhantom.join(", ")} — investigate manually`);
-        // Log details of remaining phantom buys
-        (fixedRecon.unmatchedBuys||[]).filter(b=>!actualOpenSymbols.has(b.symbol)).forEach(b=>{
-          log("WARN",`  Phantom: ${b.symbol} qty:${b.qty} @ $${b.price} on ${b.time?.slice(0,10)}`);
-        });
-      }
-
-      tradeHistory=cleanTrades;
-      saveTradeHistoryToStorage();
-      renderTradeStats(fixedRecon);
-      renderTradeTable();
-      switchTradeView('daily');
-      log("INFO",`✓ ${cleanTrades.length} matched trades (after phantom fix) | P&L $${fixedRecon.matchedPL} | ${fixedRecon.openPositions} open positions`,fixedRecon.gapNote||"");
-    } else {
-      tradeHistory=trades;
-      saveTradeHistoryToStorage();
-      renderTradeStats(recon);
-      renderTradeTable();
-      switchTradeView('daily');
-      log("INFO",`✓ ${trades.length} matched trades | P&L $${recon.matchedPL} | ${recon.openPositions} open positions ($${recon.openBuyValue} invested)${recon.gap!=null?` | Gap vs actual: $${recon.gap}`:""}`,recon.gapNote||"");
-      if(recon.phantomNote) log("WARN",`⚠ ${recon.phantomNote}`);
+      iteration++;
     }
+
+    tradeHistory=cleanTrades;
+    saveTradeHistoryToStorage();
+    renderTradeStats(fixedRecon);
+    renderTradeTable();
+    switchTradeView('daily');
+    log("INFO",`✓ ${cleanTrades.length} matched trades | P&L $${fixedRecon.matchedPL} | ${fixedRecon.openPositions} open positions ($${fixedRecon.openBuyValue} invested)${fixedRecon.gap!=null?` | Gap: $${fixedRecon.gap}`:""}`,fixedRecon.gapNote||"");
 
   }catch(e){
     log("ERROR","Trade history failed: "+e.message);
