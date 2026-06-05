@@ -2195,7 +2195,9 @@ async function loadTradeHistory(){
     while(iteration<5){
       const {trades:ft, recon:fr}=matchTrades(fixActivities, currentEquity, startEquity);
       fixedTrades=ft; fixedRecon=fr;
-      const phantomSymbols=(fr.unmatchedBuySymbols||[]).filter(s=>!actualOpenSymbols.has(s));
+      const allUnmatched=(fr.unmatchedBuySymbols||[]);
+      const phantomSymbols=allUnmatched.filter(s=>!actualOpenSymbols.has(s));
+      log("INFO",`Loop ${iteration+1}: ${fr.openPositions} open | unmatched:[${allUnmatched.join(",")}] | phantoms:[${phantomSymbols.join(",")}]`);
       if(!phantomSymbols.length) break; // all clean
       log("INFO",`Iteration ${iteration+1}: fixing phantoms for ${phantomSymbols.join(", ")}`);
       for(const sym of phantomSymbols){
