@@ -721,8 +721,10 @@ async function main() {
     CFG.maxPerCycle
   );
 
+  const tradedThisCycle = new Set();
   for (const signal of signals.slice(0, slotsAvailable)) {
-    if (existingSymbols.has(signal.ticker)) continue;
+    if (existingSymbols.has(signal.ticker)) { addLog(state,'INFO',`SKIP ${signal.ticker} — already open`); continue; }
+    if (tradedThisCycle.has(signal.ticker)) { addLog(state,'INFO',`SKIP ${signal.ticker} — already traded this cycle`); continue; }
 
     const { ticker, price, atr, atrPct, patterns } = signal;
     const slMult = calcDynamicSL(signal);
@@ -732,9 +734,13 @@ async function main() {
     const slF    = +Math.min(sl, price - 0.05).toFixed(2);
     const tpF    = +Math.max(tp, price + 0.05).toFixed(2);
     const riskPS = price - slF;
-    const qty    = Math.max(1, Math.min(
-      Math.floor((CFG.size * 0.02) / riskPS),
-      Math.floor(CFG.size / price)
+    const effectiveSize = price < 5  ? Math.min(CFG.size, 100)
+                        : price < 10 ? Math.min(CFG.size, 200)
+                        : price < 20 ? Math.min(CFG.size, 300)
+                        : CFG.size;
+    const qty = Math.max(1, Math.min(
+      Math.floor((effectiveSize * 0.02) / riskPS),
+      Math.floor(effectiveSize / price)
     ));
     const rr     = ((tpF - price) / (price - slF)).toFixed(1);
 
@@ -760,6 +766,7 @@ async function main() {
         state.trailingStops[ticker] = { high: price, entry: price, tp: tpF, sl: slF };
         state.openPositions = [...(state.openPositions || []), ticker];
         existingSymbols.add(ticker);
+        tradedThisCycle.add(ticker);
         state.dailyTrades++;
       }
     } catch (e) {
