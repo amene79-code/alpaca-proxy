@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 4,
-  "dailyDate": "2026-06-05",
+  "dailyTrades": 0,
+  "dailyDate": "2026-06-06",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -68,38 +68,8 @@
     "MRLN",
     "MRLN"
   ],
-  "lastRun": "2026-06-05T21:49:47.652Z",
+  "lastRun": "2026-06-06T13:52:57.707Z",
   "log": [
-    {
-      "time": "2026-06-04T17:19:53.577Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T17:20:06.238Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:30:17.943Z",
-      "type": "INFO",
-      "msg": "Account: $100184.49 | 1 positions open | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:30:17.954Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:30:17.987Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
     {
       "time": "2026-06-04T17:30:18.062Z",
       "type": "INFO",
@@ -1266,6 +1236,36 @@
     },
     {
       "time": "2026-06-05T21:49:47.652Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-06T13:52:57.481Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-06T13:52:57.481Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-06T13:52:57.673Z",
+      "type": "INFO",
+      "msg": "Account: $100102.59 | 0 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-06T13:52:57.695Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-06T13:52:57.707Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
