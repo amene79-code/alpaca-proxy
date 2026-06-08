@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "TNGX": {
-      "side": "long",
-      "entry": 30.18000030517578,
-      "high": 30.18000030517578,
-      "low": 30.18000030517578,
-      "initialSl": 29.34,
-      "sl": 29.34,
-      "tp": 32.42,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 3,
   "dailyDate": "2026-06-08",
   "openPositions": [
@@ -83,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T15:42:07.633Z",
+  "lastRun": "2026-06-08T15:52:45.011Z",
   "log": [
-    {
-      "time": "2026-06-05T11:36:29.611Z",
-      "type": "INFO",
-      "msg": "Account: $100166.30 | 1 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T11:36:29.684Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T11:36:29.696Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T13:30:15.555Z",
-      "type": "INFO",
-      "msg": "Account: $100154.42 | 1 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T13:30:15.643Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T13:30:15.873Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: CRWD @ $703 | High $719.68 → Stop $705.29 | P&L $-12.72",
-      "detail": ""
-    },
     {
       "time": "2026-06-05T13:30:17.406Z",
       "type": "INFO",
@@ -1284,6 +1235,42 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 49× TNGX",
       "detail": "ID e73a0be0-0a18-4f28-843c-56a73cc5816c | R:R 2.7:1 | risk $41.16"
+    },
+    {
+      "time": "2026-06-08T15:52:25.730Z",
+      "type": "INFO",
+      "msg": "Account: $100057.10 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T15:52:26.450Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T15:52:26.750Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TNGX, MRVL, INTC, IONQ, MU, GLXY, CBRS, MARA, QBTS, KEEL"
+    },
+    {
+      "time": "2026-06-08T15:52:26.750Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 28 watchlist"
+    },
+    {
+      "time": "2026-06-08T15:52:45.011Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "TNGX: below opening-range high (price $29.49 < ORH $30.01, 30 today-candles)  •  MRVL: relVol 1.0× < 2.5× (todayVol 47.2M)  •  INTC: relVol 0.6× < 2.5× (todayVol 76.8M)  •  IONQ: relVol 0.4× < 2.5× (todayVol 15.2M)  •  MU: relVol 0.6× < 2.5× (todayVol 30.8M)  •  GLXY: relVol 1.9× < 2.5× (todayVol 10.3M)  •  CBRS: relVol 0.5× < 2.5× (todayVol 4.4M)  •  MARA: relVol 0.3× < 2.5× (todayVol 13.1M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 16.4M)  •  KEEL: relVol 0.8× < 2.5× (todayVol 34.2M)  •  POET: relVol 0.3× < 2.5× (todayVol 15.5M)  •  BMNR: relVol 0.5× < 2.5× (todayVol 19.2M)"
+    },
+    {
+      "time": "2026-06-08T15:52:45.011Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ]
 }
