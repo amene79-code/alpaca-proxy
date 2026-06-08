@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T16:45:39.311Z",
+  "lastRun": "2026-06-08T16:47:10.827Z",
   "log": [
-    {
-      "time": "2026-06-05T14:58:09.484Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "MU, LULU, RDDT, SPCX, MSFT, PL, NVDA, TSLA…"
-    },
-    {
-      "time": "2026-06-05T14:58:09.890Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-05T14:58:22.726Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T15:16:02.418Z",
-      "type": "INFO",
-      "msg": "Account: $100118.23 | 0 positions open | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T15:16:02.506Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T15:16:02.718Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
     {
       "time": "2026-06-05T15:16:02.825Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-08T16:45:39.311Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T16:46:51.564Z",
+      "type": "INFO",
+      "msg": "Account: $100057.10 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T16:46:51.978Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T16:46:52.325Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TNGX, MRVL, INTC, KEEL, IONQ, MU, MARA, GLXY, CBRS, QBTS"
+    },
+    {
+      "time": "2026-06-08T16:46:52.325Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 28 watchlist"
+    },
+    {
+      "time": "2026-06-08T16:47:10.826Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "TNGX: below opening-range high (price $28.40 < ORH $30.01, 41 today-candles)  •  MRVL: relVol 1.1× < 2.5× (todayVol 53.2M)  •  INTC: relVol 0.7× < 2.5× (todayVol 86.3M)  •  KEEL: relVol 1.0× < 2.5× (todayVol 43.7M)  •  IONQ: relVol 0.5× < 2.5× (todayVol 17.4M)  •  MU: relVol 0.6× < 2.5× (todayVol 34.8M)  •  MARA: relVol 0.4× < 2.5× (todayVol 15.6M)  •  GLXY: relVol 2.1× < 2.5× (todayVol 12.0M)  •  CBRS: relVol 0.6× < 2.5× (todayVol 5.1M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 19.0M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 22.9M)  •  IREN: relVol 0.4× < 2.5× (todayVol 22.0M)"
+    },
+    {
+      "time": "2026-06-08T16:47:10.826Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
