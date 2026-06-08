@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T16:56:16.452Z",
+  "lastRun": "2026-06-08T16:57:45.142Z",
   "log": [
-    {
-      "time": "2026-06-05T16:05:57.166Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "MU, LULU, RDDT, SPCX, MSFT, PL, NVDA, TSLA…"
-    },
-    {
-      "time": "2026-06-05T16:05:57.777Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 39 from screener"
-    },
-    {
-      "time": "2026-06-05T16:06:08.078Z",
-      "type": "SIGNAL",
-      "msg": "MRLN — score 6 | ATR 2.13% | RSI 58 | RelVol 7.0×",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-06-05T16:06:10.417Z",
-      "type": "INFO",
-      "msg": "Top signal: MRLN (score 6)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T16:06:10.418Z",
-      "type": "BUY",
-      "msg": "Placing: 13x MRLN @ ~$9.21",
-      "detail": "Patterns: Volume Breakout | SL 1.5× $8.92 | TP 2.7× $9.74 | R:R 1.8"
-    },
-    {
-      "time": "2026-06-05T16:06:10.463Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 13x MRLN",
-      "detail": "ID: de08b4ac-71bc-4e70-8df1-701df19b1fd7 | R:R 1.8:1"
-    },
     {
       "time": "2026-06-05T16:12:17.625Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-08T16:56:16.452Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T16:57:23.692Z",
+      "type": "INFO",
+      "msg": "Account: $100057.10 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T16:57:23.959Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T16:57:24.384Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TNGX, MRVL, KEEL, IONQ, INTC, QBTS, MU, MARA, GLXY, CBRS"
+    },
+    {
+      "time": "2026-06-08T16:57:24.384Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 28 watchlist"
+    },
+    {
+      "time": "2026-06-08T16:57:45.142Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "TNGX: below opening-range high (price $29.78 < ORH $30.01, 43 today-candles)  •  MRVL: relVol 1.2× < 2.5× (todayVol 54.2M)  •  KEEL: relVol 1.0× < 2.5× (todayVol 46.3M)  •  IONQ: relVol 0.5× < 2.5× (todayVol 17.9M)  •  INTC: relVol 0.7× < 2.5× (todayVol 87.7M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 19.6M)  •  MU: relVol 0.6× < 2.5× (todayVol 35.2M)  •  MARA: relVol 0.4× < 2.5× (todayVol 16.5M)  •  GLXY: relVol 2.2× < 2.5× (todayVol 12.2M)  •  CBRS: relVol 0.6× < 2.5× (todayVol 5.3M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 23.6M)  •  IREN: relVol 0.4× < 2.5× (todayVol 22.3M)"
+    },
+    {
+      "time": "2026-06-08T16:57:45.142Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
