@@ -1,5 +1,12 @@
 {
-  "trailingStops": {},
+  "trailingStops": {
+    "GOOGL": {
+      "high": 367.25,
+      "entry": 367.06,
+      "tp": 379.91,
+      "sl": 360.73
+    }
+  },
   "dailyTrades": 0,
   "dailyDate": "2026-06-08",
   "openPositions": [
@@ -68,44 +75,8 @@
     "MRLN",
     "MRLN"
   ],
-  "lastRun": "2026-06-08T12:52:22.232Z",
+  "lastRun": "2026-06-08T13:00:27.230Z",
   "log": [
-    {
-      "time": "2026-06-04T17:40:45.206Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T17:40:46.080Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T17:40:46.364Z",
-      "type": "SIGNAL",
-      "msg": "AVGO — score 5 | ATR 0.56% | RSI 88 | RelVol 2.3×",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-04T17:41:04.310Z",
-      "type": "INFO",
-      "msg": "Top signal: AVGO (score 5)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:41:04.311Z",
-      "type": "BUY",
-      "msg": "Placing: 1x AVGO @ ~$422.58",
-      "detail": "Patterns: Bullish Engulfing | SL 1.2× $419.73 | TP 1.6× $426.37 | R:R 1.3"
-    },
-    {
-      "time": "2026-06-04T17:41:04.454Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 1x AVGO",
-      "detail": "ID: 9c3273d6-cd1f-4dd0-aea6-f7fe0febf73b | R:R 1.3:1"
-    },
     {
       "time": "2026-06-04T17:51:19.673Z",
       "type": "INFO",
@@ -1266,6 +1237,42 @@
     },
     {
       "time": "2026-06-08T12:52:22.232Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:00:26.796Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:00:26.872Z",
+      "type": "INFO",
+      "msg": "Account: $100102.78 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:00:26.872Z",
+      "type": "INFO",
+      "msg": "Seeded trailing stop for GOOGL",
+      "detail": "Entry $367.06 | Current $367.25 | High set to $367.25"
+    },
+    {
+      "time": "2026-06-08T13:00:26.893Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:00:27.003Z",
+      "type": "INFO",
+      "msg": "Estimated TP/SL for GOOGL",
+      "detail": "Entry $367.06 | High $367.25 | ATR $4.22 | TP $379.91 | SL $360.73"
+    },
+    {
+      "time": "2026-06-08T13:00:27.230Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
