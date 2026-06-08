@@ -577,10 +577,12 @@ async function main() {
   const diag = runScreener.lastDiag || {};
   addLog(state, 'INFO', `Screener raw — gainers ${diag.gainersRaw ?? '?'}, actives ${diag.activesRaw ?? '?'}, kept ${diag.kept ?? '?'}`,
     (diag.sample && diag.sample.length) ? diag.sample.join(', ') : '(none returned)');
-  const candidates = [...new Set([...(savedWatchlist || []), ...screener])];
+  // Screener (real gappers) goes FIRST so the watchlist can never starve it;
+  // watchlist supplements. Cap raised to 60 so a full screener + watchlist both fit.
+  const candidates = [...new Set([...screener, ...(savedWatchlist || [])])];
   const existing = new Set(positions.map(p => p.symbol));
-  const toScan = candidates.filter(t => !existing.has(t)).slice(0, 40);
-  addLog(state, 'INFO', `Scanning ${toScan.length} candidates`, `${savedWatchlist?.length || 0} watchlist + ${screener.length} screener`);
+  const toScan = candidates.filter(t => !existing.has(t)).slice(0, 60);
+  addLog(state, 'INFO', `Scanning ${toScan.length} candidates`, `${screener.length} screener + ${savedWatchlist?.length || 0} watchlist`);
 
   // 9. Analyze
   analyzeSignal.rejections = [];
