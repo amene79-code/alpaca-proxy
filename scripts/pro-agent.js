@@ -1,7 +1,18 @@
 /**
  * Pro Agent — GitHub Actions edition
- * Runs every 10 min via cron, manages trailing stops + places new orders
- * State persists between runs via state/state.json committed to repo
+ * Strategy: CATALYST GAP CONTINUATION
+ *
+ *   1. Universe = today's gainers + most-actives + saved pre-market watchlist.
+ *   2. Keep only real catalysts: gap >= 4% vs prior close AND relVol >= 2.5x.
+ *   3. Enter only those HOLDING the move: above VWAP and above the opening-range
+ *      high (filters gap-and-fade fakeouts that would be instant losers).
+ *   4. Fixed-DOLLAR risk per trade -> every loss is small and known.
+ *   5. Structural ATR stop, then move stop to BREAKEVEN at +1R, then trail the
+ *      profit. Most would-be losers become scratch trades instead of full losses.
+ *   6. Strong closers are held overnight (catalyst continuation = the edge);
+ *      weak/red positions are cut in the last 30 min (EOD review).
+ *
+ * Runs on a loop via GitHub Actions. State persists in state/state.json.
  */
 
 import fetch from 'node-fetch';
@@ -14,18 +25,28 @@ const STATE_FILE = path.join(__dirname, '..', 'state', 'state.json');
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 const CFG = {
-  size:        500,   // $ per position
-  maxPos:      20,    // max open positions
-  maxDaily:    30,   // max trades per day
-  maxPerCycle: 5,    // max new trades per cycle
-  atrSL:       1.5,   // ATR × SL multiplier
-  atrTP:       3.0,   // ATR × TP multiplier
-  trail:       0.02,  // 2% trailing stop
-  minScore:    2,     // min pattern score
-  maxATRpct:   0.1,   // min ATR%
-  earningsBuf: 3,     // days buffer around earnings
-  skipFirst15: false, // skip first 15 min after market open (9:30-9:45 ET)
-  skipLast30:  true,  // skip last 30 min before close (3:30-4:00 ET)
+  riskPerTrade: 50,    // $ risked per trade (FIXED — this is the loss cap per trade)
+  maxPosValue:  1500,  // max $ deployed in a single position
+  maxPos:       8,     // max concurrent positions
+  maxDaily:     8,     // max NEW trades per day
+  maxPerCycle:  2,     // max NEW trades per cycle
+
+  atrSL:        1.5,   // initial structural stop = entry − ATR × this
+  atrTP:        4.0,   // take-profit ceiling = entry + ATR × this (let winners run)
+  trail:        0.02,  // 2% trailing stop — applied ONLY after breakeven is reached
+  beBufferPct:  0.001, // breakeven stop sits 0.1% above entry (covers fees/slippage)
+
+  // Catalyst gates
+  minGapPct:    4.0,   // min gap vs prior close (the catalyst signal)
+  minRelVol:    2.5,   // min volume vs 20-day avg (institutional confirmation)
+  minATRpct:    0.5,   // min ATR% (need real movement)
+  minScore:     6,     // min composite score to take the trade
+  rsiMax:       88,    // reject only truly parabolic chases
+
+  // Time gates (ET)
+  skipFirst15:  true,  // never enter in first 15 min (let opening range form)
+  skipLast30:   true,  // no NEW entries in last 30 min (EOD review runs instead)
+  eodReviewMin: 25,    // start cutting weak positions when <= this many mins to close
 };
 
 // ─── Alpaca API ───────────────────────────────────────────────────────────────
@@ -36,8 +57,8 @@ const HEADERS = {
   'Content-Type':        'application/json',
 };
 
-async function alpaca(method, path, body) {
-  const r = await fetch(`${BASE}${path}`, {
+async function alpaca(method, p, body) {
+  const r = await fetch(`${BASE}${p}`, {
     method,
     headers: HEADERS,
     body: body ? JSON.stringify(body) : undefined,
@@ -67,15 +88,72 @@ async function getCandles(ticker, range, interval) {
   } catch { return null; }
 }
 
-// ─── Watchlist from repo file (saved by pre-market dashboard) ────────────────
+// ─── ET time helpers ──────────────────────────────────────────────────────────
+function etPartsOf(date) {
+  const fmt = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hour12: false,
+  });
+  const p = {};
+  for (const part of fmt.formatToParts(date)) p[part.type] = part.value;
+  let hour = parseInt(p.hour, 10);
+  if (hour === 24) hour = 0; // midnight edge case
+  return { dateStr: `${p.year}-${p.month}-${p.day}`, mins: hour * 60 + parseInt(p.minute, 10) };
+}
+function etOf(tsSeconds) { return etPartsOf(new Date(tsSeconds * 1000)); }
+const todayET = () => etPartsOf(new Date()).dateStr;
+
+// Candles belonging to today's regular session (9:30–16:00 ET)
+function todaysRegularCandles(candles) {
+  const today = todayET();
+  return candles.filter(c => {
+    const { dateStr, mins } = etOf(c.t);
+    return dateStr === today && mins >= 570 && mins < 960;
+  });
+}
+
+// ─── Catalyst screener: today's gainers + most actives ──────────────────────
+async function fetchPredefined(scrId, count = 50) {
+  try {
+    const url = `https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?count=${count}&scrIds=${scrId}`;
+    const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+    if (!r.ok) return [];
+    const d = await r.json();
+    return d?.finance?.result?.[0]?.quotes || [];
+  } catch { return []; }
+}
+
+async function runScreener() {
+  const scored = new Map(); // ticker -> prelim score
+
+  // Day gainers — already gapping/running up today
+  for (const q of await fetchPredefined('day_gainers', 50)) {
+    const sym = (q.symbol || '').toUpperCase();
+    const chg = q.regularMarketChangePercent || 0;
+    if (!/^[A-Z]{1,5}$/.test(sym)) continue;
+    if (chg < CFG.minGapPct) continue;            // pre-filter by move size
+    scored.set(sym, (scored.get(sym) || 0) + Math.min(3, chg / 5));
+  }
+
+  // Most actives — volume leaders (institutional flow)
+  for (const q of await fetchPredefined('most_actives', 50)) {
+    const sym = (q.symbol || '').toUpperCase();
+    if (!/^[A-Z]{1,5}$/.test(sym)) continue;
+    const chg = q.regularMarketChangePercent || 0;
+    if (chg <= 0) continue;                        // only up movers
+    scored.set(sym, (scored.get(sym) || 0) + 1);
+  }
+
+  return [...scored.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40).map(([t]) => t);
+}
+
+// ─── Saved pre-market watchlist (committed by the dashboard) ─────────────────
 async function fetchVercelWatchlist() {
   try {
-    // Read watchlist.json committed to the repo by the pre-market dashboard
-    const r = await fetch('https://raw.githubusercontent.com/amene79-code/alpaca-proxy/main/state/watchlist.json?t='+Date.now());
+    const r = await fetch('https://raw.githubusercontent.com/amene79-code/alpaca-proxy/main/state/watchlist.json?t=' + Date.now());
     if (!r.ok) return null;
     const d = await r.json();
     if (!d.tickers?.length) return null;
-    // Only use if saved today
     const today = new Date().toISOString().slice(0, 10);
     const savedDate = d.date ? d.date.split('/').reverse().join('-') : null;
     if (savedDate && savedDate !== today) {
@@ -89,69 +167,13 @@ async function fetchVercelWatchlist() {
   }
 }
 
-
-async function runScreener() {
-  const tickers = new Map(); // ticker -> score
-
-  // Yahoo Finance trending
-  try {
-    const r = await fetch('https://query1.finance.yahoo.com/v1/finance/trending/US?count=20', {
-      headers: { 'User-Agent': 'Mozilla/5.0' },
-    });
-    if (r.ok) {
-      const d = await r.json();
-      (d?.finance?.result?.[0]?.quotes || []).forEach(q => {
-        if (/^[A-Z]{1,5}$/.test(q.symbol)) tickers.set(q.symbol, (tickers.get(q.symbol) || 0) + 0.5);
-      });
-    }
-  } catch {}
-
-  // Apewisdom (WSB mentions)
-  try {
-    const r = await fetch('https://apewisdom.io/api/v1.0/filter/wallstreetbets/page/1');
-    if (r.ok) {
-      const d = await r.json();
-      (d?.results || []).slice(0, 20).forEach(item => {
-        const t = (item.ticker || '').toUpperCase();
-        if (/^[A-Z]{1,5}$/.test(t)) {
-          const score = Math.min(3, (item.mentions || 1) / 50);
-          tickers.set(t, (tickers.get(t) || 0) + score);
-        }
-      });
-    }
-  } catch {}
-
-  // Stocktwits trending
-  try {
-    const r = await fetch('https://api.stocktwits.com/api/2/trending/symbols.json');
-    if (r.ok) {
-      const d = await r.json();
-      (d?.symbols || []).slice(0, 20).forEach(s => {
-        const t = (s.symbol || '').toUpperCase();
-        if (/^[A-Z]{1,5}$/.test(t)) {
-          const bonus = (s.watchlist_count || 0) > 50000 ? 2.0 : 1.5;
-          tickers.set(t, (tickers.get(t) || 0) + bonus);
-        }
-      });
-    }
-  } catch {}
-
-  // Sort by score, return top 40
-  return [...tickers.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 40)
-    .map(([ticker]) => ticker);
-}
-
-// ─── Technical indicators ─────────────────────────────────────────────────────
+// ─── Indicators ───────────────────────────────────────────────────────────────
 function calcATR(candles, period = 14) {
   if (candles.length < period + 1) return 0;
   const trs = candles.slice(1).map((c, i) =>
-    Math.max(c.high - c.low, Math.abs(c.high - candles[i].close), Math.abs(c.low - candles[i].close))
-  );
+    Math.max(c.high - c.low, Math.abs(c.high - candles[i].close), Math.abs(c.low - candles[i].close)));
   return trs.slice(-period).reduce((s, v) => s + v, 0) / period;
 }
-
 function calcRSI(candles, period = 14) {
   if (candles.length < period + 1) return 50;
   const closes = candles.map(c => c.close);
@@ -160,31 +182,24 @@ function calcRSI(candles, period = 14) {
     const diff = closes[i] - closes[i - 1];
     if (diff > 0) gains += diff; else losses -= diff;
   }
-  const rs = gains / (losses || 0.001);
-  return 100 - 100 / (1 + rs);
+  return 100 - 100 / (1 + gains / (losses || 0.001));
 }
-
 function calcEMA(closes, period) {
   if (closes.length < period) return closes[closes.length - 1] || 0;
   const k = 2 / (period + 1);
   let ema = closes.slice(0, period).reduce((s, v) => s + v, 0) / period;
-  for (let i = period; i < closes.length; i++) {
-    ema = closes[i] * k + ema * (1 - k);
-  }
+  for (let i = period; i < closes.length; i++) ema = closes[i] * k + ema * (1 - k);
   return ema;
 }
-
+// VWAP over today's regular session only
 function calcVWAP(candles) {
-  let cumTPV = 0, cumVol = 0;
-  const today = new Date().toDateString();
-  for (const c of candles) {
-    const d = new Date(c.t * 1000).toDateString();
-    if (d !== today) continue;
+  let tpv = 0, vol = 0;
+  for (const c of todaysRegularCandles(candles)) {
     const tp = (c.high + c.low + c.close) / 3;
-    cumTPV += tp * (c.volume || 0);
-    cumVol += c.volume || 0;
+    tpv += tp * (c.volume || 0);
+    vol += c.volume || 0;
   }
-  return cumVol > 0 ? cumTPV / cumVol : 0;
+  return vol > 0 ? tpv / vol : 0;
 }
 
 // ─── Pattern detection ────────────────────────────────────────────────────────
@@ -192,237 +207,163 @@ function detectPatterns(candles) {
   const patterns = [];
   const n = candles.length;
   if (n < 3) return patterns;
-
   for (let i = Math.max(1, n - 5); i < n; i++) {
     const c = candles[i], p = candles[i - 1];
-    const body  = Math.abs(c.close - c.open);
+    const body = Math.abs(c.close - c.open);
     const range = c.high - c.low || 0.001;
     const pbody = Math.abs(p.close - p.open);
-    const bull  = c.close > c.open;
-
-    // Hammer
+    const bull = c.close > c.open;
     const lWick = Math.min(c.open, c.close) - c.low;
     const uWick = c.high - Math.max(c.open, c.close);
     if (lWick > body * 2 && uWick < body * 0.5 && body > 0)
       patterns.push({ name: 'Hammer', strength: 2, bullish: true });
-
-    // Bullish Engulfing
-    if (p.close < p.open && c.close > c.open &&
-        c.open < p.close && c.close > p.open && body > pbody)
+    if (p.close < p.open && c.close > c.open && c.open < p.close && c.close > p.open && body > pbody)
       patterns.push({ name: 'Bullish Engulfing', strength: 3, bullish: true });
-
-    // Doji
-    if (body / range < 0.1 && range > 0)
-      patterns.push({ name: 'Doji', strength: 1, bullish: null });
-
-    // Volume Breakout
-    const avgVol = candles.slice(Math.max(0, i - 10), i)
-      .reduce((s, c) => s + (c.volume || 0), 0) / 10;
+    const avgVol = candles.slice(Math.max(0, i - 10), i).reduce((s, x) => s + (x.volume || 0), 0) / 10;
     if ((c.volume || 0) > avgVol * 2.5 && bull)
       patterns.push({ name: 'Volume Breakout', strength: 3, bullish: true });
-
-    // Gap Up
     if (i > 0 && c.open > candles[i - 1].high * 1.005)
       patterns.push({ name: 'Gap Up', strength: 2, bullish: true });
-
-    // Bull Flag (last 5 candles)
     if (i >= 4) {
       const impulse = candles[i - 4];
       const isImpulse = (impulse.close - impulse.open) / impulse.open > 0.02;
-      const isConsolidation = candles.slice(i - 3, i + 1)
-        .every(fc => Math.abs(fc.close - fc.open) / fc.open < 0.01);
-      if (isImpulse && isConsolidation)
-        patterns.push({ name: 'Bull Flag', strength: 3, bullish: true });
+      const isConsolidation = candles.slice(i - 3, i + 1).every(fc => Math.abs(fc.close - fc.open) / fc.open < 0.01);
+      if (isImpulse && isConsolidation) patterns.push({ name: 'Bull Flag', strength: 3, bullish: true });
     }
   }
-
-  // Deduplicate
   const seen = new Set();
   return patterns.filter(p => seen.has(p.name) ? false : seen.add(p.name));
 }
 
-// ─── Signal analysis ──────────────────────────────────────────────────────────
+// ─── Signal analysis: Catalyst Gap Continuation ──────────────────────────────
 async function analyzeSignal(ticker) {
   const candles = await getCandles(ticker, '5d', '5m');
   if (!candles || candles.length < 30) return null;
 
-  const price  = candles[candles.length - 1].close;
-  const atr    = calcATR(candles, 14);
-  const atrPct = atr / price * 100;
-
-  // ── Filter 1: Minimum price $5 ──────────────────────────────────────────
+  const price = candles[candles.length - 1].close;
   if (price < 5) return null;
 
-  // ── Filter 2: Minimum average daily volume 1M ───────────────────────────
-  // Use daily candles for volume check
-  const dailyCandles = await getCandles(ticker, '1mo', '1d');
-  if (!dailyCandles || dailyCandles.length < 5) return null;
-  const avgDailyVol = dailyCandles.slice(-20).reduce((s, c) => s + (c.volume || 0), 0) / 
-                      Math.min(20, dailyCandles.length);
+  const daily = await getCandles(ticker, '1mo', '1d');
+  if (!daily || daily.length < 5) return null;
+
+  // Liquidity
+  const avgDailyVol = daily.slice(-20).reduce((s, c) => s + (c.volume || 0), 0) / Math.min(20, daily.length);
   if (avgDailyVol < 1_000_000) return null;
 
-  // ── Filter 3: Relative volume > 2× ──────────────────────────────────────
-  const todayVol = dailyCandles[dailyCandles.length - 1]?.volume || 0;
-  const relVol   = avgDailyVol > 0 ? todayVol / avgDailyVol : 0;
-  if (relVol < 1.5) return null; // at least 1.5× avg volume today
+  // ── CATALYST GATE 1: gap vs prior close ─────────────────────────────────
+  const priorClose = daily[daily.length - 2]?.close;
+  if (!priorClose) return null;
+  const gapPct = (price - priorClose) / priorClose * 100;
+  if (gapPct < CFG.minGapPct) return null;
 
-  // ── Filter 4: EMA alignment — price above 9 EMA and 20 EMA ─────────────
+  // ── CATALYST GATE 2: relative volume ────────────────────────────────────
+  const todayVol = daily[daily.length - 1]?.volume || 0;
+  const relVol = avgDailyVol > 0 ? todayVol / avgDailyVol : 0;
+  if (relVol < CFG.minRelVol) return null;
+
+  // ── HOLD GATE: still holding the move (no gap-and-fade) ──────────────────
+  const vwap = calcVWAP(candles);
+  if (vwap > 0 && price < vwap) return null;            // faded below VWAP = fake
+
+  const todays = todaysRegularCandles(candles);
+  const openRange = todays.slice(0, 3);                 // first 15 min (9:30–9:45)
+  const orHigh = openRange.length ? Math.max(...openRange.map(c => c.high)) : 0;
+  if (orHigh > 0 && price < orHigh * 0.995) return null; // broke down from opening range
+
+  // Volatility / momentum
+  const atr = calcATR(candles, 14);
+  const atrPct = atr / price * 100;
+  if (atrPct < CFG.minATRpct) return null;
+
+  const rsi = calcRSI(candles, 14);
+  if (rsi > CFG.rsiMax) return null;                     // parabolic — don't chase
+
   const closes = candles.map(c => c.close);
-  const ema9  = calcEMA(closes, 9);
-  const ema20 = calcEMA(closes, 20);
-  if (price < ema9 || price < ema20 || ema9 < ema20) return null; // must be in uptrend
+  const ema9 = calcEMA(closes, 9), ema20 = calcEMA(closes, 20);
 
-  if (atrPct < CFG.maxATRpct) return null;
+  const patterns = detectPatterns(candles).filter(p => p.bullish === true);
 
-  const rsi      = calcRSI(candles, 14);
-  const vwap     = calcVWAP(candles);
-  const patterns = detectPatterns(candles);
-  const bullish  = patterns.filter(p => p.bullish === true);
-  if (!bullish.length) return null;
+  // ── Composite score ──────────────────────────────────────────────────────
+  let score = 0;
+  score += gapPct >= 10 ? 3 : gapPct >= 6 ? 2 : 1;       // gap strength
+  score += relVol >= 5 ? 3 : relVol >= 3.5 ? 2 : 1;      // volume strength
+  if (orHigh > 0 && price >= orHigh) score += 2;         // breaking opening range high
+  if (vwap > 0 && price > vwap) score += 1;              // above VWAP
+  if (ema9 > ema20 && price > ema9) score += 1;          // intraday uptrend intact
+  if (rsi < 75) score += 1;                              // not overextended
+  score += patterns.reduce((s, p) => s + p.strength, 0); // candle patterns
 
-  // Score
-  let score = bullish.reduce((s, p) => s + p.strength, 0);
-  if (rsi < 70) score += 1;
-  if (price > vwap) score += 1;
-  if (relVol > 2)   score += 1; // bonus for strong relative volume
-  if (relVol > 3)   score += 1; // extra bonus for very strong volume
-
-  return { ticker, price, atr, atrPct, rsi, vwap, patterns: bullish, score, relVol };
+  return { ticker, price, atr, atrPct, rsi, vwap, orHigh, gapPct, relVol, patterns, score };
 }
 
-// ─── Dynamic SL/TP ────────────────────────────────────────────────────────────
-function calcDynamicSL(signal) {
-  const { atrPct, patterns } = signal;
-  let mult = CFG.atrSL;
-  if (atrPct > 4) mult = 2.8;
-  else if (atrPct > 2.5) mult = 2.2;
-  else if (atrPct > 1.5) mult = 1.8;
-  else if (atrPct > 0.8) mult = 1.5;
-  else if (atrPct > 0.4) mult = 1.2;
-  const names = patterns.map(p => p.name);
-  if (names.includes('Volume Breakout')) mult *= 0.85;
-  if (names.includes('Hammer')) mult *= 1.15;
-  // Time of day
-  const h = new Date().getUTCHours();
-  const etH = h - 4; // rough ET offset (EDT)
-  if (etH >= 9 && etH < 10) mult *= 1.35;
-  return Math.round(mult * 10) / 10;
+// ─── Stop replacement (move the bracket SL leg) ──────────────────────────────
+async function moveStopLeg(orderId, newStop) {
+  return alpaca('PATCH', `/v2/orders/${orderId}`, { stop_price: String(newStop) });
 }
 
-function calcDynamicTP(signal, slMult) {
-  const { atrPct, rsi } = signal;
-  let mult = slMult * (CFG.atrTP / CFG.atrSL);
-  if (atrPct > 4) mult *= 1.15;
-  if (rsi > 80) mult *= 0.75;
-  else if (rsi > 70) mult *= 0.90;
-  else if (rsi < 40) mult *= 1.10;
-  // Time of day (ET)
-  const h = new Date().getUTCHours();
-  const etMins = (h - 4) * 60 + new Date().getUTCMinutes();
-  const minsAfterOpen = etMins - (9 * 60 + 30);
-  const minsToClose   = (16 * 60) - etMins;
-  if (minsAfterOpen < 15)     mult *= 1.25;
-  else if (minsAfterOpen < 60) mult *= 1.1;
-  else if (minsToClose < 30)  mult *= 0.55;
-  else if (minsToClose < 60)  mult *= 0.75;
-  else if (etMins > 11 * 60 && etMins < 14 * 60) mult *= 0.9;
-  return Math.round(mult * 10) / 10;
-}
-
-// ─── State management ─────────────────────────────────────────────────────────
+// ─── State ────────────────────────────────────────────────────────────────────
 function loadState() {
-  try {
-    return JSON.parse(readFileSync(STATE_FILE, 'utf8'));
-  } catch {
-    return { trailingStops: {}, dailyTrades: 0, dailyDate: '', openPositions: [], log: [] };
-  }
+  try { return JSON.parse(readFileSync(STATE_FILE, 'utf8')); }
+  catch { return { trailingStops: {}, dailyTrades: 0, dailyDate: '', openPositions: [], log: [] }; }
 }
-
 function saveState(state) {
-  // Keep only last 200 log entries
   if (state.log.length > 200) state.log = state.log.slice(-200);
   state.lastRun = new Date().toISOString();
   writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
 }
-
 function addLog(state, type, msg, detail = '') {
-  const entry = { time: new Date().toISOString(), type, msg, detail };
-  state.log.push(entry);
+  state.log.push({ time: new Date().toISOString(), type, msg, detail });
   console.log(`[${type}] ${msg}${detail ? ' | ' + detail : ''}`);
 }
 
-// ─── Market hours check ───────────────────────────────────────────────────────
+// ─── Market hours ───────────────────────────────────────────────────────────
 function isRegularHours() {
-  const et = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
-  const m = et.getHours()*60 + et.getMinutes();
-  return m >= 570 && m < 960; // 9:30am-4pm ET
+  const { mins } = etPartsOf(new Date());
+  return mins >= 570 && mins < 960;
 }
-
-function isExtendedHours() {
-  const et = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
-  const m = et.getHours()*60 + et.getMinutes();
-  return m >= 240 && m < 1200; // 4am-8pm ET
-}
-
 function isMarketOpen() {
   const now = new Date();
-  const day = now.getUTCDay(); // 0=Sun, 6=Sat
+  const day = now.getUTCDay();
   if (day === 0 || day === 6) return false;
-  const h = now.getUTCHours(), m = now.getUTCMinutes();
-  const utcMins = h * 60 + m;
-  // NYSE: 9:30am-4pm ET = 13:30-20:00 UTC (EDT)
-  return utcMins >= 13 * 60 + 30 && utcMins < 20 * 60;
+  return isRegularHours();
 }
-
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-// ─── Cancel bracket orders then sell ─────────────────────────────────────────
+// ─── Close a position (used for ext-hours exits + EOD review) ────────────────
 async function cancelAndSell(symbol, qty, side = 'long') {
   const closeSide = side === 'short' ? 'buy' : 'sell';
-  const regular   = isRegularHours();
-
+  const regular = isRegularHours();
   try {
     const positions = await alpaca('GET', '/v2/positions').catch(() => []);
-    const position  = (Array.isArray(positions) ? positions : []).find(p => p.symbol === symbol);
+    const position = (Array.isArray(positions) ? positions : []).find(p => p.symbol === symbol);
     const actualQty = position ? Math.abs(+position.qty) : qty;
     if (!actualQty) { console.warn(`${symbol} — no position found`); return false; }
     const currentPrice = +position?.current_price || 0;
 
-    // Build order — limit with extended_hours outside regular hours
-    const buildOrder = (price) => {
-      if (regular || !price) {
-        return { symbol, qty: String(actualQty), side: closeSide, type: 'market', time_in_force: 'day' };
-      }
-      const limitPrice = closeSide === 'sell'
-        ? +(price * 0.999).toFixed(2)
-        : +(price * 1.001).toFixed(2);
-      return {
-        symbol, qty: String(actualQty), side: closeSide,
-        type: 'limit', limit_price: String(limitPrice),
-        time_in_force: 'day', extended_hours: true,
-      };
+    const buildOrder = (pr) => {
+      if (regular || !pr) return { symbol, qty: String(actualQty), side: closeSide, type: 'market', time_in_force: 'day' };
+      const limitPrice = closeSide === 'sell' ? +(pr * 0.999).toFixed(2) : +(pr * 1.001).toFixed(2);
+      return { symbol, qty: String(actualQty), side: closeSide, type: 'limit', limit_price: String(limitPrice), time_in_force: 'day', extended_hours: true };
     };
 
     let order;
     try {
       order = await alpaca('POST', '/v2/orders', buildOrder(currentPrice));
     } catch (e) {
-      if (e.message?.includes('insufficient') || e.message?.includes('conflict') || e.message?.includes('open order')) {
+      if (/insufficient|conflict|open order/i.test(e.message || '')) {
         const orders = await alpaca('GET', `/v2/orders?status=open&limit=100&nested=true`).catch(() => []);
-        const symbolOrders = (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol);
-        for (const o of symbolOrders) {
+        for (const o of (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol)) {
           await alpaca('DELETE', `/v2/orders/${o.id}`).catch(() => {});
           if (o.legs) for (const leg of o.legs) await alpaca('DELETE', `/v2/orders/${leg.id}`).catch(() => {});
         }
-        if (symbolOrders.length) await sleep(1200);
+        await sleep(1200);
         order = await alpaca('POST', '/v2/orders', buildOrder(currentPrice));
-      } else { throw e; }
+      } else throw e;
     }
 
     if (order?.id) {
       const orders = await alpaca('GET', `/v2/orders?status=open&limit=100&nested=true`).catch(() => []);
-      const symbolOrders = (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol && o.id !== order.id);
-      for (const o of symbolOrders) {
+      for (const o of (Array.isArray(orders) ? orders : []).filter(o => o.symbol === symbol && o.id !== order.id)) {
         await alpaca('DELETE', `/v2/orders/${o.id}`).catch(() => {});
         if (o.legs) for (const leg of o.legs) await alpaca('DELETE', `/v2/orders/${leg.id}`).catch(() => {});
       }
@@ -430,358 +371,241 @@ async function cancelAndSell(symbol, qty, side = 'long') {
     }
     return false;
   } catch (e) {
-    console.error(`Failed to close ${symbol}: ${e.message} — bracket orders preserved`);
+    console.error(`Failed to close ${symbol}: ${e.message} — orders preserved`);
     return false;
   }
 }
 
-
+// ─── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   console.log(`\n${'='.repeat(60)}`);
-  console.log(`Pro Agent — ${new Date().toISOString()}`);
+  console.log(`Pro Agent (Catalyst Gap Continuation) — ${new Date().toISOString()}`);
   console.log('='.repeat(60));
 
   const state = loadState();
-
-  // Reset daily counter if new day
   const today = new Date().toISOString().slice(0, 10);
   if (state.dailyDate !== today) {
     state.dailyTrades = 0;
-    state.dailyDate   = today;
-    addLog(state, 'INFO', `New trading day — counter reset`);
+    state.dailyDate = today;
+    addLog(state, 'INFO', 'New trading day — counter reset');
   }
 
-  if (!isMarketOpen()) {
-    addLog(state, 'INFO', 'Market closed — trailing stops only');
-    // Still manage trailing stops even outside hours
-  }
-
-  // ── 1. Fetch account + positions ──────────────────────────────────────────
+  // 1. Account + positions
   let account, positions;
   try {
     [account, positions] = await Promise.all([
       alpaca('GET', '/v2/account'),
       alpaca('GET', '/v2/positions'),
     ]);
-    addLog(state, 'INFO',
-      `Account: $${(+account.equity).toFixed(2)} | ${positions.length} positions open | ${state.dailyTrades} trades today`
-    );
+    addLog(state, 'INFO', `Account: $${(+account.equity).toFixed(2)} | ${positions.length} positions | ${state.dailyTrades} trades today`);
   } catch (e) {
     addLog(state, 'ERROR', `Account fetch failed: ${e.message}`);
-    saveState(state);
-    process.exit(1);
+    saveState(state); process.exit(1);
   }
 
-  // ── 2. Manage trailing stops ──────────────────────────────────────────────
-  const ictPositions = state.ictPositions || []; // don't touch ICT positions
+  const ictPositions = state.ictPositions || [];
+  const managed = positions.filter(p => !ictPositions.includes(p.symbol));
 
-  // Seed trailing stops for any positions not yet tracked
-  for (const p of positions) {
-    if (ictPositions.includes(p.symbol)) continue;
+  // 2. Seed trailing-stop state for any managed position not yet tracked
+  for (const p of managed) {
     if (!state.trailingStops[p.symbol]) {
       const price = +p.current_price || 0;
       const entry = +p.avg_entry_price || 0;
-      // Seed high as max of current price and entry — captures any gains already made
+      const isShort = +p.qty < 0;
       state.trailingStops[p.symbol] = {
-        high:  Math.max(price, entry),
-        entry: entry,
-        tp:    null,
-        sl:    null,
+        side: isShort ? 'short' : 'long',
+        entry, high: Math.max(price, entry), low: Math.min(price, entry),
+        initialSl: null, sl: null, tp: null, slOrderId: null, tpOrderId: null,
+        movedToBreakeven: false,
       };
-      addLog(state, 'INFO', `Seeded trailing stop for ${p.symbol}`,
-        `Entry $${entry.toFixed(2)} | Current $${price.toFixed(2)} | High set to $${Math.max(price,entry).toFixed(2)}`);
     }
   }
 
-  // ── Restore bracket order TP/SL from Alpaca ───────────────────────────────
+  // 3. Restore bracket leg IDs + prices from Alpaca
   try {
-    const openOrders = await alpaca('GET', '/v2/orders?status=open&limit=200&nested=true');
-    if (Array.isArray(openOrders)) {
-      let tpFound = 0, slFound = 0;
-      for (const o of openOrders) {
-        const sym = o.symbol;
-        if (!state.trailingStops[sym]) continue;
-        const legs = o.legs || [];
-        for (const leg of legs) {
-          if (leg.type === 'limit' && leg.side === 'sell') { state.trailingStops[sym].tp = +leg.limit_price; tpFound++; }
-          if (leg.type === 'stop'  && leg.side === 'sell') { state.trailingStops[sym].sl = +leg.stop_price;  slFound++; }
+    const open = await alpaca('GET', '/v2/orders?status=open&limit=200&nested=true');
+    if (Array.isArray(open)) {
+      for (const o of open) {
+        const ts = state.trailingStops[o.symbol];
+        if (!ts) continue;
+        for (const leg of (o.legs || [])) {
+          if (leg.type === 'limit' && leg.side === 'sell') { ts.tp = +leg.limit_price; ts.tpOrderId = leg.id; }
+          if (leg.type === 'stop'  && leg.side === 'sell') {
+            ts.sl = +leg.stop_price; ts.slOrderId = leg.id;
+            if (ts.initialSl == null) ts.initialSl = +leg.stop_price;
+          }
         }
       }
-      addLog(state, 'INFO', `Bracket orders — TP found: ${tpFound}, SL found: ${slFound}`);
     }
-  } catch (e) {
-    addLog(state, 'INFO', `Could not restore bracket orders: ${e.message}`);
-  }
+  } catch (e) { addLog(state, 'INFO', `Bracket restore failed: ${e.message}`); }
 
-  // For positions missing TP/SL or where TP is below current price (stale estimate)
-  for (const p of positions) {
+  // 4. Clean trailing state for positions that no longer exist
+  const active = new Set(positions.map(p => p.symbol));
+  for (const sym of Object.keys(state.trailingStops)) if (!active.has(sym)) delete state.trailingStops[sym];
+
+  // 5. Manage stops: breakeven at +1R, then trail the profit
+  const regular = isRegularHours();
+  for (const p of managed) {
+    const price = +p.current_price || 0;
+    const entry = +p.avg_entry_price || 0;
+    const qty = Math.abs(+p.qty) || 0;
+    const pl = +p.unrealized_pl || 0;
+    if (!price || !entry || !qty) continue;
     const ts = state.trailingStops[p.symbol];
     if (!ts) continue;
-    const currentPrice = +p.current_price || 0;
-    const tpStale = ts.tp && ts.tp <= currentPrice; // TP below current = stale
-    if (ts.tp && ts.sl && !tpStale) continue; // valid TP/SL already set
-    try {
-      const candles = await getCandles(p.symbol, '1mo', '1h');
-      if (candles && candles.length > 14) {
-        const atr   = calcATR(candles, 14);
-        const entry = ts.entry || +p.avg_entry_price;
-        const high  = ts.high  || currentPrice;
-        ts.tp = +(high + atr * 3).toFixed(2);
-        ts.sl = +(entry - atr * 1.5).toFixed(2);
-        addLog(state, 'INFO', `${tpStale?'Recalculated':'Estimated'} TP/SL for ${p.symbol}`,
-          `Entry $${entry.toFixed(2)} | High $${high.toFixed(2)} | ATR $${atr.toFixed(2)} | TP $${ts.tp} | SL $${ts.sl}`);
-      }
-    } catch(e) { addLog(state, 'INFO', `TP/SL calc failed for ${p.symbol}: ${e.message}`); }
-    await sleep(200);
-  }
 
-  // Now run trailing stop checks
-  // Clean up trailing stops for positions that no longer exist
-  const activeSymbols = new Set(positions.map(p => p.symbol));
-  for (const sym of Object.keys(state.trailingStops)) {
-    if (!activeSymbols.has(sym)) {
-      delete state.trailingStops[sym];
-    }
-  }
-
-  const regular = isRegularHours();
-
-  for (const p of positions) {
-    if (ictPositions.includes(p.symbol)) continue; // ICT agent manages these
-
-    const price  = +p.current_price || 0;
-    const entry  = +p.avg_entry_price || 0;
-    const qty    = Math.abs(+p.qty) || 0;
-    const isShort = +p.qty < 0;
-    if (!price || !entry || !qty) continue;
-
-    // Initialise trailing stop state
-    if (!state.trailingStops[p.symbol]) {
-      state.trailingStops[p.symbol] = {
-        high:  isShort ? price : Math.max(price, entry),
-        low:   isShort ? Math.min(price, entry) : price,
-        entry, tp: null, sl: null, side: isShort ? 'short' : 'long',
-      };
-    }
-
-    const ts = state.trailingStops[p.symbol];
-    const pl = +p.unrealized_pl || 0;
-
-    if (isShort) {
-      // SHORT: track the LOW — trailing stop triggers when price rises above low + trail%
-      if (price < (ts.low || entry) && price !== ts.tp) ts.low = price;
+    // ── SHORT (defensive only — agent is long-only; legacy handling) ───────
+    if (ts.side === 'short') {
+      if (price < (ts.low || entry)) ts.low = price;
       const stop = +((ts.low || entry) * (1 + CFG.trail)).toFixed(2);
-
-      // Alert if no SL set
-      if (!ts.sl) {
-        addLog(state, 'INFO', `⚠ ${p.symbol} SHORT has no SL — trailing stop only at $${stop}`);
-      }
-
-      // TP hit in extended hours for SHORT
-      if (ts.tp && !regular && price <= ts.tp) {
-        addLog(state, 'TRAIL', `TP hit (SHORT/ext hours): ${p.symbol} @ $${price} ≤ TP $${ts.tp}`);
-        await cancelAndSell(p.symbol, qty, 'short');
-        delete state.trailingStops[p.symbol];
-        continue;
-      }
-      // Never trigger trailing stop if price is below TP
-      if (ts.tp && price <= ts.tp && (regular || price > ts.tp * 0.99)) continue;
-
       if (price >= stop) {
-        addLog(state, 'TRAIL',
-          `Trailing stop (SHORT): ${p.symbol} @ $${price} | Low $${ts.low} → Stop $${stop} | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`
-        );
         const closed = await cancelAndSell(p.symbol, qty, 'short');
-        if (closed) {
-          addLog(state, 'SELL', `✓ Closed SHORT ${p.symbol}`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`);
-          delete state.trailingStops[p.symbol];
-          state.openPositions = (state.openPositions || []).filter(t => t !== p.symbol);
+        if (closed) { addLog(state, 'SELL', `✓ Closed SHORT ${p.symbol}`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
+      }
+      continue;
+    }
+
+    // ── LONG ───────────────────────────────────────────────────────────────
+    if (price > ts.high) ts.high = price;
+    const initialSl = ts.initialSl ?? ts.sl;
+    const R = initialSl ? (entry - initialSl) : 0; // dollar risk per share
+
+    // (a) Move to breakeven once unrealised gain >= 1R
+    if (!ts.movedToBreakeven && R > 0 && price >= entry + R) {
+      const beStop = +(entry * (1 + CFG.beBufferPct)).toFixed(2);
+      if (ts.slOrderId && beStop > (ts.sl || 0)) {
+        try {
+          await moveStopLeg(ts.slOrderId, beStop);
+          ts.sl = beStop; ts.movedToBreakeven = true;
+          addLog(state, 'TRAIL', `${p.symbol} → BREAKEVEN`, `Entry $${entry.toFixed(2)} | +1R reached @ $${price.toFixed(2)} | Stop → $${beStop}`);
+        } catch (e) { addLog(state, 'INFO', `${p.symbol} breakeven move failed: ${e.message}`); }
+      } else if (!ts.slOrderId) {
+        ts.movedToBreakeven = true; ts.sl = beStop; // no leg to patch; tracked logically
+      }
+    }
+
+    // (b) After breakeven, trail the profit (never below breakeven)
+    if (ts.movedToBreakeven) {
+      const trailStop = +(ts.high * (1 - CFG.trail)).toFixed(2);
+      const newStop = Math.max(trailStop, ts.sl || 0);
+      if (ts.slOrderId && newStop > (ts.sl || 0) + 0.01) {
+        try {
+          await moveStopLeg(ts.slOrderId, newStop);
+          addLog(state, 'TRAIL', `${p.symbol} stop raised → $${newStop}`, `High $${ts.high.toFixed(2)} | P&L +$${pl.toFixed(2)}`);
+          ts.sl = newStop;
+        } catch (e) { addLog(state, 'INFO', `${p.symbol} trail patch failed: ${e.message}`); }
+      }
+    }
+
+    // (c) Extended hours: bracket stops don't fire — close manually if breached
+    if (!regular && ts.sl && price <= ts.sl) {
+      const closed = await cancelAndSell(p.symbol, qty, 'long');
+      if (closed) { addLog(state, 'SELL', `✓ Closed ${p.symbol} (ext-hours stop)`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
+    } else if (!regular && ts.tp && price >= ts.tp) {
+      const closed = await cancelAndSell(p.symbol, qty, 'long');
+      if (closed) { addLog(state, 'SELL', `✓ Closed ${p.symbol} (ext-hours TP)`, `P&L +$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
+    }
+    await sleep(150);
+  }
+
+  // 6. EOD review — cut weak positions, hold strong closers overnight
+  if (isMarketOpen()) {
+    const { mins } = etPartsOf(new Date());
+    const minsToClose = 960 - mins;
+    if (minsToClose <= CFG.eodReviewMin && minsToClose > 2) {
+      addLog(state, 'INFO', `EOD review (${minsToClose} min to close) — cutting weak positions`);
+      for (const p of managed) {
+        const pl = +p.unrealized_pl || 0;
+        const price = +p.current_price || 0;
+        const candles = await getCandles(p.symbol, '5d', '5m');
+        const vwap = candles ? calcVWAP(candles) : 0;
+        const weak = pl <= 0 || (vwap > 0 && price < vwap); // red OR lost VWAP = don't hold overnight
+        if (weak) {
+          const closed = await cancelAndSell(p.symbol, Math.abs(+p.qty), p.qty < 0 ? 'short' : 'long');
+          if (closed) { addLog(state, 'SELL', `✓ EOD cut ${p.symbol}`, `Weak into close | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
+        } else {
+          addLog(state, 'INFO', `${p.symbol} held overnight`, `Strong close | P&L +$${pl.toFixed(2)} | above VWAP`);
         }
-      }
-    } else {
-      // LONG: track the HIGH — trailing stop triggers when price drops below high - trail%
-      if (price > ts.high && price !== ts.tp) ts.high = price;
-      const stop = +(ts.high * (1 - CFG.trail)).toFixed(2);
-
-      // Alert if no SL set
-      if (!ts.sl) {
-        addLog(state, 'INFO', `⚠ ${p.symbol} LONG has no SL — trailing stop only at $${stop}`);
-      }
-
-      // TP hit in extended hours for LONG
-      if (ts.tp && !regular && price >= ts.tp) {
-        addLog(state, 'TRAIL', `TP hit (ext hours): ${p.symbol} @ $${price} ≥ TP $${ts.tp}`);
-        const closed = await cancelAndSell(p.symbol, qty, 'long');
-        if (closed) { delete state.trailingStops[p.symbol]; }
-        continue;
-      }
-      // Regular hours: bracket handles TP
-      if (ts.tp && regular && price >= ts.tp) continue;
-
-      if (price <= stop) {
-        addLog(state, 'TRAIL',
-          `Trailing stop: ${p.symbol} @ $${price} | High $${ts.high} → Stop $${stop} | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`
-        );
-        const closed = await cancelAndSell(p.symbol, qty, 'long');
-        if (closed) {
-          addLog(state, 'SELL', `✓ Closed ${p.symbol}`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`);
-          delete state.trailingStops[p.symbol];
-          state.openPositions = (state.openPositions || []).filter(t => t !== p.symbol);
-        }
+        await sleep(200);
       }
     }
   }
 
-  // ── 3. Check if we should scan for new entries ────────────────────────────
-  if (!isMarketOpen()) {
-    addLog(state, 'INFO', 'Outside market hours — skipping new entries');
-    saveState(state);
-    return;
-  }
+  // 7. Should we look for NEW entries?
+  if (!isMarketOpen()) { addLog(state, 'INFO', 'Outside market hours — no new entries'); saveState(state); return; }
 
-  // Fine-grained time checks
-  const etNow = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
-  const etMins = etNow.getHours()*60 + etNow.getMinutes();
-  const minsAfterOpen = etMins - (9*60+30);
-  const minsToClose   = (16*60) - etMins;
+  const { mins } = etPartsOf(new Date());
+  const minsAfterOpen = mins - 570;
+  const minsToClose = 960 - mins;
+  if (CFG.skipFirst15 && minsAfterOpen < 15) { addLog(state, 'INFO', `Skip — first 15 min (${minsAfterOpen} min in)`); saveState(state); return; }
+  if (CFG.skipLast30 && minsToClose < 30) { addLog(state, 'INFO', `Skip new entries — last 30 min`); saveState(state); return; }
+  if (state.dailyTrades >= CFG.maxDaily) { addLog(state, 'INFO', `Daily limit reached (${CFG.maxDaily})`); saveState(state); return; }
+  if (positions.length >= CFG.maxPos) { addLog(state, 'INFO', `Position limit reached (${positions.length}/${CFG.maxPos})`); saveState(state); return; }
 
-  if (CFG.skipFirst15 && minsAfterOpen < 15) {
-    addLog(state, 'INFO', `Skipping — first 15 min after open (${minsAfterOpen.toFixed(0)} min in)`);
-    saveState(state);
-    return;
-  }
-  if (CFG.skipLast30 && minsToClose < 30) {
-    addLog(state, 'INFO', `Skipping — last 30 min before close (${minsToClose.toFixed(0)} min left)`);
-    saveState(state);
-    return;
-  }
-
-  if (state.dailyTrades >= CFG.maxDaily) {
-    addLog(state, 'INFO', `Daily limit reached (${CFG.maxDaily})`);
-    saveState(state);
-    return;
-  }
-
-  if (positions.length >= CFG.maxPos) {
-    addLog(state, 'INFO', `Position limit reached (${positions.length}/${CFG.maxPos})`);
-    saveState(state);
-    return;
-  }
-
-  // ── 4. Run screener + merge with pre-market watchlist ────────────────────
-  addLog(state, 'INFO', 'Fetching watchlist and screener...');
-
-  // Try pre-market watchlist saved by dashboard first
+  // 8. Build candidate universe
   const savedWatchlist = await fetchVercelWatchlist();
-  if (savedWatchlist?.length) {
-    addLog(state, 'INFO', `Pre-market watchlist loaded: ${savedWatchlist.length} tickers`,
-      savedWatchlist.slice(0, 8).join(', ') + (savedWatchlist.length > 8 ? '…' : ''));
-  }
+  if (savedWatchlist?.length) addLog(state, 'INFO', `Watchlist: ${savedWatchlist.length} tickers`, savedWatchlist.slice(0, 8).join(', '));
+  const screener = await runScreener();
+  const candidates = [...new Set([...(savedWatchlist || []), ...screener])];
+  const existing = new Set(positions.map(p => p.symbol));
+  const toScan = candidates.filter(t => !existing.has(t)).slice(0, 40);
+  addLog(state, 'INFO', `Scanning ${toScan.length} candidates`, `${savedWatchlist?.length || 0} watchlist + ${screener.length} screener`);
 
-  const screenerTickers = await runScreener();
-  // Merge: saved watchlist first (priority), then screener
-  const allCandidates = [...new Set([...(savedWatchlist||[]), ...screenerTickers])];
-  const existingSymbols = new Set(positions.map(p => p.symbol));
-  const toScan = allCandidates.filter(t => !existingSymbols.has(t)).slice(0, 40);
-  addLog(state, 'INFO', `Scanning ${toScan.length} candidates`,
-    `${savedWatchlist?.length||0} from watchlist + ${screenerTickers.length} from screener`);
-
-  // ── 5. Analyze signals ────────────────────────────────────────────────────
+  // 9. Analyze
   const signals = [];
   for (const ticker of toScan) {
     try {
-      const signal = await analyzeSignal(ticker);
-      if (signal && signal.score >= CFG.minScore) {
-        addLog(state, 'SIGNAL',
-          `${ticker} — score ${signal.score} | ATR ${signal.atrPct.toFixed(2)}% | RSI ${signal.rsi.toFixed(0)} | RelVol ${(signal.relVol||0).toFixed(1)}×`,
-          signal.patterns.map(p => p.name).join(', ')
-        );
-        signals.push(signal);
+      const s = await analyzeSignal(ticker);
+      if (s && s.score >= CFG.minScore) {
+        addLog(state, 'SIGNAL', `${ticker} — score ${s.score} | gap ${s.gapPct.toFixed(1)}% | relVol ${s.relVol.toFixed(1)}× | RSI ${s.rsi.toFixed(0)}`, s.patterns.map(p => p.name).join(', '));
+        signals.push(s);
       }
-    } catch (e) {
-      console.warn(`Analysis failed for ${ticker}: ${e.message}`);
-    }
-    await sleep(200); // rate limit
+    } catch (e) { console.warn(`Analysis failed for ${ticker}: ${e.message}`); }
+    await sleep(200);
   }
-
-  if (!signals.length) {
-    addLog(state, 'INFO', 'No signals meeting criteria');
-    saveState(state);
-    return;
-  }
-
-  // Sort by score
+  if (!signals.length) { addLog(state, 'INFO', 'No signals meeting criteria'); saveState(state); return; }
   signals.sort((a, b) => b.score - a.score);
   addLog(state, 'INFO', `Top signal: ${signals[0].ticker} (score ${signals[0].score})`);
 
-  // ── 6. Execute top signals (max 5 per cycle) ──────────────────────────────
-  const slotsAvailable = Math.min(
-    CFG.maxPos - positions.length,
-    CFG.maxDaily - state.dailyTrades,
-    CFG.maxPerCycle
-  );
-
+  // 10. Execute (fixed-$ risk sizing)
+  const slots = Math.min(CFG.maxPos - positions.length, CFG.maxDaily - state.dailyTrades, CFG.maxPerCycle);
   const tradedThisCycle = new Set();
-  for (const signal of signals.slice(0, slotsAvailable)) {
-    if (existingSymbols.has(signal.ticker)) { addLog(state,'INFO',`SKIP ${signal.ticker} — already open`); continue; }
-    if (tradedThisCycle.has(signal.ticker)) { addLog(state,'INFO',`SKIP ${signal.ticker} — already traded this cycle`); continue; }
+  for (const sig of signals.slice(0, slots)) {
+    if (existing.has(sig.ticker) || tradedThisCycle.has(sig.ticker)) continue;
+    const { ticker, price, atr, patterns } = sig;
 
-    const { ticker, price, atr, atrPct, patterns } = signal;
-    const slMult = calcDynamicSL(signal);
-    const tpMult = calcDynamicTP(signal, slMult);
-    const sl     = +(price - atr * slMult).toFixed(2);
-    const tp     = +(price + atr * tpMult).toFixed(2);
-    const slF    = +Math.min(sl, price - 0.05).toFixed(2);
-    const tpF    = +Math.max(tp, price + 0.05).toFixed(2);
-    const riskPS = price - slF;
-    const effectiveSize = price < 5  ? Math.min(CFG.size, 100)
-                        : price < 10 ? Math.min(CFG.size, 200)
-                        : price < 20 ? Math.min(CFG.size, 300)
-                        : CFG.size;
-    const qty = Math.max(1, Math.min(
-      Math.floor((effectiveSize * 0.02) / riskPS),
-      Math.floor(effectiveSize / price)
-    ));
-    const rr     = ((tpF - price) / (price - slF)).toFixed(1);
+    const slRaw = price - atr * CFG.atrSL;
+    const slF = +Math.min(slRaw, price - 0.05).toFixed(2);   // structural stop
+    const tpF = +(price + atr * CFG.atrTP).toFixed(2);       // TP ceiling
+    const riskPS = Math.max(0.01, price - slF);              // $ risk per share
+    const qtyByRisk = Math.floor(CFG.riskPerTrade / riskPS); // FIXED-$ risk sizing
+    const qtyByValue = Math.floor(CFG.maxPosValue / price);  // value cap
+    const qty = Math.max(1, Math.min(qtyByRisk, qtyByValue));
+    const rr = ((tpF - price) / riskPS).toFixed(1);
+    const dollarRisk = (riskPS * qty).toFixed(2);
 
-    addLog(state, 'BUY',
-      `Placing: ${qty}x ${ticker} @ ~$${price.toFixed(2)}`,
-      `Patterns: ${patterns.map(p => p.name).join(', ')} | SL ${slMult}× $${slF} | TP ${tpMult}× $${tpF} | R:R ${rr}`
-    );
+    addLog(state, 'BUY', `Placing ${qty}× ${ticker} @ ~$${price.toFixed(2)}`,
+      `gap ${sig.gapPct.toFixed(1)}% | risk $${dollarRisk} | SL $${slF} | TP $${tpF} | R:R ${rr} | ${patterns.map(p => p.name).join(', ')}`);
 
     try {
       const order = await alpaca('POST', '/v2/orders', {
-        symbol:       ticker,
-        qty:          String(qty),
-        side:         'buy',
-        type:         'market',
-        time_in_force:'gtc',
-        order_class:  'bracket',
-        take_profit:  { limit_price: String(tpF) },
-        stop_loss:    { stop_price: String(slF) },
+        symbol: ticker, qty: String(qty), side: 'buy', type: 'market', time_in_force: 'gtc',
+        order_class: 'bracket', take_profit: { limit_price: String(tpF) }, stop_loss: { stop_price: String(slF) },
       });
-
       if (order.id) {
-        addLog(state, 'BUY', `✓ ORDER PLACED: ${qty}x ${ticker}`, `ID: ${order.id} | R:R ${rr}:1`);
-        state.trailingStops[ticker] = { high: price, entry: price, tp: tpF, sl: slF };
-        state.openPositions = [...(state.openPositions || []), ticker];
-        existingSymbols.add(ticker);
-        tradedThisCycle.add(ticker);
-        state.dailyTrades++;
+        addLog(state, 'BUY', `✓ ORDER PLACED: ${qty}× ${ticker}`, `ID ${order.id} | R:R ${rr}:1 | risk $${dollarRisk}`);
+        state.trailingStops[ticker] = {
+          side: 'long', entry: price, high: price, low: price,
+          initialSl: slF, sl: slF, tp: tpF, slOrderId: null, tpOrderId: null, movedToBreakeven: false,
+        };
+        existing.add(ticker); tradedThisCycle.add(ticker); state.dailyTrades++;
       }
-    } catch (e) {
-      addLog(state, 'ERROR', `Order failed ${ticker}: ${e.message}`);
-    }
-
+    } catch (e) { addLog(state, 'ERROR', `Order failed ${ticker}: ${e.message}`); }
     await sleep(500);
   }
 
-  // ── 7. Save state ─────────────────────────────────────────────────────────
   saveState(state);
   console.log('\n✓ Cycle complete');
 }
 
-main().catch(e => {
-  console.error('Fatal error:', e);
-  process.exit(1);
-});
+main().catch(e => { console.error('Fatal error:', e); process.exit(1); });
