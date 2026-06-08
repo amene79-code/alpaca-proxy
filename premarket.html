@@ -69,6 +69,13 @@ button:hover{border-color:#4a4a6a;color:#dde1f0}
 .src-news{background:#1a0d1a;color:#e879f9}
 .src-insider{background:#0d1a1a;color:#7efff5}
 
+/* Source filter toggles */
+.ftog{display:flex;align-items:center;gap:4px;font-size:10px;color:#8888bb;cursor:pointer;background:#0c0c18;border:1px solid #1c1c30;padding:3px 8px;border-radius:6px;user-select:none}
+.ftog:hover{border-color:#4a4a6a}
+.ftog input{width:auto;accent-color:#4ade80;margin:0;cursor:pointer}
+.ftog-hype{color:#fb923c}
+.ftog-hype input{accent-color:#fb923c}
+
 label{color:#9090c0}
 </style>
 </head>
@@ -146,15 +153,13 @@ label{color:#9090c0}
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
       <div class="micro" style="margin:0">🏆 Combined Signal Score</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
-        <select id="rankFilter" onchange="filterRanked()" style="font-size:10px;padding:3px 8px;background:#08080f;border:1px solid #252540;color:#8888bb;border-radius:6px;width:auto">
-          <option value="all">All sources</option>
-          <option value="social">Social only (Reddit + Stocktwits)</option>
-          <option value="premarket">Pre-market movers only</option>
-          <option value="multi">Multi-source only (2+)</option>
-        </select>
-        <label style="display:flex;align-items:center;gap:5px;font-size:10px;color:#fb923c;cursor:pointer" title="By default, Reddit/Stocktwits-only picks are excluded — they won't pass the agent's gap + volume gates anyway. Tick this to send them anyway.">
-          <input type="checkbox" id="includeHype" style="width:auto;accent-color:#fb923c"> Include hype
-        </label>
+        <span style="font-size:9px;color:#555580;text-transform:uppercase;letter-spacing:0.08em">Include:</span>
+        <label class="ftog"><input type="checkbox" id="f-premarket" checked onchange="filterRanked()"> Pre-market</label>
+        <label class="ftog"><input type="checkbox" id="f-earnings" checked onchange="filterRanked()"> Earnings</label>
+        <label class="ftog"><input type="checkbox" id="f-news" checked onchange="filterRanked()"> News</label>
+        <label class="ftog"><input type="checkbox" id="f-insider" checked onchange="filterRanked()"> Insider</label>
+        <label class="ftog ftog-hype"><input type="checkbox" id="f-reddit" onchange="filterRanked()"> Reddit</label>
+        <label class="ftog ftog-hype"><input type="checkbox" id="f-stwits" onchange="filterRanked()"> Stocktwits</label>
         <button onclick="saveRawToProAgent()" style="font-size:10px;padding:4px 12px;color:#4ade80;border-color:#166534;background:#0d2a1e;border-radius:6px">
           💾 Save → Pro Agent (no AI needed)
         </button>
@@ -397,27 +402,32 @@ function setStatus(msg,color){
 }
 
 // ═══ Render results ═══════════════════════════════════════════════
+// Each "Include:" toggle maps to the source strings produced in renderResults.
+// A ticker is kept if ANY of its sources matches a ticked toggle.
+function enabledSourceMatchers(){
+  const m=[];
+  if(document.getElementById("f-premarket")?.checked) m.push(/pre-?market|volume/i);
+  if(document.getElementById("f-earnings")?.checked)  m.push(/earning/i);
+  if(document.getElementById("f-news")?.checked)      m.push(/news/i);
+  if(document.getElementById("f-insider")?.checked)   m.push(/insider/i);
+  if(document.getElementById("f-reddit")?.checked)    m.push(/reddit/i);
+  if(document.getElementById("f-stwits")?.checked)    m.push(/stocktwit/i);
+  return m;
+}
+function tickerMatchesFilters(t){
+  const matchers=enabledSourceMatchers();
+  if(!matchers.length) return false;            // nothing ticked → save nothing
+  const src=t.sources||[];
+  return src.some(s=>matchers.some(re=>re.test(s)));
+}
+
 function saveRawToProAgent(){
   if(!scanData||!scanData.rankedTickers?.length){
     alert("Run a scan first");return;
   }
-  const rankFilter=document.getElementById("rankFilter")?.value||"all";
-  let list=scanData.rankedTickers||[];
-  if(rankFilter==="social")    list=list.filter(t=>t.sources.some(s=>s.includes("Reddit")||s.includes("Stocktwits")));
-  if(rankFilter==="premarket") list=list.filter(t=>t.sources.some(s=>s.includes("Pre-market")));
-  if(rankFilter==="multi")     list=list.filter(t=>t.sources.length>=2);
-
-  // Catalyst gate: drop hype-only (Reddit/Stocktwits-only) picks unless "Include hype" is ticked.
-  // The agent rejects these at the gap + volume gates anyway, so by default they just waste scan slots.
-  const includeHype=document.getElementById("includeHype")?.checked;
-  if(!includeHype){
-    const before=list.length;
-    list=list.filter(t=>(t.sources||[]).some(s=>/pre-?market|earnings|news|insider|volume/i.test(s)));
-    const dropped=before-list.length;
-    if(dropped>0) console.log(`Excluded ${dropped} hype-only ticker(s) — tick "Include hype" to keep them`);
-  }
+  const list=(scanData.rankedTickers||[]).filter(tickerMatchesFilters);
   if(!list.length){
-    setStatus(includeHype?"No tickers to save":'No catalyst tickers found — tick "Include hype" to save social picks',"#f59e0b");
+    setStatus("Nothing matches the selected sources — tick at least one source above","#f59e0b");
     return;
   }
 
@@ -498,12 +508,8 @@ function filterRanked(){
 function renderResults(d){
   document.getElementById("results").style.display="block";
 
-  // Ranked tickers with filter
-  const rankFilter=document.getElementById("rankFilter")?.value||"all";
-  let rankedList=d.rankedTickers||[];
-  if(rankFilter==="social") rankedList=rankedList.filter(t=>t.sources.some(s=>s.includes("Reddit")||s.includes("Stocktwits")));
-  if(rankFilter==="premarket") rankedList=rankedList.filter(t=>t.sources.some(s=>s.includes("Pre-market")));
-  if(rankFilter==="multi") rankedList=rankedList.filter(t=>t.sources.length>=2);
+  // Ranked tickers — filtered by the "Include:" source toggles
+  let rankedList=(d.rankedTickers||[]).filter(tickerMatchesFilters);
   const ranked=document.getElementById("rankedTickers");
   ranked.innerHTML=(rankedList||[]).map(t=>{
     const src=t.sources||[];
@@ -725,9 +731,3 @@ function renderWatchlist(items){
 }
 
 // Scroll to top of results on new scan
-function scrollToResults(){
-  document.getElementById("results").scrollIntoView({behavior:"smooth"});
-}
-</script>
-</body>
-</html>
