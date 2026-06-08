@@ -3,7 +3,7 @@
     "TNGX": {
       "side": "long",
       "entry": 29.9424991607666,
-      "high": 29.9424991607666,
+      "high": 30.39,
       "low": 29.9424991607666,
       "initialSl": 29.37,
       "sl": 29.37,
@@ -83,44 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T17:08:23.093Z",
+  "lastRun": "2026-06-08T17:17:21.097Z",
   "log": [
-    {
-      "time": "2026-06-05T18:07:09.612Z",
-      "type": "INFO",
-      "msg": "Account: $100114.63 | 1 positions open | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T18:07:09.633Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T18:07:09.877Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T18:07:09.987Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "MU, LULU, RDDT, SPCX, MSFT, PL, NVDA, TSLA…"
-    },
-    {
-      "time": "2026-06-05T18:07:10.425Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 35 from screener"
-    },
-    {
-      "time": "2026-06-05T18:07:22.137Z",
-      "type": "SIGNAL",
-      "msg": "STI — score 8 | ATR 4.54% | RSI 61 | RelVol 4.5×",
-      "detail": "Volume Breakout, Gap Up"
-    },
     {
       "time": "2026-06-05T18:07:22.957Z",
       "type": "INFO",
@@ -1281,6 +1245,42 @@
     },
     {
       "time": "2026-06-08T17:08:23.093Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T17:17:00.549Z",
+      "type": "INFO",
+      "msg": "Account: $100082.45 | 1 positions | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T17:17:01.176Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T17:17:01.463Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TNGX, MRVL, IONQ, INTC, KEEL, CBRS, GLXY, MU, QBTS, MARA"
+    },
+    {
+      "time": "2026-06-08T17:17:01.463Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 28 watchlist"
+    },
+    {
+      "time": "2026-06-08T17:17:21.097Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "MRVL: relVol 1.2× < 2.5× (todayVol 56.4M)  •  IONQ: relVol 0.5× < 2.5× (todayVol 18.7M)  •  INTC: relVol 0.7× < 2.5× (todayVol 92.1M)  •  KEEL: relVol 1.1× < 2.5× (todayVol 48.7M)  •  CBRS: relVol 0.6× < 2.5× (todayVol 5.7M)  •  GLXY: relVol 2.2× < 2.5× (todayVol 12.5M)  •  MU: relVol 0.7× < 2.5× (todayVol 36.7M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 20.3M)  •  MARA: relVol 0.4× < 2.5× (todayVol 17.8M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 24.7M)  •  AAOI: relVol 0.8× < 2.5× (todayVol 9.8M)  •  IREN: relVol 0.4× < 2.5× (todayVol 23.2M)"
+    },
+    {
+      "time": "2026-06-08T17:17:21.097Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
