@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "TNGX": {
-      "side": "long",
-      "entry": 30.909700393676758,
-      "high": 31.385,
-      "low": 30.909700393676758,
-      "initialSl": 30.21,
-      "sl": 30.21,
-      "tp": 32.78,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 8,
   "dailyDate": "2026-06-08",
   "openPositions": [
@@ -83,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T19:24:51.775Z",
+  "lastRun": "2026-06-08T19:31:28.576Z",
   "log": [
-    {
-      "time": "2026-06-08T16:14:00.222Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T16:24:19.042Z",
-      "type": "INFO",
-      "msg": "Account: $100057.10 | 0 positions | 3 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-08T16:24:19.451Z",
       "type": "INFO",
@@ -1283,6 +1258,18 @@
       "time": "2026-06-08T19:24:51.775Z",
       "type": "INFO",
       "msg": "Daily limit reached (8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T19:31:28.312Z",
+      "type": "INFO",
+      "msg": "Account: $100023.35 | 0 positions | 8 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T19:31:28.576Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ]
