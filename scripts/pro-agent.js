@@ -259,46 +259,48 @@ function detectPatterns(candles) {
 
 // ─── Signal analysis: Catalyst Gap Continuation ──────────────────────────────
 async function analyzeSignal(ticker) {
+  const rej = (r) => { (analyzeSignal.rejections = analyzeSignal.rejections || []).push(`${ticker}: ${r}`); return null; };
+
   const candles = await getCandles(ticker, '5d', '5m');
-  if (!candles || candles.length < 30) return null;
+  if (!candles || candles.length < 30) return rej('no 5m candles');
 
   const price = candles[candles.length - 1].close;
-  if (price < 5) return null;
+  if (price < 5) return rej(`price $${price?.toFixed(2)} < $5`);
 
   const daily = await getCandles(ticker, '1mo', '1d');
-  if (!daily || daily.length < 5) return null;
+  if (!daily || daily.length < 5) return rej('no daily candles');
 
   // Liquidity
   const avgDailyVol = daily.slice(-20).reduce((s, c) => s + (c.volume || 0), 0) / Math.min(20, daily.length);
-  if (avgDailyVol < 1_000_000) return null;
+  if (avgDailyVol < 1_000_000) return rej(`avgVol ${(avgDailyVol/1e6).toFixed(1)}M < 1M`);
 
   // ── CATALYST GATE 1: gap vs prior close ─────────────────────────────────
   const priorClose = daily[daily.length - 2]?.close;
-  if (!priorClose) return null;
+  if (!priorClose) return rej('no priorClose');
   const gapPct = (price - priorClose) / priorClose * 100;
-  if (gapPct < CFG.minGapPct) return null;
+  if (gapPct < CFG.minGapPct) return rej(`gap ${gapPct.toFixed(1)}% < ${CFG.minGapPct}% (price $${price.toFixed(2)} vs priorClose $${priorClose.toFixed(2)})`);
 
   // ── CATALYST GATE 2: relative volume ────────────────────────────────────
   const todayVol = daily[daily.length - 1]?.volume || 0;
   const relVol = avgDailyVol > 0 ? todayVol / avgDailyVol : 0;
-  if (relVol < CFG.minRelVol) return null;
+  if (relVol < CFG.minRelVol) return rej(`relVol ${relVol.toFixed(1)}× < ${CFG.minRelVol}× (todayVol ${(todayVol/1e6).toFixed(1)}M)`);
 
   // ── HOLD GATE: still holding the move (no gap-and-fade) ──────────────────
   const vwap = calcVWAP(candles);
-  if (vwap > 0 && price < vwap) return null;            // faded below VWAP = fake
+  if (vwap > 0 && price < vwap) return rej(`below VWAP (price $${price.toFixed(2)} < VWAP $${vwap.toFixed(2)})`);
 
   const todays = todaysRegularCandles(candles);
   const openRange = todays.slice(0, 3);                 // first 15 min (9:30–9:45)
   const orHigh = openRange.length ? Math.max(...openRange.map(c => c.high)) : 0;
-  if (orHigh > 0 && price < orHigh * 0.995) return null; // broke down from opening range
+  if (orHigh > 0 && price < orHigh * 0.995) return rej(`below opening-range high (price $${price.toFixed(2)} < ORH $${orHigh.toFixed(2)}, ${todays.length} today-candles)`);
 
   // Volatility / momentum
   const atr = calcATR(candles, 14);
   const atrPct = atr / price * 100;
-  if (atrPct < CFG.minATRpct) return null;
+  if (atrPct < CFG.minATRpct) return rej(`ATR ${atrPct.toFixed(2)}% < ${CFG.minATRpct}%`);
 
   const rsi = calcRSI(candles, 14);
-  if (rsi > CFG.rsiMax) return null;                     // parabolic — don't chase
+  if (rsi > CFG.rsiMax) return rej(`RSI ${rsi.toFixed(0)} > ${CFG.rsiMax}`);
 
   const closes = candles.map(c => c.close);
   const ema9 = calcEMA(closes, 9), ema20 = calcEMA(closes, 20);
@@ -581,6 +583,7 @@ async function main() {
   addLog(state, 'INFO', `Scanning ${toScan.length} candidates`, `${savedWatchlist?.length || 0} watchlist + ${screener.length} screener`);
 
   // 9. Analyze
+  analyzeSignal.rejections = [];
   const signals = [];
   for (const ticker of toScan) {
     try {
@@ -591,6 +594,10 @@ async function main() {
       }
     } catch (e) { console.warn(`Analysis failed for ${ticker}: ${e.message}`); }
     await sleep(200);
+  }
+  // DIAGNOSTIC: show why candidates were rejected (first 12)
+  if (analyzeSignal.rejections.length) {
+    addLog(state, 'INFO', `Rejections (${analyzeSignal.rejections.length})`, analyzeSignal.rejections.slice(0, 12).join('  •  '));
   }
   if (!signals.length) { addLog(state, 'INFO', 'No signals meeting criteria'); saveState(state); return; }
   signals.sort((a, b) => b.score - a.score);
