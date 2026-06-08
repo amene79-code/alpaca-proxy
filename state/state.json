@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T14:23:31.631Z",
+  "lastRun": "2026-06-08T14:33:55.037Z",
   "log": [
-    {
-      "time": "2026-06-04T18:54:01.331Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:54:01.357Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:54:01.445Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T18:54:02.061Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
     {
       "time": "2026-06-04T18:54:15.167Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-06-08T14:23:31.630Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T14:33:43.023Z",
+      "type": "INFO",
+      "msg": "Account: $100094.34 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T14:33:43.123Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T14:33:43.408Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "28 watchlist + 40 screener"
+    },
+    {
+      "time": "2026-06-08T14:33:55.037Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
