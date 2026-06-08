@@ -5,9 +5,15 @@
       "entry": 367.06,
       "tp": 379.91,
       "sl": 360.73
+    },
+    "NRIX": {
+      "high": 16.799999237060547,
+      "entry": 16.799999237060547,
+      "tp": 17.54,
+      "sl": 16.41
     }
   },
-  "dailyTrades": 0,
+  "dailyTrades": 1,
   "dailyDate": "2026-06-08",
   "openPositions": [
     "FIVE",
@@ -73,64 +79,11 @@
     "BB",
     "MRLN",
     "MRLN",
-    "MRLN"
+    "MRLN",
+    "NRIX"
   ],
-  "lastRun": "2026-06-08T13:20:59.154Z",
+  "lastRun": "2026-06-08T13:31:24.280Z",
   "log": [
-    {
-      "time": "2026-06-04T18:01:48.406Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T18:01:48.943Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T18:02:02.317Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:12:15.371Z",
-      "type": "INFO",
-      "msg": "Account: $100190.10 | 3 positions open | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:12:15.448Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:12:15.480Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:12:15.711Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T18:12:16.337Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T18:12:29.457Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-04T18:22:39.801Z",
       "type": "INFO",
@@ -1276,6 +1229,60 @@
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:31:10.139Z",
+      "type": "INFO",
+      "msg": "Account: $100101.09 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:31:10.157Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:31:10.196Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:31:10.285Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF…"
+    },
+    {
+      "time": "2026-06-08T13:31:10.994Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "28 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-08T13:31:21.370Z",
+      "type": "SIGNAL",
+      "msg": "NRIX — score 11 | ATR 1.38% | RSI 96 | RelVol 4.2×",
+      "detail": "Bullish Engulfing, Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-08T13:31:23.733Z",
+      "type": "INFO",
+      "msg": "Top signal: NRIX (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:31:23.733Z",
+      "type": "BUY",
+      "msg": "Placing: 15x NRIX @ ~$16.80",
+      "detail": "Patterns: Bullish Engulfing, Volume Breakout, Gap Up | SL 1.7× $16.41 | TP 3.2× $17.54 | R:R 1.9"
+    },
+    {
+      "time": "2026-06-08T13:31:23.779Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 15x NRIX",
+      "detail": "ID: 68571e20-b2e1-4f8d-8683-1aee905e6969 | R:R 1.9:1"
     }
   ]
 }
