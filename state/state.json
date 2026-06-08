@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "GOOGL": {
-      "high": 369.4604,
-      "entry": 367.06,
-      "tp": 379.91,
-      "sl": 360.73
-    },
-    "NRIX": {
-      "high": 17.540000915527344,
-      "entry": 17.540000915527344,
-      "tp": 19.09,
-      "sl": 16.71
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 2,
   "dailyDate": "2026-06-08",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T13:41:53.431Z",
+  "lastRun": "2026-06-08T13:52:00.296Z",
   "log": [
-    {
-      "time": "2026-06-04T18:33:08.007Z",
-      "type": "INFO",
-      "msg": "Account: $100182.13 | 3 positions open | 6 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:33:08.028Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:33:08.054Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:33:08.172Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
     {
       "time": "2026-06-04T18:33:08.693Z",
       "type": "INFO",
@@ -1284,6 +1247,30 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 7x NRIX",
       "detail": "ID: 1c92b235-f95a-4b6b-a454-dbae27d439a7 | R:R 1.9:1"
+    },
+    {
+      "time": "2026-06-08T13:51:46.361Z",
+      "type": "INFO",
+      "msg": "Account: $100094.34 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:51:46.518Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T13:51:46.863Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "28 watchlist + 40 screener"
+    },
+    {
+      "time": "2026-06-08T13:52:00.295Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ]
 }
