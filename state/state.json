@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T14:02:32.904Z",
+  "lastRun": "2026-06-08T14:13:03.814Z",
   "log": [
-    {
-      "time": "2026-06-04T18:43:36.295Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:43:36.478Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T18:43:37.088Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T18:43:39.471Z",
-      "type": "SIGNAL",
-      "msg": "CRWD — score 5 | ATR 0.29% | RSI 67 | RelVol 1.5×",
-      "detail": "Bullish Engulfing"
-    },
     {
       "time": "2026-06-04T18:43:49.789Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-06-08T14:02:32.903Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T14:12:48.363Z",
+      "type": "INFO",
+      "msg": "Account: $100094.34 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T14:12:48.747Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T14:12:49.176Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "28 watchlist + 40 screener"
+    },
+    {
+      "time": "2026-06-08T14:13:03.814Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
