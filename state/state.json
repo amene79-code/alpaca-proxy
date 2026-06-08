@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "GOOGL": {
-      "high": 367.25,
+      "high": 367.4849,
       "entry": 367.06,
       "tp": 379.91,
       "sl": 360.73
@@ -75,32 +75,8 @@
     "MRLN",
     "MRLN"
   ],
-  "lastRun": "2026-06-08T13:00:27.230Z",
+  "lastRun": "2026-06-08T13:02:39.217Z",
   "log": [
-    {
-      "time": "2026-06-04T17:51:19.673Z",
-      "type": "INFO",
-      "msg": "Account: $100183.14 | 2 positions open | 4 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:51:19.738Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:51:19.938Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:51:20.145Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
     {
       "time": "2026-06-04T17:51:21.014Z",
       "type": "INFO",
@@ -1273,6 +1249,30 @@
     },
     {
       "time": "2026-06-08T13:00:27.230Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:02:38.654Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:02:38.890Z",
+      "type": "INFO",
+      "msg": "Account: $100103.01 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:02:38.963Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:02:39.217Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
