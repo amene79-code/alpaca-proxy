@@ -83,20 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T19:02:40.138Z",
+  "lastRun": "2026-06-08T19:04:24.985Z",
   "log": [
-    {
-      "time": "2026-06-08T15:52:26.750Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 28 watchlist"
-    },
-    {
-      "time": "2026-06-08T15:52:45.011Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "TNGX: below opening-range high (price $29.49 < ORH $30.01, 30 today-candles)  •  MRVL: relVol 1.0× < 2.5× (todayVol 47.2M)  •  INTC: relVol 0.6× < 2.5× (todayVol 76.8M)  •  IONQ: relVol 0.4× < 2.5× (todayVol 15.2M)  •  MU: relVol 0.6× < 2.5× (todayVol 30.8M)  •  GLXY: relVol 1.9× < 2.5× (todayVol 10.3M)  •  CBRS: relVol 0.5× < 2.5× (todayVol 4.4M)  •  MARA: relVol 0.3× < 2.5× (todayVol 13.1M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 16.4M)  •  KEEL: relVol 0.8× < 2.5× (todayVol 34.2M)  •  POET: relVol 0.3× < 2.5× (todayVol 15.5M)  •  BMNR: relVol 0.5× < 2.5× (todayVol 19.2M)"
-    },
     {
       "time": "2026-06-08T15:52:45.011Z",
       "type": "INFO",
@@ -1281,6 +1269,18 @@
     },
     {
       "time": "2026-06-08T19:02:40.138Z",
+      "type": "INFO",
+      "msg": "Daily limit reached (8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T19:04:24.557Z",
+      "type": "INFO",
+      "msg": "Account: $100074.95 | 1 positions | 8 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T19:04:24.985Z",
       "type": "INFO",
       "msg": "Daily limit reached (8)",
       "detail": ""
