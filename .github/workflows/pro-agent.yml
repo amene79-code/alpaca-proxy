@@ -19,8 +19,9 @@ jobs:
   run-agent:
     runs-on: ubuntu-latest
     timeout-minutes: 360
-    permissions:
+   permissions:
       contents: write
+      actions: write
 
     steps:
       - name: Checkout repo
