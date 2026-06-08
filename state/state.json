@@ -1,6 +1,19 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 2,
+  "trailingStops": {
+    "TNGX": {
+      "side": "long",
+      "entry": 30.18000030517578,
+      "high": 30.18000030517578,
+      "low": 30.18000030517578,
+      "initialSl": 29.34,
+      "sl": 29.34,
+      "tp": 32.42,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 3,
   "dailyDate": "2026-06-08",
   "openPositions": [
     "FIVE",
@@ -70,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T15:31:33.883Z",
+  "lastRun": "2026-06-08T15:42:07.633Z",
   "log": [
-    {
-      "time": "2026-06-04T19:46:17.195Z",
-      "type": "INFO",
-      "msg": "Skipping — last 30 min before close (14 min left)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T08:10:53.597Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T08:10:53.597Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T08:10:53.817Z",
-      "type": "INFO",
-      "msg": "Account: $100160.55 | 2 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T08:10:53.895Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T08:10:53.906Z",
-      "type": "TRAIL",
-      "msg": "Trailing stop: MRVL @ $304.75 | High $319.785 → Stop $313.39 | P&L $-13.10",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T08:10:55.543Z",
-      "type": "SELL",
-      "msg": "✓ Closed MRVL",
-      "detail": "P&L $-13.10"
-    },
-    {
-      "time": "2026-06-05T08:10:55.543Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T11:36:29.261Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
     {
       "time": "2026-06-05T11:36:29.611Z",
       "type": "INFO",
@@ -1271,6 +1230,60 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-08T15:41:48.135Z",
+      "type": "INFO",
+      "msg": "Account: $100094.34 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T15:41:48.301Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T15:41:48.612Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TNGX, MRVL, INTC, MU, IONQ, CBRS, GLXY, KEEL, QBTS, POET"
+    },
+    {
+      "time": "2026-06-08T15:41:48.612Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 28 watchlist"
+    },
+    {
+      "time": "2026-06-08T15:41:48.752Z",
+      "type": "SIGNAL",
+      "msg": "TNGX — score 12 | gap 49.3% | relVol 3.6× | RSI 79",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-08T15:42:07.079Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "MRVL: relVol 1.0× < 2.5× (todayVol 45.2M)  •  INTC: relVol 0.6× < 2.5× (todayVol 74.5M)  •  MU: relVol 0.5× < 2.5× (todayVol 29.7M)  •  IONQ: relVol 0.4× < 2.5× (todayVol 14.8M)  •  CBRS: relVol 0.5× < 2.5× (todayVol 4.2M)  •  GLXY: relVol 1.7× < 2.5× (todayVol 9.5M)  •  KEEL: relVol 0.7× < 2.5× (todayVol 32.6M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 16.1M)  •  POET: relVol 0.3× < 2.5× (todayVol 15.1M)  •  MARA: relVol 0.3× < 2.5× (todayVol 12.4M)  •  BMNR: relVol 0.5× < 2.5× (todayVol 18.8M)  •  IREN: relVol 0.3× < 2.5× (todayVol 18.5M)"
+    },
+    {
+      "time": "2026-06-08T15:42:07.079Z",
+      "type": "INFO",
+      "msg": "Top signal: TNGX (score 12)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T15:42:07.079Z",
+      "type": "BUY",
+      "msg": "Placing 49× TNGX @ ~$30.18",
+      "detail": "gap 49.3% | risk $41.16 | SL $29.34 | TP $32.42 | R:R 2.7 | Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-08T15:42:07.132Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 49× TNGX",
+      "detail": "ID e73a0be0-0a18-4f28-843c-56a73cc5816c | R:R 2.7:1 | risk $41.16"
     }
   ]
 }
