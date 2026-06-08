@@ -152,8 +152,11 @@ label{color:#9090c0}
           <option value="premarket">Pre-market movers only</option>
           <option value="multi">Multi-source only (2+)</option>
         </select>
+        <label style="display:flex;align-items:center;gap:5px;font-size:10px;color:#fb923c;cursor:pointer" title="By default, Reddit/Stocktwits-only picks are excluded — they won't pass the agent's gap + volume gates anyway. Tick this to send them anyway.">
+          <input type="checkbox" id="includeHype" style="width:auto;accent-color:#fb923c"> Include hype
+        </label>
         <button onclick="saveRawToProAgent()" style="font-size:10px;padding:4px 12px;color:#4ade80;border-color:#166534;background:#0d2a1e;border-radius:6px">
-          💾 Save all → Pro Agent (no AI needed)
+          💾 Save → Pro Agent (no AI needed)
         </button>
       </div>
     </div>
@@ -403,6 +406,20 @@ function saveRawToProAgent(){
   if(rankFilter==="social")    list=list.filter(t=>t.sources.some(s=>s.includes("Reddit")||s.includes("Stocktwits")));
   if(rankFilter==="premarket") list=list.filter(t=>t.sources.some(s=>s.includes("Pre-market")));
   if(rankFilter==="multi")     list=list.filter(t=>t.sources.length>=2);
+
+  // Catalyst gate: drop hype-only (Reddit/Stocktwits-only) picks unless "Include hype" is ticked.
+  // The agent rejects these at the gap + volume gates anyway, so by default they just waste scan slots.
+  const includeHype=document.getElementById("includeHype")?.checked;
+  if(!includeHype){
+    const before=list.length;
+    list=list.filter(t=>(t.sources||[]).some(s=>/pre-?market|earnings|news|insider|volume/i.test(s)));
+    const dropped=before-list.length;
+    if(dropped>0) console.log(`Excluded ${dropped} hype-only ticker(s) — tick "Include hype" to keep them`);
+  }
+  if(!list.length){
+    setStatus(includeHype?"No tickers to save":'No catalyst tickers found — tick "Include hype" to save social picks',"#f59e0b");
+    return;
+  }
 
   const tickers=list.map(t=>({
     ticker:     t.ticker,
