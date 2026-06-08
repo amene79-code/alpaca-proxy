@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T15:19:10.751Z",
+  "lastRun": "2026-06-08T15:27:03.571Z",
   "log": [
-    {
-      "time": "2026-06-04T19:25:34.524Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T19:25:34.615Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T19:25:35.117Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T19:25:35.992Z",
-      "type": "SIGNAL",
-      "msg": "MRVL — score 5 | ATR 0.82% | RSI 49 | RelVol 1.8×",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-04T19:25:47.593Z",
-      "type": "INFO",
-      "msg": "Top signal: MRVL (score 5)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T19:25:47.593Z",
-      "type": "BUY",
-      "msg": "Placing: 1x MRVL @ ~$317.24",
-      "detail": "Patterns: Bullish Engulfing | SL 1.5× $313.34 | TP 2.3× $323.24 | R:R 1.5"
-    },
     {
       "time": "2026-06-04T19:25:47.617Z",
       "type": "BUY",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-08T15:19:10.751Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T15:26:50.457Z",
+      "type": "INFO",
+      "msg": "Account: $100094.34 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T15:26:51.145Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T15:26:51.436Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TNGX, MRVL, INTC, KEEL, IONQ, MU, GLXY, CBRS, QBTS, MARA"
+    },
+    {
+      "time": "2026-06-08T15:26:51.436Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "28 watchlist + 40 screener"
+    },
+    {
+      "time": "2026-06-08T15:27:03.570Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SRKE: no 5m candles  •  KOAN: no 5m candles  •  UNFI: avgVol 0.5M < 1M  •  CPB: gap -1.4% < 4% (price $21.38 vs priorClose $21.68)  •  SUJA: avgVol 0.3M < 1M  •  SAIL: gap -0.5% < 4% (price $18.14 vs priorClose $18.24)  •  VLGEA: avgVol 0.1M < 1M  •  WELNF: no 5m candles  •  APXIF: no 5m candles  •  TPHS: no 5m candles  •  LE: avgVol 0.2M < 1M  •  HEOL: no 5m candles"
+    },
+    {
+      "time": "2026-06-08T15:27:03.570Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
