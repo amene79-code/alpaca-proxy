@@ -1,7 +1,7 @@
 {
   "trailingStops": {
     "GOOGL": {
-      "high": 367.4849,
+      "high": 367.49,
       "entry": 367.06,
       "tp": 379.91,
       "sl": 360.73
@@ -75,32 +75,8 @@
     "MRLN",
     "MRLN"
   ],
-  "lastRun": "2026-06-08T13:02:39.217Z",
+  "lastRun": "2026-06-08T13:10:41.361Z",
   "log": [
-    {
-      "time": "2026-06-04T17:51:21.014Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T17:51:21.561Z",
-      "type": "SIGNAL",
-      "msg": "MRVL — score 5 | ATR 0.72% | RSI 66 | RelVol 1.5×",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-04T17:51:37.209Z",
-      "type": "INFO",
-      "msg": "Top signal: MRVL (score 5)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T17:51:37.210Z",
-      "type": "BUY",
-      "msg": "Placing: 1x MRVL @ ~$316.37",
-      "detail": "Patterns: Bullish Engulfing | SL 1.2× $313.63 | TP 2.2× $321.4 | R:R 1.8"
-    },
     {
       "time": "2026-06-04T17:51:37.540Z",
       "type": "BUY",
@@ -1273,6 +1249,30 @@
     },
     {
       "time": "2026-06-08T13:02:39.217Z",
+      "type": "INFO",
+      "msg": "Outside market hours — skipping new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:10:41.209Z",
+      "type": "INFO",
+      "msg": "Market closed — trailing stops only",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:10:41.307Z",
+      "type": "INFO",
+      "msg": "Account: $100103.02 | 1 positions open | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:10:41.335Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:10:41.361Z",
       "type": "INFO",
       "msg": "Outside market hours — skipping new entries",
       "detail": ""
