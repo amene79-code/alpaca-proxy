@@ -7,13 +7,13 @@
       "sl": 360.73
     },
     "NRIX": {
-      "high": 16.799999237060547,
-      "entry": 16.799999237060547,
-      "tp": 17.54,
-      "sl": 16.41
+      "high": 17.540000915527344,
+      "entry": 17.540000915527344,
+      "tp": 19.09,
+      "sl": 16.71
     }
   },
-  "dailyTrades": 1,
+  "dailyTrades": 2,
   "dailyDate": "2026-06-08",
   "openPositions": [
     "FIVE",
@@ -80,64 +80,11 @@
     "MRLN",
     "MRLN",
     "MRLN",
+    "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T13:31:24.280Z",
+  "lastRun": "2026-06-08T13:41:53.431Z",
   "log": [
-    {
-      "time": "2026-06-04T18:22:39.801Z",
-      "type": "INFO",
-      "msg": "Account: $100182.37 | 2 positions open | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:22:39.870Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:22:39.898Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:22:40.135Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "AVGO, MU, MRVL, MSFT, NVDA, MSTR, AMD, CRWD…"
-    },
-    {
-      "time": "2026-06-04T18:22:40.983Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 40 from screener"
-    },
-    {
-      "time": "2026-06-04T18:22:54.481Z",
-      "type": "SIGNAL",
-      "msg": "CIEN — score 6 | ATR 0.61% | RSI 60 | RelVol 2.5×",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-06-04T18:22:56.166Z",
-      "type": "INFO",
-      "msg": "Top signal: CIEN (score 6)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-04T18:22:56.166Z",
-      "type": "BUY",
-      "msg": "Placing: 1x CIEN @ ~$531.90",
-      "detail": "Patterns: Bullish Engulfing | SL 1.2× $527.99 | TP 2.4× $539.71 | R:R 2.0"
-    },
-    {
-      "time": "2026-06-04T18:22:56.374Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 1x CIEN",
-      "detail": "ID: d7bbffd3-2cd3-4836-a9f5-b5a62917799b | R:R 2.0:1"
-    },
     {
       "time": "2026-06-04T18:33:08.007Z",
       "type": "INFO",
@@ -1283,6 +1230,60 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 15x NRIX",
       "detail": "ID: 68571e20-b2e1-4f8d-8683-1aee905e6969 | R:R 1.9:1"
+    },
+    {
+      "time": "2026-06-08T13:41:38.370Z",
+      "type": "INFO",
+      "msg": "Account: $100101.57 | 1 positions open | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:41:38.402Z",
+      "type": "INFO",
+      "msg": "Bracket orders — TP found: 0, SL found: 0",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:41:38.433Z",
+      "type": "INFO",
+      "msg": "Fetching watchlist and screener...",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:41:38.548Z",
+      "type": "INFO",
+      "msg": "Pre-market watchlist loaded: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF…"
+    },
+    {
+      "time": "2026-06-08T13:41:39.183Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "28 from watchlist + 40 from screener"
+    },
+    {
+      "time": "2026-06-08T13:41:50.387Z",
+      "type": "SIGNAL",
+      "msg": "NRIX — score 8 | ATR 2.27% | RSI 86 | RelVol 5.3×",
+      "detail": "Volume Breakout, Gap Up"
+    },
+    {
+      "time": "2026-06-08T13:41:52.842Z",
+      "type": "INFO",
+      "msg": "Top signal: NRIX (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T13:41:52.842Z",
+      "type": "BUY",
+      "msg": "Placing: 7x NRIX @ ~$17.54",
+      "detail": "Patterns: Volume Breakout, Gap Up | SL 2.1× $16.71 | TP 3.9× $19.09 | R:R 1.9"
+    },
+    {
+      "time": "2026-06-08T13:41:52.931Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 7x NRIX",
+      "detail": "ID: 1c92b235-f95a-4b6b-a454-dbae27d439a7 | R:R 1.9:1"
     }
   ]
 }
