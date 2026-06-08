@@ -83,44 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T17:06:47.234Z",
+  "lastRun": "2026-06-08T17:08:23.093Z",
   "log": [
-    {
-      "time": "2026-06-05T16:42:28.738Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "MU, LULU, RDDT, SPCX, MSFT, PL, NVDA, TSLA…"
-    },
-    {
-      "time": "2026-06-05T16:42:29.630Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 35 from screener"
-    },
-    {
-      "time": "2026-06-05T16:42:41.765Z",
-      "type": "SIGNAL",
-      "msg": "MRLN — score 6 | ATR 2.43% | RSI 60 | RelVol 7.3×",
-      "detail": "Bull Flag"
-    },
-    {
-      "time": "2026-06-05T16:42:44.198Z",
-      "type": "INFO",
-      "msg": "Top signal: MRLN (score 6)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T16:42:44.198Z",
-      "type": "BUY",
-      "msg": "Placing: 10x MRLN @ ~$9.14",
-      "detail": "Patterns: Bull Flag | SL 1.8× $8.74 | TP 3.2× $9.85 | R:R 1.8"
-    },
-    {
-      "time": "2026-06-05T16:42:44.719Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 10x MRLN",
-      "detail": "ID: 2dd7a94e-7ad2-4891-a271-e5b397a85b3f | R:R 1.8:1"
-    },
     {
       "time": "2026-06-05T18:07:09.612Z",
       "type": "INFO",
@@ -1284,6 +1248,42 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 50× TNGX",
       "detail": "ID 1cca4307-8e1e-4d65-af15-83ee28763614 | R:R 2.7:1 | risk $28.62"
+    },
+    {
+      "time": "2026-06-08T17:07:55.859Z",
+      "type": "INFO",
+      "msg": "Account: $100047.70 | 1 positions | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T17:07:56.311Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T17:07:57.014Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TNGX, MRVL, IONQ, KEEL, INTC, CBRS, GLXY, QBTS, MU, MARA"
+    },
+    {
+      "time": "2026-06-08T17:07:57.014Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 28 watchlist"
+    },
+    {
+      "time": "2026-06-08T17:08:23.093Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "MRVL: relVol 1.2× < 2.5× (todayVol 55.6M)  •  IONQ: relVol 0.5× < 2.5× (todayVol 18.3M)  •  KEEL: relVol 1.0× < 2.5× (todayVol 47.6M)  •  INTC: relVol 0.7× < 2.5× (todayVol 90.4M)  •  CBRS: relVol 0.6× < 2.5× (todayVol 5.5M)  •  GLXY: relVol 2.2× < 2.5× (todayVol 12.4M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 20.0M)  •  MU: relVol 0.7× < 2.5× (todayVol 36.1M)  •  MARA: relVol 0.4× < 2.5× (todayVol 17.2M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 24.2M)  •  IREN: relVol 0.4× < 2.5× (todayVol 22.8M)  •  AAOI: relVol 0.8× < 2.5× (todayVol 9.6M)"
+    },
+    {
+      "time": "2026-06-08T17:08:23.093Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ]
 }
