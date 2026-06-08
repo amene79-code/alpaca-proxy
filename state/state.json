@@ -1,6 +1,19 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 3,
+  "trailingStops": {
+    "TNGX": {
+      "side": "long",
+      "entry": 29.9424991607666,
+      "high": 29.9424991607666,
+      "low": 29.9424991607666,
+      "initialSl": 29.37,
+      "sl": 29.37,
+      "tp": 31.47,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 4,
   "dailyDate": "2026-06-08",
   "openPositions": [
     "FIVE",
@@ -70,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T16:57:45.142Z",
+  "lastRun": "2026-06-08T17:06:47.234Z",
   "log": [
-    {
-      "time": "2026-06-05T16:12:17.625Z",
-      "type": "INFO",
-      "msg": "Account: $100114.33 | 0 positions open | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T16:12:17.703Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T16:12:17.739Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T16:12:17.912Z",
-      "type": "INFO",
-      "msg": "Pre-market watchlist loaded: 30 tickers",
-      "detail": "MU, LULU, RDDT, SPCX, MSFT, PL, NVDA, TSLA…"
-    },
-    {
-      "time": "2026-06-05T16:12:18.424Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "30 from watchlist + 38 from screener"
-    },
-    {
-      "time": "2026-06-05T16:12:30.769Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T16:42:28.438Z",
-      "type": "INFO",
-      "msg": "Account: $100114.33 | 0 positions open | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T16:42:28.506Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-05T16:42:28.539Z",
-      "type": "INFO",
-      "msg": "Fetching watchlist and screener...",
-      "detail": ""
-    },
     {
       "time": "2026-06-05T16:42:28.738Z",
       "type": "INFO",
@@ -1271,6 +1230,60 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-08T17:06:27.678Z",
+      "type": "INFO",
+      "msg": "Account: $100057.10 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T17:06:27.906Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T17:06:28.223Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TNGX, MRVL, KEEL, IONQ, INTC, GLXY, CBRS, MU, QBTS, MARA"
+    },
+    {
+      "time": "2026-06-08T17:06:28.224Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 28 watchlist"
+    },
+    {
+      "time": "2026-06-08T17:06:28.363Z",
+      "type": "SIGNAL",
+      "msg": "TNGX — score 8 | gap 48.1% | relVol 4.2× | RSI 60",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T17:06:46.693Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "MRVL: relVol 1.2× < 2.5× (todayVol 55.4M)  •  KEEL: relVol 1.0× < 2.5× (todayVol 47.3M)  •  IONQ: relVol 0.5× < 2.5× (todayVol 18.3M)  •  INTC: relVol 0.7× < 2.5× (todayVol 90.1M)  •  GLXY: relVol 2.2× < 2.5× (todayVol 12.4M)  •  CBRS: relVol 0.6× < 2.5× (todayVol 5.5M)  •  MU: relVol 0.7× < 2.5× (todayVol 36.0M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 20.0M)  •  MARA: relVol 0.4× < 2.5× (todayVol 17.2M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 24.2M)  •  IREN: relVol 0.4× < 2.5× (todayVol 22.7M)  •  AAOI: relVol 0.8× < 2.5× (todayVol 9.6M)"
+    },
+    {
+      "time": "2026-06-08T17:06:46.693Z",
+      "type": "INFO",
+      "msg": "Top signal: TNGX (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T17:06:46.693Z",
+      "type": "BUY",
+      "msg": "Placing 50× TNGX @ ~$29.94",
+      "detail": "gap 48.1% | risk $28.62 | SL $29.37 | TP $31.47 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-06-08T17:06:46.733Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 50× TNGX",
+      "detail": "ID 1cca4307-8e1e-4d65-af15-83ee28763614 | R:R 2.7:1 | risk $28.62"
     }
   ]
 }
