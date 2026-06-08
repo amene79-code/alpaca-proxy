@@ -125,9 +125,12 @@ async function fetchPredefined(scrId, count = 50) {
 
 async function runScreener() {
   const scored = new Map(); // ticker -> prelim score
+  let gainersRaw = 0, activesRaw = 0;
 
   // Day gainers — already gapping/running up today
-  for (const q of await fetchPredefined('day_gainers', 50)) {
+  const gainers = await fetchPredefined('day_gainers', 50);
+  gainersRaw = gainers.length;
+  for (const q of gainers) {
     const sym = (q.symbol || '').toUpperCase();
     const chg = q.regularMarketChangePercent || 0;
     if (!/^[A-Z]{1,5}$/.test(sym)) continue;
@@ -136,7 +139,9 @@ async function runScreener() {
   }
 
   // Most actives — volume leaders (institutional flow)
-  for (const q of await fetchPredefined('most_actives', 50)) {
+  const actives = await fetchPredefined('most_actives', 50);
+  activesRaw = actives.length;
+  for (const q of actives) {
     const sym = (q.symbol || '').toUpperCase();
     if (!/^[A-Z]{1,5}$/.test(sym)) continue;
     const chg = q.regularMarketChangePercent || 0;
@@ -144,7 +149,10 @@ async function runScreener() {
     scored.set(sym, (scored.get(sym) || 0) + 1);
   }
 
-  return [...scored.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40).map(([t]) => t);
+  const list = [...scored.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40).map(([t]) => t);
+  // DIAGNOSTIC: expose what Yahoo actually returned vs what survived filtering
+  runScreener.lastDiag = { gainersRaw, activesRaw, kept: list.length, sample: list.slice(0, 10) };
+  return list;
 }
 
 // ─── Saved pre-market watchlist (committed by the dashboard) ─────────────────
@@ -165,6 +173,20 @@ async function fetchVercelWatchlist() {
     console.log(`Could not fetch watchlist: ${e.message}`);
     return null;
   }
+}
+
+// ─── ICT positions (written by the ICT agent) — never manage these ───────────
+// The ICT agent commits its open tickers to state/ict_positions.json. We read
+// that file and add them to the exclusion list so the two agents never touch
+// each other's trades. Separate file = single writer each = no clobbering.
+async function fetchICTPositions() {
+  try {
+    const r = await fetch('https://raw.githubusercontent.com/amene79-code/alpaca-proxy/main/state/ict_positions.json?t=' + Date.now());
+    if (!r.ok) return [];
+    const d = await r.json();
+    const arr = Array.isArray(d) ? d : (d.tickers || []);
+    return arr.map(t => (t && t.ticker) ? t.ticker : t).filter(Boolean);
+  } catch { return []; }
 }
 
 // ─── Indicators ───────────────────────────────────────────────────────────────
@@ -403,7 +425,11 @@ async function main() {
     saveState(state); process.exit(1);
   }
 
-  const ictPositions = state.ictPositions || [];
+  // ICT positions are managed by the ICT agent — exclude them from everything here.
+  // Merge the persisted state field with the live file the ICT agent commits.
+  const ictFromFile = await fetchICTPositions();
+  const ictPositions = [...new Set([...(state.ictPositions || []), ...ictFromFile])];
+  if (ictPositions.length) addLog(state, 'INFO', `Excluding ${ictPositions.length} ICT position(s) from management`, ictPositions.join(', '));
   const managed = positions.filter(p => !ictPositions.includes(p.symbol));
 
   // 2. Seed trailing-stop state for any managed position not yet tracked
@@ -540,12 +566,15 @@ async function main() {
   if (CFG.skipFirst15 && minsAfterOpen < 15) { addLog(state, 'INFO', `Skip — first 15 min (${minsAfterOpen} min in)`); saveState(state); return; }
   if (CFG.skipLast30 && minsToClose < 30) { addLog(state, 'INFO', `Skip new entries — last 30 min`); saveState(state); return; }
   if (state.dailyTrades >= CFG.maxDaily) { addLog(state, 'INFO', `Daily limit reached (${CFG.maxDaily})`); saveState(state); return; }
-  if (positions.length >= CFG.maxPos) { addLog(state, 'INFO', `Position limit reached (${positions.length}/${CFG.maxPos})`); saveState(state); return; }
+  if (managed.length >= CFG.maxPos) { addLog(state, 'INFO', `Position limit reached (${managed.length}/${CFG.maxPos})`); saveState(state); return; }
 
   // 8. Build candidate universe
   const savedWatchlist = await fetchVercelWatchlist();
   if (savedWatchlist?.length) addLog(state, 'INFO', `Watchlist: ${savedWatchlist.length} tickers`, savedWatchlist.slice(0, 8).join(', '));
   const screener = await runScreener();
+  const diag = runScreener.lastDiag || {};
+  addLog(state, 'INFO', `Screener raw — gainers ${diag.gainersRaw ?? '?'}, actives ${diag.activesRaw ?? '?'}, kept ${diag.kept ?? '?'}`,
+    (diag.sample && diag.sample.length) ? diag.sample.join(', ') : '(none returned)');
   const candidates = [...new Set([...(savedWatchlist || []), ...screener])];
   const existing = new Set(positions.map(p => p.symbol));
   const toScan = candidates.filter(t => !existing.has(t)).slice(0, 40);
@@ -568,7 +597,7 @@ async function main() {
   addLog(state, 'INFO', `Top signal: ${signals[0].ticker} (score ${signals[0].score})`);
 
   // 10. Execute (fixed-$ risk sizing)
-  const slots = Math.min(CFG.maxPos - positions.length, CFG.maxDaily - state.dailyTrades, CFG.maxPerCycle);
+  const slots = Math.min(CFG.maxPos - managed.length, CFG.maxDaily - state.dailyTrades, CFG.maxPerCycle);
   const tradedThisCycle = new Set();
   for (const sig of signals.slice(0, slots)) {
     if (existing.has(sig.ticker) || tradedThisCycle.has(sig.ticker)) continue;
