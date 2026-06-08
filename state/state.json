@@ -83,44 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T17:38:26.237Z",
+  "lastRun": "2026-06-08T17:40:08.990Z",
   "log": [
-    {
-      "time": "2026-06-08T12:52:22.147Z",
-      "type": "INFO",
-      "msg": "Account: $100102.59 | 0 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T12:52:22.221Z",
-      "type": "INFO",
-      "msg": "Bracket orders — TP found: 0, SL found: 0",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T12:52:22.232Z",
-      "type": "INFO",
-      "msg": "Outside market hours — skipping new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T13:00:26.796Z",
-      "type": "INFO",
-      "msg": "Market closed — trailing stops only",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T13:00:26.872Z",
-      "type": "INFO",
-      "msg": "Account: $100102.78 | 1 positions open | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T13:00:26.872Z",
-      "type": "INFO",
-      "msg": "Seeded trailing stop for GOOGL",
-      "detail": "Entry $367.06 | Current $367.25 | High set to $367.25"
-    },
     {
       "time": "2026-06-08T13:00:26.893Z",
       "type": "INFO",
@@ -1281,6 +1245,42 @@
     },
     {
       "time": "2026-06-08T17:38:26.237Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T17:39:42.298Z",
+      "type": "INFO",
+      "msg": "Account: $100076.70 | 1 positions | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-08T17:39:42.896Z",
+      "type": "INFO",
+      "msg": "Watchlist: 28 tickers",
+      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
+    },
+    {
+      "time": "2026-06-08T17:39:43.657Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TNGX, MRVL, INTC, IONQ, KEEL, QBTS, MU, GLXY, CBRS, MARA"
+    },
+    {
+      "time": "2026-06-08T17:39:43.657Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 28 watchlist"
+    },
+    {
+      "time": "2026-06-08T17:40:08.989Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "MRVL: relVol 1.3× < 2.5× (todayVol 58.6M)  •  INTC: relVol 0.8× < 2.5× (todayVol 96.2M)  •  IONQ: relVol 0.6× < 2.5× (todayVol 19.5M)  •  KEEL: relVol 1.1× < 2.5× (todayVol 52.5M)  •  QBTS: relVol 0.5× < 2.5× (todayVol 21.0M)  •  MU: relVol 0.7× < 2.5× (todayVol 38.1M)  •  GLXY: relVol 2.3× < 2.5× (todayVol 13.1M)  •  CBRS: relVol 0.7× < 2.5× (todayVol 6.1M)  •  MARA: relVol 0.5× < 2.5× (todayVol 19.0M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 25.6M)  •  AAOI: relVol 0.8× < 2.5× (todayVol 10.3M)  •  IREN: relVol 0.4× < 2.5× (todayVol 24.2M)"
+    },
+    {
+      "time": "2026-06-08T17:40:08.989Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
