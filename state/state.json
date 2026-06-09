@@ -1,5 +1,66 @@
 {
-  "trailingStops": {},
+  "trailingStops": {
+    "ABAT": {
+      "side": "short",
+      "entry": 3.79,
+      "high": 3.81,
+      "low": 3.79,
+      "initialSl": null,
+      "sl": null,
+      "tp": null,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "ALAB": {
+      "side": "short",
+      "entry": 348.6,
+      "high": 354,
+      "low": 348.6,
+      "initialSl": null,
+      "sl": null,
+      "tp": null,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "MARA": {
+      "side": "short",
+      "entry": 13.93,
+      "high": 13.96,
+      "low": 13.93,
+      "initialSl": null,
+      "sl": null,
+      "tp": null,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "NUVL": {
+      "side": "short",
+      "entry": 122.5,
+      "high": 122.85,
+      "low": 122.5,
+      "initialSl": null,
+      "sl": null,
+      "tp": null,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "TSLA": {
+      "side": "short",
+      "entry": 411.89,
+      "high": 411.89,
+      "low": 411.6,
+      "initialSl": null,
+      "sl": null,
+      "tp": null,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
   "dailyTrades": 0,
   "dailyDate": "2026-06-09",
   "openPositions": [
@@ -70,26 +131,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T07:09:34.644Z",
+  "lastRun": "2026-06-09T11:17:53.380Z",
   "log": [
-    {
-      "time": "2026-06-08T16:56:16.452Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T16:57:23.692Z",
-      "type": "INFO",
-      "msg": "Account: $100057.10 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T16:57:23.959Z",
-      "type": "INFO",
-      "msg": "Watchlist: 28 tickers",
-      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
-    },
     {
       "time": "2026-06-08T16:57:24.384Z",
       "type": "INFO",
@@ -1268,6 +1311,24 @@
     },
     {
       "time": "2026-06-09T07:09:34.644Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T11:17:50.970Z",
+      "type": "INFO",
+      "msg": "Account: $100005.97 | 6 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T11:17:53.379Z",
+      "type": "SELL",
+      "msg": "✓ Closed SHORT LRCX",
+      "detail": "P&L $-7.00"
+    },
+    {
+      "time": "2026-06-09T11:17:53.380Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
