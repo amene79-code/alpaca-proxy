@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T15:29:09.610Z",
+  "lastRun": "2026-06-09T15:39:52.868Z",
   "log": [
-    {
-      "time": "2026-06-08T18:12:04.487Z",
-      "type": "BUY",
-      "msg": "Placing 47× GLXY @ ~$31.47",
-      "detail": "gap 25.2% | risk $15.98 | SL $31.13 | TP $32.38 | R:R 2.7 | "
-    },
-    {
-      "time": "2026-06-08T18:12:04.687Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 47× GLXY",
-      "detail": "ID 7bc46194-cd3f-4bbd-a65f-6bb82e522c13 | R:R 2.7:1 | risk $15.98"
-    },
-    {
-      "time": "2026-06-08T18:20:18.551Z",
-      "type": "INFO",
-      "msg": "Account: $100125.06 | 2 positions | 6 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T18:20:19.260Z",
-      "type": "INFO",
-      "msg": "Watchlist: 28 tickers",
-      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
-    },
-    {
-      "time": "2026-06-08T18:20:19.737Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "TNGX, MRVL, IONQ, INTC, MARA, QBTS, KEEL, MU, GLXY, CBRS"
-    },
-    {
-      "time": "2026-06-08T18:20:19.737Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 28 watchlist"
-    },
     {
       "time": "2026-06-08T18:20:41.562Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-09T15:29:09.610Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T15:39:32.420Z",
+      "type": "INFO",
+      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T15:39:33.068Z",
+      "type": "INFO",
+      "msg": "Watchlist: 26 tickers",
+      "detail": "MU, AAPL, MRVL, CNM, NVDA, UEC, ORCL, CHWY"
+    },
+    {
+      "time": "2026-06-09T15:39:33.464Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "NUVL, SJM, ALHC, IFS, CECO, CHRN, VECO, BAP, ACLS, UCTT"
+    },
+    {
+      "time": "2026-06-09T15:39:33.464Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 26 watchlist"
+    },
+    {
+      "time": "2026-06-09T15:39:52.868Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "NUVL: ATR 0.07% < 0.5%  •  SJM: relVol 1.1× < 2.5× (todayVol 2.1M)  •  ALHC: relVol 0.5× < 2.5× (todayVol 3.7M)  •  IFS: avgVol 0.4M < 1M  •  CECO: avgVol 1.0M < 1M  •  CHRN: avgVol 0.4M < 1M  •  VECO: relVol 1.6× < 2.5× (todayVol 1.9M)  •  BAP: avgVol 0.6M < 1M  •  ACLS: avgVol 0.5M < 1M  •  UCTT: relVol 0.7× < 2.5× (todayVol 0.7M)  •  ICHR: relVol 0.5× < 2.5× (todayVol 0.5M)  •  SN: relVol 0.4× < 2.5× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-06-09T15:39:52.868Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
