@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "NUVL": {
-      "side": "short",
-      "entry": 122.5,
-      "high": 122.85,
-      "low": 122.5,
-      "initialSl": null,
-      "sl": null,
-      "tp": null,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 0,
   "dailyDate": "2026-06-09",
   "openPositions": [
@@ -83,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T13:32:24.801Z",
+  "lastRun": "2026-06-09T13:42:40.076Z",
   "log": [
-    {
-      "time": "2026-06-08T17:27:35.832Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "TNGX, MRVL, IONQ, INTC, GLXY, CBRS, MU, KEEL, QBTS, MARA"
-    },
-    {
-      "time": "2026-06-08T17:27:35.833Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 28 watchlist"
-    },
     {
       "time": "2026-06-08T17:27:54.273Z",
       "type": "INFO",
@@ -1283,6 +1258,18 @@
       "time": "2026-06-09T13:32:24.801Z",
       "type": "INFO",
       "msg": "Skip — first 15 min (2 min in)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T13:42:39.944Z",
+      "type": "INFO",
+      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T13:42:40.075Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (12 min in)",
       "detail": ""
     }
   ],
