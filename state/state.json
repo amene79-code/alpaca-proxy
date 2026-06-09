@@ -1,17 +1,5 @@
 {
   "trailingStops": {
-    "ABAT": {
-      "side": "short",
-      "entry": 3.79,
-      "high": 3.81,
-      "low": 3.71,
-      "initialSl": null,
-      "sl": null,
-      "tp": null,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
     "ALAB": {
       "side": "short",
       "entry": 348.6,
@@ -131,26 +119,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T12:39:40.748Z",
+  "lastRun": "2026-06-09T12:49:58.307Z",
   "log": [
-    {
-      "time": "2026-06-08T17:07:57.014Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 28 watchlist"
-    },
-    {
-      "time": "2026-06-08T17:08:23.093Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "MRVL: relVol 1.2× < 2.5× (todayVol 55.6M)  •  IONQ: relVol 0.5× < 2.5× (todayVol 18.3M)  •  KEEL: relVol 1.0× < 2.5× (todayVol 47.6M)  •  INTC: relVol 0.7× < 2.5× (todayVol 90.4M)  •  CBRS: relVol 0.6× < 2.5× (todayVol 5.5M)  •  GLXY: relVol 2.2× < 2.5× (todayVol 12.4M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 20.0M)  •  MU: relVol 0.7× < 2.5× (todayVol 36.1M)  •  MARA: relVol 0.4× < 2.5× (todayVol 17.2M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 24.2M)  •  IREN: relVol 0.4× < 2.5× (todayVol 22.8M)  •  AAOI: relVol 0.8× < 2.5× (todayVol 9.6M)"
-    },
-    {
-      "time": "2026-06-08T17:08:23.093Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-08T17:17:00.549Z",
       "type": "INFO",
@@ -1329,6 +1299,24 @@
     },
     {
       "time": "2026-06-09T12:39:40.747Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T12:49:56.091Z",
+      "type": "INFO",
+      "msg": "Account: $100005.89 | 5 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T12:49:58.306Z",
+      "type": "SELL",
+      "msg": "✓ Closed SHORT ABAT",
+      "detail": "P&L +$1.31"
+    },
+    {
+      "time": "2026-06-09T12:49:58.307Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
