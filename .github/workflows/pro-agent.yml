@@ -7,12 +7,10 @@ on:
       - 'scripts/pro-agent.js'
       - 'state/watchlist.json'
   schedule:
-    # Early morning check — 08:00-09:59 UTC (4am-5:59am ET)
-    - cron: '*/10 8-9 * * 1-5'
-    # Market hours — every 10 min 13:30-20:00 UTC (9:30am-4pm ET)
+    # Warmup — first fire 13:00 UTC (14:00 UK BST), 30 min before the open
+    - cron: '0 13 * * 1-5'
+    # Trading window — every 10 min 13:00-20:00 UTC (covers 9:30am-4pm ET session)
     - cron: '*/10 13-20 * * 1-5'
-    # Exact market open
-    - cron: '30 13 * * 1-5'
 jobs:
   run-agent:
     runs-on: ubuntu-latest
@@ -48,13 +46,15 @@ jobs:
         run: sleep 600
       - name: Schedule next or stop
         run: |
-          HOUR=$(date -u +%H)
-          DOW=$(date -u +%u)
-          if [ "$DOW" -le 5 ] && [ "$HOUR" -ge 8 ] && [ "$HOUR" -lt 20 ]; then
-            echo "Market hours — triggering next cycle"
+          # Re-dispatch only inside the run window: 13:00-20:30 UTC, Mon-Fri.
+          # 30 min before the US open (13:30 UTC) through 30 min after the close (20:00 UTC).
+          NOW=$(date -u +%H%M)   # HHMM, e.g. 1305, 2030
+          DOW=$(date -u +%u)     # 1=Mon .. 7=Sun
+          if [ "$DOW" -le 5 ] && [ "$NOW" -ge 1300 ] && [ "$NOW" -le 2030 ]; then
+            echo "Inside run window ($NOW UTC) — triggering next cycle"
             gh workflow run pro-agent.yml --ref main
           else
-            echo "Outside market hours — chain stops"
+            echo "Outside run window ($NOW UTC) — chain stops until next scheduled start"
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
