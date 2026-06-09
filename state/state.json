@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T20:06:05.005Z",
+  "lastRun": "2026-06-09T20:07:01.349Z",
   "log": [
-    {
-      "time": "2026-06-09T17:47:23.470Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "NUVL: ATR 0.04% < 0.5%  •  ALHC: relVol 1.1× < 2.5× (todayVol 7.6M)  •  CECO: avgVol 1.0M < 1M  •  IFS: avgVol 0.4M < 1M  •  VECO: below VWAP (price $67.47 < VWAP $67.61)  •  BAP: avgVol 0.6M < 1M  •  SJM: relVol 1.7× < 2.5× (todayVol 3.2M)  •  DKNG: relVol 1.1× < 2.5× (todayVol 12.7M)  •  SN: relVol 0.6× < 2.5× (todayVol 1.6M)  •  MH: avgVol 0.4M < 1M  •  ARE: relVol 0.8× < 2.5× (todayVol 1.5M)  •  ACLS: avgVol 0.5M < 1M"
-    },
-    {
-      "time": "2026-06-09T17:47:23.470Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-09T17:50:06.421Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-06-09T20:06:05.005Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T20:07:01.280Z",
+      "type": "INFO",
+      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T20:07:01.349Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
