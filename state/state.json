@@ -1,34 +1,10 @@
 {
   "trailingStops": {
-    "MARA": {
-      "side": "short",
-      "entry": 13.93,
-      "high": 13.96,
-      "low": 13.93,
-      "initialSl": null,
-      "sl": null,
-      "tp": null,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
     "NUVL": {
       "side": "short",
       "entry": 122.5,
       "high": 122.85,
       "low": 122.5,
-      "initialSl": null,
-      "sl": null,
-      "tp": null,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "TSLA": {
-      "side": "short",
-      "entry": 411.89,
-      "high": 411.89,
-      "low": 411.15,
       "initialSl": null,
       "sl": null,
       "tp": null,
@@ -107,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T13:22:04.416Z",
+  "lastRun": "2026-06-09T13:32:24.801Z",
   "log": [
-    {
-      "time": "2026-06-08T17:18:56.644Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T17:27:34.936Z",
-      "type": "INFO",
-      "msg": "Account: $100060.70 | 1 positions | 4 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T17:27:35.528Z",
-      "type": "INFO",
-      "msg": "Watchlist: 28 tickers",
-      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
-    },
     {
       "time": "2026-06-08T17:27:35.832Z",
       "type": "INFO",
@@ -1307,6 +1265,24 @@
       "time": "2026-06-09T13:22:04.415Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T13:32:22.552Z",
+      "type": "INFO",
+      "msg": "Account: $99993.33 | 2 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T13:32:24.800Z",
+      "type": "SELL",
+      "msg": "✓ Closed SHORT MARA",
+      "detail": "P&L $-0.89"
+    },
+    {
+      "time": "2026-06-09T13:32:24.801Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (2 min in)",
       "detail": ""
     }
   ],
