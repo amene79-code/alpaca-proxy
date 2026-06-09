@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T19:33:21.218Z",
+  "lastRun": "2026-06-09T19:35:18.885Z",
   "log": [
-    {
-      "time": "2026-06-09T17:25:49.806Z",
-      "type": "INFO",
-      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T17:25:50.183Z",
-      "type": "INFO",
-      "msg": "Watchlist: 26 tickers",
-      "detail": "MU, AAPL, MRVL, CNM, NVDA, UEC, ORCL, CHWY"
-    },
-    {
-      "time": "2026-06-09T17:25:50.486Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NUVL, ALHC, IFS, CECO, VECO, SJM, CPNG, DKNG, BAP, SN"
-    },
     {
       "time": "2026-06-09T17:25:50.486Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-09T19:33:21.218Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T19:35:18.778Z",
+      "type": "INFO",
+      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T19:35:18.885Z",
+      "type": "INFO",
+      "msg": "EOD review (25 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T19:35:18.885Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
