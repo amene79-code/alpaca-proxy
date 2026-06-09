@@ -4,7 +4,7 @@
       "side": "short",
       "entry": 3.79,
       "high": 3.81,
-      "low": 3.79,
+      "low": 3.76,
       "initialSl": null,
       "sl": null,
       "tp": null,
@@ -52,7 +52,7 @@
       "side": "short",
       "entry": 411.89,
       "high": 411.89,
-      "low": 411.6,
+      "low": 411.51,
       "initialSl": null,
       "sl": null,
       "tp": null,
@@ -131,20 +131,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T11:17:53.380Z",
+  "lastRun": "2026-06-09T11:28:06.242Z",
   "log": [
-    {
-      "time": "2026-06-08T16:57:24.384Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "TNGX, MRVL, KEEL, IONQ, INTC, QBTS, MU, MARA, GLXY, CBRS"
-    },
-    {
-      "time": "2026-06-08T16:57:24.384Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 28 watchlist"
-    },
     {
       "time": "2026-06-08T16:57:45.142Z",
       "type": "INFO",
@@ -1329,6 +1317,18 @@
     },
     {
       "time": "2026-06-09T11:17:53.380Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T11:28:05.972Z",
+      "type": "INFO",
+      "msg": "Account: $100012.98 | 5 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T11:28:06.242Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
