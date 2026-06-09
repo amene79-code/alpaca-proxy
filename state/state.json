@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T19:35:18.885Z",
+  "lastRun": "2026-06-09T19:36:15.692Z",
   "log": [
-    {
-      "time": "2026-06-09T17:25:50.486Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 26 watchlist"
-    },
-    {
-      "time": "2026-06-09T17:26:09.663Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "NUVL: ATR 0.06% < 0.5%  •  ALHC: relVol 1.0× < 2.5× (todayVol 7.2M)  •  IFS: avgVol 0.4M < 1M  •  CECO: avgVol 1.0M < 1M  •  VECO: relVol 2.4× < 2.5× (todayVol 3.0M)  •  SJM: relVol 1.6× < 2.5× (todayVol 3.1M)  •  CPNG: relVol 1.7× < 2.5× (todayVol 37.7M)  •  DKNG: relVol 1.1× < 2.5× (todayVol 12.2M)  •  BAP: avgVol 0.6M < 1M  •  SN: relVol 0.5× < 2.5× (todayVol 1.5M)  •  MH: avgVol 0.4M < 1M  •  SRAD: relVol 1.3× < 2.5× (todayVol 3.6M)"
-    },
-    {
-      "time": "2026-06-09T17:26:09.663Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-09T17:28:45.963Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-09T19:35:18.885Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T19:36:15.387Z",
+      "type": "INFO",
+      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T19:36:15.691Z",
+      "type": "INFO",
+      "msg": "EOD review (24 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T19:36:15.692Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
