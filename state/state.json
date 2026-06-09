@@ -52,7 +52,7 @@
       "side": "short",
       "entry": 411.89,
       "high": 411.89,
-      "low": 411.51,
+      "low": 411.15,
       "initialSl": null,
       "sl": null,
       "tp": null,
@@ -131,20 +131,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T11:28:06.242Z",
+  "lastRun": "2026-06-09T11:38:16.332Z",
   "log": [
-    {
-      "time": "2026-06-08T16:57:45.142Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "TNGX: below opening-range high (price $29.78 < ORH $30.01, 43 today-candles)  •  MRVL: relVol 1.2× < 2.5× (todayVol 54.2M)  •  KEEL: relVol 1.0× < 2.5× (todayVol 46.3M)  •  IONQ: relVol 0.5× < 2.5× (todayVol 17.9M)  •  INTC: relVol 0.7× < 2.5× (todayVol 87.7M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 19.6M)  •  MU: relVol 0.6× < 2.5× (todayVol 35.2M)  •  MARA: relVol 0.4× < 2.5× (todayVol 16.5M)  •  GLXY: relVol 2.2× < 2.5× (todayVol 12.2M)  •  CBRS: relVol 0.6× < 2.5× (todayVol 5.3M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 23.6M)  •  IREN: relVol 0.4× < 2.5× (todayVol 22.3M)"
-    },
-    {
-      "time": "2026-06-08T16:57:45.142Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-08T17:06:27.678Z",
       "type": "INFO",
@@ -1329,6 +1317,18 @@
     },
     {
       "time": "2026-06-09T11:28:06.242Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T11:38:16.249Z",
+      "type": "INFO",
+      "msg": "Account: $100009.64 | 5 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T11:38:16.332Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
