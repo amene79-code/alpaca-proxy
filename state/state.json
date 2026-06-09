@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T17:26:09.664Z",
+  "lastRun": "2026-06-09T17:29:05.238Z",
   "log": [
-    {
-      "time": "2026-06-09T12:39:40.747Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T12:49:56.091Z",
-      "type": "INFO",
-      "msg": "Account: $100005.89 | 5 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T12:49:58.306Z",
-      "type": "SELL",
-      "msg": "✓ Closed SHORT ABAT",
-      "detail": "P&L +$1.31"
-    },
-    {
-      "time": "2026-06-09T12:49:58.307Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T13:00:15.578Z",
-      "type": "INFO",
-      "msg": "Account: $100004.08 | 4 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T13:00:16.243Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-06-09T13:05:36.057Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-09T17:26:09.663Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T17:28:45.963Z",
+      "type": "INFO",
+      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T17:28:46.277Z",
+      "type": "INFO",
+      "msg": "Watchlist: 26 tickers",
+      "detail": "MU, AAPL, MRVL, CNM, NVDA, UEC, ORCL, CHWY"
+    },
+    {
+      "time": "2026-06-09T17:28:46.608Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "NUVL, ALHC, VECO, IFS, CECO, CPNG, SJM, DKNG, BAP, SN"
+    },
+    {
+      "time": "2026-06-09T17:28:46.608Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 26 watchlist"
+    },
+    {
+      "time": "2026-06-09T17:29:05.238Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "NUVL: ATR 0.06% < 0.5%  •  ALHC: relVol 1.0× < 2.5× (todayVol 7.2M)  •  VECO: relVol 2.4× < 2.5× (todayVol 3.0M)  •  IFS: avgVol 0.4M < 1M  •  CECO: avgVol 1.0M < 1M  •  CPNG: relVol 1.7× < 2.5× (todayVol 37.8M)  •  SJM: relVol 1.6× < 2.5× (todayVol 3.1M)  •  DKNG: relVol 1.1× < 2.5× (todayVol 12.3M)  •  BAP: avgVol 0.6M < 1M  •  SN: relVol 0.5× < 2.5× (todayVol 1.5M)  •  ACLS: avgVol 0.5M < 1M  •  MH: avgVol 0.4M < 1M"
+    },
+    {
+      "time": "2026-06-09T17:29:05.238Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
