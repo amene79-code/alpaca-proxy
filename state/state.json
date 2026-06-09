@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T13:53:26.881Z",
+  "lastRun": "2026-06-09T14:04:12.032Z",
   "log": [
-    {
-      "time": "2026-06-08T17:29:31.274Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "MRVL: relVol 1.2× < 2.5× (todayVol 57.4M)  •  IONQ: relVol 0.6× < 2.5× (todayVol 19.0M)  •  INTC: relVol 0.7× < 2.5× (todayVol 94.1M)  •  MU: relVol 0.7× < 2.5× (todayVol 37.5M)  •  QBTS: relVol 0.5× < 2.5× (todayVol 20.7M)  •  GLXY: relVol 2.3× < 2.5× (todayVol 12.8M)  •  CBRS: relVol 0.6× < 2.5× (todayVol 5.9M)  •  KEEL: relVol 1.1× < 2.5× (todayVol 50.5M)  •  MARA: relVol 0.5× < 2.5× (todayVol 18.3M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 25.1M)  •  IREN: relVol 0.4× < 2.5× (todayVol 23.8M)  •  AAOI: relVol 0.8× < 2.5× (todayVol 10.0M)"
-    },
-    {
-      "time": "2026-06-08T17:29:31.274Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T17:38:05.333Z",
-      "type": "INFO",
-      "msg": "Account: $100076.20 | 1 positions | 4 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T17:38:05.657Z",
-      "type": "INFO",
-      "msg": "Watchlist: 28 tickers",
-      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
-    },
-    {
-      "time": "2026-06-08T17:38:05.976Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "TNGX, MRVL, INTC, IONQ, KEEL, QBTS, MU, GLXY, CBRS, MARA"
-    },
-    {
-      "time": "2026-06-08T17:38:05.976Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 28 watchlist"
-    },
     {
       "time": "2026-06-08T17:38:26.237Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-09T13:53:26.881Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T14:03:44.681Z",
+      "type": "INFO",
+      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T14:03:45.049Z",
+      "type": "INFO",
+      "msg": "Watchlist: 26 tickers",
+      "detail": "MU, AAPL, MRVL, CNM, NVDA, UEC, ORCL, CHWY"
+    },
+    {
+      "time": "2026-06-09T14:03:45.899Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 42, kept 40",
+      "detail": "NUVL, KEEL, VNET, VECO, ACLS, UCTT, FLNC, VSH, ICHR, BAP"
+    },
+    {
+      "time": "2026-06-09T14:03:45.900Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 26 watchlist"
+    },
+    {
+      "time": "2026-06-09T14:04:12.032Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "NUVL: below VWAP (price $122.86 < VWAP $122.89)  •  KEEL: relVol 0.5× < 2.5× (todayVol 21.4M)  •  VNET: relVol 0.6× < 2.5× (todayVol 7.1M)  •  VECO: relVol 0.8× < 2.5× (todayVol 0.9M)  •  ACLS: avgVol 0.5M < 1M  •  UCTT: relVol 0.3× < 2.5× (todayVol 0.3M)  •  FLNC: relVol 0.3× < 2.5× (todayVol 3.9M)  •  VSH: relVol 0.6× < 2.5× (todayVol 4.9M)  •  ICHR: relVol 0.2× < 2.5× (todayVol 0.2M)  •  BAP: avgVol 0.6M < 1M  •  IFS: avgVol 0.4M < 1M  •  CRDO: relVol 0.4× < 2.5× (todayVol 3.2M)"
+    },
+    {
+      "time": "2026-06-09T14:04:12.032Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
