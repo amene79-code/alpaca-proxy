@@ -411,8 +411,10 @@ async function main() {
   if (state.dailyDate !== today) {
     state.dailyTrades = 0;
     state.dailyDate = today;
+    state.tradedToday = [];   // one round-trip per ticker per day — reset each day
     addLog(state, 'INFO', 'New trading day — counter reset');
   }
+  if (!Array.isArray(state.tradedToday)) state.tradedToday = [];
 
   // 1. Account + positions
   let account, positions;
@@ -610,6 +612,10 @@ async function main() {
   const tradedThisCycle = new Set();
   for (const sig of signals.slice(0, slots)) {
     if (existing.has(sig.ticker) || tradedThisCycle.has(sig.ticker)) continue;
+    if (state.tradedToday.includes(sig.ticker)) {        // one round-trip per ticker per day — no re-entry churn
+      addLog(state, 'INFO', `SKIP ${sig.ticker} — already traded today`);
+      continue;
+    }
     const { ticker, price, atr, patterns } = sig;
 
     const slRaw = price - atr * CFG.atrSL;
@@ -637,6 +643,7 @@ async function main() {
           initialSl: slF, sl: slF, tp: tpF, slOrderId: null, tpOrderId: null, movedToBreakeven: false,
         };
         existing.add(ticker); tradedThisCycle.add(ticker); state.dailyTrades++;
+        state.tradedToday.push(ticker);   // block re-entry for the rest of the day
       }
     } catch (e) { addLog(state, 'ERROR', `Order failed ${ticker}: ${e.message}`); }
     await sleep(500);
