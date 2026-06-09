@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 8,
-  "dailyDate": "2026-06-08",
+  "dailyTrades": 0,
+  "dailyDate": "2026-06-09",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-08T21:18:50.580Z",
+  "lastRun": "2026-06-09T07:09:34.644Z",
   "log": [
-    {
-      "time": "2026-06-08T16:55:55.197Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "TNGX, MRVL, INTC, KEEL, IONQ, MU, QBTS, GLXY, CBRS, MARA"
-    },
-    {
-      "time": "2026-06-08T16:55:55.197Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 28 watchlist"
-    },
-    {
-      "time": "2026-06-08T16:56:16.452Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "TNGX: below opening-range high (price $29.37 < ORH $30.01, 42 today-candles)  •  MRVL: relVol 1.2× < 2.5× (todayVol 54.1M)  •  INTC: relVol 0.7× < 2.5× (todayVol 87.6M)  •  KEEL: relVol 1.0× < 2.5× (todayVol 46.1M)  •  IONQ: relVol 0.5× < 2.5× (todayVol 17.9M)  •  MU: relVol 0.6× < 2.5× (todayVol 35.2M)  •  QBTS: relVol 0.4× < 2.5× (todayVol 19.5M)  •  GLXY: relVol 2.2× < 2.5× (todayVol 12.2M)  •  CBRS: relVol 0.6× < 2.5× (todayVol 5.3M)  •  MARA: relVol 0.4× < 2.5× (todayVol 16.5M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 23.5M)  •  IREN: relVol 0.4× < 2.5× (todayVol 22.3M)"
-    },
     {
       "time": "2026-06-08T16:56:16.452Z",
       "type": "INFO",
@@ -1271,6 +1253,25 @@
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-09T07:09:33.991Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T07:09:34.380Z",
+      "type": "INFO",
+      "msg": "Account: $100023.35 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T07:09:34.644Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
     }
-  ]
+  ],
+  "tradedToday": []
 }
