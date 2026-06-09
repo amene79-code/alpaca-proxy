@@ -1,17 +1,5 @@
 {
   "trailingStops": {
-    "ALAB": {
-      "side": "short",
-      "entry": 348.6,
-      "high": 354,
-      "low": 348.6,
-      "initialSl": null,
-      "sl": null,
-      "tp": null,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
     "MARA": {
       "side": "short",
       "entry": 13.93,
@@ -119,26 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-09T13:11:48.010Z",
+  "lastRun": "2026-06-09T13:15:54.780Z",
   "log": [
-    {
-      "time": "2026-06-08T17:18:34.416Z",
-      "type": "INFO",
-      "msg": "Account: $100077.95 | 1 positions | 4 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-08T17:18:34.878Z",
-      "type": "INFO",
-      "msg": "Watchlist: 28 tickers",
-      "detail": "SRKE, KOAN, UNFI, CPB, SUJA, SAIL, VLGEA, WELNF"
-    },
-    {
-      "time": "2026-06-08T17:18:35.166Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "TNGX, MRVL, IONQ, KEEL, INTC, CBRS, GLXY, MU, QBTS, MARA"
-    },
     {
       "time": "2026-06-08T17:18:35.166Z",
       "type": "INFO",
@@ -1317,6 +1287,24 @@
     },
     {
       "time": "2026-06-09T13:11:48.010Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T13:15:52.978Z",
+      "type": "INFO",
+      "msg": "Account: $100002.11 | 4 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-09T13:15:54.780Z",
+      "type": "SELL",
+      "msg": "✓ Closed SHORT ALAB",
+      "detail": "P&L $-9.14"
+    },
+    {
+      "time": "2026-06-09T13:15:54.780Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
