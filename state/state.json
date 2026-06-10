@@ -70,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-10T18:08:33.462Z",
+  "lastRun": "2026-06-10T18:14:16.846Z",
   "log": [
-    {
-      "time": "2026-06-09T19:01:40.847Z",
-      "type": "INFO",
-      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:01:41.021Z",
-      "type": "INFO",
-      "msg": "Watchlist: 26 tickers",
-      "detail": "MU, AAPL, MRVL, CNM, NVDA, UEC, ORCL, CHWY"
-    },
-    {
-      "time": "2026-06-09T19:01:41.393Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NUVL, ALHC, CECO, VECO, IFS, BAP, DKNG, SN, UCTT, BKD"
-    },
-    {
-      "time": "2026-06-09T19:01:41.393Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 26 watchlist"
-    },
-    {
-      "time": "2026-06-09T19:02:00.555Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "NUVL: ATR 0.03% < 0.5%  •  ALHC: relVol 1.4× < 2.5× (todayVol 10.3M)  •  CECO: avgVol 1.0M < 1M  •  VECO: below opening-range high (price $68.85 < ORH $71.77, 68 today-candles)  •  IFS: avgVol 0.4M < 1M  •  BAP: avgVol 0.6M < 1M  •  DKNG: relVol 1.2× < 2.5× (todayVol 14.3M)  •  SN: relVol 0.8× < 2.5× (todayVol 2.2M)  •  UCTT: relVol 1.1× < 2.5× (todayVol 1.2M)  •  BKD: relVol 0.8× < 2.5× (todayVol 3.1M)  •  SJM: relVol 1.9× < 2.5× (todayVol 3.6M)  •  ARE: relVol 1.0× < 2.5× (todayVol 2.0M)"
-    },
     {
       "time": "2026-06-09T19:02:00.555Z",
       "type": "INFO",
@@ -1268,6 +1238,36 @@
     },
     {
       "time": "2026-06-10T18:08:33.462Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T18:13:57.252Z",
+      "type": "INFO",
+      "msg": "Account: $99993.71 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T18:13:58.388Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FRMI, CASY, AXTI, BULL, HOOD, PLBL, DKNG, AAOI, UNFI, TGTX"
+    },
+    {
+      "time": "2026-06-10T18:13:58.388Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-10T18:14:16.846Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "FRMI: relVol 2.1× < 2.5× (todayVol 35.3M)  •  CASY: avgVol 0.6M < 1M  •  AXTI: relVol 0.7× < 2.5× (todayVol 6.4M)  •  BULL: relVol 1.1× < 2.5× (todayVol 15.7M)  •  HOOD: relVol 1.2× < 2.5× (todayVol 32.1M)  •  PLBL: avgVol 0.0M < 1M  •  DKNG: relVol 1.7× < 2.5× (todayVol 20.7M)  •  AAOI: relVol 1.0× < 2.5× (todayVol 13.0M)  •  UNFI: avgVol 0.7M < 1M  •  TGTX: relVol 2.1× < 2.5× (todayVol 3.8M)  •  MUSA: avgVol 0.3M < 1M  •  PBF: relVol 0.5× < 2.5× (todayVol 1.3M)"
+    },
+    {
+      "time": "2026-06-10T18:14:16.846Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
