@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "FRMI": {
-      "side": "long",
-      "entry": 6.944699764251709,
-      "high": 6.975,
-      "low": 6.944699764251709,
-      "initialSl": 6.77,
-      "sl": 6.77,
-      "tp": 7.42,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-06-10",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-10T19:37:56.430Z",
+  "lastRun": "2026-06-10T19:39:35.998Z",
   "log": [
-    {
-      "time": "2026-06-09T20:24:45.855Z",
-      "type": "INFO",
-      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T20:24:45.975Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T20:26:36.850Z",
-      "type": "INFO",
-      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T20:26:37.138Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-06-09T20:27:30.311Z",
       "type": "INFO",
@@ -1281,6 +1244,30 @@
     },
     {
       "time": "2026-06-10T19:37:56.430Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:39:33.592Z",
+      "type": "INFO",
+      "msg": "Account: $99990.49 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:39:33.959Z",
+      "type": "INFO",
+      "msg": "EOD review (21 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:39:35.797Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut FRMI",
+      "detail": "Weak into close | P&L $-3.23"
+    },
+    {
+      "time": "2026-06-10T19:39:35.997Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
