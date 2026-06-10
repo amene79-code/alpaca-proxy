@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-10T19:48:10.563Z",
+  "lastRun": "2026-06-10T19:49:49.222Z",
   "log": [
-    {
-      "time": "2026-06-10T16:33:42.834Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T16:33:42.940Z",
-      "type": "INFO",
-      "msg": "Account: $99993.71 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T16:33:43.981Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BULL, CASY, AXTI, HOOD, DKNG, PLBL, TGTX, MUSA, UNFI, DUOL"
-    },
     {
       "time": "2026-06-10T16:33:43.981Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-10T19:48:10.563Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:49:48.988Z",
+      "type": "INFO",
+      "msg": "Account: $99988.51 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:49:49.222Z",
+      "type": "INFO",
+      "msg": "EOD review (11 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:49:49.222Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
