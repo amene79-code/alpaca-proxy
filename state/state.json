@@ -83,38 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-10T19:18:41.831Z",
+  "lastRun": "2026-06-10T19:22:00.185Z",
   "log": [
-    {
-      "time": "2026-06-09T19:53:48.314Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:55:43.514Z",
-      "type": "INFO",
-      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:55:43.669Z",
-      "type": "INFO",
-      "msg": "EOD review (5 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:55:43.669Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:56:46.670Z",
-      "type": "INFO",
-      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-09T19:56:46.903Z",
       "type": "INFO",
@@ -1281,6 +1251,36 @@
     },
     {
       "time": "2026-06-10T19:18:41.831Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:21:46.765Z",
+      "type": "INFO",
+      "msg": "Account: $99984.04 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:21:47.513Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FRMI, CASY, PLBL, BULL, AXTI, DKNG, MUSA, UNFI, MAAS, TGTX"
+    },
+    {
+      "time": "2026-06-10T19:21:47.513Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-10T19:22:00.185Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "CASY: avgVol 0.6M < 1M  •  PLBL: avgVol 0.0M < 1M  •  BULL: relVol 1.3× < 2.5× (todayVol 18.6M)  •  AXTI: relVol 0.8× < 2.5× (todayVol 6.8M)  •  DKNG: relVol 1.8× < 2.5× (todayVol 22.7M)  •  MUSA: avgVol 0.3M < 1M  •  UNFI: avgVol 0.7M < 1M  •  MAAS: avgVol 0.0M < 1M  •  TGTX: relVol 2.2× < 2.5× (todayVol 4.1M)  •  VG: relVol 0.5× < 2.5× (todayVol 8.0M)  •  SM: relVol 0.6× < 2.5× (todayVol 2.1M)  •  ALHC: relVol 1.3× < 2.5× (todayVol 9.7M)"
+    },
+    {
+      "time": "2026-06-10T19:22:00.185Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
