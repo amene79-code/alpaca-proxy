@@ -1,6 +1,19 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 0,
+  "trailingStops": {
+    "FRMI": {
+      "side": "long",
+      "entry": 6.944699764251709,
+      "high": 6.944699764251709,
+      "low": 6.944699764251709,
+      "initialSl": 6.77,
+      "sl": 6.77,
+      "tp": 7.42,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 1,
   "dailyDate": "2026-06-10",
   "openPositions": [
     "FIVE",
@@ -70,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-10T19:11:34.128Z",
+  "lastRun": "2026-06-10T19:17:15.371Z",
   "log": [
-    {
-      "time": "2026-06-09T19:36:15.691Z",
-      "type": "INFO",
-      "msg": "EOD review (24 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:36:15.692Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:43:34.514Z",
-      "type": "INFO",
-      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:43:34.708Z",
-      "type": "INFO",
-      "msg": "EOD review (17 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:43:34.709Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:45:29.422Z",
-      "type": "INFO",
-      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:45:29.532Z",
-      "type": "INFO",
-      "msg": "EOD review (15 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T19:45:29.532Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
     {
       "time": "2026-06-09T19:46:29.722Z",
       "type": "INFO",
@@ -1271,7 +1236,57 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:16:58.252Z",
+      "type": "INFO",
+      "msg": "Account: $99993.71 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:16:59.663Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FRMI, CASY, PLBL, BULL, AXTI, DKNG, MUSA, HOOD, UNFI, TGTX"
+    },
+    {
+      "time": "2026-06-10T19:16:59.663Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-10T19:16:59.876Z",
+      "type": "SIGNAL",
+      "msg": "FRMI — score 9 | gap 23.6% | relVol 2.5× | RSI 40",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:17:14.655Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "CASY: avgVol 0.6M < 1M  •  PLBL: avgVol 0.0M < 1M  •  BULL: relVol 1.3× < 2.5× (todayVol 18.4M)  •  AXTI: relVol 0.8× < 2.5× (todayVol 6.8M)  •  DKNG: relVol 1.8× < 2.5× (todayVol 22.6M)  •  MUSA: avgVol 0.3M < 1M  •  HOOD: relVol 1.3× < 2.5× (todayVol 35.5M)  •  UNFI: avgVol 0.7M < 1M  •  TGTX: relVol 2.2× < 2.5× (todayVol 4.0M)  •  MAAS: avgVol 0.0M < 1M  •  VG: relVol 0.5× < 2.5× (todayVol 7.9M)  •  AAOI: relVol 1.1× < 2.5× (todayVol 14.2M)"
+    },
+    {
+      "time": "2026-06-10T19:17:14.655Z",
+      "type": "INFO",
+      "msg": "Top signal: FRMI (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:17:14.656Z",
+      "type": "BUY",
+      "msg": "Placing 215× FRMI @ ~$6.94",
+      "detail": "gap 23.6% | risk $37.56 | SL $6.77 | TP $7.42 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-06-10T19:17:14.871Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 215× FRMI",
+      "detail": "ID f6384e57-eacc-447a-a9de-66d6c87ae76f | R:R 2.7:1 | risk $37.56"
     }
   ],
-  "tradedToday": []
+  "tradedToday": [
+    "FRMI"
+  ]
 }
