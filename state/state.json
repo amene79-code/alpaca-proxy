@@ -3,7 +3,7 @@
     "FRMI": {
       "side": "long",
       "entry": 6.944699764251709,
-      "high": 6.945,
+      "high": 6.955,
       "low": 6.944699764251709,
       "initialSl": 6.77,
       "sl": 6.77,
@@ -83,20 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-10T19:29:17.087Z",
+  "lastRun": "2026-06-10T19:32:27.042Z",
   "log": [
-    {
-      "time": "2026-06-09T20:16:21.321Z",
-      "type": "INFO",
-      "msg": "Account: $99993.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-09T20:16:21.656Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-06-09T20:17:14.176Z",
       "type": "INFO",
@@ -1283,6 +1271,18 @@
       "time": "2026-06-10T19:29:17.087Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:32:26.139Z",
+      "type": "INFO",
+      "msg": "Account: $99994.79 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-10T19:32:27.042Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
