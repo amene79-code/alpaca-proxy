@@ -1,41 +1,50 @@
 {
   "tickers": [
     {
-      "ticker": "MU",
-      "score": 20.5,
+      "ticker": "ORCL",
+      "score": 27.4,
       "sources": [
-        "Pre-market",
-        "Reddit WSB"
+        "Reddit WSB",
+        "Stocktwits"
       ],
-      "strategy": "Score 20.5 — Pre-market, Reddit WSB",
+      "strategy": "Score 27.4 — Reddit WSB, Stocktwits",
       "direction": "bullish",
       "confidence": 90
     },
     {
-      "ticker": "AAPL",
-      "score": 10.3,
+      "ticker": "SMCI",
+      "score": 10.4,
       "sources": [
         "Pre-market",
         "Reddit WSB",
         "Stocktwits"
       ],
-      "strategy": "Score 10.3 — Pre-market, Reddit WSB, Stocktwits",
+      "strategy": "Score 10.4 — Pre-market, Reddit WSB, Stocktwits",
       "direction": "bullish",
       "confidence": 90
     },
     {
-      "ticker": "MRVL",
-      "score": 10.1,
+      "ticker": "MU",
+      "score": 10.3,
       "sources": [
-        "Pre-market",
         "Reddit WSB"
       ],
-      "strategy": "Score 10.1 — Pre-market, Reddit WSB",
+      "strategy": "Score 10.3 — Reddit WSB",
       "direction": "bullish",
       "confidence": 90
     },
     {
-      "ticker": "CNM",
+      "ticker": "NIMU",
+      "score": 10,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 10 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "PPIH",
       "score": 10,
       "sources": [
         "Earnings Today"
@@ -46,50 +55,59 @@
     },
     {
       "ticker": "NVDA",
-      "score": 7.8,
+      "score": 9.3,
       "sources": [
         "Pre-market",
         "Reddit WSB"
       ],
-      "strategy": "Score 7.8 — Pre-market, Reddit WSB",
+      "strategy": "Score 9.3 — Pre-market, Reddit WSB",
       "direction": "bullish",
-      "confidence": 78
+      "confidence": 90
     },
     {
-      "ticker": "UEC",
-      "score": 6.2,
+      "ticker": "SPCX",
+      "score": 7.6,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 7.6 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 76
+    },
+    {
+      "ticker": "CRCW",
+      "score": 7,
       "sources": [
         "Earnings Today",
-        "Stocktwits"
+        "Earnings Soon"
       ],
-      "strategy": "Score 6.2 — Earnings Today, Stocktwits",
+      "strategy": "Score 7 — Earnings Today, Earnings Soon",
       "direction": "bullish",
-      "confidence": 62
+      "confidence": 70
     },
     {
-      "ticker": "ORCL",
-      "score": 6,
-      "sources": [
-        "Earnings Today",
-        "Stocktwits"
-      ],
-      "strategy": "Score 6 — Earnings Today, Stocktwits",
-      "direction": "bullish",
-      "confidence": 60
-    },
-    {
-      "ticker": "CHWY",
+      "ticker": "MSFT",
       "score": 5.6,
       "sources": [
-        "Earnings Today",
+        "Reddit WSB",
         "Stocktwits"
       ],
-      "strategy": "Score 5.6 — Earnings Today, Stocktwits",
+      "strategy": "Score 5.6 — Reddit WSB, Stocktwits",
       "direction": "bullish",
       "confidence": 56
     },
     {
-      "ticker": "NAVN",
+      "ticker": "DTE",
+      "score": 5.4,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 5.4 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 54
+    },
+    {
+      "ticker": "SODI",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -99,7 +117,7 @@
       "confidence": 50
     },
     {
-      "ticker": "IDWM",
+      "ticker": "FRHC",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -109,7 +127,7 @@
       "confidence": 50
     },
     {
-      "ticker": "NOBH",
+      "ticker": "SVIN",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -119,7 +137,7 @@
       "confidence": 50
     },
     {
-      "ticker": "IVDN",
+      "ticker": "GTEN",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -129,7 +147,7 @@
       "confidence": 50
     },
     {
-      "ticker": "IEHC",
+      "ticker": "MCRAA",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -139,7 +157,7 @@
       "confidence": 50
     },
     {
-      "ticker": "MSB",
+      "ticker": "HMMR",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -149,7 +167,7 @@
       "confidence": 50
     },
     {
-      "ticker": "MAYS",
+      "ticker": "MH",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -159,7 +177,7 @@
       "confidence": 50
     },
     {
-      "ticker": "FRD",
+      "ticker": "BTOC",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -169,7 +187,7 @@
       "confidence": 50
     },
     {
-      "ticker": "YRD",
+      "ticker": "CLEV",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -179,7 +197,7 @@
       "confidence": 50
     },
     {
-      "ticker": "BRRE",
+      "ticker": "LBSR",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -189,7 +207,7 @@
       "confidence": 50
     },
     {
-      "ticker": "GLBS",
+      "ticker": "AUSI",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -199,7 +217,7 @@
       "confidence": 50
     },
     {
-      "ticker": "RH",
+      "ticker": "NATH",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -209,7 +227,7 @@
       "confidence": 50
     },
     {
-      "ticker": "DAKT",
+      "ticker": "CRWS",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -219,7 +237,7 @@
       "confidence": 50
     },
     {
-      "ticker": "SFIX",
+      "ticker": "JVA",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -229,7 +247,7 @@
       "confidence": 50
     },
     {
-      "ticker": "CRMT",
+      "ticker": "OLOX",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -239,7 +257,7 @@
       "confidence": 50
     },
     {
-      "ticker": "ME",
+      "ticker": "HITC",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -249,7 +267,7 @@
       "confidence": 50
     },
     {
-      "ticker": "ATEX",
+      "ticker": "SKKY",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -259,7 +277,27 @@
       "confidence": 50
     },
     {
-      "ticker": "SUJA",
+      "ticker": "VRA",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "LOVE",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "HOFT",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -269,6 +307,6 @@
       "confidence": 50
     }
   ],
-  "date": "09/06/2026",
-  "ts": 1781010692359
+  "date": "11/06/2026",
+  "ts": 1781183959731
 }
