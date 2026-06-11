@@ -3,7 +3,7 @@
     "SMCI": {
       "side": "long",
       "entry": 30.55500030517578,
-      "high": 31.385,
+      "high": 31.595,
       "low": 30.55500030517578,
       "initialSl": 30.08,
       "sl": 30.5,
@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-11T19:33:39.500Z",
+  "lastRun": "2026-06-11T19:37:05.501Z",
   "log": [
-    {
-      "time": "2026-06-11T17:13:26.098Z",
-      "type": "INFO",
-      "msg": "Account: $99988.46 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-11T17:13:26.540Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "ORCL, SMCI, MU, NIMU, PPIH, NVDA, SPCX, CRCW"
-    },
-    {
-      "time": "2026-06-11T17:13:26.981Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CPNG, VOYG, YSS, RDW, FLY, LUNR, NAVN, BBAR, TEO, ESLT"
-    },
-    {
-      "time": "2026-06-11T17:13:26.981Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-11T17:13:45.409Z",
       "type": "INFO",
@@ -1281,6 +1257,30 @@
     },
     {
       "time": "2026-06-11T19:33:39.500Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T19:37:04.920Z",
+      "type": "INFO",
+      "msg": "Account: $100043.51 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T19:37:05.196Z",
+      "type": "INFO",
+      "msg": "EOD review (23 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T19:37:05.300Z",
+      "type": "INFO",
+      "msg": "SMCI held overnight",
+      "detail": "Strong close | P&L +$55.04 | above VWAP"
+    },
+    {
+      "time": "2026-06-11T19:37:05.501Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
