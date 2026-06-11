@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-06-10",
+  "dailyTrades": 0,
+  "dailyDate": "2026-06-11",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-10T21:31:43.574Z",
+  "lastRun": "2026-06-11T13:14:47.930Z",
   "log": [
-    {
-      "time": "2026-06-10T17:00:51.581Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T17:05:20.050Z",
-      "type": "INFO",
-      "msg": "Account: $99993.71 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T17:05:21.298Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BULL, FRMI, CASY, AXTI, HOOD, PLBL, DKNG, UNFI, TGTX, MUSA"
-    },
     {
       "time": "2026-06-10T17:05:21.299Z",
       "type": "INFO",
@@ -1271,9 +1253,27 @@
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-11T13:14:47.735Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T13:14:47.796Z",
+      "type": "INFO",
+      "msg": "Account: $99988.46 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T13:14:47.929Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "FRMI"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
