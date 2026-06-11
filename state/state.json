@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-11T15:18:55.914Z",
+  "lastRun": "2026-06-11T15:29:29.589Z",
   "log": [
-    {
-      "time": "2026-06-10T18:08:18.876Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-06-10T18:08:33.461Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "FRMI: relVol 2.0× < 2.5× (todayVol 34.3M)  •  CASY: avgVol 0.6M < 1M  •  AXTI: relVol 0.7× < 2.5× (todayVol 6.3M)  •  BULL: relVol 1.1× < 2.5× (todayVol 15.7M)  •  HOOD: relVol 1.1× < 2.5× (todayVol 31.8M)  •  PLBL: avgVol 0.0M < 1M  •  DKNG: relVol 1.6× < 2.5× (todayVol 20.5M)  •  UNFI: avgVol 0.7M < 1M  •  AAOI: relVol 1.0× < 2.5× (todayVol 12.8M)  •  MUSA: avgVol 0.3M < 1M  •  TGTX: relVol 2.1× < 2.5× (todayVol 3.8M)  •  ALHC: relVol 1.1× < 2.5× (todayVol 8.0M)"
-    },
-    {
-      "time": "2026-06-10T18:08:33.462Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T18:13:57.252Z",
-      "type": "INFO",
-      "msg": "Account: $99993.71 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T18:13:58.388Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "FRMI, CASY, AXTI, BULL, HOOD, PLBL, DKNG, AAOI, UNFI, TGTX"
-    },
-    {
-      "time": "2026-06-10T18:13:58.388Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-06-10T18:14:16.846Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-11T15:18:55.914Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T15:29:10.413Z",
+      "type": "INFO",
+      "msg": "Account: $99988.46 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T15:29:10.630Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "ORCL, SMCI, MU, NIMU, PPIH, NVDA, SPCX, CRCW"
+    },
+    {
+      "time": "2026-06-11T15:29:11.062Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "CPNG, VOYG, RDW, NAVN, FLY, LUNR, BBAR, TEO, YSS, ELVN"
+    },
+    {
+      "time": "2026-06-11T15:29:11.062Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-11T15:29:29.589Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "CPNG: relVol 1.6× < 2.5× (todayVol 38.6M)  •  VOYG: relVol 0.5× < 2.5× (todayVol 1.5M)  •  RDW: relVol 0.5× < 2.5× (todayVol 30.0M)  •  NAVN: relVol 2.3× < 2.5× (todayVol 8.6M)  •  FLY: relVol 0.5× < 2.5× (todayVol 4.1M)  •  LUNR: relVol 0.4× < 2.5× (todayVol 7.2M)  •  BBAR: avgVol 0.7M < 1M  •  TEO: avgVol 0.7M < 1M  •  YSS: relVol 0.4× < 2.5× (todayVol 0.7M)  •  ELVN: avgVol 0.9M < 1M  •  IDCC: avgVol 0.3M < 1M  •  ESLT: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-06-11T15:29:29.589Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
