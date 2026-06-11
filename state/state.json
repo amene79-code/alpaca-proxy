@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-11T17:27:22.472Z",
+  "lastRun": "2026-06-11T17:30:50.789Z",
   "log": [
-    {
-      "time": "2026-06-10T19:58:28.098Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T20:00:01.963Z",
-      "type": "INFO",
-      "msg": "Account: $99988.51 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T20:00:02.120Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T20:03:11.393Z",
-      "type": "INFO",
-      "msg": "Account: $99988.51 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T20:03:11.514Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T20:08:46.911Z",
-      "type": "INFO",
-      "msg": "Account: $99988.51 | 0 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-10T20:08:48.480Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-11T17:27:22.472Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T17:30:27.951Z",
+      "type": "INFO",
+      "msg": "Account: $99988.46 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T17:30:28.384Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "ORCL, SMCI, MU, NIMU, PPIH, NVDA, SPCX, CRCW"
+    },
+    {
+      "time": "2026-06-11T17:30:28.798Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "CPNG, RDW, VOYG, YSS, FLY, NAVN, LUNR, BBAR, ATRO, IDCC"
+    },
+    {
+      "time": "2026-06-11T17:30:28.799Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-11T17:30:50.788Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "CPNG: relVol 1.9× < 2.5× (todayVol 48.0M)  •  RDW: relVol 0.7× < 2.5× (todayVol 42.7M)  •  VOYG: relVol 0.9× < 2.5× (todayVol 2.7M)  •  YSS: relVol 0.5× < 2.5× (todayVol 1.1M)  •  FLY: relVol 0.6× < 2.5× (todayVol 5.5M)  •  NAVN: below opening-range high (price $23.71 < ORH $24.42, 49 today-candles)  •  LUNR: relVol 0.6× < 2.5× (todayVol 10.2M)  •  BBAR: avgVol 0.7M < 1M  •  ATRO: avgVol 0.5M < 1M  •  IDCC: avgVol 0.3M < 1M  •  VSAT: relVol 0.4× < 2.5× (todayVol 1.1M)  •  ESLT: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-06-11T17:30:50.788Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
