@@ -702,12 +702,19 @@ async function main() {
   const { mins } = etPartsOf(new Date());
   const minsAfterOpen = mins - 570;
   const minsToClose = 960 - mins;
+  // Time gates apply to BOTH sides — hard stop here.
   if (CFG.skipFirst15 && minsAfterOpen < 15) { addLog(state, 'INFO', `Skip — first 15 min (${minsAfterOpen} min in)`); saveState(state); return; }
   if (CFG.skipLast30 && minsToClose < 30) { addLog(state, 'INFO', `Skip new entries — last 30 min`); saveState(state); return; }
-  if (state.dailyTrades >= CFG.maxDaily) { addLog(state, 'INFO', `Daily limit reached (${CFG.maxDaily})`); saveState(state); return; }
-  if (managed.length >= CFG.maxPos) { addLog(state, 'INFO', `Position limit reached (${managed.length}/${CFG.maxPos})`); saveState(state); return; }
 
-  // 8. Build candidate universe
+  // Long-side limits: skip LONG entry only — the short side runs regardless
+  // (it has its own separate daily limit). Don't return out of main() here.
+  const longBlocked =
+    (state.dailyTrades >= CFG.maxDaily) ? `Daily limit reached (${CFG.maxDaily})` :
+    (managed.length >= CFG.maxPos)      ? `Position limit reached (${managed.length}/${CFG.maxPos})` : null;
+  if (longBlocked) addLog(state, 'INFO', `${longBlocked} — skipping long entries`);
+
+  let signals = [];
+  if (!longBlocked) {
   const savedWatchlist = await fetchVercelWatchlist();
   if (savedWatchlist?.length) addLog(state, 'INFO', `Watchlist: ${savedWatchlist.length} tickers`, savedWatchlist.slice(0, 8).join(', '));
   const screener = await runScreener();
@@ -723,7 +730,6 @@ async function main() {
 
   // 9. Analyze
   analyzeSignal.rejections = [];
-  const signals = [];
   for (const ticker of toScan) {
     try {
       const s = await analyzeSignal(ticker);
@@ -738,9 +744,12 @@ async function main() {
   if (analyzeSignal.rejections.length) {
     addLog(state, 'INFO', `Rejections (${analyzeSignal.rejections.length})`, analyzeSignal.rejections.slice(0, 12).join('  •  '));
   }
-  if (!signals.length) { addLog(state, 'INFO', 'No signals meeting criteria'); saveState(state); return; }
-  signals.sort((a, b) => b.score - a.score);
-  addLog(state, 'INFO', `Top signal: ${signals[0].ticker} (score ${signals[0].score})`);
+  if (!signals.length) {
+    addLog(state, 'INFO', 'No signals meeting criteria');   // fall through to short side
+  } else {
+    signals.sort((a, b) => b.score - a.score);
+    addLog(state, 'INFO', `Top signal: ${signals[0].ticker} (score ${signals[0].score})`);
+  }
 
   // 10. Execute (fixed-$ risk sizing)
   const slots = Math.min(CFG.maxPos - managed.length, CFG.maxDaily - state.dailyTrades, CFG.maxPerCycle);
@@ -783,6 +792,7 @@ async function main() {
     } catch (e) { addLog(state, 'ERROR', `Order failed ${ticker}: ${e.message}`); }
     await sleep(500);
   }
+  } // end if(!longBlocked) — long entry section
 
   // ─── 11. SHORT SIDE ────────────────────────────────────────────────────────
   // Runs after longs, with its own SEPARATE daily limit (8 long + 8 short).
