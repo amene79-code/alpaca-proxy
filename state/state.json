@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-11T19:43:56.205Z",
+  "lastRun": "2026-06-11T19:47:23.884Z",
   "log": [
-    {
-      "time": "2026-06-11T17:15:58.844Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "ORCL, SMCI, MU, NIMU, PPIH, NVDA, SPCX, CRCW"
-    },
-    {
-      "time": "2026-06-11T17:15:59.272Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CPNG, VOYG, YSS, FLY, RDW, LUNR, NAVN, BBAR, TEO, ESLT"
-    },
-    {
-      "time": "2026-06-11T17:15:59.272Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-11T17:16:18.407Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-11T19:43:56.205Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T19:47:23.383Z",
+      "type": "INFO",
+      "msg": "Account: $100054.23 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T19:47:23.883Z",
+      "type": "INFO",
+      "msg": "EOD review (13 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T19:47:23.884Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
