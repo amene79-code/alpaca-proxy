@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-11T17:16:18.407Z",
+  "lastRun": "2026-06-11T17:20:06.825Z",
   "log": [
-    {
-      "time": "2026-06-10T19:37:56.430Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T19:39:33.592Z",
-      "type": "INFO",
-      "msg": "Account: $99990.49 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T19:39:33.959Z",
-      "type": "INFO",
-      "msg": "EOD review (21 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T19:39:35.797Z",
-      "type": "SELL",
-      "msg": "✓ EOD cut FRMI",
-      "detail": "Weak into close | P&L $-3.23"
-    },
-    {
-      "time": "2026-06-10T19:39:35.997Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-10T19:42:45.323Z",
-      "type": "INFO",
-      "msg": "Account: $99988.51 | 0 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-10T19:42:45.472Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-11T17:16:18.407Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T17:19:43.355Z",
+      "type": "INFO",
+      "msg": "Account: $99988.46 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T17:19:44.173Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "ORCL, SMCI, MU, NIMU, PPIH, NVDA, SPCX, CRCW"
+    },
+    {
+      "time": "2026-06-11T17:19:44.692Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "CPNG, YSS, VOYG, FLY, RDW, LUNR, NAVN, BBAR, TEO, IDCC"
+    },
+    {
+      "time": "2026-06-11T17:19:44.692Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-11T17:20:06.825Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "CPNG: relVol 1.8× < 2.5× (todayVol 46.3M)  •  YSS: relVol 0.5× < 2.5× (todayVol 1.1M)  •  VOYG: relVol 0.9× < 2.5× (todayVol 2.6M)  •  FLY: relVol 0.6× < 2.5× (todayVol 5.3M)  •  RDW: relVol 0.7× < 2.5× (todayVol 41.3M)  •  LUNR: relVol 0.6× < 2.5× (todayVol 9.7M)  •  NAVN: below VWAP (price $23.28 < VWAP $23.50)  •  BBAR: avgVol 0.7M < 1M  •  TEO: avgVol 0.7M < 1M  •  IDCC: avgVol 0.3M < 1M  •  ESLT: avgVol 0.1M < 1M  •  ELVN: avgVol 1.0M < 1M"
+    },
+    {
+      "time": "2026-06-11T17:20:06.825Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
