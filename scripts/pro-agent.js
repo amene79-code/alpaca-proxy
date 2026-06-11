@@ -47,6 +47,20 @@ const CFG = {
   skipFirst15:  true,  // never enter in first 15 min (let opening range form)
   skipLast30:   true,  // no NEW entries in last 30 min (EOD review runs instead)
   eodReviewMin: 25,    // start cutting weak positions when <= this many mins to close
+
+  // ─── SHORT SIDE (mirror of the long catalyst strategy) ───────────────────
+  // Sized for SURVIVAL, not opportunity: a short's loss is uncapped and
+  // squeeze-prone, so risk less, cap value lower, use a wider stop.
+  shortEnabled:    true,   // master switch for the short side
+  shortRiskPerTrade: 30,   // $ risked per short (vs 50 long) — ~60%
+  shortMaxPosValue:  1000,  // max $ per short (vs 1500 long)
+  shortAtrSL:      2.0,    // wider stop than long (1.5) — fewer shares, less whipsaw
+  shortAtrTP:      4.0,    // symmetric TP ceiling
+  shortMaxDaily:   8,      // SEPARATE daily limit (8 long + 8 short)
+  shortMinGapPct:  4.0,    // min gap DOWN (abs) vs prior close
+  shortMinRelVol:  2.5,    // same volume confirmation as long
+  shortRsiMin:     12,     // don't short something already washed-out/bouncing
+  shortMinPrice:   5,      // no shorts under $5 (squeeze + borrow brutal)
 };
 
 // ─── Alpaca API ───────────────────────────────────────────────────────────────
@@ -152,6 +166,24 @@ async function runScreener() {
   const list = [...scored.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40).map(([t]) => t);
   // DIAGNOSTIC: expose what Yahoo actually returned vs what survived filtering
   runScreener.lastDiag = { gainersRaw, activesRaw, kept: list.length, sample: list.slice(0, 10) };
+  return list;
+}
+
+// ─── Short screener: day losers (gap-down catalysts) ─────────────────────────
+async function runShortScreener() {
+  const scored = new Map();
+  let losersRaw = 0;
+  const losers = await fetchPredefined('day_losers', 50);
+  losersRaw = losers.length;
+  for (const q of losers) {
+    const sym = (q.symbol || '').toUpperCase();
+    const chg = q.regularMarketChangePercent || 0;       // negative for losers
+    if (!/^[A-Z]{1,5}$/.test(sym)) continue;
+    if (chg > -CFG.shortMinGapPct) continue;             // pre-filter by down-move size
+    scored.set(sym, (scored.get(sym) || 0) + Math.min(3, Math.abs(chg) / 5));
+  }
+  const list = [...scored.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40).map(([t]) => t);
+  runShortScreener.lastDiag = { losersRaw, kept: list.length, sample: list.slice(0, 10) };
   return list;
 }
 
@@ -320,7 +352,70 @@ async function analyzeSignal(ticker) {
   return { ticker, price, atr, atrPct, rsi, vwap, orHigh, gapPct, relVol, patterns, score };
 }
 
-// ─── Stop replacement (move the bracket SL leg) ──────────────────────────────
+// ─── Signal analysis: SHORT (gap-down continuation, mirror of long) ──────────
+async function analyzeShort(ticker) {
+  const rej = (r) => { (analyzeShort.rejections = analyzeShort.rejections || []).push(`${ticker}: ${r}`); return null; };
+
+  const candles = await getCandles(ticker, '5d', '5m');
+  if (!candles || candles.length < 30) return rej('no 5m candles');
+
+  const price = candles[candles.length - 1].close;
+  if (price < CFG.shortMinPrice) return rej(`price $${price?.toFixed(2)} < $${CFG.shortMinPrice} (short floor)`);
+
+  const daily = await getCandles(ticker, '1mo', '1d');
+  if (!daily || daily.length < 5) return rej('no daily candles');
+
+  const avgDailyVol = daily.slice(-20).reduce((s, c) => s + (c.volume || 0), 0) / Math.min(20, daily.length);
+  if (avgDailyVol < 1_000_000) return rej(`avgVol ${(avgDailyVol/1e6).toFixed(1)}M < 1M`);
+
+  // ── CATALYST GATE 1: gap DOWN vs prior close ────────────────────────────
+  const priorClose = daily[daily.length - 2]?.close;
+  if (!priorClose) return rej('no priorClose');
+  const gapPct = (price - priorClose) / priorClose * 100;       // negative = down
+  if (gapPct > -CFG.shortMinGapPct) return rej(`gap ${gapPct.toFixed(1)}% > -${CFG.shortMinGapPct}% (not gapping down enough)`);
+
+  // ── ANTI-KNIFE GATE: don't short a name net-UP on the multi-day trend ───
+  // (a one-day dip inside an uptrend is a falling knife to short)
+  const wkAgo = daily[Math.max(0, daily.length - 6)]?.close;
+  if (wkAgo && price > wkAgo) return rej(`net up over ~5d ($${wkAgo.toFixed(2)}→$${price.toFixed(2)}) — no short into uptrend`);
+
+  // ── CATALYST GATE 2: relative volume ────────────────────────────────────
+  const todayVol = daily[daily.length - 1]?.volume || 0;
+  const relVol = avgDailyVol > 0 ? todayVol / avgDailyVol : 0;
+  if (relVol < CFG.shortMinRelVol) return rej(`relVol ${relVol.toFixed(1)}× < ${CFG.shortMinRelVol}× (todayVol ${(todayVol/1e6).toFixed(1)}M)`);
+
+  // ── HOLD GATE: still breaking DOWN (below VWAP, below opening-range low) ─
+  const vwap = calcVWAP(candles);
+  if (vwap > 0 && price > vwap) return rej(`above VWAP (price $${price.toFixed(2)} > VWAP $${vwap.toFixed(2)}) — not holding breakdown`);
+
+  const todays = todaysRegularCandles(candles);
+  const openRange = todays.slice(0, 3);
+  const orLow = openRange.length ? Math.min(...openRange.map(c => c.low)) : 0;
+  if (orLow > 0 && price > orLow * 1.005) return rej(`above opening-range low (price $${price.toFixed(2)} > ORL $${orLow.toFixed(2)})`);
+
+  // Volatility / momentum
+  const atr = calcATR(candles, 14);
+  const atrPct = atr / price * 100;
+  if (atrPct < CFG.minATRpct) return rej(`ATR ${atrPct.toFixed(2)}% < ${CFG.minATRpct}%`);
+
+  const rsi = calcRSI(candles, 14);
+  if (rsi < CFG.shortRsiMin) return rej(`RSI ${rsi.toFixed(0)} < ${CFG.shortRsiMin} (washed out — don't short the bottom)`);
+
+  const closes = candles.map(c => c.close);
+  const ema9 = calcEMA(closes, 9), ema20 = calcEMA(closes, 20);
+
+  // ── Composite score (mirror) ─────────────────────────────────────────────
+  let score = 0;
+  const adg = Math.abs(gapPct);
+  score += adg >= 10 ? 3 : adg >= 6 ? 2 : 1;            // down-gap strength
+  score += relVol >= 5 ? 3 : relVol >= 3.5 ? 2 : 1;     // volume strength
+  if (orLow > 0 && price <= orLow) score += 2;          // breaking opening-range low
+  if (vwap > 0 && price < vwap) score += 1;             // below VWAP
+  if (ema9 < ema20 && price < ema9) score += 1;         // intraday downtrend intact
+  if (rsi > 25) score += 1;                             // not already washed out
+
+  return { ticker, price, atr, atrPct, rsi, vwap, orLow, gapPct, relVol, score, side: 'short' };
+}
 async function moveStopLeg(orderId, newStop) {
   return alpaca('PATCH', `/v2/orders/${orderId}`, { stop_price: String(newStop) });
 }
@@ -412,9 +507,13 @@ async function main() {
     state.dailyTrades = 0;
     state.dailyDate = today;
     state.tradedToday = [];   // one round-trip per ticker per day — reset each day
+    state.shortDailyTrades = 0;
+    state.shortTradedToday = [];   // short side: separate daily limit, reset each day
     addLog(state, 'INFO', 'New trading day — counter reset');
   }
   if (!Array.isArray(state.tradedToday)) state.tradedToday = [];
+  if (!Array.isArray(state.shortTradedToday)) state.shortTradedToday = [];
+  if (typeof state.shortDailyTrades !== 'number') state.shortDailyTrades = 0;
 
   // 1. Account + positions
   let account, positions;
@@ -459,8 +558,12 @@ async function main() {
         const ts = state.trailingStops[o.symbol];
         if (!ts) continue;
         for (const leg of (o.legs || [])) {
-          if (leg.type === 'limit' && leg.side === 'sell') { ts.tp = +leg.limit_price; ts.tpOrderId = leg.id; }
-          if (leg.type === 'stop'  && leg.side === 'sell') {
+          const ts2 = state.trailingStops[o.symbol];
+          const isShort = ts2 && ts2.side === 'short';
+          // Long bracket legs are SELL; short bracket legs are BUY.
+          const legSideMatch = isShort ? 'buy' : 'sell';
+          if (leg.type === 'limit' && leg.side === legSideMatch) { ts.tp = +leg.limit_price; ts.tpOrderId = leg.id; }
+          if (leg.type === 'stop'  && leg.side === legSideMatch) {
             ts.sl = +leg.stop_price; ts.slOrderId = leg.id;
             if (ts.initialSl == null) ts.initialSl = +leg.stop_price;
           }
@@ -484,11 +587,43 @@ async function main() {
     const ts = state.trailingStops[p.symbol];
     if (!ts) continue;
 
-    // ── SHORT (defensive only — agent is long-only; legacy handling) ───────
+    // ── SHORT — manage as mirror of long (real bracket stop is at Alpaca; this
+    //    is the secondary trail + breakeven ratchet). Profit = price falling. ──
     if (ts.side === 'short') {
-      if (price < (ts.low || entry)) ts.low = price;
-      const stop = +((ts.low || entry) * (1 + CFG.trail)).toFixed(2);
-      if (price >= stop) {
+      if (price < (ts.low ?? entry)) ts.low = price;
+      const initialSl = ts.initialSl ?? ts.sl;
+      const R = initialSl ? (initialSl - entry) : 0;       // dollar risk per share (up move)
+
+      // (a) Move to breakeven once unrealised gain >= 1R (price fell entry - R)
+      if (!ts.movedToBreakeven && R > 0 && price <= entry - R) {
+        const beStop = +(entry * (1 - CFG.beBufferPct)).toFixed(2);  // just below entry
+        if (ts.slOrderId && beStop < (ts.sl || Infinity)) {
+          try {
+            await moveStopLeg(ts.slOrderId, beStop);
+            ts.sl = beStop; ts.movedToBreakeven = true;
+            addLog(state, 'TRAIL', `${p.symbol} (SHORT) → BREAKEVEN`, `Entry $${entry.toFixed(2)} | +1R reached @ $${price.toFixed(2)} | Stop → $${beStop}`);
+          } catch (e) { addLog(state, 'INFO', `${p.symbol} short breakeven move failed: ${e.message}`); }
+        } else if (!ts.slOrderId) {
+          ts.movedToBreakeven = true; ts.sl = beStop;
+        }
+      }
+
+      // (b) After breakeven, trail the profit downward (never above breakeven)
+      if (ts.movedToBreakeven) {
+        const trailStop = +((ts.low ?? entry) * (1 + CFG.trail)).toFixed(2);
+        const newStop = Math.min(trailStop, ts.sl || Infinity);
+        if (ts.slOrderId && newStop < (ts.sl || Infinity) - 0.01) {
+          try {
+            await moveStopLeg(ts.slOrderId, newStop);
+            addLog(state, 'TRAIL', `${p.symbol} (SHORT) stop lowered → $${newStop}`, `Low $${(ts.low ?? entry).toFixed(2)} | P&L +$${pl.toFixed(2)}`);
+            ts.sl = newStop;
+          } catch (e) { addLog(state, 'INFO', `${p.symbol} short trail patch failed: ${e.message}`); }
+        }
+      }
+
+      // (c) Backstop: if the real bracket somehow isn't there, force-close on breach
+      const hardStop = +((ts.low ?? entry) * (1 + CFG.trail)).toFixed(2);
+      if (!ts.slOrderId && price >= hardStop) {
         const closed = await cancelAndSell(p.symbol, qty, 'short');
         if (closed) { addLog(state, 'SELL', `✓ Closed SHORT ${p.symbol}`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
       }
@@ -647,6 +782,96 @@ async function main() {
       }
     } catch (e) { addLog(state, 'ERROR', `Order failed ${ticker}: ${e.message}`); }
     await sleep(500);
+  }
+
+  // ─── 11. SHORT SIDE ────────────────────────────────────────────────────────
+  // Runs after longs, with its own SEPARATE daily limit (8 long + 8 short).
+  // INVARIANT: every short is placed as a BRACKET so Alpaca attaches a REAL
+  // stop. If Alpaca rejects the bracket (can't borrow / locate), the trade is
+  // SKIPPED — a short is NEVER placed without a broker-side stop.
+  if (CFG.shortEnabled) {
+    const shortSlotsLeft = CFG.shortMaxDaily - (state.shortDailyTrades || 0);
+    if (shortSlotsLeft > 0 && managed.length < CFG.maxPos) {
+      const shortScreener = await runShortScreener();
+      const sdiag = runShortScreener.lastDiag || {};
+      addLog(state, 'INFO', `Short screener — losers ${sdiag.losersRaw ?? '?'}, kept ${sdiag.kept ?? '?'}`,
+        (sdiag.sample && sdiag.sample.length) ? sdiag.sample.join(', ') : '(none returned)');
+
+      const sExisting = new Set((await alpaca('GET', '/v2/positions').catch(() => positions)).map(p => p.symbol));
+      const toScanS = shortScreener.filter(t => !sExisting.has(t)).slice(0, 40);
+
+      analyzeShort.rejections = [];
+      const shorts = [];
+      for (const ticker of toScanS) {
+        try {
+          const s = await analyzeShort(ticker);
+          if (s && s.score >= CFG.minScore) {
+            addLog(state, 'SIGNAL', `${ticker} — SHORT score ${s.score} | gap ${s.gapPct.toFixed(1)}% | relVol ${s.relVol.toFixed(1)}× | RSI ${s.rsi.toFixed(0)}`);
+            shorts.push(s);
+          }
+        } catch (e) { console.warn(`Short analysis failed for ${ticker}: ${e.message}`); }
+        await sleep(200);
+      }
+      if (analyzeShort.rejections.length) {
+        addLog(state, 'INFO', `Short rejections (${analyzeShort.rejections.length})`, analyzeShort.rejections.slice(0, 12).join('  •  '));
+      }
+
+      if (shorts.length) {
+        shorts.sort((a, b) => b.score - a.score);
+        addLog(state, 'INFO', `Top short: ${shorts[0].ticker} (score ${shorts[0].score})`);
+
+        const sSlots = Math.min(CFG.maxPos - managed.length, shortSlotsLeft, CFG.maxPerCycle);
+        const shortedThisCycle = new Set();
+        for (const sig of shorts.slice(0, sSlots)) {
+          if (sExisting.has(sig.ticker) || shortedThisCycle.has(sig.ticker)) continue;
+          if (state.shortTradedToday.includes(sig.ticker) || state.tradedToday.includes(sig.ticker)) {
+            addLog(state, 'INFO', `SKIP ${sig.ticker} — already traded today`);
+            continue;
+          }
+          const { ticker, price, atr } = sig;
+
+          // SHORT geometry: stop ABOVE entry, target BELOW. Wider stop (shortAtrSL).
+          const slRaw = price + atr * CFG.shortAtrSL;
+          const slF = +Math.max(slRaw, price + 0.05).toFixed(2);   // stop above entry
+          const tpF = +Math.max(0.01, price - atr * CFG.shortAtrTP).toFixed(2); // target below
+          const riskPS = Math.max(0.01, slF - price);              // $ risk per share (up move)
+          const qtyByRisk = Math.floor(CFG.shortRiskPerTrade / riskPS);
+          const qtyByValue = Math.floor(CFG.shortMaxPosValue / price);
+          const qty = Math.max(1, Math.min(qtyByRisk, qtyByValue));
+          const rr = ((price - tpF) / riskPS).toFixed(1);
+          const dollarRisk = (riskPS * qty).toFixed(2);
+
+          addLog(state, 'SHORT', `Placing SHORT ${qty}× ${ticker} @ ~$${price.toFixed(2)}`,
+            `gap ${sig.gapPct.toFixed(1)}% | risk $${dollarRisk} | SL $${slF} | TP $${tpF} | R:R ${rr}`);
+
+          try {
+            // BRACKET = real broker-side stop. If Alpaca can't borrow/locate, this
+            // throws and we SKIP — never a naked short.
+            const order = await alpaca('POST', '/v2/orders', {
+              symbol: ticker, qty: String(qty), side: 'sell', type: 'market', time_in_force: 'gtc',
+              order_class: 'bracket', take_profit: { limit_price: String(tpF) }, stop_loss: { stop_price: String(slF) },
+            });
+            if (order.id) {
+              addLog(state, 'SHORT', `✓ SHORT PLACED: ${qty}× ${ticker}`, `ID ${order.id} | R:R ${rr}:1 | risk $${dollarRisk} | real bracket stop @ $${slF}`);
+              state.trailingStops[ticker] = {
+                side: 'short', entry: price, high: price, low: price,
+                initialSl: slF, sl: slF, tp: tpF, slOrderId: null, tpOrderId: null, movedToBreakeven: false,
+              };
+              sExisting.add(ticker); shortedThisCycle.add(ticker);
+              state.shortDailyTrades = (state.shortDailyTrades || 0) + 1;
+              state.shortTradedToday.push(ticker);
+              managed.push({ symbol: ticker });   // count toward concurrent position cap
+            }
+          } catch (e) {
+            // Most common: not shortable / hard-to-borrow / no locate → SKIP, not naked.
+            addLog(state, 'INFO', `SKIP SHORT ${ticker} — ${e.message.slice(0, 80)}`);
+          }
+          await sleep(500);
+        }
+      } else {
+        addLog(state, 'INFO', 'No short signals meeting criteria');
+      }
+    }
   }
 
   saveState(state);
