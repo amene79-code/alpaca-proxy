@@ -3,7 +3,7 @@
     "SMCI": {
       "side": "long",
       "entry": 30.55500030517578,
-      "high": 30.95,
+      "high": 31.385,
       "low": 30.55500030517578,
       "initialSl": 30.08,
       "sl": 30.5,
@@ -83,20 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-11T19:26:53.106Z",
+  "lastRun": "2026-06-11T19:33:39.500Z",
   "log": [
-    {
-      "time": "2026-06-11T17:09:21.247Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "CPNG: relVol 1.8× < 2.5× (todayVol 45.2M)  •  VOYG: relVol 0.9× < 2.5× (todayVol 2.5M)  •  RDW: relVol 0.7× < 2.5× (todayVol 40.3M)  •  YSS: relVol 0.5× < 2.5× (todayVol 1.0M)  •  FLY: relVol 0.6× < 2.5× (todayVol 5.2M)  •  LUNR: relVol 0.6× < 2.5× (todayVol 9.5M)  •  NAVN: below VWAP (price $23.35 < VWAP $23.51)  •  TEO: avgVol 0.7M < 1M  •  BBAR: avgVol 0.7M < 1M  •  ESLT: avgVol 0.1M < 1M  •  IDCC: avgVol 0.3M < 1M  •  GGAL: relVol 1.7× < 2.5× (todayVol 2.5M)"
-    },
-    {
-      "time": "2026-06-11T17:09:21.248Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-11T17:13:26.098Z",
       "type": "INFO",
@@ -1283,6 +1271,18 @@
       "time": "2026-06-11T19:26:53.106Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T19:33:39.184Z",
+      "type": "INFO",
+      "msg": "Account: $100033.22 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-11T19:33:39.500Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
