@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-06-11",
+  "dailyTrades": 0,
+  "dailyDate": "2026-06-12",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-11T21:37:04.665Z",
+  "lastRun": "2026-06-12T11:24:19.056Z",
   "log": [
-    {
-      "time": "2026-06-11T17:30:27.951Z",
-      "type": "INFO",
-      "msg": "Account: $99988.46 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-11T17:30:28.384Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "ORCL, SMCI, MU, NIMU, PPIH, NVDA, SPCX, CRCW"
-    },
-    {
-      "time": "2026-06-11T17:30:28.798Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CPNG, RDW, VOYG, YSS, FLY, NAVN, LUNR, BBAR, ATRO, IDCC"
-    },
     {
       "time": "2026-06-11T17:30:28.799Z",
       "type": "INFO",
@@ -1271,11 +1253,27 @@
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-12T11:24:18.625Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T11:24:18.833Z",
+      "type": "INFO",
+      "msg": "Account: $100054.21 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T11:24:19.056Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "SMCI"
-  ],
+  "tradedToday": [],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
