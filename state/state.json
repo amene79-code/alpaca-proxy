@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-12T14:02:26.136Z",
+  "lastRun": "2026-06-12T14:13:10.777Z",
   "log": [
-    {
-      "time": "2026-06-11T17:45:48.950Z",
-      "type": "BUY",
-      "msg": "Placing 49× SMCI @ ~$30.56",
-      "detail": "gap 4.4% | risk $23.28 | SL $30.08 | TP $31.81 | R:R 2.6 | Bullish Engulfing, Hammer"
-    },
-    {
-      "time": "2026-06-11T17:45:49.152Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 49× SMCI",
-      "detail": "ID 96ecaa4e-015c-43e7-a68b-9837655dd6d8 | R:R 2.6:1 | risk $23.28"
-    },
-    {
-      "time": "2026-06-11T17:45:49.946Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 14",
-      "detail": "DAN, PCT, ORCL, PTC, CHWY, RGC, ANDE, Z, ZG, GDDY"
-    },
-    {
-      "time": "2026-06-11T17:45:56.633Z",
-      "type": "INFO",
-      "msg": "Short rejections (14)",
-      "detail": "DAN: relVol 2.1× < 2.5× (todayVol 2.3M)  •  PCT: above VWAP (price $8.65 > VWAP $8.30) — not holding breakdown  •  ORCL: relVol 1.8× < 2.5× (todayVol 44.6M)  •  PTC: relVol 0.5× < 2.5× (todayVol 0.8M)  •  CHWY: relVol 0.9× < 2.5× (todayVol 8.7M)  •  RGC: avgVol 0.1M < 1M  •  ANDE: avgVol 0.3M < 1M  •  Z: relVol 1.5× < 2.5× (todayVol 7.4M)  •  ZG: relVol 1.7× < 2.5× (todayVol 2.1M)  •  GDDY: relVol 0.4× < 2.5× (todayVol 1.1M)  •  HRB: relVol 0.5× < 2.5× (todayVol 1.2M)  •  CBRS: net up over ~5d ($215.40→$227.50) — no short into uptrend"
-    },
-    {
-      "time": "2026-06-11T17:45:56.633Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-11T17:48:26.466Z",
-      "type": "INFO",
-      "msg": "Account: $99983.73 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-11T17:48:26.862Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "ORCL, SMCI, MU, NIMU, PPIH, NVDA, SPCX, CRCW"
-    },
-    {
-      "time": "2026-06-11T17:48:27.452Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "RDW, CPNG, VOYG, YSS, FLY, LUNR, NAVN, ELVN, BBAR, ADPT"
-    },
-    {
-      "time": "2026-06-11T17:48:27.453Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-11T17:48:52.736Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-06-12T14:02:26.136Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T14:12:40.977Z",
+      "type": "INFO",
+      "msg": "Account: $100054.21 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T14:12:41.157Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "SPCX, MSFT, ADBE, MU, SPCE, SNDK, DTE, RKLB"
+    },
+    {
+      "time": "2026-06-12T14:12:41.539Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "POET, CIFR, KEEL, APLD, SMR, NOK, IREN, AMD, MARA, AXTI"
+    },
+    {
+      "time": "2026-06-12T14:12:41.539Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-12T14:13:01.913Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "POET: relVol 0.2× < 2.5× (todayVol 9.6M)  •  CIFR: relVol 0.3× < 2.5× (todayVol 6.8M)  •  KEEL: relVol 0.4× < 2.5× (todayVol 18.8M)  •  APLD: relVol 0.3× < 2.5× (todayVol 5.9M)  •  SMR: relVol 0.3× < 2.5× (todayVol 10.4M)  •  NOK: relVol 0.3× < 2.5× (todayVol 36.8M)  •  IREN: relVol 0.2× < 2.5× (todayVol 10.2M)  •  AMD: relVol 0.3× < 2.5× (todayVol 8.9M)  •  MARA: relVol 0.2× < 2.5× (todayVol 8.6M)  •  AXTI: relVol 0.2× < 2.5× (todayVol 2.1M)  •  ARM: relVol 0.3× < 2.5× (todayVol 4.1M)  •  VIAV: relVol 0.1× < 2.5× (todayVol 0.8M)"
+    },
+    {
+      "time": "2026-06-12T14:13:01.913Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T14:13:02.121Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 29",
+      "detail": "YSS, FLY, VOYG, NAVN, LUNR, ASTS, SATS, RDW, PL, ADBE"
+    },
+    {
+      "time": "2026-06-12T14:13:10.777Z",
+      "type": "INFO",
+      "msg": "Short rejections (29)",
+      "detail": "YSS: relVol 0.4× < 2.5× (todayVol 0.8M)  •  FLY: relVol 0.4× < 2.5× (todayVol 3.6M)  •  VOYG: net up over ~5d ($41.55→$42.36) — no short into uptrend  •  NAVN: relVol 0.6× < 2.5× (todayVol 2.3M)  •  LUNR: relVol 0.4× < 2.5× (todayVol 6.7M)  •  ASTS: relVol 0.6× < 2.5× (todayVol 15.4M)  •  SATS: net up over ~5d ($116.28→$117.07) — no short into uptrend  •  RDW: relVol 0.4× < 2.5× (todayVol 22.7M)  •  PL: relVol 0.3× < 2.5× (todayVol 4.4M)  •  ADBE: relVol 1.8× < 2.5× (todayVol 11.4M)  •  MDA: relVol 0.3× < 2.5× (todayVol 0.4M)  •  RKLB: relVol 0.8× < 2.5× (todayVol 19.6M)"
+    },
+    {
+      "time": "2026-06-12T14:13:10.777Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
