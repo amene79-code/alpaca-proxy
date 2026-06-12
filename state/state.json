@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-12T13:20:18.021Z",
+  "lastRun": "2026-06-12T13:30:30.593Z",
   "log": [
-    {
-      "time": "2026-06-11T17:34:41.047Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-11T17:34:59.629Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "CPNG: relVol 2.0× < 2.5× (todayVol 50.2M)  •  RDW: relVol 0.7× < 2.5× (todayVol 43.4M)  •  YSS: relVol 0.5× < 2.5× (todayVol 1.1M)  •  VOYG: relVol 1.0× < 2.5× (todayVol 2.7M)  •  FLY: relVol 0.6× < 2.5× (todayVol 5.5M)  •  NAVN: below opening-range high (price $23.80 < ORH $24.42, 50 today-candles)  •  LUNR: relVol 0.6× < 2.5× (todayVol 10.5M)  •  BBAR: avgVol 0.7M < 1M  •  IDCC: avgVol 0.3M < 1M  •  ATRO: avgVol 0.6M < 1M  •  VSAT: relVol 0.4× < 2.5× (todayVol 1.1M)  •  ESLT: avgVol 0.1M < 1M"
-    },
     {
       "time": "2026-06-11T17:34:59.629Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-06-12T13:20:18.020Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T13:30:30.311Z",
+      "type": "INFO",
+      "msg": "Account: $100054.21 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T13:30:30.593Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (0 min in)",
       "detail": ""
     }
   ],
