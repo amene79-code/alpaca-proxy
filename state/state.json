@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-12T20:09:22.793Z",
+  "lastRun": "2026-06-12T20:12:20.456Z",
   "log": [
-    {
-      "time": "2026-06-12T18:45:28.903Z",
-      "type": "INFO",
-      "msg": "SKIP SATS — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T18:47:19.066Z",
-      "type": "INFO",
-      "msg": "Account: $100014.91 | 0 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-12T18:47:19.191Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-06-12T20:09:22.792Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T20:12:19.922Z",
+      "type": "INFO",
+      "msg": "Account: $100098.04 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T20:12:20.456Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
