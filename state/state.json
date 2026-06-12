@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-12T19:51:43.564Z",
+  "lastRun": "2026-06-12T19:56:55.887Z",
   "log": [
-    {
-      "time": "2026-06-12T18:44:43.190Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "SPCX, MSFT, ADBE, MU, SPCE, SNDK, DTE, RKLB"
-    },
-    {
-      "time": "2026-06-12T18:44:44.008Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "POET, MAAS, ELVN, AXTI, ALMS, CRWV, NVTS, INTC, IREN, RIVN"
-    },
-    {
-      "time": "2026-06-12T18:44:44.008Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-12T18:44:45.184Z",
       "type": "SIGNAL",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-12T19:51:43.564Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T19:56:54.486Z",
+      "type": "INFO",
+      "msg": "Account: $100098.04 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T19:56:55.887Z",
+      "type": "INFO",
+      "msg": "EOD review (4 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T19:56:55.887Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
