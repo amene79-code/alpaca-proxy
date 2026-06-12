@@ -83,74 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-12T16:46:31.518Z",
+  "lastRun": "2026-06-12T16:48:36.891Z",
   "log": [
-    {
-      "time": "2026-06-12T14:24:03.129Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T14:34:17.293Z",
-      "type": "INFO",
-      "msg": "Account: $100054.21 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T14:34:17.747Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "SPCX, MSFT, ADBE, MU, SPCE, SNDK, DTE, RKLB"
-    },
-    {
-      "time": "2026-06-12T14:34:18.388Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "POET, NVTS, CIFR, KEEL, APLD, CRWV, SMR, NOK, IREN, AMD"
-    },
-    {
-      "time": "2026-06-12T14:34:18.388Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-12T14:34:44.636Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "POET: relVol 0.3× < 2.5× (todayVol 13.0M)  •  NVTS: relVol 0.2× < 2.5× (todayVol 8.7M)  •  CIFR: relVol 0.4× < 2.5× (todayVol 8.3M)  •  KEEL: relVol 0.4× < 2.5× (todayVol 22.0M)  •  APLD: relVol 0.3× < 2.5× (todayVol 7.5M)  •  CRWV: relVol 0.4× < 2.5× (todayVol 10.5M)  •  SMR: relVol 0.4× < 2.5× (todayVol 12.2M)  •  NOK: relVol 0.4× < 2.5× (todayVol 44.6M)  •  IREN: relVol 0.3× < 2.5× (todayVol 12.6M)  •  AMD: relVol 0.3× < 2.5× (todayVol 10.8M)  •  TMC: relVol 0.5× < 2.5× (todayVol 3.0M)  •  AXTI: relVol 0.4× < 2.5× (todayVol 3.2M)"
-    },
-    {
-      "time": "2026-06-12T14:34:44.636Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T14:34:44.856Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 28",
-      "detail": "YSS, FLY, NAVN, ASTS, VOYG, LUNR, SATS, RKLB, PL, RDDT"
-    },
-    {
-      "time": "2026-06-12T14:34:56.930Z",
-      "type": "INFO",
-      "msg": "Short rejections (28)",
-      "detail": "YSS: net up over ~5d ($29.14→$29.25) — no short into uptrend  •  FLY: relVol 0.5× < 2.5× (todayVol 4.3M)  •  NAVN: relVol 0.7× < 2.5× (todayVol 3.1M)  •  ASTS: relVol 0.7× < 2.5× (todayVol 18.0M)  •  VOYG: net up over ~5d ($41.55→$43.67) — no short into uptrend  •  LUNR: relVol 0.5× < 2.5× (todayVol 7.8M)  •  SATS: net up over ~5d ($116.28→$118.42) — no short into uptrend  •  RKLB: relVol 0.9× < 2.5× (todayVol 22.3M)  •  PL: relVol 0.4× < 2.5× (todayVol 5.6M)  •  RDDT: relVol 0.3× < 2.5× (todayVol 1.4M)  •  MDA: relVol 0.4× < 2.5× (todayVol 0.5M)  •  ADBE: relVol 2.0× < 2.5× (todayVol 13.1M)"
-    },
-    {
-      "time": "2026-06-12T14:34:56.930Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T14:45:12.388Z",
-      "type": "INFO",
-      "msg": "Account: $100054.21 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-12T14:45:12.924Z",
       "type": "INFO",
@@ -1281,6 +1215,72 @@
     },
     {
       "time": "2026-06-12T16:46:31.518Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T16:48:06.039Z",
+      "type": "INFO",
+      "msg": "Account: $100020.08 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T16:48:06.435Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "SPCX, MSFT, ADBE, MU, SPCE, SNDK, DTE, RKLB"
+    },
+    {
+      "time": "2026-06-12T16:48:06.826Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "POET, CIFR, CRWV, ALMS, NVTS, AXTI, ELVN, KEEL, IREN, INTC"
+    },
+    {
+      "time": "2026-06-12T16:48:06.826Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-12T16:48:08.931Z",
+      "type": "SIGNAL",
+      "msg": "ELVN — score 9 | gap 12.7% | relVol 3.0× | RSI 53",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T16:48:25.841Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "POET: relVol 0.5× < 2.5× (todayVol 23.2M)  •  CIFR: relVol 0.7× < 2.5× (todayVol 17.1M)  •  CRWV: relVol 0.9× < 2.5× (todayVol 24.7M)  •  ALMS: relVol 0.7× < 2.5× (todayVol 0.8M)  •  NVTS: relVol 0.5× < 2.5× (todayVol 19.5M)  •  AXTI: relVol 0.7× < 2.5× (todayVol 5.7M)  •  KEEL: relVol 0.7× < 2.5× (todayVol 36.6M)  •  IREN: relVol 0.5× < 2.5× (todayVol 26.6M)  •  INTC: relVol 0.7× < 2.5× (todayVol 87.7M)  •  MAAS: avgVol 0.0M < 1M  •  PLBL: avgVol 0.0M < 1M  •  TGB: relVol 0.8× < 2.5× (todayVol 3.9M)"
+    },
+    {
+      "time": "2026-06-12T16:48:25.841Z",
+      "type": "INFO",
+      "msg": "Top signal: ELVN (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T16:48:25.841Z",
+      "type": "INFO",
+      "msg": "SKIP ELVN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T16:48:26.020Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 37",
+      "detail": "YSS, FLY, SATS, VOYG, ASTS, NAVN, LUNR, PL, RDW, MDA"
+    },
+    {
+      "time": "2026-06-12T16:48:36.890Z",
+      "type": "INFO",
+      "msg": "Short rejections (36)",
+      "detail": "YSS: relVol 0.9× < 2.5× (todayVol 1.9M)  •  FLY: relVol 1.0× < 2.5× (todayVol 9.7M)  •  VOYG: net up over ~5d ($41.55→$41.88) — no short into uptrend  •  ASTS: relVol 1.4× < 2.5× (todayVol 37.1M)  •  NAVN: relVol 1.2× < 2.5× (todayVol 5.2M)  •  LUNR: relVol 0.9× < 2.5× (todayVol 15.2M)  •  PL: relVol 0.8× < 2.5× (todayVol 12.1M)  •  RDW: relVol 0.8× < 2.5× (todayVol 47.0M)  •  MDA: relVol 0.9× < 2.5× (todayVol 1.1M)  •  USAC: avgVol 0.2M < 1M  •  RKLB: relVol 1.7× < 2.5× (todayVol 45.7M)  •  ESLT: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-06-12T16:48:36.891Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
