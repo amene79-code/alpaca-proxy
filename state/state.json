@@ -70,86 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-12T17:21:04.719Z",
+  "lastRun": "2026-06-12T17:27:46.436Z",
   "log": [
-    {
-      "time": "2026-06-12T16:24:24.548Z",
-      "type": "INFO",
-      "msg": "Top signal: ELVN (score 12)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T16:24:24.548Z",
-      "type": "INFO",
-      "msg": "SKIP ELVN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T16:24:24.839Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FLY, YSS, SATS, VOYG, ASTS, LUNR, NAVN, PL, MDA, RDW"
-    },
-    {
-      "time": "2026-06-12T16:24:41.568Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "FLY: relVol 0.9× < 2.5× (todayVol 8.8M)  •  YSS: relVol 0.9× < 2.5× (todayVol 1.8M)  •  VOYG: relVol 0.6× < 2.5× (todayVol 1.9M)  •  ASTS: relVol 1.3× < 2.5× (todayVol 34.4M)  •  LUNR: relVol 0.8× < 2.5× (todayVol 14.1M)  •  NAVN: relVol 1.2× < 2.5× (todayVol 5.0M)  •  PL: relVol 0.8× < 2.5× (todayVol 11.2M)  •  MDA: relVol 0.8× < 2.5× (todayVol 1.0M)  •  RDW: relVol 0.7× < 2.5× (todayVol 44.5M)  •  RKLB: relVol 1.6× < 2.5× (todayVol 42.5M)  •  FIG: relVol 0.6× < 2.5× (todayVol 13.6M)  •  USAC: avgVol 0.2M < 1M"
-    },
-    {
-      "time": "2026-06-12T16:24:41.568Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T16:26:37.644Z",
-      "type": "INFO",
-      "msg": "Account: $100019.39 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T16:26:38.087Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "SPCX, MSFT, ADBE, MU, SPCE, SNDK, DTE, RKLB"
-    },
-    {
-      "time": "2026-06-12T16:26:38.415Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "POET, CIFR, CRWV, NVTS, KEEL, ELVN, IREN, INTC, ALMS, AXTI"
-    },
-    {
-      "time": "2026-06-12T16:26:38.415Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-12T16:26:40.071Z",
-      "type": "SIGNAL",
-      "msg": "ELVN — score 9 | gap 11.5% | relVol 2.9× | RSI 45",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T16:26:56.860Z",
-      "type": "INFO",
-      "msg": "Rejections (59)",
-      "detail": "POET: relVol 0.5× < 2.5× (todayVol 22.5M)  •  CIFR: relVol 0.7× < 2.5× (todayVol 16.2M)  •  CRWV: relVol 0.9× < 2.5× (todayVol 23.6M)  •  NVTS: relVol 0.5× < 2.5× (todayVol 18.8M)  •  KEEL: relVol 0.7× < 2.5× (todayVol 35.3M)  •  IREN: relVol 0.5× < 2.5× (todayVol 25.4M)  •  INTC: relVol 0.7× < 2.5× (todayVol 83.2M)  •  ALMS: relVol 0.6× < 2.5× (todayVol 0.7M)  •  AXTI: relVol 0.6× < 2.5× (todayVol 5.5M)  •  TGB: relVol 0.7× < 2.5× (todayVol 3.7M)  •  FRO: gap 4.0% < 4% (price $38.60 vs priorClose $37.13)  •  ERO: relVol 0.6× < 2.5× (todayVol 0.7M)"
-    },
-    {
-      "time": "2026-06-12T16:26:56.860Z",
-      "type": "INFO",
-      "msg": "Top signal: ELVN (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T16:26:56.860Z",
-      "type": "INFO",
-      "msg": "SKIP ELVN — already traded today",
-      "detail": ""
-    },
     {
       "time": "2026-06-12T16:26:56.988Z",
       "type": "INFO",
@@ -1268,6 +1190,84 @@
     },
     {
       "time": "2026-06-12T17:21:04.719Z",
+      "type": "INFO",
+      "msg": "SKIP SATS — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T17:27:16.276Z",
+      "type": "INFO",
+      "msg": "Account: $100014.91 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T17:27:16.467Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "SPCX, MSFT, ADBE, MU, SPCE, SNDK, DTE, RKLB"
+    },
+    {
+      "time": "2026-06-12T17:27:16.799Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "POET, CIFR, ELVN, CRWV, AXTI, INTC, NVTS, ALMS, IREN, KEEL"
+    },
+    {
+      "time": "2026-06-12T17:27:16.799Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-12T17:27:17.622Z",
+      "type": "SIGNAL",
+      "msg": "ELVN — score 12 | gap 14.7% | relVol 3.2× | RSI 70",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-06-12T17:27:35.677Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "POET: relVol 0.6× < 2.5× (todayVol 24.6M)  •  CIFR: relVol 0.8× < 2.5× (todayVol 18.2M)  •  CRWV: relVol 0.9× < 2.5× (todayVol 26.4M)  •  AXTI: relVol 0.7× < 2.5× (todayVol 6.4M)  •  INTC: relVol 0.8× < 2.5× (todayVol 98.0M)  •  NVTS: relVol 0.6× < 2.5× (todayVol 20.6M)  •  ALMS: relVol 0.9× < 2.5× (todayVol 0.9M)  •  IREN: relVol 0.6× < 2.5× (todayVol 28.9M)  •  KEEL: relVol 0.8× < 2.5× (todayVol 39.2M)  •  NOK: relVol 0.7× < 2.5× (todayVol 85.8M)  •  AMD: relVol 0.7× < 2.5× (todayVol 20.4M)  •  MAAS: avgVol 0.0M < 1M"
+    },
+    {
+      "time": "2026-06-12T17:27:35.677Z",
+      "type": "INFO",
+      "msg": "Top signal: ELVN (score 12)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T17:27:35.677Z",
+      "type": "INFO",
+      "msg": "SKIP ELVN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T17:27:35.845Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 32",
+      "detail": "YSS, FLY, ASTS, VOYG, SATS, NAVN, LUNR, RDW, PL, MDA"
+    },
+    {
+      "time": "2026-06-12T17:27:37.213Z",
+      "type": "SIGNAL",
+      "msg": "SATS — SHORT score 9 | gap -11.5% | relVol 3.7× | RSI 66",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T17:27:46.436Z",
+      "type": "INFO",
+      "msg": "Short rejections (31)",
+      "detail": "YSS: relVol 1.0× < 2.5× (todayVol 2.1M)  •  FLY: relVol 1.1× < 2.5× (todayVol 10.5M)  •  ASTS: relVol 1.5× < 2.5× (todayVol 39.4M)  •  VOYG: net up over ~5d ($41.55→$41.90) — no short into uptrend  •  NAVN: relVol 1.3× < 2.5× (todayVol 5.6M)  •  LUNR: relVol 0.9× < 2.5× (todayVol 16.3M)  •  RDW: relVol 0.8× < 2.5× (todayVol 49.8M)  •  PL: relVol 0.9× < 2.5× (todayVol 13.2M)  •  MDA: relVol 1.0× < 2.5× (todayVol 1.2M)  •  RKLB: relVol 1.8× < 2.5× (todayVol 49.1M)  •  USAC: avgVol 0.2M < 1M  •  ADBE: above VWAP (price $203.03 > VWAP $201.48) — not holding breakdown"
+    },
+    {
+      "time": "2026-06-12T17:27:46.436Z",
+      "type": "INFO",
+      "msg": "Top short: SATS (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T17:27:46.436Z",
       "type": "INFO",
       "msg": "SKIP SATS — already traded today",
       "detail": ""
