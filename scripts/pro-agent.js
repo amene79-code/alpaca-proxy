@@ -29,7 +29,7 @@ const CFG = {
   maxPosValue:  1500,  // max $ deployed in a single position
   maxPos:       8,     // max concurrent positions
   maxDaily:     8,     // max NEW trades per day
-  maxPerCycle:  2,     // max NEW trades per cycle
+  maxPerCycle:  4,     // max NEW trades per cycle
 
   atrSL:        1.5,   // initial structural stop = entry − ATR × this
   atrTP:        4.0,   // take-profit ceiling = entry + ATR × this (let winners run)
