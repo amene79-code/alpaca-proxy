@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-12T20:22:41.326Z",
+  "lastRun": "2026-06-12T20:27:54.860Z",
   "log": [
-    {
-      "time": "2026-06-12T18:47:42.369Z",
-      "type": "INFO",
-      "msg": "SKIP ELVN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-12T18:47:42.581Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "YSS, FLY, VOYG, ASTS, SATS, LUNR, NAVN, RDW, PL, RKLB"
-    },
     {
       "time": "2026-06-12T18:47:44.026Z",
       "type": "SIGNAL",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-06-12T20:22:41.325Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T20:27:54.497Z",
+      "type": "INFO",
+      "msg": "Account: $100098.04 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-12T20:27:54.860Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
