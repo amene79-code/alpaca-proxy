@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-15T13:24:16.350Z",
+  "lastRun": "2026-06-15T13:34:29.672Z",
   "log": [
-    {
-      "time": "2026-06-12T18:53:42.343Z",
-      "type": "INFO",
-      "msg": "Rejections (59)",
-      "detail": "POET: relVol 0.6× < 2.5× (todayVol 27.3M)  •  MAAS: avgVol 0.0M < 1M  •  AXTI: relVol 0.9× < 2.5× (todayVol 7.8M)  •  ALMS: relVol 1.2× < 2.5× (todayVol 1.4M)  •  CRWV: relVol 1.1× < 2.5× (todayVol 29.7M)  •  IREN: relVol 0.7× < 2.5× (todayVol 35.4M)  •  NVTS: relVol 0.6× < 2.5× (todayVol 22.8M)  •  INTC: relVol 1.0× < 2.5× (todayVol 123.2M)  •  ARM: relVol 1.0× < 2.5× (todayVol 12.9M)  •  RIVN: relVol 0.6× < 2.5× (todayVol 21.7M)  •  NOK: relVol 0.8× < 2.5× (todayVol 96.4M)  •  PLBL: avgVol 0.0M < 1M"
-    },
-    {
-      "time": "2026-06-12T18:53:42.343Z",
-      "type": "INFO",
-      "msg": "Top signal: ELVN (score 9)",
-      "detail": ""
-    },
     {
       "time": "2026-06-12T18:53:42.343Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-06-15T13:24:16.350Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-15T13:34:29.380Z",
+      "type": "INFO",
+      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-15T13:34:29.672Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (4 min in)",
       "detail": ""
     }
   ],
