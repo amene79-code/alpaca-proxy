@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-15T19:23:53.200Z",
+  "lastRun": "2026-06-15T19:25:55.078Z",
   "log": [
-    {
-      "time": "2026-06-15T16:50:29.437Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "FOXA: above VWAP (price $55.34 > VWAP $54.72) — not holding breakdown  •  FOX: above VWAP (price $50.26 > VWAP $49.70) — not holding breakdown  •  SSL: relVol 0.9× < 2.5× (todayVol 1.2M)  •  CENX: relVol 0.9× < 2.5× (todayVol 1.7M)  •  PTRN: relVol 1.2× < 2.5× (todayVol 1.9M)  •  LRN: avgVol 0.6M < 1M  •  WDS: relVol 1.2× < 2.5× (todayVol 1.2M)  •  VG: relVol 1.0× < 2.5× (todayVol 13.9M)  •  FISV: relVol 1.9× < 2.5× (todayVol 13.3M)  •  AA: relVol 1.6× < 2.5× (todayVol 7.8M)  •  NEXT: relVol 1.0× < 2.5× (todayVol 2.5M)  •  YPF: relVol 0.6× < 2.5× (todayVol 1.5M)"
-    },
-    {
-      "time": "2026-06-15T16:50:29.437Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T17:00:45.377Z",
-      "type": "INFO",
-      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T17:00:45.561Z",
-      "type": "INFO",
-      "msg": "Watchlist: 26 tickers",
-      "detail": "GMS, LZB, PURE, RFL, SEED, SOUB, WLY, AIOT"
-    },
-    {
-      "time": "2026-06-15T17:00:45.968Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "POET, QBTS, RGTI, SMR, SOUN, AXTI, XNDU, OUST, PLBL, XE"
-    },
-    {
-      "time": "2026-06-15T17:00:45.968Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 26 watchlist"
-    },
-    {
-      "time": "2026-06-15T17:01:05.041Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "POET: relVol 0.7× < 2.5× (todayVol 28.3M)  •  QBTS: relVol 0.6× < 2.5× (todayVol 27.4M)  •  RGTI: relVol 0.4× < 2.5× (todayVol 28.5M)  •  SMR: relVol 0.7× < 2.5× (todayVol 23.8M)  •  SOUN: relVol 0.8× < 2.5× (todayVol 21.1M)  •  AXTI: relVol 0.8× < 2.5× (todayVol 7.3M)  •  XNDU: relVol 0.8× < 2.5× (todayVol 3.7M)  •  OUST: relVol 0.6× < 2.5× (todayVol 3.1M)  •  PLBL: avgVol 0.1M < 1M  •  XE: relVol 0.9× < 2.5× (todayVol 3.8M)  •  ACHR: relVol 0.6× < 2.5× (todayVol 32.1M)  •  MU: relVol 0.5× < 2.5× (todayVol 25.2M)"
-    },
-    {
-      "time": "2026-06-15T17:01:05.041Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T17:01:05.186Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FOXA, FOX, SSL, LRN, CENX, PTRN, WDS, FISV, VG, AA"
-    },
     {
       "time": "2026-06-15T17:01:20.457Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-06-15T19:23:53.200Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-15T19:25:10.213Z",
+      "type": "INFO",
+      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-15T19:25:10.439Z",
+      "type": "INFO",
+      "msg": "Watchlist: 26 tickers",
+      "detail": "GMS, LZB, PURE, RFL, SEED, SOUB, WLY, AIOT"
+    },
+    {
+      "time": "2026-06-15T19:25:10.897Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "QBTS, POET, MU, MRVL, XNDU, WOLF, XE, AXTI, WDC, ACHR"
+    },
+    {
+      "time": "2026-06-15T19:25:10.898Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 26 watchlist"
+    },
+    {
+      "time": "2026-06-15T19:25:35.491Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "QBTS: relVol 0.8× < 2.5× (todayVol 37.4M)  •  POET: relVol 0.9× < 2.5× (todayVol 37.2M)  •  MU: relVol 0.6× < 2.5× (todayVol 34.8M)  •  MRVL: relVol 0.7× < 2.5× (todayVol 39.4M)  •  XNDU: relVol 1.2× < 2.5× (todayVol 5.8M)  •  WOLF: relVol 0.8× < 2.5× (todayVol 7.4M)  •  XE: relVol 1.2× < 2.5× (todayVol 5.2M)  •  AXTI: relVol 1.0× < 2.5× (todayVol 9.2M)  •  WDC: relVol 1.1× < 2.5× (todayVol 7.4M)  •  ACHR: relVol 0.9× < 2.5× (todayVol 49.7M)  •  SMR: relVol 0.8× < 2.5× (todayVol 29.7M)  •  RGTI: relVol 0.6× < 2.5× (todayVol 36.6M)"
+    },
+    {
+      "time": "2026-06-15T19:25:35.491Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-15T19:25:35.875Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "FOXA, LRN, FOX, SSL, FISV, MH, CENX, VG, WDS, CVSA"
+    },
+    {
+      "time": "2026-06-15T19:25:55.078Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "FOXA: above VWAP (price $54.75 > VWAP $54.72) — not holding breakdown  •  LRN: avgVol 0.8M < 1M  •  FOX: above VWAP (price $49.95 > VWAP $49.72) — not holding breakdown  •  SSL: relVol 1.1× < 2.5× (todayVol 1.6M)  •  FISV: ATR 0.28% < 0.5%  •  MH: avgVol 0.5M < 1M  •  CENX: relVol 1.5× < 2.5× (todayVol 2.8M)  •  VG: relVol 1.4× < 2.5× (todayVol 20.0M)  •  WDS: relVol 1.6× < 2.5× (todayVol 1.6M)  •  CVSA: avgVol 0.3M < 1M  •  SM: relVol 1.0× < 2.5× (todayVol 4.2M)  •  NEXT: relVol 1.2× < 2.5× (todayVol 3.1M)"
+    },
+    {
+      "time": "2026-06-15T19:25:55.078Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
