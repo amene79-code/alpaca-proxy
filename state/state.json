@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 2,
-  "dailyDate": "2026-06-12",
+  "dailyTrades": 0,
+  "dailyDate": "2026-06-15",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-12T22:12:29.162Z",
+  "lastRun": "2026-06-15T13:24:16.350Z",
   "log": [
-    {
-      "time": "2026-06-12T18:53:20.357Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "POET, MAAS, AXTI, ELVN, ALMS, CRWV, IREN, NVTS, INTC, ARM"
-    },
-    {
-      "time": "2026-06-12T18:53:20.358Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-12T18:53:21.696Z",
-      "type": "SIGNAL",
-      "msg": "ELVN — score 9 | gap 14.7% | relVol 3.9× | RSI 51",
-      "detail": ""
-    },
     {
       "time": "2026-06-12T18:53:42.343Z",
       "type": "INFO",
@@ -1271,14 +1253,27 @@
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-15T13:24:15.868Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-15T13:24:16.238Z",
+      "type": "INFO",
+      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-15T13:24:16.350Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "ELVN",
-    "ROKU"
-  ],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "SATS"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
