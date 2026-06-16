@@ -107,20 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-16T19:30:06.644Z",
+  "lastRun": "2026-06-16T19:33:19.351Z",
   "log": [
-    {
-      "time": "2026-06-15T19:14:43.291Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FOXA, LRN, FOX, SSL, CENX, FISV, VG, WDS, MH, RGC"
-    },
-    {
-      "time": "2026-06-15T19:14:57.023Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "FOXA: above opening-range low (price $54.45 > ORL $53.69)  •  LRN: avgVol 0.7M < 1M  •  FOX: above opening-range low (price $49.62 > ORL $48.56)  •  SSL: relVol 1.1× < 2.5× (todayVol 1.6M)  •  CENX: relVol 1.4× < 2.5× (todayVol 2.7M)  •  FISV: ATR 0.23% < 0.5%  •  VG: relVol 1.4× < 2.5× (todayVol 19.4M)  •  WDS: relVol 1.5× < 2.5× (todayVol 1.6M)  •  MH: avgVol 0.5M < 1M  •  RGC: avgVol 0.1M < 1M  •  SM: relVol 1.0× < 2.5× (todayVol 3.9M)  •  CVSA: avgVol 0.3M < 1M"
-    },
     {
       "time": "2026-06-15T19:14:57.023Z",
       "type": "INFO",
@@ -1307,6 +1295,18 @@
       "time": "2026-06-16T19:30:06.643Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-16T19:33:19.050Z",
+      "type": "INFO",
+      "msg": "Account: $100121.30 | 3 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-16T19:33:19.351Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
