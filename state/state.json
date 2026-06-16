@@ -3,14 +3,14 @@
     "LION": {
       "side": "long",
       "entry": 16.209999084472656,
-      "high": 16.25,
+      "high": 16.37,
       "low": 16.209999084472656,
       "initialSl": 16.08,
-      "sl": 16.08,
+      "sl": 16.2,
       "tp": 16.55,
       "slOrderId": null,
       "tpOrderId": null,
-      "movedToBreakeven": false
+      "movedToBreakeven": true
     },
     "GIL": {
       "side": "short",
@@ -28,7 +28,7 @@
       "side": "short",
       "entry": 23.68000030517578,
       "high": 23.68000030517578,
-      "low": 23.68000030517578,
+      "low": 23.67,
       "initialSl": 23.95,
       "sl": 23.95,
       "tp": 23.15,
@@ -40,7 +40,7 @@
       "side": "short",
       "entry": 13.280500411987305,
       "high": 13.280500411987305,
-      "low": 13.24,
+      "low": 13.18,
       "initialSl": 13.45,
       "sl": 13.45,
       "tp": 12.95,
@@ -119,56 +119,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-16T18:25:36.160Z",
+  "lastRun": "2026-06-16T18:29:06.420Z",
   "log": [
-    {
-      "time": "2026-06-15T18:18:05.370Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "POET: relVol 0.8× < 2.5× (todayVol 33.5M)  •  QBTS: relVol 0.7× < 2.5× (todayVol 33.1M)  •  SMR: relVol 0.8× < 2.5× (todayVol 26.5M)  •  MRVL: relVol 0.6× < 2.5× (todayVol 33.3M)  •  RGTI: relVol 0.5× < 2.5× (todayVol 32.8M)  •  MU: relVol 0.5× < 2.5× (todayVol 29.0M)  •  AXTI: relVol 0.9× < 2.5× (todayVol 8.3M)  •  XNDU: relVol 1.1× < 2.5× (todayVol 5.1M)  •  XE: relVol 1.1× < 2.5× (todayVol 4.6M)  •  WOLF: relVol 0.7× < 2.5× (todayVol 6.3M)  •  QUBT: relVol 0.8× < 2.5× (todayVol 18.3M)  •  WDC: relVol 1.0× < 2.5× (todayVol 6.7M)"
-    },
-    {
-      "time": "2026-06-15T18:18:05.370Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T18:18:05.617Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FOXA, FOX, LRN, SSL, CENX, FISV, PTRN, WDS, MH, VG"
-    },
-    {
-      "time": "2026-06-15T18:18:19.572Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "FOXA: above opening-range low (price $54.30 > ORL $53.69)  •  FOX: above opening-range low (price $49.35 > ORL $48.56)  •  LRN: avgVol 0.7M < 1M  •  SSL: relVol 1.0× < 2.5× (todayVol 1.4M)  •  CENX: relVol 1.2× < 2.5× (todayVol 2.3M)  •  FISV: relVol 2.4× < 2.5× (todayVol 17.0M)  •  PTRN: relVol 1.5× < 2.5× (todayVol 2.3M)  •  WDS: relVol 1.4× < 2.5× (todayVol 1.4M)  •  MH: avgVol 0.5M < 1M  •  VG: no daily candles  •  SM: relVol 0.8× < 2.5× (todayVol 3.2M)  •  AA: relVol 1.9× < 2.5× (todayVol 9.0M)"
-    },
-    {
-      "time": "2026-06-15T18:18:19.572Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T18:19:16.087Z",
-      "type": "INFO",
-      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T18:19:17.270Z",
-      "type": "INFO",
-      "msg": "Watchlist: 26 tickers",
-      "detail": "GMS, LZB, PURE, RFL, SEED, SOUB, WLY, AIOT"
-    },
-    {
-      "time": "2026-06-15T18:19:17.565Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "POET, QBTS, RGTI, SMR, MRVL, MU, AXTI, XNDU, XE, WOLF"
-    },
     {
       "time": "2026-06-15T18:19:17.565Z",
       "type": "INFO",
@@ -1317,6 +1269,54 @@
     },
     {
       "time": "2026-06-16T18:25:36.160Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-16T18:28:38.028Z",
+      "type": "INFO",
+      "msg": "Account: $100114.70 | 4 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-16T18:28:38.892Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "CRWV, EOSE, KEEL, LION, SSRM, MRNA, INOD, SOFI, MWH, BBWI"
+    },
+    {
+      "time": "2026-06-16T18:28:38.892Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-16T18:28:52.752Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "CRWV: relVol 1.1× < 2.5× (todayVol 31.5M)  •  EOSE: relVol 1.4× < 2.5× (todayVol 31.0M)  •  KEEL: relVol 0.9× < 2.5× (todayVol 47.1M)  •  SSRM: relVol 1.0× < 2.5× (todayVol 2.5M)  •  MRNA: relVol 1.5× < 2.5× (todayVol 7.9M)  •  INOD: relVol 1.0× < 2.5× (todayVol 1.7M)  •  SOFI: relVol 1.0× < 2.5× (todayVol 75.9M)  •  MWH: relVol 0.4× < 2.5× (todayVol 0.9M)  •  BBWI: relVol 0.8× < 2.5× (todayVol 5.0M)  •  TLN: avgVol 0.8M < 1M  •  RBLX: relVol 0.7× < 2.5× (todayVol 7.1M)  •  CARG: relVol 0.8× < 2.5× (todayVol 1.2M)"
+    },
+    {
+      "time": "2026-06-16T18:28:52.752Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-16T18:28:52.911Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "GIL, HUN, AXTI, MIAX, CBOE, AAOI, BLSH, PL, SXT, VECO"
+    },
+    {
+      "time": "2026-06-16T18:29:06.420Z",
+      "type": "INFO",
+      "msg": "Short rejections (37)",
+      "detail": "AXTI: net up over ~5d ($78.36→$97.52) — no short into uptrend  •  MIAX: net up over ~5d ($39.80→$40.06) — no short into uptrend  •  CBOE: relVol 1.0× < 2.5× (todayVol 1.6M)  •  AAOI: net up over ~5d ($162.88→$175.70) — no short into uptrend  •  BLSH: relVol 0.9× < 2.5× (todayVol 1.5M)  •  PL: relVol 1.1× < 2.5× (todayVol 18.1M)  •  SXT: avgVol 0.4M < 1M  •  VECO: net up over ~5d ($67.19→$76.72) — no short into uptrend  •  INFQ: relVol 0.4× < 2.5× (todayVol 9.8M)  •  ENLT: avgVol 0.2M < 1M  •  LITE: net up over ~5d ($821.76→$885.55) — no short into uptrend  •  LUNR: relVol 0.6× < 2.5× (todayVol 10.5M)"
+    },
+    {
+      "time": "2026-06-16T18:29:06.420Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
