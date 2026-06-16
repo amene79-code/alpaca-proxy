@@ -107,20 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-16T19:56:05.791Z",
+  "lastRun": "2026-06-16T20:03:49.864Z",
   "log": [
-    {
-      "time": "2026-06-15T19:25:35.875Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FOXA, LRN, FOX, SSL, FISV, MH, CENX, VG, WDS, CVSA"
-    },
-    {
-      "time": "2026-06-15T19:25:55.078Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "FOXA: above VWAP (price $54.75 > VWAP $54.72) — not holding breakdown  •  LRN: avgVol 0.8M < 1M  •  FOX: above VWAP (price $49.95 > VWAP $49.72) — not holding breakdown  •  SSL: relVol 1.1× < 2.5× (todayVol 1.6M)  •  FISV: ATR 0.28% < 0.5%  •  MH: avgVol 0.5M < 1M  •  CENX: relVol 1.5× < 2.5× (todayVol 2.8M)  •  VG: relVol 1.4× < 2.5× (todayVol 20.0M)  •  WDS: relVol 1.6× < 2.5× (todayVol 1.6M)  •  CVSA: avgVol 0.3M < 1M  •  SM: relVol 1.0× < 2.5× (todayVol 4.2M)  •  NEXT: relVol 1.2× < 2.5× (todayVol 3.1M)"
-    },
     {
       "time": "2026-06-15T19:25:55.078Z",
       "type": "INFO",
@@ -1307,6 +1295,18 @@
       "time": "2026-06-16T19:56:05.791Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-16T20:03:49.617Z",
+      "type": "INFO",
+      "msg": "Account: $100106.24 | 3 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-16T20:03:49.864Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
       "detail": ""
     }
   ],
