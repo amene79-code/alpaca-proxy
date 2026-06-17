@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-17T19:32:41.099Z",
+  "lastRun": "2026-06-17T19:33:54.976Z",
   "log": [
-    {
-      "time": "2026-06-17T17:34:52.708Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 31",
-      "detail": "SLBT, RGC, KMX, LION, CVNA, NDAQ, MBLY, CBOE, RXO, SMTC"
-    },
-    {
-      "time": "2026-06-17T17:35:02.587Z",
-      "type": "INFO",
-      "msg": "Short rejections (31)",
-      "detail": "SLBT: relVol 0.6× < 2.5× (todayVol 1.2M)  •  RGC: avgVol 0.1M < 1M  •  KMX: relVol 1.3× < 2.5× (todayVol 4.6M)  •  LION: net up over ~5d ($13.69→$15.07) — no short into uptrend  •  CVNA: relVol 0.8× < 2.5× (todayVol 8.6M)  •  NDAQ: relVol 1.0× < 2.5× (todayVol 3.4M)  •  MBLY: relVol 0.8× < 2.5× (todayVol 4.2M)  •  CBOE: relVol 1.3× < 2.5× (todayVol 2.2M)  •  RXO: relVol 0.4× < 2.5× (todayVol 0.9M)  •  SMTC: relVol 0.4× < 2.5× (todayVol 1.7M)  •  CME: relVol 0.8× < 2.5× (todayVol 3.1M)  •  SATS: net up over ~5d ($115.24→$115.33) — no short into uptrend"
-    },
     {
       "time": "2026-06-17T17:35:02.588Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-06-17T19:32:41.098Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-17T19:33:54.696Z",
+      "type": "INFO",
+      "msg": "Account: $100002.04 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-17T19:33:54.976Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
