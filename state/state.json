@@ -1,44 +1,20 @@
 {
   "trailingStops": {
-    "LION": {
+    "QURE": {
       "side": "long",
-      "entry": 16.209999084472656,
-      "high": 16.51,
-      "low": 16.209999084472656,
-      "initialSl": 16.08,
-      "sl": 16.2,
-      "tp": 16.55,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    },
-    "OLN": {
-      "side": "short",
-      "entry": 23.68000030517578,
-      "high": 23.68000030517578,
-      "low": 23.4,
-      "initialSl": 23.95,
-      "sl": 23.95,
-      "tp": 23.15,
+      "entry": 46.89500045776367,
+      "high": 46.89500045776367,
+      "low": 46.89500045776367,
+      "initialSl": 46.07,
+      "sl": 46.07,
+      "tp": 49.1,
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": false
-    },
-    "HUN": {
-      "side": "short",
-      "entry": 13.280500411987305,
-      "high": 13.280500411987305,
-      "low": 13.05,
-      "initialSl": 13.45,
-      "sl": 13.27,
-      "tp": 12.95,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
     }
   },
   "dailyTrades": 1,
-  "dailyDate": "2026-06-16",
+  "dailyDate": "2026-06-17",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -107,80 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-16T21:17:09.693Z",
+  "lastRun": "2026-06-17T16:37:48.098Z",
   "log": [
-    {
-      "time": "2026-06-15T19:54:58.299Z",
-      "type": "INFO",
-      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T19:54:58.406Z",
-      "type": "INFO",
-      "msg": "EOD review (6 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T19:54:58.407Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T19:56:44.034Z",
-      "type": "INFO",
-      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T19:56:44.161Z",
-      "type": "INFO",
-      "msg": "EOD review (4 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T19:56:44.161Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T20:07:15.969Z",
-      "type": "INFO",
-      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T20:07:16.413Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T20:17:38.676Z",
-      "type": "INFO",
-      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T20:17:39.182Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T20:27:53.452Z",
-      "type": "INFO",
-      "msg": "Account: $100098.02 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-15T20:27:53.738Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-06-15T20:52:02.227Z",
       "type": "INFO",
@@ -1308,15 +1212,83 @@
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-17T16:37:22.302Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-17T16:37:22.547Z",
+      "type": "INFO",
+      "msg": "Account: $99949.94 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-17T16:37:23.504Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "EOSE, FRMI, TE, HOOD, QURE, BRAI, QNT, WOLF, RDW, CPNG"
+    },
+    {
+      "time": "2026-06-17T16:37:23.504Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-17T16:37:25.119Z",
+      "type": "SIGNAL",
+      "msg": "QURE — score 10 | gap 73.7% | relVol 6.8× | RSI 42",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-17T16:37:41.245Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "EOSE: relVol 1.1× < 2.5× (todayVol 26.1M)  •  FRMI: relVol 1.1× < 2.5× (todayVol 18.9M)  •  TE: relVol 0.4× < 2.5× (todayVol 21.1M)  •  HOOD: relVol 1.1× < 2.5× (todayVol 35.1M)  •  BRAI: avgVol 0.6M < 1M  •  QNT: relVol 0.3× < 2.5× (todayVol 2.0M)  •  WOLF: relVol 0.5× < 2.5× (todayVol 4.3M)  •  RDW: relVol 0.3× < 2.5× (todayVol 19.0M)  •  CPNG: relVol 0.7× < 2.5× (todayVol 18.7M)  •  BHVN: relVol 1.3× < 2.5× (todayVol 4.1M)  •  FIG: relVol 0.8× < 2.5× (todayVol 14.8M)  •  RARE: relVol 0.7× < 2.5× (todayVol 1.1M)"
+    },
+    {
+      "time": "2026-06-17T16:37:41.245Z",
+      "type": "INFO",
+      "msg": "Top signal: QURE (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-17T16:37:41.245Z",
+      "type": "BUY",
+      "msg": "Placing 31× QURE @ ~$46.90",
+      "detail": "gap 73.7% | risk $25.58 | SL $46.07 | TP $49.1 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-06-17T16:37:41.443Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 31× QURE",
+      "detail": "ID b8de2ff2-b6e4-47d4-b0f2-cb8c9a2d799c | R:R 2.7:1 | risk $25.58"
+    },
+    {
+      "time": "2026-06-17T16:37:42.153Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 16",
+      "detail": "SLBT, RGC, CVNA, SATS, KMX, LION, CBOE, RDNT, MBLY, KB"
+    },
+    {
+      "time": "2026-06-17T16:37:48.098Z",
+      "type": "INFO",
+      "msg": "Short rejections (16)",
+      "detail": "SLBT: relVol 0.6× < 2.5× (todayVol 1.1M)  •  RGC: avgVol 0.1M < 1M  •  CVNA: relVol 0.7× < 2.5× (todayVol 7.4M)  •  SATS: relVol 0.7× < 2.5× (todayVol 7.7M)  •  KMX: relVol 1.1× < 2.5× (todayVol 3.9M)  •  LION: net up over ~5d ($13.69→$15.15) — no short into uptrend  •  CBOE: relVol 1.0× < 2.5× (todayVol 1.8M)  •  RDNT: avgVol 0.7M < 1M  •  MBLY: relVol 0.7× < 2.5× (todayVol 3.6M)  •  KB: avgVol 0.2M < 1M  •  SMTC: relVol 0.4× < 2.5× (todayVol 1.4M)  •  CME: relVol 0.7× < 2.5× (todayVol 2.5M)"
+    },
+    {
+      "time": "2026-06-17T16:37:48.098Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [
-    "LION"
+    "QURE"
   ],
-  "shortDailyTrades": 3,
-  "shortTradedToday": [
-    "GIL",
-    "OLN",
-    "HUN"
-  ]
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
