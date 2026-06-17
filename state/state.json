@@ -95,56 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-17T18:46:30.470Z",
+  "lastRun": "2026-06-17T18:51:11.384Z",
   "log": [
-    {
-      "time": "2026-06-17T16:37:41.245Z",
-      "type": "BUY",
-      "msg": "Placing 31× QURE @ ~$46.90",
-      "detail": "gap 73.7% | risk $25.58 | SL $46.07 | TP $49.1 | R:R 2.7 | "
-    },
-    {
-      "time": "2026-06-17T16:37:41.443Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 31× QURE",
-      "detail": "ID b8de2ff2-b6e4-47d4-b0f2-cb8c9a2d799c | R:R 2.7:1 | risk $25.58"
-    },
-    {
-      "time": "2026-06-17T16:37:42.153Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 16",
-      "detail": "SLBT, RGC, CVNA, SATS, KMX, LION, CBOE, RDNT, MBLY, KB"
-    },
-    {
-      "time": "2026-06-17T16:37:48.098Z",
-      "type": "INFO",
-      "msg": "Short rejections (16)",
-      "detail": "SLBT: relVol 0.6× < 2.5× (todayVol 1.1M)  •  RGC: avgVol 0.1M < 1M  •  CVNA: relVol 0.7× < 2.5× (todayVol 7.4M)  •  SATS: relVol 0.7× < 2.5× (todayVol 7.7M)  •  KMX: relVol 1.1× < 2.5× (todayVol 3.9M)  •  LION: net up over ~5d ($13.69→$15.15) — no short into uptrend  •  CBOE: relVol 1.0× < 2.5× (todayVol 1.8M)  •  RDNT: avgVol 0.7M < 1M  •  MBLY: relVol 0.7× < 2.5× (todayVol 3.6M)  •  KB: avgVol 0.2M < 1M  •  SMTC: relVol 0.4× < 2.5× (todayVol 1.4M)  •  CME: relVol 0.7× < 2.5× (todayVol 2.5M)"
-    },
-    {
-      "time": "2026-06-17T16:37:48.098Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T16:41:17.588Z",
-      "type": "INFO",
-      "msg": "Account: $99951.18 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T16:41:18.688Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "EOSE, FRMI, TE, HOOD, QURE, BRAI, QNT, WOLF, RDW, CPNG"
-    },
-    {
-      "time": "2026-06-17T16:41:18.688Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-06-17T16:41:31.073Z",
       "type": "INFO",
@@ -1293,6 +1245,54 @@
     },
     {
       "time": "2026-06-17T18:46:30.470Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-17T18:50:41.857Z",
+      "type": "INFO",
+      "msg": "Account: $99987.27 | 2 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-17T18:50:44.590Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RXT, EOSE, HOOD, TE, FRMI, RDW, QURE, BRAI, WOLF, MAAS"
+    },
+    {
+      "time": "2026-06-17T18:50:44.591Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-17T18:50:58.028Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "RXT: relVol 2.2× < 2.5× (todayVol 53.7M)  •  EOSE: relVol 1.6× < 2.5× (todayVol 38.0M)  •  HOOD: relVol 1.6× < 2.5× (todayVol 52.3M)  •  TE: relVol 0.7× < 2.5× (todayVol 32.8M)  •  FRMI: relVol 1.7× < 2.5× (todayVol 29.6M)  •  RDW: relVol 0.5× < 2.5× (todayVol 27.2M)  •  BRAI: avgVol 0.6M < 1M  •  WOLF: relVol 0.7× < 2.5× (todayVol 5.8M)  •  MAAS: avgVol 0.1M < 1M  •  SMR: relVol 0.9× < 2.5× (todayVol 32.8M)  •  MRVL: relVol 0.5× < 2.5× (todayVol 32.1M)  •  CPNG: relVol 1.0× < 2.5× (todayVol 27.9M)"
+    },
+    {
+      "time": "2026-06-17T18:50:58.029Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-17T18:50:58.166Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "SLBT, RGC, CVNA, KMX, NDAQ, MBLY, ARCB, RXO, MIAX, WING"
+    },
+    {
+      "time": "2026-06-17T18:51:11.384Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "SLBT: relVol 0.6× < 2.5× (todayVol 1.2M)  •  RGC: avgVol 0.1M < 1M  •  CVNA: relVol 1.1× < 2.5× (todayVol 11.3M)  •  KMX: relVol 1.8× < 2.5× (todayVol 6.6M)  •  NDAQ: relVol 1.5× < 2.5× (todayVol 4.9M)  •  MBLY: relVol 1.0× < 2.5× (todayVol 5.2M)  •  ARCB: avgVol 0.4M < 1M  •  RXO: relVol 0.5× < 2.5× (todayVol 1.2M)  •  MIAX: relVol 0.8× < 2.5× (todayVol 1.5M)  •  WING: net up over ~5d ($145.59→$153.35) — no short into uptrend  •  CBOE: relVol 1.5× < 2.5× (todayVol 2.6M)  •  LION: net up over ~5d ($13.69→$15.44) — no short into uptrend"
+    },
+    {
+      "time": "2026-06-17T18:51:11.384Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
