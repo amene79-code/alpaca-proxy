@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-18T20:01:12.105Z",
+  "lastRun": "2026-06-18T20:04:09.383Z",
   "log": [
-    {
-      "time": "2026-06-18T16:59:42.695Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ACN: above opening-range low (price $128.15 > ORL $126.50)  •  LEGN: ATR 0.29% < 0.5%  •  RGC: avgVol 0.1M < 1M  •  TNGX: relVol 1.1× < 2.5× (todayVol 5.6M)  •  SLBT: relVol 0.2× < 2.5× (todayVol 0.3M)  •  AAMI: avgVol 0.5M < 1M  •  CTSH: relVol 1.5× < 2.5× (todayVol 14.7M)  •  EPAM: relVol 0.8× < 2.5× (todayVol 1.6M)  •  AXTI: relVol 0.8× < 2.5× (todayVol 7.6M)  •  SPCX: net up over ~5d ($160.95→$175.21) — no short into uptrend  •  ASTS: relVol 0.7× < 2.5× (todayVol 18.0M)  •  KR: relVol 1.3× < 2.5× (todayVol 10.9M)"
-    },
-    {
-      "time": "2026-06-18T16:59:42.695Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-18T17:04:08.390Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-06-18T20:01:12.104Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T20:04:09.109Z",
+      "type": "INFO",
+      "msg": "Account: $100113.85 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T20:04:09.383Z",
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
