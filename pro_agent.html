@@ -2299,10 +2299,18 @@ function matchTrades(activities, accountEquity=null, startEquity=null){
   }
 
   // Step 2: FIFO matching per symbol
+  // Normalize Alpaca fill sides: a short entry comes through as "sell_short" and
+  // a cover as "buy_to_close" (or plain "buy"). Map them onto the buy/sell branches
+  // the matcher understands. Without this, "sell_short" opens are dropped and covers
+  // match buy-vs-buy → phantom $0.00 rows with entry==exit.
   const bySymbol={};
   for(const a of merged){
-    if(!bySymbol[a.symbol]) bySymbol[a.symbol]={fills:[]};
-    bySymbol[a.symbol].fills.push(a);
+    let side=a.side;
+    if(side==="sell_short") side="sell";        // short entry
+    else if(side==="buy_to_close") side="buy";  // short cover
+    const f={...a, side};
+    if(!bySymbol[f.symbol]) bySymbol[f.symbol]={fills:[]};
+    bySymbol[f.symbol].fills.push(f);
   }
 
   const trades=[];
