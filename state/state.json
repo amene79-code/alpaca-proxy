@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "BFLY": {
-      "side": "long",
-      "entry": 8.149999618530273,
-      "high": 8.485,
-      "low": 8.149999618530273,
-      "initialSl": 7.96,
-      "sl": 8.17,
-      "tp": 8.65,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-06-18",
   "openPositions": [
@@ -83,80 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-18T18:47:15.161Z",
+  "lastRun": "2026-06-18T18:57:59.887Z",
   "log": [
-    {
-      "time": "2026-06-17T20:10:49.969Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:13:52.880Z",
-      "type": "INFO",
-      "msg": "Account: $100002.04 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:13:52.991Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:15:03.304Z",
-      "type": "INFO",
-      "msg": "Account: $100002.04 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:15:03.416Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:21:01.726Z",
-      "type": "INFO",
-      "msg": "Account: $100002.04 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:21:01.893Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:24:17.326Z",
-      "type": "INFO",
-      "msg": "Account: $100002.04 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:24:18.097Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:25:17.798Z",
-      "type": "INFO",
-      "msg": "Account: $100002.04 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T20:25:18.181Z",
-      "type": "INFO",
-      "msg": "Outside market hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-17T21:24:03.860Z",
-      "type": "INFO",
-      "msg": "Account: $100002.04 | 0 positions | 2 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-17T21:24:03.975Z",
       "type": "INFO",
@@ -1281,6 +1196,78 @@
     },
     {
       "time": "2026-06-18T18:47:15.161Z",
+      "type": "INFO",
+      "msg": "SKIP LEGN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T18:57:32.868Z",
+      "type": "INFO",
+      "msg": "Account: $100113.85 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T18:57:33.522Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BFLY, MRVL, QS, INTC, CIFR, SMR, SMCI, MU, JBLU, RKT"
+    },
+    {
+      "time": "2026-06-18T18:57:33.522Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-18T18:57:33.696Z",
+      "type": "SIGNAL",
+      "msg": "BFLY — score 14 | gap 51.0% | relVol 6.5× | RSI 67",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-06-18T18:57:46.371Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "MRVL: relVol 0.9× < 2.5× (todayVol 57.4M)  •  QS: below opening-range high (price $7.66 < ORH $8.02, 67 today-candles)  •  INTC: relVol 1.2× < 2.5× (todayVol 145.7M)  •  CIFR: relVol 1.3× < 2.5× (todayVol 31.0M)  •  SMR: relVol 1.1× < 2.5× (todayVol 40.3M)  •  SMCI: relVol 0.7× < 2.5× (todayVol 49.7M)  •  MU: relVol 0.7× < 2.5× (todayVol 37.9M)  •  JBLU: relVol 1.1× < 2.5× (todayVol 29.8M)  •  RKT: relVol 1.2× < 2.5× (todayVol 31.1M)  •  WOLF: relVol 0.7× < 2.5× (todayVol 5.8M)  •  FRMI: relVol 1.6× < 2.5× (todayVol 29.9M)  •  PENG: relVol 0.8× < 2.5× (todayVol 2.3M)"
+    },
+    {
+      "time": "2026-06-18T18:57:46.371Z",
+      "type": "INFO",
+      "msg": "Top signal: BFLY (score 14)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T18:57:46.371Z",
+      "type": "INFO",
+      "msg": "SKIP BFLY — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T18:57:46.539Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "ACN, RGC, LEGN, SLBT, TNGX, EPAM, AAMI, AXTI, INFY, HAWK"
+    },
+    {
+      "time": "2026-06-18T18:57:47.595Z",
+      "type": "SIGNAL",
+      "msg": "LEGN — SHORT score 8 | gap -16.1% | relVol 3.2× | RSI 48",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T18:57:59.887Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "ACN: above opening-range low (price $127.83 > ORL $126.50)  •  RGC: avgVol 0.1M < 1M  •  SLBT: relVol 0.2× < 2.5× (todayVol 0.4M)  •  TNGX: relVol 1.5× < 2.5× (todayVol 7.6M)  •  EPAM: relVol 1.1× < 2.5× (todayVol 2.3M)  •  AAMI: avgVol 0.5M < 1M  •  AXTI: relVol 1.0× < 2.5× (todayVol 9.3M)  •  INFY: relVol 1.6× < 2.5× (todayVol 29.8M)  •  HAWK: relVol 0.8× < 2.5× (todayVol 0.8M)  •  CTSH: relVol 1.9× < 2.5× (todayVol 18.1M)  •  INOD: relVol 0.6× < 2.5× (todayVol 1.1M)  •  ASTS: relVol 0.8× < 2.5× (todayVol 21.1M)"
+    },
+    {
+      "time": "2026-06-18T18:57:59.887Z",
+      "type": "INFO",
+      "msg": "Top short: LEGN (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T18:57:59.887Z",
       "type": "INFO",
       "msg": "SKIP LEGN — already traded today",
       "detail": ""
