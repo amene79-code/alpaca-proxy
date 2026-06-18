@@ -70,80 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-18T19:12:34.903Z",
+  "lastRun": "2026-06-18T19:19:38.622Z",
   "log": [
-    {
-      "time": "2026-06-18T16:27:18.572Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-06-18T16:27:32.572Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "QS: relVol 2.4× < 2.5× (todayVol 54.4M)  •  MRVL: relVol 0.7× < 2.5× (todayVol 39.5M)  •  CIFR: relVol 0.8× < 2.5× (todayVol 20.1M)  •  FRMI: relVol 1.1× < 2.5× (todayVol 21.1M)  •  SMR: relVol 0.9× < 2.5× (todayVol 32.0M)  •  INTC: relVol 0.9× < 2.5× (todayVol 112.1M)  •  SMCI: relVol 0.5× < 2.5× (todayVol 34.0M)  •  JBLU: relVol 0.8× < 2.5× (todayVol 21.4M)  •  CHRN: avgVol 0.4M < 1M  •  DIOD: avgVol 0.6M < 1M  •  MU: relVol 0.5× < 2.5× (todayVol 27.2M)  •  WOLF: relVol 0.5× < 2.5× (todayVol 4.4M)"
-    },
-    {
-      "time": "2026-06-18T16:27:32.572Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T16:27:32.708Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ACN, LEGN, SLBT, TNGX, AAMI, RGC, AXTI, CTSH, SPCX, EPAM"
-    },
-    {
-      "time": "2026-06-18T16:27:47.222Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ACN: above opening-range low (price $128.71 > ORL $126.50)  •  LEGN: relVol 2.5× < 2.5× (todayVol 7.5M)  •  SLBT: relVol 0.2× < 2.5× (todayVol 0.3M)  •  TNGX: relVol 1.0× < 2.5× (todayVol 5.0M)  •  AAMI: avgVol 0.5M < 1M  •  RGC: avgVol 0.1M < 1M  •  AXTI: relVol 0.8× < 2.5× (todayVol 6.9M)  •  CTSH: relVol 1.4× < 2.5× (todayVol 13.6M)  •  SPCX: net up over ~5d ($160.95→$173.34) — no short into uptrend  •  EPAM: relVol 0.7× < 2.5× (todayVol 1.4M)  •  ASTS: relVol 0.6× < 2.5× (todayVol 16.9M)  •  GIB: avgVol 0.4M < 1M"
-    },
-    {
-      "time": "2026-06-18T16:27:47.222Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T16:31:32.244Z",
-      "type": "INFO",
-      "msg": "Account: $100001.99 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T16:31:33.554Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "QS, CIFR, MRVL, INTC, FRMI, CHRN, SMR, JBLU, SMCI, DIOD"
-    },
-    {
-      "time": "2026-06-18T16:31:33.555Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-06-18T16:31:51.200Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "QS: relVol 2.4× < 2.5× (todayVol 54.7M)  •  CIFR: relVol 0.8× < 2.5× (todayVol 20.4M)  •  MRVL: relVol 0.7× < 2.5× (todayVol 39.9M)  •  INTC: relVol 0.9× < 2.5× (todayVol 113.2M)  •  FRMI: relVol 1.2× < 2.5× (todayVol 21.3M)  •  CHRN: avgVol 0.4M < 1M  •  SMR: relVol 0.9× < 2.5× (todayVol 32.4M)  •  JBLU: relVol 0.8× < 2.5× (todayVol 21.5M)  •  SMCI: relVol 0.5× < 2.5× (todayVol 34.4M)  •  DIOD: avgVol 0.6M < 1M  •  MU: relVol 0.5× < 2.5× (todayVol 27.3M)  •  EQPT: relVol 0.9× < 2.5× (todayVol 1.6M)"
-    },
-    {
-      "time": "2026-06-18T16:31:51.200Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T16:31:51.574Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ACN, LEGN, SLBT, TNGX, AAMI, RGC, AXTI, SPCX, CTSH, EPAM"
-    },
     {
       "time": "2026-06-18T16:32:09.756Z",
       "type": "INFO",
@@ -1268,6 +1196,78 @@
     },
     {
       "time": "2026-06-18T19:12:34.903Z",
+      "type": "INFO",
+      "msg": "SKIP LEGN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T19:18:59.487Z",
+      "type": "INFO",
+      "msg": "Account: $100113.85 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T19:19:00.616Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BFLY, MRVL, QS, INTC, SMR, CIFR, SMCI, MU, JBLU, WOLF"
+    },
+    {
+      "time": "2026-06-18T19:19:00.616Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-18T19:19:00.914Z",
+      "type": "SIGNAL",
+      "msg": "BFLY — score 10 | gap 50.9% | relVol 6.8× | RSI 69",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T19:19:19.785Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "MRVL: relVol 1.0× < 2.5× (todayVol 61.3M)  •  QS: below opening-range high (price $7.70 < ORH $8.02, 71 today-candles)  •  INTC: relVol 1.2× < 2.5× (todayVol 149.7M)  •  SMR: relVol 1.1× < 2.5× (todayVol 41.6M)  •  CIFR: relVol 1.3× < 2.5× (todayVol 31.9M)  •  SMCI: relVol 0.7× < 2.5× (todayVol 51.4M)  •  MU: relVol 0.7× < 2.5× (todayVol 39.4M)  •  JBLU: relVol 1.2× < 2.5× (todayVol 31.2M)  •  WOLF: relVol 0.7× < 2.5× (todayVol 6.1M)  •  BE: relVol 0.9× < 2.5× (todayVol 9.5M)  •  CHRN: avgVol 0.4M < 1M  •  ENTG: relVol 1.0× < 2.5× (todayVol 3.2M)"
+    },
+    {
+      "time": "2026-06-18T19:19:19.785Z",
+      "type": "INFO",
+      "msg": "Top signal: BFLY (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T19:19:19.785Z",
+      "type": "INFO",
+      "msg": "SKIP BFLY — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T19:19:20.069Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "RGC, ACN, LEGN, TNGX, SLBT, EPAM, AXTI, AAMI, INFY, HAWK"
+    },
+    {
+      "time": "2026-06-18T19:19:21.309Z",
+      "type": "SIGNAL",
+      "msg": "LEGN — SHORT score 9 | gap -17.0% | relVol 3.3× | RSI 48",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T19:19:38.621Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "RGC: avgVol 0.1M < 1M  •  ACN: above opening-range low (price $128.37 > ORL $126.50)  •  TNGX: relVol 1.6× < 2.5× (todayVol 8.0M)  •  SLBT: relVol 0.2× < 2.5× (todayVol 0.4M)  •  EPAM: relVol 1.2× < 2.5× (todayVol 2.6M)  •  AXTI: relVol 1.1× < 2.5× (todayVol 9.5M)  •  AAMI: avgVol 0.5M < 1M  •  INFY: relVol 1.6× < 2.5× (todayVol 31.1M)  •  HAWK: relVol 0.9× < 2.5× (todayVol 0.9M)  •  CTSH: relVol 1.9× < 2.5× (todayVol 19.1M)  •  KR: relVol 1.7× < 2.5× (todayVol 14.0M)  •  INOD: relVol 0.7× < 2.5× (todayVol 1.1M)"
+    },
+    {
+      "time": "2026-06-18T19:19:38.621Z",
+      "type": "INFO",
+      "msg": "Top short: LEGN (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-18T19:19:38.621Z",
       "type": "INFO",
       "msg": "SKIP LEGN — already traded today",
       "detail": ""
