@@ -31,6 +31,15 @@ const CFG = {
   maxDaily:     8,     // max NEW trades per day
   maxPerCycle:  4,     // max NEW trades per cycle
 
+  // ─── HARD CIRCUIT BREAKER ────────────────────────────────────────────────
+  // Absolute cap on TOTAL trades (long + short) per day, independent of the
+  // per-side maxDaily/shortMaxDaily limits. This is the structural backstop
+  // against a June-2-style churn day: even if a cooldown leaks or runs overlap,
+  // the agent physically stops opening new positions once this many trades have
+  // been placed today. Set comfortably above a normal day (~8-16) but far below
+  // a runaway day (June 2 was 189).
+  maxTotalDaily: 20,   // hard stop: no new entries after this many trades/day
+
   atrSL:        1.5,   // initial structural stop = entry − ATR × this
   atrTP:        4.0,   // take-profit ceiling = entry + ATR × this (let winners run)
   trail:        0.02,  // 2% trailing stop — applied ONLY after breakeven is reached
@@ -41,6 +50,7 @@ const CFG = {
   minRelVol:    2.5,   // min volume vs 20-day avg (institutional confirmation)
   minATRpct:    0.5,   // min ATR% (need real movement)
   minScore:     6,     // min composite score to take the trade
+  minPrice:     20,    // price floor — sub-$20 names bled (penny/illiquid spread); data shows edge lives in $20+ liquid names
   rsiMax:       88,    // reject only truly parabolic chases
 
   // Time gates (ET)
@@ -49,9 +59,12 @@ const CFG = {
   eodReviewMin: 25,    // start cutting weak positions when <= this many mins to close
 
   // ─── SHORT SIDE (mirror of the long catalyst strategy) ───────────────────
-  // Sized for SURVIVAL, not opportunity: a short's loss is uncapped and
-  // squeeze-prone, so risk less, cap value lower, use a wider stop.
-  shortEnabled:    true,   // master switch for the short side
+  // DISABLED: over 38 trades the short side ran -$2.39/trade expectancy with a
+  // 0.40× profit factor (won 58% but avg winner $2.77 vs avg loser $9.47 — an
+  // inverted risk/reward that bleeds). No demonstrated edge. Re-enable only
+  // after the geometry is fixed to let winners run / cut losers. Setting the
+  // master switch off; the rest of the short config is kept for that future work.
+  shortEnabled:    false,  // master switch for the short side (DISABLED — see note)
   shortRiskPerTrade: 30,   // $ risked per short (vs 50 long) — ~60%
   shortMaxPosValue:  1000,  // max $ per short (vs 1500 long)
   shortAtrSL:      2.0,    // wider stop than long (1.5) — fewer shares, less whipsaw
@@ -60,7 +73,7 @@ const CFG = {
   shortMinGapPct:  4.0,    // min gap DOWN (abs) vs prior close
   shortMinRelVol:  2.5,    // same volume confirmation as long
   shortRsiMin:     12,     // don't short something already washed-out/bouncing
-  shortMinPrice:   5,      // no shorts under $5 (squeeze + borrow brutal)
+  shortMinPrice:   20,     // raised from $5 — same liquidity floor as longs
 };
 
 // ─── Alpaca API ───────────────────────────────────────────────────────────────
@@ -297,7 +310,7 @@ async function analyzeSignal(ticker) {
   if (!candles || candles.length < 30) return rej('no 5m candles');
 
   const price = candles[candles.length - 1].close;
-  if (price < 5) return rej(`price $${price?.toFixed(2)} < $5`);
+  if (price < CFG.minPrice) return rej(`price $${price?.toFixed(2)} < $${CFG.minPrice}`);
 
   const daily = await getCandles(ticker, '1mo', '1d');
   if (!daily || daily.length < 5) return rej('no daily candles');
@@ -705,6 +718,18 @@ async function main() {
   // Time gates apply to BOTH sides — hard stop here.
   if (CFG.skipFirst15 && minsAfterOpen < 15) { addLog(state, 'INFO', `Skip — first 15 min (${minsAfterOpen} min in)`); saveState(state); return; }
   if (CFG.skipLast30 && minsToClose < 30) { addLog(state, 'INFO', `Skip new entries — last 30 min`); saveState(state); return; }
+
+  // ─── HARD CIRCUIT BREAKER ──────────────────────────────────────────────────
+  // Absolute cap on total (long + short) trades per day. Structural backstop
+  // against a churn day: once hit, NO new entries of any kind for the rest of
+  // the day. This is independent of (and stricter than) the per-side limits, and
+  // it holds even if a per-ticker cooldown leaks or runs briefly overlap.
+  const totalTradesToday = (state.dailyTrades || 0) + (state.shortDailyTrades || 0);
+  if (totalTradesToday >= CFG.maxTotalDaily) {
+    addLog(state, 'INFO', `⛔ CIRCUIT BREAKER — ${totalTradesToday}/${CFG.maxTotalDaily} total trades today. No more new entries.`);
+    saveState(state);
+    return;
+  }
 
   // Long-side limits: skip LONG entry only — the short side runs regardless
   // (it has its own separate daily limit). Don't return out of main() here.
