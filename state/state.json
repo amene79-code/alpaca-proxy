@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-19T19:32:44.189Z",
+  "lastRun": "2026-06-19T19:42:56.777Z",
   "log": [
-    {
-      "time": "2026-06-18T18:36:33.218Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "ACN: ATR 0.37% < 0.5%  •  RGC: avgVol 0.1M < 1M  •  TNGX: relVol 1.4× < 2.5× (todayVol 7.2M)  •  SLBT: relVol 0.2× < 2.5× (todayVol 0.4M)  •  AXTI: relVol 1.0× < 2.5× (todayVol 8.9M)  •  EPAM: relVol 1.1× < 2.5× (todayVol 2.2M)  •  AAMI: avgVol 0.5M < 1M  •  INFY: relVol 1.5× < 2.5× (todayVol 28.4M)  •  CTSH: relVol 1.8× < 2.5× (todayVol 17.5M)  •  HAWK: relVol 0.7× < 2.5× (todayVol 0.7M)  •  INOD: relVol 0.6× < 2.5× (todayVol 1.1M)  •  ASTS: relVol 0.7× < 2.5× (todayVol 20.5M)"
-    },
-    {
-      "time": "2026-06-18T18:36:33.218Z",
-      "type": "INFO",
-      "msg": "Top short: LEGN (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T18:36:33.218Z",
-      "type": "INFO",
-      "msg": "SKIP LEGN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T18:46:46.182Z",
-      "type": "INFO",
-      "msg": "Account: $100076.13 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-18T18:46:47.121Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-06-19T19:32:44.189Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T19:42:56.374Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T19:42:56.443Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T19:42:56.777Z",
+      "type": "INFO",
+      "msg": "EOD review (18 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T19:42:56.777Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
