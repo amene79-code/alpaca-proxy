@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-19T17:50:45.744Z",
+  "lastRun": "2026-06-19T18:00:57.364Z",
   "log": [
-    {
-      "time": "2026-06-18T18:03:45.144Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BFLY, MRVL, QS, SMR, SMCI, CIFR, INTC, JBLU, FRMI, MU"
-    },
-    {
-      "time": "2026-06-18T18:03:45.145Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-06-18T18:03:58.968Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "MRVL: relVol 0.8× < 2.5× (todayVol 51.3M)  •  QS: below opening-range high (price $7.69 < ORH $8.02, 56 today-candles)  •  SMR: relVol 1.0× < 2.5× (todayVol 37.9M)  •  SMCI: relVol 0.6× < 2.5× (todayVol 42.6M)  •  CIFR: relVol 1.2× < 2.5× (todayVol 28.7M)  •  INTC: relVol 1.1× < 2.5× (todayVol 133.3M)  •  JBLU: relVol 1.0× < 2.5× (todayVol 27.2M)  •  FRMI: relVol 1.5× < 2.5× (todayVol 27.7M)  •  MU: relVol 0.6× < 2.5× (todayVol 33.7M)  •  PENG: relVol 0.7× < 2.5× (todayVol 2.1M)  •  CHRN: avgVol 0.4M < 1M  •  MTN: avgVol 0.8M < 1M"
-    },
     {
       "time": "2026-06-18T18:03:58.968Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-19T17:50:45.744Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T18:00:57.218Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T18:00:57.227Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T18:00:57.364Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
