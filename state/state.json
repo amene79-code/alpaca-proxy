@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-19T20:03:24.676Z",
+  "lastRun": "2026-06-19T20:13:40.015Z",
   "log": [
-    {
-      "time": "2026-06-18T18:47:15.161Z",
-      "type": "INFO",
-      "msg": "Top short: LEGN (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T18:47:15.161Z",
-      "type": "INFO",
-      "msg": "SKIP LEGN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T18:57:32.868Z",
-      "type": "INFO",
-      "msg": "Account: $100113.85 | 0 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-18T18:57:33.522Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-19T20:03:24.676Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T20:13:39.489Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T20:13:39.497Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T20:13:40.015Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
