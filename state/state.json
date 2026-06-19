@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-19T18:41:42.178Z",
+  "lastRun": "2026-06-19T18:51:52.764Z",
   "log": [
-    {
-      "time": "2026-06-18T18:25:18.218Z",
-      "type": "INFO",
-      "msg": "Account: $100069.21 | 2 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T18:25:19.300Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BFLY, MRVL, INTC, QS, CIFR, SMR, SMCI, JBLU, MU, FRMI"
-    },
-    {
-      "time": "2026-06-18T18:25:19.300Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-06-18T18:25:32.242Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-19T18:41:42.178Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T18:51:52.660Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T18:51:52.668Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T18:51:52.764Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
