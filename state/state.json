@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-06-18",
+  "dailyTrades": 0,
+  "dailyDate": "2026-06-19",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-18T21:26:44.446Z",
+  "lastRun": "2026-06-19T10:20:21.236Z",
   "log": [
-    {
-      "time": "2026-06-18T17:10:01.957Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-06-18T17:10:17.988Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "FRMI: relVol 1.2× < 2.5× (todayVol 22.9M)  •  QS: below opening-range high (price $7.77 < ORH $8.02, 45 today-candles)  •  MRVL: relVol 0.7× < 2.5× (todayVol 44.1M)  •  SMR: relVol 0.9× < 2.5× (todayVol 35.0M)  •  CIFR: relVol 1.0× < 2.5× (todayVol 23.6M)  •  INTC: relVol 1.0× < 2.5× (todayVol 123.0M)  •  JBLU: relVol 0.9× < 2.5× (todayVol 24.1M)  •  SMCI: relVol 0.6× < 2.5× (todayVol 37.9M)  •  CHRN: avgVol 0.4M < 1M  •  PENG: relVol 0.6× < 2.5× (todayVol 1.8M)  •  MU: relVol 0.6× < 2.5× (todayVol 29.7M)  •  DIOD: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-06-18T17:10:17.988Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-18T17:10:18.362Z",
       "type": "INFO",
@@ -1271,13 +1253,27 @@
       "type": "INFO",
       "msg": "Outside market hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-19T10:20:20.645Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T10:20:20.850Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T10:20:21.235Z",
+      "type": "INFO",
+      "msg": "Outside market hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "BFLY"
-  ],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "LEGN"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
