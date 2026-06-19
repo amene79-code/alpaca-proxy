@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-19T19:02:08.370Z",
+  "lastRun": "2026-06-19T19:12:21.856Z",
   "log": [
-    {
-      "time": "2026-06-18T18:25:45.673Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "ACN: ATR 0.45% < 0.5%  •  RGC: avgVol 0.1M < 1M  •  TNGX: relVol 1.4× < 2.5× (todayVol 6.8M)  •  SLBT: relVol 0.2× < 2.5× (todayVol 0.4M)  •  AXTI: relVol 1.0× < 2.5× (todayVol 8.7M)  •  EPAM: relVol 1.1× < 2.5× (todayVol 2.2M)  •  AAMI: avgVol 0.5M < 1M  •  CTSH: relVol 1.8× < 2.5× (todayVol 17.2M)  •  ASTS: relVol 0.7× < 2.5× (todayVol 20.2M)  •  INFY: relVol 1.4× < 2.5× (todayVol 26.4M)  •  HAWK: relVol 0.7× < 2.5× (todayVol 0.7M)  •  INOD: relVol 0.6× < 2.5× (todayVol 1.1M)"
-    },
-    {
-      "time": "2026-06-18T18:25:45.673Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T18:36:05.954Z",
-      "type": "INFO",
-      "msg": "Account: $100083.49 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-18T18:36:06.884Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-19T19:02:08.370Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T19:12:21.700Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T19:12:21.725Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T19:12:21.856Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
