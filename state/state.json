@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-19T16:18:44.026Z",
+  "lastRun": "2026-06-19T16:28:57.818Z",
   "log": [
-    {
-      "time": "2026-06-18T17:31:40.059Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "MRVL: relVol 0.8× < 2.5× (todayVol 46.3M)  •  CIFR: relVol 1.0× < 2.5× (todayVol 24.8M)  •  INTC: relVol 1.0× < 2.5× (todayVol 127.3M)  •  FRMI: relVol 1.3× < 2.5× (todayVol 24.2M)  •  QS: below opening-range high (price $7.66 < ORH $8.02, 50 today-candles)  •  SMR: relVol 1.0× < 2.5× (todayVol 35.9M)  •  JBLU: relVol 1.0× < 2.5× (todayVol 25.6M)  •  SMCI: relVol 0.6× < 2.5× (todayVol 39.3M)  •  MU: relVol 0.6× < 2.5× (todayVol 31.5M)  •  PENG: relVol 0.7× < 2.5× (todayVol 1.9M)  •  CHRN: avgVol 0.4M < 1M  •  WOLF: relVol 0.6× < 2.5× (todayVol 5.2M)"
-    },
-    {
-      "time": "2026-06-18T17:31:40.059Z",
-      "type": "INFO",
-      "msg": "Top signal: BFLY (score 12)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T17:31:40.060Z",
-      "type": "BUY",
-      "msg": "Placing 184× BFLY @ ~$8.15",
-      "detail": "gap 42.7% | risk $34.96 | SL $7.96 | TP $8.65 | R:R 2.6 | Hammer"
-    },
     {
       "time": "2026-06-18T17:31:40.089Z",
       "type": "BUY",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-19T16:18:44.025Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T16:28:57.505Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T16:28:57.575Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T16:28:57.818Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
