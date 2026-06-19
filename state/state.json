@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-19T17:09:56.535Z",
+  "lastRun": "2026-06-19T17:20:07.129Z",
   "log": [
-    {
-      "time": "2026-06-18T17:42:38.636Z",
-      "type": "INFO",
-      "msg": "Top short: LEGN (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T17:42:38.637Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 35× LEGN @ ~$28.23",
-      "detail": "gap -15.8% | risk $10.15 | SL $28.52 | TP $27.65 | R:R 2.0"
-    },
-    {
-      "time": "2026-06-18T17:42:38.709Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 35× LEGN",
-      "detail": "ID 904238aa-4b75-4e41-9233-ac49f4ade9ae | R:R 2.0:1 | risk $10.15 | real bracket stop @ $28.52"
-    },
     {
       "time": "2026-06-18T17:52:54.434Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-19T17:09:56.535Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T17:20:06.998Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T17:20:07.010Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T17:20:07.129Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
