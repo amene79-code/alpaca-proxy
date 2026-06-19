@@ -11,6 +11,19 @@ on:
     - cron: '0 13 * * 1-5'
     # Trading window — every 10 min 13:00-20:00 UTC (covers 9:30am-4pm ET session)
     - cron: '*/10 13-20 * * 1-5'
+
+# ─── Single-runner guarantee ─────────────────────────────────────────────────
+# All triggers (self-dispatch chain, the */10 cron, manual, push) share ONE
+# queue. Without this, the self-dispatch chain and the independent cron both
+# fire on the same 10-min beat and overlap — two agents load their own copy of
+# state.json, neither sees the other's tradedToday, and the same ticker gets
+# traded repeatedly (the June-2 churn). cancel-in-progress:false lets the
+# current cycle finish placing/managing trades rather than being killed mid-run;
+# a second run that starts while one is active simply waits its turn.
+concurrency:
+  group: pro-agent-singleton
+  cancel-in-progress: false
+
 jobs:
   run-agent:
     runs-on: ubuntu-latest
