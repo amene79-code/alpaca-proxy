@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-19T18:31:28.448Z",
+  "lastRun": "2026-06-19T18:41:42.178Z",
   "log": [
-    {
-      "time": "2026-06-18T18:14:47.769Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ACN, LEGN, RGC, SLBT, TNGX, AXTI, EPAM, AAMI, ASTS, CTSH"
-    },
-    {
-      "time": "2026-06-18T18:15:00.049Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "ACN: above opening-range low (price $127.33 > ORL $126.50)  •  RGC: avgVol 0.1M < 1M  •  SLBT: relVol 0.2× < 2.5× (todayVol 0.4M)  •  TNGX: relVol 1.3× < 2.5× (todayVol 6.6M)  •  AXTI: relVol 1.0× < 2.5× (todayVol 8.6M)  •  EPAM: relVol 1.0× < 2.5× (todayVol 2.1M)  •  AAMI: avgVol 0.5M < 1M  •  ASTS: relVol 0.7× < 2.5× (todayVol 19.8M)  •  CTSH: relVol 1.7× < 2.5× (todayVol 16.9M)  •  KR: relVol 1.5× < 2.5× (todayVol 12.5M)  •  HAWK: relVol 0.7× < 2.5× (todayVol 0.7M)  •  INFY: relVol 1.4× < 2.5× (todayVol 25.9M)"
-    },
-    {
-      "time": "2026-06-18T18:15:00.049Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-18T18:25:18.218Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-19T18:31:28.448Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T18:41:41.775Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T18:41:41.797Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-19T18:41:42.178Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
