@@ -459,6 +459,18 @@ function isMarketOpen() {
   if (day === 0 || day === 6) return false;
   return isRegularHours();
 }
+// Holiday-aware market check via Alpaca's own clock (knows the real NYSE
+// calendar incl. Juneteenth, July 4, Thanksgiving, half-days). Falls back to
+// the naive weekday+time check only if the API call fails, so a network blip
+// can't accidentally green-light trading — it degrades to the old behaviour.
+async function alpacaMarketOpen() {
+  try {
+    const clock = await alpaca('GET', '/v2/clock');
+    return !!clock.is_open;
+  } catch {
+    return isMarketOpen(); // fallback: weekday + RTH only (no holiday awareness)
+  }
+}
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // ─── Close a position (used for ext-hours exits + EOD review) ────────────────
@@ -539,6 +551,18 @@ async function main() {
   } catch (e) {
     addLog(state, 'ERROR', `Account fetch failed: ${e.message}`);
     saveState(state); process.exit(1);
+  }
+
+  // ─── HOLIDAY / CLOSED-MARKET AWARENESS ─────────────────────────────────────
+  // Ask Alpaca's calendar-aware clock whether the market is actually open today.
+  // On a holiday (e.g. Juneteenth) or weekend the naive weekday+time check would
+  // wrongly think we're in-session. We compute this ONCE here and use it at the
+  // new-entry gate below, so position management still runs (keeping state.json
+  // consistent and honouring real bracket stops) but no scanning/entries happen
+  // on a closed day.
+  const clockOpen = await alpacaMarketOpen();
+  if (!clockOpen) {
+    addLog(state, 'INFO', '🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.');
   }
 
   // ICT positions are managed by the ICT agent — exclude them from everything here.
@@ -710,7 +734,10 @@ async function main() {
   }
 
   // 7. Should we look for NEW entries?
-  if (!isMarketOpen()) { addLog(state, 'INFO', 'Outside market hours — no new entries'); saveState(state); return; }
+  // Use the holiday-aware clock (clockOpen) AND the in-session time check. The
+  // clock catches holidays the naive check misses; isMarketOpen() keeps the
+  // regular-trading-hours window so we don't enter pre/post market.
+  if (!clockOpen || !isMarketOpen()) { addLog(state, 'INFO', 'Market closed or outside hours — no new entries'); saveState(state); return; }
 
   const { mins } = etPartsOf(new Date());
   const minsAfterOpen = mins - 570;
