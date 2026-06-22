@@ -1,6 +1,19 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 0,
+  "trailingStops": {
+    "ORKA": {
+      "side": "long",
+      "entry": 87.48919677734375,
+      "high": 87.48919677734375,
+      "low": 87.48919677734375,
+      "initialSl": 86.66,
+      "sl": 86.66,
+      "tp": 89.71,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 1,
   "dailyDate": "2026-06-22",
   "openPositions": [
     "FIVE",
@@ -70,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-22T18:32:04.054Z",
+  "lastRun": "2026-06-22T18:42:37.861Z",
   "log": [
-    {
-      "time": "2026-06-19T18:41:41.797Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T18:41:42.178Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T18:51:52.660Z",
-      "type": "INFO",
-      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T18:51:52.668Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T18:51:52.764Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T19:02:07.960Z",
-      "type": "INFO",
-      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T19:02:07.969Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T19:02:08.370Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T19:12:21.700Z",
-      "type": "INFO",
-      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-19T19:12:21.725Z",
       "type": "INFO",
@@ -1271,9 +1230,65 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-22T18:42:16.620Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T18:42:16.865Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, SPCX, MSFT, SNDK, CLRC, ATXG, CBRS, FDX"
+    },
+    {
+      "time": "2026-06-22T18:42:17.484Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "APGE, SMCI, TE, KEEL, DFTX, HQ, BWIN, ORKA, SYRE, UMC"
+    },
+    {
+      "time": "2026-06-22T18:42:17.485Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-22T18:42:19.958Z",
+      "type": "SIGNAL",
+      "msg": "ORKA — score 16 | gap 20.9% | relVol 2.5× | RSI 53",
+      "detail": "Hammer, Bullish Engulfing, Volume Breakout"
+    },
+    {
+      "time": "2026-06-22T18:42:37.242Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "APGE: below VWAP (price $132.60 < VWAP $132.69)  •  SMCI: relVol 1.3× < 2.5× (todayVol 98.5M)  •  TE: price $10.85 < $20  •  KEEL: price $6.97 < $20  •  DFTX: below opening-range high (price $37.74 < ORH $39.16, 64 today-candles)  •  HQ: relVol 1.5× < 2.5× (todayVol 2.0M)  •  BWIN: relVol 1.6× < 2.5× (todayVol 3.1M)  •  SYRE: relVol 1.6× < 2.5× (todayVol 1.9M)  •  UMC: relVol 1.0× < 2.5× (todayVol 19.5M)  •  BHVN: price $15.45 < $20  •  KLRA: avgVol 0.7M < 1M  •  AXTI: relVol 0.9× < 2.5× (todayVol 8.3M)"
+    },
+    {
+      "time": "2026-06-22T18:42:37.242Z",
+      "type": "INFO",
+      "msg": "Top signal: ORKA (score 16)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T18:42:37.242Z",
+      "type": "BUY",
+      "msg": "Placing 17× ORKA @ ~$87.49",
+      "detail": "gap 20.9% | risk $14.10 | SL $86.66 | TP $89.71 | R:R 2.7 | Hammer, Bullish Engulfing, Volume Breakout"
+    },
+    {
+      "time": "2026-06-22T18:42:37.360Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 17× ORKA",
+      "detail": "ID 891583dd-fb09-4515-82a9-7cf708a4e753 | R:R 2.7:1 | risk $14.10"
     }
   ],
-  "tradedToday": [],
+  "tradedToday": [
+    "ORKA"
+  ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
