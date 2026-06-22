@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-22T17:28:21.938Z",
+  "lastRun": "2026-06-22T17:38:58.445Z",
   "log": [
-    {
-      "time": "2026-06-19T16:39:13.557Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T16:39:13.927Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T16:49:26.693Z",
-      "type": "INFO",
-      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T16:49:26.701Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T16:49:27.014Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-19T16:59:40.448Z",
-      "type": "INFO",
-      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-19T16:59:40.525Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-22T17:28:21.938Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T17:38:38.541Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T17:38:39.366Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, SPCX, MSFT, SNDK, CLRC, ATXG, CBRS, FDX"
+    },
+    {
+      "time": "2026-06-22T17:38:39.708Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "APGE, SMCI, KEEL, TE, DFTX, HQ, ORKA, BWIN, UMC, INIO"
+    },
+    {
+      "time": "2026-06-22T17:38:39.708Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-22T17:38:58.445Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "APGE: below VWAP (price $132.63 < VWAP $132.69)  •  SMCI: relVol 1.1× < 2.5× (todayVol 81.9M)  •  KEEL: price $6.98 < $20  •  TE: price $10.30 < $20  •  DFTX: below opening-range high (price $37.77 < ORH $39.16, 51 today-candles)  •  HQ: relVol 1.3× < 2.5× (todayVol 1.7M)  •  ORKA: relVol 2.0× < 2.5× (todayVol 2.5M)  •  BWIN: relVol 1.4× < 2.5× (todayVol 2.6M)  •  UMC: relVol 1.0× < 2.5× (todayVol 18.4M)  •  INIO: relVol 0.8× < 2.5× (todayVol 3.3M)  •  BHVN: price $15.31 < $20  •  SYRE: relVol 1.4× < 2.5× (todayVol 1.6M)"
+    },
+    {
+      "time": "2026-06-22T17:38:58.445Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
