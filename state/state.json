@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-22T19:45:50.839Z",
+  "lastRun": "2026-06-22T19:56:05.676Z",
   "log": [
-    {
-      "time": "2026-06-22T13:55:04.108Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-22T13:55:23.669Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "DFTX: below opening-range high (price $37.97 < ORH $39.16, 6 today-candles)  •  APGE: below VWAP (price $132.70 < VWAP $132.73)  •  UMC: relVol 0.3× < 2.5× (todayVol 5.6M)  •  SMCI: relVol 0.4× < 2.5× (todayVol 27.7M)  •  KEEL: price $7.12 < $20  •  MARA: price $16.03 < $20  •  BWIN: relVol 0.3× < 2.5× (todayVol 0.5M)  •  CHRN: avgVol 0.4M < 1M  •  ORKA: relVol 0.4× < 2.5× (todayVol 0.4M)  •  FRVO: relVol 0.3× < 2.5× (todayVol 0.7M)  •  BB: price $9.02 < $20  •  TE: price $10.07 < $20"
-    },
-    {
-      "time": "2026-06-22T13:55:23.669Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-22T14:05:49.376Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-22T19:45:50.839Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T19:56:05.317Z",
+      "type": "INFO",
+      "msg": "Account: $100081.47 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T19:56:05.675Z",
+      "type": "INFO",
+      "msg": "EOD review (4 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T19:56:05.676Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
