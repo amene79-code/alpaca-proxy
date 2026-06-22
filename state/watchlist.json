@@ -1,7 +1,62 @@
 {
   "tickers": [
     {
-      "ticker": "GMS",
+      "ticker": "MU",
+      "score": 27.5,
+      "sources": [
+        "Reddit WSB",
+        "Stocktwits"
+      ],
+      "strategy": "Score 27.5 — Reddit WSB, Stocktwits",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "SPCX",
+      "score": 11.8,
+      "sources": [
+        "Pre-market",
+        "Reddit WSB"
+      ],
+      "strategy": "Score 11.8 — Pre-market, Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "MSFT",
+      "score": 11.3,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 11.3 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "SNDK",
+      "score": 7.3,
+      "sources": [
+        "Pre-market",
+        "Reddit WSB",
+        "Stocktwits"
+      ],
+      "strategy": "Score 7.3 — Pre-market, Reddit WSB, Stocktwits",
+      "direction": "bullish",
+      "confidence": 73
+    },
+    {
+      "ticker": "CLRC",
+      "score": 7,
+      "sources": [
+        "Earnings Today",
+        "Earnings Soon"
+      ],
+      "strategy": "Score 7 — Earnings Today, Earnings Soon",
+      "direction": "bullish",
+      "confidence": 70
+    },
+    {
+      "ticker": "ATXG",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -11,7 +66,7 @@
       "confidence": 50
     },
     {
-      "ticker": "LZB",
+      "ticker": "CBRS",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -21,7 +76,7 @@
       "confidence": 50
     },
     {
-      "ticker": "PURE",
+      "ticker": "FDX",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -31,7 +86,7 @@
       "confidence": 50
     },
     {
-      "ticker": "RFL",
+      "ticker": "GIS",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -41,7 +96,7 @@
       "confidence": 50
     },
     {
-      "ticker": "SEED",
+      "ticker": "GRCE",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -51,7 +106,7 @@
       "confidence": 50
     },
     {
-      "ticker": "SOUB",
+      "ticker": "JFIN",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -61,7 +116,7 @@
       "confidence": 50
     },
     {
-      "ticker": "WLY",
+      "ticker": "KBH",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -71,7 +126,7 @@
       "confidence": 50
     },
     {
-      "ticker": "AIOT",
+      "ticker": "KEQU",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -81,7 +136,7 @@
       "confidence": 50
     },
     {
-      "ticker": "BANX",
+      "ticker": "KFY",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -91,7 +146,7 @@
       "confidence": 50
     },
     {
-      "ticker": "CHAI",
+      "ticker": "LOT",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -101,7 +156,7 @@
       "confidence": 50
     },
     {
-      "ticker": "CODA",
+      "ticker": "MFM",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -111,7 +166,7 @@
       "confidence": 50
     },
     {
-      "ticker": "DDDX",
+      "ticker": "MMT",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -121,7 +176,7 @@
       "confidence": 50
     },
     {
-      "ticker": "DIDIY",
+      "ticker": "SCS",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -131,7 +186,7 @@
       "confidence": 50
     },
     {
-      "ticker": "DOMO",
+      "ticker": "SUNB",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -141,7 +196,7 @@
       "confidence": 50
     },
     {
-      "ticker": "EBZT",
+      "ticker": "UCLE",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -151,7 +206,7 @@
       "confidence": 50
     },
     {
-      "ticker": "ENZ",
+      "ticker": "WOR",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -161,7 +216,7 @@
       "confidence": 50
     },
     {
-      "ticker": "IGC",
+      "ticker": "ZNB",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -171,7 +226,7 @@
       "confidence": 50
     },
     {
-      "ticker": "JRSH",
+      "ticker": "BSFC",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -181,7 +236,7 @@
       "confidence": 50
     },
     {
-      "ticker": "KCRD",
+      "ticker": "CARV",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -191,7 +246,7 @@
       "confidence": 50
     },
     {
-      "ticker": "KOAN",
+      "ticker": "CCL",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -201,7 +256,7 @@
       "confidence": 50
     },
     {
-      "ticker": "LVO",
+      "ticker": "CHI",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -211,7 +266,7 @@
       "confidence": 50
     },
     {
-      "ticker": "NMEX",
+      "ticker": "EBF",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -221,7 +276,7 @@
       "confidence": 50
     },
     {
-      "ticker": "POWW",
+      "ticker": "FRVO",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -231,7 +286,7 @@
       "confidence": 50
     },
     {
-      "ticker": "RFIL",
+      "ticker": "GELS",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -241,17 +296,7 @@
       "confidence": 50
     },
     {
-      "ticker": "RYES",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "SENR",
+      "ticker": "GURE",
       "score": 5,
       "sources": [
         "Earnings Today"
@@ -261,6 +306,6 @@
       "confidence": 50
     }
   ],
-  "date": "15/06/2026",
-  "ts": 1781529837353
+  "date": "22/06/2026",
+  "ts": 1782136489924
 }
