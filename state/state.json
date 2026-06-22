@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-22T15:10:23.561Z",
+  "lastRun": "2026-06-22T15:21:01.103Z",
   "log": [
-    {
-      "time": "2026-06-18T19:19:21.309Z",
-      "type": "SIGNAL",
-      "msg": "LEGN — SHORT score 9 | gap -17.0% | relVol 3.3× | RSI 48",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T19:19:38.621Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "RGC: avgVol 0.1M < 1M  •  ACN: above opening-range low (price $128.37 > ORL $126.50)  •  TNGX: relVol 1.6× < 2.5× (todayVol 8.0M)  •  SLBT: relVol 0.2× < 2.5× (todayVol 0.4M)  •  EPAM: relVol 1.2× < 2.5× (todayVol 2.6M)  •  AXTI: relVol 1.1× < 2.5× (todayVol 9.5M)  •  AAMI: avgVol 0.5M < 1M  •  INFY: relVol 1.6× < 2.5× (todayVol 31.1M)  •  HAWK: relVol 0.9× < 2.5× (todayVol 0.9M)  •  CTSH: relVol 1.9× < 2.5× (todayVol 19.1M)  •  KR: relVol 1.7× < 2.5× (todayVol 14.0M)  •  INOD: relVol 0.7× < 2.5× (todayVol 1.1M)"
-    },
-    {
-      "time": "2026-06-18T19:19:38.621Z",
-      "type": "INFO",
-      "msg": "Top short: LEGN (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T19:19:38.621Z",
-      "type": "INFO",
-      "msg": "SKIP LEGN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T19:22:47.232Z",
-      "type": "INFO",
-      "msg": "Account: $100113.85 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T19:22:47.679Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BFLY, MRVL, QS, SMR, CIFR, INTC, MU, SMCI, WOLF, JBLU"
-    },
     {
       "time": "2026-06-18T19:22:47.679Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-22T15:10:23.561Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T15:20:38.421Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T15:20:38.813Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, SPCX, MSFT, SNDK, CLRC, ATXG, CBRS, FDX"
+    },
+    {
+      "time": "2026-06-22T15:20:39.415Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "DFTX, APGE, UMC, SMCI, KEEL, BWIN, ORKA, TE, CHRN, BHVN"
+    },
+    {
+      "time": "2026-06-22T15:20:39.416Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-22T15:21:01.103Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "DFTX: below VWAP (price $37.24 < VWAP $37.33)  •  APGE: below VWAP (price $132.65 < VWAP $132.70)  •  UMC: relVol 0.8× < 2.5× (todayVol 14.4M)  •  SMCI: relVol 0.8× < 2.5× (todayVol 56.8M)  •  KEEL: price $7.00 < $20  •  BWIN: relVol 0.7× < 2.5× (todayVol 1.2M)  •  ORKA: relVol 1.1× < 2.5× (todayVol 1.3M)  •  TE: price $10.13 < $20  •  CHRN: avgVol 0.4M < 1M  •  BHVN: price $15.36 < $20  •  MARA: price $15.34 < $20  •  BB: price $8.90 < $20"
+    },
+    {
+      "time": "2026-06-22T15:21:01.103Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
