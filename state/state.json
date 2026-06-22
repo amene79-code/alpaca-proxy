@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-22T16:03:33.159Z",
+  "lastRun": "2026-06-22T16:14:11.990Z",
   "log": [
-    {
-      "time": "2026-06-18T19:40:46.692Z",
-      "type": "INFO",
-      "msg": "Account: $100113.85 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T19:40:46.840Z",
-      "type": "INFO",
-      "msg": "EOD review (20 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T19:40:46.840Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T19:43:39.149Z",
-      "type": "INFO",
-      "msg": "Account: $100113.85 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T19:43:39.401Z",
-      "type": "INFO",
-      "msg": "EOD review (17 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-18T19:43:39.401Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
     {
       "time": "2026-06-18T19:50:59.869Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-22T16:03:33.159Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T16:13:49.960Z",
+      "type": "INFO",
+      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-22T16:13:50.582Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, SPCX, MSFT, SNDK, CLRC, ATXG, CBRS, FDX"
+    },
+    {
+      "time": "2026-06-22T16:13:51.172Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "APGE, UMC, SMCI, KEEL, TE, DFTX, HQ, BWIN, ORKA, BHVN"
+    },
+    {
+      "time": "2026-06-22T16:13:51.172Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-22T16:14:11.990Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "APGE: below VWAP (price $132.63 < VWAP $132.70)  •  UMC: relVol 0.9× < 2.5× (todayVol 16.6M)  •  SMCI: relVol 1.0× < 2.5× (todayVol 69.0M)  •  KEEL: price $7.16 < $20  •  TE: price $10.40 < $20  •  DFTX: below opening-range high (price $38.17 < ORH $39.16, 34 today-candles)  •  HQ: relVol 0.8× < 2.5× (todayVol 1.1M)  •  BWIN: relVol 1.0× < 2.5× (todayVol 1.8M)  •  ORKA: relVol 1.4× < 2.5× (todayVol 1.7M)  •  BHVN: price $15.47 < $20  •  MARA: price $15.36 < $20  •  BB: price $8.98 < $20"
+    },
+    {
+      "time": "2026-06-22T16:14:11.990Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
