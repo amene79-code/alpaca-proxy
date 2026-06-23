@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-23T19:38:38.685Z",
+  "lastRun": "2026-06-23T19:48:58.669Z",
   "log": [
-    {
-      "time": "2026-06-23T13:45:53.159Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
-    },
-    {
-      "time": "2026-06-23T13:45:53.948Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 30, kept 22",
-      "detail": "INFQ, QBTS, RGC, QUBT, QNT, QURE, VRNS, ZETA, RGTI, SOFI"
-    },
-    {
-      "time": "2026-06-23T13:45:53.949Z",
-      "type": "INFO",
-      "msg": "Scanning 48 candidates",
-      "detail": "22 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-23T13:46:09.104Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-23T19:38:38.685Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T19:48:58.247Z",
+      "type": "INFO",
+      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T19:48:58.669Z",
+      "type": "INFO",
+      "msg": "EOD review (12 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T19:48:58.669Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
