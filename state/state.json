@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-23T20:09:30.307Z",
+  "lastRun": "2026-06-23T20:19:47.486Z",
   "log": [
-    {
-      "time": "2026-06-23T13:56:28.893Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "37 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-23T13:56:46.229Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "QNT: relVol 0.2× < 2.5× (todayVol 1.5M)  •  INFQ: price $15.32 < $20  •  QBTS: relVol 0.3× < 2.5× (todayVol 12.2M)  •  QURE: relVol 0.2× < 2.5× (todayVol 0.5M)  •  ZETA: price $19.57 < $20  •  CDW: relVol 0.1× < 2.5× (todayVol 0.2M)  •  VKTX: relVol 0.3× < 2.5× (todayVol 0.6M)  •  EZPW: avgVol 0.9M < 1M  •  OCUL: price $10.47 < $20  •  MRNA: relVol 0.2× < 2.5× (todayVol 1.3M)  •  SPCX: gap 0.6% < 4% (price $155.50 vs priorClose $154.60)  •  RGTI: gap 1.6% < 4% (price $21.72 vs priorClose $21.38)"
-    },
-    {
-      "time": "2026-06-23T13:56:46.229Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-23T14:07:09.687Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-23T20:09:30.306Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T20:19:47.161Z",
+      "type": "INFO",
+      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T20:19:47.241Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T20:19:47.486Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
