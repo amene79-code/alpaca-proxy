@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-23T20:19:47.486Z",
+  "lastRun": "2026-06-23T20:30:00.835Z",
   "log": [
-    {
-      "time": "2026-06-23T14:07:09.687Z",
-      "type": "INFO",
-      "msg": "Account: $100081.45 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T14:07:10.715Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
-    },
-    {
-      "time": "2026-06-23T14:07:11.176Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "INFQ, QNT, ZETA, QBTS, ASTS, QUBT, RGTI, VKTX, QURE, AXON"
-    },
     {
       "time": "2026-06-23T14:07:11.176Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-23T20:19:47.486Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T20:30:00.173Z",
+      "type": "INFO",
+      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T20:30:00.595Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T20:30:00.835Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
