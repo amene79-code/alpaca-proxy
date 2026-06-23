@@ -7,21 +7,20 @@ on:
       - 'scripts/pro-agent.js'
       - 'state/watchlist.json'
   schedule:
-    # ─── CRON-ONLY DRIVER ────────────────────────────────────────────────────
-    # The */10 cron is the SOLE cadence source. It fires independently every 10
-    # minutes 13:00-20:00 UTC (covers the 9:30am-4pm ET session) and — unlike a
-    # self-dispatch chain — it cannot "die": GitHub re-fires it every weekday on
-    # its own, so a holiday, a failed run, or a weekend can never break the loop.
-    # No warmup cron needed; the agent's own holiday/clock check stands it down
-    # when the market is closed.
+    # Warmup — first fire 13:00 UTC (14:00 UK BST), 30 min before the open.
+    # Seeds the self-dispatch chain each morning.
+    - cron: '0 13 * * 1-5'
+    # Trading window — every 10 min 13:00-20:00 UTC (9:30am-4pm ET). Also re-seeds
+    # the chain if a self-dispatch tick is ever dropped by GitHub.
     - cron: '*/10 13-20 * * 1-5'
 
-# ─── Single-runner guarantee ─────────────────────────────────────────────────
-# Every trigger (the */10 cron, manual dispatch, push) shares ONE queue. If a
-# cron run fires while a previous one is still finishing, the new one waits its
-# turn instead of running in parallel — so two agents never hit the same Alpaca
-# account at once (the June-2 churn cause). cancel-in-progress:false lets the
-# active cycle finish managing/placing trades rather than being killed mid-run.
+# ─── Single-runner guarantee (added — not in the original) ───────────────────
+# The original relied on the self-dispatch chain + warmup cron + */10 cron all
+# firing, which could overlap and run two agents on one Alpaca account at once
+# (the June-2 churn: same ticker traded repeatedly because each run had its own
+# state.json). This block forces ALL triggers to share one queue — if a second
+# run starts while one is active it WAITS instead of running in parallel. Keeps
+# the original's reliability while removing its one serious flaw.
 concurrency:
   group: pro-agent-singleton
   cancel-in-progress: false
@@ -29,9 +28,10 @@ concurrency:
 jobs:
   run-agent:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 360
     permissions:
       contents: write
+      actions: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -56,3 +56,18 @@ jobs:
           git add state/state.json state/watchlist.json
           git diff --staged --quiet || git commit -m "state: $(date -u '+%Y-%m-%d %H:%M') UTC"
           git push
+      - name: sleep 600
+        run: sleep 600
+      - name: Schedule next or stop
+        run: |
+          # Re-dispatch only inside the run window: 13:00-20:30 UTC, Mon-Fri.
+          NOW=$(date -u +%H%M)
+          DOW=$(date -u +%u)
+          if [ "$DOW" -le 5 ] && [ "$NOW" -ge 1300 ] && [ "$NOW" -le 2030 ]; then
+            echo "Inside run window ($NOW UTC) — triggering next cycle"
+            gh workflow run pro-agent.yml --ref main
+          else
+            echo "Outside run window ($NOW UTC) — chain stops until next scheduled start"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
