@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-23T14:18:24.201Z",
+  "lastRun": "2026-06-23T14:28:57.680Z",
   "log": [
-    {
-      "time": "2026-06-22T15:20:38.813Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, SNDK, CLRC, ATXG, CBRS, FDX"
-    },
-    {
-      "time": "2026-06-22T15:20:39.415Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "DFTX, APGE, UMC, SMCI, KEEL, BWIN, ORKA, TE, CHRN, BHVN"
-    },
-    {
-      "time": "2026-06-22T15:20:39.416Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-22T15:21:01.103Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "DFTX: below VWAP (price $37.24 < VWAP $37.33)  •  APGE: below VWAP (price $132.65 < VWAP $132.70)  •  UMC: relVol 0.8× < 2.5× (todayVol 14.4M)  •  SMCI: relVol 0.8× < 2.5× (todayVol 56.8M)  •  KEEL: price $7.00 < $20  •  BWIN: relVol 0.7× < 2.5× (todayVol 1.2M)  •  ORKA: relVol 1.1× < 2.5× (todayVol 1.3M)  •  TE: price $10.13 < $20  •  CHRN: avgVol 0.4M < 1M  •  BHVN: price $15.36 < $20  •  MARA: price $15.34 < $20  •  BB: price $8.90 < $20"
-    },
-    {
-      "time": "2026-06-22T15:21:01.103Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-22T15:31:21.090Z",
-      "type": "INFO",
-      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-22T15:31:21.532Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-23T14:18:24.200Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T14:28:35.965Z",
+      "type": "INFO",
+      "msg": "Account: $100081.45 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T14:28:36.202Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
+    },
+    {
+      "time": "2026-06-23T14:28:36.658Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "INFQ, QNT, MAAS, QBTS, VKTX, QURE, ZETA, BWIN, XE, MRNA"
+    },
+    {
+      "time": "2026-06-23T14:28:36.658Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-23T14:28:57.679Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "INFQ: price $16.16 < $20  •  QNT: relVol 0.3× < 2.5× (todayVol 2.1M)  •  MAAS: avgVol 0.1M < 1M  •  QBTS: relVol 0.5× < 2.5× (todayVol 18.1M)  •  VKTX: relVol 0.7× < 2.5× (todayVol 1.5M)  •  QURE: relVol 0.3× < 2.5× (todayVol 0.8M)  •  ZETA: price $19.82 < $20  •  BWIN: relVol 0.3× < 2.5× (todayVol 0.6M)  •  XE: relVol 0.2× < 2.5× (todayVol 1.2M)  •  MRNA: relVol 0.3× < 2.5× (todayVol 2.1M)  •  AXON: relVol 0.2× < 2.5× (todayVol 0.2M)  •  EZPW: avgVol 0.9M < 1M"
+    },
+    {
+      "time": "2026-06-23T14:28:57.679Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
