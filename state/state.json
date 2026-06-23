@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-23T19:48:58.669Z",
+  "lastRun": "2026-06-23T19:59:15.069Z",
   "log": [
-    {
-      "time": "2026-06-23T13:46:09.104Z",
-      "type": "INFO",
-      "msg": "Rejections (48)",
-      "detail": "INFQ: price $15.45 < $20  •  QBTS: relVol 0.3× < 2.5× (todayVol 9.2M)  •  RGC: price $11.68 < $20  •  QUBT: price $11.02 < $20  •  QNT: relVol 0.1× < 2.5× (todayVol 0.8M)  •  QURE: relVol 0.1× < 2.5× (todayVol 0.4M)  •  VRNS: relVol 0.2× < 2.5× (todayVol 0.3M)  •  ZETA: price $19.47 < $20  •  RGTI: gap 3.6% < 4% (price $22.14 vs priorClose $21.38)  •  SOFI: price $17.29 < $20  •  NFLX: gap 1.0% < 4% (price $73.60 vs priorClose $72.88)  •  AMZN: gap 0.8% < 4% (price $234.63 vs priorClose $232.79)"
-    },
-    {
-      "time": "2026-06-23T13:46:09.104Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-23T13:56:28.138Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-06-23T19:48:58.669Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T19:59:14.722Z",
+      "type": "INFO",
+      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T19:59:15.069Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
