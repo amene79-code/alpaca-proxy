@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-23T17:52:24.336Z",
+  "lastRun": "2026-06-23T18:02:59.316Z",
   "log": [
-    {
-      "time": "2026-06-22T18:42:37.242Z",
-      "type": "BUY",
-      "msg": "Placing 17× ORKA @ ~$87.49",
-      "detail": "gap 20.9% | risk $14.10 | SL $86.66 | TP $89.71 | R:R 2.7 | Hammer, Bullish Engulfing, Volume Breakout"
-    },
-    {
-      "time": "2026-06-22T18:42:37.360Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 17× ORKA",
-      "detail": "ID 891583dd-fb09-4515-82a9-7cf708a4e753 | R:R 2.7:1 | risk $14.10"
-    },
-    {
-      "time": "2026-06-22T18:52:55.796Z",
-      "type": "INFO",
-      "msg": "Account: $100099.69 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-22T18:52:56.866Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, SNDK, CLRC, ATXG, CBRS, FDX"
-    },
-    {
-      "time": "2026-06-22T18:52:57.467Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "APGE, SMCI, TE, KEEL, DFTX, HQ, ORKA, BWIN, UMC, SYRE"
-    },
-    {
-      "time": "2026-06-22T18:52:57.467Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-22T18:53:22.077Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-23T17:52:24.336Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T18:02:39.532Z",
+      "type": "INFO",
+      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T18:02:39.994Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
+    },
+    {
+      "time": "2026-06-23T18:02:40.356Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "INFQ, MAAS, QNT, SPCX, VRNS, VKTX, BFLY, WAY, ENLT, PAYP"
+    },
+    {
+      "time": "2026-06-23T18:02:40.356Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-23T18:02:59.315Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "INFQ: price $16.05 < $20  •  MAAS: avgVol 0.1M < 1M  •  QNT: relVol 0.7× < 2.5× (todayVol 4.2M)  •  SPCX: relVol 0.5× < 2.5× (todayVol 127.6M)  •  VRNS: below VWAP (price $35.74 < VWAP $36.49)  •  VKTX: relVol 2.0× < 2.5× (todayVol 4.3M)  •  BFLY: price $7.82 < $20  •  WAY: price $18.59 < $20  •  ENLT: avgVol 0.3M < 1M  •  PAYP: price $14.69 < $20  •  QURE: relVol 0.7× < 2.5× (todayVol 1.8M)  •  RGC: price $11.23 < $20"
+    },
+    {
+      "time": "2026-06-23T18:02:59.315Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
