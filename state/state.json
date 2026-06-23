@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-23T18:45:53.324Z",
+  "lastRun": "2026-06-23T18:56:38.253Z",
   "log": [
-    {
-      "time": "2026-06-22T19:35:37.335Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-22T19:45:50.405Z",
-      "type": "INFO",
-      "msg": "Account: $100081.47 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-22T19:45:50.838Z",
-      "type": "INFO",
-      "msg": "EOD review (15 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-22T19:45:50.839Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-22T19:56:05.317Z",
-      "type": "INFO",
-      "msg": "Account: $100081.47 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-22T19:56:05.675Z",
-      "type": "INFO",
-      "msg": "EOD review (4 min to close) — cutting weak positions",
-      "detail": ""
-    },
     {
       "time": "2026-06-22T19:56:05.676Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-23T18:45:53.324Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T18:56:11.800Z",
+      "type": "INFO",
+      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T18:56:12.500Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
+    },
+    {
+      "time": "2026-06-23T18:56:13.040Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "INFQ, MAAS, QNT, QURE, WAY, PAYP, BWIN, VRNS, LGND, RGC"
+    },
+    {
+      "time": "2026-06-23T18:56:13.040Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-23T18:56:38.252Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "INFQ: price $15.66 < $20  •  MAAS: avgVol 0.1M < 1M  •  QNT: relVol 0.7× < 2.5× (todayVol 4.5M)  •  QURE: relVol 0.8× < 2.5× (todayVol 2.0M)  •  WAY: price $18.54 < $20  •  PAYP: price $14.64 < $20  •  BWIN: relVol 0.9× < 2.5× (todayVol 1.8M)  •  VRNS: below VWAP (price $34.74 < VWAP $36.39)  •  LGND: avgVol 0.3M < 1M  •  RGC: price $11.14 < $20  •  VKTX: relVol 2.3× < 2.5× (todayVol 5.2M)  •  BBWI: relVol 0.6× < 2.5× (todayVol 3.9M)"
+    },
+    {
+      "time": "2026-06-23T18:56:38.253Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
