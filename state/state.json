@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-23T12:22:29.122Z",
+  "lastRun": "2026-06-23T13:22:50.957Z",
   "log": [
-    {
-      "time": "2026-06-22T14:27:44.056Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "APGE: below VWAP (price $132.65 < VWAP $132.72)  •  DFTX: below VWAP (price $35.28 < VWAP $37.54)  •  UMC: relVol 0.5× < 2.5× (todayVol 9.5M)  •  KEEL: price $7.16 < $20  •  MARA: price $16.03 < $20  •  SMCI: relVol 0.6× < 2.5× (todayVol 41.0M)  •  CHRN: avgVol 0.4M < 1M  •  BWIN: relVol 0.4× < 2.5× (todayVol 0.8M)  •  BHVN: price $15.48 < $20  •  ORKA: relVol 0.7× < 2.5× (todayVol 0.8M)  •  FRVO: relVol 0.5× < 2.5× (todayVol 1.1M)  •  TE: price $10.06 < $20"
-    },
-    {
-      "time": "2026-06-22T14:27:44.056Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-22T14:38:04.541Z",
-      "type": "INFO",
-      "msg": "Account: $100113.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-22T14:38:05.230Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-23T12:22:29.121Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T13:22:50.358Z",
+      "type": "INFO",
+      "msg": "Account: $100081.45 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T13:22:50.431Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-23T13:22:50.957Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
