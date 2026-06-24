@@ -70,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-24T18:49:40.881Z",
+  "lastRun": "2026-06-24T19:00:31.544Z",
   "log": [
-    {
-      "time": "2026-06-23T18:13:16.610Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
-    },
-    {
-      "time": "2026-06-23T18:13:16.936Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "INFQ, MAAS, QNT, SPCX, VKTX, VRNS, QURE, WAY, BFLY, BWIN"
-    },
-    {
-      "time": "2026-06-23T18:13:16.936Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-23T18:13:35.192Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "INFQ: price $15.87 < $20  •  MAAS: avgVol 0.1M < 1M  •  QNT: relVol 0.7× < 2.5× (todayVol 4.2M)  •  SPCX: relVol 0.5× < 2.5× (todayVol 129.2M)  •  VKTX: relVol 2.0× < 2.5× (todayVol 4.3M)  •  VRNS: below VWAP (price $35.56 < VWAP $36.48)  •  QURE: relVol 0.7× < 2.5× (todayVol 1.8M)  •  WAY: price $18.63 < $20  •  BFLY: price $7.78 < $20  •  BWIN: relVol 0.8× < 2.5× (todayVol 1.6M)  •  PAYP: price $14.62 < $20  •  ENLT: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-06-23T18:13:35.192Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-23T18:23:51.199Z",
       "type": "INFO",
@@ -1268,6 +1238,36 @@
     },
     {
       "time": "2026-06-24T18:49:40.881Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T19:00:11.536Z",
+      "type": "INFO",
+      "msg": "Account: $99996.54 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T19:00:14.108Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RUN, RKT, DFTX, KBH, FOUR, ICLR, AAL, BLDR, ADPT, CCS"
+    },
+    {
+      "time": "2026-06-24T19:00:14.108Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-24T19:00:31.543Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "RUN: price $14.89 < $15  •  RKT: price $14.88 < $15  •  DFTX: below VWAP (price $42.48 < VWAP $42.85)  •  KBH: relVol 2.2× < 2.5× (todayVol 3.2M)  •  FOUR: relVol 1.0× < 2.5× (todayVol 1.7M)  •  ICLR: relVol 1.3× < 2.5× (todayVol 1.6M)  •  AAL: relVol 1.4× < 2.5× (todayVol 171.2M)  •  BLDR: relVol 0.8× < 2.5× (todayVol 2.3M)  •  ADPT: relVol 1.1× < 2.5× (todayVol 3.9M)  •  CCS: avgVol 0.4M < 1M  •  NTRA: relVol 1.3× < 2.5× (todayVol 1.9M)  •  MMYT: relVol 1.5× < 2.5× (todayVol 1.6M)"
+    },
+    {
+      "time": "2026-06-24T19:00:31.543Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
