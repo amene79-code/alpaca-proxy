@@ -70,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-24T19:11:08.551Z",
+  "lastRun": "2026-06-24T19:21:37.787Z",
   "log": [
-    {
-      "time": "2026-06-23T18:24:10.430Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T18:34:42.217Z",
-      "type": "INFO",
-      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T18:34:42.469Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
-    },
-    {
-      "time": "2026-06-23T18:34:42.859Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "INFQ, MAAS, QNT, VRNS, QURE, VKTX, WAY, ENLT, PAYP, BWIN"
-    },
-    {
-      "time": "2026-06-23T18:34:42.859Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-23T18:35:04.911Z",
       "type": "INFO",
@@ -1268,6 +1238,36 @@
     },
     {
       "time": "2026-06-24T19:11:08.551Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T19:21:21.851Z",
+      "type": "INFO",
+      "msg": "Account: $99996.54 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T19:21:22.505Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RUN, RKT, DFTX, KBH, FOUR, ICLR, AAL, NTRA, BLDR, ADPT"
+    },
+    {
+      "time": "2026-06-24T19:21:22.505Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-24T19:21:37.786Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "RUN: price $14.72 < $15  •  RKT: price $14.82 < $15  •  DFTX: below VWAP (price $42.51 < VWAP $42.85)  •  KBH: relVol 2.3× < 2.5× (todayVol 3.3M)  •  FOUR: relVol 1.0× < 2.5× (todayVol 1.8M)  •  ICLR: relVol 1.4× < 2.5× (todayVol 1.7M)  •  AAL: relVol 1.5× < 2.5× (todayVol 181.8M)  •  NTRA: relVol 1.4× < 2.5× (todayVol 2.0M)  •  BLDR: relVol 0.9× < 2.5× (todayVol 2.4M)  •  ADPT: relVol 1.2× < 2.5× (todayVol 4.1M)  •  MMYT: relVol 1.7× < 2.5× (todayVol 1.8M)  •  RGEN: avgVol 1.0M < 1M"
+    },
+    {
+      "time": "2026-06-24T19:21:37.786Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
