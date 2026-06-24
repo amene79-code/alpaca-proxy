@@ -50,7 +50,7 @@ const CFG = {
   minRelVol:    2.5,   // min volume vs 20-day avg (institutional confirmation)
   minATRpct:    0.5,   // min ATR% (need real movement)
   minScore:     6,     // min composite score to take the trade
-  minPrice:     20,    // price floor — sub-$20 names bled (penny/illiquid spread); data shows edge lives in $20+ liquid names
+  minPrice:     15,    // price floor. Was 20 (sub-$20 penny/illiquid names bled in original data). Lowered to 15 as a TEST: forward logs showed liquid teens-priced movers (RUN, RKT ~$15-16) dying only at the price gate. Re-admits $15-20 names to widen the funnel WITHOUT re-importing the sub-$10 penny junk that did the real damage. Watch expectancy of $15-20 trades specifically; revert to 20 if they bleed.
   rsiMax:       88,    // reject only truly parabolic chases
 
   // Time gates (ET)
