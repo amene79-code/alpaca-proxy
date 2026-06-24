@@ -70,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-24T15:02:15.115Z",
+  "lastRun": "2026-06-24T15:12:43.844Z",
   "log": [
-    {
-      "time": "2026-06-23T14:28:57.679Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T14:39:09.702Z",
-      "type": "INFO",
-      "msg": "Account: $100081.45 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T14:39:09.913Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
-    },
-    {
-      "time": "2026-06-23T14:39:10.418Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "INFQ, QNT, MAAS, QBTS, ASTS, CLSK, NOW, ZETA, VKTX, XE"
-    },
-    {
-      "time": "2026-06-23T14:39:10.418Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-23T14:39:28.372Z",
       "type": "INFO",
@@ -1268,6 +1238,36 @@
     },
     {
       "time": "2026-06-24T15:02:15.115Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T15:12:28.417Z",
+      "type": "INFO",
+      "msg": "Account: $100038.49 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T15:12:29.170Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RUN, RKT, DFTX, KBH, FOUR, ICLR, CCS, BLDR, GLW, AFRM"
+    },
+    {
+      "time": "2026-06-24T15:12:29.170Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-24T15:12:43.844Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "RUN: price $16.37 < $20  •  RKT: price $15.26 < $20  •  DFTX: relVol 2.0× < 2.5× (todayVol 7.3M)  •  KBH: relVol 1.2× < 2.5× (todayVol 1.7M)  •  FOUR: relVol 0.5× < 2.5× (todayVol 0.8M)  •  ICLR: relVol 0.6× < 2.5× (todayVol 0.7M)  •  CCS: avgVol 0.4M < 1M  •  BLDR: relVol 0.4× < 2.5× (todayVol 1.1M)  •  GLW: relVol 0.6× < 2.5× (todayVol 7.4M)  •  AFRM: relVol 0.5× < 2.5× (todayVol 2.2M)  •  RH: avgVol 1.0M < 1M  •  EXPE: relVol 0.5× < 2.5× (todayVol 0.7M)"
+    },
+    {
+      "time": "2026-06-24T15:12:43.844Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
