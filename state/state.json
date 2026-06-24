@@ -83,38 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-24T16:01:19.981Z",
+  "lastRun": "2026-06-24T16:12:14.787Z",
   "log": [
-    {
-      "time": "2026-06-23T15:32:31.126Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "INFQ, MAAS, QNT, VRNS, QBTS, BFLY, BWIN, KARD, ZETA, XE"
-    },
-    {
-      "time": "2026-06-23T15:32:31.126Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-23T15:32:58.116Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "INFQ: price $16.30 < $20  •  MAAS: avgVol 0.1M < 1M  •  QNT: relVol 0.5× < 2.5× (todayVol 3.1M)  •  VRNS: relVol 1.2× < 2.5× (todayVol 1.9M)  •  QBTS: relVol 0.7× < 2.5× (todayVol 25.6M)  •  BFLY: price $7.83 < $20  •  BWIN: relVol 0.5× < 2.5× (todayVol 1.0M)  •  KARD: no daily candles  •  ZETA: price $19.70 < $20  •  XE: relVol 0.4× < 2.5× (todayVol 1.8M)  •  QURE: relVol 0.4× < 2.5× (todayVol 1.1M)  •  LKNCY: gap 0.5% < 4% (price $32.28 vs priorClose $32.12)"
-    },
-    {
-      "time": "2026-06-23T15:32:58.116Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T15:43:14.723Z",
-      "type": "INFO",
-      "msg": "Account: $100081.45 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-23T15:43:14.945Z",
       "type": "INFO",
@@ -1284,6 +1254,36 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 93× RUN",
       "detail": "ID fc24afdc-f850-4cab-8dba-0b4f27a5b8f4 | R:R 2.6:1 | risk $21.75"
+    },
+    {
+      "time": "2026-06-24T16:12:01.414Z",
+      "type": "INFO",
+      "msg": "Account: $100031.98 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T16:12:02.318Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RUN, RKT, DFTX, KBH, UMC, ICLR, RH, CCS, FOUR, BLDR"
+    },
+    {
+      "time": "2026-06-24T16:12:02.318Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-24T16:12:14.787Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "RKT: relVol 0.8× < 2.5× (todayVol 24.1M)  •  DFTX: relVol 2.4× < 2.5× (todayVol 8.8M)  •  KBH: relVol 1.5× < 2.5× (todayVol 2.1M)  •  UMC: relVol 0.7× < 2.5× (todayVol 13.3M)  •  ICLR: relVol 0.8× < 2.5× (todayVol 1.0M)  •  RH: avgVol 1.0M < 1M  •  CCS: avgVol 0.4M < 1M  •  FOUR: relVol 0.6× < 2.5× (todayVol 1.1M)  •  BLDR: relVol 0.5× < 2.5× (todayVol 1.4M)  •  MANE: avgVol 0.5M < 1M  •  GLW: relVol 0.7× < 2.5× (todayVol 10.0M)  •  W: relVol 0.7× < 2.5× (todayVol 2.4M)"
+    },
+    {
+      "time": "2026-06-24T16:12:14.787Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [
