@@ -3,7 +3,7 @@
     "DFTX": {
       "side": "long",
       "entry": 43.560001373291016,
-      "high": 43.560001373291016,
+      "high": 43.67,
       "low": 43.560001373291016,
       "initialSl": 43.11,
       "sl": 43.11,
@@ -83,50 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-24T16:54:20.391Z",
+  "lastRun": "2026-06-24T17:04:53.772Z",
   "log": [
-    {
-      "time": "2026-06-23T16:26:21.263Z",
-      "type": "INFO",
-      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T16:26:21.809Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
-    },
-    {
-      "time": "2026-06-23T16:26:22.074Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "INFQ, MAAS, SPCX, VRNS, RGC, VKTX, QNT, BWIN, BFLY, ZETA"
-    },
-    {
-      "time": "2026-06-23T16:26:22.074Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-23T16:26:40.906Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "INFQ: price $16.20 < $20  •  MAAS: avgVol 0.1M < 1M  •  SPCX: relVol 0.4× < 2.5× (todayVol 107.4M)  •  VRNS: below VWAP (price $36.42 < VWAP $36.61)  •  RGC: price $11.30 < $20  •  VKTX: relVol 1.5× < 2.5× (todayVol 3.3M)  •  QNT: relVol 0.6× < 2.5× (todayVol 3.6M)  •  BWIN: relVol 0.6× < 2.5× (todayVol 1.2M)  •  BFLY: price $7.80 < $20  •  ZETA: price $19.81 < $20  •  AXON: relVol 0.4× < 2.5× (todayVol 0.4M)  •  BBWI: relVol 0.4× < 2.5× (todayVol 2.5M)"
-    },
-    {
-      "time": "2026-06-23T16:26:40.906Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T16:37:02.078Z",
-      "type": "INFO",
-      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-23T16:37:02.508Z",
       "type": "INFO",
@@ -1284,6 +1242,48 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 34× DFTX",
       "detail": "ID 192955f0-9f16-490c-93fd-b071404d00fa | R:R 2.6:1 | risk $15.30"
+    },
+    {
+      "time": "2026-06-24T17:04:39.955Z",
+      "type": "INFO",
+      "msg": "Account: $100017.62 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T17:04:41.420Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RUN, RKT, DFTX, KBH, AAL, FOUR, ADPT, ICLR, CCS, MMYT"
+    },
+    {
+      "time": "2026-06-24T17:04:41.420Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-24T17:04:41.575Z",
+      "type": "SIGNAL",
+      "msg": "RUN — score 12 | gap 26.6% | relVol 3.7× | RSI 55",
+      "detail": "Gap Up"
+    },
+    {
+      "time": "2026-06-24T17:04:53.772Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "RKT: relVol 1.1× < 2.5× (todayVol 31.5M)  •  KBH: relVol 1.8× < 2.5× (todayVol 2.5M)  •  AAL: relVol 0.9× < 2.5× (todayVol 105.0M)  •  FOUR: relVol 0.8× < 2.5× (todayVol 1.3M)  •  ADPT: relVol 0.6× < 2.5× (todayVol 2.0M)  •  ICLR: relVol 0.9× < 2.5× (todayVol 1.1M)  •  CCS: avgVol 0.4M < 1M  •  MMYT: relVol 1.1× < 2.5× (todayVol 1.2M)  •  BLDR: relVol 0.6× < 2.5× (todayVol 1.7M)  •  NTRA: relVol 1.0× < 2.5× (todayVol 1.4M)  •  RH: avgVol 1.0M < 1M  •  MANE: avgVol 0.5M < 1M"
+    },
+    {
+      "time": "2026-06-24T17:04:53.772Z",
+      "type": "INFO",
+      "msg": "Top signal: RUN (score 12)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T17:04:53.772Z",
+      "type": "INFO",
+      "msg": "SKIP RUN — already traded today",
+      "detail": ""
     }
   ],
   "tradedToday": [
