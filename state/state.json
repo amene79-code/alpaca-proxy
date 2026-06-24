@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-24T19:21:37.787Z",
+  "lastRun": "2026-06-24T19:31:51.301Z",
   "log": [
-    {
-      "time": "2026-06-23T18:35:04.911Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "INFQ: price $15.88 < $20  •  MAAS: avgVol 0.1M < 1M  •  QNT: relVol 0.7× < 2.5× (todayVol 4.4M)  •  VRNS: below VWAP (price $35.37 < VWAP $36.44)  •  QURE: relVol 0.7× < 2.5× (todayVol 1.9M)  •  VKTX: relVol 2.0× < 2.5× (todayVol 4.5M)  •  WAY: price $18.56 < $20  •  ENLT: avgVol 0.3M < 1M  •  PAYP: price $14.64 < $20  •  BWIN: relVol 0.8× < 2.5× (todayVol 1.7M)  •  RGC: price $11.19 < $20  •  NTSK: price $9.52 < $20"
-    },
-    {
-      "time": "2026-06-23T18:35:04.911Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-23T18:45:17.671Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-06-24T19:21:37.786Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T19:31:50.846Z",
+      "type": "INFO",
+      "msg": "Account: $99996.54 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T19:31:51.301Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
