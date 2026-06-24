@@ -70,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-24T14:51:46.172Z",
+  "lastRun": "2026-06-24T15:02:15.115Z",
   "log": [
-    {
-      "time": "2026-06-23T14:28:35.965Z",
-      "type": "INFO",
-      "msg": "Account: $100081.45 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T14:28:36.202Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
-    },
-    {
-      "time": "2026-06-23T14:28:36.658Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "INFQ, QNT, MAAS, QBTS, VKTX, QURE, ZETA, BWIN, XE, MRNA"
-    },
-    {
-      "time": "2026-06-23T14:28:36.658Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-23T14:28:57.679Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "INFQ: price $16.16 < $20  •  QNT: relVol 0.3× < 2.5× (todayVol 2.1M)  •  MAAS: avgVol 0.1M < 1M  •  QBTS: relVol 0.5× < 2.5× (todayVol 18.1M)  •  VKTX: relVol 0.7× < 2.5× (todayVol 1.5M)  •  QURE: relVol 0.3× < 2.5× (todayVol 0.8M)  •  ZETA: price $19.82 < $20  •  BWIN: relVol 0.3× < 2.5× (todayVol 0.6M)  •  XE: relVol 0.2× < 2.5× (todayVol 1.2M)  •  MRNA: relVol 0.3× < 2.5× (todayVol 2.1M)  •  AXON: relVol 0.2× < 2.5× (todayVol 0.2M)  •  EZPW: avgVol 0.9M < 1M"
-    },
     {
       "time": "2026-06-23T14:28:57.679Z",
       "type": "INFO",
@@ -1268,6 +1238,36 @@
     },
     {
       "time": "2026-06-24T14:51:46.172Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T15:02:01.610Z",
+      "type": "INFO",
+      "msg": "Account: $100038.49 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T15:02:02.444Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RUN, RKT, DFTX, KBH, ICLR, FOUR, GLW, CCS, BLDR, MMYT"
+    },
+    {
+      "time": "2026-06-24T15:02:02.444Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-24T15:02:15.115Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "RUN: price $16.31 < $20  •  RKT: price $15.10 < $20  •  DFTX: relVol 1.9× < 2.5× (todayVol 6.9M)  •  KBH: relVol 1.2× < 2.5× (todayVol 1.6M)  •  ICLR: relVol 0.6× < 2.5× (todayVol 0.7M)  •  FOUR: relVol 0.5× < 2.5× (todayVol 0.8M)  •  GLW: relVol 0.5× < 2.5× (todayVol 6.7M)  •  CCS: avgVol 0.4M < 1M  •  BLDR: relVol 0.4× < 2.5× (todayVol 1.0M)  •  MMYT: relVol 0.7× < 2.5× (todayVol 0.7M)  •  PRIM: relVol 0.9× < 2.5× (todayVol 2.4M)  •  AFRM: relVol 0.4× < 2.5× (todayVol 2.0M)"
+    },
+    {
+      "time": "2026-06-24T15:02:15.115Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
