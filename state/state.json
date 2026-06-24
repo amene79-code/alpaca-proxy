@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-06-23",
+  "dailyDate": "2026-06-24",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-23T21:18:18.124Z",
+  "lastRun": "2026-06-24T14:51:46.172Z",
   "log": [
-    {
-      "time": "2026-06-23T14:18:04.568Z",
-      "type": "INFO",
-      "msg": "Account: $100081.45 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T14:18:04.824Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, SPCX, MSFT, GOOG, SNDK, GOOGL, NFLX, RKLB"
-    },
-    {
-      "time": "2026-06-23T14:18:05.270Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "INFQ, QBTS, QNT, ASTS, SMR, QUBT, RGTI, VKTX, XE, QURE"
-    },
-    {
-      "time": "2026-06-23T14:18:05.270Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-23T14:18:24.200Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "INFQ: price $16.13 < $20  •  QBTS: relVol 0.5× < 2.5× (todayVol 16.5M)  •  QNT: relVol 0.3× < 2.5× (todayVol 2.0M)  •  ASTS: relVol 0.3× < 2.5× (todayVol 6.8M)  •  SMR: price $11.73 < $20  •  QUBT: price $11.01 < $20  •  RGTI: relVol 0.3× < 2.5× (todayVol 16.3M)  •  VKTX: relVol 0.6× < 2.5× (todayVol 1.3M)  •  XE: relVol 0.2× < 2.5× (todayVol 0.9M)  •  QURE: relVol 0.3× < 2.5× (todayVol 0.7M)  •  MRNA: relVol 0.3× < 2.5× (todayVol 1.9M)  •  ZETA: price $19.76 < $20"
-    },
-    {
-      "time": "2026-06-23T14:18:24.200Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-23T14:28:35.965Z",
       "type": "INFO",
@@ -1270,6 +1234,42 @@
       "time": "2026-06-23T21:18:18.124Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T14:51:27.610Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T14:51:27.827Z",
+      "type": "INFO",
+      "msg": "Account: $100038.49 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-24T14:51:28.930Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RUN, RKT, DFTX, KBH, ICLR, BLDR, CCS, FOUR, RH, AFRM"
+    },
+    {
+      "time": "2026-06-24T14:51:28.930Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-24T14:51:46.172Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "RUN: price $16.27 < $20  •  RKT: price $15.02 < $20  •  DFTX: relVol 1.8× < 2.5× (todayVol 6.6M)  •  KBH: relVol 1.1× < 2.5× (todayVol 1.5M)  •  ICLR: relVol 0.5× < 2.5× (todayVol 0.6M)  •  BLDR: relVol 0.3× < 2.5× (todayVol 0.9M)  •  CCS: avgVol 0.4M < 1M  •  FOUR: relVol 0.4× < 2.5× (todayVol 0.7M)  •  RH: avgVol 1.0M < 1M  •  AFRM: relVol 0.4× < 2.5× (todayVol 1.8M)  •  GLW: relVol 0.4× < 2.5× (todayVol 5.9M)  •  PRIM: relVol 0.9× < 2.5× (todayVol 2.3M)"
+    },
+    {
+      "time": "2026-06-24T14:51:46.172Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
       "detail": ""
     }
   ],
