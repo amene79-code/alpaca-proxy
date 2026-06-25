@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-25T14:03:24.438Z",
+  "lastRun": "2026-06-25T14:13:59.209Z",
   "log": [
-    {
-      "time": "2026-06-23T21:18:17.745Z",
-      "type": "INFO",
-      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T21:18:17.754Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T21:18:18.124Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-24T14:51:27.610Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-24T14:51:27.827Z",
-      "type": "INFO",
-      "msg": "Account: $100038.49 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-24T14:51:28.930Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "RUN, RKT, DFTX, KBH, ICLR, BLDR, CCS, FOUR, RH, AFRM"
-    },
     {
       "time": "2026-06-24T14:51:28.930Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-25T14:03:24.438Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T14:13:39.454Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T14:13:39.934Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, WEN, MSFT, NVDA, ASTS, PEVM, SPCX, MSTR"
+    },
+    {
+      "time": "2026-06-25T14:13:40.225Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BB, TECH, MU, KYMR, AYI, NRIX, GLW, BCRX, SNDK, JBLU"
+    },
+    {
+      "time": "2026-06-25T14:13:40.225Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-25T14:13:59.209Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "BB: price $10.56 < $15  •  TECH: RSI 96 > 88  •  MU: relVol 0.6× < 2.5× (todayVol 29.6M)  •  KYMR: avgVol 0.9M < 1M  •  AYI: avgVol 0.4M < 1M  •  NRIX: relVol 0.5× < 2.5× (todayVol 1.7M)  •  GLW: relVol 0.7× < 2.5× (todayVol 9.0M)  •  BCRX: price $10.82 < $15  •  SNDK: relVol 0.5× < 2.5× (todayVol 4.9M)  •  JBLU: price $6.17 < $15  •  QCOM: relVol 0.6× < 2.5× (todayVol 12.3M)  •  DFTX: relVol 0.5× < 2.5× (todayVol 1.9M)"
+    },
+    {
+      "time": "2026-06-25T14:13:59.209Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
