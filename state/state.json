@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-25T13:21:29.873Z",
+  "lastRun": "2026-06-25T13:31:44.145Z",
   "log": [
-    {
-      "time": "2026-06-23T19:38:38.684Z",
-      "type": "INFO",
-      "msg": "EOD review (22 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T19:38:38.685Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
     {
       "time": "2026-06-23T19:48:58.247Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-06-25T13:21:29.873Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T13:31:43.581Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T13:31:44.145Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (1 min in)",
       "detail": ""
     }
   ],
