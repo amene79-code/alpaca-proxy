@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-25T16:11:09.457Z",
+  "lastRun": "2026-06-25T16:21:44.834Z",
   "log": [
-    {
-      "time": "2026-06-24T16:54:19.488Z",
-      "type": "INFO",
-      "msg": "Top signal: DFTX (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-24T16:54:19.488Z",
-      "type": "BUY",
-      "msg": "Placing 34× DFTX @ ~$43.56",
-      "detail": "gap 20.4% | risk $15.30 | SL $43.11 | TP $44.75 | R:R 2.6 | "
-    },
-    {
-      "time": "2026-06-24T16:54:19.890Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 34× DFTX",
-      "detail": "ID 192955f0-9f16-490c-93fd-b071404d00fa | R:R 2.6:1 | risk $15.30"
-    },
-    {
-      "time": "2026-06-24T17:04:39.955Z",
-      "type": "INFO",
-      "msg": "Account: $100017.62 | 1 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-24T17:04:41.420Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "RUN, RKT, DFTX, KBH, AAL, FOUR, ADPT, ICLR, CCS, MMYT"
-    },
-    {
-      "time": "2026-06-24T17:04:41.420Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-06-24T17:04:41.575Z",
       "type": "SIGNAL",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-25T16:11:09.456Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T16:21:24.981Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T16:21:25.421Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, WEN, MSFT, NVDA, ASTS, PEVM, SPCX, MSTR"
+    },
+    {
+      "time": "2026-06-25T16:21:25.756Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BB, TECH, MU, AYI, NRIX, KYMR, SNDK, GLW, SLS, QCOM"
+    },
+    {
+      "time": "2026-06-25T16:21:25.756Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-25T16:21:44.834Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "BB: price $10.44 < $15  •  TECH: ATR 0.06% < 0.5%  •  MU: relVol 0.9× < 2.5× (todayVol 49.4M)  •  AYI: avgVol 0.4M < 1M  •  NRIX: relVol 0.9× < 2.5× (todayVol 2.9M)  •  KYMR: avgVol 0.9M < 1M  •  SNDK: relVol 0.7× < 2.5× (todayVol 7.8M)  •  GLW: relVol 1.2× < 2.5× (todayVol 16.5M)  •  SLS: price $10.36 < $15  •  QCOM: relVol 1.0× < 2.5× (todayVol 21.1M)  •  MXL: relVol 0.5× < 2.5× (todayVol 1.9M)  •  VSH: relVol 0.4× < 2.5× (todayVol 3.5M)"
+    },
+    {
+      "time": "2026-06-25T16:21:44.834Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
