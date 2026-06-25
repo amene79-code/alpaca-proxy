@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-25T13:42:00.892Z",
+  "lastRun": "2026-06-25T13:52:38.309Z",
   "log": [
-    {
-      "time": "2026-06-23T19:48:58.669Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T19:59:14.722Z",
-      "type": "INFO",
-      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T19:59:15.069Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T20:09:29.853Z",
-      "type": "INFO",
-      "msg": "Account: $100038.51 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T20:09:29.918Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-23T20:09:30.306Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-06-23T20:19:47.161Z",
       "type": "INFO",
@@ -1270,6 +1234,42 @@
       "time": "2026-06-25T13:42:00.892Z",
       "type": "INFO",
       "msg": "Skip — first 15 min (12 min in)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T13:52:17.176Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T13:52:17.961Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, WEN, MSFT, NVDA, ASTS, PEVM, SPCX, MSTR"
+    },
+    {
+      "time": "2026-06-25T13:52:18.254Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 30, kept 40",
+      "detail": "BB, TECH, MU, KYMR, AYI, SNDK, NRIX, GLW, DFTX, LOAR"
+    },
+    {
+      "time": "2026-06-25T13:52:18.254Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-25T13:52:38.309Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "BB: price $10.24 < $15  •  TECH: below VWAP (price $70.16 < VWAP $70.27)  •  MU: relVol 0.4× < 2.5× (todayVol 19.3M)  •  KYMR: avgVol 0.9M < 1M  •  AYI: avgVol 0.4M < 1M  •  SNDK: relVol 0.3× < 2.5× (todayVol 3.4M)  •  NRIX: relVol 0.2× < 2.5× (todayVol 0.6M)  •  GLW: relVol 0.4× < 2.5× (todayVol 4.8M)  •  DFTX: relVol 0.2× < 2.5× (todayVol 0.9M)  •  LOAR: avgVol 0.7M < 1M  •  RVTY: relVol 0.2× < 2.5× (todayVol 0.4M)  •  HRI: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-06-25T13:52:38.309Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
       "detail": ""
     }
   ],
