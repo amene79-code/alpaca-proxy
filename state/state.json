@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-25T19:22:11.341Z",
+  "lastRun": "2026-06-25T19:32:26.720Z",
   "log": [
-    {
-      "time": "2026-06-25T13:11:18.397Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T13:21:29.282Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-25T13:21:29.289Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-06-25T19:22:11.341Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T19:32:26.248Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-25T19:32:26.719Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
