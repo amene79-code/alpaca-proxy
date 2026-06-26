@@ -70,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-26T13:41:29.998Z",
+  "lastRun": "2026-06-26T13:51:57.273Z",
   "log": [
-    {
-      "time": "2026-06-25T14:13:59.209Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T14:24:15.859Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T14:24:16.193Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, WEN, MSFT, NVDA, ASTS, PEVM, SPCX, MSTR"
-    },
-    {
-      "time": "2026-06-25T14:24:16.788Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BB, TECH, KYMR, AYI, NRIX, MU, BCRX, GLW, SNDK, PVLA"
-    },
-    {
-      "time": "2026-06-25T14:24:16.788Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-25T14:24:44.167Z",
       "type": "INFO",
@@ -1270,6 +1240,36 @@
       "time": "2026-06-26T13:41:29.998Z",
       "type": "INFO",
       "msg": "Skip — first 15 min (11 min in)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T13:51:42.972Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T13:51:43.600Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 21, kept 40",
+      "detail": "ACAD, FIG, MRNA, PLSE, WSE, SLS, GWRE, BHVN, NOW, VSXY"
+    },
+    {
+      "time": "2026-06-26T13:51:43.600Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-26T13:51:57.273Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "ACAD: relVol 0.6× < 2.5× (todayVol 0.8M)  •  FIG: relVol 0.2× < 2.5× (todayVol 3.2M)  •  MRNA: relVol 0.1× < 2.5× (todayVol 0.9M)  •  PLSE: avgVol 0.3M < 1M  •  WSE: price $11.75 < $15  •  SLS: price $11.18 < $15  •  GWRE: relVol 0.0× < 2.5× (todayVol 0.1M)  •  BHVN: relVol 0.2× < 2.5× (todayVol 0.6M)  •  NOW: relVol 0.1× < 2.5× (todayVol 4.3M)  •  VSXY: relVol 0.1× < 2.5× (todayVol 0.3M)  •  HONAV: avgVol 0.0M < 1M  •  VERA: relVol 0.2× < 2.5× (todayVol 0.3M)"
+    },
+    {
+      "time": "2026-06-26T13:51:57.273Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
       "detail": ""
     }
   ],
