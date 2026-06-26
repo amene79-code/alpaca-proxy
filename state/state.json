@@ -70,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-26T17:52:00.483Z",
+  "lastRun": "2026-06-26T18:02:25.427Z",
   "log": [
-    {
-      "time": "2026-06-25T17:46:29.732Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T17:56:52.108Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T17:56:52.511Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, WEN, MSFT, NVDA, ASTS, PEVM, SPCX, MSTR"
-    },
-    {
-      "time": "2026-06-25T17:56:53.112Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BB, TECH, MU, DPC, AYI, SNDK, NRIX, KYMR, SLS, GLW"
-    },
-    {
-      "time": "2026-06-25T17:56:53.112Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-25T17:57:17.789Z",
       "type": "INFO",
@@ -1268,6 +1238,36 @@
     },
     {
       "time": "2026-06-26T17:52:00.483Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T18:02:11.817Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T18:02:12.271Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SLS, BB, MARA, ASTS, MRNA, CHYM, IBRX, FDS, GWRE, LCID"
+    },
+    {
+      "time": "2026-06-26T18:02:12.271Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-26T18:02:25.427Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SLS: price $12.12 < $15  •  BB: price $11.08 < $15  •  MARA: price $14.85 < $15  •  ASTS: relVol 0.5× < 2.5× (todayVol 13.2M)  •  MRNA: relVol 1.2× < 2.5× (todayVol 9.9M)  •  CHYM: relVol 0.7× < 2.5× (todayVol 3.4M)  •  IBRX: price $8.59 < $15  •  FDS: avgVol 1.0M < 1M  •  GWRE: relVol 0.4× < 2.5× (todayVol 0.9M)  •  LCID: price $5.57 < $15  •  WSE: price $12.04 < $15  •  LIF: avgVol 0.7M < 1M"
+    },
+    {
+      "time": "2026-06-26T18:02:25.427Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
