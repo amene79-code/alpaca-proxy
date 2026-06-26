@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-26T19:36:36.433Z",
+  "lastRun": "2026-06-26T19:46:53.041Z",
   "log": [
-    {
-      "time": "2026-06-25T19:11:38.025Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T19:21:52.020Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T19:21:52.476Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, WEN, MSFT, NVDA, ASTS, PEVM, SPCX, MSTR"
-    },
     {
       "time": "2026-06-25T19:21:52.890Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-26T19:36:36.433Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T19:46:52.585Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T19:46:53.040Z",
+      "type": "INFO",
+      "msg": "EOD review (14 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T19:46:53.041Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
