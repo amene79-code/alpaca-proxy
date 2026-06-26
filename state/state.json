@@ -70,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-26T14:02:25.784Z",
+  "lastRun": "2026-06-26T14:12:49.742Z",
   "log": [
-    {
-      "time": "2026-06-25T14:35:05.879Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-25T14:35:25.516Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "BB: price $10.51 < $15  •  TECH: RSI 98 > 88  •  GLW: relVol 0.8× < 2.5× (todayVol 11.1M)  •  MU: relVol 0.6× < 2.5× (todayVol 33.8M)  •  AYI: avgVol 0.4M < 1M  •  KYMR: avgVol 0.9M < 1M  •  NRIX: relVol 0.6× < 2.5× (todayVol 1.9M)  •  SNDK: relVol 0.5× < 2.5× (todayVol 5.5M)  •  DFTX: relVol 0.6× < 2.5× (todayVol 2.5M)  •  UCTT: relVol 0.3× < 2.5× (todayVol 0.4M)  •  HRI: avgVol 0.6M < 1M  •  FLEX: relVol 0.3× < 2.5× (todayVol 2.6M)"
-    },
-    {
-      "time": "2026-06-25T14:35:25.516Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T14:45:41.702Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T14:45:42.357Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, WEN, MSFT, NVDA, ASTS, PEVM, SPCX, MSTR"
-    },
     {
       "time": "2026-06-25T14:45:42.952Z",
       "type": "INFO",
@@ -1268,6 +1238,36 @@
     },
     {
       "time": "2026-06-26T14:02:25.784Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T14:12:36.023Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T14:12:36.615Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 49, kept 40",
+      "detail": "ASTS, ACAD, MRNA, INFQ, NOW, BB, PLSE, SLS, BHVN, WSE"
+    },
+    {
+      "time": "2026-06-26T14:12:36.616Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-26T14:12:49.742Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "ASTS: relVol 0.2× < 2.5× (todayVol 5.2M)  •  ACAD: relVol 0.9× < 2.5× (todayVol 1.2M)  •  MRNA: relVol 0.3× < 2.5× (todayVol 2.2M)  •  INFQ: price $13.59 < $15  •  NOW: relVol 0.2× < 2.5× (todayVol 5.7M)  •  BB: price $11.00 < $15  •  PLSE: avgVol 0.3M < 1M  •  SLS: price $11.60 < $15  •  BHVN: relVol 0.3× < 2.5× (todayVol 1.0M)  •  WSE: price $11.84 < $15  •  GWRE: relVol 0.1× < 2.5× (todayVol 0.2M)  •  HIMS: relVol 0.3× < 2.5× (todayVol 5.1M)"
+    },
+    {
+      "time": "2026-06-26T14:12:49.742Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
