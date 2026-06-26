@@ -70,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-26T15:46:54.904Z",
+  "lastRun": "2026-06-26T15:57:22.586Z",
   "log": [
-    {
-      "time": "2026-06-25T16:00:33.525Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T16:10:49.706Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T16:10:50.466Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, WEN, MSFT, NVDA, ASTS, PEVM, SPCX, MSTR"
-    },
-    {
-      "time": "2026-06-25T16:10:50.781Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BB, TECH, MU, AYI, KYMR, NRIX, SNDK, GLW, QCOM, MXL"
-    },
-    {
-      "time": "2026-06-25T16:10:50.781Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-06-25T16:11:09.456Z",
       "type": "INFO",
@@ -1268,6 +1238,36 @@
     },
     {
       "time": "2026-06-26T15:46:54.903Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T15:57:07.514Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T15:57:08.762Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SLS, MRNA, BB, ACAD, ASTS, FDS, HYMC, WSE, GWRE, CHYM"
+    },
+    {
+      "time": "2026-06-26T15:57:08.763Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-06-26T15:57:22.586Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SLS: price $12.10 < $15  •  MRNA: relVol 0.9× < 2.5× (todayVol 7.1M)  •  BB: price $11.24 < $15  •  ACAD: relVol 1.8× < 2.5× (todayVol 2.5M)  •  ASTS: relVol 0.4× < 2.5× (todayVol 10.0M)  •  FDS: avgVol 1.0M < 1M  •  HYMC: relVol 0.6× < 2.5× (todayVol 1.4M)  •  WSE: price $12.13 < $15  •  GWRE: relVol 0.3× < 2.5× (todayVol 0.6M)  •  CHYM: relVol 0.4× < 2.5× (todayVol 2.1M)  •  AYA: avgVol 0.5M < 1M  •  NIQ: price $8.69 < $15"
+    },
+    {
+      "time": "2026-06-26T15:57:22.586Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
