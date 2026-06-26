@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-26T13:31:11.439Z",
+  "lastRun": "2026-06-26T13:41:29.998Z",
   "log": [
-    {
-      "time": "2026-06-25T14:13:40.225Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-25T14:13:59.209Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "BB: price $10.56 < $15  •  TECH: RSI 96 > 88  •  MU: relVol 0.6× < 2.5× (todayVol 29.6M)  •  KYMR: avgVol 0.9M < 1M  •  AYI: avgVol 0.4M < 1M  •  NRIX: relVol 0.5× < 2.5× (todayVol 1.7M)  •  GLW: relVol 0.7× < 2.5× (todayVol 9.0M)  •  BCRX: price $10.82 < $15  •  SNDK: relVol 0.5× < 2.5× (todayVol 4.9M)  •  JBLU: price $6.17 < $15  •  QCOM: relVol 0.6× < 2.5× (todayVol 12.3M)  •  DFTX: relVol 0.5× < 2.5× (todayVol 1.9M)"
-    },
     {
       "time": "2026-06-25T14:13:59.209Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-06-26T13:31:11.439Z",
       "type": "INFO",
       "msg": "Skip — first 15 min (1 min in)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T13:41:29.373Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T13:41:29.998Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (11 min in)",
       "detail": ""
     }
   ],
