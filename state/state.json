@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-26T19:46:53.041Z",
+  "lastRun": "2026-06-26T19:57:08.205Z",
   "log": [
-    {
-      "time": "2026-06-25T19:21:52.890Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "TECH, BB, MU, DPC, AYI, SNDK, NRIX, KYMR, ABCL, AMAT"
-    },
-    {
-      "time": "2026-06-25T19:21:52.890Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-25T19:22:11.341Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "TECH: ATR 0.04% < 0.5%  •  BB: price $10.30 < $15  •  MU: relVol 1.2× < 2.5× (todayVol 68.3M)  •  DPC: no daily candles  •  AYI: avgVol 0.5M < 1M  •  SNDK: relVol 1.0× < 2.5× (todayVol 11.2M)  •  NRIX: relVol 1.2× < 2.5× (todayVol 3.9M)  •  KYMR: avgVol 1.0M < 1M  •  ABCL: price $6.68 < $15  •  AMAT: relVol 1.0× < 2.5× (todayVol 10.1M)  •  MXL: relVol 0.8× < 2.5× (todayVol 3.3M)  •  UCTT: relVol 0.8× < 2.5× (todayVol 1.1M)"
-    },
     {
       "time": "2026-06-25T19:22:11.341Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-26T19:46:53.041Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T19:57:07.891Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T19:57:08.205Z",
+      "type": "INFO",
+      "msg": "EOD review (3 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-26T19:57:08.205Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
