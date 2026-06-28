@@ -1238,6 +1238,19 @@ async function _runCycle(){
 
   const existingSymbols=new Set((Array.isArray(positions)?positions:[]).map(p=>p.symbol));
 
+  // ALSO skip any ticker that already has an open/pending order (including bracket
+  // legs in 'held' / 'accepted' state). Without this, a bracket entry that hasn't
+  // filled yet leaves no position, so the next cycle re-submits a duplicate bracket
+  // — which is what caused identical orders to stack up (AMD x3, PANW x2).
+  try{
+    const openOrders=await alpaca("GET","/v2/orders?status=open&limit=200&nested=true").catch(()=>[]);
+    for(const o of (Array.isArray(openOrders)?openOrders:[])){
+      if(o.symbol) existingSymbols.add(o.symbol);
+      // bracket/OCO child legs can carry the symbol on the legs only
+      if(o.legs) for(const leg of o.legs){ if(leg.symbol) existingSymbols.add(leg.symbol); }
+    }
+  }catch(e){ log("INFO",`Could not load open orders for dedupe: ${e.message}`); }
+
   donePhase("screen"); setPhase("struct");
   log("ICT",`Scanning ${tickers.length} tickers for ICT setups`);
 
