@@ -1537,6 +1537,36 @@ async function loadICTHistory(){
     const acct=await alpaca("GET","/v2/account").catch(()=>null);
     const currentEquity=acct?+acct.equity:null;
 
+    // ── Build order_id → {client_order_id, order_id} map ──────────────────
+    // Fill activities do NOT include client_order_id, so we must look it up from
+    // the orders endpoint. Without this, every trade comes back untagged and the
+    // "ICT only" filter shows nothing. Paginate orders to cover history.
+    const orderTagById={};
+    try{
+      let oPage=null, oPages=0;
+      do{
+        const url=oPage
+          ?`/v2/orders?status=all&limit=500&until=${encodeURIComponent(oPage)}&direction=desc&nested=false`
+          :`/v2/orders?status=all&limit=500&direction=desc&nested=false`;
+        const batch=await alpaca("GET",url);
+        if(!Array.isArray(batch)||!batch.length) break;
+        for(const o of batch){
+          if(o.id) orderTagById[o.id]={tag:o.client_order_id||"", oid:o.id};
+        }
+        // paginate using the earliest submitted_at in this batch
+        oPage=batch.length===500?batch[batch.length-1].submitted_at:null;
+        oPages++;
+      } while(oPage && oPages<15);
+      log("ICT",`Loaded ${Object.keys(orderTagById).length} orders for tag lookup`);
+    }catch(e){ log("INFO",`Order tag lookup failed: ${e.message}`); }
+
+    // Stamp each fill activity with its order's client_order_id + order_id.
+    for(const a of allActivities){
+      const found = a.order_id && orderTagById[a.order_id];
+      a.client_order_id = found ? found.tag : (a.client_order_id||"");
+      a._oid = a.order_id || "";
+    }
+
     // Match trades — show ALL trades, tag ICT ones
     const all=matchAllTrades(allActivities);
 
@@ -1560,10 +1590,11 @@ async function loadICTHistory(){
       return false;
     });
 
-    // Enrich with metadata
+    // Enrich with metadata. setupType already set reliably by FIFO direction —
+    // keep it; only fall back to tag/meta if somehow missing.
     for(const t of ict){
       const meta=ictMeta[t.tag]||{};
-      t.setupType=meta.setupType||parseTagField(t.tag,1);
+      t.setupType=t.setupType||meta.setupType||parseTagField(t.tag,1);
       t.trend=meta.trend||parseTagField(t.tag,2);
       t.killZone=meta.killZone||parseTagField(t.tag,3);
       t.cvdDiv=meta.cvdDiv||"—";
@@ -1591,29 +1622,48 @@ async function loadICTHistory(){
 }
 
 function parseTagField(tag, idx){
-  // ICT-L-B-NYOpen-1234567890
+  // Tag format: ICT-L-B-NYOpen-1234567890
+  //   idx 1 = direction (L/S), idx 2 = trend (B/E/N), idx 3 = killzone string
   const parts=(tag||"").split("-");
   const map={1:{L:"long",S:"short"},2:{B:"bullish",E:"bearish",N:"neutral"}};
+  if(idx===3) return parts[3]||"—"; // e.g. "NYOpen", "LondonOpen"
   return map[idx]?.[parts[idx]]||parts[idx]||"—";
 }
 
 function matchAllTrades(activities){
-  // Merge partial fills
-  const merged=[];
-  const sorted=[...activities].sort((a,b)=>new Date(a.transaction_time)-new Date(b.transaction_time));
-  for(const a of sorted){
-    const last=merged[merged.length-1];
-    const diff=last?new Date(a.transaction_time)-new Date(last.transaction_time):Infinity;
-    if(last&&last.symbol===a.symbol&&last.side===a.side&&diff<5000){
-      const tq=+last.qty + +a.qty;
-      last.price=(+last.price * +last.qty + +a.price * +a.qty)/tq;
-      last.qty=tq;
-    } else {
-      merged.push({...a, qty:+a.qty, price:+a.price,
-        tag:a.client_order_id||""});
+  // ── Step 1: merge fills that belong to the SAME order ────────────────────
+  // A single market order (e.g. sell 47 SLS) can fill in multiple fragments,
+  // sometimes spread over more than a few seconds. The old code merged only
+  // fills within a 5-second window, so fragments of one order became separate
+  // "trades" — producing phantom duplicate round-trips (the repeated SLS/STRC
+  // wins). Merging by order_id is exact and fixes that at the source.
+  const byOrder={};
+  const orderList=[];
+  for(const a of activities){
+    const oid=a._oid||a.order_id||`${a.symbol}|${a.side}|${a.transaction_time}`;
+    if(!byOrder[oid]){
+      byOrder[oid]={
+        symbol:a.symbol, side:a.side, qty:0, notional:0,
+        transaction_time:a.transaction_time,
+        tag:a.client_order_id||"",
+      };
+      orderList.push(oid);
     }
+    const o=byOrder[oid];
+    const q=+a.qty||0, p=+a.price||0;
+    o.qty+=q; o.notional+=q*p;
+    // keep the latest fill time for the order
+    if(new Date(a.transaction_time)>new Date(o.transaction_time)) o.transaction_time=a.transaction_time;
+    if(!o.tag && a.client_order_id) o.tag=a.client_order_id;
   }
-  // FIFO match
+  const merged=orderList.map(oid=>{
+    const o=byOrder[oid];
+    return { symbol:o.symbol, side:o.side, qty:o.qty,
+             price:o.qty?o.notional/o.qty:0,
+             transaction_time:o.transaction_time, tag:o.tag||"" };
+  });
+
+  // ── Step 2: FIFO match per symbol, handling BOTH long and short ──────────
   const bySymbol={};
   for(const a of merged){
     if(!bySymbol[a.symbol]) bySymbol[a.symbol]=[];
@@ -1622,28 +1672,55 @@ function matchAllTrades(activities){
   const trades=[];
   for(const [symbol, fills] of Object.entries(bySymbol)){
     fills.sort((a,b)=>new Date(a.transaction_time)-new Date(b.transaction_time));
-    const buyQ=[];
+    const longQ=[];   // open longs: bought, waiting to sell
+    const shortQ=[];  // open shorts: sold, waiting to buy-to-cover
     for(const f of fills){
       if(f.side==="buy"){
-        buyQ.push({qty:f.qty,price:f.price,time:f.transaction_time,tag:f.tag});
-      } else if(f.side==="sell"&&buyQ.length){
-        let sq=f.qty;
-        while(sq>0.001&&buyQ.length){
-          const b=buyQ[0];
-          const matched=Math.min(sq,b.qty);
-          const pl=(f.price-b.price)*matched;
-          trades.push({
-            symbol, date:f.transaction_time.slice(0,10),
-            time:f.transaction_time,
-            qty:Math.round(matched*100)/100,
-            entry:Math.round(b.price*100)/100,
-            exit:Math.round(f.price*100)/100,
-            pl:Math.round(pl*100)/100,
-            pct:Math.round(((f.price-b.price)/b.price)*10000)/100,
-            win:pl>0, tag:b.tag||"",
-          });
-          b.qty-=matched; sq-=matched;
-          if(b.qty<0.001) buyQ.shift();
+        if(shortQ.length){
+          // buy closes a short
+          let q=f.qty;
+          while(q>0.001&&shortQ.length){
+            const s=shortQ[0];
+            const m=Math.min(q,s.qty);
+            const pl=(s.price-f.price)*m; // sold high, bought back low = profit
+            trades.push({
+              symbol, date:f.transaction_time.slice(0,10), time:f.transaction_time,
+              qty:Math.round(m*100)/100,
+              entry:Math.round(s.price*100)/100,  // short entry = the sell
+              exit:Math.round(f.price*100)/100,    // short exit  = the buy-to-cover
+              pl:Math.round(pl*100)/100,
+              pct:Math.round(((s.price-f.price)/s.price)*10000)/100,
+              win:pl>0, tag:s.tag||"", setupType:"short",
+            });
+            s.qty-=m; q-=m; if(s.qty<0.001) shortQ.shift();
+          }
+          if(q>0.001) longQ.push({qty:q,price:f.price,time:f.transaction_time,tag:f.tag});
+        } else {
+          longQ.push({qty:f.qty,price:f.price,time:f.transaction_time,tag:f.tag});
+        }
+      } else if(f.side==="sell"){
+        if(longQ.length){
+          // sell closes a long
+          let q=f.qty;
+          while(q>0.001&&longQ.length){
+            const b=longQ[0];
+            const m=Math.min(q,b.qty);
+            const pl=(f.price-b.price)*m;
+            trades.push({
+              symbol, date:f.transaction_time.slice(0,10), time:f.transaction_time,
+              qty:Math.round(m*100)/100,
+              entry:Math.round(b.price*100)/100,
+              exit:Math.round(f.price*100)/100,
+              pl:Math.round(pl*100)/100,
+              pct:Math.round(((f.price-b.price)/b.price)*10000)/100,
+              win:pl>0, tag:b.tag||"", setupType:"long",
+            });
+            b.qty-=m; q-=m; if(b.qty<0.001) longQ.shift();
+          }
+          if(q>0.001) shortQ.push({qty:q,price:f.price,time:f.transaction_time,tag:f.tag});
+        } else {
+          // sell opens a short
+          shortQ.push({qty:f.qty,price:f.price,time:f.transaction_time,tag:f.tag});
         }
       }
     }
