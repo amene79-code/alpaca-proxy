@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-29T13:49:37.438Z",
+  "lastRun": "2026-06-29T14:00:12.396Z",
   "log": [
-    {
-      "time": "2026-06-26T13:31:10.658Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T13:31:11.083Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T13:31:11.439Z",
-      "type": "INFO",
-      "msg": "Skip — first 15 min (1 min in)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T13:41:29.373Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T13:41:29.998Z",
-      "type": "INFO",
-      "msg": "Skip — first 15 min (11 min in)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T13:51:42.972Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-26T13:51:43.600Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-29T13:49:37.437Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T13:59:52.069Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T13:59:52.517Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, FLYE, SLS, RKLB, MSTR, UI"
+    },
+    {
+      "time": "2026-06-29T13:59:52.871Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 41, kept 40",
+      "detail": "FCEL, SLS, RKLB, IRDM, OUST, VSAT, CHTR, LBRDA, LBRDK, CMCSA"
+    },
+    {
+      "time": "2026-06-29T13:59:52.871Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-29T14:00:12.396Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "FCEL: relVol 0.5× < 2.5× (todayVol 6.6M)  •  SLS: price $14.36 < $15  •  RKLB: relVol 0.4× < 2.5× (todayVol 11.7M)  •  IRDM: relVol 1.0× < 2.5× (todayVol 3.0M)  •  OUST: relVol 0.6× < 2.5× (todayVol 2.9M)  •  VSAT: relVol 0.3× < 2.5× (todayVol 0.8M)  •  CHTR: relVol 1.3× < 2.5× (todayVol 4.9M)  •  LBRDA: avgVol 0.2M < 1M  •  LBRDK: relVol 0.2× < 2.5× (todayVol 0.5M)  •  CMCSA: relVol 1.4× < 2.5× (todayVol 49.1M)  •  ASTS: relVol 0.3× < 2.5× (todayVol 6.3M)  •  RBLX: relVol 0.3× < 2.5× (todayVol 3.0M)"
+    },
+    {
+      "time": "2026-06-29T14:00:12.396Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
