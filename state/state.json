@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-29T19:48:08.109Z",
+  "lastRun": "2026-06-29T19:58:25.309Z",
   "log": [
-    {
-      "time": "2026-06-29T13:59:52.871Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-29T14:00:12.396Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "FCEL: relVol 0.5× < 2.5× (todayVol 6.6M)  •  SLS: price $14.36 < $15  •  RKLB: relVol 0.4× < 2.5× (todayVol 11.7M)  •  IRDM: relVol 1.0× < 2.5× (todayVol 3.0M)  •  OUST: relVol 0.6× < 2.5× (todayVol 2.9M)  •  VSAT: relVol 0.3× < 2.5× (todayVol 0.8M)  •  CHTR: relVol 1.3× < 2.5× (todayVol 4.9M)  •  LBRDA: avgVol 0.2M < 1M  •  LBRDK: relVol 0.2× < 2.5× (todayVol 0.5M)  •  CMCSA: relVol 1.4× < 2.5× (todayVol 49.1M)  •  ASTS: relVol 0.3× < 2.5× (todayVol 6.3M)  •  RBLX: relVol 0.3× < 2.5× (todayVol 3.0M)"
-    },
     {
       "time": "2026-06-29T14:00:12.396Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-06-29T19:48:08.108Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T19:58:24.662Z",
+      "type": "INFO",
+      "msg": "Account: $99985.88 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T19:58:25.309Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
