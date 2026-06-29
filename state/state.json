@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-29T18:02:58.518Z",
+  "lastRun": "2026-06-29T18:13:32.235Z",
   "log": [
-    {
-      "time": "2026-06-26T18:33:53.925Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T18:44:09.524Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T18:44:10.618Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SLS, BB, CHYM, FDS, MRNA, IBRX, ASTS, MORN, WSE, GWRE"
-    },
-    {
-      "time": "2026-06-26T18:44:10.618Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-06-26T18:44:22.991Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "SLS: price $11.99 < $15  •  BB: price $11.13 < $15  •  CHYM: relVol 0.9× < 2.5× (todayVol 4.0M)  •  FDS: avgVol 1.0M < 1M  •  MRNA: relVol 1.3× < 2.5× (todayVol 10.5M)  •  IBRX: price $8.53 < $15  •  ASTS: relVol 0.6× < 2.5× (todayVol 14.3M)  •  MORN: avgVol 0.5M < 1M  •  WSE: price $12.07 < $15  •  GWRE: relVol 0.5× < 2.5× (todayVol 1.1M)  •  TENB: relVol 0.8× < 2.5× (todayVol 2.4M)  •  BWIN: relVol 0.8× < 2.5× (todayVol 1.6M)"
-    },
-    {
-      "time": "2026-06-26T18:44:22.991Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-26T18:54:40.531Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-29T18:02:58.517Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T18:13:11.690Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T18:13:12.233Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, FLYE, SLS, RKLB, MSTR, UI"
+    },
+    {
+      "time": "2026-06-29T18:13:12.607Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ASTS, SLS, RKLB, MSTR, FCEL, OUST, IRDM, VSAT, CBRS, OC"
+    },
+    {
+      "time": "2026-06-29T18:13:12.607Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-29T18:13:32.235Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "ASTS: relVol 0.9× < 2.5× (todayVol 22.6M)  •  SLS: price $14.60 < $15  •  RKLB: relVol 1.0× < 2.5× (todayVol 30.7M)  •  MSTR: relVol 1.1× < 2.5× (todayVol 28.6M)  •  FCEL: relVol 1.3× < 2.5× (todayVol 16.3M)  •  OUST: relVol 1.7× < 2.5× (todayVol 7.9M)  •  IRDM: ATR 0.31% < 0.5%  •  VSAT: relVol 0.9× < 2.5× (todayVol 2.8M)  •  CBRS: relVol 1.3× < 2.5× (todayVol 9.3M)  •  OC: relVol 2.5× < 2.5× (todayVol 2.9M)  •  PL: relVol 0.5× < 2.5× (todayVol 9.7M)  •  ALGM: relVol 1.1× < 2.5× (todayVol 3.5M)"
+    },
+    {
+      "time": "2026-06-29T18:13:32.235Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
