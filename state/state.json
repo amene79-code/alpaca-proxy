@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "OC": {
-      "side": "long",
-      "entry": 154.72000122070312,
-      "high": 155.66,
-      "low": 154.72000122070312,
-      "initialSl": 151.36,
-      "sl": 151.36,
-      "tp": 163.69,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-06-29",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-29T19:37:48.446Z",
+  "lastRun": "2026-06-29T19:48:08.109Z",
   "log": [
-    {
-      "time": "2026-06-29T13:49:37.437Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T13:59:52.069Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T13:59:52.517Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, WEN, FLYE, SLS, RKLB, MSTR, UI"
-    },
-    {
-      "time": "2026-06-29T13:59:52.871Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 41, kept 40",
-      "detail": "FCEL, SLS, RKLB, IRDM, OUST, VSAT, CHTR, LBRDA, LBRDK, CMCSA"
-    },
     {
       "time": "2026-06-29T13:59:52.871Z",
       "type": "INFO",
@@ -1281,6 +1244,30 @@
     },
     {
       "time": "2026-06-29T19:37:48.446Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T19:48:05.775Z",
+      "type": "INFO",
+      "msg": "Account: $99984.98 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T19:48:06.328Z",
+      "type": "INFO",
+      "msg": "EOD review (12 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T19:48:07.907Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut OC",
+      "detail": "Weak into close | P&L $-11.52"
+    },
+    {
+      "time": "2026-06-29T19:48:08.108Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
