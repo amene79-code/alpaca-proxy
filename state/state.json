@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-06-26",
+  "dailyDate": "2026-06-29",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-26T20:53:11.420Z",
+  "lastRun": "2026-06-29T13:38:59.903Z",
   "log": [
-    {
-      "time": "2026-06-25T20:13:26.134Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T20:13:26.211Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-25T20:13:26.491Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-06-25T20:23:38.712Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-06-26T20:53:11.420Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T13:38:58.949Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T13:38:59.180Z",
+      "type": "INFO",
+      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T13:38:59.902Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (8 min in)",
       "detail": ""
     }
   ],
