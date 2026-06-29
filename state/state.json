@@ -3,7 +3,7 @@
     "OC": {
       "side": "long",
       "entry": 154.72000122070312,
-      "high": 154.73,
+      "high": 155.66,
       "low": 154.72000122070312,
       "initialSl": 151.36,
       "sl": 151.36,
@@ -83,44 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-29T19:16:55.918Z",
+  "lastRun": "2026-06-29T19:27:29.845Z",
   "log": [
-    {
-      "time": "2026-06-26T20:53:11.114Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T20:53:11.420Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T13:38:58.949Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T13:38:59.180Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T13:38:59.902Z",
-      "type": "INFO",
-      "msg": "Skip — first 15 min (8 min in)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T13:49:11.786Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-29T13:49:12.354Z",
       "type": "INFO",
@@ -1281,6 +1245,42 @@
     },
     {
       "time": "2026-06-29T19:16:55.918Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T19:27:10.371Z",
+      "type": "INFO",
+      "msg": "Account: $100001.63 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T19:27:10.949Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, FLYE, SLS, RKLB, MSTR, UI"
+    },
+    {
+      "time": "2026-06-29T19:27:11.239Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ASTS, SLS, RKLB, MSTR, OUST, FCEL, IRDM, VSAT, CBRS, GLW"
+    },
+    {
+      "time": "2026-06-29T19:27:11.239Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-29T19:27:29.845Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "ASTS: relVol 1.1× < 2.5× (todayVol 26.0M)  •  SLS: price $14.80 < $15  •  RKLB: relVol 1.2× < 2.5× (todayVol 34.2M)  •  MSTR: relVol 1.2× < 2.5× (todayVol 32.8M)  •  OUST: relVol 1.8× < 2.5× (todayVol 8.7M)  •  FCEL: relVol 1.4× < 2.5× (todayVol 18.1M)  •  IRDM: ATR 0.36% < 0.5%  •  VSAT: relVol 1.1× < 2.5× (todayVol 3.3M)  •  CBRS: relVol 1.4× < 2.5× (todayVol 10.7M)  •  GLW: relVol 1.1× < 2.5× (todayVol 18.4M)  •  PL: relVol 0.6× < 2.5× (todayVol 10.9M)  •  BB: price $12.47 < $15"
+    },
+    {
+      "time": "2026-06-29T19:27:29.845Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
