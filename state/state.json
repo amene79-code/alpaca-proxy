@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-29T20:29:11.332Z",
+  "lastRun": "2026-06-29T20:39:24.617Z",
   "log": [
-    {
-      "time": "2026-06-29T14:21:04.861Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SLS, IRDM, CMCSA, CHTR, LBRDA, VSAT, LBRDK, OUST, ASTS, RKLB"
-    },
-    {
-      "time": "2026-06-29T14:21:04.861Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-29T14:21:25.439Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "SLS: price $13.93 < $15  •  IRDM: relVol 1.4× < 2.5× (todayVol 4.2M)  •  CMCSA: relVol 1.5× < 2.5× (todayVol 55.1M)  •  CHTR: relVol 1.5× < 2.5× (todayVol 5.8M)  •  LBRDA: avgVol 0.2M < 1M  •  VSAT: relVol 0.3× < 2.5× (todayVol 1.1M)  •  LBRDK: relVol 0.4× < 2.5× (todayVol 0.9M)  •  OUST: relVol 0.8× < 2.5× (todayVol 3.7M)  •  ASTS: relVol 0.3× < 2.5× (todayVol 8.1M)  •  RKLB: relVol 0.5× < 2.5× (todayVol 15.2M)  •  RBLX: relVol 0.4× < 2.5× (todayVol 4.6M)  •  ABCL: price $8.23 < $15"
-    },
     {
       "time": "2026-06-29T14:21:25.440Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-06-29T20:29:11.332Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T20:39:24.162Z",
+      "type": "INFO",
+      "msg": "Account: $99985.88 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T20:39:24.226Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T20:39:24.617Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
