@@ -83,44 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-29T18:45:11.137Z",
+  "lastRun": "2026-06-29T18:55:43.851Z",
   "log": [
-    {
-      "time": "2026-06-26T19:36:36.432Z",
-      "type": "INFO",
-      "msg": "EOD review (24 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T19:36:36.433Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T19:46:52.585Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T19:46:53.040Z",
-      "type": "INFO",
-      "msg": "EOD review (14 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T19:46:53.041Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-26T19:57:07.891Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-26T19:57:08.205Z",
       "type": "INFO",
@@ -1281,6 +1245,42 @@
     },
     {
       "time": "2026-06-29T18:45:11.137Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T18:55:24.158Z",
+      "type": "INFO",
+      "msg": "Account: $99972.34 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-29T18:55:25.148Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, FLYE, SLS, RKLB, MSTR, UI"
+    },
+    {
+      "time": "2026-06-29T18:55:25.473Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ASTS, SLS, RKLB, MSTR, BB, IRDM, OUST, FCEL, VSAT, CBRS"
+    },
+    {
+      "time": "2026-06-29T18:55:25.474Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-29T18:55:43.850Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "ASTS: relVol 1.0× < 2.5× (todayVol 24.6M)  •  SLS: price $14.62 < $15  •  RKLB: relVol 1.1× < 2.5× (todayVol 32.8M)  •  MSTR: relVol 1.2× < 2.5× (todayVol 30.8M)  •  BB: price $12.56 < $15  •  IRDM: ATR 0.32% < 0.5%  •  OUST: relVol 1.7× < 2.5× (todayVol 8.2M)  •  FCEL: relVol 1.3× < 2.5× (todayVol 17.0M)  •  VSAT: relVol 1.0× < 2.5× (todayVol 3.0M)  •  CBRS: relVol 1.4× < 2.5× (todayVol 10.1M)  •  GLW: relVol 1.1× < 2.5× (todayVol 17.3M)  •  RBLX: relVol 1.1× < 2.5× (todayVol 12.6M)"
+    },
+    {
+      "time": "2026-06-29T18:55:43.851Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
