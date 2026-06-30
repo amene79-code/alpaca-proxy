@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-06-29",
+  "dailyTrades": 0,
+  "dailyDate": "2026-06-30",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,50 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-29T21:54:48.106Z",
+  "lastRun": "2026-06-30T14:02:00.432Z",
   "log": [
-    {
-      "time": "2026-06-29T14:31:37.673Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SLS, ASTS, IRDM, VSAT, OUST, RBLX, RKLB, CMCSA, CHTR, LBRDA"
-    },
-    {
-      "time": "2026-06-29T14:31:37.674Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-29T14:31:58.271Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "SLS: price $14.14 < $15  •  ASTS: relVol 0.4× < 2.5× (todayVol 9.0M)  •  IRDM: relVol 1.6× < 2.5× (todayVol 4.7M)  •  VSAT: relVol 0.4× < 2.5× (todayVol 1.2M)  •  OUST: relVol 0.9× < 2.5× (todayVol 4.2M)  •  RBLX: relVol 0.5× < 2.5× (todayVol 5.2M)  •  RKLB: relVol 0.6× < 2.5× (todayVol 16.4M)  •  CMCSA: relVol 1.6× < 2.5× (todayVol 57.7M)  •  CHTR: relVol 1.6× < 2.5× (todayVol 6.2M)  •  LBRDA: avgVol 0.2M < 1M  •  LBRDK: relVol 0.5× < 2.5× (todayVol 1.0M)  •  ABCL: price $8.28 < $15"
-    },
-    {
-      "time": "2026-06-29T14:31:58.271Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T14:42:13.887Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T14:42:14.466Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, WEN, FLYE, SLS, RKLB, MSTR, UI"
-    },
-    {
-      "time": "2026-06-29T14:42:14.859Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SLS, ASTS, IRDM, OUST, VSAT, RBLX, RKLB, CMCSA, CHTR, LBRDK"
-    },
     {
       "time": "2026-06-29T14:42:14.860Z",
       "type": "INFO",
@@ -1271,11 +1229,51 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-06-30T14:01:40.039Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T14:01:40.093Z",
+      "type": "INFO",
+      "msg": "Account: $99985.86 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T14:01:40.502Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, ASTS, SNDK, FLYE, TSLA, SLS"
+    },
+    {
+      "time": "2026-06-30T14:01:40.834Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 36, kept 40",
+      "detail": "FCEL, ABVX, AVAV, HSAI, APD, IMOS, KTOS, NXT, WOLF, VSAT"
+    },
+    {
+      "time": "2026-06-30T14:01:40.834Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-30T14:02:00.432Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "FCEL: relVol 0.5× < 2.5× (todayVol 6.4M)  •  ABVX: relVol 0.9× < 2.5× (todayVol 3.0M)  •  AVAV: relVol 1.9× < 2.5× (todayVol 2.9M)  •  HSAI: relVol 0.7× < 2.5× (todayVol 1.2M)  •  APD: relVol 0.3× < 2.5× (todayVol 0.5M)  •  IMOS: avgVol 0.1M < 1M  •  KTOS: relVol 0.3× < 2.5× (todayVol 1.4M)  •  NXT: relVol 0.1× < 2.5× (todayVol 0.4M)  •  WOLF: relVol 0.1× < 2.5× (todayVol 0.8M)  •  VSAT: relVol 0.2× < 2.5× (todayVol 0.5M)  •  ALAB: relVol 0.2× < 2.5× (todayVol 1.1M)  •  RARE: relVol 0.3× < 2.5× (todayVol 0.9M)"
+    },
+    {
+      "time": "2026-06-30T14:02:00.432Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "OC"
-  ],
+  "tradedToday": [],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
