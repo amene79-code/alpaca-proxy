@@ -1,6 +1,19 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 0,
+  "trailingStops": {
+    "AMBA": {
+      "side": "long",
+      "entry": 87,
+      "high": 87,
+      "low": 87,
+      "initialSl": 85.65,
+      "sl": 85.65,
+      "tp": 90.6,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 1,
   "dailyDate": "2026-06-30",
   "openPositions": [
     "FIVE",
@@ -70,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-30T17:45:03.379Z",
+  "lastRun": "2026-06-30T17:55:37.482Z",
   "log": [
-    {
-      "time": "2026-06-29T18:23:45.147Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-29T18:23:49.850Z",
-      "type": "SIGNAL",
-      "msg": "OC — score 9 | gap 14.3% | relVol 2.7× | RSI 72",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T18:24:06.490Z",
-      "type": "INFO",
-      "msg": "Rejections (59)",
-      "detail": "ASTS: relVol 0.9× < 2.5× (todayVol 23.1M)  •  SLS: price $14.60 < $15  •  RKLB: relVol 1.1× < 2.5× (todayVol 31.2M)  •  MSTR: relVol 1.1× < 2.5× (todayVol 29.2M)  •  BB: price $12.54 < $15  •  FCEL: relVol 1.3× < 2.5× (todayVol 16.5M)  •  IRDM: ATR 0.31% < 0.5%  •  OUST: relVol 1.7× < 2.5× (todayVol 7.9M)  •  VSAT: relVol 0.9× < 2.5× (todayVol 2.8M)  •  CBRS: relVol 1.3× < 2.5× (todayVol 9.5M)  •  ALGM: relVol 1.1× < 2.5× (todayVol 3.6M)  •  ALAB: relVol 0.6× < 2.5× (todayVol 4.0M)"
-    },
-    {
-      "time": "2026-06-29T18:24:06.490Z",
-      "type": "INFO",
-      "msg": "Top signal: OC (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T18:24:06.491Z",
-      "type": "BUY",
-      "msg": "Placing 9× OC @ ~$154.72",
-      "detail": "gap 14.3% | risk $30.24 | SL $151.36 | TP $163.69 | R:R 2.7 | "
-    },
-    {
-      "time": "2026-06-29T18:24:07.580Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 9× OC",
-      "detail": "ID aaa7b65e-12f0-428c-bbe0-7098222e01b5 | R:R 2.7:1 | risk $30.24"
-    },
-    {
-      "time": "2026-06-29T18:34:18.390Z",
-      "type": "INFO",
-      "msg": "Account: $99993.26 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T18:34:18.964Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, WEN, FLYE, SLS, RKLB, MSTR, UI"
-    },
-    {
-      "time": "2026-06-29T18:34:19.271Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ASTS, SLS, RKLB, MSTR, BB, FCEL, IRDM, OUST, VSAT, CBRS"
-    },
     {
       "time": "2026-06-29T18:34:19.271Z",
       "type": "INFO",
@@ -1271,9 +1230,65 @@
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-06-30T17:55:16.246Z",
+      "type": "INFO",
+      "msg": "Account: $99985.86 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T17:55:16.797Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, ASTS, SNDK, FLYE, TSLA, SLS"
+    },
+    {
+      "time": "2026-06-30T17:55:17.157Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FCEL, ABVX, AMBA, AVAV, HSAI, MXL, OUST, VSAT, MBLY, WOLF"
+    },
+    {
+      "time": "2026-06-30T17:55:17.157Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-30T17:55:17.927Z",
+      "type": "SIGNAL",
+      "msg": "AMBA — score 14 | gap 29.8% | relVol 2.6× | RSI 82",
+      "detail": "Bullish Engulfing, Volume Breakout"
+    },
+    {
+      "time": "2026-06-30T17:55:36.759Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "FCEL: relVol 1.4× < 2.5× (todayVol 18.5M)  •  ABVX: relVol 1.9× < 2.5× (todayVol 6.6M)  •  AVAV: below VWAP (price $163.05 < VWAP $165.43)  •  HSAI: relVol 2.5× < 2.5× (todayVol 4.9M)  •  MXL: relVol 0.9× < 2.5× (todayVol 3.7M)  •  OUST: relVol 1.1× < 2.5× (todayVol 5.7M)  •  VSAT: relVol 1.1× < 2.5× (todayVol 3.3M)  •  MBLY: price $9.37 < $15  •  WOLF: relVol 0.6× < 2.5× (todayVol 4.4M)  •  INTC: relVol 0.5× < 2.5× (todayVol 69.5M)  •  AMD: relVol 0.6× < 2.5× (todayVol 20.0M)  •  RARE: relVol 1.3× < 2.5× (todayVol 3.6M)"
+    },
+    {
+      "time": "2026-06-30T17:55:36.760Z",
+      "type": "INFO",
+      "msg": "Top signal: AMBA (score 14)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T17:55:36.760Z",
+      "type": "BUY",
+      "msg": "Placing 17× AMBA @ ~$87.00",
+      "detail": "gap 29.8% | risk $22.95 | SL $85.65 | TP $90.6 | R:R 2.7 | Bullish Engulfing, Volume Breakout"
+    },
+    {
+      "time": "2026-06-30T17:55:36.981Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 17× AMBA",
+      "detail": "ID a16e460c-d97c-4433-8523-324b06084290 | R:R 2.7:1 | risk $22.95"
     }
   ],
-  "tradedToday": [],
+  "tradedToday": [
+    "AMBA"
+  ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
