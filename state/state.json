@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "AMBA": {
-      "side": "long",
-      "entry": 87,
-      "high": 87.6738,
-      "low": 87,
-      "initialSl": 85.65,
-      "sl": 85.65,
-      "tp": 90.6,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-06-30",
   "openPositions": [
@@ -83,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-30T18:48:18.388Z",
+  "lastRun": "2026-06-30T18:58:57.731Z",
   "log": [
-    {
-      "time": "2026-06-29T19:27:11.239Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-29T19:27:29.845Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "ASTS: relVol 1.1× < 2.5× (todayVol 26.0M)  •  SLS: price $14.80 < $15  •  RKLB: relVol 1.2× < 2.5× (todayVol 34.2M)  •  MSTR: relVol 1.2× < 2.5× (todayVol 32.8M)  •  OUST: relVol 1.8× < 2.5× (todayVol 8.7M)  •  FCEL: relVol 1.4× < 2.5× (todayVol 18.1M)  •  IRDM: ATR 0.36% < 0.5%  •  VSAT: relVol 1.1× < 2.5× (todayVol 3.3M)  •  CBRS: relVol 1.4× < 2.5× (todayVol 10.7M)  •  GLW: relVol 1.1× < 2.5× (todayVol 18.4M)  •  PL: relVol 0.6× < 2.5× (todayVol 10.9M)  •  BB: price $12.47 < $15"
-    },
-    {
-      "time": "2026-06-29T19:27:29.845Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T19:37:47.372Z",
-      "type": "INFO",
-      "msg": "Account: $99998.57 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T19:37:48.141Z",
-      "type": "INFO",
-      "msg": "EOD review (23 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T19:37:48.246Z",
-      "type": "INFO",
-      "msg": "OC held overnight",
-      "detail": "Strong close | P&L +$2.07 | above VWAP"
-    },
-    {
-      "time": "2026-06-29T19:37:48.446Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T19:48:05.775Z",
-      "type": "INFO",
-      "msg": "Account: $99984.98 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-06-29T19:48:06.328Z",
       "type": "INFO",
@@ -1283,6 +1222,54 @@
       "time": "2026-06-30T18:48:18.388Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T18:58:31.721Z",
+      "type": "INFO",
+      "msg": "Account: $99949.55 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T18:58:32.144Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, ASTS, SNDK, FLYE, TSLA, SLS"
+    },
+    {
+      "time": "2026-06-30T18:58:32.739Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FCEL, ABVX, AMBA, AVAV, MXL, HSAI, MBLY, LB, VSAT, OUST"
+    },
+    {
+      "time": "2026-06-30T18:58:32.739Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-30T18:58:33.937Z",
+      "type": "SIGNAL",
+      "msg": "AMBA — score 8 | gap 26.8% | relVol 3.3× | RSI 38",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T18:58:57.731Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "FCEL: relVol 1.6× < 2.5× (todayVol 21.5M)  •  ABVX: relVol 2.1× < 2.5× (todayVol 7.2M)  •  AVAV: below VWAP (price $163.67 < VWAP $165.37)  •  MXL: relVol 1.1× < 2.5× (todayVol 4.4M)  •  HSAI: ATR 0.27% < 0.5%  •  MBLY: price $9.44 < $15  •  LB: avgVol 0.4M < 1M  •  VSAT: relVol 1.3× < 2.5× (todayVol 4.0M)  •  OUST: relVol 1.2× < 2.5× (todayVol 6.1M)  •  AMD: relVol 0.7× < 2.5× (todayVol 22.6M)  •  WOLF: relVol 0.7× < 2.5× (todayVol 4.8M)  •  PENG: relVol 0.7× < 2.5× (todayVol 2.3M)"
+    },
+    {
+      "time": "2026-06-30T18:58:57.731Z",
+      "type": "INFO",
+      "msg": "Top signal: AMBA (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T18:58:57.731Z",
+      "type": "INFO",
+      "msg": "SKIP AMBA — already traded today",
       "detail": ""
     }
   ],
