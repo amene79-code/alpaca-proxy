@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-30T19:20:01.816Z",
+  "lastRun": "2026-06-30T19:30:33.568Z",
   "log": [
-    {
-      "time": "2026-06-29T20:39:24.617Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T21:54:47.747Z",
-      "type": "INFO",
-      "msg": "Account: $99985.88 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T21:54:47.821Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T21:54:48.106Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-30T14:01:40.039Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-30T14:01:40.093Z",
-      "type": "INFO",
-      "msg": "Account: $99985.86 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-30T14:01:40.502Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, WEN, ASTS, SNDK, FLYE, TSLA, SLS"
-    },
-    {
-      "time": "2026-06-30T14:01:40.834Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 36, kept 40",
-      "detail": "FCEL, ABVX, AVAV, HSAI, APD, IMOS, KTOS, NXT, WOLF, VSAT"
-    },
     {
       "time": "2026-06-30T14:01:40.834Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-06-30T19:20:01.816Z",
+      "type": "INFO",
+      "msg": "SKIP AMBA — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T19:30:12.123Z",
+      "type": "INFO",
+      "msg": "Account: $99949.55 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T19:30:12.386Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, ASTS, SNDK, FLYE, TSLA, SLS"
+    },
+    {
+      "time": "2026-06-30T19:30:12.873Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FCEL, ABVX, AMBA, AVAV, HSAI, MXL, LB, OUST, VSAT, WOLF"
+    },
+    {
+      "time": "2026-06-30T19:30:12.873Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-30T19:30:13.820Z",
+      "type": "SIGNAL",
+      "msg": "AMBA — score 9 | gap 29.0% | relVol 3.5× | RSI 46",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T19:30:33.568Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "FCEL: relVol 1.7× < 2.5× (todayVol 23.3M)  •  ABVX: relVol 2.2× < 2.5× (todayVol 7.5M)  •  AVAV: below opening-range high (price $166.50 < ORH $178.50, 73 today-candles)  •  HSAI: ATR 0.38% < 0.5%  •  MXL: relVol 1.1× < 2.5× (todayVol 4.6M)  •  LB: avgVol 0.4M < 1M  •  OUST: relVol 1.3× < 2.5× (todayVol 6.4M)  •  VSAT: relVol 1.4× < 2.5× (todayVol 4.4M)  •  WOLF: relVol 0.8× < 2.5× (todayVol 5.3M)  •  MBLY: price $9.52 < $15  •  TE: price $9.60 < $15  •  AMD: relVol 0.8× < 2.5× (todayVol 24.4M)"
+    },
+    {
+      "time": "2026-06-30T19:30:33.568Z",
+      "type": "INFO",
+      "msg": "Top signal: AMBA (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T19:30:33.568Z",
       "type": "INFO",
       "msg": "SKIP AMBA — already traded today",
       "detail": ""
