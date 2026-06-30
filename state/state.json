@@ -70,44 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-30T14:02:00.432Z",
+  "lastRun": "2026-06-30T14:12:34.359Z",
   "log": [
-    {
-      "time": "2026-06-29T14:42:14.860Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-29T14:42:33.782Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "SLS: price $14.55 < $15  •  ASTS: relVol 0.4× < 2.5× (todayVol 9.8M)  •  IRDM: relVol 1.7× < 2.5× (todayVol 5.2M)  •  OUST: relVol 1.0× < 2.5× (todayVol 4.4M)  •  VSAT: relVol 0.4× < 2.5× (todayVol 1.3M)  •  RBLX: relVol 0.5× < 2.5× (todayVol 5.8M)  •  RKLB: relVol 0.6× < 2.5× (todayVol 17.2M)  •  CMCSA: relVol 1.7× < 2.5× (todayVol 61.2M)  •  CHTR: relVol 1.7× < 2.5× (todayVol 6.5M)  •  LBRDK: relVol 0.6× < 2.5× (todayVol 1.3M)  •  ABCL: price $8.30 < $15  •  LBRDA: avgVol 0.2M < 1M"
-    },
-    {
-      "time": "2026-06-29T14:42:33.782Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T14:52:48.600Z",
-      "type": "INFO",
-      "msg": "Account: $99996.50 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T14:52:49.361Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, WEN, FLYE, SLS, RKLB, MSTR, UI"
-    },
-    {
-      "time": "2026-06-29T14:52:49.640Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SLS, IRDM, VSAT, OUST, RBLX, ASTS, RKLB, CMCSA, CHTR, AXON"
-    },
     {
       "time": "2026-06-29T14:52:49.640Z",
       "type": "INFO",
@@ -1268,6 +1232,42 @@
     },
     {
       "time": "2026-06-30T14:02:00.432Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T14:12:12.696Z",
+      "type": "INFO",
+      "msg": "Account: $99985.86 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T14:12:13.217Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, ASTS, SNDK, FLYE, TSLA, SLS"
+    },
+    {
+      "time": "2026-06-30T14:12:13.683Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 49, kept 40",
+      "detail": "FCEL, ABVX, AVAV, ONDS, HSAI, TE, RDW, VSAT, AMBA, KTOS"
+    },
+    {
+      "time": "2026-06-30T14:12:13.684Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-30T14:12:34.359Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "FCEL: relVol 0.6× < 2.5× (todayVol 7.5M)  •  ABVX: relVol 1.0× < 2.5× (todayVol 3.3M)  •  AVAV: relVol 2.1× < 2.5× (todayVol 3.2M)  •  ONDS: price $8.61 < $15  •  HSAI: relVol 0.8× < 2.5× (todayVol 1.5M)  •  TE: price $9.44 < $15  •  RDW: price $12.37 < $15  •  VSAT: relVol 0.2× < 2.5× (todayVol 0.7M)  •  AMBA: relVol 0.3× < 2.5× (todayVol 0.4M)  •  KTOS: relVol 0.3× < 2.5× (todayVol 1.5M)  •  APD: relVol 0.4× < 2.5× (todayVol 0.5M)  •  IMOS: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-06-30T14:12:34.359Z",
       "type": "INFO",
       "msg": "No signals meeting criteria",
       "detail": ""
