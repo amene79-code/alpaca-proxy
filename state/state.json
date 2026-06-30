@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-30T19:50:57.543Z",
+  "lastRun": "2026-06-30T20:01:09.596Z",
   "log": [
-    {
-      "time": "2026-06-30T14:12:13.684Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-06-30T14:12:34.359Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "FCEL: relVol 0.6× < 2.5× (todayVol 7.5M)  •  ABVX: relVol 1.0× < 2.5× (todayVol 3.3M)  •  AVAV: relVol 2.1× < 2.5× (todayVol 3.2M)  •  ONDS: price $8.61 < $15  •  HSAI: relVol 0.8× < 2.5× (todayVol 1.5M)  •  TE: price $9.44 < $15  •  RDW: price $12.37 < $15  •  VSAT: relVol 0.2× < 2.5× (todayVol 0.7M)  •  AMBA: relVol 0.3× < 2.5× (todayVol 0.4M)  •  KTOS: relVol 0.3× < 2.5× (todayVol 1.5M)  •  APD: relVol 0.4× < 2.5× (todayVol 0.5M)  •  IMOS: avgVol 0.1M < 1M"
-    },
-    {
-      "time": "2026-06-30T14:12:34.359Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-06-30T14:22:47.876Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-06-30T19:50:57.542Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T20:01:09.329Z",
+      "type": "INFO",
+      "msg": "Account: $99949.55 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T20:01:09.387Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T20:01:09.596Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
