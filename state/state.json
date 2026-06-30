@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-06-30T18:58:57.731Z",
+  "lastRun": "2026-06-30T19:09:29.846Z",
   "log": [
-    {
-      "time": "2026-06-29T19:48:06.328Z",
-      "type": "INFO",
-      "msg": "EOD review (12 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T19:48:07.907Z",
-      "type": "SELL",
-      "msg": "✓ EOD cut OC",
-      "detail": "Weak into close | P&L $-11.52"
-    },
-    {
-      "time": "2026-06-29T19:48:08.108Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T19:58:24.662Z",
-      "type": "INFO",
-      "msg": "Account: $99985.88 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T19:58:25.309Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T20:08:38.573Z",
-      "type": "INFO",
-      "msg": "Account: $99985.88 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T20:08:38.593Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-06-29T20:08:38.736Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-06-29T20:18:53.361Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-06-30T18:58:57.731Z",
+      "type": "INFO",
+      "msg": "SKIP AMBA — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T19:09:09.929Z",
+      "type": "INFO",
+      "msg": "Account: $99949.55 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T19:09:10.139Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, WEN, ASTS, SNDK, FLYE, TSLA, SLS"
+    },
+    {
+      "time": "2026-06-30T19:09:10.451Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FCEL, ABVX, AMBA, AVAV, MXL, HSAI, VSAT, MBLY, OUST, LB"
+    },
+    {
+      "time": "2026-06-30T19:09:10.451Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-06-30T19:09:11.214Z",
+      "type": "SIGNAL",
+      "msg": "AMBA — score 9 | gap 28.7% | relVol 3.4× | RSI 39",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T19:09:29.846Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "FCEL: relVol 1.6× < 2.5× (todayVol 22.1M)  •  ABVX: relVol 2.1× < 2.5× (todayVol 7.3M)  •  AVAV: below VWAP (price $164.68 < VWAP $165.35)  •  MXL: relVol 1.1× < 2.5× (todayVol 4.5M)  •  HSAI: ATR 0.27% < 0.5%  •  VSAT: relVol 1.3× < 2.5× (todayVol 4.1M)  •  MBLY: price $9.51 < $15  •  OUST: relVol 1.2× < 2.5× (todayVol 6.2M)  •  LB: avgVol 0.4M < 1M  •  AMD: relVol 0.7× < 2.5× (todayVol 23.1M)  •  WOLF: relVol 0.7× < 2.5× (todayVol 5.0M)  •  PENG: relVol 0.8× < 2.5× (todayVol 2.4M)"
+    },
+    {
+      "time": "2026-06-30T19:09:29.846Z",
+      "type": "INFO",
+      "msg": "Top signal: AMBA (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-06-30T19:09:29.846Z",
       "type": "INFO",
       "msg": "SKIP AMBA — already traded today",
       "detail": ""
