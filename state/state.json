@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-01T20:23:52.234Z",
+  "lastRun": "2026-07-01T21:05:21.847Z",
   "log": [
-    {
-      "time": "2026-07-01T15:46:16.610Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "CHRN, NBIS, GLW, CRWV, BRUN, SMTC, SLS, KLAC, RIOT, SNDK"
-    },
-    {
-      "time": "2026-07-01T15:46:29.134Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "CHRN: price $18.55 < $20 (short floor)  •  NBIS: relVol 1.1× < 2.5× (todayVol 19.0M)  •  GLW: net up over ~5d ($205.83→$221.87) — no short into uptrend  •  CRWV: relVol 1.1× < 2.5× (todayVol 32.8M)  •  BRUN: relVol 0.4× < 2.5× (todayVol 0.8M)  •  SMTC: relVol 0.5× < 2.5× (todayVol 2.3M)  •  SLS: price $13.18 < $20 (short floor)  •  KLAC: net up over ~5d ($240.48→$272.11) — no short into uptrend  •  RIOT: relVol 0.8× < 2.5× (todayVol 12.2M)  •  SNDK: net up over ~5d ($1914.46→$2052.11) — no short into uptrend  •  MXL: net up over ~5d ($84.99→$115.74) — no short into uptrend  •  TER: net up over ~5d ($427.20→$437.65) — no short into uptrend"
-    },
-    {
-      "time": "2026-07-01T15:46:29.134Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-01T15:56:42.195Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-01T20:23:52.234Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-01T21:05:21.521Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-01T21:05:21.596Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-01T21:05:21.847Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
