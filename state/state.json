@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-01T19:42:57.397Z",
+  "lastRun": "2026-07-01T19:53:11.347Z",
   "log": [
-    {
-      "time": "2026-07-01T15:35:00.055Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-01T15:35:24.139Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "MSTR: relVol 0.6× < 2× (todayVol 15.7M)  •  META: relVol 1.4× < 2× (todayVol 25.6M)  •  OPEN: price $5.12 < $15  •  RGC: price $7.73 < $15  •  DSC: price $6.55 < $15  •  FRHC: avgVol 0.2M < 1M  •  HIMS: relVol 0.8× < 2× (todayVol 14.6M)  •  PLTR: relVol 0.7× < 2× (todayVol 29.5M)  •  BMNR: price $14.48 < $15  •  PATH: price $11.76 < $15  •  DLO: price $14.59 < $15  •  MH: price $10.62 < $15"
-    },
-    {
-      "time": "2026-07-01T15:35:24.139Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-01T15:35:24.513Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-01T19:42:57.397Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-01T19:53:10.862Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-01T19:53:11.346Z",
+      "type": "INFO",
+      "msg": "EOD review (7 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-01T19:53:11.347Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
