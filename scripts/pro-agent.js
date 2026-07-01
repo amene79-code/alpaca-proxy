@@ -3,7 +3,7 @@
  * Strategy: CATALYST GAP CONTINUATION
  *
  *   1. Universe = today's gainers + most-actives + saved pre-market watchlist.
- *   2. Keep only real catalysts: gap >= 4% vs prior close AND relVol >= 2.5x.
+ *   2. Keep only real catalysts: gap >= 4% vs prior close AND relVol >= 2.0x.
  *   3. Enter only those HOLDING the move: above VWAP and above the opening-range
  *      high (filters gap-and-fade fakeouts that would be instant losers).
  *   4. Fixed-DOLLAR risk per trade -> every loss is small and known.
@@ -47,7 +47,7 @@ const CFG = {
 
   // Catalyst gates
   minGapPct:    4.0,   // min gap vs prior close (the catalyst signal)
-  minRelVol:    2.5,   // min volume vs 20-day avg (institutional confirmation)
+  minRelVol:    2.0,   // min volume vs 20-day avg (LOOSENED from 2.5 on 30 Jun for more frequency — watch expectancy)
   minATRpct:    0.5,   // min ATR% (need real movement)
   minScore:     6,     // min composite score to take the trade
   minPrice:     15,    // price floor. Was 20 (sub-$20 penny/illiquid names bled in original data). Lowered to 15 as a TEST: forward logs showed liquid teens-priced movers (RUN, RKT ~$15-16) dying only at the price gate. Re-admits $15-20 names to widen the funnel WITHOUT re-importing the sub-$10 penny junk that did the real damage. Watch expectancy of $15-20 trades specifically; revert to 20 if they bleed.
@@ -59,19 +59,22 @@ const CFG = {
   eodReviewMin: 25,    // start cutting weak positions when <= this many mins to close
 
   // ─── SHORT SIDE (mirror of the long catalyst strategy) ───────────────────
-  // DISABLED: over 38 trades the short side ran -$2.39/trade expectancy with a
-  // 0.40× profit factor (won 58% but avg winner $2.77 vs avg loser $9.47 — an
-  // inverted risk/reward that bleeds). No demonstrated edge. Re-enable only
-  // after the geometry is fixed to let winners run / cut losers. Setting the
-  // master switch off; the rest of the short config is kept for that future work.
-  shortEnabled:    false,  // master switch for the short side (DISABLED — see note)
-  shortRiskPerTrade: 30,   // $ risked per short (vs 50 long) — ~60%
+  // RE-ENABLED 30 Jun 2026 with TIGHTER geometry than the original test.
+  // Prior 38-trade run: -$2.39/trade expectancy, 0.40x profit factor (58% win
+  // rate but avg winner $2.77 vs avg loser $9.47 — losers ran far too big
+  // relative to winners despite winning more often than not). Diagnosis:
+  // shortAtrSL was WIDER than the long stop (2.0 vs 1.5) — backwards. This is
+  // a fresh, deliberately smaller-risk experiment testing whether a stop
+  // TIGHTER than the long side (not wider) fixes the loser-size problem.
+  // This is a NEW forward sample — do not pool with the 38-trade result above.
+  shortEnabled:    true,   // RE-ENABLED 30 Jun — tighter stop than longs, small size, own log
+  shortRiskPerTrade: 20,   // $ risked per short (vs 50 long, was 30) — reduced further while unproven
   shortMaxPosValue:  1000,  // max $ per short (vs 1500 long)
-  shortAtrSL:      2.0,    // wider stop than long (1.5) — fewer shares, less whipsaw
-  shortAtrTP:      4.0,    // symmetric TP ceiling
-  shortMaxDaily:   8,      // SEPARATE daily limit (8 long + 8 short)
+  shortAtrSL:      1.0,    // TIGHTER than long (1.5) and than old short (2.0) — directly targets "losers too big"
+  shortAtrTP:      3.0,    // reduced from 4.0 to keep R:R sane vs the tighter stop (3:1)
+  shortMaxDaily:   4,      // reduced from 8 — smaller blast radius while this restarts from zero
   shortMinGapPct:  4.0,    // min gap DOWN (abs) vs prior close
-  shortMinRelVol:  2.5,    // same volume confirmation as long
+  shortMinRelVol:  2.5,    // same volume confirmation as long (kept stricter than the loosened long 2.0)
   shortRsiMin:     12,     // don't short something already washed-out/bouncing
   shortMinPrice:   20,     // raised from $5 — same liquidity floor as longs
 };
@@ -892,7 +895,8 @@ async function main() {
           }
           const { ticker, price, atr } = sig;
 
-          // SHORT geometry: stop ABOVE entry, target BELOW. Wider stop (shortAtrSL).
+          // SHORT geometry: stop ABOVE entry, target BELOW. Stop is TIGHTER than
+          // long (shortAtrSL 1.0 vs long atrSL 1.5) — deliberately caps loser size.
           const slRaw = price + atr * CFG.shortAtrSL;
           const slF = +Math.max(slRaw, price + 0.05).toFixed(2);   // stop above entry
           const tpF = +Math.max(0.01, price - atr * CFG.shortAtrTP).toFixed(2); // target below
