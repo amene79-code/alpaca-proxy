@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-01T19:53:11.347Z",
+  "lastRun": "2026-07-01T20:03:25.446Z",
   "log": [
-    {
-      "time": "2026-07-01T15:35:24.513Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "CHRN, NBIS, GLW, CRWV, SMTC, SLS, BRUN, RIOT, TER, MXL"
-    },
-    {
-      "time": "2026-07-01T15:35:42.319Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "CHRN: price $18.35 < $20 (short floor)  •  NBIS: relVol 1.1× < 2.5× (todayVol 18.5M)  •  GLW: net up over ~5d ($205.83→$223.21) — no short into uptrend  •  CRWV: relVol 1.1× < 2.5× (todayVol 31.5M)  •  SMTC: relVol 0.5× < 2.5× (todayVol 2.2M)  •  SLS: price $13.18 < $20 (short floor)  •  BRUN: net up over ~5d ($34.26→$34.74) — no short into uptrend  •  RIOT: relVol 0.8× < 2.5× (todayVol 11.9M)  •  TER: net up over ~5d ($427.20→$439.33) — no short into uptrend  •  MXL: net up over ~5d ($84.99→$116.50) — no short into uptrend  •  SNDK: net up over ~5d ($1914.46→$2072.34) — no short into uptrend  •  KLAC: net up over ~5d ($240.48→$274.46) — no short into uptrend"
-    },
-    {
-      "time": "2026-07-01T15:35:42.319Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-01T15:45:57.197Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-01T19:53:11.347Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-01T20:03:25.105Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-01T20:03:25.183Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-01T20:03:25.446Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
