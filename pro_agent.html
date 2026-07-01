@@ -417,6 +417,11 @@ label{color:#9090c0}
           <option value="win">Winners only</option>
           <option value="loss">Losers only</option>
         </select>
+        <select id="tradeDir" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
+          <option value="all">Long + Short</option>
+          <option value="long">Long only</option>
+          <option value="short">Short only</option>
+        </select>
         <select id="tradePeriod" onchange="renderTradeTable()" style="font-size:10px;padding:4px 8px;background:#0a0a12;border:1px solid #2a2a45;color:#8888bb;border-radius:6px;width:auto">
           <option value="all">All time</option>
           <option value="today">Today</option>
@@ -438,6 +443,7 @@ label{color:#9090c0}
               <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('date')">Date</th>
               <th style="text-align:left;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('symbol')">Ticker</th>
               <th style="text-align:left;padding:6px 8px">Agent</th>
+              <th style="text-align:left;padding:6px 8px">Dir</th>
               <th style="text-align:right;padding:6px 8px">Qty</th>
               <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('entry')">Entry</th>
               <th style="text-align:right;padding:6px 8px;cursor:pointer" onclick="sortTradeTable('exit')">Exit</th>
@@ -2267,50 +2273,28 @@ async function loadTradeHistory(){
 }
 
 function matchTrades(activities, accountEquity=null, startEquity=null){
-  // Step 1: merge partial fills of one logical order — by order_id (preferred)
-  // or identical fill price, with NO time cap. This collapses fragmented stop/
-  // market sweep covers (e.g. a short cover filling 1+1+2+16 over >5s) into a
-  // single fill so short round-trips match against their opening sell correctly.
-  // Fixes phantom $0.00 rows where a fragmented cover matched buy-against-buy.
+  // Step 1: merge partial fills — same symbol, side, within 5 seconds = one fill
   const merged=[];
   const sorted=[...activities].sort((a,b)=>new Date(a.transaction_time)-new Date(b.transaction_time));
 
   for(const a of sorted){
-    const oid=a.order_id||a.client_order_id||null;
-    let target=null;
-    // only consider merging into the most recent same-symbol/same-side cluster
-    for(let i=merged.length-1;i>=0;i--){
-      const m=merged[i];
-      if(m.symbol!==a.symbol||m.side!==a.side) break;
-      const moid=m.order_id||m.client_order_id||null;
-      const sameOrder=oid&&moid&&oid===moid;
-      const samePrice=Math.abs((+m.price)-(+a.price))<0.005;
-      if(sameOrder||samePrice){ target=m; break; }
-      break;
-    }
-    if(target){
+    const last=merged[merged.length-1];
+    const timeDiff=last?new Date(a.transaction_time)-new Date(last.transaction_time):Infinity;
+    if(last&&last.symbol===a.symbol&&last.side===a.side&&timeDiff<5000){
       // Merge partial fill — weighted average price
-      const totalQty=+target.qty + +a.qty;
-      target.price=(+target.price * +target.qty + +a.price * +a.qty)/totalQty;
-      target.qty=totalQty;
+      const totalQty=+last.qty + +a.qty;
+      last.price=(+last.price * +last.qty + +a.price * +a.qty)/totalQty;
+      last.qty=totalQty;
     } else {
       merged.push({...a, qty:+a.qty, price:+a.price});
     }
   }
 
   // Step 2: FIFO matching per symbol
-  // Normalize Alpaca fill sides: a short entry comes through as "sell_short" and
-  // a cover as "buy_to_close" (or plain "buy"). Map them onto the buy/sell branches
-  // the matcher understands. Without this, "sell_short" opens are dropped and covers
-  // match buy-vs-buy → phantom $0.00 rows with entry==exit.
   const bySymbol={};
   for(const a of merged){
-    let side=a.side;
-    if(side==="sell_short") side="sell";        // short entry
-    else if(side==="buy_to_close") side="buy";  // short cover
-    const f={...a, side};
-    if(!bySymbol[f.symbol]) bySymbol[f.symbol]={fills:[]};
-    bySymbol[f.symbol].fills.push(f);
+    if(!bySymbol[a.symbol]) bySymbol[a.symbol]={fills:[]};
+    bySymbol[a.symbol].fills.push(a);
   }
 
   const trades=[];
@@ -2433,6 +2417,7 @@ function getFilteredTrades(){
   const period=document.getElementById("tradePeriod")?.value||"all";
   const search=(document.getElementById("tradeSearch")?.value||"").toUpperCase();
   const source=document.getElementById("tradeSource")?.value||"all";
+  const dir=document.getElementById("tradeDir")?.value||"all";
   const now=new Date();
   const startOfWeek=new Date(now);
   startOfWeek.setDate(now.getDate()-now.getDay());
@@ -2446,6 +2431,7 @@ function getFilteredTrades(){
     if(period==="today"&&new Date(t.time)<today) return false;
     if(period==="week"&&new Date(t.time)<startOfWeek) return false;
     if(source!=="all"&&t.source!==source) return false;
+    if(dir!=="all"&&(t.direction||"long")!==dir) return false;
     return true;
   });
 }
@@ -2780,6 +2766,10 @@ function renderTradeTable(){
         <span style="font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;
           ${t.source==="ICT"?"background:#001a18;color:#00ddcc":"background:#0f0f20;color:#818cf8"}">${t.source||"PRO"}</span>
       </td>
+      <td style="padding:6px 8px">
+        <span style="font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;
+          ${t.direction==="short"?"background:#2a0d0d;color:#f87171":"background:#0d2a1e;color:#4ade80"}">${(t.direction||"long").toUpperCase()}</span>
+      </td>
       <td style="padding:6px 8px;text-align:right;color:#6060a0">${t.qty}</td>
       <td style="padding:6px 8px;text-align:right">$${t.entry.toFixed(2)}</td>
       <td style="padding:6px 8px;text-align:right">$${t.exit.toFixed(2)}</td>
@@ -2794,8 +2784,8 @@ function renderTradeTable(){
 function exportTrades(){
   const trades=getFilteredTrades();
   if(!trades.length){alert("No trades to export");return;}
-  const header="Date,Symbol,Qty,Entry,Exit,P&L,Pct,Result\n";
-  const rows=trades.map(t=>`${t.date},${t.symbol},${t.qty},$${t.entry.toFixed(2)},$${t.exit.toFixed(2)},${t.pl.toFixed(2)},${t.pct.toFixed(2)}%,${t.win?"WIN":"LOSS"}`).join("\n");
+  const header="Date,Symbol,Direction,Qty,Entry,Exit,P&L,Pct,Result\n";
+  const rows=trades.map(t=>`${t.date},${t.symbol},${t.direction||"long"},${t.qty},$${t.entry.toFixed(2)},$${t.exit.toFixed(2)},${t.pl.toFixed(2)},${t.pct.toFixed(2)}%,${t.win?"WIN":"LOSS"}`).join("\n");
   const blob=new Blob([header+rows],{type:"text/csv"});
   const a=document.createElement("a");
   a.href=URL.createObjectURL(blob);
