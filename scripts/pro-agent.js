@@ -703,12 +703,16 @@ async function main() {
     }
 
     // (c) Extended hours: bracket stops don't fire — close manually if breached
-    if (!regular && ts.sl && price <= ts.sl) {
-      const closed = await cancelAndSell(p.symbol, qty, 'long');
-      if (closed) { addLog(state, 'SELL', `✓ Closed ${p.symbol} (ext-hours stop)`, `P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
-    } else if (!regular && ts.tp && price >= ts.tp) {
-      const closed = await cancelAndSell(p.symbol, qty, 'long');
-      if (closed) { addLog(state, 'SELL', `✓ Closed ${p.symbol} (ext-hours TP)`, `P&L +$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
+    // Determine real side from tracked state — was hardcoded 'long' before,
+    // which would have executed the WRONG close direction for an open short.
+    const posSide = ts.side || (qty < 0 ? 'short' : 'long');
+    const sideTag = posSide === 'short' ? ' (SHORT)' : '';
+    if (!regular && ts.sl && ((posSide === 'long' && price <= ts.sl) || (posSide === 'short' && price >= ts.sl))) {
+      const closed = await cancelAndSell(p.symbol, qty, posSide);
+      if (closed) { addLog(state, 'SELL', `✓ Closed${sideTag} ${p.symbol} (ext-hours stop)`, `Side ${posSide} | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
+    } else if (!regular && ts.tp && ((posSide === 'long' && price >= ts.tp) || (posSide === 'short' && price <= ts.tp))) {
+      const closed = await cancelAndSell(p.symbol, qty, posSide);
+      if (closed) { addLog(state, 'SELL', `✓ Closed${sideTag} ${p.symbol} (ext-hours TP)`, `Side ${posSide} | P&L +$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
     }
     await sleep(150);
   }
@@ -726,10 +730,14 @@ async function main() {
         const vwap = candles ? calcVWAP(candles) : 0;
         const weak = pl <= 0 || (vwap > 0 && price < vwap); // red OR lost VWAP = don't hold overnight
         if (weak) {
-          const closed = await cancelAndSell(p.symbol, Math.abs(+p.qty), p.qty < 0 ? 'short' : 'long');
-          if (closed) { addLog(state, 'SELL', `✓ EOD cut ${p.symbol}`, `Weak into close | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
+          const eodSide = p.qty < 0 ? 'short' : 'long';
+          const eodTag = eodSide === 'short' ? ' (SHORT)' : '';
+          const closed = await cancelAndSell(p.symbol, Math.abs(+p.qty), eodSide);
+          if (closed) { addLog(state, 'SELL', `✓ EOD cut${eodTag} ${p.symbol}`, `Side ${eodSide} | Weak into close | P&L ${pl >= 0 ? '+' : ''}$${pl.toFixed(2)}`); delete state.trailingStops[p.symbol]; }
         } else {
-          addLog(state, 'INFO', `${p.symbol} held overnight`, `Strong close | P&L +$${pl.toFixed(2)} | above VWAP`);
+          const holdSide = p.qty < 0 ? 'short' : 'long';
+          const holdTag = holdSide === 'short' ? ' (SHORT)' : '';
+          addLog(state, 'INFO', `${p.symbol}${holdTag} held overnight`, `Side ${holdSide} | Strong close | P&L +$${pl.toFixed(2)} | above VWAP`);
         }
         await sleep(200);
       }
