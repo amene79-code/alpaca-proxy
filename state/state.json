@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-02T17:09:31.674Z",
+  "lastRun": "2026-07-02T17:20:31.403Z",
   "log": [
-    {
-      "time": "2026-07-01T19:22:31.620Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-01T19:32:44.887Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-01T19:32:45.227Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-01T19:42:57.293Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-01T19:42:57.396Z",
-      "type": "INFO",
-      "msg": "EOD review (18 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-01T19:42:57.397Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-01T19:53:10.862Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-01T19:53:11.346Z",
-      "type": "INFO",
-      "msg": "EOD review (7 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-01T19:53:11.347Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
     {
       "time": "2026-07-01T20:03:25.105Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-02T17:09:31.674Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T17:19:48.194Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T17:19:48.831Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, META, WEN, MSFT, NBIS, RDDT, NVDA, SNDK"
+    },
+    {
+      "time": "2026-07-02T17:19:49.465Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SLBT, PLBL, RIVN, FIZZ, MSTR, AVAV, NFLX, FIG, WAY, ABVX"
+    },
+    {
+      "time": "2026-07-02T17:19:49.465Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-02T17:20:14.383Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "SLBT: price $5.32 < $15  •  PLBL: price $10.36 < $15  •  RIVN: relVol 1.7× < 2× (todayVol 53.0M)  •  FIZZ: avgVol 0.5M < 1M  •  MSTR: relVol 0.8× < 2× (todayVol 21.4M)  •  AVAV: relVol 1.6× < 2× (todayVol 3.2M)  •  NFLX: relVol 0.6× < 2× (todayVol 27.4M)  •  FIG: relVol 0.7× < 2× (todayVol 13.8M)  •  WAY: relVol 1.5× < 2× (todayVol 4.1M)  •  ABVX: relVol 1.0× < 2× (todayVol 2.7M)  •  THC: relVol 0.8× < 2× (todayVol 1.1M)  •  ARIS: relVol 0.6× < 2× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-07-02T17:20:14.383Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T17:20:14.754Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AEHR, RGC, ACLS, VECO, AAOI, ACMR, OUST, UCTT, MXL, AXTI"
+    },
+    {
+      "time": "2026-07-02T17:20:31.402Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "AEHR: relVol 1.1× < 2.5× (todayVol 1.9M)  •  RGC: price $6.58 < $20 (short floor)  •  ACLS: avgVol 0.7M < 1M  •  VECO: relVol 0.6× < 2.5× (todayVol 1.3M)  •  AAOI: relVol 0.6× < 2.5× (todayVol 8.4M)  •  ACMR: relVol 1.0× < 2.5× (todayVol 2.0M)  •  OUST: net up over ~5d ($41.82→$49.85) — no short into uptrend  •  UCTT: relVol 0.7× < 2.5× (todayVol 1.0M)  •  MXL: relVol 0.8× < 2.5× (todayVol 3.3M)  •  AXTI: relVol 0.6× < 2.5× (todayVol 5.7M)  •  VICR: avgVol 0.9M < 1M  •  FORM: relVol 0.5× < 2.5× (todayVol 1.1M)"
+    },
+    {
+      "time": "2026-07-02T17:20:31.402Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
