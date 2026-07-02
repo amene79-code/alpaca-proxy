@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-02T13:24:11.230Z",
+  "lastRun": "2026-07-02T13:34:22.209Z",
   "log": [
-    {
-      "time": "2026-07-01T15:57:01.274Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "MSTR: relVol 0.6× < 2× (todayVol 16.9M)  •  RGC: price $7.94 < $15  •  DSC: price $6.85 < $15  •  FRHC: avgVol 0.2M < 1M  •  OPEN: price $5.07 < $15  •  META: relVol 1.5× < 2× (todayVol 27.8M)  •  PLTR: relVol 0.8× < 2× (todayVol 31.9M)  •  PATH: price $11.84 < $15  •  BMNR: price $14.50 < $15  •  HIMS: relVol 0.8× < 2× (todayVol 15.5M)  •  DLO: price $14.66 < $15  •  COIN: relVol 0.6× < 2× (todayVol 5.0M)"
-    },
-    {
-      "time": "2026-07-01T15:57:01.274Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-01T15:57:01.423Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-07-02T13:24:11.229Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T13:34:22.052Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T13:34:22.209Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (4 min in)",
       "detail": ""
     }
   ],
