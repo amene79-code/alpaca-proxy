@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-02T19:31:02.275Z",
+  "lastRun": "2026-07-02T19:41:12.752Z",
   "log": [
-    {
-      "time": "2026-07-02T15:32:23.661Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "OUST: net up over ~5d ($41.82→$51.17) — no short into uptrend  •  ACMR: relVol 0.8× < 2.5× (todayVol 1.5M)  •  ACLS: avgVol 0.7M < 1M  •  MXL: net up over ~5d ($94.47→$97.83) — no short into uptrend  •  VECO: relVol 0.3× < 2.5× (todayVol 0.6M)  •  VERA: relVol 1.3× < 2.5× (todayVol 2.3M)  •  AEHR: relVol 0.7× < 2.5× (todayVol 1.0M)  •  ONTO: relVol 0.5× < 2.5× (todayVol 0.8M)  •  AAOI: relVol 0.3× < 2.5× (todayVol 4.5M)  •  BELFB: avgVol 0.3M < 1M  •  VICR: avgVol 0.9M < 1M  •  UCTT: relVol 0.4× < 2.5× (todayVol 0.5M)"
-    },
-    {
-      "time": "2026-07-02T15:32:23.661Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-02T15:42:36.030Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-02T15:42:36.400Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-02T19:31:02.275Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T19:41:12.643Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T19:41:12.752Z",
+      "type": "INFO",
+      "msg": "EOD review (19 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T19:41:12.752Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
