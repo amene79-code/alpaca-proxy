@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-02T13:34:22.209Z",
+  "lastRun": "2026-07-02T13:44:38.168Z",
   "log": [
-    {
-      "time": "2026-07-01T15:57:01.423Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "CHRN, NBIS, GLW, CRWV, BRUN, SMTC, RIOT, HUT, SLS, KLAC"
-    },
-    {
-      "time": "2026-07-01T15:57:13.890Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "CHRN: price $18.26 < $20 (short floor)  •  NBIS: relVol 1.1× < 2.5× (todayVol 19.4M)  •  GLW: net up over ~5d ($205.83→$220.62) — no short into uptrend  •  CRWV: relVol 1.1× < 2.5× (todayVol 33.8M)  •  BRUN: relVol 0.5× < 2.5× (todayVol 0.8M)  •  SMTC: relVol 0.5× < 2.5× (todayVol 2.4M)  •  RIOT: relVol 0.8× < 2.5× (todayVol 12.5M)  •  HUT: relVol 0.8× < 2.5× (todayVol 3.6M)  •  SLS: price $13.20 < $20 (short floor)  •  KLAC: net up over ~5d ($240.48→$270.45) — no short into uptrend  •  MXL: net up over ~5d ($84.99→$114.98) — no short into uptrend  •  TER: net up over ~5d ($427.20→$436.98) — no short into uptrend"
-    },
     {
       "time": "2026-07-01T15:57:13.891Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-07-02T13:34:22.209Z",
       "type": "INFO",
       "msg": "Skip — first 15 min (4 min in)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T13:44:37.600Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-02T13:44:38.168Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (14 min in)",
       "detail": ""
     }
   ],
