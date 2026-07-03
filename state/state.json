@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-07-02",
+  "dailyDate": "2026-07-03",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-02T21:31:05.418Z",
+  "lastRun": "2026-07-03T15:07:56.344Z",
   "log": [
-    {
-      "time": "2026-07-02T15:53:57.413Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "AEHR: relVol 0.7× < 2.5× (todayVol 1.2M)  •  VECO: relVol 0.4× < 2.5× (todayVol 0.7M)  •  ACMR: relVol 0.8× < 2.5× (todayVol 1.6M)  •  MXL: net up over ~5d ($94.47→$96.10) — no short into uptrend  •  ACLS: avgVol 0.7M < 1M  •  AAOI: relVol 0.4× < 2.5× (todayVol 5.4M)  •  OUST: net up over ~5d ($41.82→$52.02) — no short into uptrend  •  ONTO: relVol 0.6× < 2.5× (todayVol 0.9M)  •  VERA: relVol 1.3× < 2.5× (todayVol 2.4M)  •  SITM: avgVol 0.7M < 1M  •  FORM: relVol 0.4× < 2.5× (todayVol 0.7M)  •  AXTI: relVol 0.4× < 2.5× (todayVol 3.4M)"
-    },
-    {
-      "time": "2026-07-02T15:53:57.413Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-02T16:04:11.148Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-02T16:04:11.690Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, META, WEN, MSFT, NBIS, RDDT, NVDA, SNDK"
-    },
     {
       "time": "2026-07-02T16:04:12.482Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-07-02T21:31:05.418Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T15:07:55.978Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T15:07:56.121Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T15:07:56.163Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T15:07:56.344Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
