@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-03T17:41:20.995Z",
+  "lastRun": "2026-07-03T17:51:32.062Z",
   "log": [
-    {
-      "time": "2026-07-02T16:58:13.825Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLBL, SLBT, FIZZ, RIVN, MSTR, AVAV, WAY, ARIS, FIG, ABVX"
-    },
-    {
-      "time": "2026-07-02T16:58:13.825Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-02T16:58:32.275Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "PLBL: price $10.60 < $15  •  SLBT: price $5.38 < $15  •  FIZZ: avgVol 0.5M < 1M  •  RIVN: relVol 1.6× < 2× (todayVol 50.8M)  •  MSTR: relVol 0.7× < 2× (todayVol 20.4M)  •  AVAV: relVol 1.5× < 2× (todayVol 3.1M)  •  WAY: relVol 1.4× < 2× (todayVol 3.9M)  •  ARIS: relVol 0.6× < 2× (todayVol 1.0M)  •  FIG: relVol 0.7× < 2× (todayVol 12.8M)  •  ABVX: relVol 1.0× < 2× (todayVol 2.7M)  •  THC: relVol 0.8× < 2× (todayVol 1.0M)  •  ARX: price $13.80 < $15"
-    },
     {
       "time": "2026-07-02T16:58:32.275Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-03T17:41:20.995Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T17:51:31.939Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T17:51:31.951Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T17:51:32.062Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
