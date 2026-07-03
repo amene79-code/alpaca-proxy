@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-03T19:33:45.119Z",
+  "lastRun": "2026-07-03T19:44:00.719Z",
   "log": [
-    {
-      "time": "2026-07-02T17:31:24.078Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-02T17:41:38.831Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-02T17:41:39.292Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, META, WEN, MSFT, NBIS, RDDT, NVDA, SNDK"
-    },
-    {
-      "time": "2026-07-02T17:41:39.800Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLBL, SLBT, FIZZ, RIVN, MSTR, NFLX, FIG, AVAV, WAY, MRNA"
-    },
     {
       "time": "2026-07-02T17:41:39.800Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-07-03T19:33:45.118Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T19:44:00.289Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T19:44:00.304Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T19:44:00.719Z",
+      "type": "INFO",
+      "msg": "EOD review (16 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T19:44:00.719Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
