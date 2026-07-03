@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-03T18:22:14.373Z",
+  "lastRun": "2026-07-03T18:32:24.946Z",
   "log": [
-    {
-      "time": "2026-07-02T17:09:19.191Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-02T17:09:19.370Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "AEHR, VECO, RGC, ACLS, AAOI, ACMR, UCTT, OUST, AXTI, MXL"
-    },
-    {
-      "time": "2026-07-02T17:09:31.674Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "AEHR: relVol 1.1× < 2.5× (todayVol 1.8M)  •  VECO: relVol 0.6× < 2.5× (todayVol 1.2M)  •  RGC: price $6.65 < $20 (short floor)  •  ACLS: avgVol 0.7M < 1M  •  AAOI: relVol 0.6× < 2.5× (todayVol 8.2M)  •  ACMR: relVol 1.0× < 2.5× (todayVol 1.9M)  •  UCTT: relVol 0.7× < 2.5× (todayVol 1.0M)  •  OUST: net up over ~5d ($41.82→$50.06) — no short into uptrend  •  AXTI: relVol 0.6× < 2.5× (todayVol 5.5M)  •  MXL: net up over ~5d ($94.47→$94.61) — no short into uptrend  •  FORM: relVol 0.5× < 2.5× (todayVol 1.0M)  •  SITM: avgVol 0.7M < 1M"
-    },
     {
       "time": "2026-07-02T17:09:31.674Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-03T18:22:14.373Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T18:32:24.836Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T18:32:24.845Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-03T18:32:24.946Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
