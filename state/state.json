@@ -83,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T16:39:15.508Z",
+  "lastRun": "2026-07-06T16:49:57.760Z",
   "log": [
-    {
-      "time": "2026-07-03T18:01:44.435Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:01:44.662Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:11:56.130Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:11:56.154Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:11:56.294Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:22:13.743Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:22:13.765Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:22:14.373Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:32:24.836Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-03T18:32:24.845Z",
       "type": "INFO",
@@ -1281,6 +1227,60 @@
     },
     {
       "time": "2026-07-06T16:39:15.508Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T16:49:29.028Z",
+      "type": "INFO",
+      "msg": "Account: $99944.91 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T16:49:29.454Z",
+      "type": "INFO",
+      "msg": "Watchlist: 27 tickers",
+      "detail": "SRKE, PENG, IREN, AIDG, CEV, CHBH, CHSCP, EPAC"
+    },
+    {
+      "time": "2026-07-06T16:49:29.814Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "IREN, CIFR, BMNR, WULF, AXTI, CHRN, IMOS, BFLY, JOBY, AMD"
+    },
+    {
+      "time": "2026-07-06T16:49:29.814Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 27 watchlist"
+    },
+    {
+      "time": "2026-07-06T16:49:47.984Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "IREN: relVol 0.8× < 2× (todayVol 31.8M)  •  CIFR: relVol 0.5× < 2× (todayVol 12.8M)  •  BMNR: relVol 0.6× < 2× (todayVol 24.2M)  •  WULF: relVol 1.6× < 2× (todayVol 47.2M)  •  AXTI: relVol 0.8× < 2× (todayVol 7.9M)  •  CHRN: avgVol 0.4M < 1M  •  IMOS: avgVol 0.1M < 1M  •  BFLY: price $8.83 < $15  •  JOBY: price $9.31 < $15  •  AMD: relVol 0.6× < 2× (todayVol 18.2M)  •  OPEN: price $5.30 < $15  •  ACHR: price $5.36 < $15"
+    },
+    {
+      "time": "2026-07-06T16:49:47.984Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T16:49:48.248Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 33",
+      "detail": "SOLS, ULS, EMAT, ORLY, SLS, ZIM, FUN, AZO, STZ, BSP"
+    },
+    {
+      "time": "2026-07-06T16:49:57.760Z",
+      "type": "INFO",
+      "msg": "Short rejections (32)",
+      "detail": "ULS: relVol 0.6× < 2.5× (todayVol 0.8M)  •  EMAT: price $5.87 < $20 (short floor)  •  ORLY: relVol 0.7× < 2.5× (todayVol 6.6M)  •  SLS: price $13.93 < $20 (short floor)  •  ZIM: above VWAP (price $23.95 > VWAP $23.90) — not holding breakdown  •  FUN: price $19.68 < $20 (short floor)  •  AZO: avgVol 0.6M < 1M  •  STZ: relVol 0.6× < 2.5× (todayVol 1.7M)  •  BSP: no daily candles  •  CAVA: relVol 0.4× < 2.5× (todayVol 1.0M)  •  LEGN: relVol 0.3× < 2.5× (todayVol 0.7M)  •  FIZZ: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-07-06T16:49:57.760Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
