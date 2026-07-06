@@ -83,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T16:49:57.760Z",
+  "lastRun": "2026-07-06T17:00:54.342Z",
   "log": [
-    {
-      "time": "2026-07-03T18:32:24.845Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:32:24.946Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:42:36.194Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:42:36.263Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:42:36.485Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:52:47.769Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:52:47.782Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T18:52:47.894Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T19:02:58.598Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-03T19:02:58.606Z",
       "type": "INFO",
@@ -1281,6 +1227,60 @@
     },
     {
       "time": "2026-07-06T16:49:57.760Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T17:00:12.316Z",
+      "type": "INFO",
+      "msg": "Account: $99946.94 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T17:00:13.067Z",
+      "type": "INFO",
+      "msg": "Watchlist: 27 tickers",
+      "detail": "SRKE, PENG, IREN, AIDG, CEV, CHBH, CHSCP, EPAC"
+    },
+    {
+      "time": "2026-07-06T17:00:13.854Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "IREN, BMNR, DSC, AXTI, CHRN, IMOS, CIFR, WULF, BFLY, OPEN"
+    },
+    {
+      "time": "2026-07-06T17:00:13.854Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 27 watchlist"
+    },
+    {
+      "time": "2026-07-06T17:00:38.172Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "IREN: relVol 0.8× < 2× (todayVol 32.6M)  •  BMNR: relVol 0.6× < 2× (todayVol 25.1M)  •  DSC: price $8.06 < $15  •  AXTI: relVol 0.8× < 2× (todayVol 8.1M)  •  CHRN: avgVol 0.4M < 1M  •  IMOS: avgVol 0.1M < 1M  •  CIFR: relVol 0.6× < 2× (todayVol 13.3M)  •  WULF: relVol 1.6× < 2× (todayVol 47.9M)  •  BFLY: price $8.77 < $15  •  OPEN: price $5.31 < $15  •  JOBY: price $9.17 < $15  •  AMD: relVol 0.6× < 2× (todayVol 18.4M)"
+    },
+    {
+      "time": "2026-07-06T17:00:38.172Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T17:00:38.482Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 37",
+      "detail": "SOLS, SLS, EMAT, ORLY, ULS, ZIM, RKLB, AZO, AVAV, LEGN"
+    },
+    {
+      "time": "2026-07-06T17:00:54.341Z",
+      "type": "INFO",
+      "msg": "Short rejections (36)",
+      "detail": "SLS: price $13.85 < $20 (short floor)  •  EMAT: price $5.86 < $20 (short floor)  •  ORLY: relVol 0.8× < 2.5× (todayVol 6.7M)  •  ULS: relVol 0.7× < 2.5× (todayVol 0.9M)  •  ZIM: above VWAP (price $23.93 > VWAP $23.90) — not holding breakdown  •  RKLB: net up over ~5d ($84.54→$94.35) — no short into uptrend  •  AZO: avgVol 0.6M < 1M  •  AVAV: net up over ~5d ($137.95→$179.70) — no short into uptrend  •  LEGN: relVol 0.3× < 2.5× (todayVol 0.7M)  •  STZ: relVol 0.7× < 2.5× (todayVol 1.7M)  •  CAVA: relVol 0.4× < 2.5× (todayVol 1.1M)  •  AAP: relVol 0.6× < 2.5× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-07-06T17:00:54.341Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
