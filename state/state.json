@@ -1,5 +1,18 @@
 {
-  "trailingStops": {},
+  "trailingStops": {
+    "SOLS": {
+      "side": "short",
+      "entry": 68.38500213623047,
+      "high": 68.38500213623047,
+      "low": 68.38500213623047,
+      "initialSl": 68.91,
+      "sl": 68.91,
+      "tp": 66.81,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
   "dailyTrades": 0,
   "dailyDate": "2026-07-06",
   "openPositions": [
@@ -70,80 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T15:45:22.363Z",
+  "lastRun": "2026-07-06T15:56:14.680Z",
   "log": [
-    {
-      "time": "2026-07-03T15:18:10.570Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:18:10.954Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:28:23.911Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:28:23.936Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:28:24.085Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:38:35.756Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:38:35.830Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:38:36.159Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:48:48.521Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:48:48.541Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:48:48.666Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-03T15:59:01.105Z",
-      "type": "INFO",
-      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-03T15:59:01.164Z",
       "type": "INFO",
@@ -1271,9 +1212,83 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-07-06T15:55:35.318Z",
+      "type": "INFO",
+      "msg": "Account: $99949.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T15:55:36.041Z",
+      "type": "INFO",
+      "msg": "Watchlist: 27 tickers",
+      "detail": "SRKE, PENG, IREN, AIDG, CEV, CHBH, CHSCP, EPAC"
+    },
+    {
+      "time": "2026-07-06T15:55:36.759Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "IREN, WULF, CIFR, JOBY, AXTI, CHRN, BFLY, KEEL, AMD, IMOS"
+    },
+    {
+      "time": "2026-07-06T15:55:36.759Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 27 watchlist"
+    },
+    {
+      "time": "2026-07-06T15:56:00.070Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "IREN: relVol 0.7× < 2× (todayVol 27.4M)  •  WULF: relVol 1.4× < 2× (todayVol 40.8M)  •  CIFR: relVol 0.5× < 2× (todayVol 11.3M)  •  JOBY: price $9.36 < $15  •  AXTI: relVol 0.7× < 2× (todayVol 7.0M)  •  CHRN: avgVol 0.4M < 1M  •  BFLY: price $8.95 < $15  •  KEEL: price $5.03 < $15  •  AMD: relVol 0.5× < 2× (todayVol 16.1M)  •  IMOS: avgVol 0.1M < 1M  •  BMNR: relVol 0.5× < 2× (todayVol 17.6M)  •  TE: price $9.22 < $15"
+    },
+    {
+      "time": "2026-07-06T15:56:00.070Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T15:56:00.319Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 32",
+      "detail": "SLBT, SOLS, ULS, BSP, ORLY, LEGN, FUN, STZ, AZO, SLS"
+    },
+    {
+      "time": "2026-07-06T15:56:01.147Z",
+      "type": "SIGNAL",
+      "msg": "SOLS — SHORT score 7 | gap -14.7% | relVol 2.6× | RSI 33",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T15:56:13.705Z",
+      "type": "INFO",
+      "msg": "Short rejections (31)",
+      "detail": "SLBT: price $5.00 < $20 (short floor)  •  ULS: relVol 0.5× < 2.5× (todayVol 0.6M)  •  BSP: no daily candles  •  ORLY: relVol 0.7× < 2.5× (todayVol 5.9M)  •  LEGN: relVol 0.2× < 2.5× (todayVol 0.6M)  •  FUN: price $19.75 < $20 (short floor)  •  STZ: relVol 0.5× < 2.5× (todayVol 1.3M)  •  AZO: avgVol 0.6M < 1M  •  SLS: price $14.16 < $20 (short floor)  •  FIZZ: avgVol 0.5M < 1M  •  IBRX: price $8.93 < $20 (short floor)  •  CNK: relVol 0.6× < 2.5× (todayVol 1.3M)"
+    },
+    {
+      "time": "2026-07-06T15:56:13.705Z",
+      "type": "INFO",
+      "msg": "Top short: SOLS (score 7)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T15:56:13.705Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 14× SOLS @ ~$68.39",
+      "detail": "gap -14.7% | risk $7.35 | SL $68.91 | TP $66.81 | R:R 3.0"
+    },
+    {
+      "time": "2026-07-06T15:56:14.179Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 14× SOLS",
+      "detail": "ID ce62780e-9f1d-40e6-90b6-7d39df78b845 | R:R 3.0:1 | risk $7.35 | real bracket stop @ $68.91"
     }
   ],
   "tradedToday": [],
-  "shortDailyTrades": 0,
-  "shortTradedToday": []
+  "shortDailyTrades": 1,
+  "shortTradedToday": [
+    "SOLS"
+  ]
 }
