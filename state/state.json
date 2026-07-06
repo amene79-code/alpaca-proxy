@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T19:31:55.620Z",
+  "lastRun": "2026-07-06T19:42:10.602Z",
   "log": [
-    {
-      "time": "2026-07-06T15:56:00.070Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T15:56:00.319Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 32",
-      "detail": "SLBT, SOLS, ULS, BSP, ORLY, LEGN, FUN, STZ, AZO, SLS"
-    },
-    {
-      "time": "2026-07-06T15:56:01.147Z",
-      "type": "SIGNAL",
-      "msg": "SOLS — SHORT score 7 | gap -14.7% | relVol 2.6× | RSI 33",
-      "detail": ""
-    },
     {
       "time": "2026-07-06T15:56:13.705Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-06T19:31:55.619Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T19:42:10.286Z",
+      "type": "INFO",
+      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T19:42:10.602Z",
+      "type": "INFO",
+      "msg": "EOD review (18 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T19:42:10.602Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
