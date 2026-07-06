@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T19:52:21.930Z",
+  "lastRun": "2026-07-06T20:02:37.815Z",
   "log": [
-    {
-      "time": "2026-07-06T15:56:14.179Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 14× SOLS",
-      "detail": "ID ce62780e-9f1d-40e6-90b6-7d39df78b845 | R:R 3.0:1 | risk $7.35 | real bracket stop @ $68.91"
-    },
-    {
-      "time": "2026-07-06T16:06:31.159Z",
-      "type": "INFO",
-      "msg": "Account: $99947.92 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T16:06:32.284Z",
-      "type": "INFO",
-      "msg": "Watchlist: 27 tickers",
-      "detail": "SRKE, PENG, IREN, AIDG, CEV, CHBH, CHSCP, EPAC"
-    },
     {
       "time": "2026-07-06T16:06:32.631Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-06T19:52:21.930Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T20:02:37.313Z",
+      "type": "INFO",
+      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T20:02:37.364Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T20:02:37.815Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
