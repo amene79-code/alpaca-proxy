@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T19:42:10.602Z",
+  "lastRun": "2026-07-06T19:52:21.930Z",
   "log": [
-    {
-      "time": "2026-07-06T15:56:13.705Z",
-      "type": "INFO",
-      "msg": "Short rejections (31)",
-      "detail": "SLBT: price $5.00 < $20 (short floor)  •  ULS: relVol 0.5× < 2.5× (todayVol 0.6M)  •  BSP: no daily candles  •  ORLY: relVol 0.7× < 2.5× (todayVol 5.9M)  •  LEGN: relVol 0.2× < 2.5× (todayVol 0.6M)  •  FUN: price $19.75 < $20 (short floor)  •  STZ: relVol 0.5× < 2.5× (todayVol 1.3M)  •  AZO: avgVol 0.6M < 1M  •  SLS: price $14.16 < $20 (short floor)  •  FIZZ: avgVol 0.5M < 1M  •  IBRX: price $8.93 < $20 (short floor)  •  CNK: relVol 0.6× < 2.5× (todayVol 1.3M)"
-    },
-    {
-      "time": "2026-07-06T15:56:13.705Z",
-      "type": "INFO",
-      "msg": "Top short: SOLS (score 7)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T15:56:13.705Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 14× SOLS @ ~$68.39",
-      "detail": "gap -14.7% | risk $7.35 | SL $68.91 | TP $66.81 | R:R 3.0"
-    },
     {
       "time": "2026-07-06T15:56:14.179Z",
       "type": "SHORT",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-06T19:42:10.602Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T19:52:21.667Z",
+      "type": "INFO",
+      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T19:52:21.929Z",
+      "type": "INFO",
+      "msg": "EOD review (8 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T19:52:21.930Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
