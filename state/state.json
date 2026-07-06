@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T20:12:51.122Z",
+  "lastRun": "2026-07-06T20:23:05.520Z",
   "log": [
-    {
-      "time": "2026-07-06T16:06:49.902Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T16:06:50.051Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 32",
-      "detail": "SOLS, ULS, BSP, ORLY, FUN, CNK, LEGN, AZO, FIZZ, STZ"
-    },
-    {
-      "time": "2026-07-06T16:06:59.202Z",
-      "type": "INFO",
-      "msg": "Short rejections (31)",
-      "detail": "ULS: relVol 0.5× < 2.5× (todayVol 0.7M)  •  BSP: no daily candles  •  ORLY: relVol 0.7× < 2.5× (todayVol 6.0M)  •  FUN: price $19.77 < $20 (short floor)  •  CNK: relVol 0.6× < 2.5× (todayVol 1.4M)  •  LEGN: relVol 0.2× < 2.5× (todayVol 0.6M)  •  AZO: avgVol 0.6M < 1M  •  FIZZ: avgVol 0.5M < 1M  •  STZ: relVol 0.5× < 2.5× (todayVol 1.4M)  •  FRPT: relVol 0.3× < 2.5× (todayVol 0.4M)  •  CAVA: relVol 0.2× < 2.5× (todayVol 0.7M)  •  TFPM: avgVol 0.9M < 1M"
-    },
     {
       "time": "2026-07-06T16:06:59.202Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-06T20:12:51.122Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T20:23:04.676Z",
+      "type": "INFO",
+      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T20:23:04.734Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T20:23:05.520Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
