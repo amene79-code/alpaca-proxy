@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T20:02:37.815Z",
+  "lastRun": "2026-07-06T20:12:51.122Z",
   "log": [
-    {
-      "time": "2026-07-06T16:06:32.631Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "IREN, WULF, CIFR, JOBY, BMNR, AXTI, CHRN, BFLY, IMOS, KEEL"
-    },
-    {
-      "time": "2026-07-06T16:06:32.631Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 27 watchlist"
-    },
-    {
-      "time": "2026-07-06T16:06:49.902Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "IREN: relVol 0.7× < 2× (todayVol 28.1M)  •  WULF: relVol 1.4× < 2× (todayVol 41.6M)  •  CIFR: relVol 0.5× < 2× (todayVol 11.7M)  •  JOBY: price $9.39 < $15  •  BMNR: relVol 0.5× < 2× (todayVol 19.1M)  •  AXTI: relVol 0.7× < 2× (todayVol 7.2M)  •  CHRN: avgVol 0.4M < 1M  •  BFLY: price $8.90 < $15  •  IMOS: avgVol 0.1M < 1M  •  KEEL: price $5.01 < $15  •  AMD: relVol 0.5× < 2× (todayVol 16.4M)  •  ACHR: price $5.39 < $15"
-    },
     {
       "time": "2026-07-06T16:06:49.902Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-06T20:02:37.815Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T20:12:50.987Z",
+      "type": "INFO",
+      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T20:12:50.999Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T20:12:51.122Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
