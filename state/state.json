@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T19:21:12.704Z",
+  "lastRun": "2026-07-06T19:31:55.620Z",
   "log": [
-    {
-      "time": "2026-07-06T15:55:36.759Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 27 watchlist"
-    },
-    {
-      "time": "2026-07-06T15:56:00.070Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "IREN: relVol 0.7× < 2× (todayVol 27.4M)  •  WULF: relVol 1.4× < 2× (todayVol 40.8M)  •  CIFR: relVol 0.5× < 2× (todayVol 11.3M)  •  JOBY: price $9.36 < $15  •  AXTI: relVol 0.7× < 2× (todayVol 7.0M)  •  CHRN: avgVol 0.4M < 1M  •  BFLY: price $8.95 < $15  •  KEEL: price $5.03 < $15  •  AMD: relVol 0.5× < 2× (todayVol 16.1M)  •  IMOS: avgVol 0.1M < 1M  •  BMNR: relVol 0.5× < 2× (todayVol 17.6M)  •  TE: price $9.22 < $15"
-    },
     {
       "time": "2026-07-06T15:56:00.070Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-07-06T19:21:12.704Z",
       "type": "INFO",
       "msg": "SKIP SOLS — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T19:31:54.931Z",
+      "type": "INFO",
+      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-06T19:31:55.619Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
