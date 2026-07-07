@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "SOLS": {
-      "side": "short",
-      "entry": 60.84000015258789,
-      "high": 60.84000015258789,
-      "low": 60.84000015258789,
-      "initialSl": 61.39,
-      "sl": 61.39,
-      "tp": 59.19,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 0,
   "dailyDate": "2026-07-07",
   "openPositions": [
@@ -83,74 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-07T15:46:23.617Z",
+  "lastRun": "2026-07-07T15:57:10.752Z",
   "log": [
-    {
-      "time": "2026-07-06T18:16:19.111Z",
-      "type": "INFO",
-      "msg": "Top short: SOLS (score 7)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T18:16:19.111Z",
-      "type": "INFO",
-      "msg": "SKIP SOLS — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T18:26:32.143Z",
-      "type": "INFO",
-      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T18:26:34.104Z",
-      "type": "INFO",
-      "msg": "Watchlist: 27 tickers",
-      "detail": "SRKE, PENG, IREN, AIDG, CEV, CHBH, CHSCP, EPAC"
-    },
-    {
-      "time": "2026-07-06T18:26:34.483Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "IREN, DSC, AXTI, IMOS, BMNR, BFLY, AMD, CHRN, CIFR, JOBY"
-    },
-    {
-      "time": "2026-07-06T18:26:34.483Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 27 watchlist"
-    },
-    {
-      "time": "2026-07-06T18:26:52.838Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "IREN: relVol 1.0× < 2× (todayVol 38.6M)  •  DSC: price $8.28 < $15  •  AXTI: relVol 0.9× < 2× (todayVol 9.2M)  •  IMOS: avgVol 0.1M < 1M  •  BMNR: relVol 0.8× < 2× (todayVol 30.3M)  •  BFLY: price $8.67 < $15  •  AMD: relVol 0.7× < 2× (todayVol 21.6M)  •  CHRN: avgVol 0.4M < 1M  •  CIFR: relVol 0.8× < 2× (todayVol 18.1M)  •  JOBY: price $9.08 < $15  •  ACHR: price $5.32 < $15  •  PENG: relVol 0.6× < 2× (todayVol 2.0M)"
-    },
-    {
-      "time": "2026-07-06T18:26:52.839Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T18:26:52.983Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SOLS, LEGN, RKLB, ZIM, ULS, UNM, LFTO, IMAX, FUN, FIZZ"
-    },
-    {
-      "time": "2026-07-06T18:27:06.160Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "SOLS: above opening-range low (price $68.65 > ORL $68.30)  •  LEGN: relVol 0.3× < 2.5× (todayVol 0.8M)  •  RKLB: net up over ~5d ($84.54→$93.84) — no short into uptrend  •  ZIM: ATR 0.20% < 0.5%  •  ULS: relVol 0.8× < 2.5× (todayVol 1.1M)  •  UNM: relVol 0.8× < 2.5× (todayVol 1.2M)  •  LFTO: relVol 0.4× < 2.5× (todayVol 0.4M)  •  IMAX: relVol 0.8× < 2.5× (todayVol 0.8M)  •  FUN: price $19.72 < $20 (short floor)  •  FIZZ: avgVol 0.6M < 1M  •  EMAT: price $5.96 < $20 (short floor)  •  SPHR: avgVol 0.7M < 1M"
-    },
-    {
-      "time": "2026-07-06T18:27:06.160Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-06T18:37:17.962Z",
       "type": "INFO",
@@ -1284,6 +1205,72 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 16× SOLS",
       "detail": "ID 6908895e-99d3-444e-a6f9-7a8eb3f74076 | R:R 3.0:1 | risk $8.80 | real bracket stop @ $61.39"
+    },
+    {
+      "time": "2026-07-07T15:56:38.923Z",
+      "type": "INFO",
+      "msg": "Account: $99930.43 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T15:56:39.425Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, NVDA, SNDK, TSLA, PENG, SPCX, AMD"
+    },
+    {
+      "time": "2026-07-07T15:56:39.744Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MAAS, AGIO, FIG, TRVI, DOCN, RARE, NIQ, PBLS, RNG, VRDN"
+    },
+    {
+      "time": "2026-07-07T15:56:39.744Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-07T15:56:57.594Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "MAAS: avgVol 0.1M < 1M  •  AGIO: relVol 1.1× < 2× (todayVol 1.4M)  •  FIG: relVol 0.8× < 2× (todayVol 14.5M)  •  TRVI: relVol 1.0× < 2× (todayVol 2.6M)  •  DOCN: relVol 0.7× < 2× (todayVol 2.4M)  •  RARE: relVol 0.6× < 2× (todayVol 1.7M)  •  NIQ: price $10.50 < $15  •  PBLS: relVol 0.2× < 2× (todayVol 0.2M)  •  RNG: relVol 0.4× < 2× (todayVol 0.7M)  •  VRDN: relVol 0.5× < 2× (todayVol 1.3M)  •  TARS: avgVol 0.9M < 1M  •  GDDY: relVol 0.2× < 2× (todayVol 0.5M)"
+    },
+    {
+      "time": "2026-07-07T15:56:57.594Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T15:56:57.760Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "FRVO, RIVN, TE, VICR, ALAB, UCTT, COHU, OUST, TER, NOVT"
+    },
+    {
+      "time": "2026-07-07T15:57:06.043Z",
+      "type": "SIGNAL",
+      "msg": "SOLS — SHORT score 8 | gap -10.0% | relVol 2.7× | RSI 43",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T15:57:10.752Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "FRVO: relVol 1.0× < 2.5× (todayVol 2.8M)  •  RIVN: price $17.09 < $20 (short floor)  •  TE: price $7.32 < $20 (short floor)  •  VICR: avgVol 0.9M < 1M  •  ALAB: relVol 0.5× < 2.5× (todayVol 3.0M)  •  UCTT: relVol 0.5× < 2.5× (todayVol 0.8M)  •  COHU: relVol 0.6× < 2.5× (todayVol 0.9M)  •  OUST: relVol 0.5× < 2.5× (todayVol 2.9M)  •  TER: relVol 0.5× < 2.5× (todayVol 2.6M)  •  NOVT: avgVol 0.6M < 1M  •  PDFS: avgVol 0.9M < 1M  •  GNRC: avgVol 1.0M < 1M"
+    },
+    {
+      "time": "2026-07-07T15:57:10.752Z",
+      "type": "INFO",
+      "msg": "Top short: SOLS (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T15:57:10.752Z",
+      "type": "INFO",
+      "msg": "SKIP SOLS — already traded today",
+      "detail": ""
     }
   ],
   "tradedToday": [],
