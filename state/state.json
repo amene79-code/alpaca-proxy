@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-07T20:14:04.565Z",
+  "lastRun": "2026-07-07T20:24:18.804Z",
   "log": [
-    {
-      "time": "2026-07-07T16:18:17.192Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "AGIO, FIG, MAAS, DOCN, TRVI, VRDN, NIQ, NET, NAVN, GLUE"
-    },
-    {
-      "time": "2026-07-07T16:18:17.192Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-07T16:18:38.322Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "AGIO: relVol 1.2× < 2× (todayVol 1.5M)  •  FIG: relVol 0.8× < 2× (todayVol 15.7M)  •  MAAS: avgVol 0.1M < 1M  •  DOCN: relVol 0.7× < 2× (todayVol 2.7M)  •  TRVI: relVol 1.2× < 2× (todayVol 3.3M)  •  VRDN: relVol 0.7× < 2× (todayVol 1.6M)  •  NIQ: price $10.59 < $15  •  NET: relVol 0.7× < 2× (todayVol 2.3M)  •  NAVN: relVol 0.6× < 2× (todayVol 3.8M)  •  GLUE: relVol 0.4× < 2× (todayVol 0.6M)  •  ORKA: relVol 0.6× < 2× (todayVol 1.1M)  •  RARE: relVol 0.6× < 2× (todayVol 1.9M)"
-    },
     {
       "time": "2026-07-07T16:18:38.322Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-07T20:14:04.565Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T20:24:18.618Z",
+      "type": "INFO",
+      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T20:24:18.646Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T20:24:18.804Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
