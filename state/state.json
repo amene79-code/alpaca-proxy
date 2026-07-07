@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-07-06",
+  "dailyDate": "2026-07-07",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-06T21:53:57.645Z",
+  "lastRun": "2026-07-07T13:36:20.911Z",
   "log": [
-    {
-      "time": "2026-07-06T16:17:14.878Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "IREN, BMNR, CIFR, WULF, JOBY, AXTI, CHRN, IMOS, BFLY, KEEL"
-    },
-    {
-      "time": "2026-07-06T16:17:14.878Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 27 watchlist"
-    },
-    {
-      "time": "2026-07-06T16:17:32.446Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "IREN: relVol 0.7× < 2× (todayVol 29.1M)  •  BMNR: relVol 0.5× < 2× (todayVol 21.2M)  •  CIFR: relVol 0.5× < 2× (todayVol 12.0M)  •  WULF: relVol 1.4× < 2× (todayVol 42.6M)  •  JOBY: price $9.41 < $15  •  AXTI: relVol 0.8× < 2× (todayVol 7.4M)  •  CHRN: avgVol 0.4M < 1M  •  IMOS: avgVol 0.1M < 1M  •  BFLY: price $8.84 < $15  •  KEEL: price $5.01 < $15  •  ACHR: price $5.42 < $15  •  AMD: relVol 0.6× < 2× (todayVol 17.0M)"
-    },
     {
       "time": "2026-07-06T16:17:32.446Z",
       "type": "INFO",
@@ -1271,11 +1253,27 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-07-07T13:36:20.427Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T13:36:20.613Z",
+      "type": "INFO",
+      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T13:36:20.911Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (6 min in)",
+      "detail": ""
     }
   ],
   "tradedToday": [],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "SOLS"
-  ]
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
