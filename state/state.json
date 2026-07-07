@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-07T20:24:18.804Z",
+  "lastRun": "2026-07-07T21:05:38.274Z",
   "log": [
-    {
-      "time": "2026-07-07T16:18:38.322Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T16:18:38.518Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FRVO, TE, RIVN, VICR, UCTT, ALAB, COHU, OUST, TER, NOVT"
-    },
-    {
-      "time": "2026-07-07T16:18:48.956Z",
-      "type": "SIGNAL",
-      "msg": "SOLS — SHORT score 7 | gap -9.1% | relVol 2.9× | RSI 52",
-      "detail": ""
-    },
     {
       "time": "2026-07-07T16:18:53.303Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-07T20:24:18.804Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T21:05:38.157Z",
+      "type": "INFO",
+      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T21:05:38.170Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T21:05:38.274Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
