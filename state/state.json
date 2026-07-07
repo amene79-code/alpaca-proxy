@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-07T19:22:53.771Z",
+  "lastRun": "2026-07-07T19:33:08.475Z",
   "log": [
-    {
-      "time": "2026-07-07T15:57:10.752Z",
-      "type": "INFO",
-      "msg": "SKIP SOLS — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T16:07:26.554Z",
-      "type": "INFO",
-      "msg": "Account: $99930.43 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-07T16:07:27.519Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-07-07T19:22:53.770Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T19:33:08.099Z",
+      "type": "INFO",
+      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T19:33:08.475Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
