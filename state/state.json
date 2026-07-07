@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-07T19:43:23.160Z",
+  "lastRun": "2026-07-07T19:53:37.578Z",
   "log": [
-    {
-      "time": "2026-07-07T16:07:46.406Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "FIG: relVol 0.8× < 2× (todayVol 15.0M)  •  AGIO: relVol 1.1× < 2× (todayVol 1.4M)  •  MAAS: avgVol 0.1M < 1M  •  DOCN: relVol 0.7× < 2× (todayVol 2.6M)  •  TRVI: relVol 1.2× < 2× (todayVol 3.0M)  •  VRDN: relVol 0.6× < 2× (todayVol 1.5M)  •  TARS: avgVol 0.9M < 1M  •  NIQ: price $10.59 < $15  •  NET: relVol 0.7× < 2× (todayVol 2.2M)  •  VERA: relVol 0.6× < 2× (todayVol 1.1M)  •  RNG: relVol 0.5× < 2× (todayVol 0.7M)  •  CBZ: avgVol 0.8M < 1M"
-    },
-    {
-      "time": "2026-07-07T16:07:46.406Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T16:07:46.540Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FRVO, TE, RIVN, VICR, UCTT, ALAB, OUST, COHU, TER, KLIC"
-    },
     {
       "time": "2026-07-07T16:07:53.586Z",
       "type": "SIGNAL",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-07T19:43:23.159Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T19:53:36.970Z",
+      "type": "INFO",
+      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T19:53:37.578Z",
+      "type": "INFO",
+      "msg": "EOD review (7 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T19:53:37.578Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
