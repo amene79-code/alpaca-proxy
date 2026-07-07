@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-07T19:33:08.475Z",
+  "lastRun": "2026-07-07T19:43:23.160Z",
   "log": [
-    {
-      "time": "2026-07-07T16:07:27.519Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, NVDA, SNDK, TSLA, PENG, SPCX, AMD"
-    },
-    {
-      "time": "2026-07-07T16:07:27.877Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "FIG, AGIO, MAAS, DOCN, TRVI, VRDN, TARS, NIQ, NET, VERA"
-    },
-    {
-      "time": "2026-07-07T16:07:27.877Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-07-07T16:07:46.406Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-07T19:33:08.475Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T19:43:22.828Z",
+      "type": "INFO",
+      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T19:43:23.159Z",
+      "type": "INFO",
+      "msg": "EOD review (17 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T19:43:23.159Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
