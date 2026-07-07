@@ -70,74 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-07T17:02:15.902Z",
+  "lastRun": "2026-07-07T17:13:23.610Z",
   "log": [
-    {
-      "time": "2026-07-06T20:12:50.987Z",
-      "type": "INFO",
-      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T20:12:50.999Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T20:12:51.122Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T20:23:04.676Z",
-      "type": "INFO",
-      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T20:23:04.734Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T20:23:05.520Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T21:53:57.530Z",
-      "type": "INFO",
-      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T21:53:57.543Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-06T21:53:57.645Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T13:36:20.427Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T13:36:20.613Z",
-      "type": "INFO",
-      "msg": "Account: $99938.75 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-07T13:36:20.911Z",
       "type": "INFO",
@@ -1268,6 +1202,72 @@
     },
     {
       "time": "2026-07-07T17:02:15.902Z",
+      "type": "INFO",
+      "msg": "SKIP SOLS — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T17:12:51.672Z",
+      "type": "INFO",
+      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T17:12:51.829Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, NVDA, SNDK, TSLA, PENG, SPCX, AMD"
+    },
+    {
+      "time": "2026-07-07T17:12:52.106Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AGIO, MAAS, FIG, BAND, TRVI, RAPP, NIQ, ALMS, VRDN, NET"
+    },
+    {
+      "time": "2026-07-07T17:12:52.106Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-07T17:13:11.168Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "AGIO: relVol 1.4× < 2× (todayVol 1.7M)  •  MAAS: avgVol 0.1M < 1M  •  FIG: relVol 0.9× < 2× (todayVol 17.8M)  •  BAND: relVol 0.5× < 2× (todayVol 0.7M)  •  TRVI: relVol 1.4× < 2× (todayVol 3.7M)  •  RAPP: avgVol 0.4M < 1M  •  NIQ: price $10.71 < $15  •  ALMS: relVol 1.0× < 2× (todayVol 1.8M)  •  VRDN: relVol 0.8× < 2× (todayVol 2.0M)  •  NET: relVol 0.9× < 2× (todayVol 3.0M)  •  DOCN: relVol 0.8× < 2× (todayVol 3.1M)  •  VKTX: relVol 0.8× < 2× (todayVol 2.3M)"
+    },
+    {
+      "time": "2026-07-07T17:13:11.168Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T17:13:11.296Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "TE, FRVO, RIVN, UCTT, NOVT, VICR, OUST, COHU, GNRC, SOLS"
+    },
+    {
+      "time": "2026-07-07T17:13:14.227Z",
+      "type": "SIGNAL",
+      "msg": "SOLS — SHORT score 8 | gap -9.8% | relVol 3.2× | RSI 50",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T17:13:23.609Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "TE: price $7.26 < $20 (short floor)  •  FRVO: relVol 1.2× < 2.5× (todayVol 3.6M)  •  RIVN: price $17.31 < $20 (short floor)  •  UCTT: relVol 0.7× < 2.5× (todayVol 1.1M)  •  NOVT: avgVol 0.6M < 1M  •  VICR: avgVol 0.9M < 1M  •  OUST: relVol 0.6× < 2.5× (todayVol 3.5M)  •  COHU: relVol 0.8× < 2.5× (todayVol 1.2M)  •  GNRC: avgVol 1.0M < 1M  •  IESC: avgVol 0.3M < 1M  •  XE: price $16.55 < $20 (short floor)  •  FORM: relVol 0.7× < 2.5× (todayVol 1.4M)"
+    },
+    {
+      "time": "2026-07-07T17:13:23.609Z",
+      "type": "INFO",
+      "msg": "Top short: SOLS (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-07T17:13:23.609Z",
       "type": "INFO",
       "msg": "SKIP SOLS — already traded today",
       "detail": ""
