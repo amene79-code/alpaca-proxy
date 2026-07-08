@@ -70,74 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-08T17:51:35.035Z",
+  "lastRun": "2026-07-08T18:02:21.206Z",
   "log": [
-    {
-      "time": "2026-07-07T19:33:08.475Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T19:43:22.828Z",
-      "type": "INFO",
-      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T19:43:23.159Z",
-      "type": "INFO",
-      "msg": "EOD review (17 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T19:43:23.159Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T19:53:36.970Z",
-      "type": "INFO",
-      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T19:53:37.578Z",
-      "type": "INFO",
-      "msg": "EOD review (7 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T19:53:37.578Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T20:03:51.033Z",
-      "type": "INFO",
-      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T20:03:51.043Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T20:03:51.500Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-07T20:14:04.232Z",
-      "type": "INFO",
-      "msg": "Account: $99930.41 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-07T20:14:04.309Z",
       "type": "INFO",
@@ -1268,6 +1202,72 @@
     },
     {
       "time": "2026-07-08T17:51:35.035Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T18:01:49.011Z",
+      "type": "INFO",
+      "msg": "Account: $100035.69 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T18:01:50.102Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, EVOH, NVDA, SNDK, NBIS, SPCX, DTE, PENG"
+    },
+    {
+      "time": "2026-07-08T18:01:50.421Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BABA, PENG, WULF, KC, VG, AVGO, UCTT, VNET, AKAM, PARR"
+    },
+    {
+      "time": "2026-07-08T18:01:50.421Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-08T18:01:50.934Z",
+      "type": "SIGNAL",
+      "msg": "PENG — score 12 | gap 24.1% | relVol 2.8× | RSI 49",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-07-08T18:02:08.601Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "BABA: ATR 0.23% < 0.5%  •  WULF: relVol 0.9× < 2× (todayVol 28.2M)  •  KC: price $10.60 < $15  •  VG: price $12.25 < $15  •  AVGO: relVol 0.6× < 2× (todayVol 19.7M)  •  UCTT: relVol 0.9× < 2× (todayVol 1.4M)  •  VNET: price $8.39 < $15  •  AKAM: relVol 0.8× < 2× (todayVol 3.2M)  •  PARR: avgVol 0.9M < 1M  •  GDS: relVol 0.5× < 2× (todayVol 1.3M)  •  PBF: relVol 0.8× < 2× (todayVol 2.2M)  •  NBIS: relVol 0.7× < 2× (todayVol 12.1M)"
+    },
+    {
+      "time": "2026-07-08T18:02:08.602Z",
+      "type": "INFO",
+      "msg": "Top signal: PENG (score 12)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T18:02:08.602Z",
+      "type": "INFO",
+      "msg": "SKIP PENG — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T18:02:08.762Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PLBL, MAAS, IQMX, BFH, SLS, BE, LMND, VCRE, GPGI, EQPT"
+    },
+    {
+      "time": "2026-07-08T18:02:21.206Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "PLBL: price $7.35 < $20 (short floor)  •  MAAS: price $14.30 < $20 (short floor)  •  IQMX: price $11.59 < $20 (short floor)  •  BFH: avgVol 0.8M < 1M  •  SLS: price $12.27 < $20 (short floor)  •  BE: relVol 0.9× < 2.5× (todayVol 13.1M)  •  LMND: net up over ~5d ($65.05→$70.93) — no short into uptrend  •  VCRE: price $13.76 < $20 (short floor)  •  GPGI: price $14.52 < $20 (short floor)  •  EQPT: price $16.50 < $20 (short floor)  •  WING: relVol 0.8× < 2.5× (todayVol 0.9M)  •  NAVN: net up over ~5d ($22.87→$25.10) — no short into uptrend"
+    },
+    {
+      "time": "2026-07-08T18:02:21.206Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
