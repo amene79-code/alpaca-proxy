@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-08T19:39:15.714Z",
+  "lastRun": "2026-07-08T19:49:31.532Z",
   "log": [
-    {
-      "time": "2026-07-08T16:03:33.931Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PLBL: price $9.02 < $20 (short floor)  •  IQMX: price $11.62 < $20 (short floor)  •  LMND: net up over ~5d ($65.05→$69.99) — no short into uptrend  •  GPGI: price $14.31 < $20 (short floor)  •  ARIS: price $13.78 < $20 (short floor)  •  NWL: price $5.03 < $20 (short floor)  •  WING: relVol 0.4× < 2.5× (todayVol 0.5M)  •  W: relVol 0.4× < 2.5× (todayVol 1.3M)  •  CPRI: price $17.71 < $20 (short floor)  •  SSRM: relVol 0.4× < 2.5× (todayVol 1.6M)  •  EGO: relVol 0.5× < 2.5× (todayVol 1.6M)  •  NVTS: price $12.81 < $20 (short floor)"
-    },
-    {
-      "time": "2026-07-08T16:03:33.932Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T16:13:45.329Z",
-      "type": "INFO",
-      "msg": "Account: $99932.99 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-08T16:13:45.693Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-08T19:39:15.714Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:49:31.076Z",
+      "type": "INFO",
+      "msg": "Account: $100035.69 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:49:31.531Z",
+      "type": "INFO",
+      "msg": "EOD review (11 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:49:31.532Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
