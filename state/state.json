@@ -70,74 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-08T18:56:31.879Z",
+  "lastRun": "2026-07-08T19:07:26.972Z",
   "log": [
-    {
-      "time": "2026-07-08T15:30:33.381Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, EVOH, NVDA, SNDK, NBIS, SPCX, DTE, PENG"
-    },
-    {
-      "time": "2026-07-08T15:30:33.710Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BABA, PENG, RGC, WULF, KC, PARR, CVI, VG, PBF, VIST"
-    },
-    {
-      "time": "2026-07-08T15:30:33.710Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-08T15:30:52.285Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "BABA: relVol 1.6× < 2× (todayVol 22.0M)  •  PENG: relVol 1.8× < 2× (todayVol 6.4M)  •  RGC: price $6.93 < $15  •  WULF: relVol 0.6× < 2× (todayVol 19.7M)  •  KC: price $10.50 < $15  •  PARR: avgVol 0.9M < 1M  •  CVI: relVol 0.3× < 2× (todayVol 0.4M)  •  VG: price $12.57 < $15  •  PBF: relVol 0.5× < 2× (todayVol 1.2M)  •  VIST: avgVol 0.9M < 1M  •  VNET: price $8.27 < $15  •  PTEN: price $9.75 < $15"
-    },
-    {
-      "time": "2026-07-08T15:30:52.285Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T15:30:52.468Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "VCRE, ARIS, DSC, GPGI, PLBL, LMND, IQMX, BE, MAAS, NAVN"
-    },
-    {
-      "time": "2026-07-08T15:31:04.177Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "VCRE: price $13.40 < $20 (short floor)  •  ARIS: price $13.64 < $20 (short floor)  •  DSC: price $6.96 < $20 (short floor)  •  GPGI: price $14.26 < $20 (short floor)  •  PLBL: price $9.02 < $20 (short floor)  •  LMND: net up over ~5d ($65.05→$69.97) — no short into uptrend  •  IQMX: price $11.64 < $20 (short floor)  •  BE: relVol 0.4× < 2.5× (todayVol 6.3M)  •  MAAS: price $15.06 < $20 (short floor)  •  NAVN: net up over ~5d ($22.87→$24.74) — no short into uptrend  •  NVTS: price $12.74 < $20 (short floor)  •  SA: avgVol 0.9M < 1M"
-    },
-    {
-      "time": "2026-07-08T15:31:04.177Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T15:41:20.993Z",
-      "type": "INFO",
-      "msg": "Account: $99930.39 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T15:41:21.535Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, EVOH, NVDA, SNDK, NBIS, SPCX, DTE, PENG"
-    },
-    {
-      "time": "2026-07-08T15:41:22.051Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BABA, PENG, RGC, WULF, KC, PARR, CVI, AVGO, VG, PBF"
-    },
     {
       "time": "2026-07-08T15:41:22.052Z",
       "type": "INFO",
@@ -1268,6 +1202,72 @@
     },
     {
       "time": "2026-07-08T18:56:31.879Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:06:50.268Z",
+      "type": "INFO",
+      "msg": "Account: $100035.69 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:06:51.100Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, EVOH, NVDA, SNDK, NBIS, SPCX, DTE, PENG"
+    },
+    {
+      "time": "2026-07-08T19:06:51.510Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BABA, WULF, PENG, KC, VG, IREN, AVGO, SMCI, UCTT, XENE"
+    },
+    {
+      "time": "2026-07-08T19:06:51.510Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-08T19:06:52.686Z",
+      "type": "SIGNAL",
+      "msg": "PENG — score 8 | gap 24.6% | relVol 3.1× | RSI 55",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:07:12.704Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "BABA: ATR 0.17% < 0.5%  •  WULF: relVol 1.0× < 2× (todayVol 32.5M)  •  KC: price $10.63 < $15  •  VG: price $12.30 < $15  •  IREN: relVol 0.6× < 2× (todayVol 25.4M)  •  AVGO: relVol 0.7× < 2× (todayVol 21.5M)  •  SMCI: relVol 0.4× < 2× (todayVol 26.4M)  •  UCTT: relVol 1.0× < 2× (todayVol 1.6M)  •  XENE: relVol 1.4× < 2× (todayVol 2.5M)  •  AKAM: relVol 1.0× < 2× (todayVol 4.2M)  •  VNET: price $8.43 < $15  •  RGC: price $6.49 < $15"
+    },
+    {
+      "time": "2026-07-08T19:07:12.704Z",
+      "type": "INFO",
+      "msg": "Top signal: PENG (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:07:12.704Z",
+      "type": "INFO",
+      "msg": "SKIP PENG — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:07:12.887Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PLBL, MAAS, ALHC, IQMX, BFH, SYF, WING, VCRE, LMND, CPRI"
+    },
+    {
+      "time": "2026-07-08T19:07:26.971Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "PLBL: price $7.75 < $20 (short floor)  •  MAAS: price $14.09 < $20 (short floor)  •  ALHC: relVol 1.5× < 2.5× (todayVol 9.6M)  •  IQMX: price $11.60 < $20 (short floor)  •  BFH: avgVol 0.8M < 1M  •  SYF: relVol 1.7× < 2.5× (todayVol 6.0M)  •  WING: relVol 1.0× < 2.5× (todayVol 1.1M)  •  VCRE: price $13.76 < $20 (short floor)  •  LMND: net up over ~5d ($65.05→$71.14) — no short into uptrend  •  CPRI: price $17.85 < $20 (short floor)  •  BSP: relVol 0.2× < 2.5× (todayVol 1.6M)  •  W: relVol 0.7× < 2.5× (todayVol 2.6M)"
+    },
+    {
+      "time": "2026-07-08T19:07:26.972Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
