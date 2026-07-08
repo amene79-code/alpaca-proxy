@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-08T20:09:54.248Z",
+  "lastRun": "2026-07-08T20:20:06.034Z",
   "log": [
-    {
-      "time": "2026-07-08T16:14:04.291Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "MAAS, PLBL, GPGI, LMND, W, NWL, IQMX, ARIS, NAVN, WING"
-    },
-    {
-      "time": "2026-07-08T16:14:15.484Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "MAAS: price $14.71 < $20 (short floor)  •  PLBL: price $9.02 < $20 (short floor)  •  GPGI: price $14.27 < $20 (short floor)  •  LMND: net up over ~5d ($65.05→$70.32) — no short into uptrend  •  W: relVol 0.4× < 2.5× (todayVol 1.3M)  •  NWL: price $5.03 < $20 (short floor)  •  IQMX: price $11.74 < $20 (short floor)  •  ARIS: price $13.87 < $20 (short floor)  •  NAVN: net up over ~5d ($22.87→$24.88) — no short into uptrend  •  WING: relVol 0.5× < 2.5× (todayVol 0.6M)  •  CPRI: price $17.80 < $20 (short floor)  •  EGO: relVol 0.5× < 2.5× (todayVol 1.6M)"
-    },
-    {
-      "time": "2026-07-08T16:14:15.484Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-08T16:24:26.969Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-08T20:09:54.248Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T20:20:05.198Z",
+      "type": "INFO",
+      "msg": "Account: $100035.69 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T20:20:05.248Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T20:20:06.033Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
