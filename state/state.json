@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-08T19:29:00.398Z",
+  "lastRun": "2026-07-08T19:39:15.714Z",
   "log": [
-    {
-      "time": "2026-07-08T16:03:17.944Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "BABA: relVol 1.7× < 2× (todayVol 23.9M)  •  VG: price $12.79 < $15  •  RGC: price $7.30 < $15  •  WULF: relVol 0.7× < 2× (todayVol 22.0M)  •  KC: price $10.51 < $15  •  PARR: avgVol 0.9M < 1M  •  CVI: relVol 0.4× < 2× (todayVol 0.4M)  •  PBF: relVol 0.6× < 2× (todayVol 1.5M)  •  VNET: price $8.25 < $15  •  PTEN: price $9.78 < $15  •  VIST: avgVol 0.9M < 1M  •  DINO: relVol 0.4× < 2× (todayVol 0.8M)"
-    },
-    {
-      "time": "2026-07-08T16:03:17.944Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T16:03:18.286Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PLBL, IQMX, LMND, GPGI, ARIS, NWL, WING, W, CPRI, SSRM"
-    },
     {
       "time": "2026-07-08T16:03:33.931Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-08T19:29:00.398Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:39:15.372Z",
+      "type": "INFO",
+      "msg": "Account: $100035.69 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:39:15.713Z",
+      "type": "INFO",
+      "msg": "EOD review (21 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T19:39:15.714Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
