@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-08T19:59:43.388Z",
+  "lastRun": "2026-07-08T20:09:54.248Z",
   "log": [
-    {
-      "time": "2026-07-08T16:13:46.103Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-08T16:14:04.108Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "BABA: relVol 1.8× < 2× (todayVol 24.5M)  •  RGC: price $7.00 < $15  •  VG: price $12.70 < $15  •  WULF: relVol 0.7× < 2× (todayVol 23.0M)  •  KC: price $10.54 < $15  •  AVGO: relVol 0.5× < 2× (todayVol 14.7M)  •  PARR: avgVol 0.9M < 1M  •  CVI: relVol 0.4× < 2× (todayVol 0.5M)  •  PBF: relVol 0.6× < 2× (todayVol 1.6M)  •  VNET: price $8.26 < $15  •  PTEN: price $9.78 < $15  •  VIST: avgVol 0.9M < 1M"
-    },
-    {
-      "time": "2026-07-08T16:14:04.109Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-08T16:14:04.291Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-08T19:59:43.387Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T20:09:53.362Z",
+      "type": "INFO",
+      "msg": "Account: $100035.69 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T20:09:53.374Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-08T20:09:54.248Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
