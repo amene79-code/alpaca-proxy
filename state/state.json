@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "LASR": {
-      "side": "long",
-      "entry": 76.13999938964844,
-      "high": 76.13999938964844,
-      "low": 76.13999938964844,
-      "initialSl": 75.19,
-      "sl": 75.19,
-      "tp": 78.66,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 3,
   "dailyDate": "2026-07-09",
   "openPositions": [
@@ -83,86 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-09T16:52:12.867Z",
+  "lastRun": "2026-07-09T17:02:53.312Z",
   "log": [
-    {
-      "time": "2026-07-08T20:20:06.033Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T20:30:24.075Z",
-      "type": "INFO",
-      "msg": "Account: $100035.69 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T20:30:24.135Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T20:30:25.977Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T21:10:15.835Z",
-      "type": "INFO",
-      "msg": "Account: $100035.69 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T21:10:15.857Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T21:10:16.314Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T13:17:10.044Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T13:17:10.217Z",
-      "type": "INFO",
-      "msg": "Account: $100035.67 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T13:17:10.226Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T13:17:11.692Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T13:27:36.461Z",
-      "type": "INFO",
-      "msg": "Account: $100035.67 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T13:27:36.469Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-07-09T13:27:36.849Z",
       "type": "INFO",
@@ -1281,6 +1190,84 @@
     },
     {
       "time": "2026-07-09T16:52:12.867Z",
+      "type": "INFO",
+      "msg": "SKIP IONS — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:02:24.352Z",
+      "type": "INFO",
+      "msg": "Account: $99937.26 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:02:24.568Z",
+      "type": "INFO",
+      "msg": "Watchlist: 26 tickers",
+      "detail": "NVDA, EVOH, NBIS, PENG, AMBK, BUKS, DAL, FGFH"
+    },
+    {
+      "time": "2026-07-09T17:02:25.411Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 49, actives 50, kept 40",
+      "detail": "MARA, OPEN, LASR, BBIO, FRVO, TXG, RIVN, AEHR, ALGM, ONTO"
+    },
+    {
+      "time": "2026-07-09T17:02:25.411Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 26 watchlist"
+    },
+    {
+      "time": "2026-07-09T17:02:26.330Z",
+      "type": "SIGNAL",
+      "msg": "LASR — score 12 | gap 28.8% | relVol 2.1× | RSI 72",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-07-09T17:02:43.679Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "MARA: price $13.47 < $15  •  OPEN: price $5.28 < $15  •  BBIO: below VWAP (price $89.61 < VWAP $89.81)  •  FRVO: relVol 0.5× < 2× (todayVol 1.7M)  •  TXG: relVol 0.4× < 2× (todayVol 1.4M)  •  RIVN: relVol 1.0× < 2× (todayVol 38.1M)  •  AEHR: relVol 1.0× < 2× (todayVol 1.7M)  •  ALGM: relVol 0.3× < 2× (todayVol 1.4M)  •  ONTO: relVol 0.7× < 2× (todayVol 1.1M)  •  LITE: relVol 0.7× < 2× (todayVol 3.4M)  •  MXL: relVol 0.4× < 2× (todayVol 1.7M)  •  PENG: relVol 1.4× < 2× (todayVol 5.7M)"
+    },
+    {
+      "time": "2026-07-09T17:02:43.679Z",
+      "type": "INFO",
+      "msg": "Top signal: LASR (score 12)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:02:43.679Z",
+      "type": "INFO",
+      "msg": "SKIP LASR — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:02:43.841Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 31",
+      "detail": "IONS, PLBL, GVA, MDA, NTLA, INSW, TARS, RGC, DHT, BWLP"
+    },
+    {
+      "time": "2026-07-09T17:02:44.043Z",
+      "type": "SIGNAL",
+      "msg": "IONS — SHORT score 10 | gap -24.0% | relVol 4.8× | RSI 37",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:02:53.312Z",
+      "type": "INFO",
+      "msg": "Short rejections (30)",
+      "detail": "PLBL: price $6.14 < $20 (short floor)  •  GVA: avgVol 0.9M < 1M  •  MDA: ATR 0.30% < 0.5%  •  NTLA: price $15.49 < $20 (short floor)  •  INSW: avgVol 0.6M < 1M  •  TARS: net up over ~5d ($60.89→$62.63) — no short into uptrend  •  RGC: price $6.08 < $20 (short floor)  •  DHT: price $16.63 < $20 (short floor)  •  BWLP: price $18.92 < $20 (short floor)  •  FRO: net up over ~5d ($34.70→$36.15) — no short into uptrend  •  IRTC: avgVol 0.6M < 1M  •  MLYS: net up over ~5d ($26.89→$28.73) — no short into uptrend"
+    },
+    {
+      "time": "2026-07-09T17:02:53.312Z",
+      "type": "INFO",
+      "msg": "Top short: IONS (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:02:53.312Z",
       "type": "INFO",
       "msg": "SKIP IONS — already traded today",
       "detail": ""
