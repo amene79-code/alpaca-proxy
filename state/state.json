@@ -70,86 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-09T17:46:03.306Z",
+  "lastRun": "2026-07-09T17:56:42.089Z",
   "log": [
-    {
-      "time": "2026-07-09T14:42:00.330Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MARA, BBIO, OPEN, LASR, RIVN, PENG, AMD, TXG, QGEN, FRVO"
-    },
-    {
-      "time": "2026-07-09T14:42:00.330Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 26 watchlist"
-    },
-    {
-      "time": "2026-07-09T14:42:02.834Z",
-      "type": "SIGNAL",
-      "msg": "QGEN — score 14 | gap 12.6% | relVol 2.1× | RSI 80",
-      "detail": "Bullish Engulfing, Volume Breakout"
-    },
-    {
-      "time": "2026-07-09T14:42:18.087Z",
-      "type": "INFO",
-      "msg": "Rejections (59)",
-      "detail": "MARA: price $13.88 < $15  •  BBIO: relVol 1.6× < 2× (todayVol 6.6M)  •  OPEN: price $5.31 < $15  •  LASR: relVol 1.4× < 2× (todayVol 1.8M)  •  RIVN: relVol 0.5× < 2× (todayVol 20.7M)  •  PENG: relVol 0.8× < 2× (todayVol 3.1M)  •  AMD: relVol 0.4× < 2× (todayVol 10.7M)  •  TXG: relVol 0.2× < 2× (todayVol 0.7M)  •  FRVO: relVol 0.3× < 2× (todayVol 0.9M)  •  ARM: relVol 0.3× < 2× (todayVol 3.0M)  •  LITE: relVol 0.4× < 2× (todayVol 2.3M)  •  AEHR: relVol 0.8× < 2× (todayVol 1.3M)"
-    },
-    {
-      "time": "2026-07-09T14:42:18.087Z",
-      "type": "INFO",
-      "msg": "Top signal: QGEN (score 14)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T14:42:18.087Z",
-      "type": "BUY",
-      "msg": "Placing 35× QGEN @ ~$42.78",
-      "detail": "gap 12.6% | risk $49.70 | SL $41.36 | TP $46.57 | R:R 2.7 | Bullish Engulfing, Volume Breakout"
-    },
-    {
-      "time": "2026-07-09T14:42:18.309Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 35× QGEN",
-      "detail": "ID 11101226-56bc-4a97-ad13-e759de8f647d | R:R 2.7:1 | risk $49.70"
-    },
-    {
-      "time": "2026-07-09T14:42:18.939Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 26",
-      "detail": "IONS, PLBL, GVA, MDA, PSKY, AZN, INSW, FRO, ECO, DHT"
-    },
-    {
-      "time": "2026-07-09T14:42:26.817Z",
-      "type": "INFO",
-      "msg": "Short rejections (26)",
-      "detail": "IONS: above opening-range low (price $67.94 > ORL $66.16)  •  PLBL: price $6.01 < $20 (short floor)  •  GVA: avgVol 0.9M < 1M  •  MDA: relVol 2.0× < 2.5× (todayVol 3.2M)  •  PSKY: price $9.06 < $20 (short floor)  •  AZN: relVol 1.2× < 2.5× (todayVol 2.5M)  •  INSW: avgVol 0.6M < 1M  •  FRO: net up over ~5d ($34.70→$35.89) — no short into uptrend  •  ECO: avgVol 0.5M < 1M  •  DHT: price $16.63 < $20 (short floor)  •  BWLP: price $19.07 < $20 (short floor)  •  AVAV: relVol 0.4× < 2.5× (todayVol 0.9M)"
-    },
-    {
-      "time": "2026-07-09T14:42:26.817Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T14:52:42.366Z",
-      "type": "INFO",
-      "msg": "Account: $100034.62 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T14:52:43.041Z",
-      "type": "INFO",
-      "msg": "Watchlist: 26 tickers",
-      "detail": "NVDA, EVOH, NBIS, PENG, AMBK, BUKS, DAL, FGFH"
-    },
-    {
-      "time": "2026-07-09T14:52:43.336Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MARA, BBIO, LASR, OPEN, PENG, QGEN, FRVO, NVTS, ARM, TXG"
-    },
     {
       "time": "2026-07-09T14:52:43.337Z",
       "type": "INFO",
@@ -1268,6 +1190,84 @@
     },
     {
       "time": "2026-07-09T17:46:03.305Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:56:15.778Z",
+      "type": "INFO",
+      "msg": "Account: $99937.26 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:56:15.935Z",
+      "type": "INFO",
+      "msg": "Watchlist: 26 tickers",
+      "detail": "NVDA, EVOH, NBIS, PENG, AMBK, BUKS, DAL, FGFH"
+    },
+    {
+      "time": "2026-07-09T17:56:16.332Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MARA, OPEN, LASR, LBTYB, BBIO, FRVO, RIVN, TXG, MU, AEHR"
+    },
+    {
+      "time": "2026-07-09T17:56:16.332Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 26 watchlist"
+    },
+    {
+      "time": "2026-07-09T17:56:17.004Z",
+      "type": "SIGNAL",
+      "msg": "LASR — score 8 | gap 26.9% | relVol 2.2× | RSI 36",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:56:17.617Z",
+      "type": "SIGNAL",
+      "msg": "BBIO — score 9 | gap 15.7% | relVol 3.0× | RSI 63",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-07-09T17:56:33.915Z",
+      "type": "INFO",
+      "msg": "Rejections (58)",
+      "detail": "MARA: price $13.33 < $15  •  OPEN: price $5.28 < $15  •  LBTYB: no 5m candles  •  FRVO: relVol 0.6× < 2× (todayVol 1.8M)  •  RIVN: relVol 1.1× < 2× (todayVol 44.0M)  •  TXG: relVol 0.5× < 2× (todayVol 1.6M)  •  MU: relVol 0.5× < 2× (todayVol 27.0M)  •  AEHR: relVol 1.1× < 2× (todayVol 1.9M)  •  ALGM: relVol 0.4× < 2× (todayVol 1.5M)  •  CIFR: relVol 0.7× < 2× (todayVol 17.4M)  •  SNDK: relVol 0.7× < 2× (todayVol 8.6M)  •  MXL: relVol 0.5× < 2× (todayVol 1.8M)"
+    },
+    {
+      "time": "2026-07-09T17:56:33.916Z",
+      "type": "INFO",
+      "msg": "Top signal: BBIO (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:56:33.916Z",
+      "type": "INFO",
+      "msg": "SKIP BBIO — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:56:33.916Z",
+      "type": "INFO",
+      "msg": "SKIP LASR — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T17:56:34.059Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 27",
+      "detail": "IONS, PLBL, GVA, MDA, NTLA, INSW, RGC, ECO, ROAD, TARS"
+    },
+    {
+      "time": "2026-07-09T17:56:42.089Z",
+      "type": "INFO",
+      "msg": "Short rejections (27)",
+      "detail": "IONS: ATR 0.47% < 0.5%  •  PLBL: price $6.09 < $20 (short floor)  •  GVA: avgVol 0.9M < 1M  •  MDA: ATR 0.39% < 0.5%  •  NTLA: price $15.61 < $20 (short floor)  •  INSW: avgVol 0.6M < 1M  •  RGC: price $6.07 < $20 (short floor)  •  ECO: avgVol 0.5M < 1M  •  ROAD: avgVol 0.7M < 1M  •  TARS: net up over ~5d ($60.89→$63.68) — no short into uptrend  •  STUB: price $11.95 < $20 (short floor)  •  IRTC: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-07-09T17:56:42.089Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
