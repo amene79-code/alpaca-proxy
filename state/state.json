@@ -83,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-09T14:42:26.817Z",
+  "lastRun": "2026-07-09T14:53:10.735Z",
   "log": [
-    {
-      "time": "2026-07-08T17:40:33.278Z",
-      "type": "INFO",
-      "msg": "SKIP PENG — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T17:40:33.505Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "MAAS, IQMX, BE, SLS, EQPT, VCRE, LMND, GPGI, NAVN, QXO"
-    },
-    {
-      "time": "2026-07-08T17:40:47.676Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "MAAS: price $14.66 < $20 (short floor)  •  IQMX: price $11.55 < $20 (short floor)  •  BE: relVol 0.8× < 2.5× (todayVol 12.3M)  •  SLS: price $12.32 < $20 (short floor)  •  EQPT: price $16.45 < $20 (short floor)  •  VCRE: price $13.76 < $20 (short floor)  •  LMND: net up over ~5d ($65.05→$71.12) — no short into uptrend  •  GPGI: price $14.52 < $20 (short floor)  •  NAVN: net up over ~5d ($22.87→$25.05) — no short into uptrend  •  QXO: price $14.04 < $20 (short floor)  •  WING: relVol 0.8× < 2.5× (todayVol 0.9M)  •  YSS: relVol 0.3× < 2.5× (todayVol 0.5M)"
-    },
-    {
-      "time": "2026-07-08T17:40:47.676Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T17:51:00.856Z",
-      "type": "INFO",
-      "msg": "Account: $100035.69 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T17:51:01.417Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, EVOH, NVDA, SNDK, NBIS, SPCX, DTE, PENG"
-    },
-    {
-      "time": "2026-07-08T17:51:01.981Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BABA, PENG, WULF, KC, VG, AVGO, UCTT, VNET, PARR, AKAM"
-    },
-    {
-      "time": "2026-07-08T17:51:01.981Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-08T17:51:02.523Z",
-      "type": "SIGNAL",
-      "msg": "PENG — score 8 | gap 23.9% | relVol 2.7× | RSI 60",
-      "detail": ""
-    },
     {
       "time": "2026-07-08T17:51:21.660Z",
       "type": "INFO",
@@ -1281,6 +1227,60 @@
     },
     {
       "time": "2026-07-09T14:42:26.817Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T14:52:42.366Z",
+      "type": "INFO",
+      "msg": "Account: $100034.62 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T14:52:43.041Z",
+      "type": "INFO",
+      "msg": "Watchlist: 26 tickers",
+      "detail": "NVDA, EVOH, NBIS, PENG, AMBK, BUKS, DAL, FGFH"
+    },
+    {
+      "time": "2026-07-09T14:52:43.336Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MARA, BBIO, LASR, OPEN, PENG, QGEN, FRVO, NVTS, ARM, TXG"
+    },
+    {
+      "time": "2026-07-09T14:52:43.337Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 26 watchlist"
+    },
+    {
+      "time": "2026-07-09T14:53:01.171Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "MARA: price $14.07 < $15  •  BBIO: relVol 1.6× < 2× (todayVol 6.9M)  •  LASR: relVol 1.5× < 2× (todayVol 1.9M)  •  OPEN: price $5.24 < $15  •  PENG: relVol 0.9× < 2× (todayVol 3.4M)  •  FRVO: relVol 0.3× < 2× (todayVol 1.0M)  •  NVTS: price $14.33 < $15  •  ARM: relVol 0.3× < 2× (todayVol 3.3M)  •  TXG: relVol 0.3× < 2× (todayVol 0.9M)  •  AEHR: relVol 0.8× < 2× (todayVol 1.4M)  •  ONTO: relVol 0.4× < 2× (todayVol 0.6M)  •  LITE: relVol 0.5× < 2× (todayVol 2.4M)"
+    },
+    {
+      "time": "2026-07-09T14:53:01.172Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T14:53:01.339Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 30",
+      "detail": "IONS, PLBL, MDA, GVA, AZN, INSW, FRO, ECO, PSKY, RGC"
+    },
+    {
+      "time": "2026-07-09T14:53:10.735Z",
+      "type": "INFO",
+      "msg": "Short rejections (30)",
+      "detail": "IONS: above opening-range low (price $67.41 > ORL $66.16)  •  PLBL: price $6.09 < $20 (short floor)  •  MDA: relVol 2.1× < 2.5× (todayVol 3.4M)  •  GVA: avgVol 0.9M < 1M  •  AZN: relVol 1.3× < 2.5× (todayVol 2.7M)  •  INSW: avgVol 0.6M < 1M  •  FRO: net up over ~5d ($34.70→$35.95) — no short into uptrend  •  ECO: avgVol 0.5M < 1M  •  PSKY: price $9.12 < $20 (short floor)  •  RGC: price $6.11 < $20 (short floor)  •  DHT: price $16.67 < $20 (short floor)  •  TARS: net up over ~5d ($60.89→$63.81) — no short into uptrend"
+    },
+    {
+      "time": "2026-07-09T14:53:10.735Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
