@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-07-08",
+  "dailyTrades": 0,
+  "dailyDate": "2026-07-09",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-08T21:10:16.314Z",
+  "lastRun": "2026-07-09T13:17:11.693Z",
   "log": [
-    {
-      "time": "2026-07-08T16:24:46.595Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PLBL, LMND, MAAS, GPGI, NWL, W, NAVN, ARIS, CPRI, QXO"
-    },
-    {
-      "time": "2026-07-08T16:24:57.555Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PLBL: price $8.80 < $20 (short floor)  •  LMND: net up over ~5d ($65.05→$70.11) — no short into uptrend  •  MAAS: price $15.00 < $20 (short floor)  •  GPGI: price $14.31 < $20 (short floor)  •  NWL: price $5.05 < $20 (short floor)  •  W: relVol 0.4× < 2.5× (todayVol 1.4M)  •  NAVN: net up over ~5d ($22.87→$24.83) — no short into uptrend  •  ARIS: price $13.90 < $20 (short floor)  •  CPRI: price $17.76 < $20 (short floor)  •  QXO: price $13.97 < $20 (short floor)  •  IQMX: price $11.80 < $20 (short floor)  •  NVTS: price $12.85 < $20 (short floor)"
-    },
-    {
-      "time": "2026-07-08T16:24:57.555Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-08T16:35:09.552Z",
-      "type": "INFO",
-      "msg": "Account: $99952.99 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-08T16:35:10.971Z",
       "type": "INFO",
@@ -1271,11 +1247,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-07-09T13:17:10.044Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T13:17:10.217Z",
+      "type": "INFO",
+      "msg": "Account: $100035.67 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T13:17:10.226Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T13:17:11.692Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "PENG"
-  ],
+  "tradedToday": [],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
