@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-09T20:24:08.107Z",
+  "lastRun": "2026-07-09T21:06:38.664Z",
   "log": [
-    {
-      "time": "2026-07-09T16:41:17.279Z",
-      "type": "INFO",
-      "msg": "Short rejections (32)",
-      "detail": "PLBL: price $6.15 < $20 (short floor)  •  GVA: avgVol 0.9M < 1M  •  MDA: ATR 0.33% < 0.5%  •  NTLA: price $15.49 < $20 (short floor)  •  INSW: avgVol 0.6M < 1M  •  RGC: price $6.00 < $20 (short floor)  •  TARS: net up over ~5d ($60.89→$62.73) — no short into uptrend  •  IRTC: avgVol 0.6M < 1M  •  DHT: price $16.62 < $20 (short floor)  •  BWLP: price $18.90 < $20 (short floor)  •  FRO: net up over ~5d ($34.70→$36.10) — no short into uptrend  •  MLYS: net up over ~5d ($26.89→$28.70) — no short into uptrend"
-    },
-    {
-      "time": "2026-07-09T16:41:17.280Z",
-      "type": "INFO",
-      "msg": "Top short: IONS (score 10)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T16:41:17.280Z",
-      "type": "INFO",
-      "msg": "SKIP IONS — already traded today",
-      "detail": ""
-    },
     {
       "time": "2026-07-09T16:51:31.770Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-09T20:24:08.107Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T21:06:37.369Z",
+      "type": "INFO",
+      "msg": "Account: $99937.26 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T21:06:37.443Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T21:06:38.664Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
