@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-09T19:53:02.716Z",
+  "lastRun": "2026-07-09T20:03:21.319Z",
   "log": [
-    {
-      "time": "2026-07-09T16:30:16.391Z",
-      "type": "INFO",
-      "msg": "SKIP IONS — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T16:40:47.800Z",
-      "type": "INFO",
-      "msg": "Account: $99959.11 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T16:40:48.715Z",
-      "type": "INFO",
-      "msg": "Watchlist: 26 tickers",
-      "detail": "NVDA, EVOH, NBIS, PENG, AMBK, BUKS, DAL, FGFH"
-    },
     {
       "time": "2026-07-09T16:40:49.014Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-09T19:53:02.716Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T20:03:20.017Z",
+      "type": "INFO",
+      "msg": "Account: $99937.26 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T20:03:20.047Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T20:03:21.319Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
