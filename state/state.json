@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-09T13:17:11.693Z",
+  "lastRun": "2026-07-09T13:27:36.849Z",
   "log": [
-    {
-      "time": "2026-07-08T16:35:10.971Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, EVOH, NVDA, SNDK, NBIS, SPCX, DTE, PENG"
-    },
-    {
-      "time": "2026-07-08T16:35:11.289Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BABA, PENG, RGC, VG, WULF, KC, AVGO, PARR, CVI, PBF"
-    },
-    {
-      "time": "2026-07-08T16:35:11.289Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-07-08T16:35:29.552Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-09T13:17:11.692Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T13:27:36.461Z",
+      "type": "INFO",
+      "msg": "Account: $100035.67 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T13:27:36.469Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T13:27:36.849Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
