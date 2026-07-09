@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-09T13:27:36.849Z",
+  "lastRun": "2026-07-09T13:37:57.281Z",
   "log": [
-    {
-      "time": "2026-07-08T16:35:29.552Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "BABA: relVol 1.8× < 2× (todayVol 25.7M)  •  RGC: price $7.14 < $15  •  VG: price $12.55 < $15  •  WULF: relVol 0.7× < 2× (todayVol 24.3M)  •  KC: price $10.56 < $15  •  AVGO: relVol 0.5× < 2× (todayVol 16.3M)  •  PARR: avgVol 0.9M < 1M  •  CVI: relVol 0.4× < 2× (todayVol 0.5M)  •  PBF: relVol 0.6× < 2× (todayVol 1.7M)  •  VNET: price $8.27 < $15  •  UCTT: relVol 0.6× < 2× (todayVol 0.9M)  •  AKAM: relVol 0.5× < 2× (todayVol 2.0M)"
-    },
-    {
-      "time": "2026-07-08T16:35:29.553Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-08T16:35:29.700Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-07-09T13:27:36.849Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T13:37:56.828Z",
+      "type": "INFO",
+      "msg": "Account: $100035.67 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-09T13:37:57.280Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (7 min in)",
       "detail": ""
     }
   ],
