@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 3,
-  "dailyDate": "2026-07-09",
+  "dailyTrades": 0,
+  "dailyDate": "2026-07-10",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-09T21:06:38.664Z",
+  "lastRun": "2026-07-10T12:24:42.808Z",
   "log": [
-    {
-      "time": "2026-07-09T16:51:31.770Z",
-      "type": "INFO",
-      "msg": "Account: $99959.11 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T16:51:32.069Z",
-      "type": "INFO",
-      "msg": "Watchlist: 26 tickers",
-      "detail": "NVDA, EVOH, NBIS, PENG, AMBK, BUKS, DAL, FGFH"
-    },
-    {
-      "time": "2026-07-09T16:51:32.846Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BBIO, MARA, OPEN, LASR, FRVO, TXG, RIVN, AEHR, ONTO, LITE"
-    },
-    {
-      "time": "2026-07-09T16:51:32.846Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 26 watchlist"
-    },
     {
       "time": "2026-07-09T16:51:34.299Z",
       "type": "SIGNAL",
@@ -1271,15 +1247,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-07-10T12:24:41.999Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T12:24:42.237Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T12:24:42.451Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T12:24:42.808Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "QGEN",
-    "BBIO",
-    "LASR"
-  ],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "IONS"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
