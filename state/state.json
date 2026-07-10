@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-10T18:55:54.566Z",
+  "lastRun": "2026-07-10T19:06:43.648Z",
   "log": [
-    {
-      "time": "2026-07-09T19:42:49.109Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T19:53:02.381Z",
-      "type": "INFO",
-      "msg": "Account: $99937.26 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T19:53:02.716Z",
-      "type": "INFO",
-      "msg": "EOD review (7 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T19:53:02.716Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T20:03:20.017Z",
-      "type": "INFO",
-      "msg": "Account: $99937.26 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T20:03:20.047Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T20:03:21.319Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T20:13:51.892Z",
-      "type": "INFO",
-      "msg": "Account: $99937.26 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-09T20:13:51.955Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-07-09T20:13:53.549Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-10T18:55:54.565Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T19:06:07.357Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T19:06:08.100Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, META, NVDA, SNDK, DAL, AMBK, BUKS"
+    },
+    {
+      "time": "2026-07-10T19:06:08.508Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "VOD, PLBL, EQPT, ALM, META, WDFC, ITUB, BBAR, CCC, GGAL"
+    },
+    {
+      "time": "2026-07-10T19:06:08.508Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-10T19:06:29.540Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "VOD: price $14.72 < $15  •  PLBL: price $8.10 < $15  •  EQPT: relVol 1.9× < 2× (todayVol 5.3M)  •  ALM: relVol 1.0× < 2× (todayVol 5.9M)  •  META: relVol 1.6× < 2× (todayVol 31.4M)  •  WDFC: avgVol 0.2M < 1M  •  ITUB: price $8.65 < $15  •  BBAR: avgVol 0.8M < 1M  •  CCC: price $5.83 < $15  •  GGAL: relVol 0.9× < 2× (todayVol 1.2M)  •  CBRS: relVol 0.5× < 2× (todayVol 4.2M)  •  REZI: relVol 1.4× < 2× (todayVol 1.9M)"
+    },
+    {
+      "time": "2026-07-10T19:06:29.540Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T19:06:29.733Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "FRMI, MRNA, ARWR, AXTI, IONS, BEAM, DSC, ABCL, IBRX, TARS"
+    },
+    {
+      "time": "2026-07-10T19:06:43.648Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "FRMI: price $6.48 < $20 (short floor)  •  MRNA: relVol 0.7× < 2.5× (todayVol 6.9M)  •  ARWR: relVol 0.7× < 2.5× (todayVol 2.0M)  •  AXTI: net up over ~5d ($56.62→$57.26) — no short into uptrend  •  IONS: relVol 2.4× < 2.5× (todayVol 8.3M)  •  BEAM: relVol 0.8× < 2.5× (todayVol 2.2M)  •  DSC: price $6.30 < $20 (short floor)  •  ABCL: price $6.70 < $20 (short floor)  •  IBRX: price $8.18 < $20 (short floor)  •  TARS: relVol 1.2× < 2.5× (todayVol 1.4M)  •  NRIX: relVol 0.4× < 2.5× (todayVol 0.9M)  •  MBX: net up over ~5d ($57.80→$61.00) — no short into uptrend"
+    },
+    {
+      "time": "2026-07-10T19:06:43.648Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
