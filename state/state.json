@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-10T19:48:58.408Z",
+  "lastRun": "2026-07-10T19:59:13.392Z",
   "log": [
-    {
-      "time": "2026-07-10T15:40:48.942Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "VOD: price $14.70 < $15  •  EQPT: relVol 1.2× < 2× (todayVol 3.3M)  •  CCC: price $5.76 < $15  •  META: no daily candles  •  WDFC: avgVol 0.2M < 1M  •  CRCL: relVol 1.8× < 2× (todayVol 25.6M)  •  PLBL: price $7.08 < $15  •  JXN: avgVol 0.7M < 1M  •  ALM: relVol 0.4× < 2× (todayVol 2.5M)  •  KB: avgVol 0.4M < 1M  •  REZI: relVol 0.7× < 2× (todayVol 1.0M)  •  WPP: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-07-10T15:40:48.942Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-10T15:40:49.091Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-07-10T19:48:58.408Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T19:59:13.252Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T19:59:13.391Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
