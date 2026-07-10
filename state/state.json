@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-10T19:28:25.177Z",
+  "lastRun": "2026-07-10T19:38:39.158Z",
   "log": [
-    {
-      "time": "2026-07-10T15:30:08.671Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "FRMI: price $6.20 < $20 (short floor)  •  BEAM: relVol 0.5× < 2.5× (todayVol 1.3M)  •  MRNA: relVol 0.4× < 2.5× (todayVol 4.1M)  •  BKD: price $13.84 < $20 (short floor)  •  BE: relVol 0.5× < 2.5× (todayVol 7.0M)  •  IONS: relVol 1.4× < 2.5× (todayVol 4.4M)  •  ALMS: net up over ~5d ($26.50→$27.67) — no short into uptrend  •  AXTI: net up over ~5d ($56.62→$57.11) — no short into uptrend  •  ARWR: relVol 0.3× < 2.5× (todayVol 0.9M)  •  BHVN: price $15.38 < $20 (short floor)  •  VERA: relVol 0.3× < 2.5× (todayVol 0.8M)  •  EWTX: net up over ~5d ($39.56→$44.58) — no short into uptrend"
-    },
-    {
-      "time": "2026-07-10T15:30:08.671Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-10T15:40:24.730Z",
-      "type": "INFO",
-      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-10T15:40:25.183Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-10T19:28:25.176Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T19:38:38.694Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T19:38:39.157Z",
+      "type": "INFO",
+      "msg": "EOD review (22 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T19:38:39.157Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
