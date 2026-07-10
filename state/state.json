@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-10T19:59:13.392Z",
+  "lastRun": "2026-07-10T20:09:28.207Z",
   "log": [
-    {
-      "time": "2026-07-10T15:40:49.091Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FRMI, MRNA, BEAM, BE, AXTI, BKD, IONS, ARWR, IBRX, BHVN"
-    },
-    {
-      "time": "2026-07-10T15:41:01.592Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "FRMI: price $6.22 < $20 (short floor)  •  MRNA: relVol 0.4× < 2.5× (todayVol 4.3M)  •  BEAM: relVol 0.5× < 2.5× (todayVol 1.4M)  •  BE: relVol 0.5× < 2.5× (todayVol 7.5M)  •  AXTI: relVol 0.4× < 2.5× (todayVol 3.6M)  •  BKD: price $13.90 < $20 (short floor)  •  IONS: relVol 1.4× < 2.5× (todayVol 4.7M)  •  ARWR: relVol 0.3× < 2.5× (todayVol 0.9M)  •  IBRX: price $8.10 < $20 (short floor)  •  BHVN: price $15.38 < $20 (short floor)  •  ALMS: net up over ~5d ($26.50→$27.77) — no short into uptrend  •  EWTX: net up over ~5d ($39.56→$44.38) — no short into uptrend"
-    },
-    {
-      "time": "2026-07-10T15:41:01.592Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-10T15:51:13.875Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-10T19:59:13.391Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T20:09:27.768Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T20:09:27.800Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-10T20:09:28.207Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
