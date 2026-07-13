@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-13T19:54:52.335Z",
+  "lastRun": "2026-07-13T20:05:05.121Z",
   "log": [
-    {
-      "time": "2026-07-13T15:37:52.910Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 10",
-      "detail": "AXTI, SHAZ, NRIX, QBTS, WULF, BTDR, BEAM, MRCY, EWTX, AGX"
-    },
-    {
-      "time": "2026-07-13T15:37:56.110Z",
-      "type": "INFO",
-      "msg": "Short rejections (10)",
-      "detail": "AXTI: relVol 0.5× < 2.5× (todayVol 4.6M)  •  SHAZ: relVol 0.4× < 2.5× (todayVol 0.7M)  •  NRIX: relVol 0.2× < 2.5× (todayVol 0.5M)  •  QBTS: price $19.00 < $20 (short floor)  •  WULF: relVol 0.2× < 2.5× (todayVol 8.5M)  •  BTDR: price $12.67 < $20 (short floor)  •  BEAM: relVol 0.4× < 2.5× (todayVol 1.1M)  •  MRCY: avgVol 0.8M < 1M  •  EWTX: net up over ~5d ($40.10→$43.50) — no short into uptrend  •  AGX: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-07-13T15:37:56.111Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-13T15:48:13.796Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-13T19:54:52.335Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T20:05:04.759Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T20:05:04.767Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T20:05:05.121Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
