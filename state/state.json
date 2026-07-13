@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-13T15:59:45.877Z",
+  "lastRun": "2026-07-13T16:10:31.322Z",
   "log": [
-    {
-      "time": "2026-07-10T16:34:30.420Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, META, NVDA, SNDK, DAL, AMBK, BUKS"
-    },
-    {
-      "time": "2026-07-10T16:34:31.565Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "VOD, EQPT, CCC, WDFC, PLBL, META, CRCL, ALM, STLA, WHR"
-    },
-    {
-      "time": "2026-07-10T16:34:31.565Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-10T16:34:49.565Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "VOD: price $14.78 < $15  •  EQPT: relVol 1.4× < 2× (todayVol 3.8M)  •  CCC: price $5.80 < $15  •  WDFC: avgVol 0.2M < 1M  •  PLBL: price $7.20 < $15  •  META: relVol 1.3× < 2× (todayVol 25.3M)  •  CRCL: relVol 1.9× < 2× (todayVol 27.6M)  •  ALM: relVol 0.5× < 2× (todayVol 3.0M)  •  STLA: price $5.55 < $15  •  WHR: relVol 0.5× < 2× (todayVol 1.2M)  •  KB: avgVol 0.4M < 1M  •  REZI: relVol 0.9× < 2× (todayVol 1.2M)"
-    },
-    {
-      "time": "2026-07-10T16:34:49.565Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-10T16:34:49.743Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FRMI, DSC, MRNA, EWTX, AXTI, IONS, BEAM, BKD, IBRX, ARWR"
-    },
-    {
-      "time": "2026-07-10T16:35:01.953Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "FRMI: price $6.41 < $20 (short floor)  •  DSC: price $6.09 < $20 (short floor)  •  MRNA: relVol 0.5× < 2.5× (todayVol 4.9M)  •  EWTX: net up over ~5d ($39.56→$44.14) — no short into uptrend  •  AXTI: net up over ~5d ($56.62→$57.18) — no short into uptrend  •  IONS: relVol 1.8× < 2.5× (todayVol 5.8M)  •  BEAM: relVol 0.6× < 2.5× (todayVol 1.7M)  •  BKD: price $14.03 < $20 (short floor)  •  IBRX: price $8.15 < $20 (short floor)  •  ARWR: relVol 0.5× < 2.5× (todayVol 1.3M)  •  ALMS: net up over ~5d ($26.50→$28.00) — no short into uptrend  •  TARS: relVol 0.6× < 2.5× (todayVol 0.7M)"
-    },
-    {
-      "time": "2026-07-10T16:35:01.953Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-10T16:45:13.326Z",
-      "type": "INFO",
-      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-10T16:45:13.820Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-13T15:59:45.877Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T16:09:59.536Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T16:10:00.055Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, SPCX, CXH, KMTS, SNDK, AEHR, AIR"
+    },
+    {
+      "time": "2026-07-13T16:10:00.380Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FIG, CLF, PBF, VG, TMDX, NOG, TEAM, PARR, INTU, CVI"
+    },
+    {
+      "time": "2026-07-13T16:10:00.380Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-13T16:10:18.696Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "FIG: relVol 0.5× < 2× (todayVol 11.7M)  •  CLF: price $9.81 < $15  •  PBF: relVol 0.3× < 2× (todayVol 0.9M)  •  VG: price $13.15 < $15  •  TMDX: relVol 0.6× < 2× (todayVol 0.6M)  •  NOG: relVol 0.3× < 2× (todayVol 1.4M)  •  TEAM: relVol 0.5× < 2× (todayVol 2.0M)  •  PARR: avgVol 0.9M < 1M  •  INTU: relVol 0.4× < 2× (todayVol 2.1M)  •  CVI: relVol 0.3× < 2× (todayVol 0.3M)  •  CBZ: avgVol 0.8M < 1M  •  SM: relVol 0.4× < 2× (todayVol 1.5M)"
+    },
+    {
+      "time": "2026-07-13T16:10:18.696Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T16:10:18.921Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AXTI, APP, RGC, SNDK, ALAB, FIZZ, SEZL, SKHY, LQDA, ALM"
+    },
+    {
+      "time": "2026-07-13T16:10:31.321Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "AXTI: relVol 0.6× < 2.5× (todayVol 5.4M)  •  APP: relVol 0.6× < 2.5× (todayVol 3.6M)  •  RGC: price $5.24 < $20 (short floor)  •  SNDK: relVol 0.5× < 2.5× (todayVol 6.4M)  •  ALAB: relVol 0.3× < 2.5× (todayVol 1.8M)  •  FIZZ: avgVol 0.7M < 1M  •  SEZL: avgVol 0.7M < 1M  •  SKHY: no daily candles  •  LQDA: relVol 0.4× < 2.5× (todayVol 1.0M)  •  ALM: price $15.19 < $20 (short floor)  •  SHAZ: relVol 0.5× < 2.5× (todayVol 0.9M)  •  PLBL: price $7.46 < $20 (short floor)"
+    },
+    {
+      "time": "2026-07-13T16:10:31.322Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
