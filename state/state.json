@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-13T20:25:29.842Z",
+  "lastRun": "2026-07-13T21:27:55.472Z",
   "log": [
-    {
-      "time": "2026-07-13T15:48:39.044Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "AXTI, RGC, SNDK, SKHY, FIZZ, APP, ALAB, SEZL, LQDA, SHAZ"
-    },
-    {
-      "time": "2026-07-13T15:48:53.859Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "AXTI: relVol 0.5× < 2.5× (todayVol 4.9M)  •  RGC: price $5.25 < $20 (short floor)  •  SNDK: relVol 0.5× < 2.5× (todayVol 5.8M)  •  SKHY: no 5m candles  •  FIZZ: avgVol 0.7M < 1M  •  APP: relVol 0.5× < 2.5× (todayVol 3.0M)  •  ALAB: relVol 0.3× < 2.5× (todayVol 1.6M)  •  SEZL: avgVol 0.7M < 1M  •  LQDA: relVol 0.4× < 2.5× (todayVol 1.0M)  •  SHAZ: relVol 0.5× < 2.5× (todayVol 0.8M)  •  ALM: price $15.22 < $20 (short floor)  •  FRHC: avgVol 0.2M < 1M"
-    },
-    {
-      "time": "2026-07-13T15:48:53.859Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-13T15:59:07.603Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-13T20:25:29.842Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T21:27:54.999Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T21:27:55.063Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T21:27:55.472Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
