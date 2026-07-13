@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-13T16:31:37.295Z",
+  "lastRun": "2026-07-13T16:42:09.355Z",
   "log": [
-    {
-      "time": "2026-07-10T17:06:50.221Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, META, NVDA, SNDK, DAL, AMBK, BUKS"
-    },
-    {
-      "time": "2026-07-10T17:06:50.799Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "VOD, PLBL, EQPT, CRCL, WDFC, ALM, META, WHR, STLA, CCC"
-    },
-    {
-      "time": "2026-07-10T17:06:50.800Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-10T17:07:14.078Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "VOD: price $14.74 < $15  •  PLBL: no 5m candles  •  EQPT: relVol 1.5× < 2× (todayVol 4.1M)  •  CRCL: below VWAP (price $67.32 < VWAP $68.86)  •  WDFC: avgVol 0.2M < 1M  •  ALM: relVol 0.7× < 2× (todayVol 4.1M)  •  META: relVol 1.4× < 2× (todayVol 26.6M)  •  WHR: relVol 0.7× < 2× (todayVol 1.7M)  •  STLA: price $5.55 < $15  •  CCC: price $5.84 < $15  •  REZI: relVol 1.1× < 2× (todayVol 1.5M)  •  KB: avgVol 0.4M < 1M"
-    },
-    {
-      "time": "2026-07-10T17:07:14.078Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-10T17:07:14.267Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FRMI, MRNA, DSC, IONS, BEAM, AXTI, EWTX, IBRX, BKD, TARS"
-    },
-    {
-      "time": "2026-07-10T17:07:27.976Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "FRMI: price $6.39 < $20 (short floor)  •  MRNA: relVol 0.5× < 2.5× (todayVol 5.4M)  •  DSC: price $6.26 < $20 (short floor)  •  IONS: relVol 1.9× < 2.5× (todayVol 6.4M)  •  BEAM: relVol 0.7× < 2.5× (todayVol 1.8M)  •  AXTI: net up over ~5d ($56.62→$57.46) — no short into uptrend  •  EWTX: net up over ~5d ($39.56→$44.43) — no short into uptrend  •  IBRX: price $8.15 < $20 (short floor)  •  BKD: price $14.06 < $20 (short floor)  •  TARS: relVol 0.7× < 2.5× (todayVol 0.8M)  •  ARWR: relVol 0.6× < 2.5× (todayVol 1.5M)  •  MBX: net up over ~5d ($57.80→$60.99) — no short into uptrend"
-    },
-    {
-      "time": "2026-07-10T17:07:27.976Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-10T17:17:46.111Z",
-      "type": "INFO",
-      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-10T17:17:47.239Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-13T16:31:37.295Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T16:41:48.028Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T16:41:48.255Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, SPCX, CXH, KMTS, SNDK, AEHR, AIR"
+    },
+    {
+      "time": "2026-07-13T16:41:48.538Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 17",
+      "detail": "VOD, REZI, NU, PATH, NFLX, T, RIG, AAPL, AMZN, PLTR"
+    },
+    {
+      "time": "2026-07-13T16:41:48.538Z",
+      "type": "INFO",
+      "msg": "Scanning 46 candidates",
+      "detail": "17 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-13T16:42:04.067Z",
+      "type": "INFO",
+      "msg": "Rejections (46)",
+      "detail": "VOD: relVol 1.2× < 2× (todayVol 5.0M)  •  REZI: relVol 0.5× < 2× (todayVol 0.7M)  •  NU: price $13.77 < $15  •  PATH: price $11.92 < $15  •  NFLX: gap 2.1% < 4% (price $74.89 vs priorClose $73.37)  •  T: gap 1.5% < 4% (price $21.46 vs priorClose $21.13)  •  RIG: price $5.24 < $15  •  AAPL: gap 0.3% < 4% (price $316.27 vs priorClose $315.32)  •  AMZN: gap 1.2% < 4% (price $248.23 vs priorClose $245.34)  •  PLTR: gap 2.3% < 4% (price $129.72 vs priorClose $126.79)  •  VZ: gap 1.3% < 4% (price $42.65 vs priorClose $42.12)  •  PFE: gap 1.1% < 4% (price $24.42 vs priorClose $24.17)"
+    },
+    {
+      "time": "2026-07-13T16:42:04.068Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T16:42:04.258Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 15",
+      "detail": "AXTI, SHAZ, BTDR, WULF, QBTS, OUST, MRCY, AGX, NRIX, IBRX"
+    },
+    {
+      "time": "2026-07-13T16:42:09.355Z",
+      "type": "INFO",
+      "msg": "Short rejections (15)",
+      "detail": "AXTI: relVol 0.6× < 2.5× (todayVol 6.1M)  •  SHAZ: relVol 0.7× < 2.5× (todayVol 1.3M)  •  BTDR: price $12.28 < $20 (short floor)  •  WULF: relVol 0.4× < 2.5× (todayVol 12.3M)  •  QBTS: price $18.76 < $20 (short floor)  •  OUST: relVol 0.3× < 2.5× (todayVol 1.7M)  •  MRCY: avgVol 0.8M < 1M  •  AGX: avgVol 0.3M < 1M  •  NRIX: relVol 0.2× < 2.5× (todayVol 0.6M)  •  IBRX: price $7.82 < $20 (short floor)  •  BEAM: relVol 0.5× < 2.5× (todayVol 1.4M)  •  FRMI: price $6.29 < $20 (short floor)"
+    },
+    {
+      "time": "2026-07-13T16:42:09.355Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
