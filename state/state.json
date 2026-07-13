@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-13T19:44:42.220Z",
+  "lastRun": "2026-07-13T19:54:52.335Z",
   "log": [
-    {
-      "time": "2026-07-13T15:37:38.464Z",
-      "type": "INFO",
-      "msg": "Scanning 46 candidates",
-      "detail": "17 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-13T15:37:52.679Z",
-      "type": "INFO",
-      "msg": "Rejections (46)",
-      "detail": "VOD: relVol 1.0× < 2× (todayVol 4.1M)  •  PATH: price $12.09 < $15  •  NFLX: gap 1.8% < 4% (price $74.72 vs priorClose $73.37)  •  T: gap 1.3% < 4% (price $21.41 vs priorClose $21.13)  •  F: price $14.03 < $15  •  RIG: price $5.28 < $15  •  AAPL: gap 0.3% < 4% (price $316.32 vs priorClose $315.32)  •  AMZN: gap 1.4% < 4% (price $248.86 vs priorClose $245.34)  •  ABEV: price $3.08 < $15  •  PLTR: gap 2.8% < 4% (price $130.40 vs priorClose $126.79)  •  VZ: gap 1.2% < 4% (price $42.63 vs priorClose $42.12)  •  PFE: gap 1.3% < 4% (price $24.48 vs priorClose $24.17)"
-    },
-    {
-      "time": "2026-07-13T15:37:52.679Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-13T15:37:52.910Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-13T19:44:42.220Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T19:54:52.228Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T19:54:52.334Z",
+      "type": "INFO",
+      "msg": "EOD review (6 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-13T19:54:52.335Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
