@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-14T19:51:59.032Z",
+  "lastRun": "2026-07-14T20:02:13.316Z",
   "log": [
-    {
-      "time": "2026-07-14T15:42:36.723Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "SKHY: no daily candles  •  CLSK: price $13.61 < $15  •  BMNR: relVol 0.6× < 2× (todayVol 24.0M)  •  TSEM: relVol 1.5× < 2× (todayVol 2.7M)  •  CHRN: avgVol 0.4M < 1M  •  AXTI: relVol 0.5× < 2× (todayVol 5.1M)  •  YSS: relVol 0.3× < 2× (todayVol 0.4M)  •  AAOI: relVol 0.4× < 2× (todayVol 4.6M)  •  NTSK: price $14.23 < $15  •  BB: price $11.35 < $15  •  OKTA: relVol 0.6× < 2× (todayVol 2.1M)  •  CRWD: relVol 0.5× < 2× (todayVol 5.0M)"
-    },
-    {
-      "time": "2026-07-14T15:42:36.723Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-14T15:42:36.949Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "IBM, DNLI, ERIC, TDC, BIIB, VIRT, MBX, KD, HCA, SYK"
-    },
     {
       "time": "2026-07-14T15:42:49.172Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-14T19:51:59.032Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T20:02:12.839Z",
+      "type": "INFO",
+      "msg": "Account: $99932.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T20:02:12.896Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T20:02:13.316Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
