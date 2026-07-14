@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-07-13",
+  "dailyDate": "2026-07-14",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-13T21:27:55.472Z",
+  "lastRun": "2026-07-14T12:47:30.767Z",
   "log": [
-    {
-      "time": "2026-07-13T15:59:07.603Z",
-      "type": "INFO",
-      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-13T15:59:07.868Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, SPCX, CXH, KMTS, SNDK, AEHR, AIR"
-    },
-    {
-      "time": "2026-07-13T15:59:08.479Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "FIG, TMDX, TEAM, PBF, NOG, VG, CBZ, PARR, FA, VERX"
-    },
-    {
-      "time": "2026-07-13T15:59:08.479Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-07-13T15:59:31.567Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-07-13T21:27:55.472Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T12:47:30.500Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T12:47:30.662Z",
+      "type": "INFO",
+      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T12:47:30.671Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T12:47:30.767Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
