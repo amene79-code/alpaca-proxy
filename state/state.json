@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-14T18:26:05.381Z",
+  "lastRun": "2026-07-14T18:37:02.988Z",
   "log": [
-    {
-      "time": "2026-07-13T20:15:17.921Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-13T20:25:29.520Z",
-      "type": "INFO",
-      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-13T20:25:29.596Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-13T20:25:29.842Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-13T21:27:54.999Z",
-      "type": "INFO",
-      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-13T21:27:55.063Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-13T21:27:55.472Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-14T12:47:30.500Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-14T12:47:30.662Z",
-      "type": "INFO",
-      "msg": "Account: $99937.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-14T12:47:30.671Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-14T18:26:05.381Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T18:36:21.197Z",
+      "type": "INFO",
+      "msg": "Account: $99932.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T18:36:21.786Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, MSFT, IBM, SPCX, BNY, CXH, KMTS, ORCL"
+    },
+    {
+      "time": "2026-07-14T18:36:22.422Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SKHY, CLSK, BMNR, CHRN, ATAI, AXTI, TGB, TSEM, YSS, AAOI"
+    },
+    {
+      "time": "2026-07-14T18:36:22.422Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-14T18:36:46.636Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "SKHY: no daily candles  •  CLSK: price $13.71 < $15  •  BMNR: relVol 0.9× < 2× (todayVol 34.0M)  •  CHRN: avgVol 0.4M < 1M  •  ATAI: price $5.69 < $15  •  AXTI: relVol 0.7× < 2× (todayVol 7.1M)  •  TGB: price $7.99 < $15  •  TSEM: below VWAP (price $260.60 < VWAP $261.94)  •  YSS: relVol 0.7× < 2× (todayVol 0.9M)  •  AAOI: relVol 0.7× < 2× (todayVol 7.6M)  •  CRWD: relVol 0.7× < 2× (todayVol 7.9M)  •  ONDS: price $7.38 < $15"
+    },
+    {
+      "time": "2026-07-14T18:36:46.636Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T18:36:46.959Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "IBM, ERIC, DNLI, TDC, PSNY, WULF, HCA, THC, MMED, GEHC"
+    },
+    {
+      "time": "2026-07-14T18:37:02.988Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "IBM: above VWAP (price $219.24 > VWAP $218.92) — not holding breakdown  •  ERIC: price $10.13 < $20 (short floor)  •  DNLI: relVol 1.9× < 2.5× (todayVol 3.9M)  •  TDC: relVol 0.9× < 2.5× (todayVol 3.5M)  •  PSNY: price $16.68 < $20 (short floor)  •  WULF: price $19.30 < $20 (short floor)  •  HCA: relVol 1.9× < 2.5× (todayVol 3.1M)  •  THC: relVol 1.5× < 2.5× (todayVol 1.9M)  •  MMED: price $14.98 < $20 (short floor)  •  GEHC: relVol 1.3× < 2.5× (todayVol 6.3M)  •  NBIS: net up over ~5d ($195.19→$195.82) — no short into uptrend  •  VIRT: relVol 1.1× < 2.5× (todayVol 1.5M)"
+    },
+    {
+      "time": "2026-07-14T18:37:02.988Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
