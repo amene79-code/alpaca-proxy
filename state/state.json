@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-14T19:41:47.586Z",
+  "lastRun": "2026-07-14T19:51:59.032Z",
   "log": [
-    {
-      "time": "2026-07-14T15:42:16.736Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, MSFT, IBM, SPCX, BNY, CXH, KMTS, ORCL"
-    },
-    {
-      "time": "2026-07-14T15:42:17.229Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SKHY, CLSK, BMNR, TSEM, CHRN, AXTI, YSS, AAOI, NTSK, BB"
-    },
-    {
-      "time": "2026-07-14T15:42:17.229Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-07-14T15:42:36.723Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-14T19:41:47.586Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T19:51:58.798Z",
+      "type": "INFO",
+      "msg": "Account: $99932.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T19:51:59.032Z",
+      "type": "INFO",
+      "msg": "EOD review (9 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-14T19:51:59.032Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
