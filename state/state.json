@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-15T18:25:49.402Z",
+  "lastRun": "2026-07-15T18:37:05.975Z",
   "log": [
-    {
-      "time": "2026-07-14T20:22:49.053Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-14T21:04:09.805Z",
-      "type": "INFO",
-      "msg": "Account: $99932.18 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-14T21:04:09.832Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-14T21:04:09.978Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-15T12:05:06.566Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-15T12:05:06.700Z",
-      "type": "INFO",
-      "msg": "Account: $99932.16 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-15T12:05:06.741Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-15T12:05:06.947Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-15T14:46:04.802Z",
-      "type": "INFO",
-      "msg": "Account: $99932.16 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-15T14:46:05.253Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-15T18:25:49.402Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T18:36:05.032Z",
+      "type": "INFO",
+      "msg": "Account: $99914.34 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T18:36:06.025Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "IBM, MU, HOVR, BNY, SRKE, MSFT, ASML, NFLX"
+    },
+    {
+      "time": "2026-07-15T18:36:06.754Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "LCID, PYPL, AEHR, CHRN, MANE, CLSK, MNSO, BABA, MAAS, ERAS"
+    },
+    {
+      "time": "2026-07-15T18:36:06.754Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-15T18:36:41.336Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "LCID: price $5.72 < $15  •  PYPL: ATR 0.36% < 0.5%  •  AEHR: below VWAP (price $88.42 < VWAP $97.47)  •  CHRN: avgVol 0.4M < 1M  •  MANE: avgVol 0.8M < 1M  •  CLSK: price $14.31 < $15  •  MNSO: price $12.73 < $15  •  BABA: relVol 1.1× < 2× (todayVol 16.4M)  •  MAAS: avgVol 0.2M < 1M  •  ERAS: relVol 0.8× < 2× (todayVol 5.1M)  •  MESO: avgVol 0.2M < 1M  •  SAH: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-07-15T18:36:41.336Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T18:36:41.536Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "CELC, PNR, AAOI, DELL, UTI, CVSA, ALM, QNT, P, PGR"
+    },
+    {
+      "time": "2026-07-15T18:37:05.975Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "CELC: above VWAP (price $93.22 > VWAP $92.57) — not holding breakdown  •  PNR: above VWAP (price $64.87 > VWAP $63.88) — not holding breakdown  •  AAOI: relVol 0.7× < 2.5× (todayVol 7.4M)  •  DELL: relVol 1.2× < 2.5× (todayVol 9.9M)  •  UTI: avgVol 0.9M < 1M  •  CVSA: avgVol 0.4M < 1M  •  ALM: price $14.11 < $20 (short floor)  •  QNT: relVol 0.4× < 2.5× (todayVol 1.4M)  •  P: relVol 0.7× < 2.5× (todayVol 2.2M)  •  PGR: relVol 1.0× < 2.5× (todayVol 3.8M)  •  LEGN: relVol 1.6× < 2.5× (todayVol 4.0M)  •  PRDO: avgVol 0.7M < 1M"
+    },
+    {
+      "time": "2026-07-15T18:37:05.975Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
