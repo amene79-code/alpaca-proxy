@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-15T19:20:58.489Z",
+  "lastRun": "2026-07-15T19:31:14.421Z",
   "log": [
-    {
-      "time": "2026-07-15T15:20:13.615Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PNR: relVol 2.4× < 2.5× (todayVol 5.8M)  •  CELC: above opening-range low (price $89.57 > ORL $85.00)  •  SNDK: relVol 0.6× < 2.5× (todayVol 7.2M)  •  AAOI: relVol 0.4× < 2.5× (todayVol 4.1M)  •  DELL: relVol 0.7× < 2.5× (todayVol 5.1M)  •  P: relVol 0.3× < 2.5× (todayVol 0.9M)  •  ALM: price $14.22 < $20 (short floor)  •  SKHY: no daily candles  •  ELV: relVol 0.9× < 2.5× (todayVol 1.5M)  •  CVSA: avgVol 0.4M < 1M  •  NTAP: gap -2.0% > -4% (not gapping down enough)  •  MU: gap -3.4% > -4% (not gapping down enough)"
-    },
-    {
-      "time": "2026-07-15T15:20:13.615Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-15T15:30:27.901Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-07-15T19:20:58.489Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T19:31:13.738Z",
+      "type": "INFO",
+      "msg": "Account: $99914.34 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T19:31:14.421Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
