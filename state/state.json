@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-15T19:41:26.529Z",
+  "lastRun": "2026-07-15T19:51:38.016Z",
   "log": [
-    {
-      "time": "2026-07-15T15:30:28.897Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-15T15:31:00.837Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "LCID: price $5.49 < $15  •  AEHR: below VWAP (price $92.37 < VWAP $100.35)  •  MANE: avgVol 0.8M < 1M  •  CHRN: avgVol 0.4M < 1M  •  JBLU: price $5.64 < $15  •  BABA: no daily candles  •  MNSO: price $12.63 < $15  •  COMP: price $12.69 < $15  •  RH: avgVol 0.9M < 1M  •  KRMN: relVol 0.6× < 2× (todayVol 1.8M)  •  AEO: relVol 0.5× < 2× (todayVol 2.2M)  •  BLK: avgVol 0.9M < 1M"
-    },
-    {
-      "time": "2026-07-15T15:31:00.837Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-15T15:31:01.040Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-15T19:41:26.529Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T19:51:37.861Z",
+      "type": "INFO",
+      "msg": "Account: $99914.34 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T19:51:38.016Z",
+      "type": "INFO",
+      "msg": "EOD review (9 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T19:51:38.016Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
