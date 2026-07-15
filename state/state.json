@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-15T20:22:18.342Z",
+  "lastRun": "2026-07-15T20:56:57.050Z",
   "log": [
-    {
-      "time": "2026-07-15T15:42:10.398Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PNR, CELC, AAOI, DELL, SNDK, SKHY, P, CVSA, PRDO, DOCN"
-    },
-    {
-      "time": "2026-07-15T15:42:32.317Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PNR: relVol 2.5× < 2.5× (todayVol 6.2M)  •  CELC: above opening-range low (price $89.16 > ORL $85.00)  •  AAOI: relVol 0.4× < 2.5× (todayVol 4.4M)  •  DELL: relVol 0.8× < 2.5× (todayVol 5.9M)  •  SNDK: relVol 0.7× < 2.5× (todayVol 7.9M)  •  SKHY: no daily candles  •  P: relVol 0.4× < 2.5× (todayVol 1.1M)  •  CVSA: avgVol 0.4M < 1M  •  PRDO: avgVol 0.7M < 1M  •  DOCN: relVol 0.4× < 2.5× (todayVol 1.6M)  •  ELV: relVol 1.0× < 2.5× (todayVol 1.6M)  •  NTAP: relVol 0.3× < 2.5× (todayVol 0.9M)"
-    },
-    {
-      "time": "2026-07-15T15:42:32.318Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-15T15:52:48.898Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-15T20:22:18.342Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T20:56:56.719Z",
+      "type": "INFO",
+      "msg": "Account: $99914.34 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T20:56:56.788Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-15T20:56:57.050Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
