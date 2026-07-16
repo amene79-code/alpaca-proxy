@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-16T15:42:29.541Z",
+  "lastRun": "2026-07-16T15:53:32.733Z",
   "log": [
-    {
-      "time": "2026-07-15T17:30:19.568Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "IBM, MU, HOVR, BNY, SRKE, MSFT, ASML, NFLX"
-    },
-    {
-      "time": "2026-07-15T17:30:20.123Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "LCID, PYPL, AEHR, CHRN, MANE, MNSO, JBLU, MAAS, ERAS, HTFL"
-    },
-    {
-      "time": "2026-07-15T17:30:20.123Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-15T17:30:38.668Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "LCID: price $5.55 < $15  •  PYPL: ATR 0.31% < 0.5%  •  AEHR: below VWAP (price $88.03 < VWAP $98.17)  •  CHRN: avgVol 0.4M < 1M  •  MANE: avgVol 0.8M < 1M  •  MNSO: price $12.81 < $15  •  JBLU: price $5.61 < $15  •  MAAS: avgVol 0.2M < 1M  •  ERAS: relVol 0.7× < 2× (todayVol 4.0M)  •  HTFL: relVol 0.2× < 2× (todayVol 0.5M)  •  EVCM: price $11.97 < $15  •  RH: avgVol 0.9M < 1M"
-    },
-    {
-      "time": "2026-07-15T17:30:38.668Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-15T17:30:38.821Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "CELC, PNR, DELL, AAOI, P, QNT, UTI, WDC, SNDK, SKHY"
-    },
-    {
-      "time": "2026-07-15T17:30:52.862Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "CELC: above VWAP (price $93.76 > VWAP $92.26) — not holding breakdown  •  PNR: above opening-range low (price $63.53 > ORL $57.60)  •  DELL: relVol 1.1× < 2.5× (todayVol 8.4M)  •  AAOI: relVol 0.6× < 2.5× (todayVol 6.5M)  •  P: relVol 0.6× < 2.5× (todayVol 1.9M)  •  QNT: relVol 0.4× < 2.5× (todayVol 1.2M)  •  UTI: avgVol 0.9M < 1M  •  WDC: relVol 0.5× < 2.5× (todayVol 4.7M)  •  SNDK: relVol 1.0× < 2.5× (todayVol 12.1M)  •  SKHY: no daily candles  •  CVSA: avgVol 0.4M < 1M  •  NTAP: relVol 0.5× < 2.5× (todayVol 1.5M)"
-    },
-    {
-      "time": "2026-07-15T17:30:52.862Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-15T17:41:05.642Z",
-      "type": "INFO",
-      "msg": "Account: $99914.34 | 0 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-15T17:41:06.044Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-16T15:42:29.541Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-16T15:52:43.088Z",
+      "type": "INFO",
+      "msg": "Account: $99914.32 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-16T15:52:43.424Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, ASTS, SNDK, TSM, MSFT, UNH, TFC, HOVR"
+    },
+    {
+      "time": "2026-07-16T15:52:44.141Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ATAI, LCID, ABT, MAN, MAAS, GHRS, RHI, SMG, MATX, ERIE"
+    },
+    {
+      "time": "2026-07-16T15:52:44.141Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-16T15:53:13.779Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "ATAI: price $7.13 < $15  •  LCID: price $6.72 < $15  •  ABT: relVol 1.1× < 2× (todayVol 15.1M)  •  MAN: relVol 1.6× < 2× (todayVol 2.4M)  •  MAAS: avgVol 0.2M < 1M  •  GHRS: avgVol 0.3M < 1M  •  RHI: relVol 0.6× < 2× (todayVol 1.5M)  •  SMG: avgVol 0.8M < 1M  •  MATX: avgVol 0.3M < 1M  •  ERIE: avgVol 0.3M < 1M  •  SION: avgVol 0.5M < 1M  •  BCC: avgVol 0.5M < 1M"
+    },
+    {
+      "time": "2026-07-16T15:53:13.779Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-16T15:53:14.367Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "CHRN, ASTS, AXTI, NBIS, RKLB, PL, BE, SNDK, IQMX, GLW"
+    },
+    {
+      "time": "2026-07-16T15:53:32.733Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "CHRN: avgVol 0.4M < 1M  •  ASTS: relVol 1.4× < 2.5× (todayVol 27.8M)  •  AXTI: relVol 0.5× < 2.5× (todayVol 4.5M)  •  NBIS: relVol 0.5× < 2.5× (todayVol 9.2M)  •  RKLB: relVol 0.6× < 2.5× (todayVol 14.7M)  •  PL: relVol 0.5× < 2.5× (todayVol 6.3M)  •  BE: relVol 0.5× < 2.5× (todayVol 7.3M)  •  SNDK: relVol 0.7× < 2.5× (todayVol 8.4M)  •  IQMX: price $11.00 < $20 (short floor)  •  GLW: relVol 0.5× < 2.5× (todayVol 8.5M)  •  MXL: relVol 0.4× < 2.5× (todayVol 1.3M)  •  BB: price $9.62 < $20 (short floor)"
+    },
+    {
+      "time": "2026-07-16T15:53:32.733Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
