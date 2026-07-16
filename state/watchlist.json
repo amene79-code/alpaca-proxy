@@ -1,22 +1,75 @@
 {
   "tickers": [
     {
-      "ticker": "IBM",
-      "score": 64.8,
+      "ticker": "MU",
+      "score": 56.7,
       "sources": [
         "Reddit WSB"
       ],
-      "strategy": "Score 64.8 — Reddit WSB",
+      "strategy": "Score 56.7 — Reddit WSB",
       "direction": "bullish",
       "confidence": 90
     },
     {
-      "ticker": "MU",
-      "score": 10.5,
+      "ticker": "ASTS",
+      "score": 24.5,
+      "sources": [
+        "Pre-market",
+        "Reddit WSB"
+      ],
+      "strategy": "Score 24.5 — Pre-market, Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "SNDK",
+      "score": 15.7,
       "sources": [
         "Reddit WSB"
       ],
-      "strategy": "Score 10.5 — Reddit WSB",
+      "strategy": "Score 15.7 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "TSM",
+      "score": 14,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 14 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "MSFT",
+      "score": 13.4,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 13.4 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "UNH",
+      "score": 12.9,
+      "sources": [
+        "Earnings Today",
+        "Pre-market",
+        "Reddit WSB"
+      ],
+      "strategy": "Score 12.9 — Earnings Today, Pre-market, Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "TFC",
+      "score": 10,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 10 — Earnings Today",
       "direction": "bullish",
       "confidence": 90
     },
@@ -31,86 +84,217 @@
       "confidence": 90
     },
     {
-      "ticker": "BNY",
-      "score": 10,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 10 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "SRKE",
-      "score": 10,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 10 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "MSFT",
-      "score": 7.7,
+      "ticker": "SPCX",
+      "score": 9,
       "sources": [
         "Reddit WSB"
       ],
-      "strategy": "Score 7.7 — Reddit WSB",
+      "strategy": "Score 9 — Reddit WSB",
       "direction": "bullish",
-      "confidence": 77
-    },
-    {
-      "ticker": "ASML",
-      "score": 7.6,
-      "sources": [
-        "Reddit WSB"
-      ],
-      "strategy": "Score 7.6 — Reddit WSB",
-      "direction": "bullish",
-      "confidence": 76
+      "confidence": 90
     },
     {
       "ticker": "NFLX",
-      "score": 6.9,
+      "score": 8.3,
       "sources": [
         "Earnings Today",
         "Reddit WSB"
       ],
-      "strategy": "Score 6.9 — Earnings Today, Reddit WSB",
+      "strategy": "Score 8.3 — Earnings Today, Reddit WSB",
       "direction": "bullish",
-      "confidence": 69
+      "confidence": 83
     },
     {
-      "ticker": "NBIS",
-      "score": 6.9,
+      "ticker": "MAN",
+      "score": 7.9,
       "sources": [
-        "Reddit WSB"
+        "Earnings Today",
+        "Pre-market"
       ],
-      "strategy": "Score 6.9 — Reddit WSB",
+      "strategy": "Score 7.9 — Earnings Today, Pre-market",
       "direction": "bullish",
-      "confidence": 69
+      "confidence": 79
+    },
+    {
+      "ticker": "ABT",
+      "score": 7.7,
+      "sources": [
+        "Earnings Today",
+        "Pre-market"
+      ],
+      "strategy": "Score 7.7 — Earnings Today, Pre-market",
+      "direction": "bullish",
+      "confidence": 77
     },
     {
       "ticker": "NVDA",
-      "score": 6.7,
+      "score": 6.2,
       "sources": [
-        "Pre-market",
         "Reddit WSB"
       ],
-      "strategy": "Score 6.7 — Pre-market, Reddit WSB",
+      "strategy": "Score 6.2 — Reddit WSB",
       "direction": "bullish",
-      "confidence": 67
+      "confidence": 62
     },
     {
-      "ticker": "ORCL",
-      "score": 5.6,
+      "ticker": "RKLB",
+      "score": 6.1,
       "sources": [
         "Reddit WSB"
       ],
-      "strategy": "Score 5.6 — Reddit WSB",
+      "strategy": "Score 6.1 — Reddit WSB",
       "direction": "bullish",
-      "confidence": 56
+      "confidence": 61
+    },
+    {
+      "ticker": "AAPL",
+      "score": 5.2,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 5.2 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 52
+    },
+    {
+      "ticker": "ALV",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "BALY",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "BOTJ",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "BTM",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "CCBC",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "CCFN",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "FITB",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "LOAN",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "NVVE",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "ORBN",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "RBCAA",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "RF",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "SPFI",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
+      "ticker": "TRV",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
     },
     {
       "ticker": "AA",
@@ -121,188 +305,8 @@
       "strategy": "Score 5 — Earnings Today",
       "direction": "bullish",
       "confidence": 50
-    },
-    {
-      "ticker": "ABT",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "ADN",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "ASII",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "ATLO",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "AUSI",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "AXXA",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "BANF",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "BCBP",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "BCML",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "BHB",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "BSVN",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "BZYR",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "CAHO",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "CASS",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "CBFC",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "CBSH",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "CE",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
-    },
-    {
-      "ticker": "CFG",
-      "score": 5,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 5 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 50
     }
   ],
-  "date": "15/07/2026",
-  "ts": 1784117096066
+  "date": "16/07/2026",
+  "ts": 1784211231146
 }
