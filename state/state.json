@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-16T20:12:08.077Z",
+  "lastRun": "2026-07-16T20:22:21.873Z",
   "log": [
-    {
-      "time": "2026-07-16T16:15:20.358Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "CHRN, ASTS, AXTI, PL, RKLB, SNDK, BE, NBIS, IQMX, MXL"
-    },
-    {
-      "time": "2026-07-16T16:15:37.005Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "CHRN: avgVol 0.4M < 1M  •  ASTS: relVol 1.5× < 2.5× (todayVol 30.1M)  •  AXTI: relVol 0.5× < 2.5× (todayVol 4.7M)  •  PL: relVol 0.6× < 2.5× (todayVol 7.3M)  •  RKLB: relVol 0.6× < 2.5× (todayVol 16.2M)  •  SNDK: relVol 0.7× < 2.5× (todayVol 8.9M)  •  BE: relVol 0.5× < 2.5× (todayVol 7.9M)  •  NBIS: relVol 0.6× < 2.5× (todayVol 10.5M)  •  IQMX: price $10.83 < $20 (short floor)  •  MXL: relVol 0.4× < 2.5× (todayVol 1.5M)  •  NVTS: price $11.85 < $20 (short floor)  •  XE: price $13.48 < $20 (short floor)"
-    },
-    {
-      "time": "2026-07-16T16:15:37.005Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-16T16:25:50.134Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-16T20:12:08.077Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-16T20:22:21.530Z",
+      "type": "INFO",
+      "msg": "Account: $99872.09 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-16T20:22:21.609Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-16T20:22:21.873Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
