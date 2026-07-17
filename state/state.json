@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 2,
-  "dailyDate": "2026-07-16",
+  "dailyTrades": 0,
+  "dailyDate": "2026-07-17",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-16T20:53:39.291Z",
+  "lastRun": "2026-07-17T11:10:44.295Z",
   "log": [
-    {
-      "time": "2026-07-16T16:25:50.619Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-16T16:26:09.749Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "ATAI: price $7.14 < $15  •  LCID: price $6.66 < $15  •  ABT: relVol 1.2× < 2× (todayVol 16.6M)  •  MAN: relVol 1.7× < 2× (todayVol 2.6M)  •  MAAS: avgVol 0.2M < 1M  •  RHI: relVol 0.7× < 2× (todayVol 1.6M)  •  GHRS: avgVol 0.3M < 1M  •  ERIE: avgVol 0.3M < 1M  •  SMG: avgVol 0.8M < 1M  •  MATX: avgVol 0.3M < 1M  •  TFII: avgVol 0.4M < 1M  •  CTAS: relVol 0.6× < 2× (todayVol 1.3M)"
-    },
-    {
-      "time": "2026-07-16T16:26:09.749Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T16:26:09.897Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "CHRN, ASTS, AXTI, RKLB, PL, NBIS, IQMX, BE, BB, MXL"
-    },
     {
       "time": "2026-07-16T16:26:21.928Z",
       "type": "INFO",
@@ -1271,12 +1247,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-07-17T11:10:44.070Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T11:10:44.154Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T11:10:44.177Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T11:10:44.294Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "MAN",
-    "CDNA"
-  ],
+  "tradedToday": [],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
