@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-17T16:41:33.293Z",
+  "lastRun": "2026-07-17T16:52:18.196Z",
   "log": [
-    {
-      "time": "2026-07-16T18:25:31.128Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "MU, ASTS, SNDK, TSM, MSFT, UNH, TFC, HOVR"
-    },
-    {
-      "time": "2026-07-16T18:25:31.907Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ATAI, ABT, MAN, MAAS, CDNA, RHI, KARO, SMG, ERIE, MATX"
-    },
-    {
-      "time": "2026-07-16T18:25:31.907Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-16T18:25:32.943Z",
-      "type": "SIGNAL",
-      "msg": "MAN — score 8 | gap 33.9% | relVol 2.4× | RSI 49",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T18:25:33.814Z",
-      "type": "SIGNAL",
-      "msg": "CDNA — score 8 | gap 31.3% | relVol 2.9× | RSI 79",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T18:25:59.034Z",
-      "type": "INFO",
-      "msg": "Rejections (58)",
-      "detail": "ATAI: price $7.11 < $15  •  ABT: relVol 1.5× < 2× (todayVol 21.0M)  •  MAAS: avgVol 0.2M < 1M  •  RHI: relVol 1.0× < 2× (todayVol 2.4M)  •  KARO: avgVol 0.1M < 1M  •  SMG: avgVol 0.8M < 1M  •  ERIE: avgVol 0.3M < 1M  •  MATX: avgVol 0.3M < 1M  •  REXR: relVol 0.8× < 2× (todayVol 2.2M)  •  CTAS: relVol 0.8× < 2× (todayVol 1.9M)  •  AVAV: relVol 0.6× < 2× (todayVol 1.4M)  •  DXCM: relVol 0.8× < 2× (todayVol 3.8M)"
-    },
-    {
-      "time": "2026-07-16T18:25:59.034Z",
-      "type": "INFO",
-      "msg": "Top signal: MAN (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T18:25:59.034Z",
-      "type": "INFO",
-      "msg": "SKIP MAN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T18:25:59.034Z",
-      "type": "BUY",
-      "msg": "Placing 38× CDNA @ ~$39.07",
-      "detail": "gap 31.3% | risk $21.28 | SL $38.51 | TP $40.55 | R:R 2.6 | "
-    },
     {
       "time": "2026-07-16T18:25:59.224Z",
       "type": "BUY",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-17T16:41:33.293Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T16:51:46.272Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T16:51:46.573Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, NFLX, SPCX, SNDK, ASTS, MSFT, RKLB, AAPL"
+    },
+    {
+      "time": "2026-07-17T16:51:46.888Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "LCID, ASTS, SLS, SKHY, SION, NBIS, ORKA, MU, TRVI, MANE"
+    },
+    {
+      "time": "2026-07-17T16:51:46.888Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-17T16:52:08.626Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "LCID: price $7.18 < $15  •  ASTS: relVol 1.0× < 2× (todayVol 19.1M)  •  SLS: price $13.36 < $15  •  SKHY: relVol 0.7× < 2× (todayVol 46.4M)  •  SION: avgVol 0.5M < 1M  •  NBIS: relVol 0.8× < 2× (todayVol 14.4M)  •  ORKA: relVol 1.0× < 2× (todayVol 1.8M)  •  MU: relVol 0.8× < 2× (todayVol 39.5M)  •  TRVI: relVol 1.5× < 2× (todayVol 4.9M)  •  MANE: avgVol 0.9M < 1M  •  SIND: price $14.00 < $15  •  BHVN: relVol 0.5× < 2× (todayVol 1.5M)"
+    },
+    {
+      "time": "2026-07-17T16:52:08.626Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T16:52:08.778Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 28",
+      "detail": "ISRG, CDNS, SNPS, MAAS, NFLX, INDB, MARA, SEZL, KMT, AXON"
+    },
+    {
+      "time": "2026-07-17T16:52:18.196Z",
+      "type": "INFO",
+      "msg": "Short rejections (28)",
+      "detail": "ISRG: relVol 2.1× < 2.5× (todayVol 6.7M)  •  CDNS: relVol 1.3× < 2.5× (todayVol 3.0M)  •  SNPS: relVol 1.3× < 2.5× (todayVol 2.6M)  •  MAAS: price $19.50 < $20 (short floor)  •  NFLX: relVol 1.7× < 2.5× (todayVol 89.4M)  •  INDB: avgVol 0.5M < 1M  •  MARA: price $10.75 < $20 (short floor)  •  SEZL: avgVol 0.7M < 1M  •  KMT: net up over ~5d ($33.60→$33.66) — no short into uptrend  •  AXON: relVol 0.4× < 2.5× (todayVol 0.4M)  •  ECO: avgVol 0.5M < 1M  •  IRTC: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-07-17T16:52:18.196Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
