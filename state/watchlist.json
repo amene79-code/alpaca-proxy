@@ -2,132 +2,96 @@
   "tickers": [
     {
       "ticker": "MU",
-      "score": 56.7,
+      "score": 46.5,
       "sources": [
         "Reddit WSB"
       ],
-      "strategy": "Score 56.7 — Reddit WSB",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "ASTS",
-      "score": 24.5,
-      "sources": [
-        "Pre-market",
-        "Reddit WSB"
-      ],
-      "strategy": "Score 24.5 — Pre-market, Reddit WSB",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "SNDK",
-      "score": 15.7,
-      "sources": [
-        "Reddit WSB"
-      ],
-      "strategy": "Score 15.7 — Reddit WSB",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "TSM",
-      "score": 14,
-      "sources": [
-        "Reddit WSB"
-      ],
-      "strategy": "Score 14 — Reddit WSB",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "MSFT",
-      "score": 13.4,
-      "sources": [
-        "Reddit WSB"
-      ],
-      "strategy": "Score 13.4 — Reddit WSB",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "UNH",
-      "score": 12.9,
-      "sources": [
-        "Earnings Today",
-        "Pre-market",
-        "Reddit WSB"
-      ],
-      "strategy": "Score 12.9 — Earnings Today, Pre-market, Reddit WSB",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "TFC",
-      "score": 10,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 10 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "HOVR",
-      "score": 10,
-      "sources": [
-        "Earnings Today"
-      ],
-      "strategy": "Score 10 — Earnings Today",
-      "direction": "bullish",
-      "confidence": 90
-    },
-    {
-      "ticker": "SPCX",
-      "score": 9,
-      "sources": [
-        "Reddit WSB"
-      ],
-      "strategy": "Score 9 — Reddit WSB",
+      "strategy": "Score 46.5 — Reddit WSB",
       "direction": "bullish",
       "confidence": 90
     },
     {
       "ticker": "NFLX",
-      "score": 8.3,
+      "score": 27.6,
       "sources": [
-        "Earnings Today",
         "Reddit WSB"
       ],
-      "strategy": "Score 8.3 — Earnings Today, Reddit WSB",
+      "strategy": "Score 27.6 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "SPCX",
+      "score": 14.8,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 14.8 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "SNDK",
+      "score": 13.8,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 13.8 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "ASTS",
+      "score": 12.5,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 12.5 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "MSFT",
+      "score": 12.5,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 12.5 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 90
+    },
+    {
+      "ticker": "RKLB",
+      "score": 8.3,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 8.3 — Reddit WSB",
       "direction": "bullish",
       "confidence": 83
     },
     {
-      "ticker": "MAN",
-      "score": 7.9,
+      "ticker": "AAPL",
+      "score": 6.9,
       "sources": [
-        "Earnings Today",
-        "Pre-market"
+        "Reddit WSB"
       ],
-      "strategy": "Score 7.9 — Earnings Today, Pre-market",
+      "strategy": "Score 6.9 — Reddit WSB",
       "direction": "bullish",
-      "confidence": 79
+      "confidence": 69
     },
     {
-      "ticker": "ABT",
-      "score": 7.7,
+      "ticker": "NBIS",
+      "score": 6.9,
       "sources": [
-        "Earnings Today",
-        "Pre-market"
+        "Reddit WSB"
       ],
-      "strategy": "Score 7.7 — Earnings Today, Pre-market",
+      "strategy": "Score 6.9 — Reddit WSB",
       "direction": "bullish",
-      "confidence": 77
+      "confidence": 69
     },
     {
-      "ticker": "NVDA",
+      "ticker": "GOOGL",
       "score": 6.2,
       "sources": [
         "Reddit WSB"
@@ -137,7 +101,7 @@
       "confidence": 62
     },
     {
-      "ticker": "RKLB",
+      "ticker": "GOOG",
       "score": 6.1,
       "sources": [
         "Reddit WSB"
@@ -145,16 +109,6 @@
       "strategy": "Score 6.1 — Reddit WSB",
       "direction": "bullish",
       "confidence": 61
-    },
-    {
-      "ticker": "AAPL",
-      "score": 5.2,
-      "sources": [
-        "Reddit WSB"
-      ],
-      "strategy": "Score 5.2 — Reddit WSB",
-      "direction": "bullish",
-      "confidence": 52
     },
     {
       "ticker": "ALV",
@@ -287,6 +241,16 @@
       "confidence": 50
     },
     {
+      "ticker": "TFC",
+      "score": 5,
+      "sources": [
+        "Earnings Today"
+      ],
+      "strategy": "Score 5 — Earnings Today",
+      "direction": "bullish",
+      "confidence": 50
+    },
+    {
       "ticker": "TRV",
       "score": 5,
       "sources": [
@@ -297,16 +261,46 @@
       "confidence": 50
     },
     {
-      "ticker": "AA",
-      "score": 5,
+      "ticker": "AMD",
+      "score": 4.4,
       "sources": [
-        "Earnings Today"
+        "Reddit WSB"
       ],
-      "strategy": "Score 5 — Earnings Today",
+      "strategy": "Score 4.4 — Reddit WSB",
       "direction": "bullish",
-      "confidence": 50
+      "confidence": 44
+    },
+    {
+      "ticker": "WEN",
+      "score": 3.8,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 3.8 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 38
+    },
+    {
+      "ticker": "ORCL",
+      "score": 3.7,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 3.7 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 37
+    },
+    {
+      "ticker": "TSLA",
+      "score": 3.7,
+      "sources": [
+        "Reddit WSB"
+      ],
+      "strategy": "Score 3.7 — Reddit WSB",
+      "direction": "bullish",
+      "confidence": 37
     }
   ],
-  "date": "16/07/2026",
-  "ts": 1784211231146
+  "date": "17/07/2026",
+  "ts": 1784286634154
 }
