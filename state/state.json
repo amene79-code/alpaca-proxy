@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-17T20:26:26.134Z",
+  "lastRun": "2026-07-17T20:36:47.836Z",
   "log": [
-    {
-      "time": "2026-07-17T15:46:32.145Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ISRG: relVol 1.8× < 2.5× (todayVol 5.8M)  •  CDNS: relVol 1.0× < 2.5× (todayVol 2.3M)  •  MAAS: price $19.12 < $20 (short floor)  •  DJT: price $8.81 < $20 (short floor)  •  SNPS: relVol 1.1× < 2.5× (todayVol 2.1M)  •  CBRS: relVol 0.3× < 2.5× (todayVol 2.5M)  •  NFLX: relVol 1.5× < 2.5× (todayVol 77.5M)  •  BULL: price $6.99 < $20 (short floor)  •  MARA: price $10.65 < $20 (short floor)  •  INDB: avgVol 0.5M < 1M  •  ALAB: relVol 0.4× < 2.5× (todayVol 2.1M)  •  KMT: relVol 0.5× < 2.5× (todayVol 0.5M)"
-    },
-    {
-      "time": "2026-07-17T15:46:32.145Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T15:56:45.102Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-17T15:56:45.570Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-17T20:26:26.133Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T20:36:47.510Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T20:36:47.588Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T20:36:47.836Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
