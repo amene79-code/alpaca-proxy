@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-17T17:57:20.270Z",
+  "lastRun": "2026-07-17T18:08:23.054Z",
   "log": [
-    {
-      "time": "2026-07-16T19:20:38.001Z",
-      "type": "INFO",
-      "msg": "Top signal: MAN (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T19:20:38.001Z",
-      "type": "INFO",
-      "msg": "SKIP MAN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T19:20:38.153Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ASTS, CHRN, MXL, AXTI, BB, BE, SNDK, NBIS, MANE, NVTS"
-    },
-    {
-      "time": "2026-07-16T19:20:57.312Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ASTS: relVol 2.2× < 2.5× (todayVol 43.9M)  •  CHRN: avgVol 0.4M < 1M  •  MXL: relVol 0.8× < 2.5× (todayVol 3.0M)  •  AXTI: relVol 0.7× < 2.5× (todayVol 6.9M)  •  BB: price $9.15 < $20 (short floor)  •  BE: relVol 0.9× < 2.5× (todayVol 13.4M)  •  SNDK: relVol 1.1× < 2.5× (todayVol 14.0M)  •  NBIS: relVol 1.1× < 2.5× (todayVol 19.3M)  •  MANE: avgVol 0.8M < 1M  •  NVTS: price $11.68 < $20 (short floor)  •  RKLB: relVol 1.0× < 2.5× (todayVol 25.2M)  •  SKHY: relVol 0.6× < 2.5× (todayVol 41.3M)"
-    },
-    {
-      "time": "2026-07-16T19:20:57.312Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T19:31:10.641Z",
-      "type": "INFO",
-      "msg": "Account: $99872.09 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T19:31:11.094Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T19:41:27.991Z",
-      "type": "INFO",
-      "msg": "Account: $99872.09 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-16T19:41:28.542Z",
-      "type": "INFO",
-      "msg": "EOD review (19 min to close) — cutting weak positions",
-      "detail": ""
-    },
     {
       "time": "2026-07-16T19:41:28.542Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-17T17:57:20.269Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T18:07:35.114Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T18:07:35.683Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "MU, NFLX, SPCX, SNDK, ASTS, MSFT, RKLB, AAPL"
+    },
+    {
+      "time": "2026-07-17T18:07:37.307Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 49, kept 40",
+      "detail": "LCID, ASTS, TRVI, COAG, SLS, MANE, SIND, SKHY, DNTH, SION"
+    },
+    {
+      "time": "2026-07-17T18:07:37.307Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-17T18:08:04.507Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "LCID: price $7.11 < $15  •  ASTS: relVol 1.1× < 2× (todayVol 22.9M)  •  TRVI: relVol 1.7× < 2× (todayVol 5.5M)  •  COAG: avgVol 0.4M < 1M  •  SLS: price $12.97 < $15  •  MANE: avgVol 0.9M < 1M  •  SIND: price $14.21 < $15  •  SKHY: relVol 0.8× < 2× (todayVol 53.7M)  •  DNTH: relVol 0.5× < 2× (todayVol 0.7M)  •  SION: avgVol 0.6M < 1M  •  AGL: avgVol 0.3M < 1M  •  ORKA: relVol 1.0× < 2× (todayVol 1.9M)"
+    },
+    {
+      "time": "2026-07-17T18:08:04.507Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-17T18:08:04.821Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "ISRG, CDNS, SNPS, MAAS, NFLX, KMT, IRTC, GMED, INDB, NWL"
+    },
+    {
+      "time": "2026-07-17T18:08:23.054Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "ISRG: relVol 2.4× < 2.5× (todayVol 7.8M)  •  CDNS: relVol 1.5× < 2.5× (todayVol 3.5M)  •  SNPS: relVol 1.6× < 2.5× (todayVol 3.2M)  •  MAAS: price $19.13 < $20 (short floor)  •  NFLX: relVol 1.9× < 2.5× (todayVol 100.6M)  •  KMT: relVol 0.7× < 2.5× (todayVol 0.7M)  •  IRTC: avgVol 0.6M < 1M  •  GMED: relVol 0.5× < 2.5× (todayVol 1.0M)  •  INDB: avgVol 0.5M < 1M  •  NWL: price $5.14 < $20 (short floor)  •  SNEX: relVol 0.6× < 2.5× (todayVol 0.6M)  •  CSW: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-07-17T18:08:23.054Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
