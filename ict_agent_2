@@ -226,6 +226,8 @@ label{color:#7aaa90;font-size:11px}
   <div class="micro" style="margin-top:4px">⚙ Trade Parameters</div>
   <div class="g4">
     <div><div class="fl">Position size ($)</div><input id="cfgSize" type="number" value="500" min="10"></div>
+    <div><div class="fl">Min price ($)</div><input id="cfgMinPrice" type="number" value="30" min="0" step="1"></div>
+    <div><div class="fl">Risk per trade ($)</div><input id="cfgRisk" type="number" value="15" min="1" step="1"></div>
     <div><div class="fl">Max positions</div><input id="cfgMaxPos" type="number" value="20" min="1"></div>
     <div><div class="fl">Max trades/day</div><input id="cfgMaxDaily" type="number" value="20" min="1"></div>
     <div><div class="fl">Trailing stop (%)</div><input id="cfgTrail" type="number" value="1.5" min="0.5" step="0.5"></div>
@@ -702,7 +704,18 @@ async function analyzeSetup(ticker){
   ]);
   if(!htfC||htfC.length<20||!etfC||etfC.length<20) return null;
 
-  const price=etfC[etfC.length-1].close;
+  // H3 — LIVE ENTRY PRICE. The last candle close from Yahoo can be 5-20+ min
+  // stale, so FVG position, SL/TP and sizing were all computed off a delayed
+  // price. Pull a live quote from Alpaca and use its mid; fall back to the candle
+  // close only if the quote is unavailable.
+  let price=etfC[etfC.length-1].close;
+  try{
+    const q=await alpaca("GET",`/v2/stocks/${ticker}/quotes/latest`);
+    const bid=+q?.quote?.bp||0, ask=+q?.quote?.ap||0;
+    if(bid>0&&ask>0) price=+(((bid+ask)/2)).toFixed(2);
+    else if(ask>0) price=ask;
+    else if(bid>0) price=bid;
+  }catch{ /* keep candle close as fallback */ }
 
   // Phase 2: Market Structure on HTF
   const struct=analyzeStructure(htfC);
@@ -732,18 +745,36 @@ async function analyzeSetup(ticker){
     return null;
   }
 
-  // Determine long or short setup
+  // Determine long or short setup.
+  // FIX: previously an if/else-if that ALWAYS checked long first — so whenever
+  // price sat in both a bull and bear FVG (common with overlapping gaps), long
+  // won and short was never even evaluated. Combined with "long allows neutral
+  // trend" this made the agent long-only in practice. Now both are eligible and
+  // we pick by (a) trend alignment, then (b) best FVG quality — a fair contest.
   let setupType=null;
   let activeFVG=null;
   let activeOB=null;
 
-  if(inBullFVG&&(direction==="long"||direction==="both")&&struct.trend!=="bearish"){
-    setupType="long";
-    activeFVG=bullFVGs.sort((a,b)=>b.score-a.score)[0];
+  const longEligible = inBullFVG && (direction==="long"||direction==="both") && struct.trend!=="bearish";
+  const shortEligible = inBearFVG && (direction==="short"||direction==="both") && struct.trend!=="bullish";
+
+  const bestBull = longEligible  ? bullFVGs.sort((a,b)=>b.score-a.score)[0] : null;
+  const bestBear = shortEligible ? bearFVGs.sort((a,b)=>b.score-a.score)[0] : null;
+
+  if(longEligible && shortEligible){
+    // Both possible — resolve by trend first, then FVG quality.
+    if(struct.trend==="bullish"){ setupType="long";  activeFVG=bestBull; }
+    else if(struct.trend==="bearish"){ setupType="short"; activeFVG=bestBear; }
+    else { // neutral trend: take the higher-quality FVG
+      if((bestBear?.score||0) > (bestBull?.score||0)){ setupType="short"; activeFVG=bestBear; }
+      else { setupType="long"; activeFVG=bestBull; }
+    }
+  } else if(longEligible){ setupType="long";  activeFVG=bestBull; }
+  else if(shortEligible){ setupType="short"; activeFVG=bestBear; }
+
+  if(setupType==="long"&&activeFVG){
     activeOB=obs.filter(ob=>ob.type==="bullish"&&ob.top<=activeFVG.top&&ob.bottom>=activeFVG.bottom*0.99)[0]||null;
-  } else if(inBearFVG&&(direction==="short"||direction==="both")&&struct.trend!=="bullish"){
-    setupType="short";
-    activeFVG=bearFVGs.sort((a,b)=>b.score-a.score)[0];
+  } else if(setupType==="short"&&activeFVG){
     activeOB=obs.filter(ob=>ob.type==="bearish"&&ob.bottom>=activeFVG.bottom&&ob.top<=activeFVG.top*1.01)[0]||null;
   }
 
@@ -779,8 +810,11 @@ async function analyzeSetup(ticker){
   if(setupType==="long"&&cvdDiv==="bearish"){score-=1;reasons.push("CVD bearish div (-1)");}
   if(setupType==="short"&&cvdDiv==="bullish"){score-=1;reasons.push("CVD bullish div (-1)");}
 
-  // Liquidity sweep in setup direction
-  const recentSweep=sweeps.filter(s=>s.direction===setupType)[0];
+  // Liquidity sweep in setup direction. Sweeps carry direction "bullish"/"bearish";
+  // setupType is "long"/"short" — map them (previously compared directly, so this
+  // score NEVER applied to any trade, long or short — a dead ICT signal).
+  const wantSweepDir=setupType==="long"?"bullish":"bearish";
+  const recentSweep=sweeps.filter(s=>s.direction===wantSweepDir)[0];
   if(recentSweep){score+=3;reasons.push(`Liquidity sweep ${recentSweep.type} (+3)`);}
 
   // BOS confirmation
@@ -1007,7 +1041,15 @@ async function placeICTOrder(setup, cfg){
   const{ticker, setupType, price, sl, tp, rr}=setup;
   const side=setupType==="long"?"buy":"sell";
   const riskPS=Math.abs(price-sl);
-  const qty=Math.max(1,Math.floor(cfg.size/price));
+  // H2 — RISK-BASED SIZING. Previously qty = floor(size/price), which ignored the
+  // stop distance entirely — so a wide-stop and tight-stop trade risked wildly
+  // different amounts despite "same size". Now size so each trade risks ~the same
+  // dollar amount to its stop (cfg.riskPerTrade), capped by the dollar-exposure
+  // ceiling (cfg.size) so a very tight stop can't blow up share count.
+  const riskBudget=cfg.riskPerTrade||15;
+  const qtyByRisk = riskPS>0 ? Math.floor(riskBudget/riskPS) : 0;
+  const qtyByExposure = Math.floor(cfg.size/price);
+  const qty=Math.max(1, Math.min(qtyByRisk||qtyByExposure, qtyByExposure));
   const useLimit=cfg.orderType==="limit";
   const limitPrice=useLimit?+(price*(setupType==="long"?1.002:0.998)).toFixed(2):null;
 
@@ -1200,6 +1242,8 @@ async function runCycle(){
 async function _runCycle(){
   const cfg={
     size:      +document.getElementById("cfgSize").value||500,
+    minPrice:  +document.getElementById("cfgMinPrice").value||0,
+    riskPerTrade: +document.getElementById("cfgRisk").value||15,
     maxPos:    +document.getElementById("cfgMaxPos").value||20,
     maxDaily:  +document.getElementById("cfgMaxDaily").value||20,
     trail:     +document.getElementById("cfgTrail").value/100,
@@ -1263,6 +1307,13 @@ async function _runCycle(){
       setPhase("fvg");
       const setup=await analyzeSetup(ticker);
       if(!setup) continue;
+      // H1 — PRICE FLOOR. Cheap stocks (<$30) drove almost the entire historical
+      // loss (sub-$30 names: -$182 across 13 trades, 1 win; $30+: +$55). Reject
+      // anything below the configured floor before it can trade.
+      if(setup.price < cfg.minPrice){
+        log("SKIP",`${ticker} — price $${setup.price.toFixed(2)} < min $${cfg.minPrice} floor`);
+        continue;
+      }
       if(setup.score<cfg.minScore){
         log("SKIP",`${ticker} — score ${setup.score} < min ${cfg.minScore}`);
         continue;
