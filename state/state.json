@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-20T18:24:15.731Z",
+  "lastRun": "2026-07-20T18:34:56.047Z",
   "log": [
-    {
-      "time": "2026-07-17T19:25:05.716Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T19:35:16.293Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T19:35:16.429Z",
-      "type": "INFO",
-      "msg": "EOD review (25 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T19:35:16.429Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T19:45:29.093Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T19:45:29.595Z",
-      "type": "INFO",
-      "msg": "EOD review (15 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T19:45:29.595Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T19:55:42.762Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T19:55:43.633Z",
-      "type": "INFO",
-      "msg": "EOD review (5 min to close) — cutting weak positions",
-      "detail": ""
-    },
     {
       "time": "2026-07-17T19:55:43.633Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-20T18:24:15.730Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T18:34:27.728Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T18:34:27.904Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "DPZ, ALK, ALLY, AMSF, AQUC, ARR, ASRV, AUB"
+    },
+    {
+      "time": "2026-07-20T18:34:28.175Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "EROC, BETA, GLXY, VG, NUVB, ELF, BMNR, KC, TTAN, PTON"
+    },
+    {
+      "time": "2026-07-20T18:34:28.175Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-20T18:34:47.666Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "EROC: price $12.12 < $15  •  BETA: relVol 1.0× < 2× (todayVol 1.4M)  •  GLXY: relVol 0.4× < 2× (todayVol 3.1M)  •  VG: price $14.38 < $15  •  NUVB: price $6.26 < $15  •  ELF: relVol 0.6× < 2× (todayVol 1.8M)  •  BMNR: relVol 0.6× < 2× (todayVol 21.1M)  •  KC: price $10.15 < $15  •  TTAN: relVol 0.7× < 2× (todayVol 1.2M)  •  PTON: price $6.49 < $15  •  BTDR: price $11.37 < $15  •  AXTI: relVol 0.5× < 2× (todayVol 4.7M)"
+    },
+    {
+      "time": "2026-07-20T18:34:47.667Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T18:34:47.813Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 14",
+      "detail": "SNEX, PENG, MAAS, AAON, SEDG, WRBY, SION, AEHR, RYAAY, BE"
+    },
+    {
+      "time": "2026-07-20T18:34:56.046Z",
+      "type": "INFO",
+      "msg": "Short rejections (14)",
+      "detail": "SNEX: gap 2.0% > -4% (not gapping down enough)  •  PENG: relVol 0.9× < 2.5× (todayVol 4.5M)  •  MAAS: price $17.99 < $20 (short floor)  •  AAON: avgVol 1.0M < 1M  •  SEDG: relVol 0.8× < 2.5× (todayVol 1.9M)  •  WRBY: relVol 0.7× < 2.5× (todayVol 2.0M)  •  SION: avgVol 0.6M < 1M  •  AEHR: net up over ~5d ($68.02→$76.25) — no short into uptrend  •  RYAAY: relVol 1.0× < 2.5× (todayVol 1.6M)  •  BE: relVol 0.8× < 2.5× (todayVol 12.0M)  •  CSL: avgVol 0.6M < 1M  •  CVNA: relVol 0.5× < 2.5× (todayVol 5.5M)"
+    },
+    {
+      "time": "2026-07-20T18:34:56.046Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
