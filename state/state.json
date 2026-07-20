@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-20T19:49:52.519Z",
+  "lastRun": "2026-07-20T20:00:05.677Z",
   "log": [
-    {
-      "time": "2026-07-20T15:41:25.547Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "IREN: relVol 1.0× < 2× (todayVol 40.0M)  •  CIFR: relVol 0.8× < 2× (todayVol 17.8M)  •  ACHR: price $5.01 < $15  •  CLSK: price $14.50 < $15  •  MARA: price $11.74 < $15  •  APLD: relVol 0.6× < 2× (todayVol 10.7M)  •  HUT: relVol 1.0× < 2× (todayVol 4.2M)  •  MRVL: relVol 0.4× < 2× (todayVol 12.4M)  •  NUVB: price $6.40 < $15  •  WULF: relVol 0.4× < 2× (todayVol 13.7M)  •  ONDS: price $6.82 < $15  •  CHRN: avgVol 0.4M < 1M"
-    },
-    {
-      "time": "2026-07-20T15:41:25.548Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-20T15:41:25.680Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 34",
-      "detail": "SNEX, PENG, HDB, TEM, SION, SEDG, MAAS, AAON, PBLS, SLS"
-    },
     {
       "time": "2026-07-20T15:41:40.696Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-20T19:49:52.519Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T20:00:05.292Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T20:00:05.355Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T20:00:05.677Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
