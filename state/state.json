@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-07-17",
+  "dailyDate": "2026-07-20",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-17T21:29:14.578Z",
+  "lastRun": "2026-07-20T11:18:09.226Z",
   "log": [
-    {
-      "time": "2026-07-17T15:57:16.568Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "ASTS: relVol 0.8× < 2× (todayVol 15.6M)  •  SKHY: relVol 0.6× < 2× (todayVol 38.5M)  •  SLS: price $13.10 < $15  •  LCID: price $6.88 < $15  •  TRVI: relVol 1.4× < 2× (todayVol 4.5M)  •  NBIS: relVol 0.7× < 2× (todayVol 11.8M)  •  MANE: avgVol 0.9M < 1M  •  ORKA: relVol 0.8× < 2× (todayVol 1.6M)  •  SION: avgVol 0.5M < 1M  •  SIND: price $14.00 < $15  •  TRV: relVol 0.9× < 2× (todayVol 1.9M)  •  BHVN: relVol 0.4× < 2× (todayVol 1.4M)"
-    },
-    {
-      "time": "2026-07-17T15:57:16.568Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-17T15:57:16.732Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ISRG, CDNS, MAAS, SNPS, NFLX, DJT, MARA, INDB, BULL, KMT"
-    },
-    {
-      "time": "2026-07-17T15:57:37.087Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ISRG: relVol 1.9× < 2.5× (todayVol 6.0M)  •  CDNS: relVol 1.1× < 2.5× (todayVol 2.5M)  •  MAAS: price $19.12 < $20 (short floor)  •  SNPS: relVol 1.1× < 2.5× (todayVol 2.2M)  •  NFLX: relVol 1.5× < 2.5× (todayVol 79.1M)  •  DJT: price $8.92 < $20 (short floor)  •  MARA: price $10.68 < $20 (short floor)  •  INDB: avgVol 0.5M < 1M  •  BULL: price $7.05 < $20 (short floor)  •  KMT: relVol 0.5× < 2.5× (todayVol 0.5M)  •  CBRS: relVol 0.4× < 2.5× (todayVol 2.7M)  •  SEZL: avgVol 0.7M < 1M"
-    },
     {
       "time": "2026-07-17T15:57:37.087Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-07-17T21:29:14.578Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T11:18:08.975Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T11:18:09.065Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T11:18:09.087Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T11:18:09.226Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
