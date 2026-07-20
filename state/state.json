@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-20T19:39:33.024Z",
+  "lastRun": "2026-07-20T19:49:52.519Z",
   "log": [
-    {
-      "time": "2026-07-20T15:41:00.705Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "DPZ, ALK, ALLY, AMSF, AQUC, ARR, ASRV, AUB"
-    },
-    {
-      "time": "2026-07-20T15:41:00.981Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "IREN, CIFR, ACHR, CLSK, MARA, APLD, HUT, MRVL, NUVB, WULF"
-    },
-    {
-      "time": "2026-07-20T15:41:00.981Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
     {
       "time": "2026-07-20T15:41:25.547Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-20T19:39:33.024Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T19:49:52.075Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T19:49:52.518Z",
+      "type": "INFO",
+      "msg": "EOD review (11 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T19:49:52.519Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
