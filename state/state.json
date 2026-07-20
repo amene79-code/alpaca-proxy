@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-20T20:30:53.509Z",
+  "lastRun": "2026-07-20T21:34:32.033Z",
   "log": [
-    {
-      "time": "2026-07-20T15:52:16.109Z",
-      "type": "INFO",
-      "msg": "Short rejections (16)",
-      "detail": "SNEX: gap 2.6% > -4% (not gapping down enough)  •  PENG: relVol 0.7× < 2.5× (todayVol 3.4M)  •  SEDG: relVol 0.5× < 2.5× (todayVol 1.2M)  •  AAON: avgVol 1.0M < 1M  •  MAAS: price $18.50 < $20 (short floor)  •  WRBY: relVol 0.3× < 2.5× (todayVol 0.9M)  •  AEHR: net up over ~5d ($68.02→$76.32) — no short into uptrend  •  SION: avgVol 0.6M < 1M  •  RYAAY: relVol 0.7× < 2.5× (todayVol 1.2M)  •  ADPT: net up over ~5d ($21.02→$21.77) — no short into uptrend  •  BE: relVol 0.5× < 2.5× (todayVol 7.9M)  •  GRAL: avgVol 0.5M < 1M"
-    },
-    {
-      "time": "2026-07-20T15:52:16.109Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-20T16:02:30.441Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-20T16:02:30.653Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-20T20:30:53.508Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T21:34:31.616Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T21:34:31.627Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T21:34:32.033Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
