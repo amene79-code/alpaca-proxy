@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-20T19:29:19.580Z",
+  "lastRun": "2026-07-20T19:39:33.024Z",
   "log": [
-    {
-      "time": "2026-07-20T15:30:47.742Z",
-      "type": "INFO",
-      "msg": "Short rejections (15)",
-      "detail": "SNEX: gap 2.3% > -4% (not gapping down enough)  •  PENG: relVol 0.6× < 2.5× (todayVol 3.2M)  •  MAAS: price $17.99 < $20 (short floor)  •  SEDG: relVol 0.5× < 2.5× (todayVol 1.0M)  •  AAON: avgVol 0.9M < 1M  •  SION: avgVol 0.6M < 1M  •  WRBY: relVol 0.3× < 2.5× (todayVol 0.7M)  •  RYAAY: relVol 0.7× < 2.5× (todayVol 1.1M)  •  BE: relVol 0.5× < 2.5× (todayVol 7.1M)  •  AEHR: net up over ~5d ($68.02→$77.14) — no short into uptrend  •  ADPT: net up over ~5d ($21.02→$21.87) — no short into uptrend  •  CSL: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-07-20T15:30:47.742Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-20T15:41:00.216Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-20T15:41:00.705Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-20T19:29:19.580Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T19:39:32.706Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T19:39:33.024Z",
+      "type": "INFO",
+      "msg": "EOD review (21 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-20T19:39:33.024Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
