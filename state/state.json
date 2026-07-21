@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-21T19:50:57.861Z",
+  "lastRun": "2026-07-21T20:01:12.658Z",
   "log": [
-    {
-      "time": "2026-07-21T15:12:07.005Z",
-      "type": "INFO",
-      "msg": "Short rejections (27)",
-      "detail": "BXBL: price $7.98 < $20 (short floor)  •  DHR: above VWAP (price $174.34 > VWAP $173.99) — not holding breakdown  •  MSCI: avgVol 0.7M < 1M  •  CHRN: avgVol 0.4M < 1M  •  FIG: relVol 0.5× < 2.5× (todayVol 10.8M)  •  RGEN: relVol 0.8× < 2.5× (todayVol 0.8M)  •  QLYS: avgVol 0.8M < 1M  •  TENB: relVol 0.3× < 2.5× (todayVol 1.3M)  •  GPC: relVol 0.6× < 2.5× (todayVol 1.3M)  •  VICR: avgVol 0.9M < 1M  •  NICE: avgVol 0.5M < 1M  •  EFX: net up over ~5d ($166.93→$168.68) — no short into uptrend"
-    },
-    {
-      "time": "2026-07-21T15:12:07.005Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T15:22:26.039Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-21T15:22:26.993Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-21T19:50:57.861Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T20:01:12.529Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T20:01:12.542Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T20:01:12.657Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
