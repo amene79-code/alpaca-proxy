@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-07-20",
+  "dailyDate": "2026-07-21",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-20T21:34:32.033Z",
+  "lastRun": "2026-07-21T15:01:17.461Z",
   "log": [
-    {
-      "time": "2026-07-20T16:02:30.653Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "DPZ, ALK, ALLY, AMSF, AQUC, ARR, ASRV, AUB"
-    },
-    {
-      "time": "2026-07-20T16:02:31.028Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "GLXY, NUVB, BETA, KC, AXTI, BTDR, BMNR, COHR, EROC, WULF"
-    },
-    {
-      "time": "2026-07-20T16:02:31.028Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-20T16:02:48.836Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "GLXY: relVol 0.3× < 2× (todayVol 2.0M)  •  NUVB: price $6.30 < $15  •  BETA: relVol 0.7× < 2× (todayVol 0.9M)  •  KC: price $10.22 < $15  •  AXTI: relVol 0.4× < 2× (todayVol 4.0M)  •  BTDR: price $11.48 < $15  •  BMNR: relVol 0.4× < 2× (todayVol 13.6M)  •  COHR: relVol 0.4× < 2× (todayVol 1.8M)  •  EROC: price $11.47 < $15  •  WULF: relVol 0.4× < 2× (todayVol 15.5M)  •  ELF: relVol 0.4× < 2× (todayVol 1.2M)  •  PTON: price $6.47 < $15"
-    },
-    {
-      "time": "2026-07-20T16:02:48.836Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-20T16:02:48.981Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 16",
-      "detail": "SNEX, PENG, SEDG, AAON, MAAS, WRBY, SION, AEHR, ADPT, RYAAY"
-    },
-    {
-      "time": "2026-07-20T16:02:54.628Z",
-      "type": "INFO",
-      "msg": "Short rejections (16)",
-      "detail": "SNEX: gap 2.7% > -4% (not gapping down enough)  •  PENG: relVol 0.7× < 2.5× (todayVol 3.4M)  •  SEDG: relVol 0.6× < 2.5× (todayVol 1.3M)  •  AAON: avgVol 1.0M < 1M  •  MAAS: price $18.35 < $20 (short floor)  •  WRBY: relVol 0.3× < 2.5× (todayVol 0.9M)  •  SION: avgVol 0.6M < 1M  •  AEHR: net up over ~5d ($68.02→$76.10) — no short into uptrend  •  ADPT: net up over ~5d ($21.02→$21.72) — no short into uptrend  •  RYAAY: relVol 0.8× < 2.5× (todayVol 1.2M)  •  GRAL: avgVol 0.5M < 1M  •  CMG: relVol 0.5× < 2.5× (todayVol 9.2M)"
-    },
-    {
-      "time": "2026-07-20T16:02:54.628Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-20T16:13:07.743Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-20T16:13:08.523Z",
       "type": "INFO",
@@ -1270,6 +1216,60 @@
       "time": "2026-07-20T21:34:32.033Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T15:00:51.830Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T15:00:51.922Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T15:00:52.786Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "NBIS, ONDS, SKHY, CIFR, AEHR, PVLA, MU, ASTS, RGC, HOOD"
+    },
+    {
+      "time": "2026-07-21T15:00:52.786Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-07-21T15:01:08.263Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "NBIS: relVol 0.5× < 2× (todayVol 8.8M)  •  ONDS: price $7.68 < $15  •  SKHY: relVol 0.2× < 2× (todayVol 14.9M)  •  CIFR: relVol 0.6× < 2× (todayVol 15.3M)  •  AEHR: relVol 0.8× < 2× (todayVol 2.2M)  •  PVLA: avgVol 0.3M < 1M  •  MU: relVol 0.3× < 2× (todayVol 17.6M)  •  ASTS: relVol 0.4× < 2× (todayVol 7.3M)  •  RGC: price $5.77 < $15  •  HOOD: relVol 0.3× < 2× (todayVol 7.6M)  •  DOCN: relVol 0.4× < 2× (todayVol 1.5M)  •  BE: relVol 0.3× < 2× (todayVol 4.9M)"
+    },
+    {
+      "time": "2026-07-21T15:01:08.263Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T15:01:08.748Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 22",
+      "detail": "BXBL, DHR, MSCI, CHRN, CALX, RGEN, VICR, FIG, TENB, EFX"
+    },
+    {
+      "time": "2026-07-21T15:01:17.461Z",
+      "type": "INFO",
+      "msg": "Short rejections (22)",
+      "detail": "BXBL: price $7.85 < $20 (short floor)  •  DHR: relVol 2.5× < 2.5× (todayVol 11.5M)  •  MSCI: avgVol 0.7M < 1M  •  CHRN: avgVol 0.4M < 1M  •  CALX: relVol 1.0× < 2.5× (todayVol 1.4M)  •  RGEN: avgVol 1.0M < 1M  •  VICR: avgVol 0.9M < 1M  •  FIG: relVol 0.4× < 2.5× (todayVol 9.9M)  •  TENB: relVol 0.3× < 2.5× (todayVol 1.2M)  •  EFX: net up over ~5d ($166.93→$168.05) — no short into uptrend  •  QLYS: avgVol 0.8M < 1M  •  GPC: relVol 0.6× < 2.5× (todayVol 1.2M)"
+    },
+    {
+      "time": "2026-07-21T15:01:17.461Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
       "detail": ""
     }
   ],
