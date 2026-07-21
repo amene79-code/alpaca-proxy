@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-21T19:30:28.681Z",
+  "lastRun": "2026-07-21T19:40:41.606Z",
   "log": [
-    {
-      "time": "2026-07-21T15:11:33.020Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T15:11:33.893Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NBIS, CIFR, ONDS, SKHY, AEHR, PVLA, MU, APLD, SHAZ, AAOI"
-    },
-    {
-      "time": "2026-07-21T15:11:33.893Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-07-21T15:11:53.128Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-21T19:30:28.680Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T19:40:41.457Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T19:40:41.606Z",
+      "type": "INFO",
+      "msg": "EOD review (20 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T19:40:41.606Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
