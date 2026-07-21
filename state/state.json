@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-21T19:40:41.606Z",
+  "lastRun": "2026-07-21T19:50:57.861Z",
   "log": [
-    {
-      "time": "2026-07-21T15:11:53.128Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "NBIS: relVol 0.5× < 2× (todayVol 9.4M)  •  CIFR: relVol 0.7× < 2× (todayVol 17.1M)  •  ONDS: price $7.68 < $15  •  SKHY: relVol 0.3× < 2× (todayVol 16.1M)  •  AEHR: relVol 0.8× < 2× (todayVol 2.3M)  •  PVLA: avgVol 0.3M < 1M  •  MU: relVol 0.4× < 2× (todayVol 19.1M)  •  APLD: relVol 0.4× < 2× (todayVol 8.1M)  •  SHAZ: relVol 0.2× < 2× (todayVol 0.5M)  •  AAOI: relVol 0.4× < 2× (todayVol 3.8M)  •  HOOD: relVol 0.3× < 2× (todayVol 8.1M)  •  BE: relVol 0.3× < 2× (todayVol 5.2M)"
-    },
-    {
-      "time": "2026-07-21T15:11:53.128Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T15:11:53.278Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 27",
-      "detail": "BXBL, DHR, MSCI, CHRN, FIG, RGEN, QLYS, TENB, GPC, VICR"
-    },
     {
       "time": "2026-07-21T15:12:07.005Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-21T19:40:41.606Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T19:50:57.545Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T19:50:57.861Z",
+      "type": "INFO",
+      "msg": "EOD review (10 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T19:50:57.861Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
