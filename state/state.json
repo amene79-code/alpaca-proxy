@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-21T18:37:00.268Z",
+  "lastRun": "2026-07-21T18:47:43.625Z",
   "log": [
-    {
-      "time": "2026-07-20T19:18:10.807Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-20T19:28:27.912Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-20T19:28:28.620Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "DPZ, ALK, ALLY, AMSF, AQUC, ARR, ASRV, AUB"
-    },
-    {
-      "time": "2026-07-20T19:28:29.042Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ACHR, IREN, CIFR, CLSK, MARA, EROC, XE, BETA, BMNR, ONDS"
-    },
-    {
-      "time": "2026-07-20T19:28:29.042Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-20T19:28:58.070Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "ACHR: price $5.26 < $15  •  IREN: relVol 1.7× < 2× (todayVol 71.7M)  •  CIFR: relVol 1.4× < 2× (todayVol 33.0M)  •  CLSK: price $14.54 < $15  •  MARA: price $11.62 < $15  •  EROC: price $12.02 < $15  •  XE: relVol 0.7× < 2× (todayVol 3.3M)  •  BETA: relVol 1.2× < 2× (todayVol 1.6M)  •  BMNR: relVol 0.6× < 2× (todayVol 23.9M)  •  ONDS: price $6.84 < $15  •  CHRN: avgVol 0.4M < 1M  •  HUT: relVol 1.3× < 2× (todayVol 5.8M)"
-    },
-    {
-      "time": "2026-07-20T19:28:58.071Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-20T19:28:58.258Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SNEX, PENG, HDB, TRVI, MAAS, IMOS, SEDG, PBLS, TEM, CAVA"
-    },
     {
       "time": "2026-07-20T19:29:19.580Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-07-21T18:37:00.268Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T18:47:15.494Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T18:47:16.289Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "NBIS, CIFR, SKHY, MU, AEHR, CBRS, RGC, PVLA, AAOI, MXL"
+    },
+    {
+      "time": "2026-07-21T18:47:16.289Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-07-21T18:47:30.056Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "NBIS: relVol 1.0× < 2× (todayVol 17.3M)  •  CIFR: relVol 1.4× < 2× (todayVol 35.1M)  •  SKHY: relVol 0.5× < 2× (todayVol 30.3M)  •  MU: relVol 0.7× < 2× (todayVol 36.9M)  •  AEHR: relVol 1.3× < 2× (todayVol 3.9M)  •  CBRS: relVol 0.6× < 2× (todayVol 4.5M)  •  RGC: price $6.04 < $15  •  PVLA: avgVol 0.3M < 1M  •  AAOI: relVol 0.8× < 2× (todayVol 7.5M)  •  MXL: relVol 0.7× < 2× (todayVol 2.5M)  •  ONDS: price $7.55 < $15  •  AXTI: relVol 0.7× < 2× (todayVol 6.0M)"
+    },
+    {
+      "time": "2026-07-21T18:47:30.056Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T18:47:30.392Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "BXBL, CHRN, DHR, MSCI, TENB, QLYS, FIG, NICE, AMG, MCRI"
+    },
+    {
+      "time": "2026-07-21T18:47:43.625Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "BXBL: price $8.17 < $20 (short floor)  •  CHRN: avgVol 0.4M < 1M  •  DHR: above VWAP (price $178.49 > VWAP $174.65) — not holding breakdown  •  MSCI: avgVol 0.8M < 1M  •  TENB: relVol 0.8× < 2.5× (todayVol 2.9M)  •  QLYS: avgVol 0.8M < 1M  •  FIG: relVol 1.0× < 2.5× (todayVol 22.6M)  •  NICE: avgVol 0.5M < 1M  •  AMG: avgVol 0.3M < 1M  •  MCRI: avgVol 0.2M < 1M  •  AS: relVol 1.4× < 2.5× (todayVol 5.3M)  •  BRZE: relVol 0.6× < 2.5× (todayVol 1.3M)"
+    },
+    {
+      "time": "2026-07-21T18:47:43.625Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
