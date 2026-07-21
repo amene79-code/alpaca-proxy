@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-21T20:21:39.976Z",
+  "lastRun": "2026-07-21T20:47:31.561Z",
   "log": [
-    {
-      "time": "2026-07-21T15:22:53.381Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T15:33:08.052Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T15:33:08.820Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CIFR, ONDS, NBIS, SKHY, MU, AEHR, PVLA, AXTI, MAAS, BE"
-    },
     {
       "time": "2026-07-21T15:33:08.820Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-21T20:21:39.976Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T20:47:31.250Z",
+      "type": "INFO",
+      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T20:47:31.329Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-21T20:47:31.561Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
