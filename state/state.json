@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-22T19:41:15.711Z",
+  "lastRun": "2026-07-22T19:51:29.138Z",
   "log": [
-    {
-      "time": "2026-07-22T15:40:44.949Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T15:40:45.412Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PEGA, BXBL, PATH, AIR, RDDT, MAAS, NAVN, NTSK, BMI, TEL"
-    },
-    {
-      "time": "2026-07-22T15:41:00.228Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PEGA: relVol 2.2× < 2.5× (todayVol 6.0M)  •  BXBL: price $7.01 < $20 (short floor)  •  PATH: price $10.61 < $20 (short floor)  •  AIR: avgVol 0.5M < 1M  •  RDDT: relVol 1.3× < 2.5× (todayVol 5.4M)  •  MAAS: price $18.03 < $20 (short floor)  •  NAVN: relVol 0.4× < 2.5× (todayVol 2.2M)  •  NTSK: price $12.14 < $20 (short floor)  •  BMI: no daily candles  •  TEL: relVol 1.6× < 2.5× (todayVol 3.9M)  •  BRZE: relVol 0.3× < 2.5× (todayVol 0.7M)  •  RDY: price $11.64 < $20 (short floor)"
-    },
     {
       "time": "2026-07-22T15:41:00.228Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-22T19:41:15.711Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T19:51:28.679Z",
+      "type": "INFO",
+      "msg": "Account: $99841.97 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T19:51:29.138Z",
+      "type": "INFO",
+      "msg": "EOD review (9 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T19:51:29.138Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
