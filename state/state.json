@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-22T20:11:52.869Z",
+  "lastRun": "2026-07-22T20:22:04.819Z",
   "log": [
-    {
-      "time": "2026-07-22T15:51:39.023Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T15:51:39.284Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "BXBL, PEGA, PATH, AIR, MAAS, BMI, RDDT, NAVN, NTSK, TEL"
-    },
-    {
-      "time": "2026-07-22T15:51:53.651Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "BXBL: price $6.70 < $20 (short floor)  •  PEGA: relVol 2.2× < 2.5× (todayVol 6.1M)  •  PATH: price $10.70 < $20 (short floor)  •  AIR: avgVol 0.5M < 1M  •  MAAS: price $18.03 < $20 (short floor)  •  BMI: avgVol 0.5M < 1M  •  RDDT: relVol 1.4× < 2.5× (todayVol 5.5M)  •  NAVN: relVol 0.5× < 2.5× (todayVol 2.3M)  •  NTSK: price $12.16 < $20 (short floor)  •  TEL: relVol 1.7× < 2.5× (todayVol 4.1M)  •  BKU: relVol 1.4× < 2.5× (todayVol 1.5M)  •  BRZE: relVol 0.3× < 2.5× (todayVol 0.7M)"
-    },
     {
       "time": "2026-07-22T15:51:53.651Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-22T20:11:52.869Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T20:22:04.661Z",
+      "type": "INFO",
+      "msg": "Account: $99841.97 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T20:22:04.688Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T20:22:04.819Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
