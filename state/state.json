@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-22T19:31:00.366Z",
+  "lastRun": "2026-07-22T19:41:15.711Z",
   "log": [
-    {
-      "time": "2026-07-22T15:40:22.510Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SMCI, ARWR, ONDS, RIOT, CDE, WAB, AUR, HL, WEGZY, PAG"
-    },
-    {
-      "time": "2026-07-22T15:40:22.510Z",
-      "type": "INFO",
-      "msg": "Scanning 58 candidates",
-      "detail": "40 screener + 24 watchlist"
-    },
-    {
-      "time": "2026-07-22T15:40:44.948Z",
-      "type": "INFO",
-      "msg": "Rejections (58)",
-      "detail": "ARWR: relVol 1.3× < 2× (todayVol 4.0M)  •  ONDS: price $8.30 < $15  •  RIOT: relVol 0.6× < 2× (todayVol 9.4M)  •  CDE: relVol 0.3× < 2× (todayVol 10.8M)  •  WAB: avgVol 0.9M < 1M  •  AUR: price $6.68 < $15  •  HL: relVol 0.3× < 2× (todayVol 11.7M)  •  WEGZY: price $9.20 < $15  •  PAG: avgVol 0.4M < 1M  •  CRWV: relVol 0.5× < 2× (todayVol 12.9M)  •  DELL: relVol 0.5× < 2× (todayVol 4.0M)  •  WFRD: relVol 0.5× < 2× (todayVol 0.8M)"
-    },
     {
       "time": "2026-07-22T15:40:44.949Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-22T19:31:00.366Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T19:41:15.330Z",
+      "type": "INFO",
+      "msg": "Account: $99841.97 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T19:41:15.710Z",
+      "type": "INFO",
+      "msg": "EOD review (19 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T19:41:15.711Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
