@@ -83,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-22T17:29:52.331Z",
+  "lastRun": "2026-07-22T17:40:39.001Z",
   "log": [
-    {
-      "time": "2026-07-21T20:21:39.976Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T20:47:31.250Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T20:47:31.329Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T20:47:31.561Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T21:47:00.365Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T21:47:00.429Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-21T21:47:00.968Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T13:50:58.015Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T13:50:58.074Z",
-      "type": "INFO",
-      "msg": "Account: $99872.06 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-22T13:50:58.510Z",
       "type": "INFO",
@@ -1281,6 +1227,60 @@
     },
     {
       "time": "2026-07-22T17:29:52.331Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T17:40:03.728Z",
+      "type": "INFO",
+      "msg": "Account: $99859.14 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T17:40:04.227Z",
+      "type": "INFO",
+      "msg": "Watchlist: 24 tickers",
+      "detail": "SMCI, GOOGL, IBM, TSLA, RPM, T, WAB, CME"
+    },
+    {
+      "time": "2026-07-22T17:40:04.780Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SMCI, ARWR, ONDS, RIOT, NG, AUR, PAG, WEGZY, CRWV, DELL"
+    },
+    {
+      "time": "2026-07-22T17:40:04.781Z",
+      "type": "INFO",
+      "msg": "Scanning 59 candidates",
+      "detail": "40 screener + 24 watchlist"
+    },
+    {
+      "time": "2026-07-22T17:40:24.995Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "ARWR: relVol 1.5× < 2× (todayVol 4.9M)  •  ONDS: price $8.38 < $15  •  RIOT: relVol 1.0× < 2× (todayVol 16.4M)  •  NG: price $6.38 < $15  •  AUR: price $6.70 < $15  •  PAG: avgVol 0.4M < 1M  •  WEGZY: price $9.18 < $15  •  CRWV: relVol 0.6× < 2× (todayVol 15.3M)  •  DELL: relVol 0.7× < 2× (todayVol 4.9M)  •  WAB: avgVol 0.9M < 1M  •  CDE: relVol 0.8× < 2× (todayVol 26.6M)  •  PLSE: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-07-22T17:40:24.995Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T17:40:25.492Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "BXBL, PEGA, BMI, MAAS, PATH, NAVN, AIR, NTSK, TEL, BRZE"
+    },
+    {
+      "time": "2026-07-22T17:40:39.000Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "BXBL: price $6.32 < $20 (short floor)  •  PEGA: above opening-range low (price $25.91 > ORL $25.10)  •  BMI: avgVol 0.5M < 1M  •  MAAS: price $17.39 < $20 (short floor)  •  PATH: price $10.48 < $20 (short floor)  •  NAVN: relVol 0.6× < 2.5× (todayVol 2.8M)  •  AIR: avgVol 0.6M < 1M  •  NTSK: price $12.17 < $20 (short floor)  •  TEL: relVol 2.0× < 2.5× (todayVol 4.9M)  •  BRZE: relVol 0.5× < 2.5× (todayVol 1.2M)  •  GEV: relVol 1.2× < 2.5× (todayVol 3.4M)  •  RDDT: relVol 1.6× < 2.5× (todayVol 6.7M)"
+    },
+    {
+      "time": "2026-07-22T17:40:39.000Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
