@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-22T20:01:41.707Z",
+  "lastRun": "2026-07-22T20:11:52.869Z",
   "log": [
-    {
-      "time": "2026-07-22T15:51:14.645Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SMCI, ONDS, ARWR, RIOT, CDE, WAB, AUR, HL, PAG, RKLB"
-    },
-    {
-      "time": "2026-07-22T15:51:14.645Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 24 watchlist"
-    },
-    {
-      "time": "2026-07-22T15:51:39.023Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "ONDS: price $8.44 < $15  •  ARWR: relVol 1.3× < 2× (todayVol 4.0M)  •  RIOT: relVol 0.6× < 2× (todayVol 9.9M)  •  CDE: relVol 0.4× < 2× (todayVol 12.2M)  •  WAB: avgVol 0.9M < 1M  •  AUR: price $6.68 < $15  •  HL: relVol 0.3× < 2× (todayVol 13.1M)  •  PAG: avgVol 0.4M < 1M  •  RKLB: relVol 0.5× < 2× (todayVol 12.2M)  •  WEGZY: price $9.20 < $15  •  CRWV: relVol 0.5× < 2× (todayVol 13.2M)  •  DELL: relVol 0.6× < 2× (todayVol 4.1M)"
-    },
     {
       "time": "2026-07-22T15:51:39.023Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-22T20:01:41.707Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T20:11:52.753Z",
+      "type": "INFO",
+      "msg": "Account: $99841.97 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T20:11:52.762Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T20:11:52.869Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
