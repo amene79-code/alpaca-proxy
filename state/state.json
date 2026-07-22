@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-22T19:51:29.138Z",
+  "lastRun": "2026-07-22T20:01:41.707Z",
   "log": [
-    {
-      "time": "2026-07-22T15:41:00.228Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T15:51:13.330Z",
-      "type": "INFO",
-      "msg": "Account: $99872.77 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T15:51:13.864Z",
-      "type": "INFO",
-      "msg": "Watchlist: 24 tickers",
-      "detail": "SMCI, GOOGL, IBM, TSLA, RPM, T, WAB, CME"
-    },
     {
       "time": "2026-07-22T15:51:14.645Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-22T19:51:29.138Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T20:01:41.574Z",
+      "type": "INFO",
+      "msg": "Account: $99841.97 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T20:01:41.586Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-22T20:01:41.707Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
