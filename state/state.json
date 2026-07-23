@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-23T18:34:11.227Z",
+  "lastRun": "2026-07-23T18:45:00.957Z",
   "log": [
-    {
-      "time": "2026-07-22T19:51:29.138Z",
-      "type": "INFO",
-      "msg": "EOD review (9 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T19:51:29.138Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T20:01:41.574Z",
-      "type": "INFO",
-      "msg": "Account: $99841.97 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T20:01:41.586Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T20:01:41.707Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T20:11:52.753Z",
-      "type": "INFO",
-      "msg": "Account: $99841.97 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T20:11:52.762Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T20:11:52.869Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T20:22:04.661Z",
-      "type": "INFO",
-      "msg": "Account: $99841.97 | 0 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-22T20:22:04.688Z",
       "type": "INFO",
@@ -1268,6 +1214,60 @@
     },
     {
       "time": "2026-07-23T18:34:11.227Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T18:44:24.608Z",
+      "type": "INFO",
+      "msg": "Account: $99841.97 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T18:44:24.830Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "GOOG, GOOGL, TSLA, SPCX, MSFT, MU, NVDA, IBM"
+    },
+    {
+      "time": "2026-07-23T18:44:25.521Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "CLF, NVCR, MEDP, KALU, IMAX, EQPT, ALLE, CIFR, URI, HIMS"
+    },
+    {
+      "time": "2026-07-23T18:44:25.521Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-23T18:44:48.097Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "CLF: price $11.04 < $15  •  NVCR: below opening-range high (price $19.91 < ORH $20.55, 64 today-candles)  •  MEDP: avgVol 0.3M < 1M  •  KALU: avgVol 0.3M < 1M  •  IMAX: below opening-range high (price $44.12 < ORH $44.50, 64 today-candles)  •  EQPT: relVol 1.3× < 2× (todayVol 4.9M)  •  ALLE: relVol 1.6× < 2× (todayVol 2.3M)  •  CIFR: relVol 1.0× < 2× (todayVol 26.0M)  •  URI: avgVol 0.5M < 1M  •  HIMS: relVol 1.7× < 2× (todayVol 23.3M)  •  LMT: relVol 1.9× < 2× (todayVol 2.3M)  •  WEX: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-07-23T18:44:48.097Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T18:44:48.409Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "ACI, LBRT, STM, MBLY, TSLA, QS, XMTR, CHRN, ROL, MOH"
+    },
+    {
+      "time": "2026-07-23T18:45:00.957Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "ACI: price $11.18 < $20 (short floor)  •  LBRT: relVol 2.2× < 2.5× (todayVol 8.5M)  •  STM: relVol 2.2× < 2.5× (todayVol 25.4M)  •  MBLY: price $7.41 < $20 (short floor)  •  TSLA: relVol 2.0× < 2.5× (todayVol 84.4M)  •  QS: price $5.03 < $20 (short floor)  •  XMTR: avgVol 0.9M < 1M  •  CHRN: avgVol 0.4M < 1M  •  ROL: relVol 2.3× < 2.5× (todayVol 12.5M)  •  MOH: relVol 1.3× < 2.5× (todayVol 2.1M)  •  DOV: ATR 0.43% < 0.5%  •  SEZL: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-07-23T18:45:00.957Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
