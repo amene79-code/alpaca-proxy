@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-07-22",
+  "dailyTrades": 0,
+  "dailyDate": "2026-07-23",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-22T21:40:44.736Z",
+  "lastRun": "2026-07-23T12:24:18.235Z",
   "log": [
-    {
-      "time": "2026-07-22T16:02:34.901Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-22T16:02:35.172Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "BXBL, PEGA, PATH, BMI, AIR, RDDT, MAAS, NAVN, NTSK, BRZE"
-    },
-    {
-      "time": "2026-07-22T16:02:50.243Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "BXBL: price $6.45 < $20 (short floor)  •  PEGA: relVol 2.3× < 2.5× (todayVol 6.3M)  •  PATH: price $10.60 < $20 (short floor)  •  BMI: avgVol 0.5M < 1M  •  AIR: avgVol 0.5M < 1M  •  RDDT: relVol 1.4× < 2.5× (todayVol 5.6M)  •  MAAS: price $18.09 < $20 (short floor)  •  NAVN: relVol 0.5× < 2.5× (todayVol 2.3M)  •  NTSK: price $12.13 < $20 (short floor)  •  BRZE: relVol 0.3× < 2.5× (todayVol 0.8M)  •  TEL: relVol 1.7× < 2.5× (todayVol 4.2M)  •  GEV: relVol 0.9× < 2.5× (todayVol 2.6M)"
-    },
-    {
-      "time": "2026-07-22T16:02:50.243Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-22T16:13:03.531Z",
       "type": "INFO",
@@ -1271,11 +1247,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-07-23T12:24:17.821Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T12:24:17.978Z",
+      "type": "INFO",
+      "msg": "Account: $99841.97 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T12:24:18.025Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T12:24:18.235Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "SMCI"
-  ],
+  "tradedToday": [],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
