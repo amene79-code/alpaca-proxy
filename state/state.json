@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-23T20:20:35.021Z",
+  "lastRun": "2026-07-23T20:30:46.663Z",
   "log": [
-    {
-      "time": "2026-07-23T15:49:18.369Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NVCR, MEDP, ALLE, URI, KALU, EQPT, TMO, RTX, SSL, DGX"
-    },
-    {
-      "time": "2026-07-23T15:49:18.369Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-23T15:49:39.310Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "NVCR: below VWAP (price $19.47 < VWAP $19.64)  •  MEDP: avgVol 0.3M < 1M  •  ALLE: relVol 1.1× < 2× (todayVol 1.5M)  •  URI: avgVol 0.5M < 1M  •  KALU: avgVol 0.3M < 1M  •  EQPT: relVol 0.9× < 2× (todayVol 3.1M)  •  TMO: relVol 1.4× < 2× (todayVol 3.1M)  •  RTX: relVol 1.1× < 2× (todayVol 4.8M)  •  SSL: price $12.19 < $15  •  DGX: avgVol 0.9M < 1M  •  WEX: avgVol 0.6M < 1M  •  HON: relVol 0.5× < 2× (todayVol 2.5M)"
-    },
     {
       "time": "2026-07-23T15:49:39.310Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-23T20:20:35.021Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T20:30:46.546Z",
+      "type": "INFO",
+      "msg": "Account: $99841.97 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T20:30:46.558Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T20:30:46.663Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
