@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-23T19:29:23.474Z",
+  "lastRun": "2026-07-23T19:39:37.534Z",
   "log": [
-    {
-      "time": "2026-07-23T15:27:49.312Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T15:27:49.508Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 35",
-      "detail": "ACI, STM, TSLA, LBRT, FSV, XMTR, MOH, SEZL, DOV, AAL"
-    },
-    {
-      "time": "2026-07-23T15:27:59.557Z",
-      "type": "INFO",
-      "msg": "Short rejections (35)",
-      "detail": "ACI: price $11.40 < $20 (short floor)  •  STM: relVol 1.6× < 2.5× (todayVol 18.4M)  •  TSLA: relVol 1.3× < 2.5× (todayVol 53.0M)  •  LBRT: relVol 1.2× < 2.5× (todayVol 4.4M)  •  FSV: avgVol 0.1M < 1M  •  XMTR: avgVol 0.9M < 1M  •  MOH: relVol 0.7× < 2.5× (todayVol 1.2M)  •  SEZL: avgVol 0.6M < 1M  •  DOV: relVol 1.6× < 2.5× (todayVol 1.7M)  •  AAL: price $13.58 < $20 (short floor)  •  NTSK: price $10.98 < $20 (short floor)  •  GOOGL: relVol 1.1× < 2.5× (todayVol 35.0M)"
-    },
     {
       "time": "2026-07-23T15:27:59.557Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-23T19:29:23.473Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T19:39:37.407Z",
+      "type": "INFO",
+      "msg": "Account: $99841.97 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T19:39:37.534Z",
+      "type": "INFO",
+      "msg": "EOD review (21 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-23T19:39:37.534Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
