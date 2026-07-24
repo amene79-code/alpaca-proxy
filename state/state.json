@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-24T19:27:51.340Z",
+  "lastRun": "2026-07-24T19:38:06.433Z",
   "log": [
-    {
-      "time": "2026-07-24T15:05:54.372Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "INTC, TSLA, SPCX, MU, VZ, CHTR, AXP, USO"
-    },
-    {
-      "time": "2026-07-24T15:05:54.716Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "RNG, THC, BAH, SLB, DLR, WKC, FRMI, SSNC, NOW, ENVA"
-    },
-    {
-      "time": "2026-07-24T15:05:54.716Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-24T15:06:13.453Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "RNG: relVol 1.8× < 2× (todayVol 3.4M)  •  THC: relVol 1.1× < 2× (todayVol 1.4M)  •  BAH: relVol 0.5× < 2× (todayVol 1.3M)  •  SLB: relVol 0.7× < 2× (todayVol 8.4M)  •  DLR: relVol 1.0× < 2× (todayVol 3.6M)  •  WKC: relVol 1.1× < 2× (todayVol 1.2M)  •  FRMI: price $6.71 < $15  •  SSNC: relVol 0.5× < 2× (todayVol 1.0M)  •  NOW: relVol 0.4× < 2× (todayVol 9.6M)  •  ENVA: avgVol 0.4M < 1M  •  SGRY: relVol 0.4× < 2× (todayVol 0.6M)  •  MBLY: price $8.10 < $15"
-    },
     {
       "time": "2026-07-24T15:06:13.453Z",
       "type": "INFO",
@@ -1283,6 +1259,30 @@
       "time": "2026-07-24T19:27:51.340Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T19:38:05.670Z",
+      "type": "INFO",
+      "msg": "Account: $99855.59 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T19:38:06.140Z",
+      "type": "INFO",
+      "msg": "EOD review (22 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T19:38:06.232Z",
+      "type": "INFO",
+      "msg": "RNG held overnight",
+      "detail": "Side long | Strong close | P&L +$13.64 | above VWAP"
+    },
+    {
+      "time": "2026-07-24T19:38:06.433Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
