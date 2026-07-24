@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-24T20:19:14.736Z",
+  "lastRun": "2026-07-24T20:29:30.748Z",
   "log": [
-    {
-      "time": "2026-07-24T15:17:02.641Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 31× RNG",
-      "detail": "ID f16d5239-5c2b-4238-bf02-2b873e0eecec | R:R 2.7:1 | risk $24.18"
-    },
-    {
-      "time": "2026-07-24T15:17:03.328Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "MXL, HIMS, CBRS, NBIS, CRDO, AEHR, VICR, ALAB, AAOI, RXO"
-    },
-    {
-      "time": "2026-07-24T15:17:15.282Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "MXL: net up over ~5d ($71.84→$76.49) — no short into uptrend  •  HIMS: relVol 0.8× < 2.5× (todayVol 11.9M)  •  CBRS: net up over ~5d ($172.86→$198.71) — no short into uptrend  •  NBIS: net up over ~5d ($177.71→$200.78) — no short into uptrend  •  CRDO: net up over ~5d ($202.68→$215.36) — no short into uptrend  •  AEHR: relVol 0.4× < 2.5× (todayVol 1.2M)  •  VICR: relVol 0.2× < 2.5× (todayVol 0.2M)  •  ALAB: relVol 0.2× < 2.5× (todayVol 1.1M)  •  AAOI: net up over ~5d ($102.41→$102.88) — no short into uptrend  •  RXO: relVol 0.3× < 2.5× (todayVol 0.4M)  •  SMMT: price $13.78 < $20 (short floor)  •  TSEM: net up over ~5d ($234.10→$240.19) — no short into uptrend"
-    },
     {
       "time": "2026-07-24T15:17:15.282Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-07-24T20:19:14.736Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T20:29:30.470Z",
+      "type": "INFO",
+      "msg": "Account: $99869.85 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T20:29:30.483Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T20:29:30.748Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
