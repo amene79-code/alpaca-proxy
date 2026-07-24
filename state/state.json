@@ -83,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-24T17:38:49.754Z",
+  "lastRun": "2026-07-24T17:49:40.898Z",
   "log": [
-    {
-      "time": "2026-07-23T20:00:06.187Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T20:00:06.712Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T20:10:19.610Z",
-      "type": "INFO",
-      "msg": "Account: $99841.97 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T20:10:19.681Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T20:10:19.941Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T20:20:34.723Z",
-      "type": "INFO",
-      "msg": "Account: $99841.97 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T20:20:34.799Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T20:20:35.021Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T20:30:46.546Z",
-      "type": "INFO",
-      "msg": "Account: $99841.97 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-23T20:30:46.558Z",
       "type": "INFO",
@@ -1281,6 +1227,60 @@
     },
     {
       "time": "2026-07-24T17:38:49.754Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T17:49:02.811Z",
+      "type": "INFO",
+      "msg": "Account: $99864.12 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T17:49:03.438Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "INTC, TSLA, SPCX, MU, VZ, CHTR, AXP, USO"
+    },
+    {
+      "time": "2026-07-24T17:49:03.883Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FRMI, SLB, RNG, THC, DLR, CLF, MBLY, AAL, BAH, NOW"
+    },
+    {
+      "time": "2026-07-24T17:49:03.884Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-24T17:49:26.155Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "FRMI: price $7.47 < $15  •  SLB: relVol 1.5× < 2× (todayVol 18.5M)  •  THC: below VWAP (price $231.70 < VWAP $240.17)  •  DLR: relVol 1.9× < 2× (todayVol 7.7M)  •  CLF: price $11.85 < $15  •  MBLY: price $8.44 < $15  •  AAL: price $14.41 < $15  •  BAH: relVol 1.1× < 2× (todayVol 2.6M)  •  NOW: relVol 0.8× < 2× (todayVol 18.4M)  •  PATH: price $10.80 < $15  •  SSNC: relVol 1.0× < 2× (todayVol 1.9M)  •  FAF: avgVol 0.9M < 1M"
+    },
+    {
+      "time": "2026-07-24T17:49:26.155Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T17:49:26.351Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MXL, HIMS, LBRT, AEHR, CBRS, MWH, ALAB, SMMT, CRWV, AAOI"
+    },
+    {
+      "time": "2026-07-24T17:49:40.898Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MXL: net up over ~5d ($71.84→$72.10) — no short into uptrend  •  HIMS: relVol 1.3× < 2.5× (todayVol 18.9M)  •  LBRT: price $17.53 < $20 (short floor)  •  AEHR: relVol 0.5× < 2.5× (todayVol 1.6M)  •  CBRS: net up over ~5d ($172.86→$199.97) — no short into uptrend  •  MWH: relVol 0.5× < 2.5× (todayVol 1.1M)  •  ALAB: relVol 0.4× < 2.5× (todayVol 1.7M)  •  SMMT: price $13.73 < $20 (short floor)  •  CRWV: net up over ~5d ($73.21→$74.34) — no short into uptrend  •  AAOI: net up over ~5d ($102.41→$102.70) — no short into uptrend  •  BE: relVol 0.4× < 2.5× (todayVol 6.5M)  •  SEI: relVol 0.4× < 2.5× (todayVol 1.3M)"
+    },
+    {
+      "time": "2026-07-24T17:49:40.898Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
