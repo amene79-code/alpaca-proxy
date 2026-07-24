@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-24T20:08:50.097Z",
+  "lastRun": "2026-07-24T20:19:14.736Z",
   "log": [
-    {
-      "time": "2026-07-24T15:17:02.418Z",
-      "type": "INFO",
-      "msg": "Rejections (59)",
-      "detail": "THC: relVol 1.5× < 2× (todayVol 2.0M)  •  BAH: relVol 0.7× < 2× (todayVol 1.7M)  •  FRMI: price $6.95 < $15  •  DLR: relVol 1.4× < 2× (todayVol 5.3M)  •  SLB: relVol 1.1× < 2× (todayVol 12.9M)  •  MBLY: price $8.31 < $15  •  SSNC: relVol 0.8× < 2× (todayVol 1.4M)  •  NOW: relVol 0.6× < 2× (todayVol 12.7M)  •  AAL: price $14.35 < $15  •  WKC: relVol 1.5× < 2× (todayVol 1.8M)  •  SAP: relVol 1.0× < 2× (todayVol 2.9M)  •  ENVA: avgVol 0.4M < 1M"
-    },
-    {
-      "time": "2026-07-24T15:17:02.419Z",
-      "type": "INFO",
-      "msg": "Top signal: RNG (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T15:17:02.419Z",
-      "type": "BUY",
-      "msg": "Placing 31× RNG @ ~$48.03",
-      "detail": "gap 24.4% | risk $24.18 | SL $47.25 | TP $50.11 | R:R 2.7 | "
-    },
     {
       "time": "2026-07-24T15:17:02.641Z",
       "type": "BUY",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-07-24T20:08:50.097Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T20:19:13.708Z",
+      "type": "INFO",
+      "msg": "Account: $99850.32 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T20:19:13.733Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T20:19:14.736Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
