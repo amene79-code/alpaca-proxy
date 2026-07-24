@@ -83,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-24T15:39:16.642Z",
+  "lastRun": "2026-07-24T15:50:09.822Z",
   "log": [
-    {
-      "time": "2026-07-23T18:11:59.444Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ACI, STM, LBRT, MBLY, QS, TSLA, MOH, CHRN, XMTR, ROL"
-    },
-    {
-      "time": "2026-07-23T18:12:13.028Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ACI: price $11.20 < $20 (short floor)  •  STM: relVol 2.1× < 2.5× (todayVol 24.6M)  •  LBRT: relVol 2.1× < 2.5× (todayVol 8.1M)  •  MBLY: price $7.26 < $20 (short floor)  •  QS: price $5.01 < $20 (short floor)  •  TSLA: relVol 2.0× < 2.5× (todayVol 80.4M)  •  MOH: relVol 1.2× < 2.5× (todayVol 2.0M)  •  CHRN: avgVol 0.4M < 1M  •  XMTR: avgVol 0.9M < 1M  •  ROL: relVol 2.2× < 2.5× (todayVol 11.7M)  •  UAA: price $6.61 < $20 (short floor)  •  UA: price $6.47 < $20 (short floor)"
-    },
-    {
-      "time": "2026-07-23T18:12:13.028Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T18:22:31.174Z",
-      "type": "INFO",
-      "msg": "Account: $99841.97 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-23T18:22:31.779Z",
-      "type": "INFO",
-      "msg": "Watchlist: 30 tickers",
-      "detail": "GOOG, GOOGL, TSLA, SPCX, MSFT, MU, NVDA, IBM"
-    },
-    {
-      "time": "2026-07-23T18:22:32.079Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CLF, NVCR, MEDP, EQPT, KALU, ALLE, IMAX, URI, CIFR, HIMS"
-    },
-    {
-      "time": "2026-07-23T18:22:32.079Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-23T18:22:59.185Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "CLF: price $11.06 < $15  •  NVCR: below opening-range high (price $19.92 < ORH $20.55, 60 today-candles)  •  MEDP: avgVol 0.3M < 1M  •  EQPT: relVol 1.3× < 2× (todayVol 4.7M)  •  KALU: avgVol 0.3M < 1M  •  ALLE: relVol 1.6× < 2× (todayVol 2.2M)  •  IMAX: below opening-range high (price $43.97 < ORH $44.50, 60 today-candles)  •  URI: avgVol 0.5M < 1M  •  CIFR: relVol 1.0× < 2× (todayVol 25.2M)  •  HIMS: relVol 1.6× < 2× (todayVol 22.4M)  •  WEX: avgVol 0.6M < 1M  •  SKHY: relVol 0.5× < 2× (todayVol 27.9M)"
-    },
-    {
-      "time": "2026-07-23T18:22:59.185Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-23T18:22:59.347Z",
       "type": "INFO",
@@ -1281,6 +1227,60 @@
     },
     {
       "time": "2026-07-24T15:39:16.642Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T15:49:30.990Z",
+      "type": "INFO",
+      "msg": "Account: $99852.80 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T15:49:31.596Z",
+      "type": "INFO",
+      "msg": "Watchlist: 30 tickers",
+      "detail": "INTC, TSLA, SPCX, MU, VZ, CHTR, AXP, USO"
+    },
+    {
+      "time": "2026-07-24T15:49:31.990Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FRMI, RNG, THC, DLR, SLB, BAH, AAL, SSNC, NOW, MBLY"
+    },
+    {
+      "time": "2026-07-24T15:49:31.990Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 30 watchlist"
+    },
+    {
+      "time": "2026-07-24T15:49:54.914Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "FRMI: price $7.27 < $15  •  THC: relVol 1.7× < 2× (todayVol 2.3M)  •  DLR: relVol 1.5× < 2× (todayVol 5.8M)  •  SLB: relVol 1.2× < 2× (todayVol 14.5M)  •  BAH: relVol 0.8× < 2× (todayVol 1.9M)  •  AAL: price $14.51 < $15  •  SSNC: relVol 0.8× < 2× (todayVol 1.5M)  •  NOW: relVol 0.7× < 2× (todayVol 14.4M)  •  MBLY: price $8.22 < $15  •  SKYW: avgVol 0.5M < 1M  •  FAF: avgVol 0.9M < 1M  •  WKC: relVol 1.8× < 2× (todayVol 2.1M)"
+    },
+    {
+      "time": "2026-07-24T15:49:54.914Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T15:49:55.087Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MXL, HIMS, CBRS, NVCR, CRDO, AEHR, CHRW, ALAB, LBRT, AAOI"
+    },
+    {
+      "time": "2026-07-24T15:50:09.822Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MXL: net up over ~5d ($71.84→$73.96) — no short into uptrend  •  HIMS: relVol 1.0× < 2.5× (todayVol 13.8M)  •  CBRS: net up over ~5d ($172.86→$198.63) — no short into uptrend  •  NVCR: price $18.17 < $20 (short floor)  •  CRDO: net up over ~5d ($202.68→$215.15) — no short into uptrend  •  AEHR: relVol 0.4× < 2.5× (todayVol 1.3M)  •  CHRW: relVol 0.8× < 2.5× (todayVol 1.3M)  •  ALAB: relVol 0.3× < 2.5× (todayVol 1.3M)  •  LBRT: price $18.11 < $20 (short floor)  •  AAOI: net up over ~5d ($102.41→$103.42) — no short into uptrend  •  TSEM: net up over ~5d ($234.10→$240.33) — no short into uptrend  •  COHR: net up over ~5d ($277.60→$289.38) — no short into uptrend"
+    },
+    {
+      "time": "2026-07-24T15:50:09.822Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
