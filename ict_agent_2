@@ -847,6 +847,26 @@ async function analyzeSetup(ticker){
     // Safety: ensure SL is above entry
     if(sl<=price) sl=+(price+atrApprox*1.5).toFixed(2);
   }
+  // ── TP REALISM CAP (fix, 24 Jul) ────────────────────────────────────────
+  // Previously TP was derived from ATR (up to 4x ATR) with NO reference to the
+  // stop distance. Because the SL is structure-based (FVG edge, often tight),
+  // this produced targets at 4:1, 5:1, even 6:1 R:R — levels price frequently
+  // never reaches, so good trades round-tripped back to the stop instead of
+  // paying out (e.g. ARWR: risk $1.95, target $9.15 away = 4.7:1).
+  // Now the target is capped at a realistic multiple of the ACTUAL risk, so TP
+  // and SL are geometrically related. Min 2:1 is still enforced below.
+  const MAX_RR = 3.0;
+  const riskDist = Math.abs(price - sl);
+  if(riskDist > 0){
+    if(setupType==="long"){
+      const cappedTP = +(price + riskDist*MAX_RR).toFixed(2);
+      if(tp > cappedTP) tp = cappedTP;
+    } else {
+      const cappedTP = +(price - riskDist*MAX_RR).toFixed(2);
+      if(tp < cappedTP) tp = cappedTP;
+    }
+  }
+
   // Final sanity check — skip if still invalid
   if(setupType==="long"&&(tp<=price||sl>=price)){
     log("SKIP",`${ticker} — invalid SL/TP geometry (entry $${price} SL $${sl} TP $${tp})`);
@@ -1145,6 +1165,41 @@ function getICTPositions(){
   try{return JSON.parse(localStorage.getItem(ICT_POS_KEY)||"[]");}catch{return[];}
 }
 let trailingStops={};
+
+// ── SL/TP HYDRATION (fix, 24 Jul) ──────────────────────────────────────────
+// trailingStops lives only in memory, so after a tab restart the dashboard lost
+// the SL/TP levels and positions rendered without them (looked broken, though the
+// broker bracket was still live). Alpaca is the source of truth, so rebuild the
+// levels from the open bracket orders instead of trusting browser memory.
+async function hydrateLevelsFromAlpaca(positions){
+  try{
+    const open=await alpaca("GET","/v2/orders?status=open&limit=200&nested=true").catch(()=>[]);
+    const orders=Array.isArray(open)?open:[];
+    const flat=[];
+    for(const o of orders){ flat.push(o); if(o.legs) for(const l of o.legs) flat.push(l); }
+    for(const p of (Array.isArray(positions)?positions:[])){
+      const sym=p.symbol;
+      const mine=flat.filter(o=>o.symbol===sym);
+      if(!mine.length) continue;
+      const isShort=(+p.qty||0)<0;
+      // Closing side is opposite the position: short closes with buy, long with sell.
+      const closeSide=isShort?"buy":"sell";
+      const closers=mine.filter(o=>o.side===closeSide);
+      const stopOrder=closers.find(o=>o.stop_price!=null);
+      const tpOrder=closers.find(o=>o.stop_price==null&&o.limit_price!=null);
+      if(!trailingStops[sym]) trailingStops[sym]={};
+      const t=trailingStops[sym];
+      t.side = t.side || (isShort?"short":"long");
+      t.entry = t.entry || (+p.avg_entry_price||0);
+      if(stopOrder&&stopOrder.stop_price!=null) t.sl = +(+stopOrder.stop_price).toFixed(2);
+      if(tpOrder&&tpOrder.limit_price!=null)   t.tp = +(+tpOrder.limit_price).toFixed(2);
+      // Seed the favourable extreme so the trail readout is sane after a restart.
+      const cur=+p.current_price||t.entry;
+      if(isShort) t.low  = Math.min(t.low  ?? cur, cur, t.entry);
+      else        t.high = Math.max(t.high ?? cur, cur, t.entry);
+    }
+  }catch(e){ log("INFO",`Could not hydrate SL/TP from Alpaca: ${e.message}`); }
+}
 async function manageTrailingStops(positions, cfg){
   for(const p of Array.isArray(positions)?positions:[]){
     const price=+p.current_price||0, entry=+p.avg_entry_price||0;
@@ -1268,6 +1323,7 @@ async function _runCycle(){
   let acct, positions;
   try{
     [acct, positions]=await Promise.all([alpaca("GET","/v2/account"),alpaca("GET","/v2/positions")]);
+    await hydrateLevelsFromAlpaca(positions);
     updateAccountUI(acct); updatePositionsUI(positions);
     await manageTrailingStops(positions,cfg);
   }catch(e){log("ERROR","Account: "+e.message);scheduleNext();return;}
@@ -1418,10 +1474,20 @@ function updatePositionsUI(positions){
   el.innerHTML=sorted.map(p=>{
     const pl=+p.unrealized_pl||0,pct=(+p.unrealized_plpc||0)*100,up=pl>=0;
     const entry=+p.avg_entry_price||0;
-    const high=trailingStops[p.symbol]?.high||entry;
-    const trail=+(high*(1-(+document.getElementById("cfgTrail").value/100))).toFixed(2);
-    const tp=trailingStops[p.symbol]?.tp;
-    const sl=trailingStops[p.symbol]?.sl;
+    // Trail display must mirror the side. For a SHORT the favourable extreme is
+    // the LOW and the trail ratchets DOWN; previously this used the long formula
+    // (high * (1-trail%)) for every position, making the readout meaningless for
+    // shorts (it showed entry as "High" and a trail above the price).
+    const isShortPos=(+p.qty||0)<0;
+    const ts=trailingStops[p.symbol];
+    const trailPct=(+document.getElementById("cfgTrail").value||1.5)/100;
+    const extreme=isShortPos
+      ? (ts?.low ?? Math.min(+p.current_price||entry, entry))
+      : (ts?.high ?? Math.max(+p.current_price||entry, entry));
+    const trail=+(isShortPos ? extreme*(1+trailPct) : extreme*(1-trailPct)).toFixed(2);
+    const extremeLabel=isShortPos?"Low":"High";
+    const tp=ts?.tp;
+    const sl=ts?.sl;
     const isICT=ictPositions.includes(p.symbol);
     return `<div class="pos-row" style="border-left:3px solid ${isICT?"var(--teal)":"#2a2a45"};padding-left:8px">
       <div>
@@ -1433,7 +1499,7 @@ function updatePositionsUI(positions){
           <span style="font-size:11px;color:${up?"#00ff88":"#ff4466"};">${fmtPl(pl)} (${pct.toFixed(2)}%)</span>
         </div>
         <div style="font-size:9px;color:var(--amber);margin-top:3px">
-          $${(+p.current_price||0).toFixed(2)} · Trail $${trail} · High $${high.toFixed(2)}
+          $${(+p.current_price||0).toFixed(2)} · Trail $${trail} · ${extremeLabel} $${extreme.toFixed(2)}
           ${sl?` · <span style="color:var(--red)">SL $${sl}</span>`:""}
           ${tp?` · <span style="color:var(--green)">TP $${tp}</span>`:""}
         </div>
@@ -1476,6 +1542,7 @@ async function closePosition(symbol,qty){
 async function refreshPositions(){
   try{
     const [pos,acct]=await Promise.all([alpaca("GET","/v2/positions"),alpaca("GET","/v2/account")]);
+    await hydrateLevelsFromAlpaca(pos);
     updatePositionsUI(pos); updateAccountUI(acct);
   }catch(e){log("ERROR","Refresh: "+e.message);}
 }
