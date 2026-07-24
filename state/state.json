@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-24T13:19:30.702Z",
+  "lastRun": "2026-07-24T13:29:48.170Z",
   "log": [
-    {
-      "time": "2026-07-23T16:00:41.517Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ACI, STM, MBLY, QS, LBRT, TSLA, XMTR, MOH, FSV, ROL"
-    },
-    {
-      "time": "2026-07-23T16:01:03.562Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ACI: price $11.15 < $20 (short floor)  •  STM: relVol 1.8× < 2.5× (todayVol 20.4M)  •  MBLY: price $7.32 < $20 (short floor)  •  QS: price $5.01 < $20 (short floor)  •  LBRT: relVol 1.4× < 2.5× (todayVol 5.1M)  •  TSLA: relVol 1.6× < 2.5× (todayVol 62.5M)  •  XMTR: avgVol 0.9M < 1M  •  MOH: relVol 0.8× < 2.5× (todayVol 1.3M)  •  FSV: avgVol 0.1M < 1M  •  ROL: relVol 1.6× < 2.5× (todayVol 8.4M)  •  CHRN: avgVol 0.4M < 1M  •  SEZL: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-07-23T16:01:03.562Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-23T16:11:19.871Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-24T13:19:30.702Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T13:29:47.828Z",
+      "type": "INFO",
+      "msg": "Account: $99841.95 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T13:29:47.903Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-24T13:29:48.170Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
