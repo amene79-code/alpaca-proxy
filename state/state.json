@@ -83,62 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-27T19:06:04.818Z",
+  "lastRun": "2026-07-27T19:16:59.571Z",
   "log": [
-    {
-      "time": "2026-07-24T19:58:34.315Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T20:08:49.467Z",
-      "type": "INFO",
-      "msg": "Account: $99848.46 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T20:08:49.480Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T20:08:50.097Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T20:19:13.708Z",
-      "type": "INFO",
-      "msg": "Account: $99850.32 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T20:19:13.733Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T20:19:14.736Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T20:29:30.470Z",
-      "type": "INFO",
-      "msg": "Account: $99869.85 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T20:29:30.483Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-07-24T20:29:30.748Z",
       "type": "INFO",
@@ -1281,6 +1227,60 @@
     },
     {
       "time": "2026-07-27T19:06:04.818Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:16:23.688Z",
+      "type": "INFO",
+      "msg": "Account: $99946.94 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:16:24.095Z",
+      "type": "INFO",
+      "msg": "Watchlist: 29 tickers",
+      "detail": "FCF, AAT, AB, ABG, ACGL, ACHC, ACR, AKR"
+    },
+    {
+      "time": "2026-07-27T19:16:24.704Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BMNR, RGTI, NOW, RHI, NAVN, DJT, ANDG, W, RNG, JBS"
+    },
+    {
+      "time": "2026-07-27T19:16:24.704Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 29 watchlist"
+    },
+    {
+      "time": "2026-07-27T19:16:45.476Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "BMNR: relVol 1.2× < 2× (todayVol 44.5M)  •  RGTI: relVol 1.0× < 2× (todayVol 23.2M)  •  NOW: relVol 1.1× < 2× (todayVol 25.5M)  •  RHI: relVol 0.8× < 2× (todayVol 1.8M)  •  NAVN: relVol 0.5× < 2× (todayVol 2.1M)  •  DJT: price $9.55 < $15  •  ANDG: avgVol 0.4M < 1M  •  W: relVol 0.9× < 2× (todayVol 2.5M)  •  JBS: price $13.58 < $15  •  SHOP: relVol 1.0× < 2× (todayVol 7.5M)  •  INTA: avgVol 0.7M < 1M  •  TEAM: relVol 1.3× < 2× (todayVol 4.5M)"
+    },
+    {
+      "time": "2026-07-27T19:16:45.476Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:16:45.664Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "LEGN, SNDK, ICHR, SIMO, VG, SHAZ, CORZ, MXL, UCTT, CIFR"
+    },
+    {
+      "time": "2026-07-27T19:16:59.571Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "LEGN: price $19.19 < $20 (short floor)  •  SNDK: relVol 1.3× < 2.5× (todayVol 18.0M)  •  ICHR: relVol 0.9× < 2.5× (todayVol 1.0M)  •  SIMO: avgVol 0.7M < 1M  •  VG: price $12.83 < $20 (short floor)  •  SHAZ: relVol 0.8× < 2.5× (todayVol 1.7M)  •  CORZ: relVol 0.7× < 2.5× (todayVol 7.3M)  •  MXL: relVol 1.3× < 2.5× (todayVol 5.5M)  •  UCTT: relVol 1.0× < 2.5× (todayVol 1.5M)  •  CIFR: net up over ~5d ($20.54→$21.42) — no short into uptrend  •  BELFA: avgVol 0.2M < 1M  •  PTEN: price $9.46 < $20 (short floor)"
+    },
+    {
+      "time": "2026-07-27T19:16:59.571Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
