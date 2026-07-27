@@ -13,8 +13,8 @@
       "movedToBreakeven": true
     }
   },
-  "dailyTrades": 1,
-  "dailyDate": "2026-07-24",
+  "dailyTrades": 0,
+  "dailyDate": "2026-07-27",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-24T20:50:34.692Z",
+  "lastRun": "2026-07-27T12:14:43.648Z",
   "log": [
-    {
-      "time": "2026-07-24T15:27:31.644Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "RNG, THC, BAH, SLB, DLR, WKC, FRMI, SSNC, NOW, ENVA"
-    },
-    {
-      "time": "2026-07-24T15:27:31.645Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 30 watchlist"
-    },
-    {
-      "time": "2026-07-24T15:27:58.714Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "THC: relVol 1.6× < 2× (todayVol 2.1M)  •  BAH: relVol 0.7× < 2× (todayVol 1.8M)  •  SLB: relVol 1.1× < 2× (todayVol 13.4M)  •  DLR: relVol 1.4× < 2× (todayVol 5.5M)  •  WKC: relVol 1.6× < 2× (todayVol 1.9M)  •  FRMI: price $7.16 < $15  •  SSNC: relVol 0.8× < 2× (todayVol 1.5M)  •  NOW: relVol 0.6× < 2× (todayVol 13.4M)  •  ENVA: avgVol 0.4M < 1M  •  SGRY: relVol 1.1× < 2× (todayVol 1.5M)  •  MBLY: price $8.27 < $15  •  SKYW: avgVol 0.5M < 1M"
-    },
-    {
-      "time": "2026-07-24T15:27:58.714Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-24T15:27:59.034Z",
       "type": "INFO",
@@ -1284,11 +1260,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-07-27T12:14:43.289Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T12:14:43.350Z",
+      "type": "INFO",
+      "msg": "Account: $99864.57 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T12:14:43.362Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T12:14:43.648Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "RNG"
-  ],
+  "tradedToday": [],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
