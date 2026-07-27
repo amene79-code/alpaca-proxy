@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-27T19:58:35.364Z",
+  "lastRun": "2026-07-27T20:08:47.168Z",
   "log": [
-    {
-      "time": "2026-07-27T15:50:28.653Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "BMNR: relVol 0.8× < 2× (todayVol 29.9M)  •  RGTI: relVol 0.8× < 2× (todayVol 17.5M)  •  RHI: relVol 0.3× < 2× (todayVol 0.7M)  •  HUBS: relVol 0.4× < 2× (todayVol 0.5M)  •  PEGA: relVol 0.4× < 2× (todayVol 1.3M)  •  WIX: relVol 0.5× < 2× (todayVol 0.6M)  •  JBS: price $13.38 < $15  •  WDAY: relVol 0.5× < 2× (todayVol 2.0M)  •  SHOP: relVol 0.5× < 2× (todayVol 4.0M)  •  RNG: relVol 0.7× < 2× (todayVol 1.5M)  •  BRZE: relVol 0.3× < 2× (todayVol 0.7M)  •  W: relVol 0.5× < 2× (todayVol 1.3M)"
-    },
-    {
-      "time": "2026-07-27T15:50:28.653Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-27T15:50:28.810Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "LEGN, MXL, SIMO, SNDK, ICHR, UCTT, ACMR, VECO, AMKR, BELFA"
-    },
     {
       "time": "2026-07-27T15:50:41.375Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-27T19:58:35.364Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T20:08:47.017Z",
+      "type": "INFO",
+      "msg": "Account: $99932.74 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T20:08:47.025Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T20:08:47.168Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
