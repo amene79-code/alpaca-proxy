@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "QBTS": {
-      "side": "long",
-      "entry": 19.2450008392334,
-      "high": 19.2450008392334,
-      "low": 19.2450008392334,
-      "initialSl": 19.05,
-      "sl": 19.05,
-      "tp": 19.76,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 2,
   "dailyDate": "2026-07-27",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-27T19:27:52.870Z",
+  "lastRun": "2026-07-27T19:38:08.631Z",
   "log": [
-    {
-      "time": "2026-07-27T15:39:44.451Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "BMNR: relVol 0.8× < 2× (todayVol 28.4M)  •  RGTI: relVol 0.8× < 2× (todayVol 17.0M)  •  RHI: relVol 0.2× < 2× (todayVol 0.5M)  •  PEGA: relVol 0.4× < 2× (todayVol 1.2M)  •  HUBS: relVol 0.3× < 2× (todayVol 0.5M)  •  WDAY: relVol 0.5× < 2× (todayVol 1.9M)  •  SHOP: relVol 0.5× < 2× (todayVol 3.9M)  •  WIX: relVol 0.5× < 2× (todayVol 0.5M)  •  LIF: avgVol 0.6M < 1M  •  BRZE: relVol 0.3× < 2× (todayVol 0.6M)  •  INTA: avgVol 0.7M < 1M  •  JBS: price $13.34 < $15"
-    },
-    {
-      "time": "2026-07-27T15:39:44.451Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-27T15:39:44.627Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "LEGN, ICHR, MXL, SNDK, SIMO, UCTT, ACMR, AMKR, VECO, BELFA"
-    },
-    {
-      "time": "2026-07-27T15:39:56.766Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "LEGN: price $18.87 < $20 (short floor)  •  ICHR: relVol 0.4× < 2.5× (todayVol 0.4M)  •  MXL: relVol 0.8× < 2.5× (todayVol 3.5M)  •  SNDK: relVol 0.9× < 2.5× (todayVol 11.6M)  •  SIMO: avgVol 0.7M < 1M  •  UCTT: relVol 0.4× < 2.5× (todayVol 0.6M)  •  ACMR: relVol 0.4× < 2.5× (todayVol 0.5M)  •  AMKR: relVol 0.9× < 2.5× (todayVol 4.0M)  •  VECO: relVol 0.3× < 2.5× (todayVol 0.4M)  •  BELFA: avgVol 0.2M < 1M  •  SHAZ: relVol 0.4× < 2.5× (todayVol 0.8M)  •  COHR: relVol 0.4× < 2.5× (todayVol 1.8M)"
-    },
     {
       "time": "2026-07-27T15:39:56.766Z",
       "type": "INFO",
@@ -1283,6 +1246,30 @@
       "time": "2026-07-27T19:27:52.870Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:38:06.583Z",
+      "type": "INFO",
+      "msg": "Account: $99933.10 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:38:06.902Z",
+      "type": "INFO",
+      "msg": "EOD review (22 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:38:08.430Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut QBTS",
+      "detail": "Side long | Weak into close | P&L $-1.16"
+    },
+    {
+      "time": "2026-07-27T19:38:08.631Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
