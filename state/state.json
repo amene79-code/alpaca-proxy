@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-27T19:38:08.631Z",
+  "lastRun": "2026-07-27T19:48:20.910Z",
   "log": [
-    {
-      "time": "2026-07-27T15:39:56.766Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-27T15:50:07.227Z",
-      "type": "INFO",
-      "msg": "Account: $99952.61 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-27T15:50:07.407Z",
-      "type": "INFO",
-      "msg": "Watchlist: 29 tickers",
-      "detail": "FCF, AAT, AB, ABG, ACGL, ACHC, ACR, AKR"
-    },
     {
       "time": "2026-07-27T15:50:07.906Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-27T19:38:08.631Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:48:20.535Z",
+      "type": "INFO",
+      "msg": "Account: $99932.74 | 0 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:48:20.910Z",
+      "type": "INFO",
+      "msg": "EOD review (12 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:48:20.910Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
