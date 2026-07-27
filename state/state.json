@@ -1,6 +1,19 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 0,
+  "trailingStops": {
+    "RNG": {
+      "side": "long",
+      "entry": 53.6349983215332,
+      "high": 53.6349983215332,
+      "low": 53.6349983215332,
+      "initialSl": 53.17,
+      "sl": 53.17,
+      "tp": 54.86,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 1,
   "dailyDate": "2026-07-27",
   "openPositions": [
     "FIVE",
@@ -70,80 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-27T18:55:07.670Z",
+  "lastRun": "2026-07-27T19:06:04.818Z",
   "log": [
-    {
-      "time": "2026-07-24T19:27:34.196Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "MXL, BE, AEHR, NBIS, AXTI, HIMS, LBRT, SNDK, CBRS, AAOI"
-    },
-    {
-      "time": "2026-07-24T19:27:51.340Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "MXL: relVol 2.0× < 2.5× (todayVol 8.7M)  •  BE: relVol 0.7× < 2.5× (todayVol 10.9M)  •  AEHR: relVol 0.7× < 2.5× (todayVol 2.1M)  •  NBIS: net up over ~5d ($177.71→$191.98) — no short into uptrend  •  AXTI: net up over ~5d ($45.86→$46.31) — no short into uptrend  •  HIMS: relVol 1.6× < 2.5× (todayVol 22.9M)  •  LBRT: price $17.32 < $20 (short floor)  •  SNDK: net up over ~5d ($1354.82→$1429.06) — no short into uptrend  •  CBRS: net up over ~5d ($172.86→$196.70) — no short into uptrend  •  AAOI: relVol 0.6× < 2.5× (todayVol 5.5M)  •  CRDO: net up over ~5d ($202.68→$211.80) — no short into uptrend  •  SHAZ: relVol 0.6× < 2.5× (todayVol 1.3M)"
-    },
-    {
-      "time": "2026-07-24T19:27:51.340Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T19:38:05.670Z",
-      "type": "INFO",
-      "msg": "Account: $99855.59 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T19:38:06.140Z",
-      "type": "INFO",
-      "msg": "EOD review (22 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T19:38:06.232Z",
-      "type": "INFO",
-      "msg": "RNG held overnight",
-      "detail": "Side long | Strong close | P&L +$13.64 | above VWAP"
-    },
-    {
-      "time": "2026-07-24T19:38:06.433Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T19:48:20.410Z",
-      "type": "INFO",
-      "msg": "Account: $99854.97 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T19:48:20.856Z",
-      "type": "INFO",
-      "msg": "EOD review (12 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T19:48:20.961Z",
-      "type": "INFO",
-      "msg": "RNG held overnight",
-      "detail": "Side long | Strong close | P&L +$13.02 | above VWAP"
-    },
-    {
-      "time": "2026-07-24T19:48:21.161Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-24T19:58:33.724Z",
-      "type": "INFO",
-      "msg": "Account: $99848.46 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-24T19:58:34.315Z",
       "type": "INFO",
@@ -1271,9 +1212,83 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:05:21.049Z",
+      "type": "INFO",
+      "msg": "Account: $99952.61 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:05:21.715Z",
+      "type": "INFO",
+      "msg": "Watchlist: 29 tickers",
+      "detail": "FCF, AAT, AB, ABG, ACGL, ACHC, ACR, AKR"
+    },
+    {
+      "time": "2026-07-27T19:05:22.239Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BMNR, NOW, RGTI, DJT, RHI, NAVN, ANDG, TEAM, BRZE, WIX"
+    },
+    {
+      "time": "2026-07-27T19:05:22.239Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 29 watchlist"
+    },
+    {
+      "time": "2026-07-27T19:05:26.672Z",
+      "type": "SIGNAL",
+      "msg": "RNG — score 8 | gap 38.9% | relVol 2.0× | RSI 21",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:05:47.804Z",
+      "type": "INFO",
+      "msg": "Rejections (59)",
+      "detail": "BMNR: relVol 1.2× < 2× (todayVol 42.1M)  •  NOW: relVol 1.1× < 2× (todayVol 24.9M)  •  RGTI: gap 3.1% < 4% (price $15.31 vs priorClose $14.85)  •  DJT: price $9.57 < $15  •  RHI: relVol 0.8× < 2× (todayVol 1.7M)  •  NAVN: relVol 0.5× < 2× (todayVol 2.1M)  •  ANDG: avgVol 0.4M < 1M  •  TEAM: relVol 1.3× < 2× (todayVol 4.3M)  •  BRZE: relVol 0.6× < 2× (todayVol 1.3M)  •  WIX: relVol 0.9× < 2× (todayVol 1.1M)  •  PLSE: avgVol 0.3M < 1M  •  WDAY: relVol 0.8× < 2× (todayVol 3.4M)"
+    },
+    {
+      "time": "2026-07-27T19:05:47.804Z",
+      "type": "INFO",
+      "msg": "Top signal: RNG (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-27T19:05:47.804Z",
+      "type": "BUY",
+      "msg": "Placing 27× RNG @ ~$53.63",
+      "detail": "gap 38.9% | risk $12.55 | SL $53.17 | TP $54.86 | R:R 2.6 | "
+    },
+    {
+      "time": "2026-07-27T19:05:48.008Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 27× RNG",
+      "detail": "ID 89612ed3-154a-4184-80bb-78954b0ccc8a | R:R 2.6:1 | risk $12.55"
+    },
+    {
+      "time": "2026-07-27T19:05:48.858Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "LEGN, ICHR, SNDK, SIMO, VG, MXL, CORZ, UCTT, CIFR, TTMI"
+    },
+    {
+      "time": "2026-07-27T19:06:04.818Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "LEGN: price $19.10 < $20 (short floor)  •  ICHR: relVol 0.8× < 2.5× (todayVol 0.9M)  •  SNDK: relVol 1.3× < 2.5× (todayVol 17.5M)  •  SIMO: avgVol 0.7M < 1M  •  VG: price $12.88 < $20 (short floor)  •  MXL: relVol 1.3× < 2.5× (todayVol 5.4M)  •  CORZ: relVol 0.7× < 2.5× (todayVol 7.1M)  •  UCTT: relVol 0.9× < 2.5× (todayVol 1.3M)  •  CIFR: net up over ~5d ($17.56→$21.22) — no short into uptrend  •  TTMI: relVol 0.6× < 2.5× (todayVol 1.4M)  •  BELFA: avgVol 0.2M < 1M  •  SM: relVol 0.5× < 2.5× (todayVol 1.9M)"
+    },
+    {
+      "time": "2026-07-27T19:06:04.818Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [],
+  "tradedToday": [
+    "RNG"
+  ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
