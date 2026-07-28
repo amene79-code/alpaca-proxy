@@ -3,7 +3,7 @@
     "CLS": {
       "side": "long",
       "entry": 341.29998779296875,
-      "high": 348.71,
+      "high": 350.085,
       "low": 341.29998779296875,
       "initialSl": 337.71,
       "sl": 341.83,
@@ -83,20 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-28T19:49:37.899Z",
+  "lastRun": "2026-07-28T19:59:56.897Z",
   "log": [
-    {
-      "time": "2026-07-28T16:21:45.629Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 22 watchlist"
-    },
-    {
-      "time": "2026-07-28T16:22:15.803Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "KNSA: avgVol 0.7M < 1M  •  ITRI: avgVol 0.7M < 1M  •  RGEN: relVol 1.2× < 2× (todayVol 1.3M)  •  JBLU: price $5.90 < $15  •  IQV: relVol 2.0× < 2× (todayVol 2.6M)  •  TRU: relVol 1.2× < 2× (todayVol 2.8M)  •  AWI: avgVol 0.5M < 1M  •  AGYS: avgVol 0.3M < 1M  •  APPF: avgVol 0.4M < 1M  •  WPP: avgVol 0.4M < 1M  •  UL: relVol 1.4× < 2× (todayVol 5.2M)  •  PRK: avgVol 0.1M < 1M"
-    },
     {
       "time": "2026-07-28T16:22:15.803Z",
       "type": "INFO",
@@ -1281,6 +1269,18 @@
     },
     {
       "time": "2026-07-28T19:49:37.898Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T19:59:56.232Z",
+      "type": "INFO",
+      "msg": "Account: $100014.04 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T19:59:56.897Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
