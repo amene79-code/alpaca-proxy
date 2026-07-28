@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-28T20:20:22.175Z",
+  "lastRun": "2026-07-28T20:30:40.073Z",
   "log": [
-    {
-      "time": "2026-07-28T16:32:51.333Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "JBLU, KNSA, ITRI, RGEN, IQV, CMCSA, TRU, AWI, IOND, AGYS"
-    },
-    {
-      "time": "2026-07-28T16:32:51.333Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 22 watchlist"
-    },
-    {
-      "time": "2026-07-28T16:33:15.516Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "JBLU: price $6.03 < $15  •  KNSA: avgVol 0.7M < 1M  •  ITRI: avgVol 0.7M < 1M  •  RGEN: relVol 1.2× < 2× (todayVol 1.4M)  •  IQV: below VWAP (price $240.08 < VWAP $241.41)  •  CMCSA: relVol 0.5× < 2× (todayVol 18.1M)  •  TRU: relVol 1.2× < 2× (todayVol 2.9M)  •  AWI: avgVol 0.5M < 1M  •  IOND: no 5m candles  •  AGYS: avgVol 0.3M < 1M  •  APPF: avgVol 0.4M < 1M  •  WPP: avgVol 0.4M < 1M"
-    },
     {
       "time": "2026-07-28T16:33:15.516Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-07-28T20:20:22.175Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T20:30:39.762Z",
+      "type": "INFO",
+      "msg": "Account: $100005.70 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T20:30:39.774Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T20:30:40.072Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
