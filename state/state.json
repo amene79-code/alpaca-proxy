@@ -3,7 +3,7 @@
     "CLS": {
       "side": "long",
       "entry": 341.29998779296875,
-      "high": 348.51,
+      "high": 348.71,
       "low": 341.29998779296875,
       "initialSl": 337.71,
       "sl": 341.83,
@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-28T19:39:14.018Z",
+  "lastRun": "2026-07-28T19:49:37.899Z",
   "log": [
-    {
-      "time": "2026-07-28T16:11:25.921Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T16:21:44.310Z",
-      "type": "INFO",
-      "msg": "Account: $99932.70 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T16:21:44.645Z",
-      "type": "INFO",
-      "msg": "Watchlist: 22 tickers",
-      "detail": "MSFT, DTE, META, NBIS, PCOR, GLW, KO, BSX"
-    },
-    {
-      "time": "2026-07-28T16:21:45.629Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "KNSA, ITRI, RGEN, JBLU, IQV, TRU, AWI, AGYS, APPF, WPP"
-    },
     {
       "time": "2026-07-28T16:21:45.629Z",
       "type": "INFO",
@@ -1281,6 +1257,30 @@
     },
     {
       "time": "2026-07-28T19:39:14.018Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T19:49:37.046Z",
+      "type": "INFO",
+      "msg": "Account: $100008.54 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T19:49:37.610Z",
+      "type": "INFO",
+      "msg": "EOD review (11 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T19:49:37.697Z",
+      "type": "INFO",
+      "msg": "CLS held overnight",
+      "detail": "Side long | Strong close | P&L +$28.88 | above VWAP"
+    },
+    {
+      "time": "2026-07-28T19:49:37.898Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
