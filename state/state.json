@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 2,
-  "dailyDate": "2026-07-27",
+  "dailyTrades": 0,
+  "dailyDate": "2026-07-28",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-27T21:32:21.325Z",
+  "lastRun": "2026-07-28T11:57:56.224Z",
   "log": [
-    {
-      "time": "2026-07-27T16:01:38.154Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "LEGN: price $18.90 < $20 (short floor)  •  ICHR: relVol 0.4× < 2.5× (todayVol 0.5M)  •  MXL: relVol 1.0× < 2.5× (todayVol 3.8M)  •  SIMO: avgVol 0.7M < 1M  •  SNDK: relVol 0.9× < 2.5× (todayVol 12.5M)  •  UCTT: relVol 0.4× < 2.5× (todayVol 0.6M)  •  ACMR: relVol 0.4× < 2.5× (todayVol 0.5M)  •  BELFA: avgVol 0.2M < 1M  •  COHU: relVol 0.3× < 2.5× (todayVol 0.3M)  •  VECO: relVol 0.3× < 2.5× (todayVol 0.4M)  •  CORZ: relVol 0.4× < 2.5× (todayVol 3.9M)  •  SKHY: relVol 0.5× < 2.5× (todayVol 29.4M)"
-    },
-    {
-      "time": "2026-07-27T16:01:38.154Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-27T16:11:52.718Z",
-      "type": "INFO",
-      "msg": "Account: $99952.61 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-27T16:11:53.199Z",
-      "type": "INFO",
-      "msg": "Watchlist: 29 tickers",
-      "detail": "FCF, AAT, AB, ABG, ACGL, ACHC, ACR, AKR"
-    },
     {
       "time": "2026-07-27T16:11:53.519Z",
       "type": "INFO",
@@ -1271,12 +1247,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-07-28T11:57:55.674Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T11:57:55.911Z",
+      "type": "INFO",
+      "msg": "Account: $99932.70 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T11:57:55.984Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T11:57:56.224Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "RNG",
-    "QBTS"
-  ],
+  "tradedToday": [],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
