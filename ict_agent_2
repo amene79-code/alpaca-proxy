@@ -231,6 +231,7 @@ label{color:#7aaa90;font-size:11px}
     <div><div class="fl">Max positions</div><input id="cfgMaxPos" type="number" value="20" min="1"></div>
     <div><div class="fl">Max trades/day</div><input id="cfgMaxDaily" type="number" value="20" min="1"></div>
     <div><div class="fl">Trailing stop (%)</div><input id="cfgTrail" type="number" value="1.5" min="0.5" step="0.5"></div>
+    <div><div class="fl">Trail arms at (% profit)</div><input id="cfgTrailArm" type="number" value="1.0" min="0" step="0.5"></div>
   </div>
   <div class="g3">
     <div><div class="fl">Scan every</div>
@@ -1201,40 +1202,117 @@ async function hydrateLevelsFromAlpaca(positions){
   }catch(e){ log("INFO",`Could not hydrate SL/TP from Alpaca: ${e.message}`); }
 }
 async function manageTrailingStops(positions, cfg){
+  const trailPct = cfg.trail || 0.015;
+  // Only start trailing once a position is at least this far into profit, so a
+  // brand-new trade isn't immediately tightened before it's had room to move.
+  const ARM_PROFIT_PCT = cfg.trailArm != null ? cfg.trailArm : 0.01; // 1% in profit
+
   for(const p of Array.isArray(positions)?positions:[]){
     const price=+p.current_price||0, entry=+p.avg_entry_price||0;
     if(!price||!entry) continue;
     const qtyNum=+p.qty||0;
-    // Infer side from Alpaca position sign if we don't have it stored.
-    const side=trailingStops[p.symbol]?.side || (qtyNum<0?"short":"long");
+    if(!qtyNum) continue;
+    const side = trailingStops[p.symbol]?.side || (qtyNum<0?"short":"long");
     if(!trailingStops[p.symbol]) trailingStops[p.symbol]={high:Math.max(price,entry),low:Math.min(price,entry),entry,side};
     const st=trailingStops[p.symbol];
     if(st.low==null) st.low=Math.min(price,entry);
+    if(st.high==null) st.high=Math.max(price,entry);
 
-    // Track the favourable extreme for each side.
+    // Track favourable extreme.
     if(side==="long" && price>st.high) st.high=price;
     if(side==="short" && price<st.low)  st.low=price;
 
-    // Compute the trailing level symmetrically.
-    // NOTE: the real protection is the broker-side GTC bracket (SL+TP) placed at
-    // entry. This browser trail is ADVISORY ONLY while the tab is open — it logs
-    // when a tighter trail level is touched but does NOT cancel the broker bracket,
-    // so positions stay protected even if this tab closes.
-    if(side==="long"){
-      const trailLevel=+(st.high*(1-cfg.trail)).toFixed(2);
-      if(price<=trailLevel){
+    // How far in profit are we (fraction)?
+    const profitPct = side==="long" ? (price-entry)/entry : (entry-price)/entry;
+    if(profitPct < ARM_PROFIT_PCT) continue; // not armed yet — leave the original bracket stop
+
+    // Desired trail level behind the favourable extreme.
+    const desired = side==="long"
+      ? +(st.high*(1-trailPct)).toFixed(2)
+      : +(st.low *(1+trailPct)).toFixed(2);
+
+    // Never trail past entry into a loss — cap the trail at breakeven-ish (entry).
+    // (Once armed we at least protect breakeven; we don't move the stop the wrong side of entry.)
+    const trailLevel = side==="long" ? Math.max(desired, entry) : Math.min(desired, entry);
+
+    // Current known stop (from hydration or prior trail).
+    const curStop = st.sl != null ? +st.sl : null;
+
+    // Only RATCHET: move the stop in the favourable direction, never loosen it.
+    const better = side==="long"
+      ? (curStop==null || trailLevel > curStop)
+      : (curStop==null || trailLevel < curStop);
+
+    // Require a minimum move so we don't spam tiny cancel/replace cycles.
+    const minMove = Math.max(0.02, entry*0.001); // ~0.1% or 2 cents
+    const bigEnough = curStop==null || Math.abs(trailLevel-curStop) >= minMove;
+
+    // Also don't set a stop that's already through the current price (would fill instantly).
+    const safeVsPrice = side==="long" ? trailLevel < price : trailLevel > price;
+
+    if(better && bigEnough && safeVsPrice){
+      const ok = await moveBrokerStop(p, side, trailLevel, cfg);
+      if(ok){
+        st.sl = trailLevel;
         const pl=+p.unrealized_pl||0;
-        log("TRAIL",`(advisory) ${p.symbol} long hit trail $${trailLevel}`,
-          `High $${st.high} | price $${price} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)} | broker SL still active`);
-      }
-    } else { // short
-      const trailLevel=+(st.low*(1+cfg.trail)).toFixed(2);
-      if(price>=trailLevel){
-        const pl=+p.unrealized_pl||0;
-        log("TRAIL",`(advisory) ${p.symbol} short hit trail $${trailLevel}`,
-          `Low $${st.low} | price $${price} | P&L ${pl>=0?"+":""}$${pl.toFixed(2)} | broker SL still active`);
+        log("TRAIL",`↑ ${p.symbol} ${side} stop → $${trailLevel}`,
+          `${side==="long"?"High":"Low"} $${(side==="long"?st.high:st.low).toFixed(2)} | price $${price} | locked, P&L ${pl>=0?"+":""}$${pl.toFixed(2)}`);
       }
     }
+  }
+}
+
+// Move the broker-side stop via Option 2 (proxy allows only GET/POST/DELETE, not
+// PATCH): cancel the existing bracket legs for this symbol, then place a FRESH
+// linked bracket (new stop + the existing take-profit) so OCO integrity is kept —
+// when one leg fills the other auto-cancels. Tradeoff: a brief (~sub-second)
+// window between cancel and re-place where the position has no resting stop. On
+// paper this is acceptable. We keep the TP unchanged and only ratchet the stop.
+async function moveBrokerStop(p, side, newStop, cfg){
+  const sym=p.symbol;
+  const qty=Math.abs(+p.qty||0);
+  if(!qty) return false;
+  const closeSide = side==="short" ? "buy" : "sell";
+  try{
+    // Gather this symbol's open closing-side legs (stop + take-profit).
+    const open=await alpaca("GET","/v2/orders?status=open&limit=200&nested=true").catch(()=>[]);
+    const flat=[];
+    for(const o of (Array.isArray(open)?open:[])){ flat.push(o); if(o.legs) for(const l of o.legs) flat.push(l); }
+    const legs=flat.filter(o=>o.symbol===sym && o.side===closeSide
+      && (o.status==="held"||o.status==="new"||o.status==="accepted"));
+
+    // Preserve the existing take-profit price so we only change the stop.
+    const tpLeg=legs.find(o=>o.stop_price==null && o.limit_price!=null);
+    const tpPrice = tpLeg ? +tpLeg.limit_price : (trailingStops[sym]?.tp||null);
+
+    // Cancel existing closing legs (stop and TP) so we can re-place a clean bracket.
+    for(const l of legs){ await alpaca("DELETE",`/v2/orders/${l.id}`).catch(()=>{}); }
+    await new Promise(r=>setTimeout(r,400));
+
+    // Re-place as an OCO: one order that exits at newStop (stop) OR tpPrice (limit),
+    // whichever hits first. This restores broker-side OCO protection.
+    if(tpPrice!=null){
+      await alpaca("POST","/v2/orders",{
+        symbol:sym, qty:String(qty), side:closeSide,
+        type:"limit", limit_price:String(tpPrice),
+        order_class:"oco", time_in_force:"gtc",
+        take_profit:{limit_price:String(tpPrice)},
+        stop_loss:{stop_price:String(newStop)},
+        client_order_id:`ICT-TRAIL-${sym}-${Date.now()}`
+      });
+    } else {
+      // No TP found — place a lone GTC stop (still broker-side).
+      await alpaca("POST","/v2/orders",{
+        symbol:sym, qty:String(qty), side:closeSide,
+        type:"stop", stop_price:String(newStop), time_in_force:"gtc",
+        client_order_id:`ICT-TRAIL-${sym}-${Date.now()}`
+      });
+    }
+    return true;
+  }catch(e){
+    log("ERROR",`Trail stop move failed for ${sym}: ${e.message}`,
+      `⚠ Position may be briefly without a resting stop — check ${sym} on Alpaca`);
+    return false;
   }
 }
 
@@ -1302,6 +1380,7 @@ async function _runCycle(){
     maxPos:    +document.getElementById("cfgMaxPos").value||20,
     maxDaily:  +document.getElementById("cfgMaxDaily").value||20,
     trail:     +document.getElementById("cfgTrail").value/100,
+    trailArm:  +document.getElementById("cfgTrailArm").value/100,
     minScore:  +document.getElementById("cfgMinFVG").value||8,
     earnings:  +document.getElementById("cfgEarnings").value||2,
     orderType: document.getElementById("cfgOrderType").value||"limit",
