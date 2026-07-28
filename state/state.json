@@ -3,7 +3,7 @@
     "CLS": {
       "side": "long",
       "entry": 341.29998779296875,
-      "high": 350.085,
+      "high": 350.2,
       "low": 341.29998779296875,
       "initialSl": 337.71,
       "sl": 341.83,
@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-28T19:59:56.897Z",
+  "lastRun": "2026-07-28T20:10:08.940Z",
   "log": [
-    {
-      "time": "2026-07-28T16:22:15.803Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T16:22:16.159Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "AMKR, SANM, CVLT, GLW, STRL, SNDK, FRVO, BE, ICHR, TTMI"
-    },
-    {
-      "time": "2026-07-28T16:22:35.340Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "AMKR: relVol 2.1× < 2.5× (todayVol 11.0M)  •  SANM: avgVol 0.7M < 1M  •  CVLT: avgVol 0.7M < 1M  •  GLW: relVol 2.2× < 2.5× (todayVol 29.1M)  •  STRL: avgVol 0.6M < 1M  •  SNDK: relVol 1.1× < 2.5× (todayVol 15.5M)  •  FRVO: relVol 0.5× < 2.5× (todayVol 1.6M)  •  BE: relVol 0.8× < 2.5× (todayVol 11.5M)  •  ICHR: relVol 0.6× < 2.5× (todayVol 0.7M)  •  TTMI: relVol 1.2× < 2.5× (todayVol 2.8M)  •  SKM: relVol 0.7× < 2.5× (todayVol 1.9M)  •  FRMI: price $6.36 < $20 (short floor)"
-    },
     {
       "time": "2026-07-28T16:22:35.341Z",
       "type": "INFO",
@@ -1283,6 +1265,24 @@
       "time": "2026-07-28T19:59:56.897Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T20:10:08.643Z",
+      "type": "INFO",
+      "msg": "Account: $100014.50 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T20:10:08.665Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-28T20:10:08.940Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
