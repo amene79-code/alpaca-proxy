@@ -15,7 +15,7 @@
     "CAKE": {
       "side": "long",
       "entry": 99.66000366210938,
-      "high": 99.66000366210938,
+      "high": 99.845,
       "low": 99.66000366210938,
       "initialSl": 98.9,
       "sl": 98.9,
@@ -95,74 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-29T18:12:58.688Z",
+  "lastRun": "2026-07-29T18:23:40.797Z",
   "log": [
-    {
-      "time": "2026-07-29T14:45:30.076Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PSN, LMND, LII, VFC, AAUC, WSO, ACHC, VRT, SLGN, MAS"
-    },
-    {
-      "time": "2026-07-29T14:45:30.641Z",
-      "type": "SIGNAL",
-      "msg": "PSN — SHORT score 9 | gap -37.3% | relVol 4.2× | RSI 13",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T14:45:42.246Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "LMND: relVol 2.1× < 2.5× (todayVol 3.0M)  •  LII: avgVol 0.4M < 1M  •  VFC: price $15.06 < $20 (short floor)  •  AAUC: price $17.53 < $20 (short floor)  •  WSO: avgVol 0.4M < 1M  •  ACHC: relVol 0.8× < 2.5× (todayVol 2.5M)  •  VRT: relVol 1.5× < 2.5× (todayVol 7.1M)  •  SLGN: relVol 0.8× < 2.5× (todayVol 0.9M)  •  MAS: relVol 1.2× < 2.5× (todayVol 2.6M)  •  BTU: relVol 0.9× < 2.5× (todayVol 2.1M)  •  SITE: avgVol 0.7M < 1M  •  MOD: relVol 0.9× < 2.5× (todayVol 1.2M)"
-    },
-    {
-      "time": "2026-07-29T14:45:42.246Z",
-      "type": "INFO",
-      "msg": "Top short: PSN (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T14:45:42.246Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 16× PSN @ ~$37.28",
-      "detail": "gap -37.3% | risk $19.68 | SL $38.51 | TP $33.58 | R:R 3.0"
-    },
-    {
-      "time": "2026-07-29T14:45:42.599Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 16× PSN",
-      "detail": "ID 56aeb66c-6f32-4677-951a-2aec170e1cf0 | R:R 3.0:1 | risk $19.68 | real bracket stop @ $38.51"
-    },
-    {
-      "time": "2026-07-29T14:56:03.521Z",
-      "type": "INFO",
-      "msg": "Account: $99937.62 | 2 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T14:56:04.215Z",
-      "type": "INFO",
-      "msg": "Watchlist: 25 tickers",
-      "detail": "MSFT, META, NBIS, AAPL, AMZN, SOFI, BSX, VRT"
-    },
-    {
-      "time": "2026-07-29T14:56:04.603Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CBZ, AVTR, HURN, MANH, NEO, GRMN, MBIN, EXLS, EDU, LAD"
-    },
-    {
-      "time": "2026-07-29T14:56:04.603Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 25 watchlist"
-    },
-    {
-      "time": "2026-07-29T14:56:26.464Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "CBZ: ATR 0.09% < 0.5%  •  AVTR: price $13.98 < $15  •  HURN: avgVol 0.3M < 1M  •  MANH: avgVol 0.7M < 1M  •  NEO: relVol 1.0× < 2× (todayVol 2.7M)  •  GRMN: avgVol 0.8M < 1M  •  MBIN: avgVol 0.2M < 1M  •  EXLS: relVol 0.6× < 2× (todayVol 1.4M)  •  EDU: avgVol 0.6M < 1M  •  LAD: avgVol 0.3M < 1M  •  GEHC: relVol 1.1× < 2× (todayVol 6.0M)  •  CAKE: relVol 1.1× < 2× (todayVol 1.6M)"
-    },
     {
       "time": "2026-07-29T14:56:26.464Z",
       "type": "INFO",
@@ -1293,6 +1227,72 @@
     },
     {
       "time": "2026-07-29T18:12:58.688Z",
+      "type": "INFO",
+      "msg": "SKIP VRT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T18:23:09.766Z",
+      "type": "INFO",
+      "msg": "Account: $99905.89 | 2 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T18:23:10.227Z",
+      "type": "INFO",
+      "msg": "Watchlist: 25 tickers",
+      "detail": "MSFT, META, NBIS, AAPL, AMZN, SOFI, BSX, VRT"
+    },
+    {
+      "time": "2026-07-29T18:23:10.570Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AVTR, HURN, MANH, LAD, GRMN, EXLS, CBZ, NEO, EDU, MBIN"
+    },
+    {
+      "time": "2026-07-29T18:23:10.570Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 25 watchlist"
+    },
+    {
+      "time": "2026-07-29T18:23:29.099Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "AVTR: price $14.22 < $15  •  HURN: avgVol 0.3M < 1M  •  MANH: avgVol 0.8M < 1M  •  LAD: avgVol 0.3M < 1M  •  GRMN: avgVol 0.9M < 1M  •  EXLS: relVol 1.7× < 2× (todayVol 3.9M)  •  CBZ: ATR 0.11% < 0.5%  •  NEO: relVol 1.8× < 2× (todayVol 5.3M)  •  EDU: avgVol 0.7M < 1M  •  MBIN: avgVol 0.2M < 1M  •  CTSH: relVol 1.1× < 2× (todayVol 9.7M)  •  CHEF: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-07-29T18:23:29.099Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T18:23:29.229Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PSN, LMND, LII, VFC, AAUC, VRT, DBD, ACHC, WSO, INIO"
+    },
+    {
+      "time": "2026-07-29T18:23:30.747Z",
+      "type": "SIGNAL",
+      "msg": "VRT — SHORT score 9 | gap -16.8% | relVol 2.9× | RSI 43",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T18:23:40.797Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "PSN: above VWAP (price $39.32 > VWAP $38.88) — not holding breakdown  •  LMND: above opening-range low (price $48.42 > ORL $47.51)  •  LII: avgVol 0.5M < 1M  •  VFC: price $14.85 < $20 (short floor)  •  AAUC: price $17.01 < $20 (short floor)  •  DBD: avgVol 0.3M < 1M  •  ACHC: relVol 1.7× < 2.5× (todayVol 5.3M)  •  WSO: avgVol 0.4M < 1M  •  INIO: relVol 0.9× < 2.5× (todayVol 4.7M)  •  FRVO: price $18.35 < $20 (short floor)  •  ARX: price $12.86 < $20 (short floor)  •  HIMS: relVol 1.4× < 2.5× (todayVol 20.2M)"
+    },
+    {
+      "time": "2026-07-29T18:23:40.797Z",
+      "type": "INFO",
+      "msg": "Top short: VRT (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T18:23:40.797Z",
       "type": "INFO",
       "msg": "SKIP VRT — already traded today",
       "detail": ""
