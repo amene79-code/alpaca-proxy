@@ -1,5 +1,18 @@
 {
-  "trailingStops": {},
+  "trailingStops": {
+    "CLS": {
+      "side": "long",
+      "entry": 341.49,
+      "high": 341.49,
+      "low": 337.81,
+      "initialSl": null,
+      "sl": null,
+      "tp": null,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
   "dailyTrades": 0,
   "dailyDate": "2026-07-29",
   "openPositions": [
@@ -70,20 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-29T13:29:15.916Z",
+  "lastRun": "2026-07-29T13:39:28.898Z",
   "log": [
-    {
-      "time": "2026-07-28T16:44:10.252Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "JBLU: price $6.11 < $15  •  KNSA: avgVol 0.7M < 1M  •  ITRI: avgVol 0.7M < 1M  •  RGEN: relVol 1.2× < 2× (todayVol 1.4M)  •  IQV: below VWAP (price $241.13 < VWAP $241.39)  •  IOND: no 5m candles  •  TRU: relVol 1.2× < 2× (todayVol 2.9M)  •  AGYS: avgVol 0.3M < 1M  •  AWI: avgVol 0.5M < 1M  •  APPF: avgVol 0.4M < 1M  •  WPP: avgVol 0.4M < 1M  •  PRK: avgVol 0.1M < 1M"
-    },
-    {
-      "time": "2026-07-28T16:44:10.252Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-28T16:44:10.443Z",
       "type": "INFO",
@@ -1270,6 +1271,18 @@
       "time": "2026-07-29T13:29:15.916Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T13:39:28.621Z",
+      "type": "INFO",
+      "msg": "Account: $99964.92 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T13:39:28.898Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (9 min in)",
       "detail": ""
     }
   ],
