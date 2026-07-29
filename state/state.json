@@ -1,30 +1,5 @@
 {
-  "trailingStops": {
-    "CLS": {
-      "side": "long",
-      "entry": 341.49,
-      "high": 341.49,
-      "low": 337.81,
-      "initialSl": null,
-      "sl": null,
-      "tp": null,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "MOD": {
-      "side": "short",
-      "entry": 184.14999389648438,
-      "high": 184.14999389648438,
-      "low": 184.14999389648438,
-      "initialSl": 186.01,
-      "sl": 186.01,
-      "tp": 178.58,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-07-29",
   "openPositions": [
@@ -95,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-29T19:29:04.372Z",
+  "lastRun": "2026-07-29T19:39:20.391Z",
   "log": [
-    {
-      "time": "2026-07-29T16:23:32.923Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T16:23:33.073Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PSN, LMND, LII, VFC, AAUC, VRT, WSO, FRVO, INIO, BTDR"
-    },
-    {
-      "time": "2026-07-29T16:23:44.706Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PSN: above VWAP (price $39.13 > VWAP $38.86) — not holding breakdown  •  LMND: above opening-range low (price $48.16 > ORL $47.51)  •  LII: avgVol 0.5M < 1M  •  VFC: price $14.95 < $20 (short floor)  •  AAUC: price $17.17 < $20 (short floor)  •  VRT: relVol 2.3× < 2.5× (todayVol 11.3M)  •  WSO: avgVol 0.4M < 1M  •  FRVO: price $18.17 < $20 (short floor)  •  INIO: relVol 0.6× < 2.5× (todayVol 2.9M)  •  BTDR: price $8.94 < $20 (short floor)  •  ACHC: relVol 1.4× < 2.5× (todayVol 4.2M)  •  SITE: avgVol 0.7M < 1M"
-    },
-    {
-      "time": "2026-07-29T16:23:44.706Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T16:34:00.483Z",
-      "type": "INFO",
-      "msg": "Account: $99880.80 | 1 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-29T16:34:01.255Z",
       "type": "INFO",
@@ -1296,6 +1241,36 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 5× MOD",
       "detail": "ID af9e9183-c209-4890-9d73-1b8715b9d61e | R:R 3.0:1 | risk $9.30 | real bracket stop @ $186.01"
+    },
+    {
+      "time": "2026-07-29T19:39:16.992Z",
+      "type": "INFO",
+      "msg": "Account: $99936.91 | 2 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T19:39:17.251Z",
+      "type": "INFO",
+      "msg": "EOD review (21 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T19:39:18.613Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut CLS",
+      "detail": "Side long | Weak into close | P&L $-51.64"
+    },
+    {
+      "time": "2026-07-29T19:39:20.190Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut (SHORT) MOD",
+      "detail": "Side short | Weak into close | P&L +$3.70"
+    },
+    {
+      "time": "2026-07-29T19:39:20.391Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
     }
   ],
   "tradedToday": [
