@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-29T19:59:59.338Z",
+  "lastRun": "2026-07-29T20:10:17.659Z",
   "log": [
-    {
-      "time": "2026-07-29T16:34:23.333Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PSN, LMND, LII, VFC, AAUC, VRT, WSO, FRVO, ACHC, INIO"
-    },
-    {
-      "time": "2026-07-29T16:34:37.239Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PSN: above opening-range low (price $38.54 > ORL $38.25)  •  LMND: above opening-range low (price $48.13 > ORL $47.51)  •  LII: avgVol 0.5M < 1M  •  VFC: price $14.97 < $20 (short floor)  •  AAUC: price $17.08 < $20 (short floor)  •  VRT: relVol 2.3× < 2.5× (todayVol 11.6M)  •  WSO: avgVol 0.4M < 1M  •  FRVO: price $18.11 < $20 (short floor)  •  ACHC: relVol 1.4× < 2.5× (todayVol 4.3M)  •  INIO: relVol 0.6× < 2.5× (todayVol 3.0M)  •  BTDR: price $8.93 < $20 (short floor)  •  ARX: price $12.80 < $20 (short floor)"
-    },
-    {
-      "time": "2026-07-29T16:34:37.239Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-29T16:44:53.119Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-29T19:59:59.338Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T20:10:17.004Z",
+      "type": "INFO",
+      "msg": "Account: $99929.53 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T20:10:17.063Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T20:10:17.659Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
