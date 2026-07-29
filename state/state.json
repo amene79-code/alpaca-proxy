@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-29T19:49:35.179Z",
+  "lastRun": "2026-07-29T19:59:59.338Z",
   "log": [
-    {
-      "time": "2026-07-29T16:34:23.062Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "AVTR: price $14.17 < $15  •  HURN: avgVol 0.3M < 1M  •  MANH: avgVol 0.8M < 1M  •  GRMN: avgVol 0.9M < 1M  •  LAD: avgVol 0.3M < 1M  •  CBZ: ATR 0.10% < 0.5%  •  EXLS: relVol 1.1× < 2× (todayVol 2.5M)  •  NEO: relVol 1.5× < 2× (todayVol 4.3M)  •  MBIN: avgVol 0.2M < 1M  •  EDU: avgVol 0.7M < 1M  •  CAKE: relVol 1.8× < 2× (todayVol 2.8M)  •  CHEF: avgVol 0.5M < 1M"
-    },
-    {
-      "time": "2026-07-29T16:34:23.063Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-29T16:34:23.333Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-07-29T19:49:35.178Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T19:59:58.762Z",
+      "type": "INFO",
+      "msg": "Account: $99929.53 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T19:59:59.338Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
