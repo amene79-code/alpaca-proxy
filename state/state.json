@@ -83,74 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-29T17:29:44.223Z",
+  "lastRun": "2026-07-29T17:40:25.763Z",
   "log": [
-    {
-      "time": "2026-07-29T13:50:10.036Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "AVTR: price $14.54 < $15  •  MANH: avgVol 0.7M < 1M  •  HURN: avgVol 0.3M < 1M  •  GRMN: avgVol 0.8M < 1M  •  MBIN: avgVol 0.1M < 1M  •  CBZ: avgVol 0.9M < 1M  •  LAD: avgVol 0.3M < 1M  •  F: relVol 0.4× < 2× (todayVol 18.9M)  •  AXGN: relVol 0.2× < 2× (todayVol 0.3M)  •  GEHC: relVol 0.5× < 2× (todayVol 2.7M)  •  EXLS: relVol 0.2× < 2× (todayVol 0.5M)  •  TER: relVol 0.4× < 2× (todayVol 1.5M)"
-    },
-    {
-      "time": "2026-07-29T13:50:10.036Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T13:50:10.373Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PSN, LMND, VFC, AAUC, LII, VRT, SLGN, ACHC, WSO, MAS"
-    },
-    {
-      "time": "2026-07-29T13:50:28.679Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PSN: avgVol 1.0M < 1M  •  LMND: relVol 1.1× < 2.5× (todayVol 1.5M)  •  VFC: price $15.07 < $20 (short floor)  •  AAUC: price $17.31 < $20 (short floor)  •  LII: avgVol 0.4M < 1M  •  VRT: relVol 0.8× < 2.5× (todayVol 3.6M)  •  SLGN: relVol 0.1× < 2.5× (todayVol 0.2M)  •  ACHC: relVol 0.1× < 2.5× (todayVol 0.4M)  •  WSO: avgVol 0.4M < 1M  •  MAS: relVol 0.5× < 2.5× (todayVol 1.1M)  •  BTU: relVol 0.5× < 2.5× (todayVol 1.1M)  •  CAR: avgVol 0.5M < 1M"
-    },
-    {
-      "time": "2026-07-29T13:50:28.680Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T14:00:48.523Z",
-      "type": "INFO",
-      "msg": "Account: $99949.64 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T14:00:49.408Z",
-      "type": "INFO",
-      "msg": "Watchlist: 25 tickers",
-      "detail": "MSFT, META, NBIS, AAPL, AMZN, SOFI, BSX, VRT"
-    },
-    {
-      "time": "2026-07-29T14:00:49.677Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 28, kept 40",
-      "detail": "CBZ, AVTR, HURN, MANH, GRMN, MBIN, LAD, F, EXLS, NVTS"
-    },
-    {
-      "time": "2026-07-29T14:00:49.677Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 25 watchlist"
-    },
-    {
-      "time": "2026-07-29T14:01:08.609Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "CBZ: avgVol 1.0M < 1M  •  AVTR: price $14.01 < $15  •  HURN: avgVol 0.3M < 1M  •  MANH: avgVol 0.7M < 1M  •  GRMN: avgVol 0.8M < 1M  •  MBIN: avgVol 0.2M < 1M  •  LAD: avgVol 0.3M < 1M  •  F: relVol 0.5× < 2× (todayVol 23.6M)  •  EXLS: relVol 0.3× < 2× (todayVol 0.7M)  •  NVTS: price $10.71 < $15  •  GEHC: relVol 0.6× < 2× (todayVol 3.3M)  •  CAKE: relVol 0.6× < 2× (todayVol 0.8M)"
-    },
-    {
-      "time": "2026-07-29T14:01:08.610Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-29T14:01:08.826Z",
       "type": "INFO",
@@ -1281,6 +1215,72 @@
     },
     {
       "time": "2026-07-29T17:29:44.223Z",
+      "type": "INFO",
+      "msg": "SKIP VRT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:39:56.083Z",
+      "type": "INFO",
+      "msg": "Account: $99886.85 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:39:56.689Z",
+      "type": "INFO",
+      "msg": "Watchlist: 25 tickers",
+      "detail": "MSFT, META, NBIS, AAPL, AMZN, SOFI, BSX, VRT"
+    },
+    {
+      "time": "2026-07-29T17:39:57.096Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AVTR, HURN, MANH, LAD, GRMN, CBZ, EXLS, NEO, MBIN, EDU"
+    },
+    {
+      "time": "2026-07-29T17:39:57.097Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 25 watchlist"
+    },
+    {
+      "time": "2026-07-29T17:40:14.319Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "AVTR: price $14.23 < $15  •  HURN: avgVol 0.3M < 1M  •  MANH: avgVol 0.8M < 1M  •  LAD: avgVol 0.3M < 1M  •  GRMN: avgVol 0.9M < 1M  •  CBZ: ATR 0.07% < 0.5%  •  EXLS: relVol 1.4× < 2× (todayVol 3.3M)  •  NEO: relVol 1.6× < 2× (todayVol 4.8M)  •  MBIN: avgVol 0.2M < 1M  •  EDU: avgVol 0.6M < 1M  •  CAKE: ATR 0.45% < 0.5%  •  GEHC: relVol 1.7× < 2× (todayVol 9.4M)"
+    },
+    {
+      "time": "2026-07-29T17:40:14.319Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:40:14.484Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PSN, LMND, LII, VFC, AAUC, VRT, WSO, ACHC, DBD, INIO"
+    },
+    {
+      "time": "2026-07-29T17:40:16.080Z",
+      "type": "SIGNAL",
+      "msg": "VRT — SHORT score 9 | gap -21.7% | relVol 2.7× | RSI 50",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:40:25.763Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "PSN: above VWAP (price $39.20 > VWAP $38.86) — not holding breakdown  •  LMND: above VWAP (price $48.80 > VWAP $48.55) — not holding breakdown  •  LII: avgVol 0.4M < 1M  •  VFC: price $14.81 < $20 (short floor)  •  AAUC: price $17.11 < $20 (short floor)  •  WSO: avgVol 0.4M < 1M  •  ACHC: relVol 1.6× < 2.5× (todayVol 4.8M)  •  DBD: avgVol 0.3M < 1M  •  INIO: relVol 0.8× < 2.5× (todayVol 4.1M)  •  ARX: price $12.64 < $20 (short floor)  •  FRVO: price $18.21 < $20 (short floor)  •  MIR: price $14.61 < $20 (short floor)"
+    },
+    {
+      "time": "2026-07-29T17:40:25.763Z",
+      "type": "INFO",
+      "msg": "Top short: VRT (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:40:25.763Z",
       "type": "INFO",
       "msg": "SKIP VRT — already traded today",
       "detail": ""
