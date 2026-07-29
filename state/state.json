@@ -11,18 +11,6 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": false
-    },
-    "VRT": {
-      "side": "short",
-      "entry": 225.30499267578125,
-      "high": 225.30499267578125,
-      "low": 225.30499267578125,
-      "initialSl": 226.98,
-      "sl": 226.98,
-      "tp": 220.29,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
     }
   },
   "dailyTrades": 0,
@@ -95,74 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-29T17:08:09.345Z",
+  "lastRun": "2026-07-29T17:18:59.072Z",
   "log": [
-    {
-      "time": "2026-07-28T20:10:08.665Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T20:10:08.940Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T20:20:21.665Z",
-      "type": "INFO",
-      "msg": "Account: $100002.26 | 1 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T20:20:21.709Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T20:20:22.175Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T20:30:39.762Z",
-      "type": "INFO",
-      "msg": "Account: $100005.70 | 1 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T20:30:39.774Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T20:30:40.072Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T21:03:54.042Z",
-      "type": "INFO",
-      "msg": "Account: $100015.70 | 1 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T21:03:54.068Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T21:03:54.354Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-07-29T13:29:14.061Z",
       "type": "INFO",
@@ -1296,6 +1218,72 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 4× VRT",
       "detail": "ID 67f06ad0-50d9-4c75-b9c1-5c2dc2bbade4 | R:R 3.0:1 | risk $6.70 | real bracket stop @ $226.98"
+    },
+    {
+      "time": "2026-07-29T17:18:26.486Z",
+      "type": "INFO",
+      "msg": "Account: $99898.41 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:18:27.590Z",
+      "type": "INFO",
+      "msg": "Watchlist: 25 tickers",
+      "detail": "MSFT, META, NBIS, AAPL, AMZN, SOFI, BSX, VRT"
+    },
+    {
+      "time": "2026-07-29T17:18:27.895Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AVTR, HURN, MANH, LAD, GRMN, CBZ, EXLS, NEO, MBIN, EDU"
+    },
+    {
+      "time": "2026-07-29T17:18:27.896Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 25 watchlist"
+    },
+    {
+      "time": "2026-07-29T17:18:46.696Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "AVTR: price $14.10 < $15  •  HURN: avgVol 0.3M < 1M  •  MANH: avgVol 0.7M < 1M  •  LAD: avgVol 0.3M < 1M  •  GRMN: avgVol 0.9M < 1M  •  CBZ: ATR 0.08% < 0.5%  •  EXLS: relVol 1.3× < 2× (todayVol 3.1M)  •  NEO: relVol 1.6× < 2× (todayVol 4.7M)  •  MBIN: avgVol 0.2M < 1M  •  EDU: avgVol 0.6M < 1M  •  CAKE: ATR 0.36% < 0.5%  •  GEHC: relVol 1.7× < 2× (todayVol 9.1M)"
+    },
+    {
+      "time": "2026-07-29T17:18:46.696Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:18:46.831Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PSN, LMND, LII, VFC, AAUC, VRT, WSO, ACHC, DBD, FRVO"
+    },
+    {
+      "time": "2026-07-29T17:18:48.615Z",
+      "type": "SIGNAL",
+      "msg": "VRT — SHORT score 8 | gap -21.3% | relVol 2.6× | RSI 61",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:18:59.072Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "PSN: above VWAP (price $39.04 > VWAP $38.86) — not holding breakdown  •  LMND: above opening-range low (price $48.04 > ORL $47.51)  •  LII: avgVol 0.4M < 1M  •  VFC: price $14.82 < $20 (short floor)  •  AAUC: price $17.05 < $20 (short floor)  •  WSO: avgVol 0.4M < 1M  •  ACHC: relVol 1.5× < 2.5× (todayVol 4.6M)  •  DBD: avgVol 0.3M < 1M  •  FRVO: price $18.18 < $20 (short floor)  •  ARX: price $12.69 < $20 (short floor)  •  INIO: relVol 0.7× < 2.5× (todayVol 3.8M)  •  AXS: avgVol 0.7M < 1M"
+    },
+    {
+      "time": "2026-07-29T17:18:59.072Z",
+      "type": "INFO",
+      "msg": "Top short: VRT (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:18:59.072Z",
+      "type": "INFO",
+      "msg": "SKIP VRT — already traded today",
+      "detail": ""
     }
   ],
   "tradedToday": [],
