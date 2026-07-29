@@ -1,20 +1,7 @@
 {
-  "trailingStops": {
-    "CLS": {
-      "side": "long",
-      "entry": 341.29998779296875,
-      "high": 350.5,
-      "low": 341.29998779296875,
-      "initialSl": 337.71,
-      "sl": 341.83,
-      "tp": 350.87,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
-  "dailyTrades": 2,
-  "dailyDate": "2026-07-28",
+  "trailingStops": {},
+  "dailyTrades": 0,
+  "dailyDate": "2026-07-29",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -83,38 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-28T21:03:54.354Z",
+  "lastRun": "2026-07-29T13:29:15.916Z",
   "log": [
-    {
-      "time": "2026-07-28T16:33:31.710Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T16:43:46.392Z",
-      "type": "INFO",
-      "msg": "Account: $99932.70 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-28T16:43:46.838Z",
-      "type": "INFO",
-      "msg": "Watchlist: 22 tickers",
-      "detail": "MSFT, DTE, META, NBIS, PCOR, GLW, KO, BSX"
-    },
-    {
-      "time": "2026-07-28T16:43:47.341Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "JBLU, KNSA, ITRI, RGEN, IQV, IOND, TRU, AGYS, AWI, APPF"
-    },
-    {
-      "time": "2026-07-28T16:43:47.342Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 22 watchlist"
-    },
     {
       "time": "2026-07-28T16:44:10.252Z",
       "type": "INFO",
@@ -1284,14 +1241,39 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-07-29T13:29:14.061Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T13:29:14.120Z",
+      "type": "INFO",
+      "msg": "Account: $100022.88 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T13:29:14.127Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T13:29:15.765Z",
+      "type": "SELL",
+      "msg": "✓ Closed CLS (ext-hours TP)",
+      "detail": "Side long | P&L +$43.24"
+    },
+    {
+      "time": "2026-07-29T13:29:15.916Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "CLS",
-    "INCY"
-  ],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "AMKR"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
