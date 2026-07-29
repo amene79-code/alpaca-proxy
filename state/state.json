@@ -83,74 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-29T17:18:59.072Z",
+  "lastRun": "2026-07-29T17:29:44.223Z",
   "log": [
-    {
-      "time": "2026-07-29T13:29:14.061Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T13:29:14.120Z",
-      "type": "INFO",
-      "msg": "Account: $100022.88 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T13:29:14.127Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T13:29:15.765Z",
-      "type": "SELL",
-      "msg": "✓ Closed CLS (ext-hours TP)",
-      "detail": "Side long | P&L +$43.24"
-    },
-    {
-      "time": "2026-07-29T13:29:15.916Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T13:39:28.621Z",
-      "type": "INFO",
-      "msg": "Account: $99964.92 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T13:39:28.898Z",
-      "type": "INFO",
-      "msg": "Skip — first 15 min (9 min in)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T13:49:41.350Z",
-      "type": "INFO",
-      "msg": "Account: $99966.10 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T13:49:41.893Z",
-      "type": "INFO",
-      "msg": "Watchlist: 25 tickers",
-      "detail": "MSFT, META, NBIS, AAPL, AMZN, SOFI, BSX, VRT"
-    },
-    {
-      "time": "2026-07-29T13:49:42.339Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 18, kept 40",
-      "detail": "AVTR, MANH, HURN, GRMN, MBIN, CBZ, LAD, F, AXGN, GEHC"
-    },
-    {
-      "time": "2026-07-29T13:49:42.339Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 25 watchlist"
-    },
     {
       "time": "2026-07-29T13:50:10.036Z",
       "type": "INFO",
@@ -1281,6 +1215,72 @@
     },
     {
       "time": "2026-07-29T17:18:59.072Z",
+      "type": "INFO",
+      "msg": "SKIP VRT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:29:13.908Z",
+      "type": "INFO",
+      "msg": "Account: $99886.41 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:29:14.256Z",
+      "type": "INFO",
+      "msg": "Watchlist: 25 tickers",
+      "detail": "MSFT, META, NBIS, AAPL, AMZN, SOFI, BSX, VRT"
+    },
+    {
+      "time": "2026-07-29T17:29:14.577Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AVTR, HURN, MANH, LAD, GRMN, EXLS, CBZ, NEO, EDU, MBIN"
+    },
+    {
+      "time": "2026-07-29T17:29:14.577Z",
+      "type": "INFO",
+      "msg": "Scanning 60 candidates",
+      "detail": "40 screener + 25 watchlist"
+    },
+    {
+      "time": "2026-07-29T17:29:32.637Z",
+      "type": "INFO",
+      "msg": "Rejections (60)",
+      "detail": "AVTR: price $14.14 < $15  •  HURN: avgVol 0.3M < 1M  •  MANH: avgVol 0.8M < 1M  •  LAD: avgVol 0.3M < 1M  •  GRMN: avgVol 0.9M < 1M  •  EXLS: relVol 1.4× < 2× (todayVol 3.2M)  •  CBZ: ATR 0.08% < 0.5%  •  NEO: relVol 1.7× < 2× (todayVol 4.7M)  •  EDU: avgVol 0.7M < 1M  •  MBIN: avgVol 0.2M < 1M  •  CAKE: ATR 0.38% < 0.5%  •  GEHC: relVol 1.7× < 2× (todayVol 9.2M)"
+    },
+    {
+      "time": "2026-07-29T17:29:32.637Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:29:32.773Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PSN, LMND, LII, VFC, AAUC, VRT, WSO, ACHC, DBD, INIO"
+    },
+    {
+      "time": "2026-07-29T17:29:34.262Z",
+      "type": "SIGNAL",
+      "msg": "VRT — SHORT score 9 | gap -16.6% | relVol 2.6× | RSI 46",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:29:44.223Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "PSN: above VWAP (price $38.90 > VWAP $38.86) — not holding breakdown  •  LMND: above VWAP (price $48.58 > VWAP $48.54) — not holding breakdown  •  LII: avgVol 0.5M < 1M  •  VFC: price $14.77 < $20 (short floor)  •  AAUC: price $17.16 < $20 (short floor)  •  WSO: avgVol 0.4M < 1M  •  ACHC: relVol 1.5× < 2.5× (todayVol 4.7M)  •  DBD: avgVol 0.3M < 1M  •  INIO: relVol 0.8× < 2.5× (todayVol 4.0M)  •  ARX: price $12.63 < $20 (short floor)  •  FRVO: price $18.21 < $20 (short floor)  •  PLBL: price $5.88 < $20 (short floor)"
+    },
+    {
+      "time": "2026-07-29T17:29:44.223Z",
+      "type": "INFO",
+      "msg": "Top short: VRT (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-29T17:29:44.223Z",
       "type": "INFO",
       "msg": "SKIP VRT — already traded today",
       "detail": ""
