@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-30T20:06:36.913Z",
+  "lastRun": "2026-07-30T20:16:58.422Z",
   "log": [
-    {
-      "time": "2026-07-30T16:32:40.300Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "CIFR: relVol 0.9× < 2× (todayVol 22.7M)  •  IREN: relVol 1.0× < 2× (todayVol 46.1M)  •  NBIS: relVol 1.4× < 2× (todayVol 28.9M)  •  BE: relVol 1.4× < 2× (todayVol 22.0M)  •  CRWV: relVol 1.2× < 2× (todayVol 29.3M)  •  CLSK: price $14.48 < $15  •  WULF: relVol 0.7× < 2× (todayVol 25.6M)  •  APLD: relVol 0.8× < 2× (todayVol 17.1M)  •  MARA: price $11.88 < $15  •  MSFT: ATR 0.35% < 0.5%  •  MU: relVol 0.8× < 2× (todayVol 38.4M)  •  SKHY: relVol 0.7× < 2× (todayVol 37.1M)"
-    },
-    {
-      "time": "2026-07-30T16:32:40.300Z",
-      "type": "INFO",
-      "msg": "Top signal: CORT (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T16:32:40.300Z",
-      "type": "BUY",
-      "msg": "Placing 12× CORT @ ~$119.19",
-      "detail": "gap 28.2% | risk $19.44 | SL $117.57 | TP $123.52 | R:R 2.7 | "
-    },
     {
       "time": "2026-07-30T16:32:40.322Z",
       "type": "BUY",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-30T20:06:36.913Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T20:16:57.911Z",
+      "type": "INFO",
+      "msg": "Account: $99880.37 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T20:16:57.952Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T20:16:58.422Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
