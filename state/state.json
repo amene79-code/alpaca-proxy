@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "ALNY": {
-      "side": "short",
-      "entry": 202.6649932861328,
-      "high": 202.6649932861328,
-      "low": 202.6649932861328,
-      "initialSl": 205,
-      "sl": 205,
-      "tp": 195.66,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 0,
   "dailyDate": "2026-07-30",
   "openPositions": [
@@ -83,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-30T16:11:31.455Z",
+  "lastRun": "2026-07-30T16:22:16.171Z",
   "log": [
-    {
-      "time": "2026-07-29T18:44:40.191Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "AVTR, HURN, MANH, LAD, GRMN, EXLS, CBZ, NEO, MBIN, CAKE"
-    },
-    {
-      "time": "2026-07-29T18:44:40.191Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 25 watchlist"
-    },
-    {
-      "time": "2026-07-29T18:45:02.498Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "AVTR: price $14.18 < $15  •  HURN: avgVol 0.3M < 1M  •  MANH: avgVol 0.8M < 1M  •  LAD: avgVol 0.3M < 1M  •  GRMN: avgVol 0.9M < 1M  •  EXLS: relVol 1.8× < 2× (todayVol 4.2M)  •  CBZ: ATR 0.13% < 0.5%  •  NEO: relVol 1.9× < 2× (todayVol 5.5M)  •  MBIN: avgVol 0.2M < 1M  •  EDU: avgVol 0.7M < 1M  •  CTSH: relVol 1.1× < 2× (todayVol 10.3M)  •  NOW: relVol 1.1× < 2× (todayVol 26.8M)"
-    },
-    {
-      "time": "2026-07-29T18:45:02.498Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T18:45:02.712Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PSN, LMND, LII, VFC, AAUC, VRT, DBD, ACHC, WSO, YSS"
-    },
-    {
-      "time": "2026-07-29T18:45:04.713Z",
-      "type": "SIGNAL",
-      "msg": "VRT — SHORT score 8 | gap -16.5% | relVol 3.1× | RSI 50",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T18:45:17.350Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "PSN: above VWAP (price $39.15 > VWAP $38.89) — not holding breakdown  •  LMND: above opening-range low (price $48.15 > ORL $47.51)  •  LII: avgVol 0.5M < 1M  •  VFC: price $14.85 < $20 (short floor)  •  AAUC: price $17.08 < $20 (short floor)  •  DBD: avgVol 0.3M < 1M  •  ACHC: relVol 1.7× < 2.5× (todayVol 5.6M)  •  WSO: avgVol 0.4M < 1M  •  YSS: price $15.28 < $20 (short floor)  •  ARX: price $12.76 < $20 (short floor)  •  INIO: relVol 1.0× < 2.5× (todayVol 5.0M)  •  FRVO: price $18.36 < $20 (short floor)"
-    },
-    {
-      "time": "2026-07-29T18:45:17.350Z",
-      "type": "INFO",
-      "msg": "Top short: VRT (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T18:45:17.350Z",
-      "type": "INFO",
-      "msg": "SKIP VRT — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T18:55:44.430Z",
-      "type": "INFO",
-      "msg": "Account: $99983.69 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-07-29T18:55:45.504Z",
       "type": "INFO",
@@ -1284,6 +1211,66 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 4× ALNY",
       "detail": "ID 897f4941-db1e-4007-b1d0-65bc9178127b | R:R 3.0:1 | risk $9.34 | real bracket stop @ $205"
+    },
+    {
+      "time": "2026-07-30T16:21:46.228Z",
+      "type": "INFO",
+      "msg": "Account: $99916.11 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T16:21:47.100Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "IREN, NBIS, CIFR, BE, CRWV, SNDK, CLSK, APLD, WULF, MARA"
+    },
+    {
+      "time": "2026-07-30T16:21:47.100Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-07-30T16:22:01.076Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "IREN: relVol 1.0× < 2× (todayVol 44.6M)  •  NBIS: relVol 1.4× < 2× (todayVol 28.2M)  •  CIFR: relVol 0.8× < 2× (todayVol 22.1M)  •  BE: relVol 1.3× < 2× (todayVol 21.7M)  •  CRWV: relVol 1.2× < 2× (todayVol 28.8M)  •  SNDK: relVol 1.0× < 2× (todayVol 15.6M)  •  CLSK: price $14.65 < $15  •  APLD: relVol 0.8× < 2× (todayVol 16.7M)  •  WULF: relVol 0.7× < 2× (todayVol 24.9M)  •  MARA: price $11.93 < $15  •  MU: relVol 0.8× < 2× (todayVol 37.7M)  •  MSFT: ATR 0.37% < 0.5%"
+    },
+    {
+      "time": "2026-07-30T16:22:01.077Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T16:22:01.260Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "ALNY, RTO, WAY, FICO, PFSI, PHIN, CHRW, GPI, LKQ, RSI"
+    },
+    {
+      "time": "2026-07-30T16:22:01.689Z",
+      "type": "SIGNAL",
+      "msg": "ALNY — SHORT score 9 | gap -29.2% | relVol 2.7× | RSI 47",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T16:22:16.171Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "RTO: avgVol 1.0M < 1M  •  WAY: relVol 1.0× < 2.5× (todayVol 2.7M)  •  FICO: avgVol 0.3M < 1M  •  PFSI: avgVol 0.5M < 1M  •  PHIN: avgVol 0.3M < 1M  •  CHRW: relVol 1.4× < 2.5× (todayVol 2.9M)  •  GPI: avgVol 0.2M < 1M  •  LKQ: relVol 1.7× < 2.5× (todayVol 4.6M)  •  RSI: relVol 1.0× < 2.5× (todayVol 2.3M)  •  LRN: avgVol 0.7M < 1M  •  TW: relVol 2.0× < 2.5× (todayVol 2.9M)  •  MDGL: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-07-30T16:22:16.171Z",
+      "type": "INFO",
+      "msg": "Top short: ALNY (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T16:22:16.171Z",
+      "type": "INFO",
+      "msg": "SKIP ALNY — already traded today",
+      "detail": ""
     }
   ],
   "tradedToday": [],
