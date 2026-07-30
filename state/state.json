@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-07-29",
+  "dailyTrades": 0,
+  "dailyDate": "2026-07-30",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-29T21:14:26.532Z",
+  "lastRun": "2026-07-30T13:51:20.735Z",
   "log": [
-    {
-      "time": "2026-07-29T16:45:36.649Z",
-      "type": "INFO",
-      "msg": "Top short: PSN (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T16:45:36.649Z",
-      "type": "INFO",
-      "msg": "SKIP PSN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T16:56:41.840Z",
-      "type": "INFO",
-      "msg": "Account: $99885.16 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T16:56:42.093Z",
-      "type": "INFO",
-      "msg": "Watchlist: 25 tickers",
-      "detail": "MSFT, META, NBIS, AAPL, AMZN, SOFI, BSX, VRT"
-    },
-    {
-      "time": "2026-07-29T16:56:42.485Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "AVTR, HURN, MANH, GRMN, LAD, EXLS, CBZ, NEO, EDU, CAKE"
-    },
-    {
-      "time": "2026-07-29T16:56:42.485Z",
-      "type": "INFO",
-      "msg": "Scanning 60 candidates",
-      "detail": "40 screener + 25 watchlist"
-    },
-    {
-      "time": "2026-07-29T16:57:04.005Z",
-      "type": "INFO",
-      "msg": "Rejections (60)",
-      "detail": "AVTR: price $14.10 < $15  •  HURN: avgVol 0.3M < 1M  •  MANH: avgVol 0.8M < 1M  •  GRMN: avgVol 0.9M < 1M  •  LAD: avgVol 0.3M < 1M  •  EXLS: relVol 1.3× < 2× (todayVol 2.8M)  •  CBZ: ATR 0.09% < 0.5%  •  NEO: relVol 1.6× < 2× (todayVol 4.5M)  •  EDU: avgVol 0.7M < 1M  •  CAKE: relVol 1.9× < 2× (todayVol 3.0M)  •  MBIN: avgVol 0.2M < 1M  •  CTSH: relVol 0.8× < 2× (todayVol 7.1M)"
-    },
-    {
-      "time": "2026-07-29T16:57:04.006Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-29T16:57:04.147Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PSN, LMND, LII, VFC, AAUC, VRT, WSO, ACHC, ARX, FRVO"
-    },
     {
       "time": "2026-07-29T16:57:18.957Z",
       "type": "INFO",
@@ -1271,15 +1217,63 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-07-30T13:50:39.467Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T13:50:39.727Z",
+      "type": "INFO",
+      "msg": "Account: $99929.51 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T13:50:40.872Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 40, kept 40",
+      "detail": "BE, NBIS, CIFR, IREN, CORZ, APLD, SNDK, CRWV, WULF, MARA"
+    },
+    {
+      "time": "2026-07-30T13:50:40.872Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-07-30T13:50:59.591Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "BE: relVol 0.5× < 2× (todayVol 8.1M)  •  NBIS: relVol 0.5× < 2× (todayVol 9.8M)  •  CIFR: relVol 0.4× < 2× (todayVol 9.7M)  •  IREN: relVol 0.3× < 2× (todayVol 14.9M)  •  CORZ: relVol 0.6× < 2× (todayVol 7.2M)  •  APLD: relVol 0.3× < 2× (todayVol 5.6M)  •  SNDK: relVol 0.4× < 2× (todayVol 5.6M)  •  CRWV: relVol 0.4× < 2× (todayVol 10.2M)  •  WULF: relVol 0.2× < 2× (todayVol 8.2M)  •  MARA: price $11.77 < $15  •  MSFT: relVol 1.0× < 2× (todayVol 30.5M)  •  CMG: relVol 0.5× < 2× (todayVol 8.4M)"
+    },
+    {
+      "time": "2026-07-30T13:50:59.591Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T13:50:59.969Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "ALNY, LKQ, RTO, HLI, MDGL, PFSI, PHIN, FICO, WAY, CROX"
+    },
+    {
+      "time": "2026-07-30T13:51:20.735Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "ALNY: relVol 0.8× < 2.5× (todayVol 1.2M)  •  LKQ: relVol 0.4× < 2.5× (todayVol 1.0M)  •  RTO: avgVol 0.9M < 1M  •  HLI: avgVol 0.9M < 1M  •  MDGL: avgVol 0.3M < 1M  •  PFSI: avgVol 0.4M < 1M  •  PHIN: avgVol 0.3M < 1M  •  FICO: avgVol 0.2M < 1M  •  WAY: relVol 0.2× < 2.5× (todayVol 0.5M)  •  CROX: avgVol 0.9M < 1M  •  GPI: avgVol 0.2M < 1M  •  HGV: avgVol 1.0M < 1M"
+    },
+    {
+      "time": "2026-07-30T13:51:20.735Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "CAKE"
-  ],
-  "shortDailyTrades": 3,
-  "shortTradedToday": [
-    "PSN",
-    "VRT",
-    "MOD"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
