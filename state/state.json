@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-30T20:27:18.864Z",
+  "lastRun": "2026-07-30T20:49:27.182Z",
   "log": [
-    {
-      "time": "2026-07-30T16:32:53.111Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "RTO: avgVol 1.0M < 1M  •  FICO: avgVol 0.3M < 1M  •  CHRW: relVol 1.5× < 2.5× (todayVol 3.0M)  •  WAY: relVol 1.0× < 2.5× (todayVol 2.7M)  •  RSI: relVol 1.0× < 2.5× (todayVol 2.3M)  •  PFSI: avgVol 0.5M < 1M  •  PHIN: avgVol 0.3M < 1M  •  LKQ: relVol 1.8× < 2.5× (todayVol 4.7M)  •  GPI: avgVol 0.2M < 1M  •  LRN: avgVol 0.7M < 1M  •  MDGL: avgVol 0.3M < 1M  •  TW: relVol 2.1× < 2.5× (todayVol 3.0M)"
-    },
-    {
-      "time": "2026-07-30T16:32:53.111Z",
-      "type": "INFO",
-      "msg": "Top short: ALNY (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T16:32:53.111Z",
-      "type": "INFO",
-      "msg": "SKIP ALNY — already traded today",
-      "detail": ""
-    },
     {
       "time": "2026-07-30T16:43:03.983Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-07-30T20:27:18.864Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T20:49:26.626Z",
+      "type": "INFO",
+      "msg": "Account: $99880.37 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T20:49:26.699Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T20:49:27.182Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
