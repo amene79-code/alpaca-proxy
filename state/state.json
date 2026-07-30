@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-30T19:56:24.627Z",
+  "lastRun": "2026-07-30T20:06:36.913Z",
   "log": [
-    {
-      "time": "2026-07-30T16:32:28.148Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CIFR, IREN, NBIS, BE, CRWV, CLSK, WULF, APLD, MARA, MSFT"
-    },
-    {
-      "time": "2026-07-30T16:32:28.148Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-07-30T16:32:32.234Z",
-      "type": "SIGNAL",
-      "msg": "CORT — score 8 | gap 28.2% | relVol 2.0× | RSI 39",
-      "detail": ""
-    },
     {
       "time": "2026-07-30T16:32:40.300Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-07-30T19:56:24.626Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T20:06:36.584Z",
+      "type": "INFO",
+      "msg": "Account: $99880.37 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T20:06:36.659Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T20:06:36.913Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
