@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "CHRW": {
-      "side": "short",
-      "entry": 146.14999389648438,
-      "high": 146.14999389648438,
-      "low": 146.14999389648438,
-      "initialSl": 147.12,
-      "sl": 147.12,
-      "tp": 143.23,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-07-30",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-30T19:25:35.227Z",
+  "lastRun": "2026-07-30T19:35:54.141Z",
   "log": [
-    {
-      "time": "2026-07-30T16:21:47.100Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "IREN, NBIS, CIFR, BE, CRWV, SNDK, CLSK, APLD, WULF, MARA"
-    },
-    {
-      "time": "2026-07-30T16:21:47.100Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-07-30T16:22:01.076Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "IREN: relVol 1.0× < 2× (todayVol 44.6M)  •  NBIS: relVol 1.4× < 2× (todayVol 28.2M)  •  CIFR: relVol 0.8× < 2× (todayVol 22.1M)  •  BE: relVol 1.3× < 2× (todayVol 21.7M)  •  CRWV: relVol 1.2× < 2× (todayVol 28.8M)  •  SNDK: relVol 1.0× < 2× (todayVol 15.6M)  •  CLSK: price $14.65 < $15  •  APLD: relVol 0.8× < 2× (todayVol 16.7M)  •  WULF: relVol 0.7× < 2× (todayVol 24.9M)  •  MARA: price $11.93 < $15  •  MU: relVol 0.8× < 2× (todayVol 37.7M)  •  MSFT: ATR 0.37% < 0.5%"
-    },
-    {
-      "time": "2026-07-30T16:22:01.077Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-07-30T16:22:01.260Z",
       "type": "INFO",
@@ -1284,6 +1247,30 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 6× CHRW",
       "detail": "ID 3c00b0c2-9d85-43fc-95b0-98369c9430b7 | R:R 3.0:1 | risk $5.82 | real bracket stop @ $147.12"
+    },
+    {
+      "time": "2026-07-30T19:35:52.474Z",
+      "type": "INFO",
+      "msg": "Account: $99880.64 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T19:35:52.590Z",
+      "type": "INFO",
+      "msg": "EOD review (25 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-30T19:35:53.940Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut (SHORT) CHRW",
+      "detail": "Side short | Weak into close | P&L $-2.67"
+    },
+    {
+      "time": "2026-07-30T19:35:54.141Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
     }
   ],
   "tradedToday": [
