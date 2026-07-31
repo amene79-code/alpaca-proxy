@@ -1887,7 +1887,7 @@ function matchAllTrades(activities){
               exit:Math.round(f.price*100)/100,    // short exit  = the buy-to-cover
               pl:Math.round(pl*100)/100,
               pct:Math.round(((s.price-f.price)/s.price)*10000)/100,
-              win:pl>0, tag:s.tag||"", setupType:"short",
+              win:pl>0, tag:s.tag||"", setupType:"short", entryTime:s.time,
             });
             s.qty-=m; q-=m; if(s.qty<0.001) shortQ.shift();
           }
@@ -1910,7 +1910,7 @@ function matchAllTrades(activities){
               exit:Math.round(f.price*100)/100,
               pl:Math.round(pl*100)/100,
               pct:Math.round(((f.price-b.price)/b.price)*10000)/100,
-              win:pl>0, tag:b.tag||"", setupType:"long",
+              win:pl>0, tag:b.tag||"", setupType:"long", entryTime:b.time,
             });
             b.qty-=m; q-=m; if(b.qty<0.001) longQ.shift();
           }
@@ -1922,7 +1922,34 @@ function matchAllTrades(activities){
       }
     }
   }
-  return trades.sort((a,b)=>new Date(b.time)-new Date(a.time));
+
+  // ── Step 3: VALIDATION — reject implausibly-paired round-trips ────────────
+  // FIFO by symbol can mis-pair when a symbol has a dangling unmatched leg from a
+  // prior trade (e.g. a July 31 entry paired against a June exit fill), producing
+  // impossible results like TSLA entry $407.65 / exit $307.60 (-24.5%). These are
+  // data artifacts, not real trades. Filter them out with sanity bounds and log
+  // how many were dropped so the discrepancy is visible, not silent.
+  const MAX_PLAUSIBLE_MOVE=0.15;   // >15% single-trade move on a bracket ⇒ almost certainly mis-paired
+  const MAX_HOLD_DAYS=4;           // ICT is intraday/short-hold; multi-week pair ⇒ mis-paired
+  let dropped=0;
+  const valid=trades.filter(t=>{
+    const movePct=Math.abs(t.pct)/100;
+    // entry/exit times: t.time is the exit; find hold span if entry time captured
+    const holdMs = t.entryTime ? (new Date(t.time)-new Date(t.entryTime)) : 0;
+    const holdDays = holdMs/(1000*60*60*24);
+    const badMove = movePct>MAX_PLAUSIBLE_MOVE;
+    const badHold = holdDays>MAX_HOLD_DAYS;
+    if(badMove||badHold){
+      dropped++;
+      log("INFO",`History: dropped implausible ${t.symbol} pairing`,
+        `entry $${t.entry} → exit $${t.exit} (${t.pct}%)${badHold?` held ${holdDays.toFixed(0)}d`:""} — likely mis-paired fill, excluded`);
+      return false;
+    }
+    return true;
+  });
+  if(dropped) log("ICT",`History: excluded ${dropped} implausibly-paired trade(s) as data errors`);
+
+  return valid.sort((a,b)=>new Date(b.time)-new Date(a.time));
 }
 
 function getFilteredICT(){
