@@ -83,68 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-31T18:04:46.616Z",
+  "lastRun": "2026-07-31T18:15:26.831Z",
   "log": [
-    {
-      "time": "2026-07-31T14:50:35.888Z",
-      "type": "SIGNAL",
-      "msg": "RBLX — SHORT score 8 | gap -27.5% | relVol 3.0× | RSI 44",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-31T14:50:49.547Z",
-      "type": "INFO",
-      "msg": "Short rejections (38)",
-      "detail": "VCYT: relVol 1.7× < 2.5× (todayVol 1.8M)  •  GDDY: relVol 1.5× < 2.5× (todayVol 2.5M)  •  MTZ: relVol 1.3× < 2.5× (todayVol 1.7M)  •  OLN: price $18.19 < $20 (short floor)  •  PRM: relVol 1.4× < 2.5× (todayVol 1.9M)  •  BTSG: relVol 0.6× < 2.5× (todayVol 2.8M)  •  COIN: relVol 1.2× < 2.5× (todayVol 7.7M)  •  ALHC: price $16.09 < $20 (short floor)  •  WU: price $6.68 < $20 (short floor)  •  TU: price $9.40 < $20 (short floor)  •  FRMI: price $5.97 < $20 (short floor)  •  CTVA: relVol 0.7× < 2.5× (todayVol 2.4M)"
-    },
-    {
-      "time": "2026-07-31T14:50:49.547Z",
-      "type": "INFO",
-      "msg": "Top short: RBLX (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-31T14:50:49.547Z",
-      "type": "INFO",
-      "msg": "SKIP RBLX — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-31T15:01:09.486Z",
-      "type": "INFO",
-      "msg": "Account: $99850.54 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-31T15:01:10.475Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "AXTI, AMZN, NWL, IESC, SPXC, BSBR, DLB, MSA, CDNA, GOOGL"
-    },
-    {
-      "time": "2026-07-31T15:01:10.475Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-07-31T15:01:26.833Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "AXTI: relVol 1.9× < 2× (todayVol 16.7M)  •  AMZN: relVol 1.4× < 2× (todayVol 60.1M)  •  NWL: price $5.74 < $15  •  IESC: avgVol 0.2M < 1M  •  SPXC: avgVol 0.6M < 1M  •  BSBR: price $5.71 < $15  •  DLB: avgVol 0.9M < 1M  •  MSA: avgVol 0.2M < 1M  •  CDNA: relVol 0.7× < 2× (todayVol 0.7M)  •  GOOGL: relVol 0.5× < 2× (todayVol 13.9M)  •  MPWR: avgVol 0.9M < 1M  •  DXCM: relVol 1.1× < 2× (todayVol 4.8M)"
-    },
-    {
-      "time": "2026-07-31T15:01:26.833Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-31T15:01:27.022Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "RBLX, VCYT, RDDT, GDDY, MTZ, OLN, PRM, BTSG, WU, ALHC"
-    },
     {
       "time": "2026-07-31T15:01:27.394Z",
       "type": "SIGNAL",
@@ -1281,6 +1221,66 @@
     },
     {
       "time": "2026-07-31T18:04:46.616Z",
+      "type": "INFO",
+      "msg": "SKIP RBLX — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T18:15:00.087Z",
+      "type": "INFO",
+      "msg": "Account: $99878.68 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T18:15:00.969Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AXTI, AMZN, NWL, IESC, AMBA, CDNA, BHC, SPXC, DXCM, DLB"
+    },
+    {
+      "time": "2026-07-31T18:15:00.969Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-07-31T18:15:13.283Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "AXTI: below VWAP (price $60.44 < VWAP $60.62)  •  AMZN: ATR 0.22% < 0.5%  •  NWL: price $5.78 < $15  •  IESC: avgVol 0.2M < 1M  •  CDNA: relVol 1.3× < 2× (todayVol 1.5M)  •  BHC: price $6.87 < $15  •  SPXC: avgVol 0.6M < 1M  •  DXCM: relVol 1.6× < 2× (todayVol 7.4M)  •  DLB: avgVol 0.9M < 1M  •  ARXS: avgVol 0.8M < 1M  •  BSBR: price $5.65 < $15  •  MSA: avgVol 0.2M < 1M"
+    },
+    {
+      "time": "2026-07-31T18:15:13.283Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T18:15:13.424Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "RBLX, VCYT, RDDT, GDDY, MTZ, OLN, BTSG, PRM, ALHC, TU"
+    },
+    {
+      "time": "2026-07-31T18:15:14.198Z",
+      "type": "SIGNAL",
+      "msg": "RBLX — SHORT score 9 | gap -28.8% | relVol 4.9× | RSI 65",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T18:15:26.831Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "VCYT: above VWAP (price $46.60 > VWAP $45.88) — not holding breakdown  •  RDDT: above VWAP (price $141.02 > VWAP $140.75) — not holding breakdown  •  GDDY: relVol 2.2× < 2.5× (todayVol 3.8M)  •  MTZ: relVol 2.1× < 2.5× (todayVol 2.8M)  •  OLN: price $18.29 < $20 (short floor)  •  BTSG: relVol 1.1× < 2.5× (todayVol 5.0M)  •  PRM: above opening-range low (price $30.65 > ORL $30.20)  •  ALHC: price $15.83 < $20 (short floor)  •  TU: price $9.45 < $20 (short floor)  •  FRMI: price $5.97 < $20 (short floor)  •  NBIX: relVol 2.5× < 2.5× (todayVol 3.1M)  •  PTCT: relVol 2.0× < 2.5× (todayVol 2.8M)"
+    },
+    {
+      "time": "2026-07-31T18:15:26.831Z",
+      "type": "INFO",
+      "msg": "Top short: RBLX (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T18:15:26.831Z",
       "type": "INFO",
       "msg": "SKIP RBLX — already traded today",
       "detail": ""
