@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-31T13:35:35.820Z",
+  "lastRun": "2026-07-31T13:46:26.830Z",
   "log": [
-    {
-      "time": "2026-07-30T16:43:17.103Z",
-      "type": "SIGNAL",
-      "msg": "ALNY — SHORT score 9 | gap -29.6% | relVol 2.9× | RSI 46",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T16:43:29.560Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "RTO: avgVol 1.0M < 1M  •  FICO: avgVol 0.3M < 1M  •  WAY: relVol 1.0× < 2.5× (todayVol 2.8M)  •  RSI: relVol 1.1× < 2.5× (todayVol 2.5M)  •  CHRW: relVol 1.5× < 2.5× (todayVol 3.1M)  •  PHIN: avgVol 0.3M < 1M  •  PFSI: avgVol 0.5M < 1M  •  LKQ: relVol 1.8× < 2.5× (todayVol 4.8M)  •  GPI: avgVol 0.2M < 1M  •  LRN: avgVol 0.7M < 1M  •  MDGL: avgVol 0.3M < 1M  •  CVNA: relVol 1.9× < 2.5× (todayVol 18.5M)"
-    },
-    {
-      "time": "2026-07-30T16:43:29.560Z",
-      "type": "INFO",
-      "msg": "Top short: ALNY (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T16:43:29.560Z",
-      "type": "INFO",
-      "msg": "SKIP ALNY — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T16:53:42.840Z",
-      "type": "INFO",
-      "msg": "Account: $99914.43 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T16:53:43.728Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CIFR, NBIS, IREN, BE, CRWV, CLSK, WULF, APLD, MARA, MSFT"
-    },
-    {
-      "time": "2026-07-30T16:53:43.729Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-07-30T16:53:56.924Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "CIFR: relVol 0.9× < 2× (todayVol 24.2M)  •  NBIS: relVol 1.4× < 2× (todayVol 30.1M)  •  IREN: relVol 1.0× < 2× (todayVol 48.0M)  •  BE: relVol 1.4× < 2× (todayVol 22.7M)  •  CRWV: relVol 1.2× < 2× (todayVol 30.7M)  •  CLSK: price $14.45 < $15  •  WULF: relVol 0.7× < 2× (todayVol 27.0M)  •  APLD: relVol 0.9× < 2× (todayVol 17.9M)  •  MARA: price $11.92 < $15  •  MSFT: ATR 0.31% < 0.5%  •  MU: relVol 0.9× < 2× (todayVol 39.6M)  •  SKHY: relVol 0.7× < 2× (todayVol 38.3M)"
-    },
     {
       "time": "2026-07-30T16:53:56.924Z",
       "type": "INFO",
@@ -1270,6 +1222,54 @@
       "time": "2026-07-31T13:35:35.819Z",
       "type": "INFO",
       "msg": "Skip — first 15 min (5 min in)",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T13:45:49.652Z",
+      "type": "INFO",
+      "msg": "Account: $99880.35 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T13:45:51.030Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 24, kept 40",
+      "detail": "AXTI, NWL, AMZN, IESC, SPXC, DLB, MPWR, BSBR, SPSC, DXCM"
+    },
+    {
+      "time": "2026-07-31T13:45:51.030Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-07-31T13:46:10.410Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "AXTI: relVol 1.0× < 2× (todayVol 8.6M)  •  NWL: price $6.39 < $15  •  AMZN: relVol 0.6× < 2× (todayVol 25.8M)  •  IESC: avgVol 0.2M < 1M  •  SPXC: avgVol 0.6M < 1M  •  DLB: avgVol 0.9M < 1M  •  MPWR: avgVol 0.9M < 1M  •  BSBR: price $5.66 < $15  •  SPSC: avgVol 0.5M < 1M  •  DXCM: relVol 0.4× < 2× (todayVol 1.8M)  •  MRVL: relVol 0.2× < 2× (todayVol 5.8M)  •  VECO: avgVol 1.0M < 1M"
+    },
+    {
+      "time": "2026-07-31T13:46:10.410Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T13:46:10.722Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "RBLX, GDDY, VCYT, ALHC, PRM, RDDT, OLN, MTZ, BTSG, COIN"
+    },
+    {
+      "time": "2026-07-31T13:46:26.830Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "RBLX: relVol 1.4× < 2.5× (todayVol 11.0M)  •  GDDY: relVol 0.7× < 2.5× (todayVol 1.0M)  •  VCYT: avgVol 1.0M < 1M  •  ALHC: price $14.83 < $20 (short floor)  •  PRM: relVol 0.4× < 2.5× (todayVol 0.5M)  •  RDDT: relVol 1.0× < 2.5× (todayVol 4.1M)  •  OLN: price $18.37 < $20 (short floor)  •  MTZ: relVol 0.5× < 2.5× (todayVol 0.6M)  •  BTSG: relVol 0.2× < 2.5× (todayVol 0.8M)  •  COIN: relVol 0.5× < 2.5× (todayVol 3.1M)  •  NVO: relVol 0.9× < 2.5× (todayVol 7.7M)  •  AAPL: relVol 0.6× < 2.5× (todayVol 27.3M)"
+    },
+    {
+      "time": "2026-07-31T13:46:26.830Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
       "detail": ""
     }
   ],
