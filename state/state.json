@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-31T19:41:07.729Z",
+  "lastRun": "2026-07-31T19:51:28.674Z",
   "log": [
-    {
-      "time": "2026-07-31T16:27:21.246Z",
-      "type": "INFO",
-      "msg": "Account: $99867.35 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-31T16:27:22.001Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "AXTI, AMZN, NWL, IESC, SPXC, CDNA, BSBR, DLB, SPSC, BHC"
-    },
-    {
-      "time": "2026-07-31T16:27:22.001Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-07-31T16:27:34.130Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "AXTI: below VWAP (price $58.72 < VWAP $60.58)  •  AMZN: relVol 1.8× < 2× (todayVol 79.1M)  •  NWL: price $5.68 < $15  •  IESC: avgVol 0.2M < 1M  •  SPXC: avgVol 0.6M < 1M  •  CDNA: relVol 0.9× < 2× (todayVol 1.1M)  •  BSBR: price $5.66 < $15  •  DLB: avgVol 0.9M < 1M  •  SPSC: avgVol 0.5M < 1M  •  BHC: price $6.72 < $15  •  MSA: avgVol 0.2M < 1M  •  GOOGL: relVol 0.7× < 2× (todayVol 19.9M)"
-    },
     {
       "time": "2026-07-31T16:27:34.130Z",
       "type": "INFO",
@@ -1281,6 +1257,30 @@
     },
     {
       "time": "2026-07-31T19:41:07.729Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T19:51:27.887Z",
+      "type": "INFO",
+      "msg": "Account: $99862.33 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T19:51:28.240Z",
+      "type": "INFO",
+      "msg": "EOD review (9 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T19:51:28.473Z",
+      "type": "INFO",
+      "msg": "AMBA held overnight",
+      "detail": "Side long | Strong close | P&L +$1.50 | above VWAP"
+    },
+    {
+      "time": "2026-07-31T19:51:28.674Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
