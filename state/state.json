@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-31T13:46:26.830Z",
+  "lastRun": "2026-07-31T13:57:05.306Z",
   "log": [
-    {
-      "time": "2026-07-30T16:53:56.924Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T16:53:57.362Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ALNY, RTO, WAY, FICO, CHRW, PHIN, GPI, RSI, LKQ, PFSI"
-    },
-    {
-      "time": "2026-07-30T16:53:57.744Z",
-      "type": "SIGNAL",
-      "msg": "ALNY — SHORT score 8 | gap -29.0% | relVol 3.0× | RSI 36",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T16:54:10.622Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "RTO: avgVol 1.0M < 1M  •  WAY: relVol 1.1× < 2.5× (todayVol 2.8M)  •  FICO: avgVol 0.3M < 1M  •  CHRW: relVol 1.6× < 2.5× (todayVol 3.2M)  •  PHIN: avgVol 0.3M < 1M  •  GPI: avgVol 0.2M < 1M  •  RSI: relVol 1.2× < 2.5× (todayVol 2.7M)  •  LKQ: relVol 1.8× < 2.5× (todayVol 5.0M)  •  PFSI: avgVol 0.5M < 1M  •  LRN: avgVol 0.7M < 1M  •  CVNA: relVol 2.0× < 2.5× (todayVol 19.5M)  •  NP: avgVol 0.7M < 1M"
-    },
-    {
-      "time": "2026-07-30T16:54:10.622Z",
-      "type": "INFO",
-      "msg": "Top short: ALNY (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T16:54:10.622Z",
-      "type": "INFO",
-      "msg": "SKIP ALNY — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T17:04:27.060Z",
-      "type": "INFO",
-      "msg": "Account: $99904.05 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-30T17:04:28.397Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CIFR, IREN, NBIS, BE, CRWV, CLSK, WULF, MARA, APLD, MSFT"
-    },
     {
       "time": "2026-07-30T17:04:28.397Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-07-31T13:46:26.830Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T13:56:39.521Z",
+      "type": "INFO",
+      "msg": "Account: $99880.35 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T13:56:40.021Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 40, kept 40",
+      "detail": "NWL, AXTI, AMZN, IESC, SPXC, SPSC, DXCM, BSBR, MPWR, CDNA"
+    },
+    {
+      "time": "2026-07-31T13:56:40.021Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-07-31T13:56:52.855Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "NWL: price $6.43 < $15  •  AXTI: relVol 1.2× < 2× (todayVol 10.2M)  •  AMZN: relVol 0.8× < 2× (todayVol 31.5M)  •  IESC: avgVol 0.2M < 1M  •  SPXC: avgVol 0.6M < 1M  •  SPSC: avgVol 0.5M < 1M  •  DXCM: relVol 0.6× < 2× (todayVol 2.7M)  •  BSBR: price $5.66 < $15  •  MPWR: avgVol 0.9M < 1M  •  CDNA: relVol 0.3× < 2× (todayVol 0.3M)  •  DLB: avgVol 0.9M < 1M  •  GH: relVol 0.5× < 2× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-07-31T13:56:52.855Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T13:56:53.079Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "RBLX, GDDY, VCYT, ALHC, RDDT, MTZ, PRM, OLN, BTSG, TU"
+    },
+    {
+      "time": "2026-07-31T13:57:05.306Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "RBLX: relVol 1.7× < 2.5× (todayVol 13.9M)  •  GDDY: relVol 0.8× < 2.5× (todayVol 1.3M)  •  VCYT: avgVol 1.0M < 1M  •  ALHC: price $14.94 < $20 (short floor)  •  RDDT: relVol 1.3× < 2.5× (todayVol 5.7M)  •  MTZ: relVol 0.7× < 2.5× (todayVol 0.8M)  •  PRM: relVol 0.7× < 2.5× (todayVol 0.9M)  •  OLN: price $18.32 < $20 (short floor)  •  BTSG: relVol 0.3× < 2.5× (todayVol 1.4M)  •  TU: price $9.38 < $20 (short floor)  •  COIN: relVol 0.6× < 2.5× (todayVol 4.0M)  •  NBIX: relVol 0.7× < 2.5× (todayVol 0.8M)"
+    },
+    {
+      "time": "2026-07-31T13:57:05.306Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
