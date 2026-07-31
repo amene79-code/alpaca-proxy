@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-07-31T20:22:42.921Z",
+  "lastRun": "2026-07-31T21:17:06.866Z",
   "log": [
-    {
-      "time": "2026-07-31T16:38:18.762Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "AXTI: below VWAP (price $59.19 < VWAP $60.55)  •  AMZN: relVol 1.9× < 2× (todayVol 80.5M)  •  NWL: price $5.75 < $15  •  IESC: avgVol 0.2M < 1M  •  AMBA: relVol 1.5× < 2× (todayVol 2.5M)  •  CDNA: relVol 1.0× < 2× (todayVol 1.1M)  •  SPXC: avgVol 0.6M < 1M  •  BSBR: price $5.67 < $15  •  DLB: avgVol 0.9M < 1M  •  MSA: avgVol 0.2M < 1M  •  SPSC: avgVol 0.5M < 1M  •  BHC: price $6.70 < $15"
-    },
-    {
-      "time": "2026-07-31T16:38:18.762Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-07-31T16:38:18.903Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "RBLX, VCYT, RDDT, GDDY, MTZ, PRM, OLN, BTSG, WU, FRMI"
-    },
     {
       "time": "2026-07-31T16:38:19.076Z",
       "type": "SIGNAL",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-07-31T20:22:42.921Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T21:17:06.310Z",
+      "type": "INFO",
+      "msg": "Account: $99862.08 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T21:17:06.319Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-07-31T21:17:06.866Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
