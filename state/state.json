@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-03T20:16:29.492Z",
+  "lastRun": "2026-08-03T20:26:42.654Z",
   "log": [
-    {
-      "time": "2026-08-03T15:41:10.167Z",
-      "type": "INFO",
-      "msg": "Account: $99821.51 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T15:41:11.153Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CRWV, NBIS, CNH, ATKR, QBTS, ONDS, BFLY, IONQ, AXTI, FSLR"
-    },
-    {
-      "time": "2026-08-03T15:41:11.153Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-03T15:41:23.422Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-03T20:16:29.492Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-03T20:26:42.336Z",
+      "type": "INFO",
+      "msg": "Account: $99794.32 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-03T20:26:42.414Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-03T20:26:42.654Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
