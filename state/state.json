@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-03T20:26:42.654Z",
+  "lastRun": "2026-08-03T20:38:17.851Z",
   "log": [
-    {
-      "time": "2026-08-03T15:41:23.422Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "CRWV: relVol 0.8× < 2× (todayVol 20.1M)  •  NBIS: relVol 0.6× < 2× (todayVol 13.6M)  •  CNH: price $11.39 < $15  •  ATKR: avgVol 0.6M < 1M  •  QBTS: relVol 0.6× < 2× (todayVol 11.0M)  •  ONDS: price $8.18 < $15  •  BFLY: price $8.10 < $15  •  IONQ: relVol 0.6× < 2× (todayVol 11.2M)  •  AXTI: relVol 1.0× < 2× (todayVol 9.6M)  •  FSLR: relVol 1.2× < 2× (todayVol 2.2M)  •  AAOI: relVol 0.6× < 2× (todayVol 5.4M)  •  RGTI: relVol 0.5× < 2× (todayVol 11.1M)"
-    },
-    {
-      "time": "2026-08-03T15:41:23.422Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T15:41:23.565Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 18",
-      "detail": "SRAD, GME, KRYS, TGTX, AZN, MPWR, FICO, MAR, ALMS, STX"
-    },
     {
       "time": "2026-08-03T15:41:29.354Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-03T20:26:42.654Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-03T20:38:17.563Z",
+      "type": "INFO",
+      "msg": "Account: $99794.32 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-03T20:38:17.637Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-03T20:38:17.851Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
