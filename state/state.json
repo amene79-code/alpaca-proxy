@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T20:20:04.951Z",
+  "lastRun": "2026-08-04T20:30:22.848Z",
   "log": [
-    {
-      "time": "2026-08-04T15:43:54.387Z",
-      "type": "INFO",
-      "msg": "Short rejections (36)",
-      "detail": "BRKR: relVol 1.9× < 2.5× (todayVol 3.8M)  •  APTV: relVol 2.0× < 2.5× (todayVol 5.0M)  •  CTRI: relVol 1.4× < 2.5× (todayVol 2.2M)  •  NRG: relVol 1.4× < 2.5× (todayVol 3.2M)  •  STRL: avgVol 0.8M < 1M  •  ULS: avgVol 0.8M < 1M  •  KNF: avgVol 0.5M < 1M  •  CBT: avgVol 0.4M < 1M  •  IOND: relVol 0.7× < 2.5× (todayVol 1.0M)  •  CIFR: net up over ~5d ($20.42→$21.78) — no short into uptrend  •  ICHR: net up over ~5d ($68.10→$72.99) — no short into uptrend  •  JBTM: avgVol 0.4M < 1M"
-    },
-    {
-      "time": "2026-08-04T15:43:54.387Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T15:54:18.179Z",
-      "type": "INFO",
-      "msg": "Account: $99795.62 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-04T15:54:19.391Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-04T20:20:04.951Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T20:30:21.599Z",
+      "type": "INFO",
+      "msg": "Account: $99900.87 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T20:30:21.625Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T20:30:22.847Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
