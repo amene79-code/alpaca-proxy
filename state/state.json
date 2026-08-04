@@ -1,17 +1,5 @@
 {
   "trailingStops": {
-    "PLTR": {
-      "side": "long",
-      "entry": 158.6750030517578,
-      "high": 162.81,
-      "low": 158.6750030517578,
-      "initialSl": 157.09,
-      "sl": 158.8,
-      "tp": 162.91,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    },
     "W": {
       "side": "long",
       "entry": 116.33999633789062,
@@ -24,23 +12,11 @@
       "tpOrderId": null,
       "movedToBreakeven": true
     },
-    "PAY": {
-      "side": "long",
-      "entry": 43.52579879760742,
-      "high": 44.75,
-      "low": 43.52579879760742,
-      "initialSl": 42.99,
-      "sl": 43.62,
-      "tp": 44.97,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    },
     "APTV": {
       "side": "short",
       "entry": 47.400001525878906,
       "high": 47.400001525878906,
-      "low": 46.96,
+      "low": 46.785,
       "initialSl": 47.67,
       "sl": 47.34,
       "tp": 46.58,
@@ -52,7 +28,7 @@
       "side": "short",
       "entry": 117.34960174560547,
       "high": 117.34960174560547,
-      "low": 117.1,
+      "low": 116.16,
       "initialSl": 118.47,
       "sl": 118.47,
       "tp": 114,
@@ -68,6 +44,18 @@
       "initialSl": 44.85,
       "sl": 44.85,
       "tp": 41.7,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "BRKR": {
+      "side": "short",
+      "entry": 51.310001373291016,
+      "high": 51.310001373291016,
+      "low": 51.310001373291016,
+      "initialSl": 51.61,
+      "sl": 51.61,
+      "tp": 50.42,
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": false
@@ -143,86 +131,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T17:42:49.158Z",
+  "lastRun": "2026-08-04T17:53:35.881Z",
   "log": [
-    {
-      "time": "2026-08-03T18:42:18.301Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T18:42:18.561Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 27",
-      "detail": "SRAD, GME, TGTX, ALMS, KRYS, INDV, AZN, CVI, MANE, MAR"
-    },
-    {
-      "time": "2026-08-03T18:42:27.322Z",
-      "type": "INFO",
-      "msg": "Short rejections (27)",
-      "detail": "SRAD: price $12.31 < $20 (short floor)  •  GME: price $18.75 < $20 (short floor)  •  TGTX: relVol 2.2× < 2.5× (todayVol 4.7M)  •  ALMS: relVol 0.7× < 2.5× (todayVol 0.8M)  •  KRYS: avgVol 0.6M < 1M  •  INDV: relVol 2.5× < 2.5× (todayVol 4.0M)  •  AZN: above VWAP (price $157.39 > VWAP $156.01) — not holding breakdown  •  CVI: avgVol 1.0M < 1M  •  MANE: avgVol 0.7M < 1M  •  MAR: relVol 2.1× < 2.5× (todayVol 3.1M)  •  FICO: avgVol 0.3M < 1M  •  MPWR: avgVol 0.9M < 1M"
-    },
-    {
-      "time": "2026-08-03T18:42:27.322Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T18:52:44.400Z",
-      "type": "INFO",
-      "msg": "Account: $99801.86 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T18:52:45.143Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CRWV, NBIS, CIFR, ONDS, ATKR, AAOI, PLBL, NWL, AXTI, BFLY"
-    },
-    {
-      "time": "2026-08-03T18:52:45.143Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-03T18:52:57.692Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "CRWV: relVol 1.2× < 2× (todayVol 30.5M)  •  NBIS: relVol 0.9× < 2× (todayVol 20.0M)  •  CIFR: relVol 0.8× < 2× (todayVol 21.1M)  •  ONDS: price $8.26 < $15  •  ATKR: avgVol 0.7M < 1M  •  AAOI: relVol 1.0× < 2× (todayVol 8.5M)  •  PLBL: price $6.30 < $15  •  NWL: price $6.49 < $15  •  AXTI: relVol 1.4× < 2× (todayVol 13.5M)  •  BFLY: price $8.18 < $15  •  SOFI: relVol 0.7× < 2× (todayVol 59.6M)  •  ALM: price $12.63 < $15"
-    },
-    {
-      "time": "2026-08-03T18:52:57.692Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T18:52:57.825Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 27",
-      "detail": "SRAD, GME, TGTX, ALMS, KRYS, INDV, CVI, AZN, FICO, MAR"
-    },
-    {
-      "time": "2026-08-03T18:52:59.511Z",
-      "type": "SIGNAL",
-      "msg": "INDV — SHORT score 8 | gap -7.4% | relVol 2.5× | RSI 29",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T18:53:06.207Z",
-      "type": "INFO",
-      "msg": "Short rejections (26)",
-      "detail": "SRAD: price $12.27 < $20 (short floor)  •  GME: price $18.75 < $20 (short floor)  •  TGTX: relVol 2.2× < 2.5× (todayVol 4.8M)  •  ALMS: relVol 0.7× < 2.5× (todayVol 0.9M)  •  KRYS: avgVol 0.6M < 1M  •  CVI: avgVol 1.0M < 1M  •  AZN: above VWAP (price $157.40 > VWAP $156.03) — not holding breakdown  •  FICO: avgVol 0.3M < 1M  •  MAR: relVol 2.2× < 2.5× (todayVol 3.2M)  •  MANE: avgVol 0.7M < 1M  •  PBF: net up over ~5d ($62.76→$68.29) — no short into uptrend  •  CF: relVol 0.5× < 2.5× (todayVol 1.1M)"
-    },
-    {
-      "time": "2026-08-03T18:53:06.207Z",
-      "type": "INFO",
-      "msg": "Top short: INDV (score 8)",
-      "detail": ""
-    },
     {
       "time": "2026-08-03T18:53:06.207Z",
       "type": "SHORT",
@@ -1344,6 +1254,84 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-08-04T17:53:05.275Z",
+      "type": "INFO",
+      "msg": "Account: $99919.09 | 4 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T17:53:06.492Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "PLTR, MRVL, SNAP, INTC, W, PAY, UFPT, ZBRA, AAOI, IT"
+    },
+    {
+      "time": "2026-08-04T17:53:06.492Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-04T17:53:08.365Z",
+      "type": "SIGNAL",
+      "msg": "PAY — score 9 | gap 29.3% | relVol 2.5× | RSI 67",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T17:53:21.357Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "PLTR: ATR 0.40% < 0.5%  •  MRVL: relVol 0.9× < 2× (todayVol 21.5M)  •  SNAP: price $5.73 < $15  •  INTC: relVol 0.6× < 2× (todayVol 71.4M)  •  UFPT: avgVol 0.2M < 1M  •  ZBRA: avgVol 0.8M < 1M  •  AAOI: relVol 1.6× < 2× (todayVol 15.1M)  •  IT: relVol 1.2× < 2× (todayVol 1.7M)  •  VOYG: relVol 1.9× < 2× (todayVol 3.0M)  •  WIX: relVol 1.3× < 2× (todayVol 2.0M)  •  AEHR: relVol 0.7× < 2× (todayVol 2.3M)  •  INVX: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-08-04T17:53:21.357Z",
+      "type": "INFO",
+      "msg": "Top signal: PAY (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T17:53:21.357Z",
+      "type": "INFO",
+      "msg": "SKIP PAY — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T17:53:21.500Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 39",
+      "detail": "BRKR, CTRI, APTV, NRG, ULS, STRL, IOND, ICHR, CIFR, KNF"
+    },
+    {
+      "time": "2026-08-04T17:53:21.750Z",
+      "type": "SIGNAL",
+      "msg": "BRKR — SHORT score 8 | gap -20.2% | relVol 2.6× | RSI 23",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T17:53:35.052Z",
+      "type": "INFO",
+      "msg": "Short rejections (35)",
+      "detail": "CTRI: relVol 2.5× < 2.5× (todayVol 4.2M)  •  ULS: avgVol 0.8M < 1M  •  STRL: avgVol 0.8M < 1M  •  IOND: relVol 1.0× < 2.5× (todayVol 1.6M)  •  ICHR: net up over ~5d ($68.10→$71.24) — no short into uptrend  •  CIFR: net up over ~5d ($20.42→$21.50) — no short into uptrend  •  KNF: avgVol 0.5M < 1M  •  VVX: avgVol 0.8M < 1M  •  CBT: avgVol 0.4M < 1M  •  ROK: avgVol 0.8M < 1M  •  BHC: price $6.46 < $20 (short floor)  •  VST: relVol 1.5× < 2.5× (todayVol 6.5M)"
+    },
+    {
+      "time": "2026-08-04T17:53:35.052Z",
+      "type": "INFO",
+      "msg": "Top short: BRKR (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T17:53:35.053Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 19× BRKR @ ~$51.31",
+      "detail": "gap -20.2% | risk $5.70 | SL $51.61 | TP $50.42 | R:R 3.0"
+    },
+    {
+      "time": "2026-08-04T17:53:35.380Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 19× BRKR",
+      "detail": "ID 24808dc1-e2d2-49f2-8929-2afb6f54d8c5 | R:R 3.0:1 | risk $5.70 | real bracket stop @ $51.61"
     }
   ],
   "tradedToday": [
@@ -1351,10 +1339,11 @@
     "W",
     "PAY"
   ],
-  "shortDailyTrades": 3,
+  "shortDailyTrades": 4,
   "shortTradedToday": [
     "APTV",
     "NRG",
-    "NVO"
+    "NVO",
+    "BRKR"
   ]
 }
