@@ -1,30 +1,5 @@
 {
-  "trailingStops": {
-    "NVO": {
-      "side": "short",
-      "entry": 44.060001373291016,
-      "high": 44.060001373291016,
-      "low": 43.945,
-      "initialSl": 44.85,
-      "sl": 44.85,
-      "tp": 41.7,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "BRKR": {
-      "side": "short",
-      "entry": 51.310001373291016,
-      "high": 51.310001373291016,
-      "low": 51.1,
-      "initialSl": 51.61,
-      "sl": 51.61,
-      "tp": 50.42,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 3,
   "dailyDate": "2026-08-04",
   "openPositions": [
@@ -95,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T19:28:16.881Z",
+  "lastRun": "2026-08-04T19:38:37.735Z",
   "log": [
-    {
-      "time": "2026-08-04T15:22:27.762Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T15:32:41.576Z",
-      "type": "INFO",
-      "msg": "Account: $99795.94 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T15:32:42.444Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLTR, AAOI, SNAP, MRVL, W, PAY, VOYG, ZBRA, UFPT, AEHR"
-    },
-    {
-      "time": "2026-08-04T15:32:42.444Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-04T15:32:54.686Z",
       "type": "INFO",
@@ -1295,6 +1246,30 @@
       "time": "2026-08-04T19:28:16.880Z",
       "type": "INFO",
       "msg": "SKIP PAY — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:38:35.688Z",
+      "type": "INFO",
+      "msg": "Account: $99901.54 | 1 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:38:36.058Z",
+      "type": "INFO",
+      "msg": "EOD review (22 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:38:37.533Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut (SHORT) BRKR",
+      "detail": "Side short | Weak into close | P&L +$6.55"
+    },
+    {
+      "time": "2026-08-04T19:38:37.734Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
