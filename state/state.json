@@ -107,50 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T18:35:42.285Z",
+  "lastRun": "2026-08-04T18:46:09.526Z",
   "log": [
-    {
-      "time": "2026-08-03T19:25:03.523Z",
-      "type": "SIGNAL",
-      "msg": "INDV — SHORT score 8 | gap -8.0% | relVol 2.8× | RSI 26",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T19:25:10.759Z",
-      "type": "INFO",
-      "msg": "Short rejections (24)",
-      "detail": "GME: price $18.61 < $20 (short floor)  •  SRAD: price $12.48 < $20 (short floor)  •  TGTX: relVol 2.3× < 2.5× (todayVol 5.1M)  •  ALMS: relVol 0.8× < 2.5× (todayVol 1.0M)  •  KRYS: avgVol 0.6M < 1M  •  CVI: avgVol 1.0M < 1M  •  PBF: net up over ~5d ($62.76→$67.31) — no short into uptrend  •  FICO: avgVol 0.3M < 1M  •  AZN: above VWAP (price $158.33 > VWAP $156.14) — not holding breakdown  •  UNFI: avgVol 0.5M < 1M  •  MAR: relVol 2.3× < 2.5× (todayVol 3.4M)  •  MANE: avgVol 0.7M < 1M"
-    },
-    {
-      "time": "2026-08-03T19:25:10.759Z",
-      "type": "INFO",
-      "msg": "Top short: INDV (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T19:25:10.759Z",
-      "type": "INFO",
-      "msg": "SKIP INDV — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T19:35:25.245Z",
-      "type": "INFO",
-      "msg": "Account: $99794.32 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T19:35:25.555Z",
-      "type": "INFO",
-      "msg": "EOD review (25 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T19:35:25.555Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
     {
       "time": "2026-08-03T19:45:37.192Z",
       "type": "INFO",
@@ -1305,6 +1263,48 @@
     },
     {
       "time": "2026-08-04T18:35:42.284Z",
+      "type": "INFO",
+      "msg": "SKIP PAY — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T18:45:57.419Z",
+      "type": "INFO",
+      "msg": "Account: $99924.05 | 3 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T18:45:58.798Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "PLTR, MRVL, SNAP, INTC, WU, PAY, W, UFPT, ZBRA, IT"
+    },
+    {
+      "time": "2026-08-04T18:45:58.798Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-04T18:46:00.315Z",
+      "type": "SIGNAL",
+      "msg": "PAY — score 10 | gap 29.8% | relVol 2.8× | RSI 58",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-08-04T18:46:09.526Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "PLTR: ATR 0.39% < 0.5%  •  MRVL: relVol 1.0× < 2× (todayVol 23.1M)  •  SNAP: price $5.66 < $15  •  INTC: relVol 0.7× < 2× (todayVol 77.5M)  •  WU: price $7.22 < $15  •  UFPT: avgVol 0.2M < 1M  •  ZBRA: avgVol 0.8M < 1M  •  IT: relVol 1.4× < 2× (todayVol 2.0M)  •  AAOI: relVol 1.8× < 2× (todayVol 16.2M)  •  VOYG: below VWAP (price $33.82 < VWAP $34.71)  •  AEHR: relVol 0.8× < 2× (todayVol 2.6M)  •  ARM: relVol 1.0× < 2× (todayVol 6.3M)"
+    },
+    {
+      "time": "2026-08-04T18:46:09.526Z",
+      "type": "INFO",
+      "msg": "Top signal: PAY (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T18:46:09.526Z",
       "type": "INFO",
       "msg": "SKIP PAY — already traded today",
       "detail": ""
