@@ -28,13 +28,13 @@
       "side": "short",
       "entry": 117.34960174560547,
       "high": 117.34960174560547,
-      "low": 116.16,
+      "low": 115.4048,
       "initialSl": 118.47,
-      "sl": 118.47,
+      "sl": 117.15,
       "tp": 114,
       "slOrderId": null,
       "tpOrderId": null,
-      "movedToBreakeven": false
+      "movedToBreakeven": true
     },
     "NVO": {
       "side": "short",
@@ -131,50 +131,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T18:04:10.111Z",
+  "lastRun": "2026-08-04T18:14:37.851Z",
   "log": [
-    {
-      "time": "2026-08-03T19:03:31.644Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 28",
-      "detail": "SRAD, GME, TGTX, ALMS, KRYS, FICO, AZN, CVI, INDV, MAR"
-    },
-    {
-      "time": "2026-08-03T19:03:34.265Z",
-      "type": "SIGNAL",
-      "msg": "INDV — SHORT score 8 | gap -6.9% | relVol 2.6× | RSI 37",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T19:03:40.399Z",
-      "type": "INFO",
-      "msg": "Short rejections (27)",
-      "detail": "SRAD: price $12.42 < $20 (short floor)  •  GME: price $18.66 < $20 (short floor)  •  TGTX: relVol 2.3× < 2.5× (todayVol 4.9M)  •  ALMS: relVol 0.7× < 2.5× (todayVol 0.9M)  •  KRYS: avgVol 0.6M < 1M  •  FICO: avgVol 0.3M < 1M  •  AZN: above VWAP (price $157.72 > VWAP $156.06) — not holding breakdown  •  CVI: avgVol 1.0M < 1M  •  MAR: relVol 2.2× < 2.5× (todayVol 3.2M)  •  PBF: net up over ~5d ($62.76→$68.08) — no short into uptrend  •  CF: relVol 0.5× < 2.5× (todayVol 1.2M)  •  SDRL: avgVol 0.7M < 1M"
-    },
-    {
-      "time": "2026-08-03T19:03:40.400Z",
-      "type": "INFO",
-      "msg": "Top short: INDV (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T19:03:40.400Z",
-      "type": "INFO",
-      "msg": "SKIP INDV — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T19:14:04.114Z",
-      "type": "INFO",
-      "msg": "Account: $99794.32 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T19:14:04.891Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CRWV, NBIS, CIFR, ONDS, ATKR, PLBL, NWL, AAOI, BFLY, ALM"
-    },
     {
       "time": "2026-08-03T19:14:04.891Z",
       "type": "INFO",
@@ -1329,6 +1287,48 @@
     },
     {
       "time": "2026-08-04T18:04:10.111Z",
+      "type": "INFO",
+      "msg": "SKIP PAY — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T18:14:26.169Z",
+      "type": "INFO",
+      "msg": "Account: $99906.97 | 5 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T18:14:27.231Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "PLTR, MRVL, SNAP, SMCI, INTC, W, PAY, UFPT, ZBRA, VOYG"
+    },
+    {
+      "time": "2026-08-04T18:14:27.231Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-04T18:14:28.773Z",
+      "type": "SIGNAL",
+      "msg": "PAY — score 11 | gap 30.3% | relVol 2.6× | RSI 72",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-08-04T18:14:37.851Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "PLTR: ATR 0.43% < 0.5%  •  MRVL: relVol 0.9× < 2× (todayVol 22.1M)  •  SNAP: price $5.70 < $15  •  SMCI: relVol 0.8× < 2× (todayVol 33.4M)  •  INTC: relVol 0.7× < 2× (todayVol 74.2M)  •  UFPT: avgVol 0.2M < 1M  •  ZBRA: avgVol 0.8M < 1M  •  VOYG: below VWAP (price $34.51 < VWAP $34.73)  •  IT: relVol 1.4× < 2× (todayVol 1.8M)  •  AAOI: relVol 1.7× < 2× (todayVol 15.5M)  •  WIX: relVol 1.4× < 2× (todayVol 2.1M)  •  INVX: avgVol 0.4M < 1M"
+    },
+    {
+      "time": "2026-08-04T18:14:37.851Z",
+      "type": "INFO",
+      "msg": "Top signal: PAY (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T18:14:37.851Z",
       "type": "INFO",
       "msg": "SKIP PAY — already traded today",
       "detail": ""
