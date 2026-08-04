@@ -16,7 +16,7 @@
       "side": "short",
       "entry": 51.310001373291016,
       "high": 51.310001373291016,
-      "low": 51.11,
+      "low": 51.1,
       "initialSl": 51.61,
       "sl": 51.61,
       "tp": 50.42,
@@ -95,62 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T19:17:49.588Z",
+  "lastRun": "2026-08-04T19:28:16.881Z",
   "log": [
-    {
-      "time": "2026-08-04T15:21:59.678Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLTR, AAOI, SNAP, MRVL, W, VOYG, PAY, ZBRA, UFPT, IT"
-    },
-    {
-      "time": "2026-08-04T15:21:59.679Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-04T15:21:59.885Z",
-      "type": "SIGNAL",
-      "msg": "PLTR — score 9 | gap 26.3% | relVol 2.3× | RSI 68",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T15:22:13.641Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "AAOI: relVol 1.3× < 2× (todayVol 11.4M)  •  SNAP: price $5.78 < $15  •  MRVL: relVol 0.6× < 2× (todayVol 15.0M)  •  W: relVol 1.7× < 2× (todayVol 5.8M)  •  VOYG: relVol 1.5× < 2× (todayVol 2.2M)  •  PAY: relVol 1.5× < 2× (todayVol 1.5M)  •  ZBRA: avgVol 0.7M < 1M  •  UFPT: avgVol 0.2M < 1M  •  IT: relVol 0.8× < 2× (todayVol 1.0M)  •  FN: avgVol 0.8M < 1M  •  DORM: avgVol 0.3M < 1M  •  AEHR: relVol 0.4× < 2× (todayVol 1.4M)"
-    },
-    {
-      "time": "2026-08-04T15:22:13.642Z",
-      "type": "INFO",
-      "msg": "Top signal: PLTR (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T15:22:13.642Z",
-      "type": "BUY",
-      "msg": "Placing 9× PLTR @ ~$158.68",
-      "detail": "gap 26.3% | risk $14.27 | SL $157.09 | TP $162.91 | R:R 2.7 | "
-    },
-    {
-      "time": "2026-08-04T15:22:13.735Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 9× PLTR",
-      "detail": "ID 64bc387a-713d-4ec5-9a26-6d658aa9c0b7 | R:R 2.7:1 | risk $14.27"
-    },
-    {
-      "time": "2026-08-04T15:22:14.572Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 34",
-      "detail": "BRKR, APTV, CTRI, NRG, ULS, STRL, CBT, KNF, IOND, ICHR"
-    },
-    {
-      "time": "2026-08-04T15:22:27.762Z",
-      "type": "INFO",
-      "msg": "Short rejections (34)",
-      "detail": "BRKR: relVol 1.8× < 2.5× (todayVol 3.6M)  •  APTV: relVol 1.8× < 2.5× (todayVol 4.4M)  •  CTRI: relVol 1.1× < 2.5× (todayVol 1.7M)  •  NRG: relVol 1.2× < 2.5× (todayVol 2.7M)  •  ULS: avgVol 0.8M < 1M  •  STRL: avgVol 0.8M < 1M  •  CBT: avgVol 0.4M < 1M  •  KNF: avgVol 0.5M < 1M  •  IOND: relVol 0.6× < 2.5× (todayVol 0.9M)  •  ICHR: avgVol 1.0M < 1M  •  CIFR: net up over ~5d ($20.42→$21.94) — no short into uptrend  •  VVX: avgVol 0.8M < 1M"
-    },
     {
       "time": "2026-08-04T15:22:27.762Z",
       "type": "INFO",
@@ -1293,6 +1239,60 @@
     },
     {
       "time": "2026-08-04T19:17:49.588Z",
+      "type": "INFO",
+      "msg": "SKIP PAY — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:28:04.711Z",
+      "type": "INFO",
+      "msg": "Account: $99901.18 | 2 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:28:05.474Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "PLTR, MRVL, SNAP, WU, INTC, SMCI, W, PAY, IT, ZBRA"
+    },
+    {
+      "time": "2026-08-04T19:28:05.474Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-04T19:28:07.300Z",
+      "type": "SIGNAL",
+      "msg": "W — score 8 | gap 28.7% | relVol 3.0× | RSI 33",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:28:07.618Z",
+      "type": "SIGNAL",
+      "msg": "PAY — score 8 | gap 27.4% | relVol 3.1× | RSI 19",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:28:16.880Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "PLTR: ATR 0.40% < 0.5%  •  MRVL: relVol 1.0× < 2× (todayVol 24.6M)  •  SNAP: price $5.70 < $15  •  WU: price $7.30 < $15  •  INTC: relVol 0.7× < 2× (todayVol 84.7M)  •  SMCI: relVol 0.9× < 2× (todayVol 39.3M)  •  IT: relVol 1.8× < 2× (todayVol 2.5M)  •  ZBRA: avgVol 0.8M < 1M  •  UFPT: avgVol 0.2M < 1M  •  VOYG: below VWAP (price $34.55 < VWAP $34.68)  •  AAOI: relVol 1.9× < 2× (todayVol 17.2M)  •  AEHR: relVol 0.8× < 2× (todayVol 2.8M)"
+    },
+    {
+      "time": "2026-08-04T19:28:16.880Z",
+      "type": "INFO",
+      "msg": "Top signal: W (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:28:16.880Z",
+      "type": "INFO",
+      "msg": "SKIP W — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:28:16.880Z",
       "type": "INFO",
       "msg": "SKIP PAY — already traded today",
       "detail": ""
