@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T19:48:59.067Z",
+  "lastRun": "2026-08-04T19:59:19.653Z",
   "log": [
-    {
-      "time": "2026-08-04T15:33:06.748Z",
-      "type": "INFO",
-      "msg": "Short rejections (36)",
-      "detail": "BRKR: relVol 1.9× < 2.5× (todayVol 3.7M)  •  APTV: relVol 1.9× < 2.5× (todayVol 4.7M)  •  CTRI: relVol 1.3× < 2.5× (todayVol 2.0M)  •  NRG: relVol 1.3× < 2.5× (todayVol 3.0M)  •  ULS: avgVol 0.8M < 1M  •  STRL: avgVol 0.8M < 1M  •  CBT: avgVol 0.4M < 1M  •  KNF: avgVol 0.5M < 1M  •  IOND: relVol 0.6× < 2.5× (todayVol 0.9M)  •  CIFR: net up over ~5d ($20.42→$21.73) — no short into uptrend  •  ICHR: avgVol 1.0M < 1M  •  JBTM: avgVol 0.4M < 1M"
-    },
-    {
-      "time": "2026-08-04T15:33:06.749Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-04T15:43:29.370Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-08-04T19:48:59.067Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:59:19.120Z",
+      "type": "INFO",
+      "msg": "Account: $99900.87 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T19:59:19.652Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
