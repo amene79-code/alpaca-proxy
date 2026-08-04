@@ -3,7 +3,7 @@
     "PLTR": {
       "side": "long",
       "entry": 158.6750030517578,
-      "high": 160.635,
+      "high": 160.85,
       "low": 158.6750030517578,
       "initialSl": 157.09,
       "sl": 158.8,
@@ -11,9 +11,33 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": true
+    },
+    "W": {
+      "side": "long",
+      "entry": 116.33999633789062,
+      "high": 116.33999633789062,
+      "low": 116.33999633789062,
+      "initialSl": 115.44,
+      "sl": 115.44,
+      "tp": 118.73,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "PAY": {
+      "side": "long",
+      "entry": 43.52579879760742,
+      "high": 43.52579879760742,
+      "low": 43.52579879760742,
+      "initialSl": 42.99,
+      "sl": 42.99,
+      "tp": 44.97,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
     }
   },
-  "dailyTrades": 1,
+  "dailyTrades": 3,
   "dailyDate": "2026-08-04",
   "openPositions": [
     "FIVE",
@@ -83,92 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T16:16:37.661Z",
+  "lastRun": "2026-08-04T16:27:28.579Z",
   "log": [
-    {
-      "time": "2026-08-03T16:56:03.289Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 27",
-      "detail": "SRAD, GME, KRYS, TGTX, AZN, MAR, FICO, ALMS, MPWR, DORM"
-    },
-    {
-      "time": "2026-08-03T16:56:14.394Z",
-      "type": "INFO",
-      "msg": "Short rejections (27)",
-      "detail": "SRAD: price $12.27 < $20 (short floor)  •  GME: price $18.64 < $20 (short floor)  •  KRYS: avgVol 0.6M < 1M  •  TGTX: relVol 1.8× < 2.5× (todayVol 3.9M)  •  AZN: above VWAP (price $156.26 > VWAP $155.67) — not holding breakdown  •  MAR: relVol 1.7× < 2.5× (todayVol 2.4M)  •  FICO: avgVol 0.3M < 1M  •  ALMS: relVol 0.4× < 2.5× (todayVol 0.5M)  •  MPWR: avgVol 0.9M < 1M  •  DORM: avgVol 0.3M < 1M  •  MANE: avgVol 0.7M < 1M  •  CBOE: net up over ~5d ($288.87→$293.70) — no short into uptrend"
-    },
-    {
-      "time": "2026-08-03T16:56:14.394Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T17:06:26.084Z",
-      "type": "INFO",
-      "msg": "Account: $99801.86 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T17:06:26.621Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CRWV, NBIS, ATKR, BFLY, ONDS, CIFR, SOFI, AXTI, CORZ, ALM"
-    },
-    {
-      "time": "2026-08-03T17:06:26.621Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-03T17:06:38.302Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "CRWV: relVol 1.0× < 2× (todayVol 25.8M)  •  NBIS: relVol 0.8× < 2× (todayVol 16.9M)  •  ATKR: avgVol 0.6M < 1M  •  BFLY: price $8.15 < $15  •  ONDS: price $8.20 < $15  •  CIFR: relVol 0.6× < 2× (todayVol 16.5M)  •  SOFI: relVol 0.5× < 2× (todayVol 43.2M)  •  AXTI: relVol 1.2× < 2× (todayVol 11.1M)  •  CORZ: relVol 1.2× < 2× (todayVol 15.6M)  •  ALM: price $12.45 < $15  •  AAOI: relVol 0.8× < 2× (todayVol 6.6M)  •  ORCL: relVol 0.7× < 2× (todayVol 26.9M)"
-    },
-    {
-      "time": "2026-08-03T17:06:38.302Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T17:06:38.416Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 28",
-      "detail": "SRAD, GME, KRYS, TGTX, ALMS, AZN, MAR, FICO, MPWR, MANE"
-    },
-    {
-      "time": "2026-08-03T17:06:46.972Z",
-      "type": "INFO",
-      "msg": "Short rejections (28)",
-      "detail": "SRAD: price $12.21 < $20 (short floor)  •  GME: price $18.75 < $20 (short floor)  •  KRYS: avgVol 0.6M < 1M  •  TGTX: relVol 1.9× < 2.5× (todayVol 3.9M)  •  ALMS: relVol 0.4× < 2.5× (todayVol 0.5M)  •  AZN: above VWAP (price $157.26 > VWAP $155.72) — not holding breakdown  •  MAR: relVol 1.7× < 2.5× (todayVol 2.4M)  •  FICO: avgVol 0.3M < 1M  •  MPWR: avgVol 0.9M < 1M  •  MANE: avgVol 0.7M < 1M  •  CVI: avgVol 1.0M < 1M  •  DORM: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-08-03T17:06:46.973Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T17:16:58.617Z",
-      "type": "INFO",
-      "msg": "Account: $99801.86 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-03T17:16:59.144Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CRWV, NBIS, CIFR, ONDS, ATKR, AXTI, BFLY, SOFI, CORZ, CNH"
-    },
-    {
-      "time": "2026-08-03T17:16:59.144Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-03T17:17:10.993Z",
       "type": "INFO",
@@ -1284,10 +1224,96 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-08-04T16:27:00.542Z",
+      "type": "INFO",
+      "msg": "Account: $99814.16 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T16:27:01.497Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "PLTR, AAOI, SNAP, MRVL, W, PAY, VOYG, ZBRA, UFPT, AEHR"
+    },
+    {
+      "time": "2026-08-04T16:27:01.497Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-04T16:27:02.514Z",
+      "type": "SIGNAL",
+      "msg": "W — score 11 | gap 30.3% | relVol 2.0× | RSI 66",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-08-04T16:27:02.844Z",
+      "type": "SIGNAL",
+      "msg": "PAY — score 9 | gap 26.1% | relVol 2.1× | RSI 56",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T16:27:14.061Z",
+      "type": "INFO",
+      "msg": "Rejections (37)",
+      "detail": "AAOI: relVol 1.5× < 2× (todayVol 13.3M)  •  SNAP: price $5.75 < $15  •  MRVL: relVol 0.8× < 2× (todayVol 18.7M)  •  VOYG: relVol 1.7× < 2× (todayVol 2.6M)  •  ZBRA: avgVol 0.8M < 1M  •  UFPT: avgVol 0.2M < 1M  •  AEHR: relVol 0.6× < 2× (todayVol 1.9M)  •  IT: relVol 0.9× < 2× (todayVol 1.2M)  •  FN: avgVol 0.8M < 1M  •  DORM: avgVol 0.3M < 1M  •  COHR: relVol 1.2× < 2× (todayVol 5.5M)  •  INTC: relVol 0.5× < 2× (todayVol 61.3M)"
+    },
+    {
+      "time": "2026-08-04T16:27:14.061Z",
+      "type": "INFO",
+      "msg": "Top signal: W (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T16:27:14.061Z",
+      "type": "BUY",
+      "msg": "Placing 12× W @ ~$116.34",
+      "detail": "gap 30.3% | risk $10.80 | SL $115.44 | TP $118.73 | R:R 2.7 | Hammer"
+    },
+    {
+      "time": "2026-08-04T16:27:14.736Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 12× W",
+      "detail": "ID d26d81e1-4425-43b9-95d6-b709c42de677 | R:R 2.7:1 | risk $10.80"
+    },
+    {
+      "time": "2026-08-04T16:27:15.237Z",
+      "type": "BUY",
+      "msg": "Placing 34× PAY @ ~$43.53",
+      "detail": "gap 26.1% | risk $18.22 | SL $42.99 | TP $44.97 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-08-04T16:27:15.314Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 34× PAY",
+      "detail": "ID 4fd7b121-49ad-426c-9c07-b5e8cbcd15cf | R:R 2.7:1 | risk $18.22"
+    },
+    {
+      "time": "2026-08-04T16:27:15.980Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 39",
+      "detail": "BRKR, APTV, CTRI, NRG, STRL, ULS, CIFR, IOND, KNF, CBT"
+    },
+    {
+      "time": "2026-08-04T16:27:28.579Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "BRKR: relVol 2.1× < 2.5× (todayVol 4.2M)  •  APTV: relVol 2.4× < 2.5× (todayVol 6.3M)  •  CTRI: relVol 2.0× < 2.5× (todayVol 3.3M)  •  NRG: relVol 2.2× < 2.5× (todayVol 5.4M)  •  STRL: avgVol 0.8M < 1M  •  ULS: avgVol 0.8M < 1M  •  CIFR: net up over ~5d ($20.42→$21.55) — no short into uptrend  •  IOND: relVol 0.8× < 2.5× (todayVol 1.1M)  •  KNF: avgVol 0.5M < 1M  •  CBT: avgVol 0.4M < 1M  •  ICHR: net up over ~5d ($68.10→$72.65) — no short into uptrend  •  ROK: avgVol 0.8M < 1M"
+    },
+    {
+      "time": "2026-08-04T16:27:28.579Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [
-    "PLTR"
+    "PLTR",
+    "W",
+    "PAY"
   ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
