@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T20:30:22.848Z",
+  "lastRun": "2026-08-04T21:47:24.870Z",
   "log": [
-    {
-      "time": "2026-08-04T15:54:19.391Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLTR, AAOI, SNAP, MRVL, W, PAY, VOYG, ZBRA, UFPT, AEHR"
-    },
-    {
-      "time": "2026-08-04T15:54:19.391Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-04T15:54:31.497Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "AAOI: relVol 1.4× < 2× (todayVol 12.5M)  •  SNAP: price $5.74 < $15  •  MRVL: relVol 0.7× < 2× (todayVol 17.0M)  •  W: relVol 1.9× < 2× (todayVol 6.6M)  •  PAY: relVol 1.7× < 2× (todayVol 1.8M)  •  VOYG: relVol 1.7× < 2× (todayVol 2.5M)  •  ZBRA: avgVol 0.8M < 1M  •  UFPT: avgVol 0.2M < 1M  •  AEHR: relVol 0.5× < 2× (todayVol 1.7M)  •  FN: avgVol 0.8M < 1M  •  IT: relVol 0.8× < 2× (todayVol 1.1M)  •  DORM: avgVol 0.3M < 1M"
-    },
     {
       "time": "2026-08-04T15:54:31.497Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-04T20:30:22.847Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T21:47:24.284Z",
+      "type": "INFO",
+      "msg": "Account: $99900.87 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T21:47:24.353Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-04T21:47:24.870Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
