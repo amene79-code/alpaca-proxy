@@ -95,62 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-05T18:56:50.997Z",
+  "lastRun": "2026-08-05T19:07:17.465Z",
   "log": [
-    {
-      "time": "2026-08-05T15:54:14.022Z",
-      "type": "INFO",
-      "msg": "Account: $99913.63 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T15:54:14.947Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SHOP, ZETA, MTRN, QLYS, URGN, BSP, FRPT, TWST, COMP, TVTX"
-    },
-    {
-      "time": "2026-08-05T15:54:14.947Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-05T15:54:29.790Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "SHOP: below VWAP (price $144.19 < VWAP $146.38)  •  ZETA: below VWAP (price $26.92 < VWAP $27.22)  •  MTRN: avgVol 0.3M < 1M  •  QLYS: avgVol 0.7M < 1M  •  URGN: avgVol 0.8M < 1M  •  BSP: relVol 0.9× < 2× (todayVol 1.8M)  •  FRPT: relVol 1.6× < 2× (todayVol 1.8M)  •  TWST: relVol 1.1× < 2× (todayVol 1.5M)  •  COMP: price $12.97 < $15  •  TVTX: relVol 1.9× < 2× (todayVol 2.6M)  •  CDE: relVol 0.5× < 2× (todayVol 14.9M)  •  AUGO: avgVol 0.8M < 1M"
-    },
-    {
-      "time": "2026-08-05T15:54:29.790Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T15:54:29.973Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SEDG, PODD, TDC, DVA, EXTR, CC, LCID, MDLN, RRX, NYT"
-    },
-    {
-      "time": "2026-08-05T15:54:44.964Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "SEDG: above opening-range low (price $37.51 > ORL $36.04)  •  PODD: above opening-range low (price $131.56 > ORL $126.50)  •  TDC: relVol 1.4× < 2.5× (todayVol 4.4M)  •  DVA: avgVol 0.8M < 1M  •  EXTR: relVol 1.2× < 2.5× (todayVol 2.1M)  •  CC: price $14.88 < $20 (short floor)  •  LCID: price $6.51 < $20 (short floor)  •  MDLN: relVol 1.8× < 2.5× (todayVol 9.7M)  •  RRX: relVol 1.7× < 2.5× (todayVol 1.8M)  •  NYT: relVol 2.0× < 2.5× (todayVol 3.5M)  •  GLXY: price $19.13 < $20 (short floor)  •  RBA: above VWAP (price $96.53 > VWAP $96.50) — not holding breakdown"
-    },
-    {
-      "time": "2026-08-05T15:54:44.964Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T16:05:05.980Z",
-      "type": "INFO",
-      "msg": "Account: $99917.08 | 1 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-05T16:05:07.012Z",
       "type": "INFO",
@@ -1293,6 +1239,60 @@
     },
     {
       "time": "2026-08-05T18:56:50.997Z",
+      "type": "INFO",
+      "msg": "SKIP FRPT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T19:07:03.168Z",
+      "type": "INFO",
+      "msg": "Account: $99846.06 | 2 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T19:07:03.664Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SHOP, ZETA, MTRN, WTTR, LIME, FRPT, QLYS, BSP, HL, EGO"
+    },
+    {
+      "time": "2026-08-05T19:07:03.664Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-05T19:07:04.896Z",
+      "type": "SIGNAL",
+      "msg": "WTTR — score 15 | gap 20.3% | relVol 2.6× | RSI 72",
+      "detail": "Bullish Engulfing, Volume Breakout"
+    },
+    {
+      "time": "2026-08-05T19:07:05.509Z",
+      "type": "SIGNAL",
+      "msg": "FRPT — score 9 | gap 16.1% | relVol 3.1× | RSI 58",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T19:07:17.465Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "SHOP: below opening-range high (price $147.57 < ORH $153.86, 69 today-candles)  •  ZETA: below VWAP (price $27.08 < VWAP $27.20)  •  MTRN: avgVol 0.4M < 1M  •  LIME: avgVol 0.2M < 1M  •  QLYS: avgVol 0.8M < 1M  •  BSP: relVol 2.0× < 2× (todayVol 4.2M)  •  HL: relVol 0.8× < 2× (todayVol 30.9M)  •  EGO: relVol 1.4× < 2× (todayVol 3.0M)  •  TWST: relVol 1.5× < 2× (todayVol 2.1M)  •  COMP: price $12.97 < $15  •  CDE: relVol 1.4× < 2× (todayVol 39.1M)  •  INTA: avgVol 0.8M < 1M"
+    },
+    {
+      "time": "2026-08-05T19:07:17.465Z",
+      "type": "INFO",
+      "msg": "Top signal: WTTR (score 15)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T19:07:17.465Z",
+      "type": "INFO",
+      "msg": "SKIP WTTR — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T19:07:17.465Z",
       "type": "INFO",
       "msg": "SKIP FRPT — already traded today",
       "detail": ""
