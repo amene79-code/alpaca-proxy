@@ -16,13 +16,13 @@
       "side": "short",
       "entry": 35.55500030517578,
       "high": 35.55500030517578,
-      "low": 35.49,
+      "low": 35.165,
       "initialSl": 35.77,
-      "sl": 35.77,
+      "sl": 35.5,
       "tp": 34.91,
       "slOrderId": null,
       "tpOrderId": null,
-      "movedToBreakeven": false
+      "movedToBreakeven": true
     },
     "FRPT": {
       "side": "long",
@@ -107,74 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-05T17:42:29.288Z",
+  "lastRun": "2026-08-05T17:53:18.362Z",
   "log": [
-    {
-      "time": "2026-08-04T18:56:45.340Z",
-      "type": "INFO",
-      "msg": "SKIP PAY — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T19:07:05.206Z",
-      "type": "INFO",
-      "msg": "Account: $99903.27 | 3 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T19:07:06.578Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLTR, MRVL, SNAP, INTC, W, PAY, UFPT, ZBRA, IT, VOYG"
-    },
-    {
-      "time": "2026-08-04T19:07:06.579Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-04T19:07:08.583Z",
-      "type": "SIGNAL",
-      "msg": "PAY — score 8 | gap 27.7% | relVol 2.9× | RSI 31",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T19:07:22.994Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "PLTR: ATR 0.35% < 0.5%  •  MRVL: relVol 1.0× < 2× (todayVol 23.8M)  •  SNAP: price $5.66 < $15  •  INTC: relVol 0.7× < 2× (todayVol 80.8M)  •  UFPT: avgVol 0.2M < 1M  •  ZBRA: avgVol 0.8M < 1M  •  IT: relVol 1.6× < 2× (todayVol 2.1M)  •  VOYG: below VWAP (price $34.18 < VWAP $34.69)  •  AAOI: relVol 1.8× < 2× (todayVol 16.7M)  •  AEHR: relVol 0.8× < 2× (todayVol 2.7M)  •  TDW: avgVol 0.6M < 1M  •  ARM: relVol 1.0× < 2× (todayVol 6.6M)"
-    },
-    {
-      "time": "2026-08-04T19:07:22.994Z",
-      "type": "INFO",
-      "msg": "Top signal: PAY (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T19:07:22.994Z",
-      "type": "INFO",
-      "msg": "SKIP PAY — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T19:17:37.164Z",
-      "type": "INFO",
-      "msg": "Account: $99905.83 | 2 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T19:17:37.915Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLTR, MRVL, SNAP, INTC, WU, W, PAY, UFPT, IT, ZBRA"
-    },
-    {
-      "time": "2026-08-04T19:17:37.915Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-04T19:17:39.468Z",
       "type": "SIGNAL",
@@ -1305,6 +1239,72 @@
     },
     {
       "time": "2026-08-05T17:42:29.288Z",
+      "type": "INFO",
+      "msg": "SKIP FLUT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T17:52:49.738Z",
+      "type": "INFO",
+      "msg": "Account: $99896.19 | 3 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T17:52:50.824Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SHOP, ZETA, MTRN, BSP, URGN, QLYS, WTTR, FRPT, COMP, HL"
+    },
+    {
+      "time": "2026-08-05T17:52:50.824Z",
+      "type": "INFO",
+      "msg": "Scanning 38 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-05T17:53:05.918Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "SHOP: below opening-range high (price $146.93 < ORH $153.86, 54 today-candles)  •  ZETA: below opening-range high (price $27.35 < ORH $28.26, 54 today-candles)  •  MTRN: avgVol 0.3M < 1M  •  BSP: relVol 1.7× < 2× (todayVol 3.7M)  •  URGN: avgVol 0.8M < 1M  •  QLYS: avgVol 0.8M < 1M  •  WTTR: relVol 1.6× < 2× (todayVol 2.6M)  •  COMP: price $13.09 < $15  •  HL: relVol 0.5× < 2× (todayVol 18.3M)  •  EGO: relVol 1.1× < 2× (todayVol 2.4M)  •  TWST: relVol 1.4× < 2× (todayVol 1.9M)  •  CDE: relVol 1.0× < 2× (todayVol 28.7M)"
+    },
+    {
+      "time": "2026-08-05T17:53:05.918Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T17:53:06.057Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "SEDG, TDC, PODD, LCID, EXTR, CC, DVA, NYT, MDLN, RRX"
+    },
+    {
+      "time": "2026-08-05T17:53:08.342Z",
+      "type": "SIGNAL",
+      "msg": "NYT — SHORT score 9 | gap -16.0% | relVol 3.0× | RSI 48",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T17:53:09.072Z",
+      "type": "SIGNAL",
+      "msg": "FLUT — SHORT score 10 | gap -13.9% | relVol 4.1× | RSI 27",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T17:53:18.362Z",
+      "type": "INFO",
+      "msg": "Short rejections (37)",
+      "detail": "SEDG: above opening-range low (price $36.45 > ORL $36.04)  •  TDC: relVol 1.8× < 2.5× (todayVol 5.9M)  •  PODD: above opening-range low (price $133.12 > ORL $126.50)  •  LCID: price $6.41 < $20 (short floor)  •  EXTR: relVol 1.5× < 2.5× (todayVol 2.7M)  •  CC: price $14.90 < $20 (short floor)  •  DVA: avgVol 0.8M < 1M  •  RRX: relVol 2.3× < 2.5× (todayVol 2.5M)  •  GLXY: price $19.25 < $20 (short floor)  •  RBA: above VWAP (price $97.09 > VWAP $96.49) — not holding breakdown  •  PARR: relVol 1.2× < 2.5× (todayVol 1.2M)  •  LIVN: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-08-05T17:53:18.362Z",
+      "type": "INFO",
+      "msg": "Top short: FLUT (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T17:53:18.362Z",
       "type": "INFO",
       "msg": "SKIP FLUT — already traded today",
       "detail": ""
