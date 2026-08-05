@@ -16,7 +16,7 @@
       "side": "short",
       "entry": 35.560001373291016,
       "high": 35.560001373291016,
-      "low": 35.51,
+      "low": 35.34,
       "initialSl": 35.81,
       "sl": 35.81,
       "tp": 34.8,
@@ -95,74 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-05T18:25:13.927Z",
+  "lastRun": "2026-08-05T18:35:51.442Z",
   "log": [
-    {
-      "time": "2026-08-05T15:11:11.760Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T15:11:11.908Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SEDG, TDC, DVA, PODD, EXTR, CC, MDLN, NYT, LCID, RRX"
-    },
-    {
-      "time": "2026-08-05T15:11:27.803Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "SEDG: above VWAP (price $38.22 > VWAP $38.07) — not holding breakdown  •  TDC: relVol 1.1× < 2.5× (todayVol 3.4M)  •  DVA: avgVol 0.8M < 1M  •  PODD: relVol 2.1× < 2.5× (todayVol 3.0M)  •  EXTR: relVol 1.0× < 2.5× (todayVol 1.7M)  •  CC: price $15.01 < $20 (short floor)  •  MDLN: relVol 1.4× < 2.5× (todayVol 7.3M)  •  NYT: relVol 1.8× < 2.5× (todayVol 3.0M)  •  LCID: price $6.64 < $20 (short floor)  •  RRX: net up over ~5d ($187.60→$189.37) — no short into uptrend  •  RBA: above opening-range low (price $96.14 > ORL $94.50)  •  CDW: relVol 1.5× < 2.5× (todayVol 2.9M)"
-    },
-    {
-      "time": "2026-08-05T15:11:27.803Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T15:21:42.516Z",
-      "type": "INFO",
-      "msg": "Account: $99900.83 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T15:21:43.499Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SHOP, ZETA, MTRN, QLYS, BSP, TVTX, COMP, HL, URGN, CDE"
-    },
-    {
-      "time": "2026-08-05T15:21:43.499Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-05T15:22:02.529Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "SHOP: relVol 2.0× < 2× (todayVol 18.7M)  •  ZETA: below VWAP (price $27.22 < VWAP $27.23)  •  MTRN: avgVol 0.3M < 1M  •  QLYS: avgVol 0.7M < 1M  •  BSP: relVol 0.6× < 2× (todayVol 1.1M)  •  TVTX: relVol 1.8× < 2× (todayVol 2.4M)  •  COMP: price $13.09 < $15  •  HL: relVol 0.3× < 2× (todayVol 10.1M)  •  URGN: avgVol 0.8M < 1M  •  CDE: relVol 0.4× < 2× (todayVol 11.8M)  •  EGO: relVol 0.6× < 2× (todayVol 1.2M)  •  AUGO: avgVol 0.8M < 1M"
-    },
-    {
-      "time": "2026-08-05T15:22:02.529Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T15:22:02.932Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SEDG, TDC, PODD, DVA, EXTR, CC, MDLN, LCID, NYT, RRX"
-    },
-    {
-      "time": "2026-08-05T15:22:21.728Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "SEDG: above opening-range low (price $37.80 > ORL $36.04)  •  TDC: relVol 1.1× < 2.5× (todayVol 3.5M)  •  PODD: relVol 2.3× < 2.5× (todayVol 3.3M)  •  DVA: avgVol 0.8M < 1M  •  EXTR: relVol 1.0× < 2.5× (todayVol 1.8M)  •  CC: price $14.86 < $20 (short floor)  •  MDLN: relVol 1.5× < 2.5× (todayVol 7.8M)  •  LCID: price $6.61 < $20 (short floor)  •  NYT: relVol 1.8× < 2.5× (todayVol 3.1M)  •  RRX: net up over ~5d ($187.60→$187.99) — no short into uptrend  •  GLXY: price $19.05 < $20 (short floor)  •  GXO: relVol 1.0× < 2.5× (todayVol 1.4M)"
-    },
     {
       "time": "2026-08-05T15:22:21.729Z",
       "type": "INFO",
@@ -1295,6 +1229,72 @@
       "time": "2026-08-05T18:25:13.927Z",
       "type": "INFO",
       "msg": "SKIP WTTR — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:35:37.221Z",
+      "type": "INFO",
+      "msg": "Account: $99843.12 | 2 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:35:38.392Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SHOP, ZETA, MTRN, BSP, QLYS, WTTR, FRPT, URGN, TWST, INTA"
+    },
+    {
+      "time": "2026-08-05T18:35:38.392Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-05T18:35:40.263Z",
+      "type": "SIGNAL",
+      "msg": "WTTR — score 9 | gap 15.4% | relVol 2.3× | RSI 66",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:35:40.618Z",
+      "type": "SIGNAL",
+      "msg": "FRPT — score 12 | gap 14.8% | relVol 2.9× | RSI 51",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-08-05T18:35:50.586Z",
+      "type": "SIGNAL",
+      "msg": "SHAK — score 7 | gap 7.8% | relVol 3.0× | RSI 39",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:35:51.442Z",
+      "type": "INFO",
+      "msg": "Rejections (37)",
+      "detail": "SHOP: below opening-range high (price $146.49 < ORH $153.86, 62 today-candles)  •  ZETA: below opening-range high (price $27.27 < ORH $28.26, 62 today-candles)  •  MTRN: avgVol 0.4M < 1M  •  BSP: relVol 1.8× < 2× (todayVol 3.9M)  •  QLYS: avgVol 0.8M < 1M  •  URGN: avgVol 0.8M < 1M  •  TWST: relVol 1.5× < 2× (todayVol 2.1M)  •  INTA: avgVol 0.8M < 1M  •  LIME: avgVol 0.2M < 1M  •  HL: relVol 0.6× < 2× (todayVol 24.5M)  •  EGO: relVol 1.3× < 2× (todayVol 2.8M)  •  COMP: price $12.91 < $15"
+    },
+    {
+      "time": "2026-08-05T18:35:51.442Z",
+      "type": "INFO",
+      "msg": "Top signal: FRPT (score 12)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:35:51.442Z",
+      "type": "INFO",
+      "msg": "SKIP FRPT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:35:51.442Z",
+      "type": "INFO",
+      "msg": "SKIP WTTR — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:35:51.442Z",
+      "type": "INFO",
+      "msg": "SKIP SHAK — already traded today",
       "detail": ""
     }
   ],
