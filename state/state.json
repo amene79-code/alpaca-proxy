@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 3,
-  "dailyDate": "2026-08-04",
+  "dailyTrades": 0,
+  "dailyDate": "2026-08-05",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-04T21:47:24.870Z",
+  "lastRun": "2026-08-05T15:11:27.803Z",
   "log": [
-    {
-      "time": "2026-08-04T15:54:31.497Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T15:54:31.630Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 37",
-      "detail": "BRKR, CTRI, APTV, NRG, STRL, ULS, CBT, KNF, IOND, ICHR"
-    },
-    {
-      "time": "2026-08-04T15:54:43.529Z",
-      "type": "INFO",
-      "msg": "Short rejections (37)",
-      "detail": "BRKR: relVol 2.0× < 2.5× (todayVol 3.9M)  •  CTRI: relVol 1.6× < 2.5× (todayVol 2.6M)  •  APTV: relVol 2.1× < 2.5× (todayVol 5.3M)  •  NRG: relVol 1.6× < 2.5× (todayVol 3.7M)  •  STRL: avgVol 0.8M < 1M  •  ULS: avgVol 0.8M < 1M  •  CBT: avgVol 0.4M < 1M  •  KNF: avgVol 0.5M < 1M  •  IOND: relVol 0.7× < 2.5× (todayVol 1.0M)  •  ICHR: net up over ~5d ($68.10→$72.51) — no short into uptrend  •  CIFR: net up over ~5d ($20.42→$22.10) — no short into uptrend  •  JBTM: avgVol 0.4M < 1M"
-    },
-    {
-      "time": "2026-08-04T15:54:43.529Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T16:05:06.692Z",
-      "type": "INFO",
-      "msg": "Account: $99796.97 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T16:05:07.344Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLTR, AAOI, SNAP, MRVL, W, PAY, VOYG, ZBRA, UFPT, AEHR"
-    },
-    {
-      "time": "2026-08-04T16:05:07.344Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-04T16:05:19.756Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "AAOI: relVol 1.4× < 2× (todayVol 12.7M)  •  SNAP: price $5.76 < $15  •  MRVL: relVol 0.7× < 2× (todayVol 17.4M)  •  W: relVol 1.9× < 2× (todayVol 6.7M)  •  PAY: relVol 1.7× < 2× (todayVol 1.8M)  •  VOYG: relVol 1.7× < 2× (todayVol 2.5M)  •  ZBRA: avgVol 0.8M < 1M  •  UFPT: avgVol 0.2M < 1M  •  AEHR: relVol 0.5× < 2× (todayVol 1.8M)  •  IT: relVol 0.9× < 2× (todayVol 1.1M)  •  FN: avgVol 0.8M < 1M  •  DORM: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-08-04T16:05:19.756Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-04T16:05:19.924Z",
       "type": "INFO",
@@ -1271,18 +1217,63 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-08-05T15:10:58.297Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T15:10:58.378Z",
+      "type": "INFO",
+      "msg": "Account: $99900.83 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T15:10:58.939Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SHOP, ZETA, MTRN, QLYS, TVTX, COMP, HL, CDE, FRPT, DT"
+    },
+    {
+      "time": "2026-08-05T15:10:58.939Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-05T15:11:11.759Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SHOP: relVol 1.9× < 2× (todayVol 17.9M)  •  ZETA: below VWAP (price $27.23 < VWAP $27.23)  •  MTRN: avgVol 0.3M < 1M  •  QLYS: avgVol 0.7M < 1M  •  TVTX: relVol 1.7× < 2× (todayVol 2.4M)  •  COMP: price $13.16 < $15  •  HL: relVol 0.2× < 2× (todayVol 9.5M)  •  CDE: relVol 0.4× < 2× (todayVol 10.5M)  •  FRPT: relVol 1.2× < 2× (todayVol 1.3M)  •  DT: relVol 1.4× < 2× (todayVol 6.1M)  •  AUGO: avgVol 0.8M < 1M  •  BSP: relVol 0.4× < 2× (todayVol 0.8M)"
+    },
+    {
+      "time": "2026-08-05T15:11:11.760Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T15:11:11.908Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "SEDG, TDC, DVA, PODD, EXTR, CC, MDLN, NYT, LCID, RRX"
+    },
+    {
+      "time": "2026-08-05T15:11:27.803Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "SEDG: above VWAP (price $38.22 > VWAP $38.07) — not holding breakdown  •  TDC: relVol 1.1× < 2.5× (todayVol 3.4M)  •  DVA: avgVol 0.8M < 1M  •  PODD: relVol 2.1× < 2.5× (todayVol 3.0M)  •  EXTR: relVol 1.0× < 2.5× (todayVol 1.7M)  •  CC: price $15.01 < $20 (short floor)  •  MDLN: relVol 1.4× < 2.5× (todayVol 7.3M)  •  NYT: relVol 1.8× < 2.5× (todayVol 3.0M)  •  LCID: price $6.64 < $20 (short floor)  •  RRX: net up over ~5d ($187.60→$189.37) — no short into uptrend  •  RBA: above opening-range low (price $96.14 > ORL $94.50)  •  CDW: relVol 1.5× < 2.5× (todayVol 2.9M)"
+    },
+    {
+      "time": "2026-08-05T15:11:27.803Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "PLTR",
-    "W",
-    "PAY"
-  ],
-  "shortDailyTrades": 4,
-  "shortTradedToday": [
-    "APTV",
-    "NRG",
-    "NVO",
-    "BRKR"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
