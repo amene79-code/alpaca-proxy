@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-05T19:58:52.975Z",
+  "lastRun": "2026-08-05T20:09:15.392Z",
   "log": [
-    {
-      "time": "2026-08-05T16:37:47.887Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "SHOP: below VWAP (price $143.58 < VWAP $146.09)  •  ZETA: below VWAP (price $27.06 < VWAP $27.21)  •  MTRN: avgVol 0.3M < 1M  •  BSP: relVol 1.1× < 2× (todayVol 2.3M)  •  URGN: avgVol 0.8M < 1M  •  FRPT: relVol 1.7× < 2× (todayVol 2.0M)  •  QLYS: avgVol 0.7M < 1M  •  EGO: relVol 0.8× < 2× (todayVol 1.8M)  •  COMP: price $12.98 < $15  •  CDE: relVol 0.8× < 2× (todayVol 21.9M)  •  TWST: relVol 1.2× < 2× (todayVol 1.7M)  •  DT: relVol 1.8× < 2× (todayVol 7.8M)"
-    },
-    {
-      "time": "2026-08-05T16:37:47.887Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T16:37:48.016Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SEDG, TDC, PODD, EXTR, DVA, MDLN, CC, NYT, RRX, LCID"
-    },
     {
       "time": "2026-08-05T16:37:52.572Z",
       "type": "SIGNAL",
@@ -1270,6 +1252,24 @@
       "time": "2026-08-05T19:58:52.975Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T20:09:14.653Z",
+      "type": "INFO",
+      "msg": "Account: $99845.52 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T20:09:14.695Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T20:09:15.392Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
