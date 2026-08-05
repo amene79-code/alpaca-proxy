@@ -16,7 +16,7 @@
       "side": "short",
       "entry": 35.560001373291016,
       "high": 35.560001373291016,
-      "low": 35.560001373291016,
+      "low": 35.51,
       "initialSl": 35.81,
       "sl": 35.81,
       "tp": 34.8,
@@ -95,62 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-05T18:14:41.351Z",
+  "lastRun": "2026-08-05T18:25:13.927Z",
   "log": [
-    {
-      "time": "2026-08-04T20:30:22.847Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T21:47:24.284Z",
-      "type": "INFO",
-      "msg": "Account: $99900.87 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T21:47:24.353Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T21:47:24.870Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T15:10:58.297Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T15:10:58.378Z",
-      "type": "INFO",
-      "msg": "Account: $99900.83 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T15:10:58.939Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SHOP, ZETA, MTRN, QLYS, TVTX, COMP, HL, CDE, FRPT, DT"
-    },
-    {
-      "time": "2026-08-05T15:10:58.939Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-05T15:11:11.759Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "SHOP: relVol 1.9× < 2× (todayVol 17.9M)  •  ZETA: below VWAP (price $27.23 < VWAP $27.23)  •  MTRN: avgVol 0.3M < 1M  •  QLYS: avgVol 0.7M < 1M  •  TVTX: relVol 1.7× < 2× (todayVol 2.4M)  •  COMP: price $13.16 < $15  •  HL: relVol 0.2× < 2× (todayVol 9.5M)  •  CDE: relVol 0.4× < 2× (todayVol 10.5M)  •  FRPT: relVol 1.2× < 2× (todayVol 1.3M)  •  DT: relVol 1.4× < 2× (todayVol 6.1M)  •  AUGO: avgVol 0.8M < 1M  •  BSP: relVol 0.4× < 2× (todayVol 0.8M)"
-    },
     {
       "time": "2026-08-05T15:11:11.760Z",
       "type": "INFO",
@@ -1296,6 +1242,60 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 28× SEDG",
       "detail": "ID 5f62a5a6-93d2-45e9-8690-72cd37804681 | R:R 3.0:1 | risk $7.00 | real bracket stop @ $35.81"
+    },
+    {
+      "time": "2026-08-05T18:24:57.203Z",
+      "type": "INFO",
+      "msg": "Account: $99837.38 | 2 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:24:59.240Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 49, kept 40",
+      "detail": "SHOP, ZETA, MTRN, BSP, QLYS, WTTR, URGN, FRPT, EGO, HL"
+    },
+    {
+      "time": "2026-08-05T18:24:59.241Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-05T18:25:01.180Z",
+      "type": "SIGNAL",
+      "msg": "WTTR — score 8 | gap 15.2% | relVol 2.3× | RSI 62",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:25:01.905Z",
+      "type": "SIGNAL",
+      "msg": "FRPT — score 11 | gap 13.4% | relVol 2.7× | RSI 54",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-08-05T18:25:13.927Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "SHOP: below opening-range high (price $146.14 < ORH $153.86, 60 today-candles)  •  ZETA: below opening-range high (price $27.39 < ORH $28.26, 60 today-candles)  •  MTRN: avgVol 0.3M < 1M  •  BSP: relVol 1.8× < 2× (todayVol 3.9M)  •  QLYS: avgVol 0.8M < 1M  •  URGN: avgVol 0.8M < 1M  •  EGO: relVol 1.2× < 2× (todayVol 2.7M)  •  HL: relVol 0.6× < 2× (todayVol 21.8M)  •  TWST: relVol 1.5× < 2× (todayVol 2.0M)  •  INTA: avgVol 0.8M < 1M  •  CDE: relVol 1.1× < 2× (todayVol 31.6M)  •  DT: below VWAP (price $51.29 < VWAP $51.79)"
+    },
+    {
+      "time": "2026-08-05T18:25:13.927Z",
+      "type": "INFO",
+      "msg": "Top signal: FRPT (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:25:13.927Z",
+      "type": "INFO",
+      "msg": "SKIP FRPT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T18:25:13.927Z",
+      "type": "INFO",
+      "msg": "SKIP WTTR — already traded today",
+      "detail": ""
     }
   ],
   "tradedToday": [
