@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-05T20:19:31.799Z",
+  "lastRun": "2026-08-05T20:29:49.455Z",
   "log": [
-    {
-      "time": "2026-08-05T16:38:02.302Z",
-      "type": "INFO",
-      "msg": "SKIP FLUT — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T16:48:25.611Z",
-      "type": "INFO",
-      "msg": "Account: $99921.97 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T16:48:26.728Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SHOP, ZETA, MTRN, BSP, URGN, QLYS, SIND, FRPT, EGO, COMP"
-    },
     {
       "time": "2026-08-05T16:48:26.728Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-05T20:19:31.799Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T20:29:49.174Z",
+      "type": "INFO",
+      "msg": "Account: $99845.52 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T20:29:49.233Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T20:29:49.455Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
