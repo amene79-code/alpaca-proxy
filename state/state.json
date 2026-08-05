@@ -4,13 +4,13 @@
       "side": "short",
       "entry": 94.29000091552734,
       "high": 94.29000091552734,
-      "low": 93.76,
+      "low": 92.9201,
       "initialSl": 95,
-      "sl": 95,
+      "sl": 94.11,
       "tp": 92.16,
       "slOrderId": null,
       "tpOrderId": null,
-      "movedToBreakeven": false
+      "movedToBreakeven": true
     }
   },
   "dailyTrades": 0,
@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-05T15:43:57.872Z",
+  "lastRun": "2026-08-05T15:54:44.964Z",
   "log": [
-    {
-      "time": "2026-08-04T16:37:54.717Z",
-      "type": "INFO",
-      "msg": "Scanning 37 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-04T16:38:06.788Z",
-      "type": "INFO",
-      "msg": "Rejections (37)",
-      "detail": "SNAP: price $5.76 < $15  •  MRVL: relVol 0.8× < 2× (todayVol 19.0M)  •  INTC: relVol 0.6× < 2× (todayVol 62.5M)  •  VOYG: relVol 1.8× < 2× (todayVol 2.7M)  •  ZBRA: avgVol 0.8M < 1M  •  AAOI: relVol 1.5× < 2× (todayVol 13.5M)  •  UFPT: avgVol 0.2M < 1M  •  AEHR: relVol 0.6× < 2× (todayVol 2.0M)  •  IT: relVol 1.0× < 2× (todayVol 1.3M)  •  FN: avgVol 0.8M < 1M  •  DORM: avgVol 0.3M < 1M  •  COHR: relVol 1.2× < 2× (todayVol 5.6M)"
-    },
-    {
-      "time": "2026-08-04T16:38:06.788Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T16:38:06.951Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 39",
-      "detail": "BRKR, CTRI, APTV, NRG, CIFR, STRL, ULS, IOND, ICHR, CBT"
-    },
-    {
-      "time": "2026-08-04T16:38:07.853Z",
-      "type": "SIGNAL",
-      "msg": "APTV — SHORT score 8 | gap -17.2% | relVol 2.6× | RSI 46",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T16:38:20.189Z",
-      "type": "INFO",
-      "msg": "Short rejections (38)",
-      "detail": "BRKR: relVol 2.2× < 2.5× (todayVol 4.3M)  •  CTRI: relVol 2.0× < 2.5× (todayVol 3.4M)  •  NRG: relVol 2.3× < 2.5× (todayVol 5.7M)  •  CIFR: net up over ~5d ($20.42→$21.23) — no short into uptrend  •  STRL: avgVol 0.8M < 1M  •  ULS: avgVol 0.8M < 1M  •  IOND: relVol 0.8× < 2.5× (todayVol 1.2M)  •  ICHR: net up over ~5d ($68.10→$72.24) — no short into uptrend  •  CBT: avgVol 0.4M < 1M  •  KNF: avgVol 0.5M < 1M  •  ROK: avgVol 0.8M < 1M  •  VVX: avgVol 0.8M < 1M"
-    },
-    {
-      "time": "2026-08-04T16:38:20.189Z",
-      "type": "INFO",
-      "msg": "Top short: APTV (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-04T16:38:20.189Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 21× APTV @ ~$47.40",
-      "detail": "gap -17.2% | risk $5.67 | SL $47.67 | TP $46.58 | R:R 3.0"
-    },
     {
       "time": "2026-08-04T16:38:24.441Z",
       "type": "SHORT",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-08-05T15:43:57.872Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T15:54:14.022Z",
+      "type": "INFO",
+      "msg": "Account: $99913.63 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T15:54:14.947Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SHOP, ZETA, MTRN, QLYS, URGN, BSP, FRPT, TWST, COMP, TVTX"
+    },
+    {
+      "time": "2026-08-05T15:54:14.947Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-05T15:54:29.790Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SHOP: below VWAP (price $144.19 < VWAP $146.38)  •  ZETA: below VWAP (price $26.92 < VWAP $27.22)  •  MTRN: avgVol 0.3M < 1M  •  QLYS: avgVol 0.7M < 1M  •  URGN: avgVol 0.8M < 1M  •  BSP: relVol 0.9× < 2× (todayVol 1.8M)  •  FRPT: relVol 1.6× < 2× (todayVol 1.8M)  •  TWST: relVol 1.1× < 2× (todayVol 1.5M)  •  COMP: price $12.97 < $15  •  TVTX: relVol 1.9× < 2× (todayVol 2.6M)  •  CDE: relVol 0.5× < 2× (todayVol 14.9M)  •  AUGO: avgVol 0.8M < 1M"
+    },
+    {
+      "time": "2026-08-05T15:54:29.790Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T15:54:29.973Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "SEDG, PODD, TDC, DVA, EXTR, CC, LCID, MDLN, RRX, NYT"
+    },
+    {
+      "time": "2026-08-05T15:54:44.964Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "SEDG: above opening-range low (price $37.51 > ORL $36.04)  •  PODD: above opening-range low (price $131.56 > ORL $126.50)  •  TDC: relVol 1.4× < 2.5× (todayVol 4.4M)  •  DVA: avgVol 0.8M < 1M  •  EXTR: relVol 1.2× < 2.5× (todayVol 2.1M)  •  CC: price $14.88 < $20 (short floor)  •  LCID: price $6.51 < $20 (short floor)  •  MDLN: relVol 1.8× < 2.5× (todayVol 9.7M)  •  RRX: relVol 1.7× < 2.5× (todayVol 1.8M)  •  NYT: relVol 2.0× < 2.5× (todayVol 3.5M)  •  GLXY: price $19.13 < $20 (short floor)  •  RBA: above VWAP (price $96.53 > VWAP $96.50) — not holding breakdown"
+    },
+    {
+      "time": "2026-08-05T15:54:44.964Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
