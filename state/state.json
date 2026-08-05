@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-05T19:28:11.829Z",
+  "lastRun": "2026-08-05T19:38:23.995Z",
   "log": [
-    {
-      "time": "2026-08-05T16:26:57.269Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SEDG, PODD, TDC, EXTR, DVA, MDLN, CC, RRX, LCID, NYT"
-    },
-    {
-      "time": "2026-08-05T16:27:00.935Z",
-      "type": "SIGNAL",
-      "msg": "FLUT — SHORT score 8 | gap -12.1% | relVol 3.2× | RSI 15",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T16:27:09.728Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "SEDG: above opening-range low (price $36.90 > ORL $36.04)  •  PODD: above opening-range low (price $133.23 > ORL $126.50)  •  TDC: relVol 1.6× < 2.5× (todayVol 5.0M)  •  EXTR: relVol 1.3× < 2.5× (todayVol 2.2M)  •  DVA: avgVol 0.8M < 1M  •  MDLN: relVol 2.2× < 2.5× (todayVol 12.0M)  •  CC: price $14.98 < $20 (short floor)  •  RRX: relVol 1.9× < 2.5× (todayVol 2.0M)  •  LCID: price $6.57 < $20 (short floor)  •  NYT: relVol 2.3× < 2.5× (todayVol 4.0M)  •  RBA: above opening-range low (price $95.96 > ORL $94.50)  •  GLXY: price $19.55 < $20 (short floor)"
-    },
     {
       "time": "2026-08-05T16:27:09.728Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-08-05T19:28:11.829Z",
       "type": "INFO",
       "msg": "SKIP SHAK — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T19:38:23.884Z",
+      "type": "INFO",
+      "msg": "Account: $99845.52 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T19:38:23.994Z",
+      "type": "INFO",
+      "msg": "EOD review (22 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-05T19:38:23.994Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
