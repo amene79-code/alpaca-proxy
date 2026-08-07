@@ -35,6 +35,18 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": false
+    },
+    "LASR": {
+      "side": "short",
+      "entry": 56.900001525878906,
+      "high": 56.900001525878906,
+      "low": 56.900001525878906,
+      "initialSl": 57.39,
+      "sl": 57.39,
+      "tp": 55.42,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
     }
   },
   "dailyTrades": 5,
@@ -107,74 +119,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-07T17:03:04.432Z",
+  "lastRun": "2026-08-07T17:13:41.198Z",
   "log": [
-    {
-      "time": "2026-08-05T20:09:14.695Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T20:09:15.392Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T20:19:31.484Z",
-      "type": "INFO",
-      "msg": "Account: $99845.52 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T20:19:31.566Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T20:19:31.799Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T20:29:49.174Z",
-      "type": "INFO",
-      "msg": "Account: $99845.52 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T20:29:49.233Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T20:29:49.455Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T21:17:58.158Z",
-      "type": "INFO",
-      "msg": "Account: $99845.52 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T21:17:58.232Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T21:17:58.456Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-08-06T15:16:03.735Z",
       "type": "INFO",
@@ -1308,6 +1254,72 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:13:17.915Z",
+      "type": "INFO",
+      "msg": "Account: $99943.55 | 3 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:13:19.100Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "DOCS, RDW, DV, CELH, SPCX, SOUN, AAOI, TEAM, TWLO, FIGS"
+    },
+    {
+      "time": "2026-08-07T17:13:19.100Z",
+      "type": "INFO",
+      "msg": "Scanning 37 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-07T17:13:29.235Z",
+      "type": "INFO",
+      "msg": "Rejections (37)",
+      "detail": "DOCS: below VWAP (price $27.46 < VWAP $33.51)  •  RDW: price $13.51 < $15  •  DV: price $13.22 < $15  •  SPCX: relVol 1.8× < 2× (todayVol 169.6M)  •  SOUN: price $7.86 < $15  •  AAOI: relVol 1.8× < 2× (todayVol 19.1M)  •  TEAM: below VWAP (price $145.18 < VWAP $146.31)  •  FIGS: price $14.17 < $15  •  NTRA: relVol 1.7× < 2× (todayVol 1.9M)  •  ROAD: relVol 0.7× < 2× (todayVol 1.0M)  •  FIVN: relVol 1.5× < 2× (todayVol 5.2M)  •  FLR: relVol 1.9× < 2× (todayVol 4.5M)"
+    },
+    {
+      "time": "2026-08-07T17:13:29.235Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:13:29.342Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "SEZL, LASR, TTD, POST, TDS, ARW, DAVE, AMRZ, FOUR, XRAY"
+    },
+    {
+      "time": "2026-08-07T17:13:29.946Z",
+      "type": "SIGNAL",
+      "msg": "LASR — SHORT score 6 | gap -24.6% | relVol 2.8× | RSI 13",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:13:40.479Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "SEZL: avgVol 0.7M < 1M  •  TTD: price $13.80 < $20 (short floor)  •  POST: avgVol 0.9M < 1M  •  TDS: relVol 1.2× < 2.5× (todayVol 1.3M)  •  ARW: avgVol 0.5M < 1M  •  DAVE: avgVol 0.5M < 1M  •  AMRZ: relVol 1.8× < 2.5× (todayVol 5.4M)  •  FOUR: relVol 1.3× < 2.5× (todayVol 1.7M)  •  XRAY: price $12.19 < $20 (short floor)  •  TNGX: relVol 0.5× < 2.5× (todayVol 1.0M)  •  ESE: avgVol 0.2M < 1M  •  LB: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-08-07T17:13:40.479Z",
+      "type": "INFO",
+      "msg": "Top short: LASR (score 6)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:13:40.480Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 17× LASR @ ~$56.90",
+      "detail": "gap -24.6% | risk $8.33 | SL $57.39 | TP $55.42 | R:R 3.0"
+    },
+    {
+      "time": "2026-08-07T17:13:40.697Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 17× LASR",
+      "detail": "ID 2fb2db2d-f34e-4d27-8854-8b1c87f1c776 | R:R 3.0:1 | risk $8.33 | real bracket stop @ $57.39"
     }
   ],
   "tradedToday": [
@@ -1317,8 +1329,9 @@
     "CART",
     "CELH"
   ],
-  "shortDailyTrades": 1,
+  "shortDailyTrades": 2,
   "shortTradedToday": [
-    "INOD"
+    "INOD",
+    "LASR"
   ]
 }
