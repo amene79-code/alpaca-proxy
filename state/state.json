@@ -1,21 +1,9 @@
 {
   "trailingStops": {
-    "CHYM": {
-      "side": "long",
-      "entry": 32.18000030517578,
-      "high": 32.685,
-      "low": 32.18000030517578,
-      "initialSl": 31.8,
-      "sl": 32.22,
-      "tp": 33.2,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    },
     "U": {
       "side": "long",
       "entry": 40.540000915527344,
-      "high": 40.79,
+      "high": 40.81,
       "low": 40.540000915527344,
       "initialSl": 40,
       "sl": 40,
@@ -25,8 +13,8 @@
       "movedToBreakeven": false
     }
   },
-  "dailyTrades": 2,
-  "dailyDate": "2026-08-06",
+  "dailyTrades": 0,
+  "dailyDate": "2026-08-07",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -95,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-06T15:37:46.753Z",
+  "lastRun": "2026-08-07T00:29:24.428Z",
   "log": [
-    {
-      "time": "2026-08-05T17:20:37.858Z",
-      "type": "INFO",
-      "msg": "Account: $99894.67 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T17:20:38.719Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SHOP, ZETA, MTRN, BSP, URGN, QLYS, COMP, EGO, WTTR, HL"
-    },
-    {
-      "time": "2026-08-05T17:20:38.719Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-05T17:20:49.518Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "SHOP: below opening-range high (price $146.50 < ORH $153.86, 47 today-candles)  •  ZETA: below VWAP (price $26.95 < VWAP $27.20)  •  MTRN: avgVol 0.3M < 1M  •  BSP: relVol 1.6× < 2× (todayVol 3.5M)  •  URGN: avgVol 0.8M < 1M  •  QLYS: avgVol 0.8M < 1M  •  COMP: price $13.11 < $15  •  EGO: relVol 1.0× < 2× (todayVol 2.1M)  •  WTTR: relVol 1.5× < 2× (todayVol 2.4M)  •  HL: relVol 0.4× < 2× (todayVol 15.3M)  •  TWST: relVol 1.4× < 2× (todayVol 1.9M)  •  INTA: avgVol 0.8M < 1M"
-    },
     {
       "time": "2026-08-05T17:20:49.518Z",
       "type": "INFO",
@@ -1296,12 +1260,33 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-08-07T00:29:23.752Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T00:29:23.824Z",
+      "type": "INFO",
+      "msg": "Account: $99901.00 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T00:29:23.832Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T00:29:24.428Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "CHYM",
-    "U"
-  ],
+  "tradedToday": [],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
