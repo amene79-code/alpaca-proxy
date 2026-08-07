@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "HALO": {
-      "side": "long",
-      "entry": 100.30249786376953,
-      "high": 102.145,
-      "low": 100.30249786376953,
-      "initialSl": 99.5,
-      "sl": 100.51,
-      "tp": 102.43,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 7,
   "dailyDate": "2026-08-07",
   "openPositions": [
@@ -83,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-07T19:22:42.687Z",
+  "lastRun": "2026-08-07T19:32:57.427Z",
   "log": [
-    {
-      "time": "2026-08-07T15:37:00.481Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-07T15:47:20.283Z",
-      "type": "INFO",
-      "msg": "Account: $99986.57 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-07T15:47:21.423Z",
       "type": "INFO",
@@ -1283,6 +1258,18 @@
       "time": "2026-08-07T19:22:42.687Z",
       "type": "INFO",
       "msg": "SKIP LASR — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T19:32:56.709Z",
+      "type": "INFO",
+      "msg": "Account: $99919.03 | 0 positions | 7 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T19:32:57.426Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
