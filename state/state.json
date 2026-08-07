@@ -24,22 +24,10 @@
       "tpOrderId": null,
       "movedToBreakeven": false
     },
-    "CART": {
-      "side": "long",
-      "entry": 50.779998779296875,
-      "high": 50.779998779296875,
-      "low": 50.779998779296875,
-      "initialSl": 50.4,
-      "sl": 50.4,
-      "tp": 51.8,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
     "CELH": {
       "side": "long",
       "entry": 26.7450008392334,
-      "high": 26.7450008392334,
+      "high": 26.845,
       "low": 26.7450008392334,
       "initialSl": 26.49,
       "sl": 26.49,
@@ -119,56 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-07T16:52:16.556Z",
+  "lastRun": "2026-08-07T17:03:04.432Z",
   "log": [
-    {
-      "time": "2026-08-05T19:38:23.994Z",
-      "type": "INFO",
-      "msg": "EOD review (22 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T19:38:23.994Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T19:48:39.946Z",
-      "type": "INFO",
-      "msg": "Account: $99845.52 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T19:48:40.395Z",
-      "type": "INFO",
-      "msg": "EOD review (12 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T19:48:40.396Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T19:58:52.819Z",
-      "type": "INFO",
-      "msg": "Account: $99845.52 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T19:58:52.975Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T20:09:14.653Z",
-      "type": "INFO",
-      "msg": "Account: $99845.52 | 0 positions | 3 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-05T20:09:14.695Z",
       "type": "INFO",
@@ -1317,6 +1257,54 @@
     },
     {
       "time": "2026-08-07T16:52:16.556Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:02:35.944Z",
+      "type": "INFO",
+      "msg": "Account: $99944.36 | 3 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:02:36.934Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "DOCS, RDW, CELH, DV, SPCX, SOUN, AAOI, TEAM, TWLO, FIGS"
+    },
+    {
+      "time": "2026-08-07T17:02:36.934Z",
+      "type": "INFO",
+      "msg": "Scanning 37 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-07T17:02:50.005Z",
+      "type": "INFO",
+      "msg": "Rejections (37)",
+      "detail": "DOCS: below VWAP (price $27.27 < VWAP $33.60)  •  RDW: price $13.46 < $15  •  DV: price $13.22 < $15  •  SPCX: relVol 1.8× < 2× (todayVol 167.2M)  •  SOUN: price $7.89 < $15  •  AAOI: relVol 1.8× < 2× (todayVol 19.0M)  •  TEAM: below VWAP (price $144.97 < VWAP $146.39)  •  FIGS: price $14.28 < $15  •  ROAD: relVol 0.7× < 2× (todayVol 0.9M)  •  NTRA: relVol 1.7× < 2× (todayVol 1.8M)  •  FIVN: relVol 1.5× < 2× (todayVol 5.1M)  •  FLR: relVol 1.9× < 2× (todayVol 4.4M)"
+    },
+    {
+      "time": "2026-08-07T17:02:50.005Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:02:50.283Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "SEZL, LASR, TTD, POST, TDS, ARW, DAVE, AMRZ, XRAY, FOUR"
+    },
+    {
+      "time": "2026-08-07T17:03:04.431Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "SEZL: avgVol 0.7M < 1M  •  LASR: above opening-range low (price $57.46 > ORL $56.71)  •  TTD: price $13.84 < $20 (short floor)  •  POST: avgVol 0.9M < 1M  •  TDS: relVol 1.2× < 2.5× (todayVol 1.3M)  •  ARW: avgVol 0.5M < 1M  •  DAVE: avgVol 0.5M < 1M  •  AMRZ: relVol 1.8× < 2.5× (todayVol 5.2M)  •  XRAY: price $12.13 < $20 (short floor)  •  FOUR: relVol 1.3× < 2.5× (todayVol 1.6M)  •  TNGX: relVol 0.4× < 2.5× (todayVol 1.0M)  •  ESE: avgVol 0.2M < 1M"
+    },
+    {
+      "time": "2026-08-07T17:03:04.431Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
