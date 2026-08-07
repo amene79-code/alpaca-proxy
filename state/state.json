@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-07T20:03:59.947Z",
+  "lastRun": "2026-08-07T20:14:19.421Z",
   "log": [
-    {
-      "time": "2026-08-07T15:58:09.641Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-07T15:58:21.710Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "DOCS: below VWAP (price $28.21 < VWAP $34.46)  •  RDW: price $13.61 < $15  •  DV: price $13.23 < $15  •  SPCX: relVol 1.5× < 2× (todayVol 138.6M)  •  CELH: relVol 1.8× < 2× (todayVol 19.3M)  •  SOUN: price $7.84 < $15  •  CDE: relVol 0.6× < 2× (todayVol 19.5M)  •  TWLO: relVol 1.8× < 2× (todayVol 3.7M)  •  TEAM: below VWAP (price $143.78 < VWAP $146.51)  •  FIGS: price $14.30 < $15  •  NTRA: relVol 1.4× < 2× (todayVol 1.6M)  •  FIVN: relVol 1.3× < 2× (todayVol 4.5M)"
-    },
-    {
-      "time": "2026-08-07T15:58:21.710Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-07T15:58:21.880Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-07T20:03:59.947Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T20:14:19.285Z",
+      "type": "INFO",
+      "msg": "Account: $99919.03 | 0 positions | 7 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T20:14:19.298Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T20:14:19.421Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
