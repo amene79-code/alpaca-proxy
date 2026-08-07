@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-07T14:32:20.647Z",
+  "lastRun": "2026-08-07T14:43:07.196Z",
   "log": [
-    {
-      "time": "2026-08-05T17:41:56.318Z",
-      "type": "INFO",
-      "msg": "Scanning 38 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-05T17:42:13.221Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "SHOP: below opening-range high (price $147.05 < ORH $153.86, 52 today-candles)  •  ZETA: below VWAP (price $27.13 < VWAP $27.20)  •  MTRN: avgVol 0.3M < 1M  •  BSP: relVol 1.7× < 2× (todayVol 3.7M)  •  URGN: avgVol 0.8M < 1M  •  QLYS: avgVol 0.8M < 1M  •  WTTR: relVol 1.5× < 2× (todayVol 2.5M)  •  EGO: relVol 1.0× < 2× (todayVol 2.2M)  •  COMP: price $13.10 < $15  •  HL: relVol 0.4× < 2× (todayVol 17.1M)  •  TWST: relVol 1.4× < 2× (todayVol 1.9M)  •  AXTI: relVol 0.9× < 2× (todayVol 9.9M)"
-    },
-    {
-      "time": "2026-08-05T17:42:13.221Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T17:42:13.381Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SEDG, TDC, PODD, LCID, CC, EXTR, DVA, NYT, RRX, MDLN"
-    },
-    {
-      "time": "2026-08-05T17:42:16.502Z",
-      "type": "SIGNAL",
-      "msg": "NYT — SHORT score 9 | gap -16.0% | relVol 3.0× | RSI 48",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T17:42:17.304Z",
-      "type": "SIGNAL",
-      "msg": "FLUT — SHORT score 10 | gap -13.4% | relVol 3.9× | RSI 37",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-05T17:42:29.288Z",
-      "type": "INFO",
-      "msg": "Short rejections (37)",
-      "detail": "SEDG: above opening-range low (price $36.48 > ORL $36.04)  •  TDC: relVol 1.8× < 2.5× (todayVol 5.9M)  •  PODD: above opening-range low (price $133.63 > ORL $126.50)  •  LCID: price $6.48 < $20 (short floor)  •  CC: price $14.84 < $20 (short floor)  •  EXTR: relVol 1.5× < 2.5× (todayVol 2.6M)  •  DVA: avgVol 0.8M < 1M  •  RRX: relVol 2.3× < 2.5× (todayVol 2.4M)  •  GLXY: price $19.17 < $20 (short floor)  •  RBA: above VWAP (price $97.13 > VWAP $96.48) — not holding breakdown  •  PARR: relVol 1.2× < 2.5× (todayVol 1.2M)  •  LIVN: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-08-05T17:42:29.288Z",
-      "type": "INFO",
-      "msg": "Top short: FLUT (score 10)",
-      "detail": ""
-    },
     {
       "time": "2026-08-05T17:42:29.288Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-07T14:32:20.646Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T14:42:41.172Z",
+      "type": "INFO",
+      "msg": "Account: $99986.57 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T14:42:41.959Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "DOCS, TEAM, DV, SPCX, AAOI, FIGS, TWLO, NTRA, FIVN, ROAD"
+    },
+    {
+      "time": "2026-08-07T14:42:41.959Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-07T14:42:54.392Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "DOCS: below VWAP (price $31.54 < VWAP $36.01)  •  TEAM: relVol 2.0× < 2× (todayVol 8.9M)  •  DV: price $13.23 < $15  •  SPCX: relVol 1.0× < 2× (todayVol 90.7M)  •  AAOI: relVol 1.3× < 2× (todayVol 13.1M)  •  FIGS: price $14.94 < $15  •  TWLO: relVol 1.1× < 2× (todayVol 2.2M)  •  NTRA: relVol 1.1× < 2× (todayVol 1.2M)  •  FIVN: relVol 0.9× < 2× (todayVol 3.0M)  •  ROAD: relVol 0.4× < 2× (todayVol 0.5M)  •  ABNB: relVol 1.7× < 2× (todayVol 6.5M)  •  APPN: avgVol 0.9M < 1M"
+    },
+    {
+      "time": "2026-08-07T14:42:54.392Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T14:42:54.524Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "SEZL, LASR, TTD, POST, ARW, STX, TDS, ESE, AMRZ, XRAY"
+    },
+    {
+      "time": "2026-08-07T14:43:07.195Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "SEZL: avgVol 0.6M < 1M  •  LASR: avgVol 1.0M < 1M  •  TTD: price $14.35 < $20 (short floor)  •  POST: avgVol 0.9M < 1M  •  ARW: avgVol 0.5M < 1M  •  STX: relVol 0.4× < 2.5× (todayVol 2.1M)  •  TDS: relVol 0.5× < 2.5× (todayVol 0.5M)  •  ESE: avgVol 0.2M < 1M  •  AMRZ: relVol 1.0× < 2.5× (todayVol 2.9M)  •  XRAY: price $12.17 < $20 (short floor)  •  LB: avgVol 0.2M < 1M  •  CTOS: price $10.34 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-07T14:43:07.195Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
