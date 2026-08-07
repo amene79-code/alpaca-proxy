@@ -12,18 +12,6 @@
       "tpOrderId": null,
       "movedToBreakeven": false
     },
-    "TWLO": {
-      "side": "long",
-      "entry": 253.57000732421875,
-      "high": 253.57000732421875,
-      "low": 253.57000732421875,
-      "initialSl": 251.44,
-      "sl": 251.44,
-      "tp": 259.25,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
     "CELH": {
       "side": "long",
       "entry": 26.7450008392334,
@@ -40,7 +28,7 @@
       "side": "short",
       "entry": 56.900001525878906,
       "high": 56.900001525878906,
-      "low": 56.900001525878906,
+      "low": 56.57,
       "initialSl": 57.39,
       "sl": 57.39,
       "tp": 55.42,
@@ -119,56 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-07T17:13:41.198Z",
+  "lastRun": "2026-08-07T17:24:28.492Z",
   "log": [
-    {
-      "time": "2026-08-06T15:16:03.735Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-06T15:16:03.957Z",
-      "type": "INFO",
-      "msg": "Account: $99845.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-06T15:16:04.782Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 18",
-      "detail": "AXTI, NVDA, INTC, FIG, ONDS, RDW, U, MU, CHYM, AAPL"
-    },
-    {
-      "time": "2026-08-06T15:16:04.782Z",
-      "type": "INFO",
-      "msg": "Scanning 18 candidates",
-      "detail": "18 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-06T15:16:07.736Z",
-      "type": "SIGNAL",
-      "msg": "U — score 8 | gap 14.3% | relVol 2.2× | RSI 79",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-06T15:16:08.744Z",
-      "type": "SIGNAL",
-      "msg": "CHYM — score 9 | gap 24.2% | relVol 2.4× | RSI 65",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-06T15:16:12.982Z",
-      "type": "INFO",
-      "msg": "Rejections (16)",
-      "detail": "AXTI: relVol 0.5× < 2× (todayVol 5.1M)  •  NVDA: gap -0.5% < 4% (price $218.15 vs priorClose $219.22)  •  INTC: gap 0.7% < 4% (price $101.75 vs priorClose $101.06)  •  FIG: gap -17.1% < 4% (price $23.34 vs priorClose $28.15)  •  ONDS: price $9.15 < $15  •  RDW: price $12.07 < $15  •  MU: gap 2.1% < 4% (price $911.88 vs priorClose $893.19)  •  AAPL: gap 0.3% < 4% (price $311.86 vs priorClose $311.00)  •  PFE: gap 0.5% < 4% (price $25.95 vs priorClose $25.81)  •  BTG: price $4.14 < $15  •  WBD: gap 1.8% < 4% (price $26.44 vs priorClose $25.97)  •  GRAB: price $3.67 < $15"
-    },
-    {
-      "time": "2026-08-06T15:16:12.982Z",
-      "type": "INFO",
-      "msg": "Top signal: CHYM (score 9)",
-      "detail": ""
-    },
     {
       "time": "2026-08-06T15:16:12.982Z",
       "type": "BUY",
@@ -1320,6 +1260,54 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 17× LASR",
       "detail": "ID 2fb2db2d-f34e-4d27-8854-8b1c87f1c776 | R:R 3.0:1 | risk $8.33 | real bracket stop @ $57.39"
+    },
+    {
+      "time": "2026-08-07T17:24:02.341Z",
+      "type": "INFO",
+      "msg": "Account: $99936.94 | 3 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:24:03.464Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "DOCS, BTG, RDW, DV, SPCX, CELH, AAOI, SOUN, TEAM, TWLO"
+    },
+    {
+      "time": "2026-08-07T17:24:03.464Z",
+      "type": "INFO",
+      "msg": "Scanning 38 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-07T17:24:16.178Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "DOCS: below VWAP (price $27.41 < VWAP $33.45)  •  BTG: price $5.05 < $15  •  RDW: price $13.48 < $15  •  DV: price $13.22 < $15  •  SPCX: relVol 1.9× < 2× (todayVol 172.1M)  •  AAOI: relVol 1.8× < 2× (todayVol 19.4M)  •  SOUN: price $7.86 < $15  •  TEAM: below opening-range high (price $146.90 < ORH $151.37, 48 today-candles)  •  TWLO: ATR 0.39% < 0.5%  •  FIGS: price $14.24 < $15  •  NTRA: relVol 1.7× < 2× (todayVol 1.9M)  •  ROAD: relVol 0.7× < 2× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-08-07T17:24:16.178Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-07T17:24:16.259Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "SEZL, LASR, TTD, POST, TDS, ARW, DAVE, AMRZ, XRAY, FOUR"
+    },
+    {
+      "time": "2026-08-07T17:24:28.492Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "SEZL: avgVol 0.7M < 1M  •  TTD: price $13.84 < $20 (short floor)  •  POST: avgVol 0.9M < 1M  •  TDS: relVol 1.2× < 2.5× (todayVol 1.3M)  •  ARW: avgVol 0.5M < 1M  •  DAVE: avgVol 0.5M < 1M  •  AMRZ: relVol 1.8× < 2.5× (todayVol 5.5M)  •  XRAY: price $12.18 < $20 (short floor)  •  FOUR: relVol 1.4× < 2.5× (todayVol 1.8M)  •  RMD: relVol 1.5× < 2.5× (todayVol 2.1M)  •  TNGX: relVol 0.5× < 2.5× (todayVol 1.0M)  •  BE: net up over ~5d ($205.81→$214.35) — no short into uptrend"
+    },
+    {
+      "time": "2026-08-07T17:24:28.492Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [
