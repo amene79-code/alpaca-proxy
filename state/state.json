@@ -83,20 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-10T19:20:44.760Z",
+  "lastRun": "2026-08-10T19:31:03.730Z",
   "log": [
-    {
-      "time": "2026-08-10T15:01:52.813Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "BTDR: price $9.10 < $20 (short floor)  •  COHR: net up over ~5d ($288.14→$328.66) — no short into uptrend  •  AXTI: net up over ~5d ($68.67→$78.27) — no short into uptrend  •  SIMO: relVol 0.6× < 2.5× (todayVol 0.6M)  •  AAON: relVol 0.7× < 2.5× (todayVol 0.8M)  •  B: net up over ~5d ($37.36→$40.04) — no short into uptrend  •  DJT: price $9.40 < $20 (short floor)  •  UAA: price $5.64 < $20 (short floor)  •  XE: net up over ~5d ($17.39→$20.90) — no short into uptrend  •  OKLO: net up over ~5d ($41.22→$44.79) — no short into uptrend  •  LASR: relVol 0.9× < 2.5× (todayVol 1.0M)  •  LITE: net up over ~5d ($779.89→$827.54) — no short into uptrend"
-    },
-    {
-      "time": "2026-08-10T15:01:52.813Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-10T15:12:16.480Z",
       "type": "INFO",
@@ -1283,6 +1271,18 @@
       "time": "2026-08-10T19:20:44.760Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T19:31:03.365Z",
+      "type": "INFO",
+      "msg": "Account: $99890.20 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T19:31:03.730Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
