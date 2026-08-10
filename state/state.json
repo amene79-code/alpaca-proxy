@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-10T19:41:14.962Z",
+  "lastRun": "2026-08-10T19:51:36.403Z",
   "log": [
-    {
-      "time": "2026-08-10T15:12:29.015Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T15:12:29.147Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "BTDR, COHR, AXTI, AAON, SIMO, DJT, XE, OKLO, B, UAA"
-    },
-    {
-      "time": "2026-08-10T15:12:40.654Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "BTDR: price $9.24 < $20 (short floor)  •  COHR: net up over ~5d ($288.14→$329.63) — no short into uptrend  •  AXTI: net up over ~5d ($68.67→$78.07) — no short into uptrend  •  AAON: relVol 0.7× < 2.5× (todayVol 0.8M)  •  SIMO: relVol 0.6× < 2.5× (todayVol 0.7M)  •  DJT: price $9.34 < $20 (short floor)  •  XE: net up over ~5d ($17.39→$20.98) — no short into uptrend  •  OKLO: net up over ~5d ($41.22→$44.98) — no short into uptrend  •  B: net up over ~5d ($37.36→$40.61) — no short into uptrend  •  UAA: price $5.70 < $20 (short floor)  •  LITE: net up over ~5d ($779.89→$831.51) — no short into uptrend  •  SOUN: price $7.51 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-10T15:12:40.655Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-10T15:23:10.371Z",
       "type": "INFO",
@@ -1281,6 +1257,30 @@
     },
     {
       "time": "2026-08-10T19:41:14.962Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T19:51:35.607Z",
+      "type": "INFO",
+      "msg": "Account: $99889.78 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T19:51:36.097Z",
+      "type": "INFO",
+      "msg": "EOD review (9 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T19:51:36.203Z",
+      "type": "INFO",
+      "msg": "NESR held overnight",
+      "detail": "Side long | Strong close | P&L +$28.35 | above VWAP"
+    },
+    {
+      "time": "2026-08-10T19:51:36.403Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
