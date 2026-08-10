@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-10T20:12:08.071Z",
+  "lastRun": "2026-08-10T20:22:19.649Z",
   "log": [
-    {
-      "time": "2026-08-10T15:23:35.671Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "BTDR: price $9.12 < $20 (short floor)  •  COHR: net up over ~5d ($288.14→$332.92) — no short into uptrend  •  AXTI: net up over ~5d ($68.67→$78.40) — no short into uptrend  •  DJT: price $9.26 < $20 (short floor)  •  SIMO: relVol 0.7× < 2.5× (todayVol 0.7M)  •  AAON: relVol 0.8× < 2.5× (todayVol 0.8M)  •  XE: net up over ~5d ($17.39→$20.92) — no short into uptrend  •  UAA: price $5.66 < $20 (short floor)  •  OKLO: net up over ~5d ($41.22→$44.89) — no short into uptrend  •  B: net up over ~5d ($37.36→$40.60) — no short into uptrend  •  TTD: price $12.87 < $20 (short floor)  •  LCID: price $6.57 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-10T15:23:35.671Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T15:33:56.973Z",
-      "type": "INFO",
-      "msg": "Account: $99918.70 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-10T15:33:58.526Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-08-10T20:12:08.071Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T20:22:19.324Z",
+      "type": "INFO",
+      "msg": "Account: $99876.55 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T20:22:19.333Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T20:22:19.649Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
