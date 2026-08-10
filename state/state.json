@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-10T18:59:15.191Z",
+  "lastRun": "2026-08-10T19:09:50.633Z",
   "log": [
-    {
-      "time": "2026-08-10T14:40:03.268Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "BTDR: price $9.45 < $20 (short floor)  •  COHR: net up over ~5d ($288.14→$334.51) — no short into uptrend  •  AXTI: net up over ~5d ($68.67→$79.29) — no short into uptrend  •  B: net up over ~5d ($37.36→$40.07) — no short into uptrend  •  DJT: price $9.40 < $20 (short floor)  •  AAON: relVol 0.6× < 2.5× (todayVol 0.6M)  •  SOUN: price $7.41 < $20 (short floor)  •  SIMO: relVol 0.5× < 2.5× (todayVol 0.5M)  •  OKLO: net up over ~5d ($41.22→$45.13) — no short into uptrend  •  MNDY: relVol 1.2× < 2.5× (todayVol 2.0M)  •  LCID: price $6.58 < $20 (short floor)  •  VAC: avgVol 0.5M < 1M"
-    },
-    {
-      "time": "2026-08-10T14:40:03.268Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T14:50:30.770Z",
-      "type": "INFO",
-      "msg": "Account: $99918.70 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T14:50:31.471Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ABCL, ACHR, NESR, FSLY, LFST, FIG, BFLY, RIG, HP, CLMT"
-    },
-    {
-      "time": "2026-08-10T14:50:31.471Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-10T14:50:45.160Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "ABCL: price $9.37 < $15  •  ACHR: price $6.53 < $15  •  NESR: relVol 1.2× < 2× (todayVol 2.0M)  •  FSLY: relVol 0.7× < 2× (todayVol 4.1M)  •  LFST: price $12.39 < $15  •  FIG: relVol 0.4× < 2× (todayVol 8.6M)  •  BFLY: price $9.86 < $15  •  RIG: price $5.60 < $15  •  HP: relVol 0.4× < 2× (todayVol 0.4M)  •  CLMT: relVol 0.5× < 2× (todayVol 0.6M)  •  SMCI: relVol 0.6× < 2× (todayVol 26.8M)  •  P: relVol 0.9× < 2× (todayVol 2.0M)"
-    },
-    {
-      "time": "2026-08-10T14:50:45.160Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T14:50:45.306Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "BTDR, COHR, AXTI, B, AAON, DJT, SIMO, DOCS, SOUN, MNDY"
-    },
     {
       "time": "2026-08-10T14:50:58.680Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-08-10T18:59:15.191Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T19:09:28.421Z",
+      "type": "INFO",
+      "msg": "Account: $99904.27 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T19:09:29.314Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ABCL, ACHR, OBX, NESR, FSLY, BSP, RIG, CLMT, FIG, TXG"
+    },
+    {
+      "time": "2026-08-10T19:09:29.314Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-10T19:09:39.859Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "ABCL: price $9.39 < $15  •  ACHR: price $6.24 < $15  •  OBX: avgVol 0.0M < 1M  •  FSLY: relVol 1.7× < 2× (todayVol 10.6M)  •  BSP: below VWAP (price $52.30 < VWAP $53.31)  •  RIG: price $5.72 < $15  •  CLMT: relVol 1.4× < 2× (todayVol 1.8M)  •  FIG: relVol 0.7× < 2× (todayVol 18.1M)  •  TXG: relVol 1.1× < 2× (todayVol 3.5M)  •  HP: relVol 1.9× < 2× (todayVol 2.1M)  •  PTEN: price $11.00 < $15  •  BFLY: price $9.80 < $15"
+    },
+    {
+      "time": "2026-08-10T19:09:39.859Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T19:09:39.985Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "BTDR, AXTI, COHR, SIMO, DJT, NYAX, LASR, FLR, OKLO, SOUN"
+    },
+    {
+      "time": "2026-08-10T19:09:50.633Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "BTDR: price $9.02 < $20 (short floor)  •  AXTI: net up over ~5d ($68.67→$74.31) — no short into uptrend  •  COHR: net up over ~5d ($288.14→$331.63) — no short into uptrend  •  SIMO: relVol 1.4× < 2.5× (todayVol 1.5M)  •  DJT: price $9.23 < $20 (short floor)  •  NYAX: no 5m candles  •  LASR: relVol 1.8× < 2.5× (todayVol 2.2M)  •  FLR: net up over ~5d ($50.17→$52.55) — no short into uptrend  •  OKLO: net up over ~5d ($41.22→$44.66) — no short into uptrend  •  SOUN: price $7.41 < $20 (short floor)  •  LITE: net up over ~5d ($779.89→$823.40) — no short into uptrend  •  XE: net up over ~5d ($17.39→$21.00) — no short into uptrend"
+    },
+    {
+      "time": "2026-08-10T19:09:50.633Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
