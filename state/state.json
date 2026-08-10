@@ -3,14 +3,14 @@
     "NESR": {
       "side": "long",
       "entry": 35.310001373291016,
-      "high": 35.97,
+      "high": 36.165,
       "low": 35.310001373291016,
       "initialSl": 34.8,
-      "sl": 34.8,
+      "sl": 35.51,
       "tp": 36.67,
       "slOrderId": null,
       "tpOrderId": null,
-      "movedToBreakeven": false
+      "movedToBreakeven": true
     }
   },
   "dailyTrades": 1,
@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-10T18:16:05.231Z",
+  "lastRun": "2026-08-10T18:26:55.237Z",
   "log": [
-    {
-      "time": "2026-08-07T20:03:59.615Z",
-      "type": "INFO",
-      "msg": "Account: $99919.03 | 0 positions | 7 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-07T20:03:59.691Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-07T20:03:59.947Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-07T20:14:19.285Z",
-      "type": "INFO",
-      "msg": "Account: $99919.03 | 0 positions | 7 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-07T20:14:19.298Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-07T20:14:19.421Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-07T20:24:31.789Z",
-      "type": "INFO",
-      "msg": "Account: $99919.03 | 0 positions | 7 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-07T20:24:31.866Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-08-07T20:24:32.150Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-08-10T18:16:05.231Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T18:26:23.842Z",
+      "type": "INFO",
+      "msg": "Account: $99947.89 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T18:26:24.793Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ABCL, BSP, NESR, FSLY, OBX, RIG, FIG, CLMT, HP, TXG"
+    },
+    {
+      "time": "2026-08-10T18:26:24.793Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-10T18:26:39.868Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "ABCL: price $9.41 < $15  •  BSP: relVol 1.9× < 2× (todayVol 4.2M)  •  FSLY: relVol 1.5× < 2× (todayVol 9.5M)  •  OBX: avgVol 0.0M < 1M  •  RIG: price $5.73 < $15  •  FIG: relVol 0.7× < 2× (todayVol 16.9M)  •  CLMT: relVol 1.2× < 2× (todayVol 1.6M)  •  HP: relVol 1.5× < 2× (todayVol 1.7M)  •  TXG: relVol 1.0× < 2× (todayVol 3.1M)  •  ACHR: price $5.95 < $15  •  PTEN: price $10.97 < $15  •  LFST: price $11.98 < $15"
+    },
+    {
+      "time": "2026-08-10T18:26:39.869Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-10T18:26:40.050Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "BTDR, AXTI, COHR, DJT, SIMO, NYAX, LASR, UAA, REZI, XE"
+    },
+    {
+      "time": "2026-08-10T18:26:55.236Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "BTDR: price $8.70 < $20 (short floor)  •  AXTI: net up over ~5d ($68.67→$74.75) — no short into uptrend  •  COHR: net up over ~5d ($288.14→$334.11) — no short into uptrend  •  DJT: price $9.14 < $20 (short floor)  •  SIMO: relVol 1.2× < 2.5× (todayVol 1.3M)  •  NYAX: no 5m candles  •  LASR: relVol 1.7× < 2.5× (todayVol 2.0M)  •  UAA: price $5.66 < $20 (short floor)  •  REZI: relVol 0.3× < 2.5× (todayVol 0.7M)  •  XE: net up over ~5d ($17.39→$20.99) — no short into uptrend  •  OKLO: net up over ~5d ($41.22→$44.84) — no short into uptrend  •  SOUN: price $7.43 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-10T18:26:55.236Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
