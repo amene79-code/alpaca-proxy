@@ -23,9 +23,21 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": true
+    },
+    "NN": {
+      "side": "long",
+      "entry": 18.90999984741211,
+      "high": 18.90999984741211,
+      "low": 18.90999984741211,
+      "initialSl": 18.46,
+      "sl": 18.46,
+      "tp": 20.11,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
     }
   },
-  "dailyTrades": 2,
+  "dailyTrades": 3,
   "dailyDate": "2026-08-11",
   "openPositions": [
     "FIVE",
@@ -95,74 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-11T17:20:08.080Z",
+  "lastRun": "2026-08-11T17:30:47.471Z",
   "log": [
-    {
-      "time": "2026-08-10T19:20:29.041Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "BTDR, AXTI, COHR, SIMO, DJT, NYAX, LASR, SLS, FLR, CHRN"
-    },
-    {
-      "time": "2026-08-10T19:20:44.760Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "BTDR: price $8.93 < $20 (short floor)  •  AXTI: net up over ~5d ($68.67→$75.23) — no short into uptrend  •  COHR: net up over ~5d ($288.14→$332.49) — no short into uptrend  •  SIMO: relVol 1.5× < 2.5× (todayVol 1.6M)  •  DJT: price $9.27 < $20 (short floor)  •  NYAX: no 5m candles  •  LASR: relVol 1.8× < 2.5× (todayVol 2.2M)  •  SLS: price $11.05 < $20 (short floor)  •  FLR: net up over ~5d ($50.17→$52.71) — no short into uptrend  •  CHRN: price $19.35 < $20 (short floor)  •  XE: net up over ~5d ($17.39→$20.98) — no short into uptrend  •  VAC: avgVol 0.5M < 1M"
-    },
-    {
-      "time": "2026-08-10T19:20:44.760Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T19:31:03.365Z",
-      "type": "INFO",
-      "msg": "Account: $99890.20 | 1 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T19:31:03.730Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T19:41:14.397Z",
-      "type": "INFO",
-      "msg": "Account: $99880.75 | 1 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T19:41:14.667Z",
-      "type": "INFO",
-      "msg": "EOD review (19 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T19:41:14.761Z",
-      "type": "INFO",
-      "msg": "NESR held overnight",
-      "detail": "Side long | Strong close | P&L +$19.32 | above VWAP"
-    },
-    {
-      "time": "2026-08-10T19:41:14.962Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T19:51:35.607Z",
-      "type": "INFO",
-      "msg": "Account: $99889.78 | 1 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T19:51:36.097Z",
-      "type": "INFO",
-      "msg": "EOD review (9 min to close) — cutting weak positions",
-      "detail": ""
-    },
     {
       "time": "2026-08-10T19:51:36.203Z",
       "type": "INFO",
@@ -1296,11 +1242,78 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-08-11T17:30:20.214Z",
+      "type": "INFO",
+      "msg": "Account: $99857.72 | 2 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T17:30:20.909Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FRMI, RNW, NIQ, ALMR, NN, SEPN, ACHR, CIFR, ZLAB, IMOS"
+    },
+    {
+      "time": "2026-08-11T17:30:20.909Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-11T17:30:22.274Z",
+      "type": "SIGNAL",
+      "msg": "NN — score 9 | gap 22.6% | relVol 2.3× | RSI 72",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T17:30:33.874Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "FRMI: price $7.14 < $15  •  RNW: price $6.84 < $15  •  NIQ: ATR 0.46% < 0.5%  •  ALMR: avgVol 0.2M < 1M  •  SEPN: avgVol 0.3M < 1M  •  ACHR: price $6.82 < $15  •  CIFR: relVol 0.6× < 2× (todayVol 20.0M)  •  ZLAB: avgVol 0.8M < 1M  •  IMOS: avgVol 0.1M < 1M  •  STDN: price $12.66 < $15  •  OUST: relVol 0.6× < 2× (todayVol 2.1M)  •  ARMK: relVol 1.0× < 2× (todayVol 2.5M)"
+    },
+    {
+      "time": "2026-08-11T17:30:33.874Z",
+      "type": "INFO",
+      "msg": "Top signal: NN (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T17:30:33.874Z",
+      "type": "BUY",
+      "msg": "Placing 79× NN @ ~$18.91",
+      "detail": "gap 22.6% | risk $35.55 | SL $18.46 | TP $20.11 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-08-11T17:30:33.899Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 79× NN",
+      "detail": "ID 296aec0f-c72b-4fb6-9541-513ebaa58eb1 | R:R 2.7:1 | risk $35.55"
+    },
+    {
+      "time": "2026-08-11T17:30:34.510Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "LIF, HUBG, ONON, NYAX, ETOR, TME, FA, ESLT, DFTX, ALMS"
+    },
+    {
+      "time": "2026-08-11T17:30:47.470Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "LIF: avgVol 0.7M < 1M  •  HUBG: avgVol 0.8M < 1M  •  ONON: above opening-range low (price $30.94 > ORL $30.14)  •  NYAX: avgVol 0.0M < 1M  •  ETOR: avgVol 0.8M < 1M  •  TME: price $8.77 < $20 (short floor)  •  FA: net up over ~5d ($20.64→$21.22) — no short into uptrend  •  ESLT: avgVol 0.1M < 1M  •  DFTX: relVol 1.2× < 2.5× (todayVol 2.1M)  •  ALMS: avgVol 0.9M < 1M  •  UAA: price $5.41 < $20 (short floor)  •  UA: price $5.28 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-11T17:30:47.470Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [
     "NIQ",
-    "SE"
+    "SE",
+    "NN"
   ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
