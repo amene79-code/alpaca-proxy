@@ -11,18 +11,6 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": true
-    },
-    "NIQ": {
-      "side": "long",
-      "entry": 15.5600004196167,
-      "high": 15.5600004196167,
-      "low": 15.5600004196167,
-      "initialSl": 15.32,
-      "sl": 15.32,
-      "tp": 16.19,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
     }
   },
   "dailyTrades": 1,
@@ -95,68 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-11T15:00:35.099Z",
+  "lastRun": "2026-08-11T15:11:08.403Z",
   "log": [
-    {
-      "time": "2026-08-10T16:38:47.653Z",
-      "type": "INFO",
-      "msg": "Account: $99918.70 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T16:38:48.105Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ABCL, ACHR, NESR, FSLY, FIG, RIG, BFLY, BSP, LFST, HP"
-    },
-    {
-      "time": "2026-08-10T16:38:48.106Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-10T16:38:48.746Z",
-      "type": "SIGNAL",
-      "msg": "NESR — score 11 | gap 21.7% | relVol 2.0× | RSI 78",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-08-10T16:39:00.282Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "ABCL: price $9.20 < $15  •  ACHR: price $6.21 < $15  •  FSLY: relVol 1.2× < 2× (todayVol 7.4M)  •  FIG: relVol 0.5× < 2× (todayVol 12.9M)  •  RIG: price $5.68 < $15  •  BFLY: price $9.94 < $15  •  BSP: relVol 0.6× < 2× (todayVol 1.1M)  •  LFST: price $12.06 < $15  •  HP: relVol 0.9× < 2× (todayVol 1.0M)  •  CLMT: relVol 1.0× < 2× (todayVol 1.2M)  •  TXG: relVol 0.7× < 2× (todayVol 2.0M)  •  DDOG: relVol 0.7× < 2× (todayVol 3.4M)"
-    },
-    {
-      "time": "2026-08-10T16:39:00.282Z",
-      "type": "INFO",
-      "msg": "Top signal: NESR (score 11)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T16:39:00.282Z",
-      "type": "BUY",
-      "msg": "Placing 42× NESR @ ~$35.31",
-      "detail": "gap 21.7% | risk $21.42 | SL $34.8 | TP $36.67 | R:R 2.7 | Bullish Engulfing"
-    },
-    {
-      "time": "2026-08-10T16:39:00.363Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 42× NESR",
-      "detail": "ID ed6f1fe7-1a55-4dd5-9ea5-d2d6ef70bc95 | R:R 2.7:1 | risk $21.42"
-    },
-    {
-      "time": "2026-08-10T16:39:01.037Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "BTDR, AXTI, COHR, SIMO, NYAX, DJT, AAON, OKLO, XE, LITE"
-    },
-    {
-      "time": "2026-08-10T16:39:12.683Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "BTDR: price $9.01 < $20 (short floor)  •  AXTI: net up over ~5d ($68.67→$76.10) — no short into uptrend  •  COHR: net up over ~5d ($288.14→$333.53) — no short into uptrend  •  SIMO: relVol 1.0× < 2.5× (todayVol 1.0M)  •  NYAX: no 5m candles  •  DJT: price $9.22 < $20 (short floor)  •  AAON: relVol 1.0× < 2.5× (todayVol 1.1M)  •  OKLO: net up over ~5d ($41.22→$44.41) — no short into uptrend  •  XE: net up over ~5d ($17.39→$20.92) — no short into uptrend  •  LITE: net up over ~5d ($779.89→$824.23) — no short into uptrend  •  B: net up over ~5d ($37.36→$40.49) — no short into uptrend  •  LASR: relVol 1.2× < 2.5× (todayVol 1.5M)"
-    },
     {
       "time": "2026-08-10T16:39:12.684Z",
       "type": "INFO",
@@ -1293,6 +1221,66 @@
     },
     {
       "time": "2026-08-11T15:00:35.099Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T15:10:48.854Z",
+      "type": "INFO",
+      "msg": "Account: $99840.53 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T15:10:49.535Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FRMI, ACHR, RNW, NIQ, ALMR, BSP, ABCL, CRCL, IMOS, CIFR"
+    },
+    {
+      "time": "2026-08-11T15:10:49.535Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-11T15:10:50.420Z",
+      "type": "SIGNAL",
+      "msg": "NIQ — score 9 | gap 32.3% | relVol 2.3× | RSI 51",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T15:11:01.268Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "FRMI: price $7.20 < $15  •  ACHR: price $7.07 < $15  •  RNW: price $6.80 < $15  •  ALMR: avgVol 0.2M < 1M  •  BSP: relVol 0.8× < 2× (todayVol 1.8M)  •  ABCL: price $10.03 < $15  •  CRCL: relVol 0.7× < 2× (todayVol 7.9M)  •  IMOS: avgVol 0.1M < 1M  •  CIFR: relVol 0.4× < 2× (todayVol 13.7M)  •  ZLAB: avgVol 0.7M < 1M  •  CIB: avgVol 0.3M < 1M  •  ARMK: relVol 0.6× < 2× (todayVol 1.4M)"
+    },
+    {
+      "time": "2026-08-11T15:11:01.268Z",
+      "type": "INFO",
+      "msg": "Top signal: NIQ (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T15:11:01.268Z",
+      "type": "INFO",
+      "msg": "SKIP NIQ — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T15:11:01.477Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 23",
+      "detail": "LIF, ONON, HUBG, FA, TME, ETOR, ESLT, ALMS, UAA, DFTX"
+    },
+    {
+      "time": "2026-08-11T15:11:08.403Z",
+      "type": "INFO",
+      "msg": "Short rejections (23)",
+      "detail": "LIF: avgVol 0.6M < 1M  •  ONON: above VWAP (price $31.35 > VWAP $30.95) — not holding breakdown  •  HUBG: avgVol 0.8M < 1M  •  FA: net up over ~5d ($20.64→$21.07) — no short into uptrend  •  TME: price $8.85 < $20 (short floor)  •  ETOR: avgVol 0.7M < 1M  •  ESLT: avgVol 0.1M < 1M  •  ALMS: avgVol 0.9M < 1M  •  UAA: price $5.43 < $20 (short floor)  •  DFTX: relVol 0.5× < 2.5× (todayVol 0.9M)  •  UA: price $5.32 < $20 (short floor)  •  VG: price $13.35 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-11T15:11:08.403Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
