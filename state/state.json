@@ -15,7 +15,7 @@
     "SE": {
       "side": "long",
       "entry": 129.49000549316406,
-      "high": 131.7,
+      "high": 131.8838,
       "low": 129.49000549316406,
       "initialSl": 128.24,
       "sl": 129.78,
@@ -95,26 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-11T20:19:57.580Z",
+  "lastRun": "2026-08-11T20:30:13.524Z",
   "log": [
-    {
-      "time": "2026-08-11T16:15:23.834Z",
-      "type": "INFO",
-      "msg": "Top signal: NIQ (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T16:15:23.834Z",
-      "type": "INFO",
-      "msg": "SKIP NIQ — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T16:15:24.013Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "LIF, ONON, HUBG, NYAX, TME, ETOR, ALMS, FA, ESLT, DFTX"
-    },
     {
       "time": "2026-08-11T16:15:38.202Z",
       "type": "INFO",
@@ -1293,6 +1275,24 @@
     },
     {
       "time": "2026-08-11T20:19:57.580Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T20:30:13.055Z",
+      "type": "INFO",
+      "msg": "Account: $99859.99 | 2 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T20:30:13.081Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T20:30:13.524Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
