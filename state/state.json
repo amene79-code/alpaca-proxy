@@ -95,38 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-11T19:38:59.750Z",
+  "lastRun": "2026-08-11T19:49:13.864Z",
   "log": [
-    {
-      "time": "2026-08-11T16:04:19.681Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-11T16:04:20.572Z",
-      "type": "SIGNAL",
-      "msg": "NIQ — score 9 | gap 37.0% | relVol 2.9× | RSI 68",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T16:04:36.650Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "FRMI: price $7.18 < $15  •  RNW: price $6.82 < $15  •  ALMR: avgVol 0.2M < 1M  •  SEPN: avgVol 0.3M < 1M  •  ACHR: price $6.82 < $15  •  BSP: relVol 1.0× < 2× (todayVol 2.2M)  •  IMOS: avgVol 0.1M < 1M  •  CIFR: relVol 0.5× < 2× (todayVol 16.5M)  •  ZLAB: avgVol 0.8M < 1M  •  ARMK: relVol 0.7× < 2× (todayVol 1.8M)  •  SMR: price $9.62 < $15  •  WULF: relVol 0.4× < 2× (todayVol 13.9M)"
-    },
-    {
-      "time": "2026-08-11T16:04:36.650Z",
-      "type": "INFO",
-      "msg": "Top signal: NIQ (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T16:04:36.650Z",
-      "type": "INFO",
-      "msg": "SKIP NIQ — already traded today",
-      "detail": ""
-    },
     {
       "time": "2026-08-11T16:04:36.873Z",
       "type": "INFO",
@@ -1293,6 +1263,36 @@
     },
     {
       "time": "2026-08-11T19:38:59.750Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T19:49:12.619Z",
+      "type": "INFO",
+      "msg": "Account: $99843.04 | 2 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T19:49:13.243Z",
+      "type": "INFO",
+      "msg": "EOD review (11 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T19:49:13.343Z",
+      "type": "INFO",
+      "msg": "NESR held overnight",
+      "detail": "Side long | Strong close | P&L +$24.15 | above VWAP"
+    },
+    {
+      "time": "2026-08-11T19:49:13.663Z",
+      "type": "INFO",
+      "msg": "SE held overnight",
+      "detail": "Side long | Strong close | P&L +$15.51 | above VWAP"
+    },
+    {
+      "time": "2026-08-11T19:49:13.863Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
