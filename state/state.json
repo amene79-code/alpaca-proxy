@@ -23,18 +23,6 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": true
-    },
-    "NN": {
-      "side": "long",
-      "entry": 18.90999984741211,
-      "high": 18.90999984741211,
-      "low": 18.90999984741211,
-      "initialSl": 18.46,
-      "sl": 18.46,
-      "tp": 20.11,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
     }
   },
   "dailyTrades": 3,
@@ -107,80 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-11T17:52:27.090Z",
+  "lastRun": "2026-08-11T18:03:13.486Z",
   "log": [
-    {
-      "time": "2026-08-11T14:17:35.784Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 29, kept 40",
-      "detail": "FRMI, RNW, CIFR, NIQ, ALMR, WULF, RIOT, IREN, BSP, OUST"
-    },
-    {
-      "time": "2026-08-11T14:17:35.784Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-11T14:17:53.457Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "FRMI: price $7.18 < $15  •  RNW: price $6.81 < $15  •  CIFR: relVol 0.3× < 2× (todayVol 9.3M)  •  NIQ: relVol 1.5× < 2× (todayVol 2.1M)  •  ALMR: avgVol 0.2M < 1M  •  WULF: relVol 0.3× < 2× (todayVol 8.6M)  •  RIOT: relVol 1.4× < 2× (todayVol 28.3M)  •  IREN: relVol 0.3× < 2× (todayVol 12.9M)  •  BSP: relVol 0.5× < 2× (todayVol 1.1M)  •  OUST: relVol 0.3× < 2× (todayVol 1.1M)  •  IMOS: avgVol 0.1M < 1M  •  HUT: relVol 0.3× < 2× (todayVol 1.3M)"
-    },
-    {
-      "time": "2026-08-11T14:17:53.457Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T14:17:53.755Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 25",
-      "detail": "LIF, ONON, TME, ALMS, FA, HUBG, ETOR, ESLT, UAA, DFTX"
-    },
-    {
-      "time": "2026-08-11T14:18:03.824Z",
-      "type": "INFO",
-      "msg": "Short rejections (25)",
-      "detail": "LIF: avgVol 0.6M < 1M  •  ONON: above VWAP (price $31.41 > VWAP $30.77) — not holding breakdown  •  TME: price $8.88 < $20 (short floor)  •  ALMS: avgVol 0.9M < 1M  •  FA: net up over ~5d ($20.64→$21.31) — no short into uptrend  •  HUBG: avgVol 0.7M < 1M  •  ETOR: avgVol 0.7M < 1M  •  ESLT: avgVol 0.1M < 1M  •  UAA: price $5.45 < $20 (short floor)  •  DFTX: relVol 0.3× < 2.5× (todayVol 0.5M)  •  AMTM: relVol 0.6× < 2.5× (todayVol 1.0M)  •  UA: price $5.34 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-11T14:18:03.824Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T14:28:17.316Z",
-      "type": "INFO",
-      "msg": "Account: $99878.18 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T14:28:18.026Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 37, kept 40",
-      "detail": "FRMI, RNW, NIQ, ALMR, CIFR, BSP, WULF, RIOT, AEHR, OUST"
-    },
-    {
-      "time": "2026-08-11T14:28:18.027Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-11T14:28:30.517Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "FRMI: price $7.11 < $15  •  RNW: price $6.80 < $15  •  NIQ: relVol 1.6× < 2× (todayVol 2.4M)  •  ALMR: avgVol 0.2M < 1M  •  CIFR: relVol 0.3× < 2× (todayVol 10.4M)  •  BSP: relVol 0.6× < 2× (todayVol 1.3M)  •  WULF: relVol 0.3× < 2× (todayVol 9.5M)  •  RIOT: relVol 1.6× < 2× (todayVol 30.7M)  •  AEHR: relVol 0.3× < 2× (todayVol 0.9M)  •  OUST: relVol 0.4× < 2× (todayVol 1.2M)  •  NBTX: avgVol 0.1M < 1M  •  CIB: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-08-11T14:28:30.517Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-11T14:28:30.678Z",
       "type": "INFO",
@@ -1305,6 +1221,78 @@
     },
     {
       "time": "2026-08-11T17:52:27.090Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T18:02:43.961Z",
+      "type": "INFO",
+      "msg": "Account: $99840.64 | 2 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T18:02:45.169Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FRMI, RNW, NIQ, ALMR, SEPN, NN, ACHR, CIFR, ZLAB, IMOS"
+    },
+    {
+      "time": "2026-08-11T18:02:45.169Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-11T18:02:45.878Z",
+      "type": "SIGNAL",
+      "msg": "NIQ — score 9 | gap 40.9% | relVol 4.0× | RSI 57",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T18:02:47.053Z",
+      "type": "SIGNAL",
+      "msg": "NN — score 8 | gap 17.0% | relVol 2.5× | RSI 19",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T18:03:00.650Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "FRMI: price $7.23 < $15  •  RNW: price $6.84 < $15  •  ALMR: avgVol 0.2M < 1M  •  SEPN: avgVol 0.3M < 1M  •  ACHR: price $6.84 < $15  •  CIFR: relVol 0.7× < 2× (todayVol 21.8M)  •  ZLAB: avgVol 0.8M < 1M  •  IMOS: avgVol 0.1M < 1M  •  AEHR: relVol 0.6× < 2× (todayVol 1.9M)  •  ARMK: relVol 1.1× < 2× (todayVol 2.7M)  •  STDN: price $12.45 < $15  •  SEZL: avgVol 0.8M < 1M"
+    },
+    {
+      "time": "2026-08-11T18:03:00.650Z",
+      "type": "INFO",
+      "msg": "Top signal: NIQ (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T18:03:00.650Z",
+      "type": "INFO",
+      "msg": "SKIP NIQ — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T18:03:00.650Z",
+      "type": "INFO",
+      "msg": "SKIP NN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T18:03:00.837Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "LIF, HUBG, ONON, NYAX, ETOR, TME, FA, ESLT, ALMS, DFTX"
+    },
+    {
+      "time": "2026-08-11T18:03:13.485Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "LIF: avgVol 0.7M < 1M  •  HUBG: avgVol 0.8M < 1M  •  ONON: above opening-range low (price $30.86 > ORL $30.14)  •  NYAX: avgVol 0.0M < 1M  •  ETOR: avgVol 0.8M < 1M  •  TME: price $8.74 < $20 (short floor)  •  FA: net up over ~5d ($20.64→$21.21) — no short into uptrend  •  ESLT: avgVol 0.1M < 1M  •  ALMS: avgVol 0.9M < 1M  •  DFTX: relVol 1.3× < 2.5× (todayVol 2.3M)  •  UAA: price $5.36 < $20 (short floor)  •  UA: price $5.24 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-11T18:03:13.486Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
