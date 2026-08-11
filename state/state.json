@@ -95,26 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-11T20:09:42.589Z",
+  "lastRun": "2026-08-11T20:19:57.580Z",
   "log": [
-    {
-      "time": "2026-08-11T16:15:08.455Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-11T16:15:09.642Z",
-      "type": "SIGNAL",
-      "msg": "NIQ — score 8 | gap 38.4% | relVol 3.1× | RSI 76",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T16:15:23.834Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "FRMI: price $7.16 < $15  •  RNW: price $6.82 < $15  •  ACHR: price $6.91 < $15  •  ALMR: avgVol 0.2M < 1M  •  SEPN: avgVol 0.3M < 1M  •  NN: relVol 0.9× < 2× (todayVol 2.6M)  •  BSP: relVol 1.0× < 2× (todayVol 2.3M)  •  IMOS: avgVol 0.1M < 1M  •  CIFR: relVol 0.5× < 2× (todayVol 17.0M)  •  ZLAB: avgVol 0.8M < 1M  •  ABCL: price $9.83 < $15  •  AEHR: relVol 0.5× < 2× (todayVol 1.7M)"
-    },
     {
       "time": "2026-08-11T16:15:23.834Z",
       "type": "INFO",
@@ -1293,6 +1275,24 @@
     },
     {
       "time": "2026-08-11T20:09:42.589Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T20:19:56.964Z",
+      "type": "INFO",
+      "msg": "Account: $99858.49 | 2 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T20:19:57.031Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T20:19:57.580Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
