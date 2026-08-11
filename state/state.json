@@ -107,56 +107,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-11T17:30:47.471Z",
+  "lastRun": "2026-08-11T17:41:38.744Z",
   "log": [
-    {
-      "time": "2026-08-10T19:51:36.203Z",
-      "type": "INFO",
-      "msg": "NESR held overnight",
-      "detail": "Side long | Strong close | P&L +$28.35 | above VWAP"
-    },
-    {
-      "time": "2026-08-10T19:51:36.403Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T20:01:52.543Z",
-      "type": "INFO",
-      "msg": "Account: $99874.87 | 1 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T20:01:52.599Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T20:01:52.975Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T20:12:07.805Z",
-      "type": "INFO",
-      "msg": "Account: $99884.95 | 1 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T20:12:07.813Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-10T20:12:08.071Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-08-10T20:22:19.324Z",
       "type": "INFO",
@@ -1305,6 +1257,54 @@
     },
     {
       "time": "2026-08-11T17:30:47.470Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T17:41:03.161Z",
+      "type": "INFO",
+      "msg": "Account: $99848.03 | 3 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T17:41:04.744Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FRMI, RNW, NIQ, ALMR, NN, SEPN, ACHR, CIFR, ZLAB, IMOS"
+    },
+    {
+      "time": "2026-08-11T17:41:04.744Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-11T17:41:21.821Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "FRMI: price $7.11 < $15  •  RNW: price $6.84 < $15  •  NIQ: ATR 0.46% < 0.5%  •  ALMR: avgVol 0.2M < 1M  •  SEPN: avgVol 0.3M < 1M  •  ACHR: price $6.82 < $15  •  CIFR: relVol 0.6× < 2× (todayVol 20.9M)  •  ZLAB: avgVol 0.8M < 1M  •  IMOS: avgVol 0.1M < 1M  •  STDN: price $12.62 < $15  •  WULF: relVol 0.5× < 2× (todayVol 16.1M)  •  ARMK: relVol 1.0× < 2× (todayVol 2.6M)"
+    },
+    {
+      "time": "2026-08-11T17:41:21.821Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-11T17:41:22.078Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "LIF, ONON, HUBG, ETOR, NYAX, TME, FA, ESLT, ALMS, DFTX"
+    },
+    {
+      "time": "2026-08-11T17:41:38.744Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "LIF: avgVol 0.7M < 1M  •  ONON: above opening-range low (price $30.92 > ORL $30.14)  •  HUBG: avgVol 0.8M < 1M  •  ETOR: avgVol 0.8M < 1M  •  NYAX: avgVol 0.0M < 1M  •  TME: price $8.77 < $20 (short floor)  •  FA: net up over ~5d ($20.64→$21.32) — no short into uptrend  •  ESLT: avgVol 0.1M < 1M  •  ALMS: avgVol 0.9M < 1M  •  DFTX: relVol 1.2× < 2.5× (todayVol 2.2M)  •  UAA: price $5.39 < $20 (short floor)  •  UA: price $5.26 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-11T17:41:38.744Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
