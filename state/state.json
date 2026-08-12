@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "SMCI": {
-      "side": "long",
-      "entry": 37.29280090332031,
-      "high": 38.05,
-      "low": 37.29280090332031,
-      "initialSl": 36.84,
-      "sl": 37.35,
-      "tp": 38.51,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 3,
   "dailyDate": "2026-08-12",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-12T20:11:08.530Z",
+  "lastRun": "2026-08-12T20:21:24.689Z",
   "log": [
-    {
-      "time": "2026-08-12T16:16:35.625Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T16:26:52.700Z",
-      "type": "INFO",
-      "msg": "Account: $99796.13 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T16:26:53.807Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NBIS, CRWV, SMCI, NOK, QNT, EROC, FOIL, SHAZ, ATRO, HRB"
-    },
-    {
-      "time": "2026-08-12T16:26:53.807Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-12T16:27:10.609Z",
       "type": "INFO",
@@ -1281,6 +1244,30 @@
     },
     {
       "time": "2026-08-12T20:11:08.529Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T20:21:22.684Z",
+      "type": "INFO",
+      "msg": "Account: $99750.32 | 1 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T20:21:22.740Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T20:21:24.538Z",
+      "type": "SELL",
+      "msg": "✓ Closed SMCI (ext-hours stop)",
+      "detail": "Side long | P&L $-1.60"
+    },
+    {
+      "time": "2026-08-12T20:21:24.689Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
