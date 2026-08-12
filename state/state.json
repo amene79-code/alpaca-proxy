@@ -15,7 +15,7 @@
     "SMCI": {
       "side": "long",
       "entry": 37.29280090332031,
-      "high": 37.345,
+      "high": 37.3798,
       "low": 37.29280090332031,
       "initialSl": 36.84,
       "sl": 36.84,
@@ -95,68 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-12T17:42:45.390Z",
+  "lastRun": "2026-08-12T17:53:24.878Z",
   "log": [
-    {
-      "time": "2026-08-11T19:38:59.180Z",
-      "type": "INFO",
-      "msg": "EOD review (22 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T19:38:59.287Z",
-      "type": "INFO",
-      "msg": "NESR held overnight",
-      "detail": "Side long | Strong close | P&L +$16.80 | above VWAP"
-    },
-    {
-      "time": "2026-08-11T19:38:59.550Z",
-      "type": "INFO",
-      "msg": "SE held overnight",
-      "detail": "Side long | Strong close | P&L +$13.75 | above VWAP"
-    },
-    {
-      "time": "2026-08-11T19:38:59.750Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T19:49:12.619Z",
-      "type": "INFO",
-      "msg": "Account: $99843.04 | 2 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T19:49:13.243Z",
-      "type": "INFO",
-      "msg": "EOD review (11 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T19:49:13.343Z",
-      "type": "INFO",
-      "msg": "NESR held overnight",
-      "detail": "Side long | Strong close | P&L +$24.15 | above VWAP"
-    },
-    {
-      "time": "2026-08-11T19:49:13.663Z",
-      "type": "INFO",
-      "msg": "SE held overnight",
-      "detail": "Side long | Strong close | P&L +$15.51 | above VWAP"
-    },
-    {
-      "time": "2026-08-11T19:49:13.863Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T19:59:26.313Z",
-      "type": "INFO",
-      "msg": "Account: $99841.31 | 2 positions | 3 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-11T19:59:26.771Z",
       "type": "INFO",
@@ -1293,6 +1233,66 @@
     },
     {
       "time": "2026-08-12T17:42:45.389Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T17:52:58.520Z",
+      "type": "INFO",
+      "msg": "Account: $99770.57 | 2 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T17:52:59.568Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "NBIS, CRWV, SMCI, NOK, QNT, EROC, SHAZ, ATRO, LITE, CIEN"
+    },
+    {
+      "time": "2026-08-12T17:52:59.568Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-12T17:53:00.659Z",
+      "type": "SIGNAL",
+      "msg": "QNT — score 9 | gap 22.8% | relVol 2.3× | RSI 64",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T17:53:12.425Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "NBIS: relVol 1.7× < 2× (todayVol 43.5M)  •  CRWV: below VWAP (price $107.83 < VWAP $107.96)  •  NOK: price $10.42 < $15  •  EROC: price $13.87 < $15  •  SHAZ: relVol 0.7× < 2× (todayVol 1.5M)  •  ATRO: avgVol 0.5M < 1M  •  LITE: relVol 1.8× < 2× (todayVol 8.8M)  •  CIEN: relVol 1.1× < 2× (todayVol 2.3M)  •  IREN: relVol 0.7× < 2× (todayVol 33.6M)  •  SPCX: relVol 1.0× < 2× (todayVol 104.2M)  •  HRB: below VWAP (price $53.28 < VWAP $54.38)  •  MRX: avgVol 0.7M < 1M"
+    },
+    {
+      "time": "2026-08-12T17:53:12.425Z",
+      "type": "INFO",
+      "msg": "Top signal: QNT (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T17:53:12.425Z",
+      "type": "INFO",
+      "msg": "SKIP QNT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T17:53:12.613Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MAAS, FRVO, LQDA, BSP, LB, ACM, TPL, ACHR, KVYO, AEO"
+    },
+    {
+      "time": "2026-08-12T17:53:24.878Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MAAS: price $17.00 < $20 (short floor)  •  FRVO: relVol 1.5× < 2.5× (todayVol 4.0M)  •  LQDA: relVol 1.9× < 2.5× (todayVol 2.6M)  •  BSP: net up over ~5d ($37.45→$48.69) — no short into uptrend  •  LB: avgVol 0.3M < 1M  •  ACM: relVol 1.2× < 2.5× (todayVol 2.1M)  •  TPL: avgVol 0.3M < 1M  •  ACHR: price $6.34 < $20 (short floor)  •  KVYO: price $17.15 < $20 (short floor)  •  AEO: price $16.25 < $20 (short floor)  •  LYFT: price $16.44 < $20 (short floor)  •  LEGN: gap -0.9% > -4% (not gapping down enough)"
+    },
+    {
+      "time": "2026-08-12T17:53:24.878Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
