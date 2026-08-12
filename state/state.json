@@ -95,68 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-12T17:53:24.878Z",
+  "lastRun": "2026-08-12T18:04:03.967Z",
   "log": [
-    {
-      "time": "2026-08-11T19:59:26.771Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T20:09:42.001Z",
-      "type": "INFO",
-      "msg": "Account: $99841.37 | 2 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T20:09:42.074Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T20:09:42.589Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T20:19:56.964Z",
-      "type": "INFO",
-      "msg": "Account: $99858.49 | 2 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T20:19:57.031Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T20:19:57.580Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T20:30:13.055Z",
-      "type": "INFO",
-      "msg": "Account: $99859.99 | 2 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T20:30:13.081Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T20:30:13.524Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-08-11T21:13:39.848Z",
       "type": "INFO",
@@ -1293,6 +1233,66 @@
     },
     {
       "time": "2026-08-12T17:53:24.878Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:03:41.278Z",
+      "type": "INFO",
+      "msg": "Account: $99766.41 | 2 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:03:42.493Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "NBIS, CRWV, SMCI, NOK, EROC, QNT, SHAZ, ATRO, LITE, MRX"
+    },
+    {
+      "time": "2026-08-12T18:03:42.493Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-12T18:03:43.668Z",
+      "type": "SIGNAL",
+      "msg": "QNT — score 8 | gap 21.3% | relVol 2.3× | RSI 62",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:03:53.055Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "NBIS: relVol 1.8× < 2× (todayVol 44.1M)  •  CRWV: below VWAP (price $107.37 < VWAP $107.96)  •  NOK: price $10.40 < $15  •  EROC: price $13.84 < $15  •  SHAZ: relVol 0.7× < 2× (todayVol 1.6M)  •  ATRO: avgVol 0.5M < 1M  •  LITE: relVol 1.8× < 2× (todayVol 9.0M)  •  MRX: avgVol 0.7M < 1M  •  IREN: relVol 0.7× < 2× (todayVol 34.6M)  •  CIEN: relVol 1.1× < 2× (todayVol 2.4M)  •  SPCX: relVol 1.0× < 2× (todayVol 107.3M)  •  HRB: below VWAP (price $53.33 < VWAP $54.35)"
+    },
+    {
+      "time": "2026-08-12T18:03:53.056Z",
+      "type": "INFO",
+      "msg": "Top signal: QNT (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:03:53.056Z",
+      "type": "INFO",
+      "msg": "SKIP QNT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:03:53.173Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MAAS, FRVO, BSP, LQDA, ACM, LB, KVYO, ACHR, AXON, TPL"
+    },
+    {
+      "time": "2026-08-12T18:04:03.966Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MAAS: price $17.11 < $20 (short floor)  •  FRVO: relVol 1.5× < 2.5× (todayVol 4.1M)  •  BSP: net up over ~5d ($37.45→$48.46) — no short into uptrend  •  LQDA: relVol 2.0× < 2.5× (todayVol 2.7M)  •  ACM: relVol 1.2× < 2.5× (todayVol 2.2M)  •  LB: avgVol 0.3M < 1M  •  KVYO: price $17.08 < $20 (short floor)  •  ACHR: price $6.32 < $20 (short floor)  •  AXON: avgVol 0.9M < 1M  •  TPL: avgVol 0.3M < 1M  •  DJT: price $8.35 < $20 (short floor)  •  AEO: price $16.26 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-12T18:04:03.967Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
