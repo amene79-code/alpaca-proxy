@@ -1,17 +1,5 @@
 {
   "trailingStops": {
-    "NESR": {
-      "side": "long",
-      "entry": 35.310001373291016,
-      "high": 36.53,
-      "low": 35.310001373291016,
-      "initialSl": 34.8,
-      "sl": 35.51,
-      "tp": 36.67,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    },
     "SMCI": {
       "side": "long",
       "entry": 37.29280090332031,
@@ -23,18 +11,6 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": true
-    },
-    "LITE": {
-      "side": "long",
-      "entry": 928.27001953125,
-      "high": 928.27001953125,
-      "low": 928.27001953125,
-      "initialSl": 921.29,
-      "sl": 921.29,
-      "tp": 946.89,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
     }
   },
   "dailyTrades": 3,
@@ -107,44 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-12T19:29:56.635Z",
+  "lastRun": "2026-08-12T19:40:21.445Z",
   "log": [
-    {
-      "time": "2026-08-12T15:55:11.098Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T16:05:25.092Z",
-      "type": "INFO",
-      "msg": "Account: $99795.71 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T16:05:26.005Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NBIS, CRWV, SMCI, EROC, QNT, FOIL, SHAZ, ATRO, HRB, NOK"
-    },
-    {
-      "time": "2026-08-12T16:05:26.005Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-12T16:05:40.625Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "NBIS: relVol 1.4× < 2× (todayVol 33.1M)  •  CRWV: relVol 2.0× < 2× (todayVol 56.3M)  •  SMCI: relVol 1.7× < 2× (todayVol 89.0M)  •  EROC: price $13.70 < $15  •  QNT: relVol 1.7× < 2× (todayVol 2.3M)  •  FOIL: no 5m candles  •  SHAZ: relVol 0.4× < 2× (todayVol 1.0M)  •  ATRO: avgVol 0.5M < 1M  •  HRB: relVol 1.7× < 2× (todayVol 3.7M)  •  NOK: price $10.38 < $15  •  LITE: relVol 1.4× < 2× (todayVol 7.0M)  •  MRX: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-08-12T16:05:40.626Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-12T16:05:40.800Z",
       "type": "INFO",
@@ -1307,6 +1247,42 @@
       "time": "2026-08-12T19:29:56.635Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T19:40:16.167Z",
+      "type": "INFO",
+      "msg": "Account: $99781.69 | 3 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T19:40:17.195Z",
+      "type": "INFO",
+      "msg": "EOD review (20 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T19:40:19.035Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut LITE",
+      "detail": "Side long | Weak into close | P&L $-5.87"
+    },
+    {
+      "time": "2026-08-12T19:40:20.965Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut NESR",
+      "detail": "Side long | Weak into close | P&L $-6.72"
+    },
+    {
+      "time": "2026-08-12T19:40:21.245Z",
+      "type": "INFO",
+      "msg": "SMCI held overnight",
+      "detail": "Side long | Strong close | P&L +$28.80 | above VWAP"
+    },
+    {
+      "time": "2026-08-12T19:40:21.445Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
