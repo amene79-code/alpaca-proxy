@@ -95,68 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-12T18:25:29.746Z",
+  "lastRun": "2026-08-12T18:36:14.792Z",
   "log": [
-    {
-      "time": "2026-08-12T14:39:55.845Z",
-      "type": "INFO",
-      "msg": "Account: $99801.59 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T14:39:56.884Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NBIS, CRWV, SMCI, BE, EROC, QNT, SHAZ, ATRO, HRB, SKHY"
-    },
-    {
-      "time": "2026-08-12T14:39:56.885Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-12T14:40:11.328Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "NBIS: relVol 1.0× < 2× (todayVol 25.0M)  •  CRWV: relVol 1.5× < 2× (todayVol 44.5M)  •  SMCI: relVol 1.3× < 2× (todayVol 67.6M)  •  BE: relVol 0.4× < 2× (todayVol 7.8M)  •  EROC: price $13.59 < $15  •  QNT: relVol 1.0× < 2× (todayVol 1.3M)  •  SHAZ: relVol 0.3× < 2× (todayVol 0.6M)  •  ATRO: avgVol 0.5M < 1M  •  HRB: relVol 1.2× < 2× (todayVol 2.5M)  •  SKHY: relVol 0.3× < 2× (todayVol 12.6M)  •  MRX: avgVol 0.6M < 1M  •  CAVA: relVol 1.1× < 2× (todayVol 4.2M)"
-    },
-    {
-      "time": "2026-08-12T14:40:11.328Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T14:40:11.512Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 25",
-      "detail": "BSP, BETA, PFGC, ACHR, OCTV, LB, ALMR, BLDR, FIVN, FSLR"
-    },
-    {
-      "time": "2026-08-12T14:40:20.250Z",
-      "type": "INFO",
-      "msg": "Short rejections (25)",
-      "detail": "BSP: net up over ~5d ($43.75→$48.70) — no short into uptrend  •  BETA: net up over ~5d ($22.20→$22.66) — no short into uptrend  •  PFGC: relVol 0.6× < 2.5× (todayVol 1.0M)  •  ACHR: price $6.36 < $20 (short floor)  •  OCTV: price $18.50 < $20 (short floor)  •  LB: avgVol 0.3M < 1M  •  ALMR: avgVol 0.3M < 1M  •  BLDR: relVol 0.1× < 2.5× (todayVol 0.3M)  •  FIVN: net up over ~5d ($29.60→$30.98) — no short into uptrend  •  FSLR: relVol 0.3× < 2.5× (todayVol 0.8M)  •  CHTR: relVol 0.1× < 2.5× (todayVol 0.3M)  •  SMR: price $9.43 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-12T14:40:20.250Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T14:50:33.833Z",
-      "type": "INFO",
-      "msg": "Account: $99801.17 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T14:50:35.016Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NBIS, CRWV, SMCI, NOK, BE, EROC, QNT, SHAZ, ATRO, HRB"
-    },
     {
       "time": "2026-08-12T14:50:35.016Z",
       "type": "INFO",
@@ -1293,6 +1233,66 @@
     },
     {
       "time": "2026-08-12T18:25:29.746Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:35:48.778Z",
+      "type": "INFO",
+      "msg": "Account: $99774.01 | 2 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:35:50.250Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "NBIS, CRWV, SMCI, SPCX, IREN, EROC, QNT, SHAZ, ATRO, MRX"
+    },
+    {
+      "time": "2026-08-12T18:35:50.250Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-12T18:35:52.023Z",
+      "type": "SIGNAL",
+      "msg": "QNT — score 8 | gap 21.8% | relVol 2.4× | RSI 50",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:36:02.353Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "NBIS: relVol 1.9× < 2× (todayVol 46.8M)  •  CRWV: below opening-range high (price $107.99 < ORH $111.82, 62 today-candles)  •  SPCX: relVol 1.2× < 2× (todayVol 122.1M)  •  IREN: relVol 0.8× < 2× (todayVol 37.4M)  •  EROC: price $14.00 < $15  •  SHAZ: relVol 0.8× < 2× (todayVol 1.8M)  •  ATRO: avgVol 0.5M < 1M  •  MRX: avgVol 0.7M < 1M  •  LITE: relVol 1.9× < 2× (todayVol 9.5M)  •  NOK: price $10.37 < $15  •  CAVA: relVol 2.0× < 2× (todayVol 7.3M)  •  CIEN: relVol 1.2× < 2× (todayVol 2.6M)"
+    },
+    {
+      "time": "2026-08-12T18:36:02.353Z",
+      "type": "INFO",
+      "msg": "Top signal: QNT (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:36:02.353Z",
+      "type": "INFO",
+      "msg": "SKIP QNT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T18:36:02.483Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MAAS, FRVO, LQDA, BSP, ACM, LB, KVYO, ACHR, LYFT, AEO"
+    },
+    {
+      "time": "2026-08-12T18:36:14.791Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MAAS: price $17.07 < $20 (short floor)  •  FRVO: relVol 1.7× < 2.5× (todayVol 4.7M)  •  LQDA: relVol 2.1× < 2.5× (todayVol 2.8M)  •  BSP: net up over ~5d ($37.45→$48.46) — no short into uptrend  •  ACM: relVol 1.3× < 2.5× (todayVol 2.4M)  •  LB: avgVol 0.3M < 1M  •  KVYO: price $17.13 < $20 (short floor)  •  ACHR: price $6.33 < $20 (short floor)  •  LYFT: price $16.39 < $20 (short floor)  •  AEO: price $16.26 < $20 (short floor)  •  AXON: avgVol 0.9M < 1M  •  FSLR: relVol 0.8× < 2.5× (todayVol 2.1M)"
+    },
+    {
+      "time": "2026-08-12T18:36:14.791Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
