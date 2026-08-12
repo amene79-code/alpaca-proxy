@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-12T20:00:52.408Z",
+  "lastRun": "2026-08-12T20:11:08.530Z",
   "log": [
-    {
-      "time": "2026-08-12T16:16:23.648Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T16:16:23.823Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 34",
-      "detail": "MAAS, FRVO, LB, ACHR, ACM, BSP, LYFT, DJT, TPL, AEO"
-    },
-    {
-      "time": "2026-08-12T16:16:35.625Z",
-      "type": "INFO",
-      "msg": "Short rejections (34)",
-      "detail": "MAAS: price $17.61 < $20 (short floor)  •  FRVO: relVol 1.0× < 2.5× (todayVol 2.6M)  •  LB: avgVol 0.3M < 1M  •  ACHR: price $6.25 < $20 (short floor)  •  ACM: relVol 1.0× < 2.5× (todayVol 1.7M)  •  BSP: gap -2.5% > -4% (not gapping down enough)  •  LYFT: price $16.50 < $20 (short floor)  •  DJT: price $8.38 < $20 (short floor)  •  TPL: avgVol 0.3M < 1M  •  AEO: price $16.39 < $20 (short floor)  •  FSLR: relVol 0.6× < 2.5× (todayVol 1.5M)  •  ADIG: net up over ~5d ($22.00→$26.36) — no short into uptrend"
-    },
     {
       "time": "2026-08-12T16:16:35.625Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-08-12T20:00:52.408Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T20:11:08.118Z",
+      "type": "INFO",
+      "msg": "Account: $99757.52 | 1 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T20:11:08.175Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T20:11:08.529Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
