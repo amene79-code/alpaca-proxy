@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-12T14:18:57.051Z",
+  "lastRun": "2026-08-12T14:29:32.321Z",
   "log": [
-    {
-      "time": "2026-08-11T16:36:35.572Z",
-      "type": "INFO",
-      "msg": "Account: $99854.94 | 2 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T16:36:36.982Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "FRMI, RNW, NIQ, ALMR, NN, SEPN, SE, ACHR, CIFR, IMOS"
-    },
-    {
-      "time": "2026-08-11T16:36:36.982Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-11T16:36:37.851Z",
-      "type": "SIGNAL",
-      "msg": "NIQ — score 9 | gap 39.9% | relVol 3.3× | RSI 75",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T16:36:52.947Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "FRMI: price $7.13 < $15  •  RNW: price $6.84 < $15  •  ALMR: avgVol 0.2M < 1M  •  NN: relVol 1.4× < 2× (todayVol 4.1M)  •  SEPN: avgVol 0.3M < 1M  •  ACHR: price $6.76 < $15  •  CIFR: relVol 0.6× < 2× (todayVol 17.9M)  •  IMOS: avgVol 0.1M < 1M  •  ZLAB: avgVol 0.8M < 1M  •  STDN: price $12.70 < $15  •  BSP: relVol 1.0× < 2× (todayVol 2.5M)  •  ABCL: price $9.82 < $15"
-    },
-    {
-      "time": "2026-08-11T16:36:52.948Z",
-      "type": "INFO",
-      "msg": "Top signal: NIQ (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T16:36:52.948Z",
-      "type": "INFO",
-      "msg": "SKIP NIQ — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-11T16:36:53.184Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 36",
-      "detail": "LIF, ONON, HUBG, NYAX, ETOR, TME, ALMS, ESLT, FA, DFTX"
-    },
     {
       "time": "2026-08-11T16:37:08.348Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-08-12T14:18:57.050Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T14:29:12.128Z",
+      "type": "INFO",
+      "msg": "Account: $99797.39 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T14:29:13.124Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "NBIS, CRWV, SMCI, BE, EROC, ATRO, HRB, QNT, SHAZ, NOK"
+    },
+    {
+      "time": "2026-08-12T14:29:13.124Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-12T14:29:25.341Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "NBIS: relVol 1.0× < 2× (todayVol 23.9M)  •  CRWV: relVol 1.5× < 2× (todayVol 41.9M)  •  SMCI: relVol 1.2× < 2× (todayVol 63.4M)  •  BE: relVol 0.4× < 2× (todayVol 7.2M)  •  EROC: price $13.99 < $15  •  ATRO: avgVol 0.5M < 1M  •  HRB: relVol 1.1× < 2× (todayVol 2.4M)  •  QNT: relVol 0.9× < 2× (todayVol 1.1M)  •  SHAZ: relVol 0.2× < 2× (todayVol 0.5M)  •  NOK: price $10.35 < $15  •  SKHY: relVol 0.3× < 2× (todayVol 11.9M)  •  MRX: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-08-12T14:29:25.341Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-12T14:29:25.491Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 22",
+      "detail": "OCTV, BSP, PFGC, BETA, ACM, ACHR, ALMR, FIG, FIVN, FSLR"
+    },
+    {
+      "time": "2026-08-12T14:29:32.321Z",
+      "type": "INFO",
+      "msg": "Short rejections (22)",
+      "detail": "OCTV: price $18.08 < $20 (short floor)  •  BSP: gap -4.0% > -4% (not gapping down enough)  •  PFGC: relVol 0.6× < 2.5× (todayVol 0.9M)  •  BETA: gap -2.9% > -4% (not gapping down enough)  •  ACM: relVol 0.5× < 2.5× (todayVol 0.8M)  •  ACHR: price $6.40 < $20 (short floor)  •  ALMR: avgVol 0.2M < 1M  •  FIG: relVol 0.2× < 2.5× (todayVol 4.8M)  •  FIVN: net up over ~5d ($29.79→$31.05) — no short into uptrend  •  FSLR: relVol 0.3× < 2.5× (todayVol 0.6M)  •  LB: avgVol 0.3M < 1M  •  PEGA: relVol 0.1× < 2.5× (todayVol 0.2M)"
+    },
+    {
+      "time": "2026-08-12T14:29:32.321Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
