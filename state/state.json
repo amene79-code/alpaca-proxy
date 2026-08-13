@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-13T20:11:45.034Z",
+  "lastRun": "2026-08-13T20:21:57.986Z",
   "log": [
-    {
-      "time": "2026-08-13T16:07:09.124Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "CLBT, LFTO, REZI, BSP, STUB, TPR, DKL, YETI, CBRS, PAAS"
-    },
-    {
-      "time": "2026-08-13T16:07:21.932Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "CLBT: price $10.34 < $20 (short floor)  •  LFTO: avgVol 0.7M < 1M  •  REZI: relVol 1.5× < 2.5× (todayVol 3.4M)  •  BSP: relVol 0.8× < 2.5× (todayVol 2.2M)  •  STUB: price $7.16 < $20 (short floor)  •  TPR: relVol 1.9× < 2.5× (todayVol 4.7M)  •  DKL: avgVol 0.1M < 1M  •  YETI: relVol 2.3× < 2.5× (todayVol 3.3M)  •  CBRS: net up over ~5d ($211.30→$229.40) — no short into uptrend  •  PAAS: relVol 1.4× < 2.5× (todayVol 5.3M)  •  FRMI: price $6.88 < $20 (short floor)  •  BGSI: avgVol 0.1M < 1M"
-    },
-    {
-      "time": "2026-08-13T16:07:21.932Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-13T16:17:35.990Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-13T20:11:45.034Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T20:21:57.762Z",
+      "type": "INFO",
+      "msg": "Account: $99740.46 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T20:21:57.804Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T20:21:57.986Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
