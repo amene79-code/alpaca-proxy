@@ -1,6 +1,19 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 1,
+  "trailingStops": {
+    "FIGR": {
+      "side": "long",
+      "entry": 33.27920150756836,
+      "high": 33.27920150756836,
+      "low": 33.27920150756836,
+      "initialSl": 32.57,
+      "sl": 32.57,
+      "tp": 35.17,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 2,
   "dailyDate": "2026-08-13",
   "openPositions": [
     "FIVE",
@@ -70,86 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-13T18:04:53.414Z",
+  "lastRun": "2026-08-13T18:15:38.908Z",
   "log": [
-    {
-      "time": "2026-08-12T20:00:52.408Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T20:11:08.118Z",
-      "type": "INFO",
-      "msg": "Account: $99757.52 | 1 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T20:11:08.175Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T20:11:08.529Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T20:21:22.684Z",
-      "type": "INFO",
-      "msg": "Account: $99750.32 | 1 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T20:21:22.740Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T20:21:24.538Z",
-      "type": "SELL",
-      "msg": "✓ Closed SMCI (ext-hours stop)",
-      "detail": "Side long | P&L $-1.60"
-    },
-    {
-      "time": "2026-08-12T20:21:24.689Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T21:12:30.344Z",
-      "type": "INFO",
-      "msg": "Account: $99749.12 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T21:12:30.351Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T21:12:30.677Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T14:20:10.435Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T14:20:10.515Z",
-      "type": "INFO",
-      "msg": "Account: $99748.94 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-13T14:20:11.180Z",
       "type": "INFO",
@@ -1271,10 +1206,89 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-08-13T18:15:06.942Z",
+      "type": "INFO",
+      "msg": "Account: $99790.76 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T18:15:07.812Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ARX, SNDK, EROC, AVAH, TBBB, BIRK, ACHR, SKHY, MH, BVC"
+    },
+    {
+      "time": "2026-08-13T18:15:07.813Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-13T18:15:08.798Z",
+      "type": "SIGNAL",
+      "msg": "EROC — score 8 | gap 18.8% | relVol 4.0× | RSI 76",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T18:15:13.781Z",
+      "type": "SIGNAL",
+      "msg": "FIGR — score 7 | gap 8.5% | relVol 2.0× | RSI 76",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T18:15:23.909Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "ARX: below VWAP (price $19.47 < VWAP $19.54)  •  SNDK: relVol 1.1× < 2× (todayVol 17.4M)  •  AVAH: price $10.73 < $15  •  TBBB: avgVol 0.6M < 1M  •  BIRK: relVol 2.0× < 2× (todayVol 3.2M)  •  ACHR: price $6.80 < $15  •  SKHY: relVol 0.7× < 2× (todayVol 25.8M)  •  MH: price $13.09 < $15  •  BVC: price $14.70 < $15  •  RKT: price $14.98 < $15  •  XE: relVol 0.9× < 2× (todayVol 4.7M)  •  MU: relVol 0.6× < 2× (todayVol 28.0M)"
+    },
+    {
+      "time": "2026-08-13T18:15:23.909Z",
+      "type": "INFO",
+      "msg": "Top signal: EROC (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T18:15:23.909Z",
+      "type": "INFO",
+      "msg": "SKIP EROC — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T18:15:23.909Z",
+      "type": "BUY",
+      "msg": "Placing 45× FIGR @ ~$33.28",
+      "detail": "gap 8.5% | risk $31.91 | SL $32.57 | TP $35.17 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-08-13T18:15:24.100Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 45× FIGR",
+      "detail": "ID 9e441d0b-1ae7-40cc-ba18-428e2cac0a00 | R:R 2.7:1 | risk $31.91"
+    },
+    {
+      "time": "2026-08-13T18:15:24.773Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "CLBT, BSP, LFTO, REZI, TPR, CBRS, DKL, STUB, YETI, BGSI"
+    },
+    {
+      "time": "2026-08-13T18:15:38.907Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "CLBT: price $10.23 < $20 (short floor)  •  BSP: relVol 1.2× < 2.5× (todayVol 3.3M)  •  LFTO: avgVol 0.7M < 1M  •  REZI: relVol 2.0× < 2.5× (todayVol 4.8M)  •  TPR: relVol 2.5× < 2.5× (todayVol 5.9M)  •  CBRS: net up over ~5d ($211.30→$227.28) — no short into uptrend  •  DKL: avgVol 0.1M < 1M  •  STUB: price $7.45 < $20 (short floor)  •  YETI: above opening-range low (price $44.51 > ORL $44.00)  •  BGSI: avgVol 0.1M < 1M  •  FRMI: price $6.78 < $20 (short floor)  •  PAAS: relVol 1.7× < 2.5× (todayVol 6.8M)"
+    },
+    {
+      "time": "2026-08-13T18:15:38.908Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [
-    "EROC"
+    "EROC",
+    "FIGR"
   ],
   "shortDailyTrades": 1,
   "shortTradedToday": [
