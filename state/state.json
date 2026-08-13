@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "WDAY": {
-      "side": "long",
-      "entry": 209.625,
-      "high": 209.625,
-      "low": 209.625,
-      "initialSl": 199.56,
-      "sl": 199.56,
-      "tp": 236.47,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 3,
   "dailyDate": "2026-08-13",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-13T19:30:31.801Z",
+  "lastRun": "2026-08-13T19:40:52.641Z",
   "log": [
-    {
-      "time": "2026-08-13T15:56:17.124Z",
-      "type": "INFO",
-      "msg": "Account: $99748.94 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T15:56:17.586Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ARX, SNDK, AVAH, TBBB, MH, SMCI, BIRK, SKHY, IREN, INTC"
-    },
-    {
-      "time": "2026-08-13T15:56:17.586Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-13T15:56:30.258Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "ARX: below VWAP (price $19.53 < VWAP $19.56)  •  SNDK: relVol 0.8× < 2× (todayVol 12.7M)  •  AVAH: price $10.57 < $15  •  TBBB: avgVol 0.5M < 1M  •  MH: price $13.19 < $15  •  SMCI: relVol 1.3× < 2× (todayVol 73.8M)  •  BIRK: relVol 1.5× < 2× (todayVol 2.6M)  •  SKHY: relVol 0.6× < 2× (todayVol 20.1M)  •  IREN: relVol 1.0× < 2× (todayVol 45.6M)  •  INTC: relVol 0.5× < 2× (todayVol 58.1M)  •  HPE: relVol 1.0× < 2× (todayVol 15.5M)  •  RKT: price $14.66 < $15"
-    },
     {
       "time": "2026-08-13T15:56:30.258Z",
       "type": "INFO",
@@ -1283,6 +1246,30 @@
       "time": "2026-08-13T19:30:31.801Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T19:40:50.129Z",
+      "type": "INFO",
+      "msg": "Account: $99741.46 | 1 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T19:40:50.973Z",
+      "type": "INFO",
+      "msg": "EOD review (20 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T19:40:52.440Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut WDAY",
+      "detail": "Side long | Weak into close | P&L $-14.20"
+    },
+    {
+      "time": "2026-08-13T19:40:52.641Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
