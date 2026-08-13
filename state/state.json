@@ -1,5 +1,18 @@
 {
-  "trailingStops": {},
+  "trailingStops": {
+    "YETI": {
+      "side": "short",
+      "entry": 43.959999084472656,
+      "high": 43.959999084472656,
+      "low": 43.959999084472656,
+      "initialSl": 44.23,
+      "sl": 44.23,
+      "tp": 43.14,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
   "dailyTrades": 0,
   "dailyDate": "2026-08-13",
   "openPositions": [
@@ -70,74 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-13T17:00:52.001Z",
+  "lastRun": "2026-08-13T17:11:32.386Z",
   "log": [
-    {
-      "time": "2026-08-12T18:46:44.432Z",
-      "type": "INFO",
-      "msg": "Top signal: QNT (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T18:46:44.432Z",
-      "type": "INFO",
-      "msg": "SKIP QNT — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T18:46:44.559Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "MAAS, FRVO, LQDA, BSP, LB, ACM, ACHR, KVYO, GRAL, LYFT"
-    },
-    {
-      "time": "2026-08-12T18:46:57.372Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "MAAS: price $16.98 < $20 (short floor)  •  FRVO: relVol 1.8× < 2.5× (todayVol 4.8M)  •  LQDA: relVol 2.1× < 2.5× (todayVol 2.9M)  •  BSP: net up over ~5d ($37.45→$48.77) — no short into uptrend  •  LB: avgVol 0.3M < 1M  •  ACM: relVol 1.4× < 2.5× (todayVol 2.5M)  •  ACHR: price $6.32 < $20 (short floor)  •  KVYO: price $17.12 < $20 (short floor)  •  GRAL: avgVol 0.7M < 1M  •  LYFT: price $16.42 < $20 (short floor)  •  FSLR: relVol 0.8× < 2.5× (todayVol 2.1M)  •  AEO: price $16.28 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-12T18:46:57.372Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T18:57:14.396Z",
-      "type": "INFO",
-      "msg": "Account: $99769.95 | 2 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T18:57:15.485Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NBIS, CRWV, SMCI, SPCX, IREN, EROC, QNT, SHAZ, ATRO, MRX"
-    },
-    {
-      "time": "2026-08-12T18:57:15.485Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-12T18:57:17.071Z",
-      "type": "SIGNAL",
-      "msg": "QNT — score 8 | gap 22.2% | relVol 2.5× | RSI 26",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-12T18:57:26.962Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "NBIS: relVol 1.9× < 2× (todayVol 48.4M)  •  CRWV: below VWAP (price $107.20 < VWAP $107.95)  •  SPCX: relVol 1.2× < 2× (todayVol 128.9M)  •  IREN: relVol 0.8× < 2× (todayVol 38.7M)  •  EROC: price $13.87 < $15  •  SHAZ: relVol 0.8× < 2× (todayVol 1.9M)  •  ATRO: avgVol 0.5M < 1M  •  MRX: avgVol 0.7M < 1M  •  NOK: price $10.31 < $15  •  CAVA: relVol 2.0× < 2× (todayVol 7.6M)  •  SKHY: relVol 0.5× < 2× (todayVol 20.6M)  •  LITE: relVol 1.9× < 2× (todayVol 9.9M)"
-    },
-    {
-      "time": "2026-08-12T18:57:26.962Z",
-      "type": "INFO",
-      "msg": "Top signal: QNT (score 8)",
-      "detail": ""
-    },
     {
       "time": "2026-08-12T18:57:26.962Z",
       "type": "INFO",
@@ -1271,9 +1218,77 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-08-13T17:11:06.652Z",
+      "type": "INFO",
+      "msg": "Account: $99748.94 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T17:11:07.334Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ARX, SNDK, AVAH, BIRK, TBBB, SKHY, SMCI, MU, RKT, MH"
+    },
+    {
+      "time": "2026-08-13T17:11:07.334Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-13T17:11:19.409Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "ARX: below VWAP (price $19.52 < VWAP $19.55)  •  SNDK: relVol 1.0× < 2× (todayVol 15.8M)  •  AVAH: price $10.59 < $15  •  BIRK: relVol 1.8× < 2× (todayVol 2.9M)  •  TBBB: avgVol 0.6M < 1M  •  SKHY: relVol 0.7× < 2× (todayVol 24.0M)  •  SMCI: relVol 1.5× < 2× (todayVol 90.0M)  •  MU: relVol 0.6× < 2× (todayVol 25.4M)  •  RKT: price $14.99 < $15  •  MH: price $12.91 < $15  •  ACHR: price $6.68 < $15  •  MWH: relVol 0.9× < 2× (todayVol 1.7M)"
+    },
+    {
+      "time": "2026-08-13T17:11:19.409Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T17:11:19.550Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "CLBT, LFTO, REZI, BSP, TPR, STUB, YETI, DKL, CBRS, FRMI"
+    },
+    {
+      "time": "2026-08-13T17:11:21.703Z",
+      "type": "SIGNAL",
+      "msg": "YETI — SHORT score 9 | gap -13.5% | relVol 2.8× | RSI 36",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T17:11:31.652Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "CLBT: price $10.48 < $20 (short floor)  •  LFTO: avgVol 0.7M < 1M  •  REZI: relVol 1.7× < 2.5× (todayVol 4.1M)  •  BSP: relVol 1.1× < 2.5× (todayVol 2.8M)  •  TPR: relVol 2.2× < 2.5× (todayVol 5.1M)  •  STUB: price $7.35 < $20 (short floor)  •  DKL: avgVol 0.1M < 1M  •  CBRS: net up over ~5d ($211.30→$228.14) — no short into uptrend  •  FRMI: price $6.84 < $20 (short floor)  •  PAAS: relVol 1.6× < 2.5× (todayVol 6.1M)  •  BGSI: avgVol 0.1M < 1M  •  CSCO: relVol 1.8× < 2.5× (todayVol 37.2M)"
+    },
+    {
+      "time": "2026-08-13T17:11:31.652Z",
+      "type": "INFO",
+      "msg": "Top short: YETI (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-13T17:11:31.653Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 22× YETI @ ~$43.96",
+      "detail": "gap -13.5% | risk $5.94 | SL $44.23 | TP $43.14 | R:R 3.0"
+    },
+    {
+      "time": "2026-08-13T17:11:31.885Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 22× YETI",
+      "detail": "ID 8e7eff26-af21-416c-b82e-515927ddbbbf | R:R 3.0:1 | risk $5.94 | real bracket stop @ $44.23"
     }
   ],
   "tradedToday": [],
-  "shortDailyTrades": 0,
-  "shortTradedToday": []
+  "shortDailyTrades": 1,
+  "shortTradedToday": [
+    "YETI"
+  ]
 }
