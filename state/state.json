@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-14T20:15:21.945Z",
+  "lastRun": "2026-08-14T20:25:37.294Z",
   "log": [
-    {
-      "time": "2026-08-14T15:28:57.926Z",
-      "type": "INFO",
-      "msg": "Account: $99735.67 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T15:28:58.550Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "AAOI, RDDT, NU, HTFL, LUNR, USAR, SNDK, STDN, ONDS, NBIS"
-    },
-    {
-      "time": "2026-08-14T15:28:58.550Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-14T15:29:10.980Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-08-14T20:15:21.945Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T20:25:36.872Z",
+      "type": "INFO",
+      "msg": "Account: $99747.90 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T20:25:36.941Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T20:25:37.294Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
