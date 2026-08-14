@@ -3,7 +3,7 @@
     "HTFL": {
       "side": "long",
       "entry": 41.61000061035156,
-      "high": 42.38,
+      "high": 42.72,
       "low": 41.61000061035156,
       "initialSl": 39.29,
       "sl": 39.29,
@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-14T18:19:55.715Z",
+  "lastRun": "2026-08-14T18:30:41.590Z",
   "log": [
-    {
-      "time": "2026-08-13T20:32:16.926Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T21:12:24.557Z",
-      "type": "INFO",
-      "msg": "Account: $99740.46 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T21:12:24.633Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T21:12:24.933Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T14:13:53.518Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T14:13:53.654Z",
-      "type": "INFO",
-      "msg": "Account: $99740.31 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T14:13:54.630Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 38, kept 40",
-      "detail": "RDDT, AAOI, LUNR, NU, HTFL, USAR, SNDK, AEHR, NBIS, STDN"
-    },
-    {
-      "time": "2026-08-14T14:13:54.630Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-14T14:14:08.583Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-08-14T18:19:55.715Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T18:30:10.471Z",
+      "type": "INFO",
+      "msg": "Account: $99762.34 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T18:30:11.825Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AAOI, RDDT, HTFL, NU, LUNR, BYND, CIFR, SNDK, NBIS, WULF"
+    },
+    {
+      "time": "2026-08-14T18:30:11.825Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-14T18:30:26.448Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "AAOI: relVol 1.2× < 2× (todayVol 14.7M)  •  RDDT: below VWAP (price $176.68 < VWAP $178.90)  •  NU: relVol 1.6× < 2× (todayVol 126.4M)  •  LUNR: relVol 1.5× < 2× (todayVol 15.1M)  •  BYND: price $13.73 < $15  •  CIFR: relVol 0.8× < 2× (todayVol 29.0M)  •  SNDK: relVol 1.0× < 2× (todayVol 16.8M)  •  NBIS: relVol 0.8× < 2× (todayVol 20.9M)  •  WULF: relVol 0.7× < 2× (todayVol 21.3M)  •  AMD: relVol 0.7× < 2× (todayVol 18.3M)  •  VERA: below opening-range high (price $31.79 < ORH $32.26, 61 today-candles)  •  WING: relVol 0.7× < 2× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-08-14T18:30:26.448Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T18:30:26.764Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "BLSH, XE, BETA, STNE, HAWK, WIX, LIME, HSAI, AVGO, UCTT"
+    },
+    {
+      "time": "2026-08-14T18:30:41.589Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "BLSH: net up over ~5d ($23.62→$24.38) — no short into uptrend  •  XE: relVol 0.6× < 2.5× (todayVol 3.5M)  •  BETA: net up over ~5d ($23.51→$24.16) — no short into uptrend  •  STNE: price $9.46 < $20 (short floor)  •  HAWK: avgVol 1.0M < 1M  •  WIX: net up over ~5d ($60.20→$74.18) — no short into uptrend  •  LIME: avgVol 0.3M < 1M  •  HSAI: price $17.95 < $20 (short floor)  •  AVGO: relVol 1.0× < 2.5× (todayVol 18.3M)  •  UCTT: relVol 0.6× < 2.5× (todayVol 0.8M)  •  MNDY: relVol 0.4× < 2.5× (todayVol 0.7M)  •  ASAN: price $9.21 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-14T18:30:41.589Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
