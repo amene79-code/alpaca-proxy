@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-14T20:35:49.813Z",
+  "lastRun": "2026-08-14T20:55:42.691Z",
   "log": [
-    {
-      "time": "2026-08-14T15:29:22.290Z",
-      "type": "INFO",
-      "msg": "Short rejections (38)",
-      "detail": "HAWK: avgVol 0.9M < 1M  •  MH: price $12.33 < $20 (short floor)  •  BLSH: net up over ~5d ($23.62→$25.08) — no short into uptrend  •  QNT: net up over ~5d ($58.71→$63.30) — no short into uptrend  •  DUOL: net up over ~5d ($130.90→$133.65) — no short into uptrend  •  WIX: net up over ~5d ($60.20→$74.49) — no short into uptrend  •  UCTT: relVol 0.3× < 2.5× (todayVol 0.4M)  •  BETA: net up over ~5d ($23.51→$24.43) — no short into uptrend  •  MESO: price $15.44 < $20 (short floor)  •  LIME: avgVol 0.3M < 1M  •  HSAI: price $18.13 < $20 (short floor)  •  SMMT: price $13.16 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-14T15:29:22.290Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T15:39:36.771Z",
-      "type": "INFO",
-      "msg": "Account: $99733.99 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-14T15:39:37.732Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-08-14T20:35:49.813Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T20:55:42.000Z",
+      "type": "INFO",
+      "msg": "Account: $99744.70 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T20:55:42.069Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T20:55:42.691Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
