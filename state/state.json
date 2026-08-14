@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-14T17:26:47.058Z",
+  "lastRun": "2026-08-14T17:37:27.866Z",
   "log": [
-    {
-      "time": "2026-08-13T19:09:15.296Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T19:19:25.969Z",
-      "type": "INFO",
-      "msg": "Account: $99755.66 | 0 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T19:19:26.457Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ARX, SNDK, ACHR, AVAH, WDAY, EROC, WIX, TBBB, MH, SKHY"
-    },
-    {
-      "time": "2026-08-13T19:19:26.457Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-13T19:19:28.272Z",
-      "type": "SIGNAL",
-      "msg": "EROC — score 9 | gap 15.9% | relVol 4.4× | RSI 28",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T19:19:39.304Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "ARX: below VWAP (price $19.48 < VWAP $19.54)  •  SNDK: relVol 1.1× < 2× (todayVol 19.0M)  •  ACHR: price $6.95 < $15  •  AVAH: price $11.44 < $15  •  WDAY: below VWAP (price $205.70 < VWAP $208.03)  •  WIX: relVol 1.8× < 2× (todayVol 3.0M)  •  TBBB: avgVol 0.6M < 1M  •  MH: price $13.24 < $15  •  SKHY: relVol 0.8× < 2× (todayVol 27.8M)  •  XE: relVol 1.0× < 2× (todayVol 5.8M)  •  RKT: relVol 0.9× < 2× (todayVol 25.3M)  •  TTD: price $14.48 < $15"
-    },
-    {
-      "time": "2026-08-13T19:19:39.304Z",
-      "type": "INFO",
-      "msg": "Top signal: EROC (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T19:19:39.304Z",
-      "type": "INFO",
-      "msg": "SKIP EROC — already traded today",
-      "detail": ""
-    },
     {
       "time": "2026-08-13T19:19:39.470Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-08-14T17:26:47.058Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T17:37:03.433Z",
+      "type": "INFO",
+      "msg": "Account: $99730.00 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T17:37:04.366Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AAOI, RDDT, LUNR, HTFL, NBIS, NU, BYND, CIFR, SNDK, STDN"
+    },
+    {
+      "time": "2026-08-14T17:37:04.366Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-14T17:37:16.529Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "AAOI: relVol 1.2× < 2× (todayVol 13.9M)  •  RDDT: below VWAP (price $175.46 < VWAP $179.21)  •  LUNR: relVol 1.4× < 2× (todayVol 14.2M)  •  NBIS: relVol 0.7× < 2× (todayVol 18.8M)  •  NU: relVol 1.5× < 2× (todayVol 118.5M)  •  BYND: price $13.72 < $15  •  CIFR: relVol 0.7× < 2× (todayVol 23.2M)  •  SNDK: relVol 1.0× < 2× (todayVol 15.9M)  •  STDN: price $13.44 < $15  •  WULF: relVol 0.6× < 2× (todayVol 19.0M)  •  VERA: relVol 2.0× < 2× (todayVol 4.0M)  •  HL: relVol 0.6× < 2× (todayVol 26.1M)"
+    },
+    {
+      "time": "2026-08-14T17:37:16.529Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T17:37:16.667Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 38",
+      "detail": "BLSH, XE, DUOL, UCTT, LIME, MNDY, WIX, HSAI, ASAN, CAMT"
+    },
+    {
+      "time": "2026-08-14T17:37:27.865Z",
+      "type": "INFO",
+      "msg": "Short rejections (38)",
+      "detail": "BLSH: net up over ~5d ($23.62→$24.83) — no short into uptrend  •  XE: relVol 0.5× < 2.5× (todayVol 2.9M)  •  DUOL: net up over ~5d ($130.90→$133.33) — no short into uptrend  •  UCTT: relVol 0.5× < 2.5× (todayVol 0.7M)  •  LIME: avgVol 0.3M < 1M  •  MNDY: relVol 0.4× < 2.5× (todayVol 0.7M)  •  WIX: net up over ~5d ($60.20→$74.73) — no short into uptrend  •  HSAI: price $18.02 < $20 (short floor)  •  ASAN: price $9.23 < $20 (short floor)  •  CAMT: avgVol 0.6M < 1M  •  MH: price $12.70 < $20 (short floor)  •  STNE: price $9.59 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-14T17:37:27.866Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
