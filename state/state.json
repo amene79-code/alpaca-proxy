@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-14T19:44:37.314Z",
+  "lastRun": "2026-08-14T19:54:54.896Z",
   "log": [
-    {
-      "time": "2026-08-14T15:07:57.457Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "HAWK: avgVol 0.9M < 1M  •  BLSH: net up over ~5d ($23.62→$25.20) — no short into uptrend  •  MH: price $12.48 < $20 (short floor)  •  DUOL: net up over ~5d ($130.90→$133.18) — no short into uptrend  •  WIX: net up over ~5d ($60.20→$74.17) — no short into uptrend  •  BETA: net up over ~5d ($23.51→$24.43) — no short into uptrend  •  QNT: net up over ~5d ($58.71→$63.91) — no short into uptrend  •  MESO: price $15.44 < $20 (short floor)  •  ASAN: price $9.24 < $20 (short floor)  •  MNDY: relVol 0.2× < 2.5× (todayVol 0.4M)  •  SMMT: price $13.15 < $20 (short floor)  •  STNE: price $9.61 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-14T15:07:57.457Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T15:18:15.798Z",
-      "type": "INFO",
-      "msg": "Account: $99738.93 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T15:18:17.105Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "AAOI, RDDT, NU, HTFL, LUNR, USAR, SNDK, STDN, LFTO, NBIS"
-    },
     {
       "time": "2026-08-14T15:18:17.105Z",
       "type": "INFO",
@@ -1281,6 +1257,30 @@
     },
     {
       "time": "2026-08-14T19:44:37.313Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T19:54:53.941Z",
+      "type": "INFO",
+      "msg": "Account: $99743.97 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T19:54:54.604Z",
+      "type": "INFO",
+      "msg": "EOD review (6 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T19:54:54.695Z",
+      "type": "INFO",
+      "msg": "HTFL held overnight",
+      "detail": "Side long | Strong close | P&L +$3.66 | above VWAP"
+    },
+    {
+      "time": "2026-08-14T19:54:54.896Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
