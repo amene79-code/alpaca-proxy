@@ -3,7 +3,7 @@
     "HTFL": {
       "side": "long",
       "entry": 41.61000061035156,
-      "high": 42.35,
+      "high": 42.38,
       "low": 41.61000061035156,
       "initialSl": 39.29,
       "sl": 39.29,
@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-14T18:09:19.574Z",
+  "lastRun": "2026-08-14T18:19:55.715Z",
   "log": [
-    {
-      "time": "2026-08-13T20:11:44.838Z",
-      "type": "INFO",
-      "msg": "Account: $99740.46 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T20:11:44.865Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T20:11:45.034Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T20:21:57.762Z",
-      "type": "INFO",
-      "msg": "Account: $99740.46 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T20:21:57.804Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T20:21:57.986Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T20:32:16.773Z",
-      "type": "INFO",
-      "msg": "Account: $99740.46 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-13T20:32:16.795Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-08-13T20:32:16.926Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-08-14T18:09:19.574Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T18:19:33.480Z",
+      "type": "INFO",
+      "msg": "Account: $99755.20 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T18:19:34.661Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AAOI, RDDT, HTFL, NU, LUNR, CIFR, SNDK, NBIS, STDN, WULF"
+    },
+    {
+      "time": "2026-08-14T18:19:34.662Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-14T18:19:45.051Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "AAOI: relVol 1.2× < 2× (todayVol 14.5M)  •  RDDT: below VWAP (price $175.44 < VWAP $178.90)  •  NU: relVol 1.6× < 2× (todayVol 124.9M)  •  LUNR: relVol 1.4× < 2× (todayVol 14.9M)  •  CIFR: relVol 0.8× < 2× (todayVol 28.1M)  •  SNDK: relVol 1.0× < 2× (todayVol 16.7M)  •  NBIS: relVol 0.8× < 2× (todayVol 20.5M)  •  STDN: price $13.45 < $15  •  WULF: relVol 0.7× < 2× (todayVol 20.9M)  •  AMD: relVol 0.6× < 2× (todayVol 18.0M)  •  WING: relVol 0.7× < 2× (todayVol 0.9M)  •  MXL: relVol 0.5× < 2× (todayVol 1.8M)"
+    },
+    {
+      "time": "2026-08-14T18:19:45.051Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-14T18:19:45.177Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "BLSH, XE, HAWK, STNE, HSAI, UCTT, AVGO, BETA, WIX, LIME"
+    },
+    {
+      "time": "2026-08-14T18:19:55.715Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "BLSH: net up over ~5d ($23.62→$24.48) — no short into uptrend  •  XE: relVol 0.6× < 2.5× (todayVol 3.4M)  •  HAWK: avgVol 1.0M < 1M  •  STNE: price $9.44 < $20 (short floor)  •  HSAI: price $17.92 < $20 (short floor)  •  UCTT: relVol 0.6× < 2.5× (todayVol 0.8M)  •  AVGO: relVol 1.0× < 2.5× (todayVol 17.9M)  •  BETA: net up over ~5d ($23.51→$24.46) — no short into uptrend  •  WIX: net up over ~5d ($60.88→$74.75) — no short into uptrend  •  LIME: avgVol 0.3M < 1M  •  MNDY: relVol 0.4× < 2.5× (todayVol 0.7M)  •  DDS: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-08-14T18:19:55.715Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
