@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "HTFL": {
-      "side": "long",
-      "entry": 41.61000061035156,
-      "high": 42.79,
-      "low": 41.61000061035156,
-      "initialSl": 39.29,
-      "sl": 39.29,
-      "tp": 47.79,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 0,
   "dailyDate": "2026-08-17",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-17T19:26:54.350Z",
+  "lastRun": "2026-08-17T19:37:10.918Z",
   "log": [
-    {
-      "time": "2026-08-17T14:50:11.175Z",
-      "type": "INFO",
-      "msg": "Account: $99753.30 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-17T14:50:19.022Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CBRS, SNDK, ARGX, AXTI, MRVL, LUNR, SKHY, MU, SPCX, MESO"
-    },
-    {
-      "time": "2026-08-17T14:50:19.022Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-17T14:50:34.326Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "CBRS: relVol 1.2× < 2× (todayVol 8.2M)  •  SNDK: relVol 0.5× < 2× (todayVol 8.0M)  •  ARGX: avgVol 0.3M < 1M  •  AXTI: relVol 0.5× < 2× (todayVol 5.6M)  •  MRVL: relVol 0.4× < 2× (todayVol 8.4M)  •  LUNR: relVol 0.8× < 2× (todayVol 8.4M)  •  SKHY: relVol 0.3× < 2× (todayVol 9.9M)  •  MU: relVol 0.3× < 2× (todayVol 13.4M)  •  SPCX: relVol 0.5× < 2× (todayVol 53.4M)  •  MESO: avgVol 0.2M < 1M  •  SMTC: relVol 0.5× < 2× (todayVol 1.1M)  •  HTHT: relVol 1.2× < 2× (todayVol 1.8M)"
-    },
     {
       "time": "2026-08-17T14:50:34.326Z",
       "type": "INFO",
@@ -1283,6 +1246,30 @@
       "time": "2026-08-17T19:26:54.350Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T19:37:07.930Z",
+      "type": "INFO",
+      "msg": "Account: $99740.70 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T19:37:08.384Z",
+      "type": "INFO",
+      "msg": "EOD review (23 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T19:37:10.717Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut HTFL",
+      "detail": "Side long | Weak into close | P&L +$0.40"
+    },
+    {
+      "time": "2026-08-17T19:37:10.918Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
