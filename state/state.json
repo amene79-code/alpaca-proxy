@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-17T19:37:10.918Z",
+  "lastRun": "2026-08-17T19:47:24.721Z",
   "log": [
-    {
-      "time": "2026-08-17T14:50:34.326Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-17T14:50:34.592Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "STUB, FRVO, MNSO, LFTO, PLBL, WING, RGC, IEP, SOUN, FA"
-    },
-    {
-      "time": "2026-08-17T14:50:49.182Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "STUB: price $7.18 < $20 (short floor)  •  FRVO: price $17.92 < $20 (short floor)  •  MNSO: price $10.73 < $20 (short floor)  •  LFTO: price $19.94 < $20 (short floor)  •  PLBL: price $6.61 < $20 (short floor)  •  WING: relVol 0.3× < 2.5× (todayVol 0.4M)  •  RGC: price $5.13 < $20 (short floor)  •  IEP: price $6.99 < $20 (short floor)  •  SOUN: price $7.01 < $20 (short floor)  •  FA: relVol 0.2× < 2.5× (todayVol 0.4M)  •  SMMT: price $12.62 < $20 (short floor)  •  TENB: relVol 0.2× < 2.5× (todayVol 0.6M)"
-    },
     {
       "time": "2026-08-17T14:50:49.182Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-17T19:37:10.918Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T19:47:24.584Z",
+      "type": "INFO",
+      "msg": "Account: $99739.86 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T19:47:24.721Z",
+      "type": "INFO",
+      "msg": "EOD review (13 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T19:47:24.721Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
