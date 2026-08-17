@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-17T17:23:45.471Z",
+  "lastRun": "2026-08-17T17:34:32.377Z",
   "log": [
-    {
-      "time": "2026-08-14T19:23:49.748Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T19:23:49.896Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "BLSH, XE, UCTT, STNE, WIX, VIK, MNDY, BETA, HUBS, DUOL"
-    },
-    {
-      "time": "2026-08-14T19:24:02.004Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "BLSH: net up over ~5d ($23.62→$24.41) — no short into uptrend  •  XE: relVol 0.8× < 2.5× (todayVol 4.4M)  •  UCTT: relVol 0.8× < 2.5× (todayVol 1.1M)  •  STNE: price $9.47 < $20 (short floor)  •  WIX: net up over ~5d ($60.88→$74.22) — no short into uptrend  •  VIK: relVol 1.7× < 2.5× (todayVol 3.5M)  •  MNDY: relVol 0.4× < 2.5× (todayVol 0.8M)  •  BETA: net up over ~5d ($23.51→$24.41) — no short into uptrend  •  HUBS: net up over ~5d ($202.43→$223.92) — no short into uptrend  •  DUOL: net up over ~5d ($122.58→$134.18) — no short into uptrend  •  DDS: avgVol 0.1M < 1M  •  LIME: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-08-14T19:24:02.004Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T19:34:17.260Z",
-      "type": "INFO",
-      "msg": "Account: $99755.83 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T19:34:17.829Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T19:44:36.340Z",
-      "type": "INFO",
-      "msg": "Account: $99755.10 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-14T19:44:36.958Z",
-      "type": "INFO",
-      "msg": "EOD review (16 min to close) — cutting weak positions",
-      "detail": ""
-    },
     {
       "time": "2026-08-14T19:44:37.113Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-08-17T17:23:45.471Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T17:33:59.300Z",
+      "type": "INFO",
+      "msg": "Account: $99738.18 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T17:34:00.251Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AXTI, ARGX, CBRS, NBTX, SNDK, RUM, LUNR, MRVL, FIGR, SKHY"
+    },
+    {
+      "time": "2026-08-17T17:34:00.251Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-17T17:34:17.427Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "AXTI: relVol 0.8× < 2× (todayVol 9.9M)  •  ARGX: avgVol 0.3M < 1M  •  CBRS: relVol 1.7× < 2× (todayVol 11.6M)  •  NBTX: avgVol 0.1M < 1M  •  SNDK: relVol 0.8× < 2× (todayVol 13.1M)  •  RUM: price $8.35 < $15  •  LUNR: relVol 1.4× < 2× (todayVol 14.5M)  •  MRVL: relVol 0.6× < 2× (todayVol 13.8M)  •  FIGR: relVol 1.5× < 2× (todayVol 5.6M)  •  SKHY: relVol 0.5× < 2× (todayVol 17.5M)  •  SPCX: relVol 0.7× < 2× (todayVol 84.2M)  •  HTHT: relVol 1.9× < 2× (todayVol 2.9M)"
+    },
+    {
+      "time": "2026-08-17T17:34:17.428Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T17:34:17.617Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "STUB, LFTO, FRVO, MNSO, WING, IRTC, GENI, XMTR, KLAR, PLBL"
+    },
+    {
+      "time": "2026-08-17T17:34:32.377Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "STUB: price $7.14 < $20 (short floor)  •  LFTO: price $19.54 < $20 (short floor)  •  FRVO: price $17.96 < $20 (short floor)  •  MNSO: price $10.74 < $20 (short floor)  •  WING: relVol 0.7× < 2.5× (todayVol 1.0M)  •  IRTC: avgVol 0.7M < 1M  •  GENI: price $7.76 < $20 (short floor)  •  XMTR: avgVol 0.7M < 1M  •  KLAR: price $19.32 < $20 (short floor)  •  PLBL: price $6.67 < $20 (short floor)  •  CLBT: price $10.38 < $20 (short floor)  •  TENB: relVol 0.3× < 2.5× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-08-17T17:34:32.377Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
