@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-17T20:38:29.417Z",
+  "lastRun": "2026-08-17T21:00:04.442Z",
   "log": [
-    {
-      "time": "2026-08-17T15:12:34.275Z",
-      "type": "INFO",
-      "msg": "Short rejections (35)",
-      "detail": "STUB: price $7.18 < $20 (short floor)  •  PLBL: price $6.50 < $20 (short floor)  •  MNSO: price $10.73 < $20 (short floor)  •  LFTO: price $19.93 < $20 (short floor)  •  FRVO: price $18.33 < $20 (short floor)  •  WING: relVol 0.4× < 2.5× (todayVol 0.5M)  •  XMTR: avgVol 0.8M < 1M  •  STZ: relVol 0.5× < 2.5× (todayVol 0.8M)  •  CLBT: price $10.48 < $20 (short floor)  •  IEP: price $6.98 < $20 (short floor)  •  DAO: price $16.88 < $20 (short floor)  •  CLM: price $6.91 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-17T15:12:34.275Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-17T15:22:48.639Z",
-      "type": "INFO",
-      "msg": "Account: $99746.16 | 1 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-17T15:23:48.934Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-17T20:38:29.417Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T21:00:04.316Z",
+      "type": "INFO",
+      "msg": "Account: $99739.86 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T21:00:04.326Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-17T21:00:04.442Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
