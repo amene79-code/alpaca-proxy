@@ -3,7 +3,7 @@
     "AMLX": {
       "side": "long",
       "entry": 31.210100173950195,
-      "high": 35.64,
+      "high": 36,
       "low": 31.210100173950195,
       "initialSl": 29.3,
       "sl": 31.25,
@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-18T20:18:36.341Z",
+  "lastRun": "2026-08-18T20:28:52.813Z",
   "log": [
-    {
-      "time": "2026-08-18T15:25:51.926Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "HAE: avgVol 0.8M < 1M  •  UGI: relVol 0.7× < 2× (todayVol 1.0M)  •  DUOL: relVol 0.4× < 2× (todayVol 0.6M)  •  TRGP: relVol 0.8× < 2× (todayVol 0.9M)  •  FOUR: relVol 0.4× < 2× (todayVol 0.6M)  •  BBWI: gap 3.4% < 4% (price $20.07 vs priorClose $19.41)  •  DAO: avgVol 0.0M < 1M  •  ULTA: avgVol 0.6M < 1M  •  MNDY: gap 0.4% < 4% (price $87.91 vs priorClose $87.52)  •  CHWY: gap 4.0% < 4% (price $23.32 vs priorClose $22.42)  •  APPN: avgVol 0.9M < 1M  •  SPOT: gap 1.2% < 4% (price $518.82 vs priorClose $512.82)"
-    },
-    {
-      "time": "2026-08-18T15:25:51.926Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-18T15:25:52.177Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "KLAR, FN, AEHR, KALU, AUR, MXL, CBRS, CRDO, AAOI, COHR"
-    },
     {
       "time": "2026-08-18T15:26:09.146Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-08-18T20:18:36.341Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T20:28:52.336Z",
+      "type": "INFO",
+      "msg": "Account: $99850.01 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T20:28:52.411Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T20:28:52.813Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
