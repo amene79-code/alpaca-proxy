@@ -3,7 +3,7 @@
     "AMLX": {
       "side": "long",
       "entry": 31.210100173950195,
-      "high": 34.71,
+      "high": 35.27,
       "low": 31.210100173950195,
       "initialSl": 29.3,
       "sl": 31.25,
@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-18T19:27:19.422Z",
+  "lastRun": "2026-08-18T19:37:32.030Z",
   "log": [
-    {
-      "time": "2026-08-18T15:03:55.224Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "HAE: avgVol 0.8M < 1M  •  DUOL: relVol 0.4× < 2× (todayVol 0.5M)  •  FOUR: relVol 0.3× < 2× (todayVol 0.5M)  •  TRGP: relVol 0.8× < 2× (todayVol 0.9M)  •  BBWI: gap 3.6% < 4% (price $20.10 vs priorClose $19.41)  •  DAO: avgVol 0.0M < 1M  •  ULTA: avgVol 0.6M < 1M  •  SPOT: gap 1.1% < 4% (price $518.59 vs priorClose $512.82)  •  GDDY: gap 2.4% < 4% (price $97.20 vs priorClose $94.91)  •  MNDY: gap 0.1% < 4% (price $87.65 vs priorClose $87.52)  •  VERX: price $13.11 < $15  •  LULU: gap 1.6% < 4% (price $121.51 vs priorClose $119.55)"
-    },
-    {
-      "time": "2026-08-18T15:03:55.224Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-18T15:03:55.830Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "KLAR, AEHR, MXL, AUR, CBRS, KALU, AXTI, COHR, FORM, CRDO"
-    },
-    {
-      "time": "2026-08-18T15:04:33.919Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "KLAR: price $15.88 < $20 (short floor)  •  AEHR: net up over ~5d ($106.20→$125.10) — no short into uptrend  •  MXL: net up over ~5d ($68.44→$73.16) — no short into uptrend  •  AUR: price $6.04 < $20 (short floor)  •  CBRS: gap -0.3% > -4% (not gapping down enough)  •  KALU: avgVol 0.3M < 1M  •  AXTI: gap 3.0% > -4% (not gapping down enough)  •  COHR: relVol 0.6× < 2.5× (todayVol 4.0M)  •  FORM: net up over ~5d ($112.47→$121.94) — no short into uptrend  •  CRDO: net up over ~5d ($239.93→$249.50) — no short into uptrend  •  AAOI: net up over ~5d ($132.81→$136.88) — no short into uptrend  •  VIAV: net up over ~5d ($37.20→$41.00) — no short into uptrend"
-    },
     {
       "time": "2026-08-18T15:04:33.919Z",
       "type": "INFO",
@@ -1283,6 +1259,30 @@
       "time": "2026-08-18T19:27:19.421Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T19:37:31.219Z",
+      "type": "INFO",
+      "msg": "Account: $99831.03 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T19:37:31.636Z",
+      "type": "INFO",
+      "msg": "EOD review (23 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T19:37:31.829Z",
+      "type": "INFO",
+      "msg": "AMLX held overnight",
+      "detail": "Side long | Strong close | P&L +$105.30 | above VWAP"
+    },
+    {
+      "time": "2026-08-18T19:37:32.029Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
