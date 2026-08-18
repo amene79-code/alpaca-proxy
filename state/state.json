@@ -83,20 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-18T19:47:50.615Z",
+  "lastRun": "2026-08-18T19:58:07.362Z",
   "log": [
-    {
-      "time": "2026-08-18T15:15:00.478Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "HAE: avgVol 0.8M < 1M  •  DAO: avgVol 0.0M < 1M  •  TRGP: relVol 0.8× < 2× (todayVol 0.9M)  •  DUOL: relVol 0.4× < 2× (todayVol 0.5M)  •  FOUR: relVol 0.4× < 2× (todayVol 0.6M)  •  BBWI: gap 3.5% < 4% (price $20.09 vs priorClose $19.41)  •  MNDY: gap 0.7% < 4% (price $88.12 vs priorClose $87.52)  •  ULTA: avgVol 0.6M < 1M  •  SPOT: gap 1.2% < 4% (price $518.90 vs priorClose $512.82)  •  GDDY: gap 2.5% < 4% (price $97.26 vs priorClose $94.91)  •  BRZE: gap 1.7% < 4% (price $29.42 vs priorClose $28.93)  •  VERX: price $13.11 < $15"
-    },
-    {
-      "time": "2026-08-18T15:15:00.478Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-18T15:15:00.613Z",
       "type": "INFO",
@@ -1281,6 +1269,18 @@
     },
     {
       "time": "2026-08-18T19:47:50.615Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T19:58:06.878Z",
+      "type": "INFO",
+      "msg": "Account: $99828.39 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T19:58:07.361Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
