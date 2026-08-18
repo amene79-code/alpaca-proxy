@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-18T19:58:07.362Z",
+  "lastRun": "2026-08-18T20:08:22.311Z",
   "log": [
-    {
-      "time": "2026-08-18T15:15:00.613Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "KLAR, AEHR, KALU, MXL, AUR, CBRS, CRDO, AAOI, AXTI, COHR"
-    },
-    {
-      "time": "2026-08-18T15:15:14.397Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "KLAR: price $15.52 < $20 (short floor)  •  AEHR: net up over ~5d ($106.20→$124.21) — no short into uptrend  •  KALU: avgVol 0.3M < 1M  •  MXL: net up over ~5d ($68.44→$72.94) — no short into uptrend  •  AUR: price $6.02 < $20 (short floor)  •  CBRS: gap -0.4% > -4% (not gapping down enough)  •  CRDO: net up over ~5d ($239.93→$247.34) — no short into uptrend  •  AAOI: net up over ~5d ($132.81→$135.79) — no short into uptrend  •  AXTI: gap 2.9% > -4% (not gapping down enough)  •  COHR: relVol 0.6× < 2.5× (todayVol 4.3M)  •  VIAV: net up over ~5d ($37.20→$40.76) — no short into uptrend  •  TTMI: relVol 0.4× < 2.5× (todayVol 1.1M)"
-    },
-    {
-      "time": "2026-08-18T15:15:14.398Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-18T15:25:30.828Z",
       "type": "INFO",
@@ -1283,6 +1265,24 @@
       "time": "2026-08-18T19:58:07.361Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T20:08:21.824Z",
+      "type": "INFO",
+      "msg": "Account: $99829.21 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T20:08:21.900Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T20:08:22.311Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
