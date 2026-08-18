@@ -3,7 +3,7 @@
     "AMLX": {
       "side": "long",
       "entry": 31.210100173950195,
-      "high": 35.27,
+      "high": 35.64,
       "low": 31.210100173950195,
       "initialSl": 29.3,
       "sl": 31.25,
@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-18T20:08:22.311Z",
+  "lastRun": "2026-08-18T20:18:36.341Z",
   "log": [
-    {
-      "time": "2026-08-18T15:25:30.828Z",
-      "type": "INFO",
-      "msg": "Account: $99773.49 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-18T15:25:32.441Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "AMLX, HAE, UGI, DUOL, TRGP, FOUR, BBWI, DAO, ULTA, MNDY"
-    },
-    {
-      "time": "2026-08-18T15:25:32.441Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-18T15:25:51.926Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-08-18T20:08:22.311Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T20:18:35.846Z",
+      "type": "INFO",
+      "msg": "Account: $99840.65 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T20:18:35.919Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T20:18:36.341Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
