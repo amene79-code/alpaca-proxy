@@ -3,7 +3,7 @@
     "AMLX": {
       "side": "long",
       "entry": 31.210100173950195,
-      "high": 31.210100173950195,
+      "high": 31.275,
       "low": 31.210100173950195,
       "initialSl": 29.3,
       "sl": 29.3,
@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-18T14:31:21.666Z",
+  "lastRun": "2026-08-18T14:42:10.970Z",
   "log": [
-    {
-      "time": "2026-08-17T16:19:09.113Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-17T16:29:24.805Z",
-      "type": "INFO",
-      "msg": "Account: $99749.31 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-17T16:29:27.140Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ARGX, CBRS, NBTX, SNDK, AXTI, LUNR, FIGR, MRVL, SKHY, SPCX"
-    },
-    {
-      "time": "2026-08-17T16:29:27.140Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-17T16:29:49.217Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "ARGX: avgVol 0.3M < 1M  •  CBRS: relVol 1.5× < 2× (todayVol 10.1M)  •  NBTX: avgVol 0.1M < 1M  •  SNDK: relVol 0.7× < 2× (todayVol 11.7M)  •  AXTI: relVol 0.7× < 2× (todayVol 8.4M)  •  LUNR: relVol 1.2× < 2× (todayVol 12.3M)  •  FIGR: relVol 1.2× < 2× (todayVol 4.4M)  •  MRVL: relVol 0.6× < 2× (todayVol 12.4M)  •  SKHY: relVol 0.5× < 2× (todayVol 15.5M)  •  SPCX: relVol 0.7× < 2× (todayVol 75.3M)  •  MU: relVol 0.5× < 2× (todayVol 19.7M)  •  MESO: avgVol 0.2M < 1M"
-    },
-    {
-      "time": "2026-08-17T16:29:49.217Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-17T16:29:49.407Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "STUB, FRVO, MNSO, WING, LFTO, IRTC, KLAR, PLBL, XMTR, GENI"
-    },
-    {
-      "time": "2026-08-17T16:30:04.442Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "STUB: price $7.25 < $20 (short floor)  •  FRVO: price $17.87 < $20 (short floor)  •  MNSO: price $10.77 < $20 (short floor)  •  WING: relVol 0.6× < 2.5× (todayVol 0.8M)  •  LFTO: price $19.84 < $20 (short floor)  •  IRTC: avgVol 0.7M < 1M  •  KLAR: price $19.27 < $20 (short floor)  •  PLBL: price $6.66 < $20 (short floor)  •  XMTR: avgVol 0.8M < 1M  •  GENI: price $7.80 < $20 (short floor)  •  CLBT: price $10.39 < $20 (short floor)  •  FA: relVol 0.3× < 2.5× (todayVol 0.8M)"
-    },
     {
       "time": "2026-08-17T16:30:04.442Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-08-18T14:31:21.665Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T14:41:39.320Z",
+      "type": "INFO",
+      "msg": "Account: $99741.25 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T14:41:40.626Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 47, actives 50, kept 32",
+      "detail": "AMLX, HAE, FOUR, TRGP, DAO, BBWI, DUOL, ULTA, ONDS, AAPL"
+    },
+    {
+      "time": "2026-08-18T14:41:40.627Z",
+      "type": "INFO",
+      "msg": "Scanning 31 candidates",
+      "detail": "32 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-18T14:41:54.047Z",
+      "type": "INFO",
+      "msg": "Rejections (31)",
+      "detail": "HAE: avgVol 0.8M < 1M  •  FOUR: relVol 0.3× < 2× (todayVol 0.4M)  •  TRGP: relVol 0.7× < 2× (todayVol 0.8M)  •  DAO: avgVol 0.0M < 1M  •  BBWI: gap 3.5% < 4% (price $20.09 vs priorClose $19.41)  •  DUOL: relVol 0.3× < 2× (todayVol 0.4M)  •  ULTA: avgVol 0.5M < 1M  •  ONDS: price $9.00 < $15  •  AAPL: gap 1.8% < 4% (price $311.43 vs priorClose $305.93)  •  NKE: gap -2.1% < 4% (price $39.88 vs priorClose $40.73)  •  DT: gap -0.7% < 4% (price $48.78 vs priorClose $49.14)  •  PFE: gap 1.4% < 4% (price $27.17 vs priorClose $26.79)"
+    },
+    {
+      "time": "2026-08-18T14:41:54.048Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T14:41:54.242Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "KLAR, AUR, CBRS, KALU, MXL, AEHR, COHR, TTMI, AAOI, VNET"
+    },
+    {
+      "time": "2026-08-18T14:42:10.970Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "KLAR: price $15.90 < $20 (short floor)  •  AUR: price $6.07 < $20 (short floor)  •  CBRS: gap 0.9% > -4% (not gapping down enough)  •  KALU: avgVol 0.3M < 1M  •  MXL: net up over ~5d ($68.44→$74.81) — no short into uptrend  •  AEHR: gap -3.8% > -4% (not gapping down enough)  •  COHR: gap -3.6% > -4% (not gapping down enough)  •  TTMI: relVol 0.3× < 2.5× (todayVol 0.9M)  •  AAOI: net up over ~5d ($132.81→$138.55) — no short into uptrend  •  VNET: price $7.11 < $20 (short floor)  •  CRDO: gap -2.1% > -4% (not gapping down enough)  •  SMTC: gap -0.9% > -4% (not gapping down enough)"
+    },
+    {
+      "time": "2026-08-18T14:42:10.970Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
