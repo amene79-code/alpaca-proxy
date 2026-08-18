@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-18T19:37:32.030Z",
+  "lastRun": "2026-08-18T19:47:50.615Z",
   "log": [
-    {
-      "time": "2026-08-18T15:04:33.919Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-18T15:14:47.282Z",
-      "type": "INFO",
-      "msg": "Account: $99770.89 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-18T15:14:47.926Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "AMLX, HAE, DAO, TRGP, DUOL, FOUR, BBWI, MNDY, ULTA, SPOT"
-    },
-    {
-      "time": "2026-08-18T15:14:47.926Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-18T15:15:00.478Z",
       "type": "INFO",
@@ -1281,6 +1257,30 @@
     },
     {
       "time": "2026-08-18T19:37:32.029Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T19:47:49.561Z",
+      "type": "INFO",
+      "msg": "Account: $99820.21 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T19:47:50.300Z",
+      "type": "INFO",
+      "msg": "EOD review (13 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-18T19:47:50.414Z",
+      "type": "INFO",
+      "msg": "AMLX held overnight",
+      "detail": "Side long | Strong close | P&L +$94.48 | above VWAP"
+    },
+    {
+      "time": "2026-08-18T19:47:50.615Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
