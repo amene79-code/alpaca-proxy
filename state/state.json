@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-19T19:55:47.973Z",
+  "lastRun": "2026-08-19T20:06:00.445Z",
   "log": [
-    {
-      "time": "2026-08-19T16:10:16.330Z",
-      "type": "SIGNAL",
-      "msg": "BNTX — score 9 | gap 20.5% | relVol 5.1× | RSI 46",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T16:10:24.689Z",
-      "type": "INFO",
-      "msg": "Rejections (36)",
-      "detail": "CDE: relVol 0.8× < 2× (todayVol 28.7M)  •  MSTR: relVol 1.5× < 2× (todayVol 25.0M)  •  HL: relVol 0.6× < 2× (todayVol 24.1M)  •  BMNR: relVol 1.1× < 2× (todayVol 33.7M)  •  CRCL: relVol 1.3× < 2× (todayVol 14.0M)  •  MRK: ATR 0.31% < 0.5%  •  TWST: relVol 1.2× < 2× (todayVol 1.9M)  •  EL: below opening-range high (price $98.42 < ORH $99.13, 33 today-candles)  •  MARA: price $9.85 < $15  •  DRD: avgVol 0.3M < 1M  •  MRVL: relVol 1.2× < 2× (todayVol 27.4M)  •  NG: price $8.44 < $15"
-    },
-    {
-      "time": "2026-08-19T16:10:24.690Z",
-      "type": "INFO",
-      "msg": "Top signal: BNTX (score 9)",
-      "detail": ""
-    },
     {
       "time": "2026-08-19T16:10:24.690Z",
       "type": "INFO",
@@ -1283,6 +1265,24 @@
       "time": "2026-08-19T19:55:47.973Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T20:06:00.100Z",
+      "type": "INFO",
+      "msg": "Account: $99935.22 | 1 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T20:06:00.112Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T20:06:00.444Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
