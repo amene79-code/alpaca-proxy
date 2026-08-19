@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "MRNA": {
-      "side": "long",
-      "entry": 143.2899932861328,
-      "high": 175.2186,
-      "low": 143.2899932861328,
-      "initialSl": 129.81,
-      "sl": 143.71,
-      "tp": 179.23,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 5,
   "dailyDate": "2026-08-19",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-19T20:16:13.440Z",
+  "lastRun": "2026-08-19T20:26:31.039Z",
   "log": [
-    {
-      "time": "2026-08-19T16:10:36.268Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T16:20:49.943Z",
-      "type": "INFO",
-      "msg": "Account: $99864.91 | 3 positions | 4 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T16:20:51.808Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, MSTR, CDE, BMNR, HL, CRCL, MRK, BNTX, TEM, TWST"
-    },
-    {
-      "time": "2026-08-19T16:20:51.808Z",
-      "type": "INFO",
-      "msg": "Scanning 37 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-19T16:21:24.350Z",
       "type": "INFO",
@@ -1281,6 +1244,30 @@
     },
     {
       "time": "2026-08-19T20:16:13.440Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T20:26:28.862Z",
+      "type": "INFO",
+      "msg": "Account: $99971.55 | 1 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T20:26:28.909Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T20:26:30.888Z",
+      "type": "SELL",
+      "msg": "✓ Closed MRNA (ext-hours TP)",
+      "detail": "Side long | P&L +$126.42"
+    },
+    {
+      "time": "2026-08-19T20:26:31.039Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
