@@ -3,7 +3,7 @@
     "MRNA": {
       "side": "long",
       "entry": 143.2899932861328,
-      "high": 159.33,
+      "high": 162.7401,
       "low": 143.2899932861328,
       "initialSl": 129.81,
       "sl": 143.71,
@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-19T19:25:02.457Z",
+  "lastRun": "2026-08-19T19:35:21.453Z",
   "log": [
-    {
-      "time": "2026-08-19T15:59:28.318Z",
-      "type": "INFO",
-      "msg": "Scanning 38 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-19T15:59:30.980Z",
-      "type": "SIGNAL",
-      "msg": "TEM — score 12 | gap 20.1% | relVol 2.0× | RSI 61",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-08-19T15:59:41.360Z",
-      "type": "INFO",
-      "msg": "Rejections (37)",
-      "detail": "CDE: relVol 0.7× < 2× (todayVol 27.4M)  •  MSTR: relVol 1.5× < 2× (todayVol 24.2M)  •  HL: relVol 0.6× < 2× (todayVol 21.2M)  •  BMNR: relVol 1.0× < 2× (todayVol 31.8M)  •  CRCL: relVol 1.2× < 2× (todayVol 13.6M)  •  MRK: ATR 0.34% < 0.5%  •  BNTX: below VWAP (price $111.66 < VWAP $112.40)  •  TWST: relVol 1.2× < 2× (todayVol 1.9M)  •  MARA: price $9.81 < $15  •  EXK: price $10.98 < $15  •  BLSH: relVol 0.6× < 2× (todayVol 1.1M)  •  NG: price $8.36 < $15"
-    },
-    {
-      "time": "2026-08-19T15:59:41.360Z",
-      "type": "INFO",
-      "msg": "Top signal: TEM (score 12)",
-      "detail": ""
-    },
     {
       "time": "2026-08-19T15:59:41.360Z",
       "type": "BUY",
@@ -1283,6 +1259,30 @@
       "time": "2026-08-19T19:25:02.457Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T19:35:20.540Z",
+      "type": "INFO",
+      "msg": "Account: $99902.64 | 1 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T19:35:21.156Z",
+      "type": "INFO",
+      "msg": "EOD review (25 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T19:35:21.254Z",
+      "type": "INFO",
+      "msg": "MRNA held overnight",
+      "detail": "Side long | Strong close | P&L +$57.51 | above VWAP"
+    },
+    {
+      "time": "2026-08-19T19:35:21.453Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
