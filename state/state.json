@@ -95,56 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-19T18:20:30.095Z",
+  "lastRun": "2026-08-19T18:31:19.703Z",
   "log": [
-    {
-      "time": "2026-08-19T14:44:14.333Z",
-      "type": "INFO",
-      "msg": "Account: $99874.95 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T14:44:15.012Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, HL, CDE, MRK, IOVA, BNTX, TWST, TEM, PPC, CRCL"
-    },
-    {
-      "time": "2026-08-19T14:44:15.012Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-19T14:44:16.691Z",
-      "type": "SIGNAL",
-      "msg": "BNTX — score 9 | gap 23.0% | relVol 4.2× | RSI 77",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T14:44:28.110Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "HL: relVol 0.3× < 2× (todayVol 10.1M)  •  CDE: relVol 0.3× < 2× (todayVol 11.8M)  •  MRK: relVol 1.6× < 2× (todayVol 13.5M)  •  IOVA: price $7.76 < $15  •  TWST: relVol 0.9× < 2× (todayVol 1.4M)  •  TEM: relVol 1.4× < 2× (todayVol 6.9M)  •  PPC: relVol 0.8× < 2× (todayVol 1.3M)  •  CRCL: relVol 0.8× < 2× (todayVol 8.1M)  •  MRVL: relVol 1.0× < 2× (todayVol 21.9M)  •  HYMC: relVol 0.6× < 2× (todayVol 0.9M)  •  MSTR: relVol 0.6× < 2× (todayVol 9.8M)  •  EXK: price $10.90 < $15"
-    },
-    {
-      "time": "2026-08-19T14:44:28.110Z",
-      "type": "INFO",
-      "msg": "Top signal: BNTX (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T14:44:28.110Z",
-      "type": "BUY",
-      "msg": "Placing 13× BNTX @ ~$114.11",
-      "detail": "gap 23.0% | risk $31.98 | SL $111.65 | TP $120.68 | R:R 2.7 | "
-    },
-    {
-      "time": "2026-08-19T14:44:28.215Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 13× BNTX",
-      "detail": "ID b080ce23-e60b-40ad-a52f-9272b1bd5fb4 | R:R 2.7:1 | risk $31.98"
-    },
     {
       "time": "2026-08-19T14:44:28.879Z",
       "type": "INFO",
@@ -1293,6 +1245,54 @@
     },
     {
       "time": "2026-08-19T18:20:30.095Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T18:30:45.428Z",
+      "type": "INFO",
+      "msg": "Account: $99876.33 | 2 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T18:30:46.646Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MRNA, MRK, MSTR, HL, CDE, TEM, BNTX, TWST, BMNR, XXI"
+    },
+    {
+      "time": "2026-08-19T18:30:46.646Z",
+      "type": "INFO",
+      "msg": "Scanning 38 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-19T18:31:02.062Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "MRK: ATR 0.28% < 0.5%  •  HL: relVol 1.2× < 2× (todayVol 47.0M)  •  CDE: relVol 1.0× < 2× (todayVol 39.7M)  •  TEM: ATR 0.49% < 0.5%  •  BNTX: below VWAP (price $110.32 < VWAP $112.33)  •  TWST: relVol 1.6× < 2× (todayVol 2.6M)  •  BMNR: relVol 1.6× < 2× (todayVol 49.6M)  •  XXI: price $5.52 < $15  •  MRVL: relVol 1.4× < 2× (todayVol 32.6M)  •  KC: price $12.27 < $15  •  NG: price $8.31 < $15  •  BLSH: relVol 0.9× < 2× (todayVol 1.4M)"
+    },
+    {
+      "time": "2026-08-19T18:31:02.062Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-19T18:31:03.319Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "VICR, AEHR, CENX, NBIS, STLD, AXTI, SEI, NUE, VOYG, MTSI"
+    },
+    {
+      "time": "2026-08-19T18:31:19.703Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "VICR: avgVol 0.9M < 1M  •  AEHR: relVol 0.9× < 2.5× (todayVol 2.2M)  •  CENX: relVol 1.5× < 2.5× (todayVol 3.2M)  •  NBIS: relVol 1.1× < 2.5× (todayVol 30.8M)  •  STLD: relVol 1.1× < 2.5× (todayVol 1.2M)  •  AXTI: relVol 0.9× < 2.5× (todayVol 12.3M)  •  SEI: relVol 0.7× < 2.5× (todayVol 2.4M)  •  NUE: relVol 1.4× < 2.5× (todayVol 2.0M)  •  VOYG: relVol 0.5× < 2.5× (todayVol 0.8M)  •  MTSI: relVol 0.7× < 2.5× (todayVol 1.1M)  •  TTMI: relVol 0.6× < 2.5× (todayVol 2.0M)  •  FSLY: relVol 0.5× < 2.5× (todayVol 3.4M)"
+    },
+    {
+      "time": "2026-08-19T18:31:19.703Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
