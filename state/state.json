@@ -4,7 +4,7 @@
       "side": "short",
       "entry": 43.84550094604492,
       "high": 43.84550094604492,
-      "low": 43.84550094604492,
+      "low": 43.317,
       "initialSl": 44.37,
       "sl": 44.37,
       "tp": 42.27,
@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T14:46:26.422Z",
+  "lastRun": "2026-08-20T14:57:11.061Z",
   "log": [
-    {
-      "time": "2026-08-19T17:26:32.888Z",
-      "type": "INFO",
-      "msg": "Top signal: TEM (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T17:26:32.888Z",
-      "type": "INFO",
-      "msg": "SKIP TEM — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T17:26:33.134Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "VICR, AEHR, NBIS, AXTI, TTMI, MTSI, DOCN, VOYG, SEI, ACMR"
-    },
-    {
-      "time": "2026-08-19T17:26:48.949Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "VICR: avgVol 0.8M < 1M  •  AEHR: relVol 0.8× < 2.5× (todayVol 2.0M)  •  NBIS: relVol 1.0× < 2.5× (todayVol 28.0M)  •  AXTI: relVol 0.9× < 2.5× (todayVol 11.5M)  •  TTMI: relVol 0.5× < 2.5× (todayVol 1.6M)  •  MTSI: relVol 0.6× < 2.5× (todayVol 0.9M)  •  DOCN: relVol 0.5× < 2.5× (todayVol 1.5M)  •  VOYG: relVol 0.4× < 2.5× (todayVol 0.7M)  •  SEI: relVol 0.6× < 2.5× (todayVol 2.0M)  •  ACMR: relVol 0.5× < 2.5× (todayVol 0.5M)  •  MXL: relVol 0.5× < 2.5× (todayVol 1.6M)  •  ZTO: relVol 1.0× < 2.5× (todayVol 1.8M)"
-    },
-    {
-      "time": "2026-08-19T17:26:48.950Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T17:37:01.638Z",
-      "type": "INFO",
-      "msg": "Account: $99905.91 | 2 positions | 4 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T17:37:02.543Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, HL, MRK, CDE, MSTR, BMNR, TEM, BNTX, TWST, CRCL"
-    },
-    {
-      "time": "2026-08-19T17:37:02.543Z",
-      "type": "INFO",
-      "msg": "Scanning 38 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-19T17:37:04.747Z",
       "type": "SIGNAL",
@@ -1284,6 +1236,54 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 22× AAP",
       "detail": "ID 3b8602b6-b78c-4b9c-a2c4-788ddc61b225 | R:R 3.0:1 | risk $11.54 | real bracket stop @ $44.37"
+    },
+    {
+      "time": "2026-08-20T14:56:41.260Z",
+      "type": "INFO",
+      "msg": "Account: $99982.08 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T14:56:42.068Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "TEM, BTDR, MARA, IOVA, BMNR, HIMS, CRCL, BULL, MSTR, CNH"
+    },
+    {
+      "time": "2026-08-20T14:56:42.068Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-20T14:56:56.507Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "TEM: relVol 1.7× < 2× (todayVol 9.8M)  •  BTDR: price $10.44 < $15  •  MARA: price $10.44 < $15  •  IOVA: price $8.51 < $15  •  BMNR: relVol 0.9× < 2× (todayVol 28.9M)  •  HIMS: relVol 0.6× < 2× (todayVol 8.2M)  •  CRCL: relVol 0.9× < 2× (todayVol 9.9M)  •  BULL: price $9.06 < $15  •  MSTR: relVol 1.1× < 2× (todayVol 20.3M)  •  CNH: price $10.78 < $15  •  RIOT: relVol 0.4× < 2× (todayVol 8.0M)  •  SKHY: relVol 0.4× < 2× (todayVol 13.0M)"
+    },
+    {
+      "time": "2026-08-20T14:56:56.507Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T14:56:56.685Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MRNA, KC, WMT, UPST, MWH, SHAZ, ENVA, SIND, XE, ONDS"
+    },
+    {
+      "time": "2026-08-20T14:57:11.061Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MRNA: net up over ~5d ($63.65→$140.09) — no short into uptrend  •  KC: price $11.16 < $20 (short floor)  •  WMT: relVol 1.6× < 2.5× (todayVol 36.6M)  •  UPST: relVol 0.7× < 2.5× (todayVol 3.3M)  •  MWH: relVol 0.6× < 2.5× (todayVol 1.1M)  •  SHAZ: relVol 0.2× < 2.5× (todayVol 0.5M)  •  ENVA: avgVol 0.3M < 1M  •  SIND: price $15.40 < $20 (short floor)  •  XE: price $18.50 < $20 (short floor)  •  ONDS: price $8.30 < $20 (short floor)  •  ALMS: avgVol 0.9M < 1M  •  FLY: relVol 0.2× < 2.5× (todayVol 0.8M)"
+    },
+    {
+      "time": "2026-08-20T14:57:11.061Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [],
