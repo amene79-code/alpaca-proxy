@@ -70,80 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T17:06:59.833Z",
+  "lastRun": "2026-08-20T17:17:50.757Z",
   "log": [
-    {
-      "time": "2026-08-19T19:55:47.973Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:06:00.100Z",
-      "type": "INFO",
-      "msg": "Account: $99935.22 | 1 positions | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:06:00.112Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:06:00.444Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:16:13.165Z",
-      "type": "INFO",
-      "msg": "Account: $99940.08 | 1 positions | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:16:13.175Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:16:13.440Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:26:28.862Z",
-      "type": "INFO",
-      "msg": "Account: $99971.55 | 1 positions | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:26:28.909Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:26:30.888Z",
-      "type": "SELL",
-      "msg": "✓ Closed MRNA (ext-hours TP)",
-      "detail": "Side long | P&L +$126.42"
-    },
-    {
-      "time": "2026-08-19T20:26:31.039Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:40:19.808Z",
-      "type": "INFO",
-      "msg": "Account: $99971.64 | 0 positions | 5 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-19T20:40:19.847Z",
       "type": "INFO",
@@ -1268,6 +1196,78 @@
     },
     {
       "time": "2026-08-20T17:06:59.833Z",
+      "type": "INFO",
+      "msg": "SKIP AAP — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:17:20.780Z",
+      "type": "INFO",
+      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:17:22.067Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MARA, TEM, IOVA, MSTR, CRCL, BMNR, XXI, CNH, CLSK, ANDG"
+    },
+    {
+      "time": "2026-08-20T17:17:22.067Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-20T17:17:22.620Z",
+      "type": "SIGNAL",
+      "msg": "TEM — score 7 | gap 9.2% | relVol 2.5× | RSI 30",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:17:36.041Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "MARA: price $10.74 < $15  •  IOVA: price $8.70 < $15  •  MSTR: relVol 1.8× < 2× (todayVol 32.6M)  •  CRCL: relVol 1.4× < 2× (todayVol 16.3M)  •  BMNR: relVol 1.4× < 2× (todayVol 47.5M)  •  XXI: price $6.16 < $15  •  CNH: price $10.85 < $15  •  CLSK: price $12.25 < $15  •  ANDG: avgVol 0.5M < 1M  •  BTDR: price $10.48 < $15  •  LB: avgVol 0.3M < 1M  •  DE: relVol 1.8× < 2× (todayVol 1.9M)"
+    },
+    {
+      "time": "2026-08-20T17:17:36.041Z",
+      "type": "INFO",
+      "msg": "Top signal: TEM (score 7)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:17:36.041Z",
+      "type": "INFO",
+      "msg": "SKIP TEM — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:17:36.226Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AAP, MRNA, AADX, SHAZ, EQPT, KRMN, XE, INIO, AVAV, EROC"
+    },
+    {
+      "time": "2026-08-20T17:17:36.687Z",
+      "type": "SIGNAL",
+      "msg": "AAP — SHORT score 11 | gap -26.1% | relVol 5.5× | RSI 35",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:17:50.757Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "MRNA: net up over ~5d ($63.65→$128.97) — no short into uptrend  •  AADX: price $15.30 < $20 (short floor)  •  SHAZ: relVol 0.5× < 2.5× (todayVol 1.1M)  •  EQPT: price $17.65 < $20 (short floor)  •  KRMN: relVol 0.3× < 2.5× (todayVol 0.8M)  •  XE: price $17.95 < $20 (short floor)  •  INIO: relVol 0.6× < 2.5× (todayVol 2.6M)  •  AVAV: relVol 0.8× < 2.5× (todayVol 0.9M)  •  EROC: price $13.05 < $20 (short floor)  •  FLY: relVol 0.6× < 2.5× (todayVol 1.8M)  •  SEI: relVol 0.6× < 2.5× (todayVol 2.1M)  •  FOIL: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-08-20T17:17:50.757Z",
+      "type": "INFO",
+      "msg": "Top short: AAP (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:17:50.757Z",
       "type": "INFO",
       "msg": "SKIP AAP — already traded today",
       "detail": ""
