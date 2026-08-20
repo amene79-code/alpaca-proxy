@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T17:17:50.757Z",
+  "lastRun": "2026-08-20T17:28:31.442Z",
   "log": [
-    {
-      "time": "2026-08-19T20:40:19.847Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T20:40:20.425Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T21:10:02.782Z",
-      "type": "INFO",
-      "msg": "Account: $99971.64 | 0 positions | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T21:10:02.793Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T21:10:02.899Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T13:42:04.383Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T13:42:04.460Z",
-      "type": "INFO",
-      "msg": "Account: $99971.45 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T13:42:04.613Z",
-      "type": "INFO",
-      "msg": "Skip — first 15 min (12 min in)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T13:52:18.655Z",
-      "type": "INFO",
-      "msg": "Account: $99971.45 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T13:52:19.444Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 24, kept 36",
-      "detail": "BULL, BTDR, MARA, MSTR, BMNR, EGIEY, XXI, AUPH, CLSK, TEM"
-    },
     {
       "time": "2026-08-20T13:52:19.444Z",
       "type": "INFO",
@@ -1270,6 +1210,66 @@
       "time": "2026-08-20T17:17:50.757Z",
       "type": "INFO",
       "msg": "SKIP AAP — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:28:05.182Z",
+      "type": "INFO",
+      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:28:05.648Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MARA, TEM, IOVA, MSTR, CRCL, PURR, BMNR, XXI, CLSK, CNH"
+    },
+    {
+      "time": "2026-08-20T17:28:05.648Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-20T17:28:06.086Z",
+      "type": "SIGNAL",
+      "msg": "TEM — score 10 | gap 9.5% | relVol 2.5× | RSI 38",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-08-20T17:28:18.588Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "MARA: price $10.83 < $15  •  IOVA: price $8.68 < $15  •  MSTR: relVol 1.8× < 2× (todayVol 33.2M)  •  CRCL: relVol 1.4× < 2× (todayVol 16.5M)  •  PURR: price $9.98 < $15  •  BMNR: relVol 1.5× < 2× (todayVol 48.1M)  •  XXI: price $6.16 < $15  •  CLSK: price $12.37 < $15  •  CNH: price $10.84 < $15  •  ANDG: avgVol 0.5M < 1M  •  BTDR: price $10.48 < $15  •  LB: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-08-20T17:28:18.588Z",
+      "type": "INFO",
+      "msg": "Top signal: TEM (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:28:18.588Z",
+      "type": "INFO",
+      "msg": "SKIP TEM — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:28:18.772Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MRNA, AADX, SHAZ, KRMN, AVAV, SEI, XE, FLY, WMT, EROC"
+    },
+    {
+      "time": "2026-08-20T17:28:31.441Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MRNA: net up over ~5d ($63.65→$129.35) — no short into uptrend  •  AADX: price $15.26 < $20 (short floor)  •  SHAZ: relVol 0.5× < 2.5× (todayVol 1.2M)  •  KRMN: relVol 0.3× < 2.5× (todayVol 0.9M)  •  AVAV: relVol 0.8× < 2.5× (todayVol 0.9M)  •  SEI: relVol 0.7× < 2.5× (todayVol 2.2M)  •  XE: price $18.01 < $20 (short floor)  •  FLY: relVol 0.6× < 2.5× (todayVol 1.8M)  •  WMT: relVol 2.3× < 2.5× (todayVol 53.9M)  •  EROC: price $13.07 < $20 (short floor)  •  ATAT: avgVol 0.9M < 1M  •  EQPT: price $17.99 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-20T17:28:31.442Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
       "detail": ""
     }
   ],
