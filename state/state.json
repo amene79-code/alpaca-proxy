@@ -70,80 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T16:56:14.702Z",
+  "lastRun": "2026-08-20T17:06:59.833Z",
   "log": [
-    {
-      "time": "2026-08-19T19:25:02.457Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:35:20.540Z",
-      "type": "INFO",
-      "msg": "Account: $99902.64 | 1 positions | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:35:21.156Z",
-      "type": "INFO",
-      "msg": "EOD review (25 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:35:21.254Z",
-      "type": "INFO",
-      "msg": "MRNA held overnight",
-      "detail": "Side long | Strong close | P&L +$57.51 | above VWAP"
-    },
-    {
-      "time": "2026-08-19T19:35:21.453Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:45:36.098Z",
-      "type": "INFO",
-      "msg": "Account: $99921.54 | 1 positions | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:45:36.388Z",
-      "type": "INFO",
-      "msg": "EOD review (15 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:45:36.523Z",
-      "type": "INFO",
-      "msg": "MRNA held overnight",
-      "detail": "Side long | Strong close | P&L +$76.41 | above VWAP"
-    },
-    {
-      "time": "2026-08-19T19:45:36.723Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:55:47.199Z",
-      "type": "INFO",
-      "msg": "Account: $99939.90 | 1 positions | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:55:47.474Z",
-      "type": "INFO",
-      "msg": "EOD review (5 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:55:47.772Z",
-      "type": "INFO",
-      "msg": "MRNA held overnight",
-      "detail": "Side long | Strong close | P&L +$94.77 | above VWAP"
-    },
     {
       "time": "2026-08-19T19:55:47.973Z",
       "type": "INFO",
@@ -1270,6 +1198,78 @@
       "time": "2026-08-20T16:56:14.702Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:06:35.043Z",
+      "type": "INFO",
+      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:06:36.280Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MARA, IOVA, MSTR, CRCL, BMNR, PURR, XXI, CLSK, CNH, TEM"
+    },
+    {
+      "time": "2026-08-20T17:06:36.280Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-20T17:06:39.010Z",
+      "type": "SIGNAL",
+      "msg": "TEM — score 8 | gap 10.3% | relVol 2.4× | RSI 49",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:06:48.070Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "MARA: price $10.81 < $15  •  IOVA: price $8.74 < $15  •  MSTR: relVol 1.7× < 2× (todayVol 31.8M)  •  CRCL: relVol 1.4× < 2× (todayVol 16.0M)  •  BMNR: relVol 1.4× < 2× (todayVol 46.7M)  •  PURR: price $10.06 < $15  •  XXI: price $6.16 < $15  •  CLSK: price $12.34 < $15  •  CNH: price $10.88 < $15  •  BULL: price $9.04 < $15  •  SKHY: relVol 0.5× < 2× (todayVol 16.2M)  •  LB: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-08-20T17:06:48.070Z",
+      "type": "INFO",
+      "msg": "Top signal: TEM (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:06:48.070Z",
+      "type": "INFO",
+      "msg": "SKIP TEM — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:06:48.198Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AAP, MRNA, AADX, SHAZ, EQPT, KRMN, EROC, XE, AVAV, INIO"
+    },
+    {
+      "time": "2026-08-20T17:06:48.536Z",
+      "type": "SIGNAL",
+      "msg": "AAP — SHORT score 11 | gap -26.0% | relVol 5.2× | RSI 33",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:06:59.832Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "MRNA: net up over ~5d ($63.65→$129.47) — no short into uptrend  •  AADX: price $15.37 < $20 (short floor)  •  SHAZ: relVol 0.4× < 2.5× (todayVol 1.1M)  •  EQPT: price $17.74 < $20 (short floor)  •  KRMN: relVol 0.3× < 2.5× (todayVol 0.8M)  •  EROC: price $13.07 < $20 (short floor)  •  XE: price $18.04 < $20 (short floor)  •  AVAV: relVol 0.7× < 2.5× (todayVol 0.8M)  •  INIO: relVol 0.6× < 2.5× (todayVol 2.5M)  •  WMT: relVol 2.2× < 2.5× (todayVol 52.3M)  •  FLY: relVol 0.5× < 2.5× (todayVol 1.7M)  •  SEI: relVol 0.6× < 2.5× (todayVol 2.0M)"
+    },
+    {
+      "time": "2026-08-20T17:06:59.832Z",
+      "type": "INFO",
+      "msg": "Top short: AAP (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:06:59.833Z",
+      "type": "INFO",
+      "msg": "SKIP AAP — already traded today",
       "detail": ""
     }
   ],
