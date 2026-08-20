@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T17:28:31.442Z",
+  "lastRun": "2026-08-20T17:39:08.631Z",
   "log": [
-    {
-      "time": "2026-08-20T13:52:19.444Z",
-      "type": "INFO",
-      "msg": "Scanning 36 candidates",
-      "detail": "36 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-20T13:52:32.789Z",
-      "type": "INFO",
-      "msg": "Rejections (36)",
-      "detail": "BULL: price $9.75 < $15  •  BTDR: price $10.80 < $15  •  MARA: price $10.45 < $15  •  MSTR: relVol 0.8× < 2× (todayVol 13.2M)  •  BMNR: relVol 0.6× < 2× (todayVol 18.4M)  •  EGIEY: price $5.94 < $15  •  XXI: price $6.09 < $15  •  AUPH: relVol 0.4× < 2× (todayVol 0.4M)  •  CLSK: price $12.20 < $15  •  TEM: relVol 0.8× < 2× (todayVol 4.6M)  •  LB: avgVol 0.3M < 1M  •  LIF: relVol 0.2× < 2× (todayVol 0.2M)"
-    },
-    {
-      "time": "2026-08-20T13:52:32.790Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T13:52:32.967Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 35",
-      "detail": "MRNA, KC, WMT, MWH, MT, SHAZ, MP, USAR, CBRS, BEAM"
-    },
-    {
-      "time": "2026-08-20T13:52:46.257Z",
-      "type": "INFO",
-      "msg": "Short rejections (35)",
-      "detail": "MRNA: net up over ~5d ($63.65→$143.35) — no short into uptrend  •  KC: price $11.27 < $20 (short floor)  •  WMT: relVol 1.0× < 2.5× (todayVol 22.6M)  •  MWH: relVol 0.3× < 2.5× (todayVol 0.6M)  •  MT: relVol 0.4× < 2.5× (todayVol 0.6M)  •  SHAZ: relVol 0.1× < 2.5× (todayVol 0.1M)  •  MP: relVol 0.2× < 2.5× (todayVol 1.1M)  •  USAR: price $17.11 < $20 (short floor)  •  CBRS: relVol 0.2× < 2.5× (todayVol 1.3M)  •  BEAM: net up over ~5d ($26.51→$27.51) — no short into uptrend  •  STLA: price $5.15 < $20 (short floor)  •  INIO: relVol 0.0× < 2.5× (todayVol 0.1M)"
-    },
-    {
-      "time": "2026-08-20T13:52:46.257Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T14:03:08.627Z",
-      "type": "INFO",
-      "msg": "Account: $99971.45 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T14:03:09.614Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 36, kept 33",
-      "detail": "BULL, TEM, BTDR, MARA, MSTR, BMNR, EGIEY, CLSK, CRCL, AUPH"
-    },
     {
       "time": "2026-08-20T14:03:09.615Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-20T17:28:31.442Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:38:42.460Z",
+      "type": "INFO",
+      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:38:42.680Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MARA, IOVA, CRCL, MSTR, XXI, PURR, CNH, BMNR, CLSK, ANDG"
+    },
+    {
+      "time": "2026-08-20T17:38:42.680Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-20T17:38:55.747Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MARA: price $10.78 < $15  •  IOVA: price $8.69 < $15  •  CRCL: relVol 1.4× < 2× (todayVol 16.8M)  •  MSTR: relVol 1.8× < 2× (todayVol 33.5M)  •  XXI: price $6.20 < $15  •  PURR: price $9.97 < $15  •  CNH: price $10.88 < $15  •  BMNR: relVol 1.5× < 2× (todayVol 48.7M)  •  CLSK: price $12.27 < $15  •  ANDG: avgVol 0.5M < 1M  •  TEM: below VWAP (price $66.94 < VWAP $66.96)  •  BTDR: price $10.44 < $15"
+    },
+    {
+      "time": "2026-08-20T17:38:55.747Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T17:38:55.883Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MRNA, SHAZ, AADX, SEI, KRMN, XE, AVAV, WMT, EROC, INIO"
+    },
+    {
+      "time": "2026-08-20T17:39:08.631Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MRNA: net up over ~5d ($63.65→$131.37) — no short into uptrend  •  SHAZ: relVol 0.5× < 2.5× (todayVol 1.2M)  •  AADX: price $15.52 < $20 (short floor)  •  SEI: relVol 0.7× < 2.5× (todayVol 2.3M)  •  KRMN: relVol 0.4× < 2.5× (todayVol 0.9M)  •  XE: price $18.01 < $20 (short floor)  •  AVAV: relVol 0.8× < 2.5× (todayVol 0.9M)  •  WMT: relVol 2.3× < 2.5× (todayVol 54.9M)  •  EROC: price $13.06 < $20 (short floor)  •  INIO: relVol 0.7× < 2.5× (todayVol 2.8M)  •  ATAT: avgVol 0.9M < 1M  •  FOIL: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-08-20T17:39:08.631Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
