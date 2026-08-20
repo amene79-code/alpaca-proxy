@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T16:34:42.105Z",
+  "lastRun": "2026-08-20T16:45:31.725Z",
   "log": [
-    {
-      "time": "2026-08-19T19:13:42.766Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, MRK, HL, MSTR, CDE, BMNR, TEM, TWST, BNTX, KC"
-    },
-    {
-      "time": "2026-08-19T19:13:42.766Z",
-      "type": "INFO",
-      "msg": "Scanning 38 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-19T19:13:44.685Z",
-      "type": "SIGNAL",
-      "msg": "TEM — score 12 | gap 23.6% | relVol 3.2× | RSI 61",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-08-19T19:13:56.958Z",
-      "type": "INFO",
-      "msg": "Rejections (37)",
-      "detail": "MRK: ATR 0.23% < 0.5%  •  HL: relVol 1.4× < 2× (todayVol 54.6M)  •  CDE: relVol 1.2× < 2× (todayVol 44.3M)  •  BMNR: relVol 1.7× < 2× (todayVol 52.9M)  •  TWST: relVol 1.7× < 2× (todayVol 2.8M)  •  BNTX: below VWAP (price $111.70 < VWAP $112.30)  •  KC: price $12.48 < $15  •  HYMC: relVol 1.5× < 2× (todayVol 2.4M)  •  XXI: price $5.49 < $15  •  AMR: avgVol 0.3M < 1M  •  NG: price $8.40 < $15  •  EXK: price $10.91 < $15"
-    },
-    {
-      "time": "2026-08-19T19:13:56.958Z",
-      "type": "INFO",
-      "msg": "Top signal: TEM (score 12)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:13:56.958Z",
-      "type": "INFO",
-      "msg": "SKIP TEM — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:13:57.133Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "NBIS, VICR, AEHR, FSLY, AXTI, SEI, MXL, VOYG, PENG, TTMI"
-    },
-    {
-      "time": "2026-08-19T19:14:12.495Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "NBIS: relVol 1.2× < 2.5× (todayVol 34.0M)  •  VICR: avgVol 0.9M < 1M  •  AEHR: relVol 0.9× < 2.5× (todayVol 2.4M)  •  FSLY: relVol 0.6× < 2.5× (todayVol 4.0M)  •  AXTI: relVol 1.0× < 2.5× (todayVol 12.7M)  •  SEI: relVol 0.8× < 2.5× (todayVol 2.8M)  •  MXL: relVol 0.6× < 2.5× (todayVol 2.1M)  •  VOYG: relVol 0.6× < 2.5× (todayVol 0.9M)  •  PENG: relVol 0.5× < 2.5× (todayVol 1.1M)  •  TTMI: relVol 0.7× < 2.5× (todayVol 2.4M)  •  MTSI: relVol 0.8× < 2.5× (todayVol 1.2M)  •  STX: relVol 0.8× < 2.5× (todayVol 4.6M)"
-    },
-    {
-      "time": "2026-08-19T19:14:12.495Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-19T19:24:30.954Z",
-      "type": "INFO",
-      "msg": "Account: $99889.33 | 1 positions | 5 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-19T19:24:32.243Z",
       "type": "INFO",
@@ -1270,6 +1210,66 @@
       "time": "2026-08-20T16:34:42.105Z",
       "type": "INFO",
       "msg": "SKIP AAP — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T16:45:00.926Z",
+      "type": "INFO",
+      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T16:45:02.183Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MARA, TEM, BTDR, IOVA, CRCL, MSTR, BMNR, XXI, CLSK, CNH"
+    },
+    {
+      "time": "2026-08-20T16:45:02.184Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-20T16:45:02.699Z",
+      "type": "SIGNAL",
+      "msg": "TEM — score 11 | gap 10.7% | relVol 2.4× | RSI 33",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-08-20T16:45:16.986Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "MARA: price $10.77 < $15  •  BTDR: price $10.56 < $15  •  IOVA: price $8.68 < $15  •  CRCL: relVol 1.3× < 2× (todayVol 15.4M)  •  MSTR: relVol 1.7× < 2× (todayVol 30.4M)  •  BMNR: relVol 1.4× < 2× (todayVol 44.9M)  •  XXI: price $6.16 < $15  •  CLSK: price $12.35 < $15  •  CNH: price $10.89 < $15  •  SKHY: relVol 0.5× < 2× (todayVol 15.9M)  •  ANDG: avgVol 0.5M < 1M  •  LB: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-08-20T16:45:16.987Z",
+      "type": "INFO",
+      "msg": "Top signal: TEM (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T16:45:16.987Z",
+      "type": "INFO",
+      "msg": "SKIP TEM — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T16:45:17.196Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MRNA, SHAZ, AADX, SEI, EQPT, WMT, FOIL, FLY, XE, COAG"
+    },
+    {
+      "time": "2026-08-20T16:45:31.724Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MRNA: net up over ~5d ($63.65→$130.04) — no short into uptrend  •  SHAZ: relVol 0.4× < 2.5× (todayVol 1.0M)  •  AADX: price $15.63 < $20 (short floor)  •  SEI: relVol 0.6× < 2.5× (todayVol 1.9M)  •  EQPT: price $17.91 < $20 (short floor)  •  WMT: relVol 2.2× < 2.5× (todayVol 50.3M)  •  FOIL: avgVol 0.1M < 1M  •  FLY: relVol 0.5× < 2.5× (todayVol 1.6M)  •  XE: price $18.14 < $20 (short floor)  •  COAG: avgVol 0.4M < 1M  •  AVAV: relVol 0.7× < 2.5× (todayVol 0.8M)  •  KRMN: relVol 0.3× < 2.5× (todayVol 0.8M)"
+    },
+    {
+      "time": "2026-08-20T16:45:31.725Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
       "detail": ""
     }
   ],
