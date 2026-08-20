@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T19:27:23.762Z",
+  "lastRun": "2026-08-20T19:37:38.320Z",
   "log": [
-    {
-      "time": "2026-08-20T15:50:46.026Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-20T15:51:19.097Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "MARA: price $10.60 < $15  •  BTDR: price $10.48 < $15  •  IOVA: price $8.69 < $15  •  MSTR: relVol 1.5× < 2× (todayVol 27.1M)  •  PURR: price $10.07 < $15  •  CRCL: relVol 1.1× < 2× (todayVol 13.2M)  •  BMNR: relVol 1.1× < 2× (todayVol 37.4M)  •  CNH: price $10.89 < $15  •  XXI: price $6.07 < $15  •  DE: relVol 1.4× < 2× (todayVol 1.5M)  •  ANDG: avgVol 0.5M < 1M  •  LB: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-08-20T15:51:19.097Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-20T15:51:19.763Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-08-20T19:27:23.762Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T19:37:37.993Z",
+      "type": "INFO",
+      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T19:37:38.319Z",
+      "type": "INFO",
+      "msg": "EOD review (23 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T19:37:38.320Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
