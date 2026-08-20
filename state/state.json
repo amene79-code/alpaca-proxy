@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T18:22:21.803Z",
+  "lastRun": "2026-08-20T18:33:10.127Z",
   "log": [
-    {
-      "time": "2026-08-20T14:46:13.796Z",
-      "type": "SIGNAL",
-      "msg": "AAP — SHORT score 9 | gap -22.0% | relVol 2.8× | RSI 35",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T14:46:25.674Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "MRNA: net up over ~5d ($63.65→$140.75) — no short into uptrend  •  KC: price $11.07 < $20 (short floor)  •  WMT: relVol 1.5× < 2.5× (todayVol 34.6M)  •  UPST: relVol 0.6× < 2.5× (todayVol 3.0M)  •  MWH: relVol 0.5× < 2.5× (todayVol 1.0M)  •  SIND: price $15.37 < $20 (short floor)  •  COAG: avgVol 0.4M < 1M  •  SHAZ: relVol 0.2× < 2.5× (todayVol 0.5M)  •  ONDS: price $8.32 < $20 (short floor)  •  ENVA: avgVol 0.3M < 1M  •  TAL: price $11.38 < $20 (short floor)  •  KLRA: price $17.20 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-20T14:46:25.674Z",
-      "type": "INFO",
-      "msg": "Top short: AAP (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T14:46:25.674Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 22× AAP @ ~$43.85",
-      "detail": "gap -22.0% | risk $11.54 | SL $44.37 | TP $42.27 | R:R 3.0"
-    },
-    {
-      "time": "2026-08-20T14:46:25.921Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 22× AAP",
-      "detail": "ID 3b8602b6-b78c-4b9c-a2c4-788ddc61b225 | R:R 3.0:1 | risk $11.54 | real bracket stop @ $44.37"
-    },
-    {
-      "time": "2026-08-20T14:56:41.260Z",
-      "type": "INFO",
-      "msg": "Account: $99982.08 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T14:56:42.068Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "TEM, BTDR, MARA, IOVA, BMNR, HIMS, CRCL, BULL, MSTR, CNH"
-    },
-    {
-      "time": "2026-08-20T14:56:42.068Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-20T14:56:56.507Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "TEM: relVol 1.7× < 2× (todayVol 9.8M)  •  BTDR: price $10.44 < $15  •  MARA: price $10.44 < $15  •  IOVA: price $8.51 < $15  •  BMNR: relVol 0.9× < 2× (todayVol 28.9M)  •  HIMS: relVol 0.6× < 2× (todayVol 8.2M)  •  CRCL: relVol 0.9× < 2× (todayVol 9.9M)  •  BULL: price $9.06 < $15  •  MSTR: relVol 1.1× < 2× (todayVol 20.3M)  •  CNH: price $10.78 < $15  •  RIOT: relVol 0.4× < 2× (todayVol 8.0M)  •  SKHY: relVol 0.4× < 2× (todayVol 13.0M)"
-    },
-    {
-      "time": "2026-08-20T14:56:56.507Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-20T14:56:56.685Z",
       "type": "INFO",
@@ -1268,6 +1208,66 @@
     },
     {
       "time": "2026-08-20T18:22:21.803Z",
+      "type": "INFO",
+      "msg": "SKIP AAP — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T18:32:39.182Z",
+      "type": "INFO",
+      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T18:32:40.363Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MARA, IOVA, MSTR, BMNR, XXI, CLSK, ANDG, BULL, TEM, CAI"
+    },
+    {
+      "time": "2026-08-20T18:32:40.363Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-20T18:32:55.143Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MARA: price $10.84 < $15  •  IOVA: price $8.94 < $15  •  MSTR: relVol 1.9× < 2× (todayVol 35.7M)  •  BMNR: relVol 1.6× < 2× (todayVol 52.1M)  •  XXI: price $6.11 < $15  •  CLSK: price $12.23 < $15  •  ANDG: avgVol 0.5M < 1M  •  BULL: price $9.00 < $15  •  TEM: below VWAP (price $66.49 < VWAP $66.55)  •  CAI: relVol 0.8× < 2× (todayVol 3.7M)  •  BTDR: price $10.37 < $15  •  COIN: relVol 1.6× < 2× (todayVol 13.3M)"
+    },
+    {
+      "time": "2026-08-20T18:32:55.143Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T18:32:55.412Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AAP, MRNA, SHAZ, AADX, INIO, EROC, WMT, XE, AVAV, FLY"
+    },
+    {
+      "time": "2026-08-20T18:32:55.934Z",
+      "type": "SIGNAL",
+      "msg": "AAP — SHORT score 11 | gap -26.2% | relVol 6.4× | RSI 67",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T18:33:10.127Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "MRNA: net up over ~5d ($63.65→$133.76) — no short into uptrend  •  SHAZ: relVol 0.6× < 2.5× (todayVol 1.4M)  •  AADX: price $15.41 < $20 (short floor)  •  INIO: relVol 0.8× < 2.5× (todayVol 3.3M)  •  EROC: price $12.90 < $20 (short floor)  •  WMT: ATR 0.23% < 0.5%  •  XE: price $17.98 < $20 (short floor)  •  AVAV: relVol 0.9× < 2.5× (todayVol 1.1M)  •  FLY: relVol 0.7× < 2.5× (todayVol 2.1M)  •  EQPT: price $18.01 < $20 (short floor)  •  RH: avgVol 0.7M < 1M  •  SEI: relVol 0.9× < 2.5× (todayVol 3.0M)"
+    },
+    {
+      "time": "2026-08-20T18:33:10.127Z",
+      "type": "INFO",
+      "msg": "Top short: AAP (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T18:33:10.127Z",
       "type": "INFO",
       "msg": "SKIP AAP — already traded today",
       "detail": ""
