@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T20:18:50.649Z",
+  "lastRun": "2026-08-20T20:29:11.642Z",
   "log": [
-    {
-      "time": "2026-08-20T16:02:19.042Z",
-      "type": "SIGNAL",
-      "msg": "AAP — SHORT score 9 | gap -25.1% | relVol 4.3× | RSI 23",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T16:02:31.120Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "MRNA: net up over ~5d ($63.65→$138.23) — no short into uptrend  •  SHAZ: relVol 0.3× < 2.5× (todayVol 0.8M)  •  WMT: relVol 2.0× < 2.5× (todayVol 45.1M)  •  INIO: relVol 0.4× < 2.5× (todayVol 1.8M)  •  FLY: relVol 0.4× < 2.5× (todayVol 1.4M)  •  MWH: relVol 0.7× < 2.5× (todayVol 1.4M)  •  XE: price $18.15 < $20 (short floor)  •  KC: price $11.32 < $20 (short floor)  •  KRMN: relVol 0.3× < 2.5× (todayVol 0.6M)  •  EQPT: price $18.10 < $20 (short floor)  •  UPST: relVol 1.0× < 2.5× (todayVol 4.6M)  •  AADX: price $15.90 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-20T16:02:31.120Z",
-      "type": "INFO",
-      "msg": "Top short: AAP (score 9)",
-      "detail": ""
-    },
     {
       "time": "2026-08-20T16:02:31.120Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-20T20:18:50.649Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T20:29:11.206Z",
+      "type": "INFO",
+      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T20:29:11.233Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-20T20:29:11.642Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
