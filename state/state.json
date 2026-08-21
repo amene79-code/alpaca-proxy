@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-21T13:41:14.810Z",
+  "lastRun": "2026-08-21T13:51:54.391Z",
   "log": [
-    {
-      "time": "2026-08-20T16:13:18.514Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "MRNA: net up over ~5d ($63.65→$139.29) — no short into uptrend  •  SHAZ: relVol 0.4× < 2.5× (todayVol 0.9M)  •  INIO: relVol 0.5× < 2.5× (todayVol 1.9M)  •  AADX: price $15.65 < $20 (short floor)  •  WMT: relVol 2.0× < 2.5× (todayVol 46.8M)  •  COAG: avgVol 0.4M < 1M  •  XE: price $18.14 < $20 (short floor)  •  SEI: relVol 0.4× < 2.5× (todayVol 1.5M)  •  EQPT: price $18.00 < $20 (short floor)  •  KC: price $11.31 < $20 (short floor)  •  FLY: relVol 0.4× < 2.5× (todayVol 1.4M)  •  KRMN: relVol 0.3× < 2.5× (todayVol 0.7M)"
-    },
-    {
-      "time": "2026-08-20T16:13:18.514Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T16:23:38.854Z",
-      "type": "INFO",
-      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T16:23:39.660Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "TEM, MARA, BTDR, IOVA, CRCL, MSTR, BMNR, CNH, XXI, SKHY"
-    },
-    {
-      "time": "2026-08-20T16:23:39.661Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-20T16:23:39.806Z",
-      "type": "SIGNAL",
-      "msg": "TEM — score 8 | gap 10.7% | relVol 2.3× | RSI 45",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T16:23:51.866Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "MARA: price $10.57 < $15  •  BTDR: price $10.43 < $15  •  IOVA: price $8.56 < $15  •  CRCL: relVol 1.3× < 2× (todayVol 14.7M)  •  MSTR: relVol 1.6× < 2× (todayVol 29.6M)  •  BMNR: relVol 1.3× < 2× (todayVol 43.0M)  •  CNH: price $10.86 < $15  •  XXI: price $6.13 < $15  •  SKHY: relVol 0.5× < 2× (todayVol 15.5M)  •  ANDG: avgVol 0.5M < 1M  •  LB: avgVol 0.3M < 1M  •  BULL: price $8.99 < $15"
-    },
-    {
-      "time": "2026-08-20T16:23:51.866Z",
-      "type": "INFO",
-      "msg": "Top signal: TEM (score 8)",
-      "detail": ""
-    },
     {
       "time": "2026-08-20T16:23:51.867Z",
       "type": "INFO",
@@ -1270,6 +1222,54 @@
       "time": "2026-08-21T13:41:14.809Z",
       "type": "INFO",
       "msg": "Skip — first 15 min (11 min in)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T13:51:32.605Z",
+      "type": "INFO",
+      "msg": "Account: $99982.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T13:51:34.178Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 29, kept 40",
+      "detail": "HOOD, MRNA, MARA, CRCL, COIN, PURR, FCX, BTDR, MSTR, IREN"
+    },
+    {
+      "time": "2026-08-21T13:51:34.178Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-21T13:51:52.085Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "HOOD: relVol 0.7× < 2× (todayVol 12.5M)  •  MRNA: relVol 0.6× < 2× (todayVol 13.2M)  •  MARA: price $12.34 < $15  •  CRCL: relVol 0.7× < 2× (todayVol 8.2M)  •  COIN: relVol 0.6× < 2× (todayVol 5.5M)  •  PURR: price $10.92 < $15  •  FCX: relVol 0.5× < 2× (todayVol 6.1M)  •  BTDR: price $11.67 < $15  •  MSTR: relVol 0.7× < 2× (todayVol 14.2M)  •  IREN: relVol 0.2× < 2× (todayVol 8.8M)  •  WULF: relVol 0.2× < 2× (todayVol 8.0M)  •  UUUU: relVol 0.4× < 2× (todayVol 2.8M)"
+    },
+    {
+      "time": "2026-08-21T13:51:52.085Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T13:51:52.392Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 20, kept 4",
+      "detail": "OSIS, UI, TLX, BABA"
+    },
+    {
+      "time": "2026-08-21T13:51:54.391Z",
+      "type": "INFO",
+      "msg": "Short rejections (4)",
+      "detail": "OSIS: avgVol 0.2M < 1M  •  UI: avgVol 0.1M < 1M  •  TLX: price $11.36 < $20 (short floor)  •  BABA: relVol 0.8× < 2.5× (todayVol 8.2M)"
+    },
+    {
+      "time": "2026-08-21T13:51:54.391Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
       "detail": ""
     }
   ],
