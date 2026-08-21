@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-08-20",
+  "dailyTrades": 0,
+  "dailyDate": "2026-08-21",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-20T21:12:59.047Z",
+  "lastRun": "2026-08-21T13:41:14.810Z",
   "log": [
-    {
-      "time": "2026-08-20T16:13:06.000Z",
-      "type": "INFO",
-      "msg": "Top signal: TEM (score 12)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T16:13:06.000Z",
-      "type": "INFO",
-      "msg": "SKIP TEM — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T16:13:06.136Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "MRNA, SHAZ, INIO, AADX, WMT, COAG, XE, SEI, EQPT, KC"
-    },
     {
       "time": "2026-08-20T16:13:18.514Z",
       "type": "INFO",
@@ -1271,13 +1253,27 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-08-21T13:41:14.489Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T13:41:14.672Z",
+      "type": "INFO",
+      "msg": "Account: $99982.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T13:41:14.809Z",
+      "type": "INFO",
+      "msg": "Skip — first 15 min (11 min in)",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "TEM"
-  ],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "AAP"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
