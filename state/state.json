@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-21T20:12:21.096Z",
+  "lastRun": "2026-08-21T20:22:36.333Z",
   "log": [
-    {
-      "time": "2026-08-21T15:27:05.343Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 9× MRNA",
-      "detail": "ID 39549563-2768-4ece-9d82-20a45b154227 | R:R 2.7:1 | risk $36.27"
-    },
-    {
-      "time": "2026-08-21T15:27:05.969Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 16",
-      "detail": "HUT, OSIS, TLX, CIFR, BABA, UI, MRVL, SA, IOVA, CLSK"
-    },
-    {
-      "time": "2026-08-21T15:27:10.930Z",
-      "type": "INFO",
-      "msg": "Short rejections (16)",
-      "detail": "HUT: relVol 1.1× < 2.5× (todayVol 5.5M)  •  OSIS: avgVol 0.2M < 1M  •  TLX: price $11.35 < $20 (short floor)  •  CIFR: price $15.87 < $20 (short floor)  •  BABA: relVol 1.5× < 2.5× (todayVol 16.3M)  •  UI: avgVol 0.1M < 1M  •  MRVL: net up over ~5d ($222.02→$234.40) — no short into uptrend  •  SA: avgVol 0.7M < 1M  •  IOVA: price $8.48 < $20 (short floor)  •  CLSK: price $11.94 < $20 (short floor)  •  MWH: relVol 0.2× < 2.5× (todayVol 0.5M)  •  CBRS: relVol 0.5× < 2.5× (todayVol 3.4M)"
-    },
     {
       "time": "2026-08-21T15:27:10.930Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-21T20:12:21.095Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T20:22:35.981Z",
+      "type": "INFO",
+      "msg": "Account: $99944.43 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T20:22:35.993Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T20:22:36.333Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
