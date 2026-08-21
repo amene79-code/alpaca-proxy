@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-21T17:45:25.185Z",
+  "lastRun": "2026-08-21T17:56:13.707Z",
   "log": [
-    {
-      "time": "2026-08-20T20:48:38.554Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T21:12:58.701Z",
-      "type": "INFO",
-      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T21:12:58.778Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T21:12:59.047Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T13:41:14.489Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T13:41:14.672Z",
-      "type": "INFO",
-      "msg": "Account: $99982.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T13:41:14.809Z",
-      "type": "INFO",
-      "msg": "Skip — first 15 min (11 min in)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T13:51:32.605Z",
-      "type": "INFO",
-      "msg": "Account: $99982.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-21T13:51:34.178Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-21T17:45:25.185Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T17:55:50.417Z",
+      "type": "INFO",
+      "msg": "Account: $99944.43 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T17:55:51.560Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "HOOD, MRNA, USAR, FCX, SLS, UEC, BMNR, MSTR, VIRT, CVI"
+    },
+    {
+      "time": "2026-08-21T17:55:51.560Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-21T17:56:06.575Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "HOOD: relVol 2.0× < 2× (todayVol 37.6M)  •  MRNA: below VWAP (price $145.08 < VWAP $149.66)  •  USAR: relVol 1.2× < 2× (todayVol 15.3M)  •  FCX: relVol 1.5× < 2× (todayVol 20.1M)  •  SLS: relVol 1.4× < 2× (todayVol 8.6M)  •  UEC: price $12.44 < $15  •  BMNR: relVol 1.2× < 2× (todayVol 41.1M)  •  MSTR: relVol 1.7× < 2× (todayVol 33.8M)  •  VIRT: relVol 1.1× < 2× (todayVol 1.5M)  •  CVI: avgVol 1.0M < 1M  •  TGTX: relVol 1.5× < 2× (todayVol 3.4M)  •  INFQ: price $13.82 < $15"
+    },
+    {
+      "time": "2026-08-21T17:56:06.575Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T17:56:06.764Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 46, kept 20",
+      "detail": "HUT, CIFR, OSIS, TLX, BABA, SA, IOVA, DAR, BKV, WULF"
+    },
+    {
+      "time": "2026-08-21T17:56:13.707Z",
+      "type": "INFO",
+      "msg": "Short rejections (20)",
+      "detail": "HUT: relVol 1.5× < 2.5× (todayVol 7.6M)  •  CIFR: price $15.60 < $20 (short floor)  •  OSIS: avgVol 0.2M < 1M  •  TLX: price $11.31 < $20 (short floor)  •  BABA: relVol 2.0× < 2.5× (todayVol 22.9M)  •  SA: avgVol 0.7M < 1M  •  IOVA: price $8.32 < $20 (short floor)  •  DAR: relVol 1.3× < 2.5× (todayVol 3.0M)  •  BKV: avgVol 1.0M < 1M  •  WULF: price $15.48 < $20 (short floor)  •  CLSK: price $11.87 < $20 (short floor)  •  MRVL: net up over ~5d ($222.02→$237.40) — no short into uptrend"
+    },
+    {
+      "time": "2026-08-21T17:56:13.707Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
