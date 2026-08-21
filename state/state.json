@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-21T18:49:14.445Z",
+  "lastRun": "2026-08-21T18:59:46.360Z",
   "log": [
-    {
-      "time": "2026-08-21T14:44:32.583Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, HOOD, COIN, CLF, CRCL, USAR, MSTR, FCX, PURR, TGTX"
-    },
-    {
-      "time": "2026-08-21T14:44:32.583Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-21T14:44:44.472Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "MRNA: relVol 1.6× < 2× (todayVol 34.3M)  •  HOOD: relVol 1.4× < 2× (todayVol 25.0M)  •  COIN: relVol 1.1× < 2× (todayVol 9.7M)  •  CLF: price $11.61 < $15  •  CRCL: relVol 1.1× < 2× (todayVol 13.7M)  •  USAR: relVol 0.6× < 2× (todayVol 7.6M)  •  MSTR: relVol 1.1× < 2× (todayVol 21.2M)  •  FCX: relVol 0.9× < 2× (todayVol 11.2M)  •  PURR: price $10.60 < $15  •  TGTX: relVol 1.0× < 2× (todayVol 2.2M)  •  BGC: price $11.84 < $15  •  VIRT: relVol 0.6× < 2× (todayVol 0.8M)"
-    },
-    {
-      "time": "2026-08-21T14:44:44.472Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T14:44:44.600Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 19",
-      "detail": "HUT, CIFR, OSIS, UI, TLX, SA, BABA, AEHR, MWH, CLSK"
-    },
-    {
-      "time": "2026-08-21T14:44:50.351Z",
-      "type": "INFO",
-      "msg": "Short rejections (19)",
-      "detail": "HUT: relVol 0.8× < 2.5× (todayVol 4.0M)  •  CIFR: price $15.59 < $20 (short floor)  •  OSIS: avgVol 0.2M < 1M  •  UI: avgVol 0.1M < 1M  •  TLX: price $11.35 < $20 (short floor)  •  SA: avgVol 0.7M < 1M  •  BABA: relVol 1.2× < 2.5× (todayVol 13.5M)  •  AEHR: relVol 0.3× < 2.5× (todayVol 0.8M)  •  MWH: relVol 0.1× < 2.5× (todayVol 0.3M)  •  CLSK: price $11.81 < $20 (short floor)  •  MRVL: net up over ~5d ($222.02→$235.81) — no short into uptrend  •  APLD: relVol 0.3× < 2.5× (todayVol 6.0M)"
-    },
-    {
-      "time": "2026-08-21T14:44:50.351Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T14:55:04.213Z",
-      "type": "INFO",
-      "msg": "Account: $99982.80 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-21T14:55:04.981Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-21T18:49:14.444Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T18:59:28.645Z",
+      "type": "INFO",
+      "msg": "Account: $99944.43 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T18:59:29.390Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "HOOD, SLS, UEC, USAR, FCX, BTDR, CVI, DK, VIRT, RGTI"
+    },
+    {
+      "time": "2026-08-21T18:59:29.390Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-21T18:59:40.074Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "HOOD: ATR 0.42% < 0.5%  •  SLS: relVol 1.9× < 2× (todayVol 12.4M)  •  UEC: price $12.73 < $15  •  USAR: relVol 1.4× < 2× (todayVol 17.2M)  •  FCX: relVol 1.7× < 2× (todayVol 22.1M)  •  BTDR: price $11.18 < $15  •  CVI: avgVol 1.0M < 1M  •  DK: relVol 0.8× < 2× (todayVol 1.1M)  •  VIRT: relVol 1.2× < 2× (todayVol 1.7M)  •  RGTI: relVol 0.8× < 2× (todayVol 16.4M)  •  MRNA: below VWAP (price $141.60 < VWAP $148.66)  •  INFQ: price $13.90 < $15"
+    },
+    {
+      "time": "2026-08-21T18:59:40.074Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T18:59:40.189Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 49, kept 21",
+      "detail": "HUT, SA, TLX, IOVA, CIFR, OSIS, BABA, BKV, WULF, CBRS"
+    },
+    {
+      "time": "2026-08-21T18:59:46.360Z",
+      "type": "INFO",
+      "msg": "Short rejections (21)",
+      "detail": "HUT: relVol 1.6× < 2.5× (todayVol 8.1M)  •  SA: avgVol 0.7M < 1M  •  TLX: price $11.33 < $20 (short floor)  •  IOVA: price $8.23 < $20 (short floor)  •  CIFR: price $15.77 < $20 (short floor)  •  OSIS: avgVol 0.2M < 1M  •  BABA: relVol 2.2× < 2.5× (todayVol 24.8M)  •  BKV: avgVol 1.0M < 1M  •  WULF: price $15.40 < $20 (short floor)  •  CBRS: relVol 0.8× < 2.5× (todayVol 5.7M)  •  RIOT: price $19.82 < $20 (short floor)  •  MRVL: net up over ~5d ($222.02→$237.53) — no short into uptrend"
+    },
+    {
+      "time": "2026-08-21T18:59:46.360Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
