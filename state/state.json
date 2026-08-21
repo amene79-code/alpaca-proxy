@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-21T14:13:00.998Z",
+  "lastRun": "2026-08-21T14:23:31.673Z",
   "log": [
-    {
-      "time": "2026-08-20T16:34:42.105Z",
-      "type": "INFO",
-      "msg": "Top short: AAP (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T16:34:42.105Z",
-      "type": "INFO",
-      "msg": "SKIP AAP — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T16:45:00.926Z",
-      "type": "INFO",
-      "msg": "Account: $99982.87 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-20T16:45:02.183Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MARA, TEM, BTDR, IOVA, CRCL, MSTR, BMNR, XXI, CLSK, CNH"
-    },
-    {
-      "time": "2026-08-20T16:45:02.184Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-20T16:45:02.699Z",
-      "type": "SIGNAL",
-      "msg": "TEM — score 11 | gap 10.7% | relVol 2.4× | RSI 33",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-08-20T16:45:16.986Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "MARA: price $10.77 < $15  •  BTDR: price $10.56 < $15  •  IOVA: price $8.68 < $15  •  CRCL: relVol 1.3× < 2× (todayVol 15.4M)  •  MSTR: relVol 1.7× < 2× (todayVol 30.4M)  •  BMNR: relVol 1.4× < 2× (todayVol 44.9M)  •  XXI: price $6.16 < $15  •  CLSK: price $12.35 < $15  •  CNH: price $10.89 < $15  •  SKHY: relVol 0.5× < 2× (todayVol 15.9M)  •  ANDG: avgVol 0.5M < 1M  •  LB: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-08-20T16:45:16.987Z",
-      "type": "INFO",
-      "msg": "Top signal: TEM (score 11)",
-      "detail": ""
-    },
     {
       "time": "2026-08-20T16:45:16.987Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-21T14:13:00.998Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T14:23:14.661Z",
+      "type": "INFO",
+      "msg": "Account: $99982.80 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T14:23:15.582Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MRNA, HOOD, COIN, CLF, BTDR, CRCL, TGTX, PURR, FCX, MSTR"
+    },
+    {
+      "time": "2026-08-21T14:23:15.582Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-21T14:23:27.605Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MRNA: relVol 1.3× < 2× (todayVol 26.7M)  •  HOOD: relVol 1.2× < 2× (todayVol 21.9M)  •  COIN: relVol 1.0× < 2× (todayVol 8.8M)  •  CLF: price $11.58 < $15  •  BTDR: price $11.23 < $15  •  CRCL: relVol 1.0× < 2× (todayVol 11.8M)  •  TGTX: relVol 0.8× < 2× (todayVol 1.8M)  •  PURR: price $10.70 < $15  •  FCX: relVol 0.8× < 2× (todayVol 9.6M)  •  MSTR: relVol 1.0× < 2× (todayVol 19.0M)  •  SOFI: relVol 0.4× < 2× (todayVol 21.2M)  •  SIND: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-08-21T14:23:27.605Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-21T14:23:27.751Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 48, kept 13",
+      "detail": "UI, TLX, BABA, OSIS, HUT, AEHR, MRVL, MWH, CBRS, CIFR"
+    },
+    {
+      "time": "2026-08-21T14:23:31.672Z",
+      "type": "INFO",
+      "msg": "Short rejections (13)",
+      "detail": "UI: avgVol 0.1M < 1M  •  TLX: price $11.37 < $20 (short floor)  •  BABA: relVol 1.1× < 2.5× (todayVol 11.6M)  •  OSIS: avgVol 0.2M < 1M  •  HUT: relVol 0.5× < 2.5× (todayVol 2.6M)  •  AEHR: relVol 0.3× < 2.5× (todayVol 0.7M)  •  MRVL: net up over ~5d ($222.02→$236.99) — no short into uptrend  •  MWH: relVol 0.1× < 2.5× (todayVol 0.2M)  •  CBRS: relVol 0.3× < 2.5× (todayVol 2.3M)  •  CIFR: price $16.36 < $20 (short floor)  •  GOF: price $9.02 < $20 (short floor)  •  LIME: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-08-21T14:23:31.672Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
