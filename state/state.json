@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-24T18:05:15.577Z",
+  "lastRun": "2026-08-24T18:16:03.911Z",
   "log": [
-    {
-      "time": "2026-08-21T20:22:36.333Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T20:48:20.994Z",
-      "type": "INFO",
-      "msg": "Account: $99944.43 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T20:48:21.003Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T20:48:21.115Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T21:09:21.596Z",
-      "type": "INFO",
-      "msg": "Account: $99944.43 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T21:09:21.656Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T21:09:22.242Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T13:58:48.691Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
     {
       "time": "2026-08-24T13:58:48.804Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-24T18:05:15.577Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T18:15:33.447Z",
+      "type": "INFO",
+      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T18:15:34.910Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BMNR, SNAP, GENB, SA, EZPW, NG, RUM, LIFE, CNK, ETSY"
+    },
+    {
+      "time": "2026-08-24T18:15:34.910Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-24T18:15:48.678Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "BMNR: relVol 1.5× < 2× (todayVol 51.5M)  •  SNAP: price $5.45 < $15  •  GENB: avgVol 0.7M < 1M  •  SA: avgVol 0.8M < 1M  •  EZPW: relVol 1.4× < 2× (todayVol 1.6M)  •  NG: price $9.33 < $15  •  RUM: price $9.63 < $15  •  LIFE: relVol 1.0× < 2× (todayVol 1.8M)  •  CNK: relVol 0.5× < 2× (todayVol 1.2M)  •  ETSY: relVol 0.5× < 2× (todayVol 1.6M)  •  SGHC: price $14.04 < $15  •  VERA: relVol 0.7× < 2× (todayVol 1.4M)"
+    },
+    {
+      "time": "2026-08-24T18:15:48.678Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T18:15:48.847Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AAOI, NN, AUR, HIMS, XPEV, PONY, TEM, RGTI, NBTX, ASTS"
+    },
+    {
+      "time": "2026-08-24T18:16:03.911Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "AAOI: relVol 0.9× < 2.5× (todayVol 11.5M)  •  NN: price $15.65 < $20 (short floor)  •  AUR: price $5.66 < $20 (short floor)  •  HIMS: net up over ~5d ($28.61→$30.71) — no short into uptrend  •  XPEV: price $11.15 < $20 (short floor)  •  PONY: price $7.53 < $20 (short floor)  •  TEM: net up over ~5d ($51.64→$66.55) — no short into uptrend  •  RGTI: price $16.44 < $20 (short floor)  •  NBTX: avgVol 0.2M < 1M  •  ASTS: relVol 0.5× < 2.5× (todayVol 6.1M)  •  LUNR: price $16.89 < $20 (short floor)  •  AXTI: relVol 0.5× < 2.5× (todayVol 6.8M)"
+    },
+    {
+      "time": "2026-08-24T18:16:03.911Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
