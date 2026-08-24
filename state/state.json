@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-24T19:51:40.257Z",
+  "lastRun": "2026-08-24T20:01:53.897Z",
   "log": [
-    {
-      "time": "2026-08-24T15:13:49.106Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "AAOI: relVol 0.6× < 2.5× (todayVol 8.5M)  •  AXTI: relVol 0.3× < 2.5× (todayVol 4.6M)  •  NBTX: avgVol 0.2M < 1M  •  PONY: price $7.49 < $20 (short floor)  •  INOD: relVol 0.5× < 2.5× (todayVol 0.8M)  •  SLS: price $14.11 < $20 (short floor)  •  SNDK: relVol 0.4× < 2.5× (todayVol 6.4M)  •  HIMS: net up over ~5d ($28.61→$31.00) — no short into uptrend  •  LUNR: price $16.89 < $20 (short floor)  •  FORM: relVol 0.2× < 2.5× (todayVol 0.3M)  •  XPEV: price $11.30 < $20 (short floor)  •  MANE: avgVol 0.8M < 1M"
-    },
-    {
-      "time": "2026-08-24T15:13:49.106Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T15:24:02.572Z",
-      "type": "INFO",
-      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-24T15:24:03.763Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-08-24T19:51:40.257Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T20:01:53.588Z",
+      "type": "INFO",
+      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T20:01:53.665Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T20:01:53.897Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
