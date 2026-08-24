@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-24T13:59:09.498Z",
+  "lastRun": "2026-08-24T14:09:53.052Z",
   "log": [
-    {
-      "time": "2026-08-21T15:48:13.695Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T15:48:13.812Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 41, kept 16",
-      "detail": "HUT, OSIS, TLX, CIFR, PLBL, SA, BABA, MRVL, IOVA, AEHR"
-    },
-    {
-      "time": "2026-08-21T15:48:18.674Z",
-      "type": "INFO",
-      "msg": "Short rejections (16)",
-      "detail": "HUT: relVol 1.2× < 2.5× (todayVol 5.8M)  •  OSIS: avgVol 0.2M < 1M  •  TLX: price $11.34 < $20 (short floor)  •  CIFR: price $15.86 < $20 (short floor)  •  PLBL: price $5.78 < $20 (short floor)  •  SA: avgVol 0.7M < 1M  •  BABA: relVol 1.6× < 2.5× (todayVol 17.6M)  •  MRVL: net up over ~5d ($222.02→$235.18) — no short into uptrend  •  IOVA: price $8.48 < $20 (short floor)  •  AEHR: relVol 0.4× < 2.5× (todayVol 1.1M)  •  UI: avgVol 0.1M < 1M  •  CLSK: price $11.94 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-21T15:48:18.674Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T15:58:35.871Z",
-      "type": "INFO",
-      "msg": "Account: $99944.43 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T15:58:36.931Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "HOOD, MRNA, COIN, BTDR, MSTR, SOFI, FCX, INFQ, USAR, RIVN"
-    },
-    {
-      "time": "2026-08-21T15:58:36.931Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-21T15:58:49.118Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "HOOD: relVol 1.6× < 2× (todayVol 30.4M)  •  MRNA: below VWAP (price $147.18 < VWAP $149.88)  •  COIN: relVol 1.5× < 2× (todayVol 13.0M)  •  BTDR: price $11.24 < $15  •  MSTR: relVol 1.4× < 2× (todayVol 28.4M)  •  SOFI: relVol 0.6× < 2× (todayVol 36.5M)  •  FCX: relVol 1.3× < 2× (todayVol 16.1M)  •  INFQ: price $13.95 < $15  •  USAR: relVol 0.9× < 2× (todayVol 11.4M)  •  RIVN: relVol 0.8× < 2× (todayVol 18.9M)  •  UEC: price $12.36 < $15  •  CRCL: relVol 1.3× < 2× (todayVol 16.7M)"
-    },
     {
       "time": "2026-08-21T15:58:49.119Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-24T13:59:09.498Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T14:09:25.830Z",
+      "type": "INFO",
+      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T14:09:27.024Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 34, actives 35, kept 24",
+      "detail": "CLF, BMNR, VERA, EZPW, NG, SA, AVAH, MSTR, MARA, VALE"
+    },
+    {
+      "time": "2026-08-24T14:09:27.024Z",
+      "type": "INFO",
+      "msg": "Scanning 24 candidates",
+      "detail": "24 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-24T14:09:36.198Z",
+      "type": "INFO",
+      "msg": "Rejections (24)",
+      "detail": "CLF: price $12.01 < $15  •  BMNR: relVol 0.5× < 2× (todayVol 16.4M)  •  VERA: relVol 0.2× < 2× (todayVol 0.4M)  •  EZPW: relVol 0.6× < 2× (todayVol 0.6M)  •  NG: price $9.22 < $15  •  SA: avgVol 0.8M < 1M  •  AVAH: price $13.85 < $15  •  MSTR: gap 3.7% < 4% (price $123.72 vs priorClose $119.25)  •  MARA: price $11.48 < $15  •  VALE: price $14.99 < $15  •  WMT: gap 0.8% < 4% (price $104.52 vs priorClose $103.70)  •  WULF: gap 0.5% < 4% (price $15.72 vs priorClose $15.64)"
+    },
+    {
+      "time": "2026-08-24T14:09:36.198Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T14:09:36.565Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AAOI, SNDK, AXTI, HIMS, NBTX, PONY, SLS, MRNA, INFQ, LUNR"
+    },
+    {
+      "time": "2026-08-24T14:09:53.051Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "AAOI: relVol 0.4× < 2.5× (todayVol 5.5M)  •  SNDK: relVol 0.2× < 2.5× (todayVol 4.0M)  •  AXTI: relVol 0.2× < 2.5× (todayVol 3.0M)  •  HIMS: net up over ~5d ($28.61→$30.81) — no short into uptrend  •  NBTX: avgVol 0.2M < 1M  •  PONY: price $7.53 < $20 (short floor)  •  SLS: price $14.16 < $20 (short floor)  •  MRNA: net up over ~5d ($64.46→$132.82) — no short into uptrend  •  INFQ: price $12.93 < $20 (short floor)  •  LUNR: price $16.81 < $20 (short floor)  •  AEHR: relVol 0.2× < 2.5× (todayVol 0.6M)  •  STX: relVol 0.1× < 2.5× (todayVol 0.7M)"
+    },
+    {
+      "time": "2026-08-24T14:09:53.051Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
