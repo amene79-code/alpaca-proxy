@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-24T18:58:55.635Z",
+  "lastRun": "2026-08-24T19:09:38.829Z",
   "log": [
-    {
-      "time": "2026-08-24T14:41:30.127Z",
-      "type": "INFO",
-      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T14:41:30.901Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 34",
-      "detail": "PURR, BMNR, CLF, MARA, MSTR, CRCL, NG, EZPW, VERA, LIFE"
-    },
-    {
-      "time": "2026-08-24T14:41:30.901Z",
-      "type": "INFO",
-      "msg": "Scanning 34 candidates",
-      "detail": "34 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-24T14:41:40.908Z",
-      "type": "INFO",
-      "msg": "Rejections (34)",
-      "detail": "PURR: price $11.39 < $15  •  BMNR: relVol 0.7× < 2× (todayVol 24.3M)  •  CLF: price $12.02 < $15  •  MARA: price $11.98 < $15  •  MSTR: relVol 0.9× < 2× (todayVol 18.0M)  •  CRCL: relVol 0.7× < 2× (todayVol 8.6M)  •  NG: price $9.32 < $15  •  EZPW: relVol 0.7× < 2× (todayVol 0.8M)  •  VERA: relVol 0.3× < 2× (todayVol 0.7M)  •  LIFE: relVol 0.5× < 2× (todayVol 0.8M)  •  AVAH: price $13.90 < $15  •  RUM: price $9.52 < $15"
-    },
-    {
-      "time": "2026-08-24T14:41:40.908Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T14:41:41.043Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "AAOI, PONY, SNDK, SLS, INOD, AXTI, NBTX, LUNR, HIMS, FORM"
-    },
-    {
-      "time": "2026-08-24T14:41:53.540Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "AAOI: relVol 0.5× < 2.5× (todayVol 7.2M)  •  PONY: price $7.47 < $20 (short floor)  •  SNDK: relVol 0.3× < 2.5× (todayVol 5.2M)  •  SLS: price $14.09 < $20 (short floor)  •  INOD: relVol 0.4× < 2.5× (todayVol 0.7M)  •  AXTI: relVol 0.3× < 2.5× (todayVol 3.9M)  •  NBTX: avgVol 0.2M < 1M  •  LUNR: price $16.89 < $20 (short floor)  •  HIMS: net up over ~5d ($28.61→$31.23) — no short into uptrend  •  FORM: relVol 0.2× < 2.5× (todayVol 0.2M)  •  MANE: avgVol 0.8M < 1M  •  AGX: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-08-24T14:41:53.540Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-24T14:52:06.870Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-24T18:58:55.635Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T19:09:09.106Z",
+      "type": "INFO",
+      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T19:09:10.224Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BMNR, GENB, SA, EZPW, NG, LIFE, ETSY, SGHC, BMA, RUM"
+    },
+    {
+      "time": "2026-08-24T19:09:10.224Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-24T19:09:24.316Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "BMNR: relVol 1.6× < 2× (todayVol 55.4M)  •  GENB: avgVol 0.7M < 1M  •  SA: avgVol 0.8M < 1M  •  EZPW: relVol 1.6× < 2× (todayVol 1.8M)  •  NG: price $9.40 < $15  •  LIFE: relVol 1.1× < 2× (todayVol 1.9M)  •  ETSY: relVol 0.7× < 2× (todayVol 2.1M)  •  SGHC: price $14.06 < $15  •  BMA: avgVol 0.3M < 1M  •  RUM: price $9.53 < $15  •  GGAL: avgVol 0.9M < 1M  •  CLBT: price $11.62 < $15"
+    },
+    {
+      "time": "2026-08-24T19:09:24.316Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T19:09:24.575Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AAOI, HIMS, NN, XPEV, EGIEY, RGTI, PONY, NBTX, LUNR, AUR"
+    },
+    {
+      "time": "2026-08-24T19:09:38.829Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "AAOI: relVol 0.9× < 2.5× (todayVol 12.2M)  •  HIMS: net up over ~5d ($28.61→$30.61) — no short into uptrend  •  NN: price $15.91 < $20 (short floor)  •  XPEV: price $11.15 < $20 (short floor)  •  EGIEY: price $5.50 < $20 (short floor)  •  RGTI: price $16.42 < $20 (short floor)  •  PONY: price $7.55 < $20 (short floor)  •  NBTX: avgVol 0.2M < 1M  •  LUNR: price $16.81 < $20 (short floor)  •  AUR: price $5.72 < $20 (short floor)  •  ASTS: relVol 0.6× < 2.5× (todayVol 7.2M)  •  FRVO: price $15.57 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-24T19:09:38.829Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
