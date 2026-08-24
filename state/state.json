@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-24T17:43:50.569Z",
+  "lastRun": "2026-08-24T17:54:26.758Z",
   "log": [
-    {
-      "time": "2026-08-21T19:31:21.136Z",
-      "type": "INFO",
-      "msg": "Account: $99944.43 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T19:31:21.563Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T19:41:33.797Z",
-      "type": "INFO",
-      "msg": "Account: $99944.43 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T19:41:33.901Z",
-      "type": "INFO",
-      "msg": "EOD review (19 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T19:41:33.901Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T19:51:48.680Z",
-      "type": "INFO",
-      "msg": "Account: $99944.43 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T19:51:48.981Z",
-      "type": "INFO",
-      "msg": "EOD review (9 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-21T19:51:48.981Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
     {
       "time": "2026-08-21T20:02:06.192Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-24T17:43:50.569Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T17:54:03.325Z",
+      "type": "INFO",
+      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T17:54:04.083Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 45, actives 50, kept 34",
+      "detail": "BMNR, SNAP, SA, GENB, NG, EZPW, CNK, RUM, SGHC, ETSY"
+    },
+    {
+      "time": "2026-08-24T17:54:04.083Z",
+      "type": "INFO",
+      "msg": "Scanning 34 candidates",
+      "detail": "34 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-24T17:54:14.342Z",
+      "type": "INFO",
+      "msg": "Rejections (34)",
+      "detail": "BMNR: relVol 1.4× < 2× (todayVol 49.7M)  •  SNAP: price $5.45 < $15  •  SA: avgVol 0.8M < 1M  •  GENB: avgVol 0.7M < 1M  •  NG: price $9.31 < $15  •  EZPW: relVol 1.4× < 2× (todayVol 1.6M)  •  CNK: relVol 0.5× < 2× (todayVol 1.2M)  •  RUM: price $9.57 < $15  •  SGHC: price $14.02 < $15  •  ETSY: relVol 0.5× < 2× (todayVol 1.5M)  •  MARA: price $11.44 < $15  •  VALE: price $14.98 < $15"
+    },
+    {
+      "time": "2026-08-24T17:54:14.342Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T17:54:14.483Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AAOI, AUR, AXTI, NN, HIMS, PONY, RGTI, LUNR, XPEV, AGX"
+    },
+    {
+      "time": "2026-08-24T17:54:26.758Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "AAOI: relVol 0.8× < 2.5× (todayVol 11.2M)  •  AUR: price $5.64 < $20 (short floor)  •  AXTI: relVol 0.5× < 2.5× (todayVol 6.6M)  •  NN: price $16.02 < $20 (short floor)  •  HIMS: net up over ~5d ($28.61→$30.85) — no short into uptrend  •  PONY: price $7.53 < $20 (short floor)  •  RGTI: price $16.43 < $20 (short floor)  •  LUNR: price $16.81 < $20 (short floor)  •  XPEV: price $11.19 < $20 (short floor)  •  AGX: avgVol 0.3M < 1M  •  FRHC: avgVol 0.1M < 1M  •  ASTS: relVol 0.5× < 2.5× (todayVol 5.3M)"
+    },
+    {
+      "time": "2026-08-24T17:54:26.758Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
