@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-24T20:12:06.775Z",
+  "lastRun": "2026-08-24T20:22:19.387Z",
   "log": [
-    {
-      "time": "2026-08-24T15:24:19.140Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T15:24:19.427Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "AAOI, AXTI, PONY, NBTX, SLS, INOD, SNDK, HIMS, FORM, TEM"
-    },
-    {
-      "time": "2026-08-24T15:24:35.899Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "AAOI: relVol 0.6× < 2.5× (todayVol 8.6M)  •  AXTI: relVol 0.3× < 2.5× (todayVol 4.8M)  •  PONY: price $7.41 < $20 (short floor)  •  NBTX: avgVol 0.2M < 1M  •  SLS: price $14.08 < $20 (short floor)  •  INOD: relVol 0.5× < 2.5× (todayVol 0.8M)  •  SNDK: relVol 0.4× < 2.5× (todayVol 6.5M)  •  HIMS: net up over ~5d ($28.61→$31.05) — no short into uptrend  •  FORM: relVol 0.3× < 2.5× (todayVol 0.3M)  •  TEM: net up over ~5d ($51.64→$67.25) — no short into uptrend  •  LUNR: price $16.96 < $20 (short floor)  •  BFLY: price $8.84 < $20 (short floor)"
-    },
     {
       "time": "2026-08-24T15:24:35.899Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-24T20:12:06.775Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T20:22:19.224Z",
+      "type": "INFO",
+      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T20:22:19.237Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-24T20:22:19.387Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
