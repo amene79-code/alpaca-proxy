@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-25T17:27:56.895Z",
+  "lastRun": "2026-08-25T17:38:35.978Z",
   "log": [
-    {
-      "time": "2026-08-24T19:51:39.627Z",
-      "type": "INFO",
-      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T19:51:40.257Z",
-      "type": "INFO",
-      "msg": "EOD review (9 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T19:51:40.257Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T20:01:53.588Z",
-      "type": "INFO",
-      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T20:01:53.665Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T20:01:53.897Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T20:12:06.658Z",
-      "type": "INFO",
-      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T20:12:06.665Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T20:12:06.775Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T20:22:19.224Z",
-      "type": "INFO",
-      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-24T20:22:19.237Z",
       "type": "INFO",
@@ -1268,6 +1208,66 @@
     },
     {
       "time": "2026-08-25T17:27:56.895Z",
+      "type": "INFO",
+      "msg": "SKIP DKS — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T17:38:13.939Z",
+      "type": "INFO",
+      "msg": "Account: $99967.82 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T17:38:14.989Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MRNA, STDN, ABCL, GENB, SMCI, SMR, PURR, HOOD, MARA, RUM"
+    },
+    {
+      "time": "2026-08-25T17:38:14.989Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-25T17:38:29.856Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MRNA: relVol 1.3× < 2× (todayVol 34.3M)  •  STDN: price $14.05 < $15  •  ABCL: price $12.26 < $15  •  GENB: avgVol 0.8M < 1M  •  SMCI: relVol 0.6× < 2× (todayVol 31.9M)  •  SMR: price $9.80 < $15  •  PURR: price $11.43 < $15  •  HOOD: relVol 0.8× < 2× (todayVol 16.4M)  •  MARA: price $11.95 < $15  •  RUM: price $10.43 < $15  •  OKLO: relVol 0.8× < 2× (todayVol 7.0M)  •  CLSK: price $12.68 < $15"
+    },
+    {
+      "time": "2026-08-25T17:38:29.857Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T17:38:30.009Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 16",
+      "detail": "DKS, MAAS, BETA, LBTYB, BBWI, RBRK, ALB, JMKE, ASO, TENB"
+    },
+    {
+      "time": "2026-08-25T17:38:30.436Z",
+      "type": "SIGNAL",
+      "msg": "DKS — SHORT score 11 | gap -29.4% | relVol 8.7× | RSI 43",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T17:38:35.978Z",
+      "type": "INFO",
+      "msg": "Short rejections (15)",
+      "detail": "MAAS: price $14.41 < $20 (short floor)  •  BETA: relVol 0.5× < 2.5× (todayVol 1.0M)  •  LBTYB: no 5m candles  •  BBWI: price $18.04 < $20 (short floor)  •  RBRK: relVol 0.5× < 2.5× (todayVol 1.6M)  •  ALB: net up over ~5d ($132.71→$134.02) — no short into uptrend  •  JMKE: net up over ~5d ($21.71→$22.39) — no short into uptrend  •  ASO: relVol 1.4× < 2.5× (todayVol 1.9M)  •  TENB: relVol 0.2× < 2.5× (todayVol 0.6M)  •  VIST: avgVol 0.9M < 1M  •  KTB: avgVol 0.7M < 1M  •  TTAN: net up over ~5d ($91.11→$91.67) — no short into uptrend"
+    },
+    {
+      "time": "2026-08-25T17:38:35.978Z",
+      "type": "INFO",
+      "msg": "Top short: DKS (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T17:38:35.978Z",
       "type": "INFO",
       "msg": "SKIP DKS — already traded today",
       "detail": ""
