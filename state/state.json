@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-25T20:18:40.890Z",
+  "lastRun": "2026-08-25T20:28:51.957Z",
   "log": [
-    {
-      "time": "2026-08-25T15:31:31.649Z",
-      "type": "INFO",
-      "msg": "Short rejections (8)",
-      "detail": "LBTYB: no 5m candles  •  SSL: price $11.54 < $20 (short floor)  •  JMKE: net up over ~5d ($21.71→$22.41) — no short into uptrend  •  ALB: net up over ~5d ($132.71→$135.10) — no short into uptrend  •  LULU: relVol 0.5× < 2.5× (todayVol 1.4M)  •  BETA: relVol 0.2× < 2.5× (todayVol 0.4M)  •  SWKS: relVol 0.3× < 2.5× (todayVol 1.5M)  •  LEVI: relVol 0.3× < 2.5× (todayVol 0.6M)"
-    },
-    {
-      "time": "2026-08-25T15:31:31.649Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T15:41:47.665Z",
-      "type": "INFO",
-      "msg": "Account: $99951.86 | 1 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-25T15:41:48.511Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-25T20:18:40.890Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T20:28:51.802Z",
+      "type": "INFO",
+      "msg": "Account: $99967.82 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T20:28:51.811Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T20:28:51.957Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
