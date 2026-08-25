@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-25T19:26:20.582Z",
+  "lastRun": "2026-08-25T19:37:41.306Z",
   "log": [
-    {
-      "time": "2026-08-25T15:20:39.174Z",
-      "type": "INFO",
-      "msg": "Account: $99946.13 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T15:20:39.709Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, GENB, STDN, SMCI, ABCL, PURR, MRVL, BMNR, IREN, SMR"
-    },
-    {
-      "time": "2026-08-25T15:20:39.709Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-25T15:20:52.357Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-08-25T19:26:20.582Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T19:37:40.702Z",
+      "type": "INFO",
+      "msg": "Account: $99967.82 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T19:37:41.306Z",
+      "type": "INFO",
+      "msg": "EOD review (23 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T19:37:41.306Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
