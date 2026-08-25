@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-25T14:06:30.207Z",
+  "lastRun": "2026-08-25T14:17:04.504Z",
   "log": [
-    {
-      "time": "2026-08-24T16:07:48.703Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "AAOI: relVol 0.7× < 2.5× (todayVol 9.6M)  •  INOD: relVol 0.6× < 2.5× (todayVol 1.0M)  •  AXTI: relVol 0.4× < 2.5× (todayVol 5.6M)  •  PONY: price $7.53 < $20 (short floor)  •  HIMS: net up over ~5d ($28.61→$30.97) — no short into uptrend  •  FRVO: price $15.57 < $20 (short floor)  •  NBTX: avgVol 0.2M < 1M  •  AGX: avgVol 0.3M < 1M  •  SLS: price $14.32 < $20 (short floor)  •  ABCL: price $10.51 < $20 (short floor)  •  INFQ: price $13.11 < $20 (short floor)  •  XPEV: price $11.34 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-24T16:07:48.703Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T16:18:00.957Z",
-      "type": "INFO",
-      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T16:18:01.587Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BMNR, MSTR, CLF, NG, RUM, SA, LIFE, EZPW, VERA, CNK"
-    },
-    {
-      "time": "2026-08-24T16:18:01.587Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-24T16:18:14.359Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "BMNR: relVol 1.2× < 2× (todayVol 41.4M)  •  MSTR: relVol 1.3× < 2× (todayVol 27.4M)  •  CLF: price $11.75 < $15  •  NG: price $9.38 < $15  •  RUM: price $9.70 < $15  •  SA: avgVol 0.8M < 1M  •  LIFE: relVol 0.8× < 2× (todayVol 1.4M)  •  EZPW: relVol 1.1× < 2× (todayVol 1.2M)  •  VERA: relVol 0.5× < 2× (todayVol 1.0M)  •  CNK: relVol 0.2× < 2× (todayVol 0.6M)  •  AVAH: price $13.88 < $15  •  GENB: avgVol 0.7M < 1M"
-    },
-    {
-      "time": "2026-08-24T16:18:14.360Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-24T16:18:14.500Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "AAOI, INOD, PONY, HIMS, NBTX, AXTI, FRVO, INFQ, LUNR, TEM"
-    },
     {
       "time": "2026-08-24T16:18:27.441Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-25T14:06:30.207Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T14:16:45.461Z",
+      "type": "INFO",
+      "msg": "Account: $99944.38 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T14:16:46.270Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 38, kept 40",
+      "detail": "MRNA, SMCI, ABCL, MRVL, PURR, MAIR, HOOD, GENB, STDN, CDLR"
+    },
+    {
+      "time": "2026-08-25T14:16:46.270Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-25T14:17:01.077Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MRNA: relVol 0.5× < 2× (todayVol 13.0M)  •  SMCI: relVol 0.3× < 2× (todayVol 14.0M)  •  ABCL: price $11.94 < $15  •  MRVL: relVol 0.3× < 2× (todayVol 7.6M)  •  PURR: price $11.27 < $15  •  MAIR: relVol 0.7× < 2× (todayVol 1.9M)  •  HOOD: relVol 0.3× < 2× (todayVol 5.8M)  •  GENB: avgVol 0.7M < 1M  •  STDN: price $12.88 < $15  •  CDLR: avgVol 0.1M < 1M  •  BEAM: relVol 0.2× < 2× (todayVol 0.2M)  •  TWST: relVol 0.1× < 2× (todayVol 0.2M)"
+    },
+    {
+      "time": "2026-08-25T14:17:01.077Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T14:17:01.192Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 42, kept 8",
+      "detail": "DKS, ALB, FIGS, DAR, PAY, SSL, LBTYB, TGT"
+    },
+    {
+      "time": "2026-08-25T14:17:04.504Z",
+      "type": "INFO",
+      "msg": "Short rejections (8)",
+      "detail": "DKS: RSI 3 < 12 (washed out — don't short the bottom)  •  ALB: net up over ~5d ($132.71→$133.37) — no short into uptrend  •  FIGS: price $14.35 < $20 (short floor)  •  DAR: relVol 0.1× < 2.5× (todayVol 0.3M)  •  PAY: relVol 0.1× < 2.5× (todayVol 0.1M)  •  SSL: price $11.73 < $20 (short floor)  •  LBTYB: no 5m candles  •  TGT: net up over ~5d ($152.48→$162.74) — no short into uptrend"
+    },
+    {
+      "time": "2026-08-25T14:17:04.504Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
