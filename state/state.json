@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-25T19:58:09.078Z",
+  "lastRun": "2026-08-25T20:08:26.883Z",
   "log": [
-    {
-      "time": "2026-08-25T15:31:12.222Z",
-      "type": "INFO",
-      "msg": "Account: $99955.69 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T15:31:13.501Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, GENB, ABCL, STDN, SMCI, PURR, MRVL, HOOD, IREN, MARA"
-    },
-    {
-      "time": "2026-08-25T15:31:13.501Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-25T15:31:28.208Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-08-25T19:58:09.078Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T20:08:26.562Z",
+      "type": "INFO",
+      "msg": "Account: $99967.82 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T20:08:26.633Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-25T20:08:26.883Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
