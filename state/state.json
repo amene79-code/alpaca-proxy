@@ -1,6 +1,31 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 0,
+  "trailingStops": {
+    "ANF": {
+      "side": "long",
+      "entry": 144.46499633789062,
+      "high": 144.46499633789062,
+      "low": 144.46499633789062,
+      "initialSl": 142.16,
+      "sl": 142.16,
+      "tp": 150.61,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "BZ": {
+      "side": "long",
+      "entry": 19.03499984741211,
+      "high": 19.03499984741211,
+      "low": 19.03499984741211,
+      "initialSl": 18.72,
+      "sl": 18.72,
+      "tp": 19.87,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 2,
   "dailyDate": "2026-08-26",
   "openPositions": [
     "FIVE",
@@ -70,92 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-26T14:34:14.793Z",
+  "lastRun": "2026-08-26T14:45:01.485Z",
   "log": [
-    {
-      "time": "2026-08-25T16:45:12.747Z",
-      "type": "INFO",
-      "msg": "Account: $99967.82 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T16:45:13.637Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, STDN, ABCL, SMCI, PURR, HOOD, GENB, MARA, SMR, IREN"
-    },
-    {
-      "time": "2026-08-25T16:45:13.638Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-25T16:45:28.358Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "MRNA: relVol 1.2× < 2× (todayVol 31.8M)  •  STDN: price $14.45 < $15  •  ABCL: price $12.25 < $15  •  SMCI: relVol 0.5× < 2× (todayVol 29.4M)  •  PURR: price $11.52 < $15  •  HOOD: relVol 0.8× < 2× (todayVol 14.9M)  •  GENB: avgVol 0.8M < 1M  •  MARA: price $11.87 < $15  •  SMR: price $9.61 < $15  •  IREN: relVol 0.4× < 2× (todayVol 17.4M)  •  MRVL: relVol 0.6× < 2× (todayVol 12.8M)  •  CIFR: relVol 0.5× < 2× (todayVol 18.5M)"
-    },
-    {
-      "time": "2026-08-25T16:45:28.359Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T16:45:28.477Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 12",
-      "detail": "DKS, SSL, LBTYB, BETA, ALB, RBRK, ASO, WSO, BURL, VIST"
-    },
-    {
-      "time": "2026-08-25T16:45:33.251Z",
-      "type": "INFO",
-      "msg": "Short rejections (12)",
-      "detail": "DKS: ATR 0.42% < 0.5%  •  SSL: price $11.44 < $20 (short floor)  •  LBTYB: no 5m candles  •  BETA: relVol 0.4× < 2.5× (todayVol 0.8M)  •  ALB: net up over ~5d ($132.71→$134.17) — no short into uptrend  •  RBRK: relVol 0.4× < 2.5× (todayVol 1.2M)  •  ASO: relVol 1.2× < 2.5× (todayVol 1.7M)  •  WSO: avgVol 0.6M < 1M  •  BURL: avgVol 0.8M < 1M  •  VIST: avgVol 0.9M < 1M  •  BBWI: price $18.41 < $20 (short floor)  •  LULU: relVol 0.7× < 2.5× (todayVol 1.8M)"
-    },
-    {
-      "time": "2026-08-25T16:45:33.252Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T16:55:50.396Z",
-      "type": "INFO",
-      "msg": "Account: $99967.82 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T16:55:51.320Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, STDN, ABCL, SMCI, PURR, HOOD, SMR, CLSK, GENB, MARA"
-    },
-    {
-      "time": "2026-08-25T16:55:51.320Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-25T16:56:04.486Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "MRNA: relVol 1.2× < 2× (todayVol 32.6M)  •  STDN: price $14.48 < $15  •  ABCL: price $12.29 < $15  •  SMCI: relVol 0.5× < 2× (todayVol 29.9M)  •  PURR: price $11.45 < $15  •  HOOD: relVol 0.8× < 2× (todayVol 15.3M)  •  SMR: price $9.60 < $15  •  CLSK: price $12.65 < $15  •  GENB: avgVol 0.8M < 1M  •  MARA: price $11.82 < $15  •  IREN: relVol 0.4× < 2× (todayVol 17.8M)  •  CIFR: relVol 0.5× < 2× (todayVol 18.7M)"
-    },
-    {
-      "time": "2026-08-25T16:56:04.486Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T16:56:04.654Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 12",
-      "detail": "DKS, BETA, LBTYB, ALB, RBRK, BURL, BBWI, WSO, ASO, VIST"
-    },
     {
       "time": "2026-08-25T16:56:08.833Z",
       "type": "INFO",
@@ -1271,9 +1212,96 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-08-26T14:44:30.953Z",
+      "type": "INFO",
+      "msg": "Account: $99967.78 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T14:44:31.713Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 39",
+      "detail": "BZ, ANF, SMMT, SMTC, BBWI, TTMI, ZYME, P, ACHC, LB"
+    },
+    {
+      "time": "2026-08-26T14:44:31.713Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "39 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-26T14:44:31.960Z",
+      "type": "SIGNAL",
+      "msg": "BZ — score 8 | gap 16.9% | relVol 2.1× | RSI 79",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T14:44:32.411Z",
+      "type": "SIGNAL",
+      "msg": "ANF — score 9 | gap 32.7% | relVol 3.5× | RSI 70",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T14:44:46.851Z",
+      "type": "INFO",
+      "msg": "Rejections (37)",
+      "detail": "SMMT: price $14.17 < $15  •  SMTC: relVol 1.9× < 2× (todayVol 5.4M)  •  BBWI: relVol 1.0× < 2× (todayVol 5.7M)  •  TTMI: relVol 0.5× < 2× (todayVol 1.4M)  •  ZYME: avgVol 0.6M < 1M  •  P: relVol 0.3× < 2× (todayVol 0.9M)  •  ACHC: relVol 0.3× < 2× (todayVol 0.5M)  •  LB: avgVol 0.4M < 1M  •  CRK: price $14.91 < $15  •  DTM: relVol 0.5× < 2× (todayVol 0.5M)  •  META: gap 1.1% < 4% (price $576.13 vs priorClose $570.05)  •  BMNR: gap 0.4% < 4% (price $24.91 vs priorClose $24.82)"
+    },
+    {
+      "time": "2026-08-26T14:44:46.852Z",
+      "type": "INFO",
+      "msg": "Top signal: ANF (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T14:44:46.852Z",
+      "type": "BUY",
+      "msg": "Placing 10× ANF @ ~$144.46",
+      "detail": "gap 32.7% | risk $23.05 | SL $142.16 | TP $150.61 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-08-26T14:44:47.079Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 10× ANF",
+      "detail": "ID 36626418-c6b6-4941-b675-4a93a223a9f4 | R:R 2.7:1 | risk $23.05"
+    },
+    {
+      "time": "2026-08-26T14:44:47.580Z",
+      "type": "BUY",
+      "msg": "Placing 78× BZ @ ~$19.03",
+      "detail": "gap 16.9% | risk $24.57 | SL $18.72 | TP $19.87 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-08-26T14:44:47.668Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 78× BZ",
+      "detail": "ID 8e03ade5-b4df-4740-b78a-4864deaf4489 | R:R 2.7:1 | risk $24.57"
+    },
+    {
+      "time": "2026-08-26T14:44:48.261Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 37",
+      "detail": "SYRE, GENB, DY, RUM, QBTS, FIGR, SNAP, ZM, RLAY, TNK"
+    },
+    {
+      "time": "2026-08-26T14:45:01.485Z",
+      "type": "INFO",
+      "msg": "Short rejections (37)",
+      "detail": "SYRE: avgVol 0.8M < 1M  •  GENB: price $17.95 < $20 (short floor)  •  DY: avgVol 0.5M < 1M  •  RUM: price $9.30 < $20 (short floor)  •  QBTS: price $17.76 < $20 (short floor)  •  FIGR: net up over ~5d ($36.85→$37.81) — no short into uptrend  •  SNAP: price $5.48 < $20 (short floor)  •  ZM: relVol 0.8× < 2.5× (todayVol 2.6M)  •  RLAY: price $19.24 < $20 (short floor)  •  TNK: avgVol 0.4M < 1M  •  MRNA: relVol 0.3× < 2.5× (todayVol 9.1M)  •  LPG: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-08-26T14:45:01.485Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [],
+  "tradedToday": [
+    "ANF",
+    "BZ"
+  ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
