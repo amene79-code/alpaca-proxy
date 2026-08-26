@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-26T14:12:59.650Z",
+  "lastRun": "2026-08-26T14:23:31.796Z",
   "log": [
-    {
-      "time": "2026-08-25T16:23:54.911Z",
-      "type": "INFO",
-      "msg": "Account: $99961.60 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T16:23:55.823Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, STDN, ABCL, PURR, SMCI, GENB, HOOD, CLSK, IREN, MARA"
-    },
-    {
-      "time": "2026-08-25T16:23:55.824Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-25T16:24:11.833Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "MRNA: relVol 1.1× < 2× (todayVol 29.7M)  •  STDN: price $14.85 < $15  •  ABCL: price $12.28 < $15  •  PURR: price $11.58 < $15  •  SMCI: relVol 0.5× < 2× (todayVol 28.1M)  •  GENB: avgVol 0.8M < 1M  •  HOOD: relVol 0.7× < 2× (todayVol 14.3M)  •  CLSK: price $12.67 < $15  •  IREN: relVol 0.4× < 2× (todayVol 16.7M)  •  MARA: price $11.83 < $15  •  MRVL: relVol 0.5× < 2× (todayVol 12.3M)  •  MAIR: relVol 1.3× < 2× (todayVol 3.8M)"
-    },
-    {
-      "time": "2026-08-25T16:24:11.833Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-25T16:24:12.021Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 8",
-      "detail": "DKS, LBTYB, ALB, BETA, ASO, VIST, LULU, WSO"
-    },
-    {
-      "time": "2026-08-25T16:24:15.040Z",
-      "type": "INFO",
-      "msg": "Short rejections (7)",
-      "detail": "LBTYB: no 5m candles  •  ALB: net up over ~5d ($132.71→$134.15) — no short into uptrend  •  BETA: relVol 0.3× < 2.5× (todayVol 0.7M)  •  ASO: relVol 1.2× < 2.5× (todayVol 1.6M)  •  VIST: avgVol 0.9M < 1M  •  LULU: relVol 0.7× < 2.5× (todayVol 1.7M)  •  WSO: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-08-25T16:24:15.040Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-25T16:34:28.359Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-08-26T14:12:59.650Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T14:23:13.343Z",
+      "type": "INFO",
+      "msg": "Account: $99967.78 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T14:23:13.817Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 47, actives 42, kept 33",
+      "detail": "BZ, ANF, SMMT, SMTC, ZYME, TTMI, ACHC, CRK, DTM, WMB"
+    },
+    {
+      "time": "2026-08-26T14:23:13.817Z",
+      "type": "INFO",
+      "msg": "Scanning 33 candidates",
+      "detail": "33 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-26T14:23:25.017Z",
+      "type": "INFO",
+      "msg": "Rejections (33)",
+      "detail": "BZ: relVol 1.8× < 2× (todayVol 8.2M)  •  ANF: RSI 92 > 88  •  SMMT: price $14.29 < $15  •  SMTC: relVol 1.7× < 2× (todayVol 4.8M)  •  ZYME: avgVol 0.6M < 1M  •  TTMI: relVol 0.4× < 2× (todayVol 1.2M)  •  ACHC: relVol 0.2× < 2× (todayVol 0.4M)  •  CRK: relVol 0.3× < 2× (todayVol 0.6M)  •  DTM: relVol 0.4× < 2× (todayVol 0.5M)  •  WMB: relVol 0.4× < 2× (todayVol 2.5M)  •  KVUE: gap 0.4% < 4% (price $19.42 vs priorClose $19.33)  •  BMNR: gap 1.0% < 4% (price $25.07 vs priorClose $24.82)"
+    },
+    {
+      "time": "2026-08-26T14:23:25.017Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T14:23:25.167Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 21",
+      "detail": "SYRE, GENB, FIGR, RUM, QBTS, SNAP, MRNA, ZM, LPG, TNK"
+    },
+    {
+      "time": "2026-08-26T14:23:31.796Z",
+      "type": "INFO",
+      "msg": "Short rejections (21)",
+      "detail": "SYRE: avgVol 0.8M < 1M  •  GENB: price $18.05 < $20 (short floor)  •  FIGR: net up over ~5d ($36.85→$37.96) — no short into uptrend  •  RUM: price $9.45 < $20 (short floor)  •  QBTS: price $18.01 < $20 (short floor)  •  SNAP: price $5.51 < $20 (short floor)  •  MRNA: relVol 0.3× < 2.5× (todayVol 7.9M)  •  ZM: relVol 0.7× < 2.5× (todayVol 2.2M)  •  LPG: avgVol 0.5M < 1M  •  TNK: avgVol 0.4M < 1M  •  RLAY: price $19.46 < $20 (short floor)  •  AXTI: relVol 0.1× < 2.5× (todayVol 1.5M)"
+    },
+    {
+      "time": "2026-08-26T14:23:31.796Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
