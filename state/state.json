@@ -95,80 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-26T18:26:13.299Z",
+  "lastRun": "2026-08-26T18:37:00.487Z",
   "log": [
-    {
-      "time": "2026-08-25T21:12:15.047Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T13:51:27.004Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T13:51:27.070Z",
-      "type": "INFO",
-      "msg": "Account: $99967.78 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T13:51:27.562Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 48, actives 12, kept 23",
-      "detail": "ANF, BZ, SMTC, SMMT, TTMI, ACHC, LEU, ALHC, CRK, XE"
-    },
-    {
-      "time": "2026-08-26T13:51:27.562Z",
-      "type": "INFO",
-      "msg": "Scanning 23 candidates",
-      "detail": "23 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-26T13:51:35.125Z",
-      "type": "INFO",
-      "msg": "Rejections (23)",
-      "detail": "ANF: relVol 2.0× < 2× (todayVol 2.2M)  •  BZ: relVol 1.1× < 2× (todayVol 5.1M)  •  SMTC: relVol 1.2× < 2× (todayVol 3.2M)  •  SMMT: price $14.85 < $15  •  TTMI: relVol 0.2× < 2× (todayVol 0.6M)  •  ACHC: relVol 0.1× < 2× (todayVol 0.2M)  •  LEU: avgVol 0.6M < 1M  •  ALHC: price $14.40 < $15  •  CRK: relVol 0.2× < 2× (todayVol 0.4M)  •  XE: relVol 0.1× < 2× (todayVol 0.7M)  •  WMB: relVol 0.2× < 2× (todayVol 1.4M)  •  ZYME: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-08-26T13:51:35.125Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T13:51:35.281Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 13",
-      "detail": "SYRE, GENB, RUM, ZM, MRNA, TNK, SNAP, FIGR, RLAY, BHVN"
-    },
-    {
-      "time": "2026-08-26T13:51:39.429Z",
-      "type": "INFO",
-      "msg": "Short rejections (13)",
-      "detail": "SYRE: avgVol 0.8M < 1M  •  GENB: price $18.00 < $20 (short floor)  •  RUM: price $9.48 < $20 (short floor)  •  ZM: relVol 0.5× < 2.5× (todayVol 1.5M)  •  MRNA: relVol 0.2× < 2.5× (todayVol 5.4M)  •  TNK: avgVol 0.4M < 1M  •  SNAP: price $5.62 < $20 (short floor)  •  FIGR: net up over ~5d ($36.85→$39.13) — no short into uptrend  •  RLAY: price $19.58 < $20 (short floor)  •  BHVN: price $13.78 < $20 (short floor)  •  BSX: relVol 0.4× < 2.5× (todayVol 8.3M)  •  INSW: avgVol 0.5M < 1M"
-    },
-    {
-      "time": "2026-08-26T13:51:39.429Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T14:01:59.677Z",
-      "type": "INFO",
-      "msg": "Account: $99967.78 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T14:02:00.933Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 24, kept 35",
-      "detail": "BZ, ANF, SMMT, SMTC, TTMI, ZYME, ACHC, CRK, ALHC, NYAX"
-    },
     {
       "time": "2026-08-26T14:02:00.934Z",
       "type": "INFO",
@@ -1293,6 +1221,78 @@
     },
     {
       "time": "2026-08-26T18:26:13.299Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T18:36:30.026Z",
+      "type": "INFO",
+      "msg": "Account: $100091.24 | 2 positions | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T18:36:31.075Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ANF, BZ, BHVN, SMTC, URBN, SMMT, BBWI, ERAS, CVI, TTMI"
+    },
+    {
+      "time": "2026-08-26T18:36:31.075Z",
+      "type": "INFO",
+      "msg": "Scanning 38 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-08-26T18:36:31.301Z",
+      "type": "SIGNAL",
+      "msg": "ANF — score 10 | gap 35.8% | relVol 8.2× | RSI 84",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T18:36:31.710Z",
+      "type": "SIGNAL",
+      "msg": "BHVN — score 10 | gap 22.4% | relVol 4.7× | RSI 70",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T18:36:46.345Z",
+      "type": "INFO",
+      "msg": "Rejections (36)",
+      "detail": "URBN: relVol 1.8× < 2× (todayVol 1.8M)  •  SMMT: price $14.40 < $15  •  BBWI: relVol 1.9× < 2× (todayVol 11.5M)  •  ERAS: relVol 1.8× < 2× (todayVol 5.6M)  •  CVI: avgVol 1.0M < 1M  •  TTMI: relVol 0.8× < 2× (todayVol 2.5M)  •  LITE: relVol 0.6× < 2× (todayVol 3.2M)  •  SIMO: relVol 0.4× < 2× (todayVol 0.5M)  •  CHRW: relVol 0.6× < 2× (todayVol 1.2M)  •  XENE: avgVol 0.6M < 1M  •  ANET: relVol 0.5× < 2× (todayVol 3.6M)  •  BTSG: relVol 0.4× < 2× (todayVol 1.2M)"
+    },
+    {
+      "time": "2026-08-26T18:36:46.345Z",
+      "type": "INFO",
+      "msg": "Top signal: ANF (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T18:36:46.345Z",
+      "type": "INFO",
+      "msg": "SKIP ANF — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T18:36:46.345Z",
+      "type": "INFO",
+      "msg": "SKIP BHVN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T18:36:46.481Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "GENB, SYRE, QBTS, FIGR, RUM, SNAP, MRNA, SMR, TNK, FRVO"
+    },
+    {
+      "time": "2026-08-26T18:37:00.486Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "GENB: price $16.32 < $20 (short floor)  •  SYRE: avgVol 0.9M < 1M  •  QBTS: price $17.55 < $20 (short floor)  •  FIGR: net up over ~5d ($36.85→$37.42) — no short into uptrend  •  RUM: price $9.32 < $20 (short floor)  •  SNAP: price $5.43 < $20 (short floor)  •  MRNA: relVol 0.6× < 2.5× (todayVol 17.6M)  •  SMR: price $9.08 < $20 (short floor)  •  TNK: avgVol 0.4M < 1M  •  FRVO: price $15.35 < $20 (short floor)  •  OKLO: relVol 1.4× < 2.5× (todayVol 13.8M)  •  HSAI: price $17.08 < $20 (short floor)"
+    },
+    {
+      "time": "2026-08-26T18:37:00.487Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
