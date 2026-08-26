@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-26T19:40:43.550Z",
+  "lastRun": "2026-08-26T19:50:57.694Z",
   "log": [
-    {
-      "time": "2026-08-26T16:15:22.869Z",
-      "type": "SIGNAL",
-      "msg": "ANF — score 11 | gap 40.2% | relVol 6.0× | RSI 75",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T16:15:35.745Z",
-      "type": "INFO",
-      "msg": "Rejections (36)",
-      "detail": "ERAS: relVol 1.4× < 2× (todayVol 4.0M)  •  SMTC: below VWAP (price $137.84 < VWAP $138.95)  •  ZYME: avgVol 0.7M < 1M  •  SMMT: price $14.27 < $15  •  PBF: relVol 0.3× < 2× (todayVol 0.8M)  •  BBWI: relVol 1.4× < 2× (todayVol 8.5M)  •  TTMI: relVol 0.6× < 2× (todayVol 1.9M)  •  TNGX: relVol 0.5× < 2× (todayVol 1.0M)  •  SIMO: relVol 0.3× < 2× (todayVol 0.4M)  •  CVI: avgVol 1.0M < 1M  •  DK: relVol 0.4× < 2× (todayVol 0.6M)  •  INIO: relVol 0.2× < 2× (todayVol 0.8M)"
-    },
-    {
-      "time": "2026-08-26T16:15:35.745Z",
-      "type": "INFO",
-      "msg": "Top signal: ANF (score 11)",
-      "detail": ""
-    },
     {
       "time": "2026-08-26T16:15:35.745Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-26T19:40:43.550Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T19:50:57.338Z",
+      "type": "INFO",
+      "msg": "Account: $100077.09 | 0 positions | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T19:50:57.693Z",
+      "type": "INFO",
+      "msg": "EOD review (10 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T19:50:57.694Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
