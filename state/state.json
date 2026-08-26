@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "BZ": {
-      "side": "long",
-      "entry": 19.03499984741211,
-      "high": 19.075,
-      "low": 19.03499984741211,
-      "initialSl": 18.72,
-      "sl": 18.72,
-      "tp": 19.87,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 4,
   "dailyDate": "2026-08-26",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-26T19:30:27.029Z",
+  "lastRun": "2026-08-26T19:40:43.550Z",
   "log": [
-    {
-      "time": "2026-08-26T16:05:09.549Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T16:15:21.623Z",
-      "type": "INFO",
-      "msg": "Account: $100029.91 | 2 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T16:15:22.602Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 39",
-      "detail": "BZ, ANF, BHVN, ERAS, SMTC, ZYME, SMMT, PBF, BBWI, TTMI"
-    },
-    {
-      "time": "2026-08-26T16:15:22.602Z",
-      "type": "INFO",
-      "msg": "Scanning 37 candidates",
-      "detail": "39 screener + 0 watchlist"
-    },
     {
       "time": "2026-08-26T16:15:22.869Z",
       "type": "SIGNAL",
@@ -1283,6 +1246,30 @@
       "time": "2026-08-26T19:30:27.029Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T19:40:41.061Z",
+      "type": "INFO",
+      "msg": "Account: $100077.87 | 1 positions | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T19:40:41.543Z",
+      "type": "INFO",
+      "msg": "EOD review (20 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T19:40:43.349Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut BZ",
+      "detail": "Side long | Weak into close | P&L $-10.92"
+    },
+    {
+      "time": "2026-08-26T19:40:43.550Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
