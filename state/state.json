@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-26T19:50:57.694Z",
+  "lastRun": "2026-08-26T20:01:13.193Z",
   "log": [
-    {
-      "time": "2026-08-26T16:15:35.745Z",
-      "type": "INFO",
-      "msg": "SKIP ANF — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T16:15:35.906Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "GENB, SYRE, FIGR, RUM, QBTS, SNAP, ZM, MRNA, HSAI, SMR"
-    },
-    {
-      "time": "2026-08-26T16:15:48.163Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "GENB: price $16.95 < $20 (short floor)  •  SYRE: avgVol 0.8M < 1M  •  FIGR: net up over ~5d ($36.85→$37.33) — no short into uptrend  •  RUM: price $9.34 < $20 (short floor)  •  QBTS: price $17.70 < $20 (short floor)  •  SNAP: price $5.43 < $20 (short floor)  •  ZM: relVol 1.2× < 2.5× (todayVol 3.8M)  •  MRNA: relVol 0.5× < 2.5× (todayVol 13.4M)  •  HSAI: price $17.05 < $20 (short floor)  •  SMR: price $9.20 < $20 (short floor)  •  CAI: net up over ~5d ($22.76→$26.32) — no short into uptrend  •  MARA: price $11.11 < $20 (short floor)"
-    },
     {
       "time": "2026-08-26T16:15:48.163Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-08-26T19:50:57.694Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T20:01:12.865Z",
+      "type": "INFO",
+      "msg": "Account: $100077.09 | 0 positions | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T20:01:12.944Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-26T20:01:13.193Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
