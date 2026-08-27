@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 4,
-  "dailyDate": "2026-08-26",
+  "dailyTrades": 0,
+  "dailyDate": "2026-08-27",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-26T21:42:48.111Z",
+  "lastRun": "2026-08-27T22:44:44.014Z",
   "log": [
-    {
-      "time": "2026-08-26T16:26:38.885Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "GENB: price $16.93 < $20 (short floor)  •  SYRE: avgVol 0.8M < 1M  •  DY: avgVol 0.5M < 1M  •  FIGR: net up over ~5d ($36.85→$37.21) — no short into uptrend  •  RUM: price $9.27 < $20 (short floor)  •  SNAP: price $5.39 < $20 (short floor)  •  QBTS: price $17.67 < $20 (short floor)  •  ZM: relVol 1.3× < 2.5× (todayVol 4.0M)  •  MRNA: relVol 0.5× < 2.5× (todayVol 13.7M)  •  HSAI: price $17.05 < $20 (short floor)  •  SMR: price $9.16 < $20 (short floor)  •  MARA: price $11.07 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-26T16:26:38.885Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T16:36:53.972Z",
-      "type": "INFO",
-      "msg": "Account: $100041.07 | 2 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T16:36:55.023Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BZ, ANF, BHVN, SMMT, ERAS, SMTC, TNGX, ZYME, BBWI, CVI"
-    },
     {
       "time": "2026-08-26T16:36:55.023Z",
       "type": "INFO",
@@ -1271,14 +1247,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-08-27T22:44:43.233Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-27T22:44:43.479Z",
+      "type": "INFO",
+      "msg": "Account: $100076.91 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-27T22:44:43.552Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-27T22:44:44.014Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "ANF",
-    "BZ",
-    "BHVN",
-    "SMTC"
-  ],
+  "tradedToday": [],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
