@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-08-27",
+  "dailyDate": "2026-08-28",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-27T22:54:56.987Z",
+  "lastRun": "2026-08-28T22:51:59.925Z",
   "log": [
-    {
-      "time": "2026-08-26T16:37:12.303Z",
-      "type": "INFO",
-      "msg": "Top signal: ANF (score 10)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T16:37:12.303Z",
-      "type": "INFO",
-      "msg": "SKIP ANF — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T16:37:12.498Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "GENB, SYRE, DY, FIGR, SNAP, RUM, QBTS, ZM, MRNA, HSAI"
-    },
-    {
-      "time": "2026-08-26T16:37:28.459Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "GENB: price $16.86 < $20 (short floor)  •  SYRE: avgVol 0.8M < 1M  •  DY: avgVol 0.5M < 1M  •  FIGR: net up over ~5d ($36.85→$37.26) — no short into uptrend  •  SNAP: price $5.37 < $20 (short floor)  •  RUM: price $9.28 < $20 (short floor)  •  QBTS: price $17.68 < $20 (short floor)  •  ZM: relVol 1.3× < 2.5× (todayVol 4.1M)  •  MRNA: relVol 0.5× < 2.5× (todayVol 13.9M)  •  HSAI: price $17.00 < $20 (short floor)  •  MARA: price $11.06 < $20 (short floor)  •  SMR: price $9.19 < $20 (short floor)"
-    },
     {
       "time": "2026-08-26T16:37:28.459Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-08-27T22:54:56.987Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-28T22:51:58.892Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-28T22:51:59.361Z",
+      "type": "INFO",
+      "msg": "Account: $100076.91 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-28T22:51:59.402Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-28T22:51:59.925Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
