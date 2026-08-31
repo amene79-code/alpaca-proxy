@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-31T20:03:16.084Z",
+  "lastRun": "2026-08-31T20:13:36.149Z",
   "log": [
-    {
-      "time": "2026-08-26T17:10:31.091Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "GENB: price $16.97 < $20 (short floor)  •  SYRE: avgVol 0.8M < 1M  •  SNAP: price $5.35 < $20 (short floor)  •  RUM: price $9.27 < $20 (short floor)  •  FIGR: net up over ~5d ($36.85→$37.28) — no short into uptrend  •  QBTS: price $17.58 < $20 (short floor)  •  TNK: avgVol 0.4M < 1M  •  MRNA: relVol 0.5× < 2.5× (todayVol 15.0M)  •  HSAI: price $17.00 < $20 (short floor)  •  SMR: price $9.15 < $20 (short floor)  •  ZM: relVol 1.4× < 2.5× (todayVol 4.4M)  •  FRVO: price $15.41 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-26T17:10:31.091Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T17:20:42.299Z",
-      "type": "INFO",
-      "msg": "Account: $100064.93 | 2 positions | 3 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-08-26T17:20:43.056Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-31T20:03:16.084Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T20:13:35.852Z",
+      "type": "INFO",
+      "msg": "Account: $100076.91 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T20:13:35.912Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T20:13:36.149Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
