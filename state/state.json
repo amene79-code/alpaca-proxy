@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-31T19:22:04.633Z",
+  "lastRun": "2026-08-31T19:32:24.359Z",
   "log": [
-    {
-      "time": "2026-08-26T16:59:32.396Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "ANF: below VWAP (price $144.13 < VWAP $145.71)  •  ERAS: relVol 1.4× < 2× (todayVol 4.2M)  •  SMTC: below VWAP (price $137.32 < VWAP $138.84)  •  SMMT: price $14.38 < $15  •  ZYME: avgVol 0.7M < 1M  •  BBWI: relVol 1.6× < 2× (todayVol 9.4M)  •  TTMI: relVol 0.7× < 2× (todayVol 2.2M)  •  CVI: avgVol 1.0M < 1M  •  TNGX: relVol 0.8× < 2× (todayVol 1.7M)  •  SIMO: relVol 0.3× < 2× (todayVol 0.4M)  •  CHRW: relVol 0.4× < 2× (todayVol 0.8M)  •  ALHC: price $14.41 < $15"
-    },
-    {
-      "time": "2026-08-26T16:59:32.396Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-26T16:59:32.548Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-08-31T19:22:04.633Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T19:32:23.794Z",
+      "type": "INFO",
+      "msg": "Account: $100076.91 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T19:32:24.359Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
