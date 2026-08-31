@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-31T20:13:36.149Z",
+  "lastRun": "2026-08-31T20:23:50.340Z",
   "log": [
-    {
-      "time": "2026-08-26T17:20:43.056Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ANF, BZ, BHVN, SMTC, TTMI, SMMT, CVI, ERAS, ZYME, INIO"
-    },
-    {
-      "time": "2026-08-26T17:20:43.056Z",
-      "type": "INFO",
-      "msg": "Scanning 38 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-26T17:20:55.644Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "ANF: below VWAP (price $143.95 < VWAP $145.60)  •  SMTC: below VWAP (price $138.13 < VWAP $138.81)  •  TTMI: relVol 0.7× < 2× (todayVol 2.3M)  •  SMMT: price $14.34 < $15  •  CVI: avgVol 1.0M < 1M  •  ERAS: relVol 1.5× < 2× (todayVol 4.4M)  •  ZYME: avgVol 0.7M < 1M  •  INIO: relVol 0.3× < 2× (todayVol 1.1M)  •  ALHC: price $14.48 < $15  •  CHRW: relVol 0.5× < 2× (todayVol 0.9M)  •  SIMO: relVol 0.3× < 2× (todayVol 0.4M)  •  PBF: relVol 0.3× < 2× (todayVol 1.0M)"
-    },
     {
       "time": "2026-08-26T17:20:55.644Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-08-31T20:13:36.149Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T20:23:50.099Z",
+      "type": "INFO",
+      "msg": "Account: $100076.91 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T20:23:50.139Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T20:23:50.340Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
