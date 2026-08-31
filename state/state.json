@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-08-31T19:52:59.824Z",
+  "lastRun": "2026-08-31T20:03:16.084Z",
   "log": [
-    {
-      "time": "2026-08-26T17:10:17.720Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "ANF: below VWAP (price $143.62 < VWAP $145.66)  •  ERAS: relVol 1.5× < 2× (todayVol 4.3M)  •  SMTC: below VWAP (price $137.99 < VWAP $138.82)  •  SMMT: price $14.41 < $15  •  ZYME: avgVol 0.7M < 1M  •  TTMI: relVol 0.7× < 2× (todayVol 2.3M)  •  BBWI: relVol 1.6× < 2× (todayVol 9.7M)  •  CVI: avgVol 1.0M < 1M  •  TNGX: relVol 0.8× < 2× (todayVol 1.7M)  •  CHRW: relVol 0.5× < 2× (todayVol 0.9M)  •  SIMO: relVol 0.3× < 2× (todayVol 0.4M)  •  INIO: relVol 0.3× < 2× (todayVol 1.1M)"
-    },
-    {
-      "time": "2026-08-26T17:10:17.720Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T17:10:17.884Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "GENB, SYRE, SNAP, RUM, FIGR, QBTS, TNK, MRNA, HSAI, SMR"
-    },
     {
       "time": "2026-08-26T17:10:31.091Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-08-31T19:52:59.824Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T20:03:15.955Z",
+      "type": "INFO",
+      "msg": "Account: $100076.91 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T20:03:15.966Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-08-31T20:03:16.084Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
