@@ -83,68 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-01T17:51:06.248Z",
+  "lastRun": "2026-09-01T18:01:54.198Z",
   "log": [
-    {
-      "time": "2026-08-26T18:15:23.074Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T18:25:40.099Z",
-      "type": "INFO",
-      "msg": "Account: $100097.90 | 2 positions | 4 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T18:25:41.059Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ANF, BZ, BHVN, SMTC, BBWI, SMMT, ERAS, URBN, CVI, TTMI"
-    },
-    {
-      "time": "2026-08-26T18:25:41.059Z",
-      "type": "INFO",
-      "msg": "Scanning 38 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-26T18:25:41.904Z",
-      "type": "SIGNAL",
-      "msg": "BHVN — score 9 | gap 23.4% | relVol 4.7× | RSI 76",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T18:25:57.400Z",
-      "type": "INFO",
-      "msg": "Rejections (37)",
-      "detail": "ANF: below VWAP (price $145.40 < VWAP $145.44)  •  BBWI: relVol 1.8× < 2× (todayVol 11.3M)  •  SMMT: price $14.47 < $15  •  ERAS: relVol 1.8× < 2× (todayVol 5.3M)  •  URBN: relVol 1.8× < 2× (todayVol 1.8M)  •  CVI: avgVol 1.0M < 1M  •  TTMI: relVol 0.8× < 2× (todayVol 2.5M)  •  MDGL: avgVol 0.4M < 1M  •  SIMO: relVol 0.4× < 2× (todayVol 0.5M)  •  GAP: relVol 1.4× < 2× (todayVol 7.7M)  •  XENE: avgVol 0.6M < 1M  •  LITE: relVol 0.6× < 2× (todayVol 3.2M)"
-    },
-    {
-      "time": "2026-08-26T18:25:57.400Z",
-      "type": "INFO",
-      "msg": "Top signal: BHVN (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T18:25:57.400Z",
-      "type": "INFO",
-      "msg": "SKIP BHVN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T18:25:57.551Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "GENB, SYRE, DY, QBTS, SNAP, FIGR, RUM, MRNA, SMR, OKLO"
-    },
-    {
-      "time": "2026-08-26T18:26:13.299Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "GENB: price $16.74 < $20 (short floor)  •  SYRE: avgVol 0.9M < 1M  •  DY: avgVol 0.6M < 1M  •  QBTS: price $17.55 < $20 (short floor)  •  SNAP: price $5.38 < $20 (short floor)  •  FIGR: net up over ~5d ($36.85→$37.42) — no short into uptrend  •  RUM: price $9.32 < $20 (short floor)  •  MRNA: relVol 0.6× < 2.5× (todayVol 17.4M)  •  SMR: price $9.07 < $20 (short floor)  •  OKLO: relVol 1.4× < 2.5× (todayVol 13.5M)  •  TNK: avgVol 0.4M < 1M  •  FRVO: price $15.37 < $20 (short floor)"
-    },
     {
       "time": "2026-08-26T18:26:13.299Z",
       "type": "INFO",
@@ -1281,6 +1221,66 @@
     },
     {
       "time": "2026-09-01T17:51:06.248Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T18:01:21.301Z",
+      "type": "INFO",
+      "msg": "Account: $100059.26 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T18:01:22.343Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 36",
+      "detail": "FRVO, MRNA, MMED, KLRA, PBR, CRK, STDN, NVS, SMMT, DUOL"
+    },
+    {
+      "time": "2026-09-01T18:01:22.343Z",
+      "type": "INFO",
+      "msg": "Scanning 35 candidates",
+      "detail": "36 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-01T18:01:23.080Z",
+      "type": "SIGNAL",
+      "msg": "MMED — score 8 | gap 10.2% | relVol 2.7× | RSI 53",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T18:01:37.247Z",
+      "type": "INFO",
+      "msg": "Rejections (34)",
+      "detail": "MRNA: relVol 0.5× < 2× (todayVol 15.8M)  •  KLRA: avgVol 0.6M < 1M  •  PBR: relVol 1.0× < 2× (todayVol 19.6M)  •  CRK: below opening-range high (price $15.74 < ORH $16.12, 56 today-candles)  •  STDN: avgVol 0.9M < 1M  •  NVS: below VWAP (price $161.65 < VWAP $161.72)  •  SMMT: price $14.43 < $15  •  DUOL: relVol 1.0× < 2× (todayVol 1.4M)  •  HP: relVol 0.8× < 2× (todayVol 1.2M)  •  VIST: avgVol 1.0M < 1M  •  EC: relVol 1.0× < 2× (todayVol 1.8M)  •  BWXT: relVol 0.9× < 2× (todayVol 0.9M)"
+    },
+    {
+      "time": "2026-09-01T18:01:37.247Z",
+      "type": "INFO",
+      "msg": "Top signal: MMED (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T18:01:37.247Z",
+      "type": "INFO",
+      "msg": "SKIP MMED — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T18:01:37.418Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PSQL, PURR, SN, FROG, AXON, ONDS, XNDU, PS, BMNR, CRWD"
+    },
+    {
+      "time": "2026-09-01T18:01:54.198Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "PSQL: price $15.48 < $20 (short floor)  •  PURR: price $11.16 < $20 (short floor)  •  SN: relVol 0.8× < 2.5× (todayVol 1.4M)  •  FROG: no 5m candles  •  AXON: avgVol 0.9M < 1M  •  ONDS: price $7.06 < $20 (short floor)  •  XNDU: price $9.92 < $20 (short floor)  •  PS: avgVol 0.2M < 1M  •  BMNR: relVol 0.6× < 2.5× (todayVol 25.1M)  •  CRWD: net up over ~5d ($185.38→$214.04) — no short into uptrend  •  NTSK: price $14.19 < $20 (short floor)  •  ROAD: avgVol 0.7M < 1M"
+    },
+    {
+      "time": "2026-09-01T18:01:54.198Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
