@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-01T19:38:17.513Z",
+  "lastRun": "2026-09-01T19:48:47.575Z",
   "log": [
-    {
-      "time": "2026-08-31T19:21:52.101Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "EIX, PCG, MNSO, AON, KRMN, HSAI, TTWO, PINS, LIFE, BFLY"
-    },
-    {
-      "time": "2026-08-31T19:22:04.633Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "EIX: ATR 0.48% < 0.5%  •  PCG: price $13.45 < $20 (short floor)  •  MNSO: price $9.30 < $20 (short floor)  •  AON: avgVol 0.8M < 1M  •  KRMN: relVol 1.0× < 2.5× (todayVol 2.4M)  •  HSAI: price $16.16 < $20 (short floor)  •  TTWO: relVol 1.8× < 2.5× (todayVol 4.7M)  •  PINS: relVol 1.4× < 2.5× (todayVol 14.7M)  •  LIFE: relVol 0.4× < 2.5× (todayVol 0.6M)  •  BFLY: price $7.89 < $20 (short floor)  •  HWM: relVol 2.3× < 2.5× (todayVol 5.2M)  •  TKC: price $5.06 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-31T19:22:04.633Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-08-31T19:32:23.794Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-01T19:38:17.513Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T19:48:46.396Z",
+      "type": "INFO",
+      "msg": "Account: $100015.81 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T19:48:47.575Z",
+      "type": "INFO",
+      "msg": "EOD review (12 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T19:48:47.575Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
