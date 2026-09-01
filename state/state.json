@@ -11,18 +11,6 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": false
-    },
-    "MMED": {
-      "side": "long",
-      "entry": 22.299999237060547,
-      "high": 22.299999237060547,
-      "low": 22.299999237060547,
-      "initialSl": 22.13,
-      "sl": 22.13,
-      "tp": 22.76,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
     }
   },
   "dailyTrades": 2,
@@ -95,68 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-01T17:18:56.483Z",
+  "lastRun": "2026-09-01T17:29:34.182Z",
   "log": [
-    {
-      "time": "2026-08-26T17:53:07.097Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-08-26T17:53:07.746Z",
-      "type": "SIGNAL",
-      "msg": "BHVN — score 12 | gap 21.5% | relVol 4.0× | RSI 84",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-08-26T17:53:22.466Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "ANF: below VWAP (price $142.63 < VWAP $145.49)  •  SMTC: below VWAP (price $137.94 < VWAP $138.78)  •  SMMT: price $14.44 < $15  •  BBWI: relVol 1.8× < 2× (todayVol 10.7M)  •  URBN: relVol 1.5× < 2× (todayVol 1.5M)  •  INIO: relVol 0.3× < 2× (todayVol 1.2M)  •  ERAS: relVol 1.6× < 2× (todayVol 4.7M)  •  TTMI: relVol 0.8× < 2× (todayVol 2.4M)  •  CVI: avgVol 1.0M < 1M  •  ZYME: avgVol 0.7M < 1M  •  ALHC: price $14.44 < $15  •  CHRW: relVol 0.5× < 2× (todayVol 1.0M)"
-    },
-    {
-      "time": "2026-08-26T17:53:22.466Z",
-      "type": "INFO",
-      "msg": "Top signal: BHVN (score 12)",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T17:53:22.466Z",
-      "type": "INFO",
-      "msg": "SKIP BHVN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T17:53:22.684Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "GENB, SYRE, QBTS, FIGR, RUM, SNAP, MRNA, SMR, TNK, FRVO"
-    },
-    {
-      "time": "2026-08-26T17:53:37.243Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "GENB: price $16.82 < $20 (short floor)  •  SYRE: avgVol 0.9M < 1M  •  QBTS: price $17.66 < $20 (short floor)  •  FIGR: net up over ~5d ($36.85→$37.69) — no short into uptrend  •  RUM: price $9.38 < $20 (short floor)  •  SNAP: price $5.43 < $20 (short floor)  •  MRNA: relVol 0.6× < 2.5× (todayVol 16.3M)  •  SMR: price $9.11 < $20 (short floor)  •  TNK: avgVol 0.4M < 1M  •  FRVO: price $15.31 < $20 (short floor)  •  ZM: relVol 1.5× < 2.5× (todayVol 4.8M)  •  HSAI: price $17.13 < $20 (short floor)"
-    },
-    {
-      "time": "2026-08-26T17:53:37.243Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T18:04:04.864Z",
-      "type": "INFO",
-      "msg": "Account: $100101.26 | 1 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-26T18:04:05.535Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ANF, BZ, BHVN, SMMT, SMTC, URBN, ERAS, CVI, BBWI, TTMI"
-    },
     {
       "time": "2026-08-26T18:04:05.535Z",
       "type": "INFO",
@@ -1293,6 +1221,66 @@
     },
     {
       "time": "2026-09-01T17:18:56.482Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T17:29:10.588Z",
+      "type": "INFO",
+      "msg": "Account: $100070.66 | 1 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T17:29:11.495Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 31",
+      "detail": "FRVO, MRNA, KLRA, MMED, PBR, CRK, NVS, SMMT, STDN, DUOL"
+    },
+    {
+      "time": "2026-09-01T17:29:11.495Z",
+      "type": "INFO",
+      "msg": "Scanning 30 candidates",
+      "detail": "31 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-01T17:29:12.261Z",
+      "type": "SIGNAL",
+      "msg": "MMED — score 10 | gap 9.7% | relVol 2.4× | RSI 46",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-09-01T17:29:21.143Z",
+      "type": "INFO",
+      "msg": "Rejections (29)",
+      "detail": "MRNA: relVol 0.5× < 2× (todayVol 15.2M)  •  KLRA: avgVol 0.6M < 1M  •  PBR: relVol 0.9× < 2× (todayVol 17.0M)  •  CRK: below opening-range high (price $15.78 < ORH $16.12, 49 today-candles)  •  NVS: below VWAP (price $161.33 < VWAP $161.74)  •  SMMT: price $14.44 < $15  •  STDN: avgVol 0.8M < 1M  •  DUOL: relVol 1.0× < 2× (todayVol 1.3M)  •  HP: relVol 0.7× < 2× (todayVol 1.1M)  •  TDW: avgVol 0.6M < 1M  •  PCG: price $13.38 < $15  •  AAPL: gap 2.5% < 4% (price $324.76 vs priorClose $316.85)"
+    },
+    {
+      "time": "2026-09-01T17:29:21.143Z",
+      "type": "INFO",
+      "msg": "Top signal: MMED (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T17:29:21.143Z",
+      "type": "INFO",
+      "msg": "SKIP MMED — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-01T17:29:21.273Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PSQL, AXON, SN, NTSK, XNDU, FROG, ONDS, TENB, BMNR, CRWD"
+    },
+    {
+      "time": "2026-09-01T17:29:34.182Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "PSQL: price $14.73 < $20 (short floor)  •  AXON: avgVol 0.9M < 1M  •  SN: relVol 0.7× < 2.5× (todayVol 1.2M)  •  NTSK: price $14.02 < $20 (short floor)  •  XNDU: price $9.89 < $20 (short floor)  •  FROG: net up over ~5d ($89.48→$92.22) — no short into uptrend  •  ONDS: price $7.07 < $20 (short floor)  •  TENB: net up over ~5d ($32.79→$35.35) — no short into uptrend  •  BMNR: relVol 0.6× < 2.5× (todayVol 23.3M)  •  CRWD: net up over ~5d ($185.38→$214.60) — no short into uptrend  •  APPN: avgVol 0.9M < 1M  •  WHR: relVol 1.1× < 2.5× (todayVol 2.2M)"
+    },
+    {
+      "time": "2026-09-01T17:29:34.182Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
