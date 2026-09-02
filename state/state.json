@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-02T20:17:29.546Z",
+  "lastRun": "2026-09-02T20:27:40.928Z",
   "log": [
-    {
-      "time": "2026-09-01T19:16:35.086Z",
-      "type": "INFO",
-      "msg": "SKIP FRVO — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:16:35.086Z",
-      "type": "INFO",
-      "msg": "SKIP EIX — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:16:35.086Z",
-      "type": "INFO",
-      "msg": "SKIP MMED — already traded today",
-      "detail": ""
-    },
     {
       "time": "2026-09-01T19:16:35.266Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-02T20:17:29.546Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T20:27:40.800Z",
+      "type": "INFO",
+      "msg": "Account: $100032.44 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T20:27:40.812Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T20:27:40.928Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
