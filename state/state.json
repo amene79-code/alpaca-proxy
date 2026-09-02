@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-02T20:27:40.928Z",
+  "lastRun": "2026-09-02T21:58:34.246Z",
   "log": [
-    {
-      "time": "2026-09-01T19:16:35.266Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "OSW, SN, PS, PSQL, PURR, FROG, ONDS, BMNR, AXON, XNDU"
-    },
-    {
-      "time": "2026-09-01T19:16:50.947Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "OSW: avgVol 0.8M < 1M  •  SN: relVol 1.0× < 2.5× (todayVol 1.8M)  •  PS: avgVol 0.2M < 1M  •  PSQL: price $15.80 < $20 (short floor)  •  PURR: price $11.19 < $20 (short floor)  •  FROG: net up over ~5d ($89.48→$91.77) — no short into uptrend  •  ONDS: price $7.05 < $20 (short floor)  •  BMNR: relVol 0.7× < 2.5× (todayVol 29.9M)  •  AXON: avgVol 0.9M < 1M  •  XNDU: price $9.94 < $20 (short floor)  •  CDNS: relVol 0.7× < 2.5× (todayVol 1.4M)  •  NTSK: price $14.18 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-01T19:16:50.947Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-01T19:27:11.446Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-02T20:27:40.928Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T21:58:33.717Z",
+      "type": "INFO",
+      "msg": "Account: $100032.44 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T21:58:33.777Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T21:58:34.246Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
