@@ -3,7 +3,7 @@
     "DELL": {
       "side": "long",
       "entry": 484.57000732421875,
-      "high": 493.394,
+      "high": 495.2259,
       "low": 484.57000732421875,
       "initialSl": 478.82,
       "sl": 485.47,
@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-02T19:36:32.058Z",
+  "lastRun": "2026-09-02T19:46:45.727Z",
   "log": [
-    {
-      "time": "2026-09-01T19:05:51.279Z",
-      "type": "INFO",
-      "msg": "Top signal: FRVO (score 10)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:05:51.279Z",
-      "type": "INFO",
-      "msg": "SKIP FRVO — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:05:51.279Z",
-      "type": "INFO",
-      "msg": "SKIP MMED — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:05:51.279Z",
-      "type": "INFO",
-      "msg": "SKIP EIX — already traded today",
-      "detail": ""
-    },
     {
       "time": "2026-09-01T19:05:51.503Z",
       "type": "INFO",
@@ -1281,6 +1257,30 @@
     },
     {
       "time": "2026-09-02T19:36:32.057Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T19:46:44.910Z",
+      "type": "INFO",
+      "msg": "Account: $100063.11 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T19:46:45.406Z",
+      "type": "INFO",
+      "msg": "EOD review (14 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T19:46:45.526Z",
+      "type": "INFO",
+      "msg": "DELL held overnight",
+      "detail": "Side long | Strong close | P&L +$30.71 | above VWAP"
+    },
+    {
+      "time": "2026-09-02T19:46:45.727Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
