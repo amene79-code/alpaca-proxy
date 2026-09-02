@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "CRDO": {
-      "side": "short",
-      "entry": 165.97860717773438,
-      "high": 165.97860717773438,
-      "low": 163.69,
-      "initialSl": 166.96,
-      "sl": 165.63,
-      "tp": 163.02,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 0,
   "dailyDate": "2026-09-02",
   "openPositions": [
@@ -83,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-02T17:51:08.723Z",
+  "lastRun": "2026-09-02T18:01:36.627Z",
   "log": [
-    {
-      "time": "2026-09-01T17:50:36.045Z",
-      "type": "SIGNAL",
-      "msg": "MMED — score 12 | gap 10.6% | relVol 2.6× | RSI 46",
-      "detail": "Bullish Engulfing"
-    },
-    {
-      "time": "2026-09-01T17:50:49.099Z",
-      "type": "INFO",
-      "msg": "Rejections (32)",
-      "detail": "MRNA: relVol 0.5× < 2× (todayVol 15.6M)  •  KLRA: avgVol 0.6M < 1M  •  PBR: relVol 1.0× < 2× (todayVol 19.2M)  •  CRK: below opening-range high (price $15.77 < ORH $16.12, 53 today-candles)  •  STDN: avgVol 0.9M < 1M  •  NVS: below VWAP (price $161.41 < VWAP $161.73)  •  SMMT: price $14.43 < $15  •  DUOL: relVol 1.0× < 2× (todayVol 1.4M)  •  EC: relVol 1.0× < 2× (todayVol 1.8M)  •  HP: relVol 0.8× < 2× (todayVol 1.1M)  •  PCG: price $13.38 < $15  •  AAPL: gap 2.4% < 4% (price $324.60 vs priorClose $316.85)"
-    },
-    {
-      "time": "2026-09-01T17:50:49.099Z",
-      "type": "INFO",
-      "msg": "Top signal: MMED (score 12)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T17:50:49.099Z",
-      "type": "INFO",
-      "msg": "SKIP MMED — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T17:50:49.279Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PSQL, SN, AXON, FROG, NTSK, PURR, PS, XNDU, ONDS, BMNR"
-    },
-    {
-      "time": "2026-09-01T17:51:06.248Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PSQL: price $15.28 < $20 (short floor)  •  SN: relVol 0.8× < 2.5× (todayVol 1.3M)  •  AXON: avgVol 0.9M < 1M  •  FROG: net up over ~5d ($90.14→$92.11) — no short into uptrend  •  NTSK: price $14.11 < $20 (short floor)  •  PURR: price $11.32 < $20 (short floor)  •  PS: avgVol 0.2M < 1M  •  XNDU: price $9.95 < $20 (short floor)  •  ONDS: price $7.08 < $20 (short floor)  •  BMNR: relVol 0.6× < 2.5× (todayVol 24.3M)  •  CRWD: net up over ~5d ($185.38→$214.43) — no short into uptrend  •  CDNS: relVol 0.6× < 2.5× (todayVol 1.2M)"
-    },
-    {
-      "time": "2026-09-01T17:51:06.248Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T18:01:21.301Z",
-      "type": "INFO",
-      "msg": "Account: $100059.26 | 1 positions | 2 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-01T18:01:22.343Z",
       "type": "INFO",
@@ -1281,6 +1220,54 @@
     },
     {
       "time": "2026-09-02T17:51:08.723Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T18:01:21.050Z",
+      "type": "INFO",
+      "msg": "Account: $100032.40 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T18:01:21.662Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 39",
+      "detail": "CNH, MMED, NVDA, ONDS, NU, INTC, AAL, PLUG, AAPL, CDE"
+    },
+    {
+      "time": "2026-09-02T18:01:21.662Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "39 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-02T18:01:33.533Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "CNH: price $13.40 < $15  •  MMED: relVol 1.7× < 2× (todayVol 2.6M)  •  NVDA: gap 3.3% < 4% (price $224.60 vs priorClose $217.44)  •  ONDS: price $7.53 < $15  •  NU: relVol 0.8× < 2× (todayVol 53.3M)  •  INTC: gap 0.6% < 4% (price $89.51 vs priorClose $88.97)  •  AAL: price $13.14 < $15  •  PLUG: price $2.10 < $15  •  AAPL: gap 0.2% < 4% (price $325.80 vs priorClose $325.13)  •  CDE: relVol 0.5× < 2× (todayVol 21.6M)  •  BTG: price $5.39 < $15  •  F: price $13.98 < $15"
+    },
+    {
+      "time": "2026-09-02T18:01:33.533Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T18:01:33.633Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 9",
+      "detail": "CRDO, PSQL, CRWD, SAIL, ERAS, TENB, PS, NET, S"
+    },
+    {
+      "time": "2026-09-02T18:01:36.627Z",
+      "type": "INFO",
+      "msg": "Short rejections (9)",
+      "detail": "CRDO: ATR 0.48% < 0.5%  •  PSQL: price $13.47 < $20 (short floor)  •  CRWD: net up over ~5d ($189.18→$202.04) — no short into uptrend  •  SAIL: price $18.07 < $20 (short floor)  •  ERAS: price $15.81 < $20 (short floor)  •  TENB: net up over ~5d ($32.79→$33.53) — no short into uptrend  •  PS: avgVol 0.2M < 1M  •  NET: relVol 0.4× < 2.5× (todayVol 1.6M)  •  S: price $19.65 < $20 (short floor)"
+    },
+    {
+      "time": "2026-09-02T18:01:36.627Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
