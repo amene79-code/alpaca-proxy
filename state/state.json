@@ -3,14 +3,14 @@
     "DELL": {
       "side": "long",
       "entry": 484.57000732421875,
-      "high": 487.845,
+      "high": 493.394,
       "low": 484.57000732421875,
       "initialSl": 478.82,
-      "sl": 478.82,
+      "sl": 485.47,
       "tp": 499.9,
       "slOrderId": null,
       "tpOrderId": null,
-      "movedToBreakeven": false
+      "movedToBreakeven": true
     }
   },
   "dailyTrades": 1,
@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-02T19:26:15.765Z",
+  "lastRun": "2026-09-02T19:36:32.058Z",
   "log": [
-    {
-      "time": "2026-09-01T19:05:39.533Z",
-      "type": "SIGNAL",
-      "msg": "FRVO — score 10 | gap 28.2% | relVol 5.8× | RSI 49",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:05:39.968Z",
-      "type": "SIGNAL",
-      "msg": "EIX — score 8 | gap 9.4% | relVol 3.5× | RSI 68",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:05:40.716Z",
-      "type": "SIGNAL",
-      "msg": "MMED — score 9 | gap 11.8% | relVol 3.0× | RSI 66",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:05:51.279Z",
-      "type": "INFO",
-      "msg": "Rejections (31)",
-      "detail": "MRNA: relVol 0.6× < 2× (todayVol 18.6M)  •  PCG: price $14.14 < $15  •  PBR: relVol 1.2× < 2× (todayVol 23.5M)  •  CNH: price $12.37 < $15  •  CRK: below opening-range high (price $15.81 < ORH $16.12, 68 today-candles)  •  KLRA: avgVol 0.6M < 1M  •  PLSE: avgVol 0.4M < 1M  •  DUOL: relVol 1.1× < 2× (todayVol 1.5M)  •  NVS: below VWAP (price $161.41 < VWAP $161.71)  •  HP: relVol 1.0× < 2× (todayVol 1.4M)  •  GRDN: avgVol 0.4M < 1M  •  BWXT: relVol 1.2× < 2× (todayVol 1.2M)"
-    },
     {
       "time": "2026-09-01T19:05:51.279Z",
       "type": "INFO",
@@ -1283,6 +1259,30 @@
       "time": "2026-09-02T19:26:15.765Z",
       "type": "INFO",
       "msg": "SKIP CRDO — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T19:36:31.274Z",
+      "type": "INFO",
+      "msg": "Account: $100057.61 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T19:36:31.706Z",
+      "type": "INFO",
+      "msg": "EOD review (24 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T19:36:31.857Z",
+      "type": "INFO",
+      "msg": "DELL held overnight",
+      "detail": "Side long | Strong close | P&L +$25.21 | above VWAP"
+    },
+    {
+      "time": "2026-09-02T19:36:32.057Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
