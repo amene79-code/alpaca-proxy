@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "DELL": {
-      "side": "long",
-      "entry": 484.57000732421875,
-      "high": 495.2259,
-      "low": 484.57000732421875,
-      "initialSl": 478.82,
-      "sl": 485.47,
-      "tp": 499.9,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-09-02",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-02T20:07:11.655Z",
+  "lastRun": "2026-09-02T20:17:29.546Z",
   "log": [
-    {
-      "time": "2026-09-01T19:16:22.075Z",
-      "type": "SIGNAL",
-      "msg": "EIX — score 9 | gap 9.5% | relVol 3.6× | RSI 61",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:16:22.827Z",
-      "type": "SIGNAL",
-      "msg": "MMED — score 9 | gap 11.3% | relVol 3.1× | RSI 54",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:16:35.086Z",
-      "type": "INFO",
-      "msg": "Rejections (32)",
-      "detail": "MRNA: relVol 0.6× < 2× (todayVol 19.7M)  •  PCG: price $14.20 < $15  •  CRK: below opening-range high (price $15.97 < ORH $16.12, 71 today-candles)  •  CNH: price $12.44 < $15  •  PBR: relVol 1.2× < 2× (todayVol 24.2M)  •  KLRA: avgVol 0.6M < 1M  •  PLSE: avgVol 0.4M < 1M  •  DUOL: relVol 1.1× < 2× (todayVol 1.5M)  •  NVS: below VWAP (price $161.37 < VWAP $161.70)  •  SMMT: price $14.40 < $15  •  HP: relVol 1.0× < 2× (todayVol 1.4M)  •  ORA: avgVol 0.7M < 1M"
-    },
-    {
-      "time": "2026-09-01T19:16:35.086Z",
-      "type": "INFO",
-      "msg": "Top signal: FRVO (score 11)",
-      "detail": ""
-    },
     {
       "time": "2026-09-01T19:16:35.086Z",
       "type": "INFO",
@@ -1281,6 +1244,30 @@
     },
     {
       "time": "2026-09-02T20:07:11.655Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T20:17:27.673Z",
+      "type": "INFO",
+      "msg": "Account: $100033.18 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T20:17:27.684Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T20:17:29.395Z",
+      "type": "SELL",
+      "msg": "✓ Closed DELL (ext-hours stop)",
+      "detail": "Side long | P&L +$0.78"
+    },
+    {
+      "time": "2026-09-02T20:17:29.546Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
