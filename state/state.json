@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-02T19:46:45.727Z",
+  "lastRun": "2026-09-02T19:56:58.736Z",
   "log": [
-    {
-      "time": "2026-09-01T19:05:51.503Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PURR, OSW, SN, FROG, PS, ONDS, AXON, BMNR, XNDU, PSQL"
-    },
-    {
-      "time": "2026-09-01T19:06:06.148Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PURR: price $11.14 < $20 (short floor)  •  OSW: avgVol 0.8M < 1M  •  SN: relVol 1.1× < 2.5× (todayVol 1.8M)  •  FROG: net up over ~5d ($89.48→$91.66) — no short into uptrend  •  PS: avgVol 0.2M < 1M  •  ONDS: price $7.05 < $20 (short floor)  •  AXON: avgVol 0.9M < 1M  •  BMNR: relVol 0.7× < 2.5× (todayVol 29.4M)  •  XNDU: price $9.93 < $20 (short floor)  •  PSQL: price $15.98 < $20 (short floor)  •  CRWD: net up over ~5d ($185.38→$213.51) — no short into uptrend  •  NTSK: price $14.16 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-01T19:06:06.148Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:16:20.056Z",
-      "type": "INFO",
-      "msg": "Account: $100015.81 | 0 positions | 3 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-01T19:16:20.872Z",
       "type": "INFO",
@@ -1281,6 +1257,30 @@
     },
     {
       "time": "2026-09-02T19:46:45.727Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T19:56:58.036Z",
+      "type": "INFO",
+      "msg": "Account: $100051.93 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T19:56:58.374Z",
+      "type": "INFO",
+      "msg": "EOD review (4 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T19:56:58.535Z",
+      "type": "INFO",
+      "msg": "DELL held overnight",
+      "detail": "Side long | Strong close | P&L +$19.53 | above VWAP"
+    },
+    {
+      "time": "2026-09-02T19:56:58.736Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
