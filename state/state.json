@@ -1,7 +1,20 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 3,
-  "dailyDate": "2026-09-01",
+  "trailingStops": {
+    "CRDO": {
+      "side": "short",
+      "entry": 165.97860717773438,
+      "high": 165.97860717773438,
+      "low": 165.97860717773438,
+      "initialSl": 166.96,
+      "sl": 166.96,
+      "tp": 163.02,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 0,
+  "dailyDate": "2026-09-02",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,80 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-01T22:20:40.614Z",
+  "lastRun": "2026-09-02T16:58:04.592Z",
   "log": [
-    {
-      "time": "2026-08-31T20:23:50.099Z",
-      "type": "INFO",
-      "msg": "Account: $100076.91 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-31T20:23:50.139Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-31T20:23:50.340Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-31T23:16:12.735Z",
-      "type": "INFO",
-      "msg": "Account: $100076.91 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-31T23:16:12.811Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-08-31T23:16:13.381Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T17:07:40.008Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T17:07:40.400Z",
-      "type": "INFO",
-      "msg": "Account: $100076.91 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T17:07:41.443Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 45, actives 50, kept 29",
-      "detail": "FRVO, MRNA, MMED, KLRA, PBR, CRK, NVS, DUOL, SMMT, STDN"
-    },
-    {
-      "time": "2026-09-01T17:07:41.443Z",
-      "type": "INFO",
-      "msg": "Scanning 29 candidates",
-      "detail": "29 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-01T17:07:41.745Z",
-      "type": "SIGNAL",
-      "msg": "FRVO — score 10 | gap 27.8% | relVol 5.0× | RSI 78",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T17:07:42.728Z",
-      "type": "SIGNAL",
-      "msg": "MMED — score 8 | gap 10.1% | relVol 2.2× | RSI 41",
-      "detail": ""
-    },
     {
       "time": "2026-09-01T17:07:54.573Z",
       "type": "INFO",
@@ -1271,13 +1212,83 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-09-02T16:57:46.583Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T16:57:46.737Z",
+      "type": "INFO",
+      "msg": "Account: $100015.66 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T16:57:47.660Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 35",
+      "detail": "CNH, MMED, NVDA, ONDS, NU, INTC, AAL, AAPL, CDE, BTG"
+    },
+    {
+      "time": "2026-09-02T16:57:47.660Z",
+      "type": "INFO",
+      "msg": "Scanning 35 candidates",
+      "detail": "35 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-02T16:58:00.248Z",
+      "type": "INFO",
+      "msg": "Rejections (35)",
+      "detail": "CNH: price $13.28 < $15  •  MMED: relVol 1.3× < 2× (todayVol 2.1M)  •  NVDA: gap 3.9% < 4% (price $225.83 vs priorClose $217.44)  •  ONDS: price $7.47 < $15  •  NU: relVol 0.6× < 2× (todayVol 44.5M)  •  INTC: gap 1.4% < 4% (price $90.19 vs priorClose $88.97)  •  AAL: price $13.16 < $15  •  AAPL: gap 0.3% < 4% (price $326.03 vs priorClose $325.13)  •  CDE: relVol 0.4× < 2× (todayVol 16.2M)  •  BTG: price $5.40 < $15  •  F: price $13.89 < $15  •  SOFI: relVol 0.6× < 2× (todayVol 24.5M)"
+    },
+    {
+      "time": "2026-09-02T16:58:00.248Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T16:58:00.422Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 10",
+      "detail": "CRDO, PSQL, CRWD, NET, SAIL, ERAS, TENB, NTSK, XNDU, S"
+    },
+    {
+      "time": "2026-09-02T16:58:01.033Z",
+      "type": "SIGNAL",
+      "msg": "CRDO — SHORT score 8 | gap -19.7% | relVol 3.5× | RSI 14",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T16:58:04.035Z",
+      "type": "INFO",
+      "msg": "Short rejections (9)",
+      "detail": "PSQL: price $13.95 < $20 (short floor)  •  CRWD: net up over ~5d ($189.18→$202.78) — no short into uptrend  •  NET: relVol 0.4× < 2.5× (todayVol 1.3M)  •  SAIL: price $18.18 < $20 (short floor)  •  ERAS: price $15.85 < $20 (short floor)  •  TENB: relVol 0.4× < 2.5× (todayVol 1.3M)  •  NTSK: price $13.32 < $20 (short floor)  •  XNDU: price $9.46 < $20 (short floor)  •  S: price $19.68 < $20 (short floor)"
+    },
+    {
+      "time": "2026-09-02T16:58:04.036Z",
+      "type": "INFO",
+      "msg": "Top short: CRDO (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T16:58:04.036Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 6× CRDO @ ~$165.98",
+      "detail": "gap -19.7% | risk $5.89 | SL $166.96 | TP $163.02 | R:R 3.0"
+    },
+    {
+      "time": "2026-09-02T16:58:04.091Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 6× CRDO",
+      "detail": "ID 1a1dd28f-f1ab-4647-b1a0-4303069cf86c | R:R 3.0:1 | risk $5.89 | real bracket stop @ $166.96"
     }
   ],
-  "tradedToday": [
-    "FRVO",
-    "MMED",
-    "EIX"
-  ],
-  "shortDailyTrades": 0,
-  "shortTradedToday": []
+  "tradedToday": [],
+  "shortDailyTrades": 1,
+  "shortTradedToday": [
+    "CRDO"
+  ]
 }
