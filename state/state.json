@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-02T19:56:58.736Z",
+  "lastRun": "2026-09-02T20:07:11.655Z",
   "log": [
-    {
-      "time": "2026-09-01T19:16:20.872Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 35",
-      "detail": "FRVO, MRNA, EIX, PCG, MMED, CRK, CNH, PBR, KLRA, PLSE"
-    },
-    {
-      "time": "2026-09-01T19:16:20.872Z",
-      "type": "INFO",
-      "msg": "Scanning 35 candidates",
-      "detail": "35 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-01T19:16:21.108Z",
-      "type": "SIGNAL",
-      "msg": "FRVO — score 11 | gap 29.1% | relVol 5.8× | RSI 66",
-      "detail": ""
-    },
     {
       "time": "2026-09-01T19:16:22.075Z",
       "type": "SIGNAL",
@@ -1283,6 +1265,24 @@
       "time": "2026-09-02T19:56:58.736Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T20:07:11.203Z",
+      "type": "INFO",
+      "msg": "Account: $100045.83 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T20:07:11.260Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-02T20:07:11.655Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
