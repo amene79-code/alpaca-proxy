@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-03T20:13:47.583Z",
+  "lastRun": "2026-09-03T20:24:10.662Z",
   "log": [
-    {
-      "time": "2026-09-02T19:05:01.261Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 3× DELL",
-      "detail": "ID 553a979e-cbde-43c0-8868-eae760b90fef | R:R 2.7:1 | risk $17.25"
-    },
-    {
-      "time": "2026-09-02T19:05:01.901Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 31",
-      "detail": "CRDO, PSQL, MDB, STDN, PANW, BFLY, EIX, PS, FRVO, PLTR"
-    },
-    {
-      "time": "2026-09-02T19:05:02.141Z",
-      "type": "SIGNAL",
-      "msg": "CRDO — SHORT score 9 | gap -20.0% | relVol 4.5× | RSI 72",
-      "detail": ""
-    },
     {
       "time": "2026-09-02T19:05:12.662Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-03T20:13:47.583Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-03T20:24:09.874Z",
+      "type": "INFO",
+      "msg": "Account: $100018.55 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-03T20:24:09.945Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-03T20:24:10.662Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
