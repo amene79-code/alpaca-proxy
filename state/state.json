@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-03T19:53:06.897Z",
+  "lastRun": "2026-09-03T20:03:24.044Z",
   "log": [
-    {
-      "time": "2026-09-02T19:04:47.563Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "DELL, GTLB, SGLD, CNH, MLYS, ONDS, ASTS, KARD, HL, AUR"
-    },
-    {
-      "time": "2026-09-02T19:04:47.563Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-02T19:04:47.748Z",
-      "type": "SIGNAL",
-      "msg": "DELL — score 9 | gap 14.0% | relVol 4.2× | RSI 83",
-      "detail": ""
-    },
     {
       "time": "2026-09-02T19:05:01.070Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-03T19:53:06.897Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-03T20:03:23.740Z",
+      "type": "INFO",
+      "msg": "Account: $100018.55 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-03T20:03:23.799Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-03T20:03:24.044Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
