@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-03T17:04:26.577Z",
+  "lastRun": "2026-09-03T17:14:56.620Z",
   "log": [
-    {
-      "time": "2026-09-01T19:59:03.160Z",
-      "type": "INFO",
-      "msg": "Account: $100015.81 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T19:59:03.490Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T20:09:23.497Z",
-      "type": "INFO",
-      "msg": "Account: $100015.81 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T20:09:23.570Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T20:09:24.030Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T20:19:39.977Z",
-      "type": "INFO",
-      "msg": "Account: $100015.81 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T20:19:40.046Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-01T20:19:40.556Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-09-01T20:29:54.476Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-09-03T17:04:26.577Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-03T17:14:37.319Z",
+      "type": "INFO",
+      "msg": "Account: $100036.46 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-03T17:14:37.705Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SNOW, CRCL, HOOD, MSTR, BMNR, CIFR, BULL, MARA, HCM, SMMT"
+    },
+    {
+      "time": "2026-09-03T17:14:37.705Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-03T17:14:49.512Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SNOW: below VWAP (price $368.38 < VWAP $372.64)  •  CRCL: relVol 1.2× < 2× (todayVol 17.0M)  •  HOOD: relVol 1.8× < 2× (todayVol 36.1M)  •  MSTR: relVol 1.0× < 2× (todayVol 25.6M)  •  BMNR: relVol 1.0× < 2× (todayVol 39.2M)  •  CIFR: relVol 0.7× < 2× (todayVol 22.2M)  •  BULL: price $10.07 < $15  •  MARA: price $11.56 < $15  •  HCM: price $14.19 < $15  •  SMMT: relVol 1.3× < 2× (todayVol 7.3M)  •  CLSK: price $12.44 < $15  •  WULF: relVol 0.5× < 2× (todayVol 15.3M)"
+    },
+    {
+      "time": "2026-09-03T17:14:49.512Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-03T17:14:49.611Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 23",
+      "detail": "PSQL, VSXY, CPB, PL, CIEN, MAAS, TSN, AMR, IONS, TDW"
+    },
+    {
+      "time": "2026-09-03T17:14:56.619Z",
+      "type": "INFO",
+      "msg": "Short rejections (22)",
+      "detail": "PSQL: price $9.95 < $20 (short floor)  •  CPB: above opening-range low (price $21.59 > ORL $21.41)  •  PL: price $18.17 < $20 (short floor)  •  CIEN: relVol 2.3× < 2.5× (todayVol 4.9M)  •  MAAS: price $15.98 < $20 (short floor)  •  TSN: relVol 1.3× < 2.5× (todayVol 3.5M)  •  AMR: avgVol 0.4M < 1M  •  IONS: relVol 0.9× < 2.5× (todayVol 1.9M)  •  TDW: avgVol 0.6M < 1M  •  AEHR: relVol 0.9× < 2.5× (todayVol 2.1M)  •  CHTR: relVol 0.4× < 2.5× (todayVol 1.0M)  •  WIX: relVol 0.4× < 2.5× (todayVol 0.6M)"
+    },
+    {
+      "time": "2026-09-03T17:14:56.619Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
