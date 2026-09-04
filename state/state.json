@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-09-03",
+  "dailyDate": "2026-09-04",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-03T21:52:18.644Z",
+  "lastRun": "2026-09-04T16:43:12.362Z",
   "log": [
-    {
-      "time": "2026-09-02T19:15:26.919Z",
-      "type": "INFO",
-      "msg": "Account: $100028.80 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-02T19:15:27.900Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CNH, MMED, ANDE, NVDA, ONDS, NU, INTC, AAL, PLUG, AAPL"
-    },
-    {
-      "time": "2026-09-02T19:15:27.901Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-02T19:15:43.856Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "CNH: price $13.56 < $15  •  MMED: below VWAP (price $23.79 < VWAP $23.91)  •  ANDE: avgVol 0.3M < 1M  •  NVDA: gap 3.3% < 4% (price $224.51 vs priorClose $217.44)  •  ONDS: price $7.60 < $15  •  NU: relVol 0.9× < 2× (todayVol 66.4M)  •  INTC: gap 1.0% < 4% (price $89.83 vs priorClose $88.97)  •  AAL: price $13.14 < $15  •  PLUG: price $2.13 < $15  •  AAPL: gap 0.1% < 4% (price $325.49 vs priorClose $325.13)  •  CDE: relVol 0.7× < 2× (todayVol 27.8M)  •  BTG: price $5.39 < $15"
-    },
-    {
-      "time": "2026-09-02T19:15:43.856Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-02T19:15:44.032Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 7",
-      "detail": "CRDO, PSQL, PS, CRWD, S, NET, SAIL"
-    },
-    {
-      "time": "2026-09-02T19:15:44.776Z",
-      "type": "SIGNAL",
-      "msg": "CRDO — SHORT score 9 | gap -19.9% | relVol 4.6× | RSI 72",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-02T19:15:47.246Z",
-      "type": "INFO",
-      "msg": "Short rejections (6)",
-      "detail": "PSQL: price $13.40 < $20 (short floor)  •  PS: avgVol 0.2M < 1M  •  CRWD: net up over ~5d ($189.18→$203.52) — no short into uptrend  •  S: price $19.59 < $20 (short floor)  •  NET: relVol 0.5× < 2.5× (todayVol 1.9M)  •  SAIL: price $18.33 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-02T19:15:47.246Z",
-      "type": "INFO",
-      "msg": "Top short: CRDO (score 9)",
-      "detail": ""
-    },
     {
       "time": "2026-09-02T19:15:47.246Z",
       "type": "INFO",
@@ -1271,12 +1217,63 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-09-04T16:42:50.212Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T16:42:50.282Z",
+      "type": "INFO",
+      "msg": "Account: $100018.49 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T16:42:50.775Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SMCI, ALAB, CBRS, AEHR, MRVL, SNDK, SKHY, IREN, MU, AXTI"
+    },
+    {
+      "time": "2026-09-04T16:42:50.776Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-04T16:43:02.599Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SMCI: relVol 0.5× < 2× (todayVol 27.5M)  •  ALAB: relVol 1.2× < 2× (todayVol 3.9M)  •  CBRS: relVol 1.2× < 2× (todayVol 9.9M)  •  AEHR: relVol 1.2× < 2× (todayVol 3.1M)  •  MRVL: relVol 0.5× < 2× (todayVol 12.2M)  •  SNDK: relVol 0.8× < 2× (todayVol 10.1M)  •  SKHY: relVol 0.7× < 2× (todayVol 11.7M)  •  IREN: relVol 0.4× < 2× (todayVol 18.7M)  •  MU: relVol 0.8× < 2× (todayVol 22.1M)  •  AXTI: relVol 0.8× < 2× (todayVol 7.1M)  •  SMTC: relVol 0.4× < 2× (todayVol 1.2M)  •  BLTE: avgVol 0.2M < 1M"
+    },
+    {
+      "time": "2026-09-04T16:43:02.599Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T16:43:02.716Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 32",
+      "detail": "GWRE, LULU, PATH, FICO, ADSK, MNDY, TRU, TSLA, EFX, ADBE"
+    },
+    {
+      "time": "2026-09-04T16:43:12.362Z",
+      "type": "INFO",
+      "msg": "Short rejections (32)",
+      "detail": "GWRE: relVol 1.8× < 2.5× (todayVol 2.2M)  •  LULU: above VWAP (price $100.36 > VWAP $100.28) — not holding breakdown  •  PATH: price $15.19 < $20 (short floor)  •  FICO: avgVol 0.3M < 1M  •  ADSK: relVol 1.1× < 2.5× (todayVol 2.1M)  •  MNDY: relVol 0.4× < 2.5× (todayVol 0.5M)  •  TRU: relVol 1.2× < 2.5× (todayVol 2.1M)  •  TSLA: net up over ~5d ($348.75→$351.98) — no short into uptrend  •  EFX: avgVol 1.0M < 1M  •  ADBE: relVol 0.9× < 2.5× (todayVol 3.8M)  •  WLY: avgVol 0.5M < 1M  •  PTC: relVol 0.8× < 2.5× (todayVol 0.9M)"
+    },
+    {
+      "time": "2026-09-04T16:43:12.362Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [],
-  "shortDailyTrades": 2,
-  "shortTradedToday": [
-    "VSXY",
-    "CIEN"
-  ]
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
