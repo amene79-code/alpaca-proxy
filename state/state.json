@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-04T19:54:50.847Z",
+  "lastRun": "2026-09-04T20:05:03.944Z",
   "log": [
-    {
-      "time": "2026-09-03T18:39:43.240Z",
-      "type": "INFO",
-      "msg": "Top short: CIEN (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-03T18:39:43.240Z",
-      "type": "INFO",
-      "msg": "SKIP CIEN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-03T18:50:00.209Z",
-      "type": "INFO",
-      "msg": "Account: $100018.55 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-03T18:50:01.423Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-04T19:54:50.847Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T20:05:03.716Z",
+      "type": "INFO",
+      "msg": "Account: $100011.77 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T20:05:03.726Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T20:05:03.944Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
