@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-04T19:44:34.918Z",
+  "lastRun": "2026-09-04T19:54:50.847Z",
   "log": [
-    {
-      "time": "2026-09-03T18:39:34.803Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 27",
-      "detail": "PSQL, VSXY, CIEN, PL, AMR, MAAS, TSN, CPB, AEHR, BTU"
-    },
-    {
-      "time": "2026-09-03T18:39:35.468Z",
-      "type": "SIGNAL",
-      "msg": "CIEN — SHORT score 9 | gap -10.4% | relVol 2.6× | RSI 37",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-03T18:39:43.239Z",
-      "type": "INFO",
-      "msg": "Short rejections (25)",
-      "detail": "PSQL: price $9.93 < $20 (short floor)  •  PL: price $18.07 < $20 (short floor)  •  AMR: avgVol 0.4M < 1M  •  MAAS: price $16.03 < $20 (short floor)  •  TSN: relVol 1.6× < 2.5× (todayVol 4.3M)  •  CPB: above VWAP (price $21.98 > VWAP $21.63) — not holding breakdown  •  AEHR: relVol 1.3× < 2.5× (todayVol 3.3M)  •  BTU: net up over ~5d ($27.32→$27.60) — no short into uptrend  •  TDW: avgVol 0.6M < 1M  •  IONS: relVol 1.1× < 2.5× (todayVol 2.4M)  •  WIX: relVol 0.6× < 2.5× (todayVol 0.9M)  •  CNR: avgVol 0.5M < 1M"
-    },
     {
       "time": "2026-09-03T18:39:43.240Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-04T19:44:34.918Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T19:54:50.317Z",
+      "type": "INFO",
+      "msg": "Account: $100011.77 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T19:54:50.847Z",
+      "type": "INFO",
+      "msg": "EOD review (6 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T19:54:50.847Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
