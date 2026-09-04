@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-04T17:26:21.820Z",
+  "lastRun": "2026-09-04T17:36:59.044Z",
   "log": [
-    {
-      "time": "2026-09-02T20:27:40.928Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-02T21:58:33.717Z",
-      "type": "INFO",
-      "msg": "Account: $100032.44 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-02T21:58:33.777Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-02T21:58:34.246Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-03T16:53:29.102Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-03T16:53:29.338Z",
-      "type": "INFO",
-      "msg": "Account: $100032.36 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-03T16:53:30.018Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SNOW, HOOD, CRCL, MSTR, BMNR, CIFR, BULL, HCM, SMMT, MARA"
-    },
-    {
-      "time": "2026-09-03T16:53:30.018Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-09-03T16:53:42.078Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-04T17:26:21.820Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T17:36:33.321Z",
+      "type": "INFO",
+      "msg": "Account: $100018.49 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T17:36:33.996Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SMCI, CBRS, SKHY, ALAB, AEHR, SNDK, MRVL, IREN, BLTE, AXTI"
+    },
+    {
+      "time": "2026-09-04T17:36:33.996Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-04T17:36:46.550Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SMCI: relVol 0.6× < 2× (todayVol 33.3M)  •  CBRS: relVol 1.3× < 2× (todayVol 10.7M)  •  SKHY: relVol 0.8× < 2× (todayVol 13.7M)  •  ALAB: relVol 1.3× < 2× (todayVol 4.2M)  •  AEHR: relVol 1.3× < 2× (todayVol 3.4M)  •  SNDK: relVol 0.9× < 2× (todayVol 11.6M)  •  MRVL: relVol 0.6× < 2× (todayVol 13.3M)  •  IREN: relVol 0.5× < 2× (todayVol 21.2M)  •  BLTE: avgVol 0.2M < 1M  •  AXTI: relVol 0.8× < 2× (todayVol 7.8M)  •  UCTT: avgVol 0.9M < 1M  •  COHU: avgVol 0.9M < 1M"
+    },
+    {
+      "time": "2026-09-04T17:36:46.550Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-04T17:36:46.655Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "GWRE, LULU, PATH, FICO, ADSK, TRU, EFX, MNDY, TSLA, BMNR"
+    },
+    {
+      "time": "2026-09-04T17:36:59.044Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "GWRE: relVol 2.1× < 2.5× (todayVol 2.6M)  •  LULU: above VWAP (price $101.05 > VWAP $100.32) — not holding breakdown  •  PATH: price $15.16 < $20 (short floor)  •  FICO: avgVol 0.3M < 1M  •  ADSK: relVol 1.2× < 2.5× (todayVol 2.3M)  •  TRU: relVol 1.3× < 2.5× (todayVol 2.3M)  •  EFX: relVol 1.7× < 2.5× (todayVol 1.7M)  •  MNDY: relVol 0.4× < 2.5× (todayVol 0.5M)  •  TSLA: net up over ~5d ($348.75→$352.07) — no short into uptrend  •  BMNR: net up over ~5d ($23.80→$24.86) — no short into uptrend  •  ZS: relVol 1.9× < 2.5× (todayVol 5.2M)  •  ADBE: relVol 1.0× < 2.5× (todayVol 4.2M)"
+    },
+    {
+      "time": "2026-09-04T17:36:59.044Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
