@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-07T18:14:26.143Z",
+  "lastRun": "2026-09-07T18:24:39.013Z",
   "log": [
-    {
-      "time": "2026-09-03T19:01:02.607Z",
-      "type": "INFO",
-      "msg": "SKIP VSXY — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-03T19:11:17.926Z",
-      "type": "INFO",
-      "msg": "Account: $100018.55 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-03T19:11:18.586Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MSTR, CRCL, HOOD, BMNR, CIFR, MARA, BULL, SNOW, SMMT, HCM"
-    },
     {
       "time": "2026-09-03T19:11:18.586Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-07T18:14:26.143Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-07T18:24:38.902Z",
+      "type": "INFO",
+      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-07T18:24:38.911Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-07T18:24:39.013Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
