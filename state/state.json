@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-07T18:04:11.045Z",
+  "lastRun": "2026-09-07T18:14:26.143Z",
   "log": [
-    {
-      "time": "2026-09-03T19:00:54.447Z",
-      "type": "SIGNAL",
-      "msg": "VSXY — SHORT score 9 | gap -13.9% | relVol 3.6× | RSI 60",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-03T19:01:02.607Z",
-      "type": "INFO",
-      "msg": "Short rejections (26)",
-      "detail": "PSQL: price $9.90 < $20 (short floor)  •  CIEN: ATR 0.48% < 0.5%  •  PL: price $18.17 < $20 (short floor)  •  AMR: avgVol 0.4M < 1M  •  MAAS: price $16.06 < $20 (short floor)  •  TSN: relVol 1.6× < 2.5× (todayVol 4.6M)  •  CPB: above VWAP (price $22.10 > VWAP $21.64) — not holding breakdown  •  AEHR: relVol 1.4× < 2.5× (todayVol 3.4M)  •  BTU: relVol 0.8× < 2.5× (todayVol 1.7M)  •  TDW: avgVol 0.6M < 1M  •  IONS: relVol 1.1× < 2.5× (todayVol 2.5M)  •  WIX: relVol 0.6× < 2.5× (todayVol 1.0M)"
-    },
-    {
-      "time": "2026-09-03T19:01:02.607Z",
-      "type": "INFO",
-      "msg": "Top short: VSXY (score 9)",
-      "detail": ""
-    },
     {
       "time": "2026-09-03T19:01:02.607Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-07T18:04:11.045Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-07T18:14:25.845Z",
+      "type": "INFO",
+      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-07T18:14:25.914Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-07T18:14:26.143Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
