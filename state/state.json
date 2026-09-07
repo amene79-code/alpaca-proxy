@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-07T18:24:39.013Z",
+  "lastRun": "2026-09-07T18:35:00.021Z",
   "log": [
-    {
-      "time": "2026-09-03T19:11:18.586Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-03T19:11:30.630Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "MSTR: relVol 1.1× < 2× (todayVol 30.8M)  •  CRCL: relVol 1.4× < 2× (todayVol 19.9M)  •  HOOD: ATR 0.28% < 0.5%  •  BMNR: relVol 1.1× < 2× (todayVol 47.4M)  •  CIFR: relVol 0.8× < 2× (todayVol 28.1M)  •  MARA: price $11.61 < $15  •  BULL: price $9.98 < $15  •  SNOW: below VWAP (price $361.49 < VWAP $371.62)  •  SMMT: relVol 1.7× < 2× (todayVol 10.2M)  •  HCM: price $14.12 < $15  •  PURR: price $12.42 < $15  •  PLTR: relVol 0.8× < 2× (todayVol 29.4M)"
-    },
-    {
-      "time": "2026-09-03T19:11:30.630Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-03T19:11:30.777Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-07T18:24:39.013Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-07T18:34:59.515Z",
+      "type": "INFO",
+      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-07T18:34:59.546Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-07T18:35:00.021Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
