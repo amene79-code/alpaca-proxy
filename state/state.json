@@ -1,6 +1,19 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 0,
+  "trailingStops": {
+    "ROIV": {
+      "side": "long",
+      "entry": 41.510101318359375,
+      "high": 41.510101318359375,
+      "low": 41.510101318359375,
+      "initialSl": 41.12,
+      "sl": 41.12,
+      "tp": 42.54,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 1,
   "dailyDate": "2026-09-08",
   "openPositions": [
     "FIVE",
@@ -70,74 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-08T18:40:36.968Z",
+  "lastRun": "2026-09-08T18:51:17.791Z",
   "log": [
-    {
-      "time": "2026-09-04T18:30:32.109Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-04T18:30:32.239Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "GWRE, LULU, FICO, PATH, ADSK, MNDY, EFX, TRU, WIX, BMNR"
-    },
-    {
-      "time": "2026-09-04T18:30:46.213Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "GWRE: relVol 2.4× < 2.5× (todayVol 3.1M)  •  LULU: above opening-range low (price $100.32 > ORL $97.99)  •  FICO: avgVol 0.3M < 1M  •  PATH: price $15.36 < $20 (short floor)  •  ADSK: relVol 1.3× < 2.5× (todayVol 2.5M)  •  MNDY: relVol 0.4× < 2.5× (todayVol 0.6M)  •  EFX: relVol 1.9× < 2.5× (todayVol 1.9M)  •  TRU: relVol 1.5× < 2.5× (todayVol 2.6M)  •  WIX: relVol 0.6× < 2.5× (todayVol 1.0M)  •  BMNR: net up over ~5d ($23.80→$24.80) — no short into uptrend  •  TSLA: net up over ~5d ($348.75→$353.03) — no short into uptrend  •  ADBE: relVol 1.1× < 2.5× (todayVol 4.6M)"
-    },
-    {
-      "time": "2026-09-04T18:30:46.213Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-04T18:40:58.041Z",
-      "type": "INFO",
-      "msg": "Account: $100018.49 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-04T18:40:58.468Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CBRS, ALAB, AEHR, SMCI, SNDK, IREN, MU, COHU, BLTE, UCTT"
-    },
-    {
-      "time": "2026-09-04T18:40:58.468Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-04T18:41:10.280Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "CBRS: relVol 1.3× < 2× (todayVol 11.4M)  •  ALAB: relVol 1.4× < 2× (todayVol 4.5M)  •  AEHR: relVol 1.3× < 2× (todayVol 3.6M)  •  SMCI: relVol 0.7× < 2× (todayVol 39.6M)  •  SNDK: relVol 1.0× < 2× (todayVol 12.5M)  •  IREN: relVol 0.5× < 2× (todayVol 24.8M)  •  MU: relVol 1.0× < 2× (todayVol 26.6M)  •  COHU: avgVol 0.9M < 1M  •  BLTE: avgVol 0.2M < 1M  •  UCTT: avgVol 0.9M < 1M  •  VAC: avgVol 0.5M < 1M  •  AXTI: relVol 0.9× < 2× (todayVol 8.3M)"
-    },
-    {
-      "time": "2026-09-04T18:41:10.280Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-04T18:41:10.395Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "GWRE, LULU, FICO, PATH, ADSK, MNDY, EFX, TRU, WIX, TSLA"
-    },
-    {
-      "time": "2026-09-04T18:41:21.992Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "GWRE: relVol 2.5× < 2.5× (todayVol 3.2M)  •  LULU: above VWAP (price $100.47 > VWAP $100.35) — not holding breakdown  •  FICO: avgVol 0.3M < 1M  •  PATH: price $15.29 < $20 (short floor)  •  ADSK: relVol 1.3× < 2.5× (todayVol 2.5M)  •  MNDY: relVol 0.4× < 2.5× (todayVol 0.6M)  •  EFX: relVol 1.9× < 2.5× (todayVol 1.9M)  •  TRU: relVol 1.5× < 2.5× (todayVol 2.6M)  •  WIX: relVol 0.6× < 2.5× (todayVol 1.0M)  •  TSLA: net up over ~5d ($348.75→$353.14) — no short into uptrend  •  ADBE: relVol 1.1× < 2.5× (todayVol 4.6M)  •  BMNR: net up over ~5d ($23.80→$24.84) — no short into uptrend"
-    },
     {
       "time": "2026-09-04T18:41:21.992Z",
       "type": "INFO",
@@ -1271,9 +1218,77 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-09-08T18:50:51.702Z",
+      "type": "INFO",
+      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-08T18:50:52.400Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SMR, CRWV, BE, ROIV, SEI, INTC, FRMI, NBIS, WULF, AXTI"
+    },
+    {
+      "time": "2026-09-08T18:50:52.400Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-08T18:50:53.498Z",
+      "type": "SIGNAL",
+      "msg": "ROIV — score 8 | gap 18.8% | relVol 2.2× | RSI 39",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-08T18:51:04.494Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "SMR: price $11.18 < $15  •  CRWV: relVol 1.5× < 2× (todayVol 41.6M)  •  BE: relVol 1.8× < 2× (todayVol 22.3M)  •  SEI: relVol 1.5× < 2× (todayVol 3.4M)  •  INTC: relVol 1.1× < 2× (todayVol 110.1M)  •  FRMI: price $5.86 < $15  •  NBIS: relVol 0.9× < 2× (todayVol 20.5M)  •  WULF: relVol 0.8× < 2× (todayVol 23.8M)  •  AXTI: relVol 1.1× < 2× (todayVol 10.3M)  •  DOCN: relVol 1.1× < 2× (todayVol 2.3M)  •  CIFR: relVol 0.9× < 2× (todayVol 28.5M)  •  LITE: relVol 1.3× < 2× (todayVol 6.0M)"
+    },
+    {
+      "time": "2026-09-08T18:51:04.494Z",
+      "type": "INFO",
+      "msg": "Top signal: ROIV (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-08T18:51:04.494Z",
+      "type": "BUY",
+      "msg": "Placing 36× ROIV @ ~$41.51",
+      "detail": "gap 18.8% | risk $14.04 | SL $41.12 | TP $42.54 | R:R 2.6 | "
+    },
+    {
+      "time": "2026-09-08T18:51:04.751Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 36× ROIV",
+      "detail": "ID a1d28fb8-fc37-41f9-bbd9-ff66347c5b16 | R:R 2.6:1 | risk $14.04"
+    },
+    {
+      "time": "2026-09-08T18:51:05.428Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "DYN, NVS, GPCR, APPN, BEAM, STDN, AMGN, FOUR, PATH, HWM"
+    },
+    {
+      "time": "2026-09-08T18:51:17.791Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "DYN: above VWAP (price $20.70 > VWAP $19.55) — not holding breakdown  •  NVS: ATR 0.10% < 0.5%  •  GPCR: avgVol 0.8M < 1M  •  APPN: avgVol 0.8M < 1M  •  BEAM: above VWAP (price $26.78 > VWAP $26.08) — not holding breakdown  •  STDN: price $13.28 < $20 (short floor)  •  AMGN: relVol 1.7× < 2.5× (todayVol 3.9M)  •  FOUR: relVol 0.6× < 2.5× (todayVol 1.2M)  •  PATH: price $13.88 < $20 (short floor)  •  HWM: relVol 2.4× < 2.5× (todayVol 7.3M)  •  SYK: relVol 1.8× < 2.5× (todayVol 4.3M)  •  MAN: avgVol 0.8M < 1M"
+    },
+    {
+      "time": "2026-09-08T18:51:17.791Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [],
+  "tradedToday": [
+    "ROIV"
+  ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
