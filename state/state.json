@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-08T19:23:19.700Z",
+  "lastRun": "2026-09-08T19:33:32.607Z",
   "log": [
-    {
-      "time": "2026-09-04T19:13:21.437Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "LULU: above opening-range low (price $100.17 > ORL $97.99)  •  FICO: avgVol 0.3M < 1M  •  PATH: price $15.36 < $20 (short floor)  •  ASAN: price $8.73 < $20 (short floor)  •  ADSK: relVol 1.4× < 2.5× (todayVol 2.7M)  •  MNDY: relVol 0.5× < 2.5× (todayVol 0.6M)  •  EFX: relVol 2.0× < 2.5× (todayVol 2.0M)  •  TRU: relVol 1.6× < 2.5× (todayVol 2.8M)  •  BMNR: net up over ~5d ($23.80→$24.79) — no short into uptrend  •  ADBE: relVol 1.1× < 2.5× (todayVol 4.8M)  •  ZS: relVol 2.2× < 2.5× (todayVol 6.1M)  •  TSLA: net up over ~5d ($348.75→$354.36) — no short into uptrend"
-    },
-    {
-      "time": "2026-09-04T19:13:21.437Z",
-      "type": "INFO",
-      "msg": "Top short: GWRE (score 8)",
-      "detail": ""
-    },
     {
       "time": "2026-09-04T19:13:21.437Z",
       "type": "SHORT",
@@ -1270,6 +1258,18 @@
       "time": "2026-09-08T19:23:19.700Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-08T19:33:32.401Z",
+      "type": "INFO",
+      "msg": "Account: $99996.61 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-08T19:33:32.607Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
