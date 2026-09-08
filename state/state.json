@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-08T19:54:55.605Z",
+  "lastRun": "2026-09-08T20:05:12.258Z",
   "log": [
-    {
-      "time": "2026-09-04T19:23:51.687Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-04T19:23:51.864Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "GWRE, LULU, FICO, PATH, ASAN, ADSK, MNDY, EFX, TRU, ADBE"
-    },
-    {
-      "time": "2026-09-04T19:24:08.773Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "GWRE: above VWAP (price $161.21 > VWAP $160.51) — not holding breakdown  •  LULU: above opening-range low (price $100.17 > ORL $97.99)  •  FICO: avgVol 0.3M < 1M  •  PATH: price $15.28 < $20 (short floor)  •  ASAN: price $8.74 < $20 (short floor)  •  ADSK: relVol 1.4× < 2.5× (todayVol 2.7M)  •  MNDY: relVol 0.5× < 2.5× (todayVol 0.6M)  •  EFX: relVol 2.0× < 2.5× (todayVol 2.1M)  •  TRU: relVol 1.7× < 2.5× (todayVol 2.9M)  •  ADBE: relVol 1.2× < 2.5× (todayVol 4.9M)  •  BMNR: net up over ~5d ($23.80→$24.87) — no short into uptrend  •  TSLA: net up over ~5d ($348.75→$354.20) — no short into uptrend"
-    },
     {
       "time": "2026-09-04T19:24:08.773Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-08T19:54:55.605Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-08T20:05:11.690Z",
+      "type": "INFO",
+      "msg": "Account: $99996.61 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-08T20:05:11.737Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-08T20:05:12.258Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
