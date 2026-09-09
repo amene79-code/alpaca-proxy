@@ -4,13 +4,13 @@
       "side": "short",
       "entry": 57.869998931884766,
       "high": 57.869998931884766,
-      "low": 57.345,
+      "low": 56.7,
       "initialSl": 58.28,
-      "sl": 58.28,
+      "sl": 57.74,
       "tp": 56.65,
       "slOrderId": null,
       "tpOrderId": null,
-      "movedToBreakeven": false
+      "movedToBreakeven": true
     }
   },
   "dailyTrades": 0,
@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-09T17:11:30.744Z",
+  "lastRun": "2026-09-09T17:22:07.849Z",
   "log": [
-    {
-      "time": "2026-09-07T18:24:38.911Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T18:24:39.013Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T18:34:59.515Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T18:34:59.546Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T18:35:00.021Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T18:45:19.483Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T18:45:19.508Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T18:45:19.909Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-09-07T18:55:30.514Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-09-09T17:11:30.744Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:21:43.422Z",
+      "type": "INFO",
+      "msg": "Account: $100015.20 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:21:43.912Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "PLSE, CMPS, META, ASO, NET, SSL, MRVL, SKHY, SUNB, JMKE"
+    },
+    {
+      "time": "2026-09-09T17:21:43.912Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-09T17:21:55.921Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "PLSE: avgVol 0.5M < 1M  •  CMPS: relVol 1.6× < 2× (todayVol 3.8M)  •  META: relVol 1.4× < 2× (todayVol 23.0M)  •  ASO: relVol 1.6× < 2× (todayVol 3.2M)  •  NET: relVol 0.8× < 2× (todayVol 2.5M)  •  SSL: price $14.65 < $15  •  MRVL: relVol 0.6× < 2× (todayVol 14.4M)  •  SKHY: relVol 1.0× < 2× (todayVol 18.5M)  •  SUNB: relVol 1.2× < 2× (todayVol 8.1M)  •  JMKE: below VWAP (price $22.45 < VWAP $22.47)  •  AEHR: relVol 1.1× < 2× (todayVol 3.1M)  •  DDOG: relVol 0.7× < 2× (todayVol 2.8M)"
+    },
+    {
+      "time": "2026-09-09T17:21:55.921Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:21:56.028Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "TTAN, RML, TBBK, BRZE, CASY, UI, CHRN, ORA, PS, XE"
+    },
+    {
+      "time": "2026-09-09T17:22:07.849Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "RML: price $10.81 < $20 (short floor)  •  TBBK: avgVol 0.3M < 1M  •  BRZE: relVol 2.1× < 2.5× (todayVol 6.4M)  •  CASY: avgVol 0.4M < 1M  •  UI: avgVol 0.2M < 1M  •  CHRN: price $18.53 < $20 (short floor)  •  ORA: avgVol 0.7M < 1M  •  PS: avgVol 0.2M < 1M  •  XE: price $17.23 < $20 (short floor)  •  BKV: ATR 0.24% < 0.5%  •  NAMS: relVol 0.5× < 2.5× (todayVol 0.6M)  •  CHWY: relVol 1.6× < 2.5× (todayVol 11.4M)"
+    },
+    {
+      "time": "2026-09-09T17:22:07.849Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
