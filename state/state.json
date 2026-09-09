@@ -3,7 +3,7 @@
     "CMPS": {
       "side": "long",
       "entry": 15.300000190734863,
-      "high": 15.300000190734863,
+      "high": 15.33,
       "low": 15.300000190734863,
       "initialSl": 15.17,
       "sl": 15.17,
@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-09T18:47:53.054Z",
+  "lastRun": "2026-09-09T18:58:31.400Z",
   "log": [
-    {
-      "time": "2026-09-08T17:57:01.002Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-08T17:57:01.462Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SMR, CRWV, BE, ROIV, SEI, INTC, NBIS, DOCN, CIFR, FRMI"
-    },
-    {
-      "time": "2026-09-08T17:57:01.462Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-08T17:57:15.459Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "SMR: price $11.13 < $15  •  CRWV: relVol 1.4× < 2× (todayVol 38.0M)  •  BE: relVol 1.6× < 2× (todayVol 20.7M)  •  ROIV: ATR 0.45% < 0.5%  •  SEI: relVol 1.3× < 2× (todayVol 3.0M)  •  INTC: relVol 1.0× < 2× (todayVol 99.7M)  •  NBIS: relVol 0.8× < 2× (todayVol 18.5M)  •  DOCN: relVol 0.9× < 2× (todayVol 1.8M)  •  CIFR: relVol 0.8× < 2× (todayVol 25.5M)  •  FRMI: price $5.82 < $15  •  IREN: relVol 0.8× < 2× (todayVol 35.5M)  •  NOK: price $10.82 < $15"
-    },
-    {
-      "time": "2026-09-08T17:57:15.459Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-08T17:57:15.574Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "DYN, NVS, BEAM, APPN, AMGN, FOUR, STDN, HWM, PATH, GWRE"
-    },
-    {
-      "time": "2026-09-08T17:57:27.675Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "DYN: above VWAP (price $20.46 > VWAP $19.45) — not holding breakdown  •  NVS: ATR 0.09% < 0.5%  •  BEAM: above VWAP (price $26.50 > VWAP $26.05) — not holding breakdown  •  APPN: avgVol 0.8M < 1M  •  AMGN: relVol 1.5× < 2.5× (todayVol 3.5M)  •  FOUR: relVol 0.6× < 2.5× (todayVol 1.0M)  •  STDN: price $13.46 < $20 (short floor)  •  HWM: relVol 2.2× < 2.5× (todayVol 6.7M)  •  PATH: price $13.97 < $20 (short floor)  •  GWRE: relVol 1.2× < 2.5× (todayVol 1.7M)  •  MAN: avgVol 0.8M < 1M  •  GDDY: relVol 0.7× < 2.5× (todayVol 1.3M)"
-    },
-    {
-      "time": "2026-09-08T17:57:27.675Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-08T18:07:43.361Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-09-09T18:47:53.054Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T18:58:06.067Z",
+      "type": "INFO",
+      "msg": "Account: $100018.01 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T18:58:06.749Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 49, actives 50, kept 40",
+      "detail": "PLSE, SKHY, ASO, META, NET, SSL, CMPS, JMKE, MXL, SUNB"
+    },
+    {
+      "time": "2026-09-09T18:58:06.749Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-09T18:58:19.230Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "PLSE: avgVol 0.5M < 1M  •  SKHY: relVol 1.2× < 2× (todayVol 22.7M)  •  ASO: ATR 0.42% < 0.5%  •  META: relVol 1.6× < 2× (todayVol 27.0M)  •  NET: relVol 1.1× < 2× (todayVol 3.4M)  •  SSL: price $14.56 < $15  •  JMKE: below opening-range high (price $22.69 < ORH $23.79, 67 today-candles)  •  MXL: relVol 0.9× < 2× (todayVol 2.0M)  •  SUNB: relVol 1.3× < 2× (todayVol 9.3M)  •  AEHR: relVol 1.3× < 2× (todayVol 3.5M)  •  SEI: relVol 1.4× < 2× (todayVol 3.6M)  •  DDOG: relVol 0.8× < 2× (todayVol 3.3M)"
+    },
+    {
+      "time": "2026-09-09T18:58:19.230Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T18:58:19.342Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "TTAN, TBBK, RML, BRZE, CASY, CHRN, UI, CHWY, PS, XE"
+    },
+    {
+      "time": "2026-09-09T18:58:31.400Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "TTAN: ATR 0.38% < 0.5%  •  TBBK: avgVol 0.4M < 1M  •  RML: price $11.30 < $20 (short floor)  •  BRZE: ATR 0.38% < 0.5%  •  CASY: avgVol 0.4M < 1M  •  CHRN: price $17.95 < $20 (short floor)  •  UI: avgVol 0.2M < 1M  •  CHWY: relVol 2.1× < 2.5× (todayVol 15.2M)  •  PS: avgVol 0.2M < 1M  •  XE: price $17.20 < $20 (short floor)  •  VRT: net up over ~5d ($255.97→$261.96) — no short into uptrend  •  APG: relVol 1.3× < 2.5× (todayVol 3.5M)"
+    },
+    {
+      "time": "2026-09-09T18:58:31.400Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
