@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-09T17:32:47.075Z",
+  "lastRun": "2026-09-09T17:43:25.078Z",
   "log": [
-    {
-      "time": "2026-09-07T19:26:10.463Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:26:10.939Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:36:23.396Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:36:23.426Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:36:23.568Z",
-      "type": "INFO",
-      "msg": "EOD review (24 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:36:23.569Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:46:37.285Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:46:37.294Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:46:37.646Z",
-      "type": "INFO",
-      "msg": "EOD review (14 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:46:37.646Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-09-07T19:56:49.488Z",
       "type": "INFO",
@@ -1268,6 +1208,66 @@
     },
     {
       "time": "2026-09-09T17:32:47.075Z",
+      "type": "INFO",
+      "msg": "SKIP TTAN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:42:59.157Z",
+      "type": "INFO",
+      "msg": "Account: $100016.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:42:59.845Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SIG, PLSE, ASO, META, CMPS, SKHY, NET, SSL, JMKE, AEHR"
+    },
+    {
+      "time": "2026-09-09T17:42:59.846Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-09T17:43:12.652Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SIG: avgVol 0.8M < 1M  •  PLSE: avgVol 0.5M < 1M  •  ASO: relVol 1.7× < 2× (todayVol 3.3M)  •  META: relVol 1.4× < 2× (todayVol 24.2M)  •  CMPS: relVol 1.8× < 2× (todayVol 4.2M)  •  SKHY: relVol 1.0× < 2× (todayVol 19.0M)  •  NET: relVol 0.9× < 2× (todayVol 2.6M)  •  SSL: price $14.62 < $15  •  JMKE: below opening-range high (price $22.51 < ORH $23.79, 52 today-candles)  •  AEHR: relVol 1.2× < 2× (todayVol 3.2M)  •  SUNB: relVol 1.2× < 2× (todayVol 8.5M)  •  DDOG: relVol 0.7× < 2× (todayVol 2.9M)"
+    },
+    {
+      "time": "2026-09-09T17:43:12.652Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:43:12.747Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "TTAN, RML, TBBK, BRZE, CASY, UI, CHRN, RGC, XE, PS"
+    },
+    {
+      "time": "2026-09-09T17:43:13.305Z",
+      "type": "SIGNAL",
+      "msg": "TTAN — SHORT score 10 | gap -29.8% | relVol 8.4× | RSI 35",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:43:25.078Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "RML: price $10.25 < $20 (short floor)  •  TBBK: avgVol 0.3M < 1M  •  BRZE: relVol 2.2× < 2.5× (todayVol 6.6M)  •  CASY: avgVol 0.4M < 1M  •  UI: avgVol 0.2M < 1M  •  CHRN: price $18.31 < $20 (short floor)  •  RGC: price $5.95 < $20 (short floor)  •  XE: price $17.16 < $20 (short floor)  •  PS: avgVol 0.2M < 1M  •  BKV: ATR 0.26% < 0.5%  •  VRT: net up over ~5d ($255.97→$264.40) — no short into uptrend  •  MMYT: avgVol 0.4M < 1M"
+    },
+    {
+      "time": "2026-09-09T17:43:25.078Z",
+      "type": "INFO",
+      "msg": "Top short: TTAN (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:43:25.078Z",
       "type": "INFO",
       "msg": "SKIP TTAN — already traded today",
       "detail": ""
