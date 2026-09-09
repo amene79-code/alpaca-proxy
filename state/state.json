@@ -3,7 +3,7 @@
     "ASO": {
       "side": "long",
       "entry": 50.2400016784668,
-      "high": 50.915,
+      "high": 51,
       "low": 50.2400016784668,
       "initialSl": 49.86,
       "sl": 50.29,
@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-09T19:51:20.746Z",
+  "lastRun": "2026-09-09T20:01:33.593Z",
   "log": [
-    {
-      "time": "2026-09-08T18:51:04.494Z",
-      "type": "BUY",
-      "msg": "Placing 36× ROIV @ ~$41.51",
-      "detail": "gap 18.8% | risk $14.04 | SL $41.12 | TP $42.54 | R:R 2.6 | "
-    },
-    {
-      "time": "2026-09-08T18:51:04.751Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 36× ROIV",
-      "detail": "ID a1d28fb8-fc37-41f9-bbd9-ff66347c5b16 | R:R 2.6:1 | risk $14.04"
-    },
-    {
-      "time": "2026-09-08T18:51:05.428Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "DYN, NVS, GPCR, APPN, BEAM, STDN, AMGN, FOUR, PATH, HWM"
-    },
     {
       "time": "2026-09-08T18:51:17.791Z",
       "type": "INFO",
@@ -1283,6 +1265,24 @@
       "time": "2026-09-09T19:51:20.745Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T20:01:33.038Z",
+      "type": "INFO",
+      "msg": "Account: $100000.57 | 1 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T20:01:33.075Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T20:01:33.593Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
