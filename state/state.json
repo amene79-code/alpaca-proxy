@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-09T20:22:02.666Z",
+  "lastRun": "2026-09-09T21:58:49.534Z",
   "log": [
-    {
-      "time": "2026-09-08T19:01:46.800Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-08T19:01:46.908Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "DYN, NVS, GPCR, APPN, AMGN, STDN, FOUR, BEAM, SYK, PATH"
-    },
-    {
-      "time": "2026-09-08T19:02:00.989Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "DYN: above VWAP (price $20.72 > VWAP $19.57) — not holding breakdown  •  NVS: ATR 0.12% < 0.5%  •  GPCR: avgVol 0.8M < 1M  •  APPN: avgVol 0.8M < 1M  •  AMGN: relVol 1.7× < 2.5× (todayVol 4.0M)  •  STDN: price $13.30 < $20 (short floor)  •  FOUR: relVol 0.7× < 2.5× (todayVol 1.2M)  •  BEAM: above VWAP (price $26.86 > VWAP $26.09) — not holding breakdown  •  SYK: relVol 1.8× < 2.5× (todayVol 4.3M)  •  PATH: price $13.89 < $20 (short floor)  •  HWM: relVol 2.4× < 2.5× (todayVol 7.4M)  •  EXPE: relVol 1.5× < 2.5× (todayVol 2.1M)"
-    },
     {
       "time": "2026-09-08T19:02:00.989Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-09-09T20:22:02.665Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T21:58:49.262Z",
+      "type": "INFO",
+      "msg": "Account: $99993.32 | 1 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T21:58:49.269Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T21:58:49.534Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
