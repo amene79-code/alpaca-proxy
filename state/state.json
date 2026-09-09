@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "TTAN": {
-      "side": "short",
-      "entry": 57.869998931884766,
-      "high": 57.869998931884766,
-      "low": 56.7,
-      "initialSl": 58.28,
-      "sl": 57.74,
-      "tp": 56.65,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 0,
   "dailyDate": "2026-09-09",
   "openPositions": [
@@ -83,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-09T17:22:07.849Z",
+  "lastRun": "2026-09-09T17:32:47.075Z",
   "log": [
-    {
-      "time": "2026-09-07T18:55:30.514Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T18:55:30.572Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T18:55:30.987Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:05:42.785Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:05:42.844Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:05:43.106Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:15:55.817Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:15:55.886Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:15:56.098Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-07T19:26:10.392Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-07T19:26:10.463Z",
       "type": "INFO",
@@ -1283,6 +1210,66 @@
       "time": "2026-09-09T17:22:07.849Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:32:20.618Z",
+      "type": "INFO",
+      "msg": "Account: $100016.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:32:21.323Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 39",
+      "detail": "PLSE, META, ASO, CMPS, NET, SKHY, SSL, MRVL, SUNB, AEHR"
+    },
+    {
+      "time": "2026-09-09T17:32:21.323Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "39 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-09T17:32:34.611Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "PLSE: avgVol 0.5M < 1M  •  META: relVol 1.4× < 2× (todayVol 23.6M)  •  ASO: relVol 1.6× < 2× (todayVol 3.2M)  •  CMPS: relVol 1.8× < 2× (todayVol 4.1M)  •  NET: relVol 0.9× < 2× (todayVol 2.6M)  •  SKHY: relVol 1.0× < 2× (todayVol 18.9M)  •  SSL: price $14.61 < $15  •  MRVL: relVol 0.6× < 2× (todayVol 14.6M)  •  SUNB: relVol 1.2× < 2× (todayVol 8.2M)  •  AEHR: relVol 1.1× < 2× (todayVol 3.2M)  •  JMKE: below VWAP (price $22.32 < VWAP $22.47)  •  DDOG: relVol 0.7× < 2× (todayVol 2.9M)"
+    },
+    {
+      "time": "2026-09-09T17:32:34.611Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:32:34.736Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "TTAN, RML, TBBK, BRZE, CASY, UI, CHRN, PS, XE, BKV"
+    },
+    {
+      "time": "2026-09-09T17:32:34.941Z",
+      "type": "SIGNAL",
+      "msg": "TTAN — SHORT score 11 | gap -30.2% | relVol 8.3× | RSI 32",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:32:47.074Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "RML: price $10.55 < $20 (short floor)  •  TBBK: avgVol 0.3M < 1M  •  BRZE: relVol 2.2× < 2.5× (todayVol 6.5M)  •  CASY: avgVol 0.4M < 1M  •  UI: avgVol 0.2M < 1M  •  CHRN: price $18.50 < $20 (short floor)  •  PS: avgVol 0.2M < 1M  •  XE: price $17.21 < $20 (short floor)  •  BKV: ATR 0.25% < 0.5%  •  ORA: avgVol 0.7M < 1M  •  MMYT: avgVol 0.4M < 1M  •  CHWY: relVol 1.6× < 2.5× (todayVol 11.6M)"
+    },
+    {
+      "time": "2026-09-09T17:32:47.075Z",
+      "type": "INFO",
+      "msg": "Top short: TTAN (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T17:32:47.075Z",
+      "type": "INFO",
+      "msg": "SKIP TTAN — already traded today",
       "detail": ""
     }
   ],
