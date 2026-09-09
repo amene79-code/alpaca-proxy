@@ -3,7 +3,7 @@
     "ASO": {
       "side": "long",
       "entry": 50.2400016784668,
-      "high": 51,
+      "high": 51.1268,
       "low": 50.2400016784668,
       "initialSl": 49.86,
       "sl": 50.29,
@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-09T20:01:33.593Z",
+  "lastRun": "2026-09-09T20:11:47.445Z",
   "log": [
-    {
-      "time": "2026-09-08T18:51:17.791Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "DYN: above VWAP (price $20.70 > VWAP $19.55) — not holding breakdown  •  NVS: ATR 0.10% < 0.5%  •  GPCR: avgVol 0.8M < 1M  •  APPN: avgVol 0.8M < 1M  •  BEAM: above VWAP (price $26.78 > VWAP $26.08) — not holding breakdown  •  STDN: price $13.28 < $20 (short floor)  •  AMGN: relVol 1.7× < 2.5× (todayVol 3.9M)  •  FOUR: relVol 0.6× < 2.5× (todayVol 1.2M)  •  PATH: price $13.88 < $20 (short floor)  •  HWM: relVol 2.4× < 2.5× (todayVol 7.3M)  •  SYK: relVol 1.8× < 2.5× (todayVol 4.3M)  •  MAN: avgVol 0.8M < 1M"
-    },
-    {
-      "time": "2026-09-08T18:51:17.791Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-08T19:01:31.420Z",
-      "type": "INFO",
-      "msg": "Account: $100010.83 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-08T19:01:32.162Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-09-09T20:01:33.593Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T20:11:46.993Z",
+      "type": "INFO",
+      "msg": "Account: $100004.25 | 1 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T20:11:47.069Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T20:11:47.445Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
