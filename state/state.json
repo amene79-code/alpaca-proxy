@@ -3,26 +3,14 @@
     "ASO": {
       "side": "long",
       "entry": 50.2400016784668,
-      "high": 50.43,
+      "high": 50.675,
       "low": 50.2400016784668,
       "initialSl": 49.86,
-      "sl": 49.86,
+      "sl": 50.29,
       "tp": 51.25,
       "slOrderId": null,
       "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "AMBA": {
-      "side": "long",
-      "entry": 68.97000122070312,
-      "high": 68.97000122070312,
-      "low": 68.97000122070312,
-      "initialSl": 68.05,
-      "sl": 68.05,
-      "tp": 71.43,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
+      "movedToBreakeven": true
     }
   },
   "dailyTrades": 3,
@@ -95,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-09T19:30:53.767Z",
+  "lastRun": "2026-09-09T19:41:07.489Z",
   "log": [
-    {
-      "time": "2026-09-08T18:40:36.967Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "DYN: above VWAP (price $20.66 > VWAP $19.53) — not holding breakdown  •  NVS: ATR 0.10% < 0.5%  •  GPCR: avgVol 0.8M < 1M  •  BEAM: above VWAP (price $26.70 > VWAP $26.08) — not holding breakdown  •  AMGN: relVol 1.7× < 2.5× (todayVol 3.9M)  •  APPN: avgVol 0.8M < 1M  •  STDN: price $13.37 < $20 (short floor)  •  PATH: price $13.92 < $20 (short floor)  •  FOUR: relVol 0.6× < 2.5× (todayVol 1.1M)  •  HWM: relVol 2.4× < 2.5× (todayVol 7.1M)  •  BCRX: price $9.16 < $20 (short floor)  •  SYK: relVol 1.8× < 2.5× (todayVol 4.1M)"
-    },
-    {
-      "time": "2026-09-08T18:40:36.968Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-08T18:50:51.702Z",
-      "type": "INFO",
-      "msg": "Account: $100011.73 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-08T18:50:52.400Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SMR, CRWV, BE, ROIV, SEI, INTC, FRMI, NBIS, WULF, AXTI"
-    },
     {
       "time": "2026-09-08T18:50:52.400Z",
       "type": "INFO",
@@ -1295,6 +1259,30 @@
       "time": "2026-09-09T19:30:53.767Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T19:41:06.480Z",
+      "type": "INFO",
+      "msg": "Account: $99991.15 | 1 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T19:41:07.130Z",
+      "type": "INFO",
+      "msg": "EOD review (19 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-09T19:41:07.288Z",
+      "type": "INFO",
+      "msg": "ASO held overnight",
+      "detail": "Side long | Strong close | P&L +$12.62 | above VWAP"
+    },
+    {
+      "time": "2026-09-09T19:41:07.489Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
