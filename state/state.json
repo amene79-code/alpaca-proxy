@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-10T18:50:41.735Z",
+  "lastRun": "2026-09-10T19:01:05.333Z",
   "log": [
-    {
-      "time": "2026-09-09T18:04:44.720Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "TTAN, RML, TBBK, BRZE, CASY, UI, PS, CHRN, BKV, XE"
-    },
-    {
-      "time": "2026-09-09T18:04:45.064Z",
-      "type": "SIGNAL",
-      "msg": "TTAN — SHORT score 11 | gap -30.1% | relVol 8.5× | RSI 35",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T18:04:58.834Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "RML: price $10.60 < $20 (short floor)  •  TBBK: avgVol 0.3M < 1M  •  BRZE: relVol 2.3× < 2.5× (todayVol 6.9M)  •  CASY: avgVol 0.4M < 1M  •  UI: avgVol 0.2M < 1M  •  PS: avgVol 0.2M < 1M  •  CHRN: price $18.61 < $20 (short floor)  •  BKV: ATR 0.34% < 0.5%  •  XE: price $17.27 < $20 (short floor)  •  ORA: avgVol 0.7M < 1M  •  CHWY: relVol 1.9× < 2.5× (todayVol 13.3M)  •  RUM: price $7.63 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-09T18:04:58.835Z",
-      "type": "INFO",
-      "msg": "Top short: TTAN (score 11)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T18:04:58.835Z",
-      "type": "INFO",
-      "msg": "SKIP TTAN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T18:15:11.036Z",
-      "type": "INFO",
-      "msg": "Account: $100016.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T18:15:11.602Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLSE, ASO, NET, META, SKHY, SSL, CMPS, JMKE, AEHR, MXL"
-    },
-    {
-      "time": "2026-09-09T18:15:11.602Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-09-09T18:15:24.357Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-10T18:50:41.735Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T19:00:57.583Z",
+      "type": "INFO",
+      "msg": "Account: $99991.26 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T19:00:58.589Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 16",
+      "detail": "ASO, SPCX, F, AAPL, PATH, T, CMCSA, RIG, ITUB, SNAP"
+    },
+    {
+      "time": "2026-09-10T19:00:58.589Z",
+      "type": "INFO",
+      "msg": "Scanning 16 candidates",
+      "detail": "16 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-10T19:01:02.859Z",
+      "type": "INFO",
+      "msg": "Rejections (16)",
+      "detail": "ASO: relVol 1.0× < 2× (todayVol 2.1M)  •  SPCX: gap 0.8% < 4% (price $148.70 vs priorClose $147.55)  •  F: price $13.92 < $15  •  AAPL: gap 3.2% < 4% (price $325.39 vs priorClose $315.34)  •  PATH: price $14.06 < $15  •  T: gap 1.9% < 4% (price $25.62 vs priorClose $25.15)  •  CMCSA: gap 2.3% < 4% (price $25.17 vs priorClose $24.59)  •  RIG: price $5.76 < $15  •  ITUB: price $8.31 < $15  •  SNAP: price $5.40 < $15  •  BBD: price $3.57 < $15  •  GOOGL: gap 0.4% < 4% (price $331.95 vs priorClose $330.65)"
+    },
+    {
+      "time": "2026-09-10T19:01:02.859Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T19:01:02.949Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 8",
+      "detail": "RML, COO, XE, FRVO, CIFR, VRT, IBP, LIME"
+    },
+    {
+      "time": "2026-09-10T19:01:05.333Z",
+      "type": "INFO",
+      "msg": "Short rejections (8)",
+      "detail": "RML: price $8.74 < $20 (short floor)  •  COO: above VWAP (price $55.22 > VWAP $54.08) — not holding breakdown  •  XE: price $15.90 < $20 (short floor)  •  FRVO: price $16.09 < $20 (short floor)  •  CIFR: price $15.94 < $20 (short floor)  •  VRT: relVol 1.7× < 2.5× (todayVol 7.9M)  •  IBP: avgVol 0.3M < 1M  •  LIME: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-09-10T19:01:05.333Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
