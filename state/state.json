@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "AVAV": {
-      "side": "long",
-      "entry": 154.6800994873047,
-      "high": 154.6800994873047,
-      "low": 154.6800994873047,
-      "initialSl": 153.24,
-      "sl": 153.24,
-      "tp": 158.53,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-09-10",
   "openPositions": [
@@ -83,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-10T17:36:12.513Z",
+  "lastRun": "2026-09-10T17:46:56.145Z",
   "log": [
-    {
-      "time": "2026-09-09T17:00:10.943Z",
-      "type": "SIGNAL",
-      "msg": "TTAN — SHORT score 11 | gap -29.1% | relVol 8.0× | RSI 56",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T17:00:25.276Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "RML: price $10.56 < $20 (short floor)  •  TBBK: avgVol 0.3M < 1M  •  BRZE: relVol 2.1× < 2.5× (todayVol 6.2M)  •  CASY: avgVol 0.4M < 1M  •  UI: avgVol 0.2M < 1M  •  CHRN: price $18.68 < $20 (short floor)  •  ORA: avgVol 0.6M < 1M  •  PS: avgVol 0.2M < 1M  •  XE: price $17.24 < $20 (short floor)  •  BKV: avgVol 1.0M < 1M  •  CHWY: relVol 1.6× < 2.5× (todayVol 10.9M)  •  NAMS: relVol 0.5× < 2.5× (todayVol 0.5M)"
-    },
-    {
-      "time": "2026-09-09T17:00:25.276Z",
-      "type": "INFO",
-      "msg": "Top short: TTAN (score 11)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T17:00:25.276Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 17× TTAN @ ~$57.87",
-      "detail": "gap -29.1% | risk $6.97 | SL $58.28 | TP $56.65 | R:R 3.0"
-    },
-    {
-      "time": "2026-09-09T17:00:25.547Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 17× TTAN",
-      "detail": "ID 1e4a144d-0fad-4103-8c5c-c7eb37f88d73 | R:R 3.0:1 | risk $6.97 | real bracket stop @ $58.28"
-    },
-    {
-      "time": "2026-09-09T17:10:57.231Z",
-      "type": "INFO",
-      "msg": "Account: $100004.24 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T17:10:58.136Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "PLSE, CMPS, META, ASO, MRVL, SSL, NET, SKHY, SUNB, AEHR"
-    },
-    {
-      "time": "2026-09-09T17:10:58.136Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-09-09T17:11:14.804Z",
       "type": "INFO",
@@ -1281,6 +1220,54 @@
     },
     {
       "time": "2026-09-10T17:36:12.513Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T17:46:28.002Z",
+      "type": "INFO",
+      "msg": "Account: $99991.26 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T17:46:28.622Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "SWKS, AVAV, PLSE, QRVO, RDDT, DPC, VIST, BSP, ELV, VEON"
+    },
+    {
+      "time": "2026-09-10T17:46:28.623Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-10T17:46:42.406Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "SWKS: relVol 1.0× < 2× (todayVol 5.8M)  •  AVAV: ATR 0.44% < 0.5%  •  PLSE: avgVol 0.6M < 1M  •  QRVO: avgVol 1.0M < 1M  •  RDDT: relVol 0.5× < 2× (todayVol 3.7M)  •  DPC: relVol 0.6× < 2× (todayVol 0.7M)  •  VIST: relVol 1.2× < 2× (todayVol 1.4M)  •  BSP: relVol 1.2× < 2× (todayVol 1.6M)  •  ELV: avgVol 0.9M < 1M  •  VEON: avgVol 0.1M < 1M  •  ASO: relVol 0.8× < 2× (todayVol 1.7M)  •  MDB: relVol 0.5× < 2× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-09-10T17:46:42.406Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T17:46:42.566Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "RML, NAVN, AEO, COO, AXGN, TGB, ALM, LECO, LEU, ERO"
+    },
+    {
+      "time": "2026-09-10T17:46:56.145Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "RML: price $9.00 < $20 (short floor)  •  NAVN: above opening-range low (price $20.33 > ORL $19.64)  •  AEO: price $14.22 < $20 (short floor)  •  COO: above VWAP (price $54.28 > VWAP $53.97) — not holding breakdown  •  AXGN: avgVol 0.9M < 1M  •  TGB: price $8.04 < $20 (short floor)  •  ALM: price $16.74 < $20 (short floor)  •  LECO: avgVol 0.5M < 1M  •  LEU: avgVol 0.6M < 1M  •  ERO: net up over ~5d ($34.76→$35.18) — no short into uptrend  •  HBM: relVol 0.7× < 2.5× (todayVol 2.7M)  •  SRPT: relVol 0.4× < 2.5× (todayVol 1.1M)"
+    },
+    {
+      "time": "2026-09-10T17:46:56.145Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
