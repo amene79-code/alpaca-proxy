@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-10T19:22:31.622Z",
+  "lastRun": "2026-09-10T19:32:44.616Z",
   "log": [
-    {
-      "time": "2026-09-09T18:36:45.559Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SIG, PLSE, ASO, SKHY, META, NET, SSL, CMPS, JMKE, AEHR"
-    },
-    {
-      "time": "2026-09-09T18:36:45.560Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-09-09T18:36:47.805Z",
       "type": "SIGNAL",
@@ -1270,6 +1258,18 @@
       "time": "2026-09-10T19:22:31.622Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T19:32:44.324Z",
+      "type": "INFO",
+      "msg": "Account: $99991.26 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T19:32:44.616Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
