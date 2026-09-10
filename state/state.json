@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-10T20:13:37.198Z",
+  "lastRun": "2026-09-10T20:23:50.315Z",
   "log": [
-    {
-      "time": "2026-09-09T18:47:42.291Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T18:47:42.378Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "TTAN, TBBK, BRZE, RML, CASY, RGC, CHRN, UI, PS, CHWY"
-    },
-    {
-      "time": "2026-09-09T18:47:53.053Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "TTAN: ATR 0.37% < 0.5%  •  TBBK: avgVol 0.4M < 1M  •  BRZE: relVol 2.5× < 2.5× (todayVol 7.4M)  •  RML: price $11.60 < $20 (short floor)  •  CASY: avgVol 0.4M < 1M  •  RGC: price $5.81 < $20 (short floor)  •  CHRN: price $18.02 < $20 (short floor)  •  UI: avgVol 0.2M < 1M  •  PS: avgVol 0.2M < 1M  •  CHWY: relVol 2.0× < 2.5× (todayVol 14.7M)  •  APG: relVol 1.1× < 2.5× (todayVol 3.0M)  •  VRT: net up over ~5d ($255.97→$261.20) — no short into uptrend"
-    },
     {
       "time": "2026-09-09T18:47:53.054Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-10T20:13:37.197Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T20:23:50.078Z",
+      "type": "INFO",
+      "msg": "Account: $99991.26 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T20:23:50.109Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-10T20:23:50.315Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
