@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-11T17:56:38.221Z",
+  "lastRun": "2026-09-11T18:07:11.620Z",
   "log": [
-    {
-      "time": "2026-09-10T16:52:18.870Z",
-      "type": "INFO",
-      "msg": "Account: $100008.27 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-10T16:52:19.560Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SWKS, AVAV, PLSE, BSP, QRVO, RDDT, DPC, NTSK, ELV, VIST"
-    },
-    {
-      "time": "2026-09-10T16:52:19.560Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-10T16:52:20.060Z",
-      "type": "SIGNAL",
-      "msg": "AVAV — score 13 | gap 9.9% | relVol 3.6× | RSI 35",
-      "detail": "Bullish Engulfing, Hammer"
-    },
-    {
-      "time": "2026-09-10T16:52:32.600Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "SWKS: relVol 0.8× < 2× (todayVol 4.6M)  •  PLSE: avgVol 0.6M < 1M  •  BSP: relVol 1.0× < 2× (todayVol 1.4M)  •  QRVO: avgVol 0.9M < 1M  •  RDDT: relVol 0.5× < 2× (todayVol 3.4M)  •  DPC: relVol 0.5× < 2× (todayVol 0.6M)  •  NTSK: relVol 0.5× < 2× (todayVol 2.4M)  •  ELV: avgVol 0.9M < 1M  •  VIST: relVol 1.0× < 2× (todayVol 1.2M)  •  MDB: relVol 0.4× < 2× (todayVol 0.8M)  •  PAYP: avgVol 0.8M < 1M  •  IOND: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-09-10T16:52:32.600Z",
-      "type": "INFO",
-      "msg": "Top signal: AVAV (score 13)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-10T16:52:32.600Z",
-      "type": "BUY",
-      "msg": "Placing 9× AVAV @ ~$154.68",
-      "detail": "gap 9.9% | risk $12.96 | SL $153.24 | TP $158.53 | R:R 2.7 | Bullish Engulfing, Hammer"
-    },
-    {
-      "time": "2026-09-10T16:52:32.689Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 9× AVAV",
-      "detail": "ID 5baa81ac-04b3-4f3c-ba3d-3c77df84a590 | R:R 2.7:1 | risk $12.96"
-    },
     {
       "time": "2026-09-10T16:52:33.318Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-11T17:56:38.221Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T18:06:51.682Z",
+      "type": "INFO",
+      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T18:06:52.089Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "HPE, CIFR, HPQ, HDB, VICR, SMCI, WULF, DELL, HUT, MXL"
+    },
+    {
+      "time": "2026-09-11T18:06:52.089Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-11T18:07:04.171Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "HPE: relVol 1.0× < 2× (todayVol 23.3M)  •  CIFR: relVol 0.7× < 2× (todayVol 24.8M)  •  HPQ: relVol 1.2× < 2× (todayVol 17.8M)  •  HDB: relVol 1.6× < 2× (todayVol 16.6M)  •  VICR: avgVol 0.7M < 1M  •  SMCI: relVol 0.8× < 2× (todayVol 33.2M)  •  WULF: relVol 0.6× < 2× (todayVol 17.7M)  •  DELL: relVol 1.2× < 2× (todayVol 10.7M)  •  HUT: relVol 0.8× < 2× (todayVol 3.7M)  •  MXL: relVol 0.6× < 2× (todayVol 1.4M)  •  FLEX: relVol 0.4× < 2× (todayVol 1.1M)  •  BGSI: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-09-11T18:07:04.172Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T18:07:04.282Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 22",
+      "detail": "SMR, SLS, RML, ALM, OKLO, LEU, RCUS, QLYS, PLSE, XE"
+    },
+    {
+      "time": "2026-09-11T18:07:11.619Z",
+      "type": "INFO",
+      "msg": "Short rejections (22)",
+      "detail": "SMR: price $8.82 < $20 (short floor)  •  SLS: price $11.67 < $20 (short floor)  •  RML: price $7.70 < $20 (short floor)  •  ALM: price $15.26 < $20 (short floor)  •  OKLO: relVol 1.6× < 2.5× (todayVol 14.7M)  •  LEU: avgVol 0.6M < 1M  •  RCUS: relVol 2.3× < 2.5× (todayVol 3.0M)  •  QLYS: avgVol 0.6M < 1M  •  PLSE: avgVol 0.6M < 1M  •  XE: price $14.95 < $20 (short floor)  •  IRON: avgVol 0.4M < 1M  •  GOSS: price $10.78 < $20 (short floor)"
+    },
+    {
+      "time": "2026-09-11T18:07:11.620Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
