@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-11T19:52:43.424Z",
+  "lastRun": "2026-09-11T20:02:54.797Z",
   "log": [
-    {
-      "time": "2026-09-10T18:18:29.572Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "NAVN, RML, AEO, COO, AXGN, TGB, ALM, ERO, RELY, LEU"
-    },
-    {
-      "time": "2026-09-10T18:18:42.272Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "NAVN: price $19.93 < $20 (short floor)  •  RML: price $9.04 < $20 (short floor)  •  AEO: price $14.16 < $20 (short floor)  •  COO: above VWAP (price $54.65 > VWAP $54.00) — not holding breakdown  •  AXGN: avgVol 0.9M < 1M  •  TGB: price $7.98 < $20 (short floor)  •  ALM: price $16.56 < $20 (short floor)  •  ERO: net up over ~5d ($34.76→$34.86) — no short into uptrend  •  RELY: relVol 1.1× < 2.5× (todayVol 3.7M)  •  LEU: avgVol 0.6M < 1M  •  LECO: avgVol 0.5M < 1M  •  HBM: relVol 0.7× < 2.5× (todayVol 2.8M)"
-    },
-    {
-      "time": "2026-09-10T18:18:42.272Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-10T18:28:55.201Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-11T19:52:43.424Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T20:02:54.619Z",
+      "type": "INFO",
+      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T20:02:54.641Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T20:02:54.797Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
