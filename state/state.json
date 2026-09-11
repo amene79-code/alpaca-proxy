@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-11T17:46:01.288Z",
+  "lastRun": "2026-09-11T17:56:38.221Z",
   "log": [
-    {
-      "time": "2026-09-09T20:11:47.445Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T20:22:02.134Z",
-      "type": "INFO",
-      "msg": "Account: $100004.25 | 1 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T20:22:02.142Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T20:22:02.665Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T21:58:49.262Z",
-      "type": "INFO",
-      "msg": "Account: $99993.32 | 1 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T21:58:49.269Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-09T21:58:49.534Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-10T16:52:18.734Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
     {
       "time": "2026-09-10T16:52:18.870Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-11T17:46:01.288Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T17:56:14.234Z",
+      "type": "INFO",
+      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T17:56:15.523Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "HPE, CIFR, HDB, HPQ, WULF, VICR, MARA, SMCI, PURR, DELL"
+    },
+    {
+      "time": "2026-09-11T17:56:15.523Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-11T17:56:30.506Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "HPE: relVol 1.0× < 2× (todayVol 22.6M)  •  CIFR: relVol 0.7× < 2× (todayVol 23.8M)  •  HDB: relVol 1.5× < 2× (todayVol 16.3M)  •  HPQ: relVol 1.2× < 2× (todayVol 17.6M)  •  WULF: relVol 0.6× < 2× (todayVol 16.9M)  •  VICR: avgVol 0.7M < 1M  •  MARA: price $12.11 < $15  •  SMCI: relVol 0.8× < 2× (todayVol 32.8M)  •  PURR: price $11.65 < $15  •  DELL: relVol 1.2× < 2× (todayVol 10.4M)  •  HUT: relVol 0.8× < 2× (todayVol 3.6M)  •  SIMO: avgVol 0.8M < 1M"
+    },
+    {
+      "time": "2026-09-11T17:56:30.506Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T17:56:30.667Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 21",
+      "detail": "SMR, SLS, RML, ALM, OKLO, RCUS, LEU, QLYS, PLSE, XE"
+    },
+    {
+      "time": "2026-09-11T17:56:38.221Z",
+      "type": "INFO",
+      "msg": "Short rejections (21)",
+      "detail": "SMR: price $8.85 < $20 (short floor)  •  SLS: price $11.89 < $20 (short floor)  •  RML: price $7.70 < $20 (short floor)  •  ALM: price $15.30 < $20 (short floor)  •  OKLO: relVol 1.5× < 2.5× (todayVol 14.4M)  •  RCUS: relVol 2.2× < 2.5× (todayVol 3.0M)  •  LEU: avgVol 0.6M < 1M  •  QLYS: avgVol 0.6M < 1M  •  PLSE: avgVol 0.6M < 1M  •  XE: price $14.94 < $20 (short floor)  •  IRON: avgVol 0.4M < 1M  •  TLX: price $11.29 < $20 (short floor)"
+    },
+    {
+      "time": "2026-09-11T17:56:38.221Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
