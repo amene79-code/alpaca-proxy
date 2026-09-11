@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-11T20:02:54.797Z",
+  "lastRun": "2026-09-11T20:13:08.515Z",
   "log": [
-    {
-      "time": "2026-09-10T18:28:55.201Z",
-      "type": "INFO",
-      "msg": "Account: $99991.26 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-10T18:28:56.297Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 20",
-      "detail": "PLSE, ASO, SPCX, NU, F, AAPL, PATH, ONDS, T, CMCSA"
-    },
-    {
-      "time": "2026-09-10T18:28:56.297Z",
-      "type": "INFO",
-      "msg": "Scanning 20 candidates",
-      "detail": "20 screener + 0 watchlist"
-    },
     {
       "time": "2026-09-10T18:29:02.176Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-11T20:02:54.797Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T20:13:08.202Z",
+      "type": "INFO",
+      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T20:13:08.272Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T20:13:08.515Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
