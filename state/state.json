@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-11T20:23:22.020Z",
+  "lastRun": "2026-09-11T21:49:40.066Z",
   "log": [
-    {
-      "time": "2026-09-10T18:29:04.551Z",
-      "type": "INFO",
-      "msg": "Short rejections (7)",
-      "detail": "RML: price $8.84 < $20 (short floor)  •  COO: above VWAP (price $54.78 > VWAP $54.01) — not holding breakdown  •  XE: price $16.02 < $20 (short floor)  •  FRVO: price $16.23 < $20 (short floor)  •  VRT: relVol 1.6× < 2.5× (todayVol 7.5M)  •  CIFR: price $16.03 < $20 (short floor)  •  IBP: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-09-10T18:29:04.551Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-10T18:39:24.301Z",
-      "type": "INFO",
-      "msg": "Account: $99991.26 | 0 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-10T18:39:25.260Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-11T20:23:22.020Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T21:49:39.780Z",
+      "type": "INFO",
+      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T21:49:39.834Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-11T21:49:40.066Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
