@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-14T19:55:32.287Z",
+  "lastRun": "2026-09-14T20:06:25.533Z",
   "log": [
-    {
-      "time": "2026-09-11T16:52:46.035Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 19",
-      "detail": "SMR, RML, ALM, OKLO, SLS, LEU, RCUS, PLSE, QLYS, XE"
-    },
-    {
-      "time": "2026-09-11T16:52:51.471Z",
-      "type": "INFO",
-      "msg": "Short rejections (19)",
-      "detail": "SMR: price $8.81 < $20 (short floor)  •  RML: price $7.75 < $20 (short floor)  •  ALM: price $15.23 < $20 (short floor)  •  OKLO: relVol 1.4× < 2.5× (todayVol 13.1M)  •  SLS: price $12.59 < $20 (short floor)  •  LEU: avgVol 0.6M < 1M  •  RCUS: relVol 1.6× < 2.5× (todayVol 2.1M)  •  PLSE: avgVol 0.6M < 1M  •  QLYS: avgVol 0.6M < 1M  •  XE: price $14.94 < $20 (short floor)  •  TLX: price $11.29 < $20 (short floor)  •  WERN: avgVol 0.8M < 1M"
-    },
-    {
-      "time": "2026-09-11T16:52:51.471Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-11T17:03:03.588Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-14T19:55:32.287Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-14T20:05:45.238Z",
+      "type": "INFO",
+      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-14T20:05:45.283Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-14T20:06:25.533Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
