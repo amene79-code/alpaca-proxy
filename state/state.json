@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-14T19:34:03.487Z",
+  "lastRun": "2026-09-14T19:44:38.938Z",
   "log": [
-    {
-      "time": "2026-09-11T16:52:30.369Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T16:52:30.550Z",
-      "type": "INFO",
-      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T16:52:34.023Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "HPE, CIFR, CLSK, WULF, HPQ, MARA, PURR, VICR, BMNR, DELL"
-    },
     {
       "time": "2026-09-11T16:52:34.023Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-14T19:34:03.487Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-14T19:44:19.714Z",
+      "type": "INFO",
+      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-14T19:44:38.937Z",
+      "type": "INFO",
+      "msg": "EOD review (16 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-14T19:44:38.938Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
