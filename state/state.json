@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-14T20:06:25.533Z",
+  "lastRun": "2026-09-14T20:17:24.416Z",
   "log": [
-    {
-      "time": "2026-09-11T17:03:03.588Z",
-      "type": "INFO",
-      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T17:03:07.440Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "HPE, CIFR, CLSK, WULF, HPQ, MARA, VICR, PURR, BMNR, HUT"
-    },
-    {
-      "time": "2026-09-11T17:03:07.440Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-09-11T17:03:21.151Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-14T20:06:25.533Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-14T20:16:43.631Z",
+      "type": "INFO",
+      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-14T20:16:43.710Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-14T20:17:24.415Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
