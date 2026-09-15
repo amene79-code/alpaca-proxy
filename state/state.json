@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-15T19:14:50.404Z",
+  "lastRun": "2026-09-15T19:25:34.023Z",
   "log": [
-    {
-      "time": "2026-09-11T19:52:43.294Z",
-      "type": "INFO",
-      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T19:52:43.423Z",
-      "type": "INFO",
-      "msg": "EOD review (8 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T19:52:43.424Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T20:02:54.619Z",
-      "type": "INFO",
-      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T20:02:54.641Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T20:02:54.797Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T20:13:08.202Z",
-      "type": "INFO",
-      "msg": "Account: $99991.18 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-11T20:13:08.272Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-09-11T20:13:08.515Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-15T19:14:50.404Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-15T19:25:04.252Z",
+      "type": "INFO",
+      "msg": "Account: $99977.38 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-15T19:25:05.185Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "FPS, RIG, SWKS, TEM, KRMN, CAI, TENB, ADPT, TLX, QRVO"
+    },
+    {
+      "time": "2026-09-15T19:25:05.185Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-15T19:25:19.774Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "FPS: below VWAP (price $31.80 < VWAP $31.80)  •  RIG: price $5.84 < $15  •  SWKS: relVol 1.4× < 2× (todayVol 9.5M)  •  TEM: relVol 0.8× < 2× (todayVol 6.2M)  •  KRMN: relVol 1.1× < 2× (todayVol 2.9M)  •  CAI: relVol 1.3× < 2× (todayVol 6.9M)  •  TENB: relVol 1.0× < 2× (todayVol 5.3M)  •  ADPT: relVol 1.5× < 2× (todayVol 2.4M)  •  TLX: price $12.82 < $15  •  QRVO: relVol 1.4× < 2× (todayVol 1.5M)  •  RVTY: relVol 1.3× < 2× (todayVol 2.2M)  •  CVI: relVol 0.6× < 2× (todayVol 0.6M)"
+    },
+    {
+      "time": "2026-09-15T19:25:19.774Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-15T19:25:19.914Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "ENVA, ALHC, ARWR, ASND, BOOT, AXON, RML, WING, CRCL, IONS"
+    },
+    {
+      "time": "2026-09-15T19:25:34.023Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "ENVA: avgVol 0.3M < 1M  •  ALHC: price $10.06 < $20 (short floor)  •  ARWR: relVol 2.2× < 2.5× (todayVol 3.1M)  •  ASND: avgVol 0.6M < 1M  •  BOOT: avgVol 0.6M < 1M  •  AXON: avgVol 0.8M < 1M  •  RML: price $6.72 < $20 (short floor)  •  WING: relVol 1.9× < 2.5× (todayVol 2.1M)  •  CRCL: relVol 1.1× < 2.5× (todayVol 17.6M)  •  IONS: relVol 1.4× < 2.5× (todayVol 4.3M)  •  COIN: relVol 1.4× < 2.5× (todayVol 14.7M)  •  CAVA: relVol 2.1× < 2.5× (todayVol 5.5M)"
+    },
+    {
+      "time": "2026-09-15T19:25:34.023Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
