@@ -1,6 +1,19 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 0,
+  "trailingStops": {
+    "FPS": {
+      "side": "long",
+      "entry": 35.220001220703125,
+      "high": 35.220001220703125,
+      "low": 35.220001220703125,
+      "initialSl": 34.71,
+      "sl": 34.71,
+      "tp": 36.57,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 1,
   "dailyDate": "2026-09-16",
   "openPositions": [
     "FIVE",
@@ -70,74 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-16T18:52:16.852Z",
+  "lastRun": "2026-09-16T19:03:02.864Z",
   "log": [
-    {
-      "time": "2026-09-15T17:27:27.401Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ENVA: avgVol 0.3M < 1M  •  ALHC: price $10.18 < $20 (short floor)  •  ASND: avgVol 0.6M < 1M  •  RML: price $6.56 < $20 (short floor)  •  WING: relVol 1.4× < 2.5× (todayVol 1.6M)  •  AXON: avgVol 0.8M < 1M  •  BOOT: avgVol 0.6M < 1M  •  SRRK: relVol 1.7× < 2.5× (todayVol 2.3M)  •  ARWR: relVol 1.5× < 2.5× (todayVol 2.1M)  •  CRCL: relVol 0.6× < 2.5× (todayVol 9.4M)  •  CAVA: relVol 1.3× < 2.5× (todayVol 3.4M)  •  DFTX: relVol 1.3× < 2.5× (todayVol 2.5M)"
-    },
-    {
-      "time": "2026-09-15T17:27:27.401Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-15T17:37:41.118Z",
-      "type": "INFO",
-      "msg": "Account: $99999.63 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-15T17:37:42.526Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "FPS, SWKS, RIG, TLX, TENB, QRVO, ILMN, RVTY, KRMN, TXG"
-    },
-    {
-      "time": "2026-09-15T17:37:42.526Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-15T17:37:56.382Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "SWKS: relVol 1.1× < 2× (todayVol 7.2M)  •  RIG: price $5.87 < $15  •  TLX: price $12.91 < $15  •  TENB: relVol 0.7× < 2× (todayVol 3.6M)  •  QRVO: relVol 1.0× < 2× (todayVol 1.1M)  •  ILMN: relVol 0.8× < 2× (todayVol 1.5M)  •  RVTY: relVol 0.8× < 2× (todayVol 1.3M)  •  KRMN: relVol 0.8× < 2× (todayVol 2.1M)  •  TXG: relVol 0.6× < 2× (todayVol 1.5M)  •  CAI: relVol 1.1× < 2× (todayVol 5.6M)  •  PBF: ATR 0.38% < 0.5%  •  VAL: relVol 1.1× < 2× (todayVol 1.2M)"
-    },
-    {
-      "time": "2026-09-15T17:37:56.382Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-15T17:37:56.528Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ENVA, ALHC, ASND, RML, WING, BOOT, AXON, SRRK, ARWR, CAVA"
-    },
-    {
-      "time": "2026-09-15T17:38:10.265Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ENVA: avgVol 0.3M < 1M  •  ALHC: price $10.05 < $20 (short floor)  •  ASND: avgVol 0.6M < 1M  •  RML: price $6.56 < $20 (short floor)  •  WING: relVol 1.5× < 2.5× (todayVol 1.6M)  •  BOOT: avgVol 0.6M < 1M  •  AXON: avgVol 0.8M < 1M  •  SRRK: relVol 1.8× < 2.5× (todayVol 2.4M)  •  ARWR: relVol 1.6× < 2.5× (todayVol 2.1M)  •  CAVA: relVol 1.5× < 2.5× (todayVol 3.8M)  •  CAKE: relVol 0.5× < 2.5× (todayVol 0.7M)  •  IONS: relVol 1.0× < 2.5× (todayVol 3.1M)"
-    },
-    {
-      "time": "2026-09-15T17:38:10.265Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-15T17:48:27.528Z",
-      "type": "INFO",
-      "msg": "Account: $99977.38 | 0 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-15T17:48:28.299Z",
       "type": "INFO",
@@ -1271,9 +1218,77 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-09-16T19:02:34.936Z",
+      "type": "INFO",
+      "msg": "Account: $99977.38 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T19:02:36.046Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "CIFR, FPS, SMTC, AXTI, WULF, SPCX, AMRX, INTC, BRKR, WOR"
+    },
+    {
+      "time": "2026-09-16T19:02:36.046Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-16T19:02:36.563Z",
+      "type": "SIGNAL",
+      "msg": "FPS — score 8 | gap 12.3% | relVol 2.1× | RSI 43",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T19:02:49.100Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "CIFR: relVol 1.5× < 2× (todayVol 52.4M)  •  SMTC: relVol 0.9× < 2× (todayVol 3.2M)  •  AXTI: relVol 1.1× < 2× (todayVol 8.9M)  •  WULF: relVol 0.8× < 2× (todayVol 23.7M)  •  SPCX: relVol 1.2× < 2× (todayVol 88.3M)  •  AMRX: relVol 1.7× < 2× (todayVol 2.8M)  •  INTC: relVol 1.0× < 2× (todayVol 85.9M)  •  BRKR: relVol 1.4× < 2× (todayVol 2.9M)  •  WOR: avgVol 0.3M < 1M  •  LITE: relVol 1.2× < 2× (todayVol 4.8M)  •  ALAB: relVol 0.7× < 2× (todayVol 2.4M)  •  CRDO: relVol 0.9× < 2× (todayVol 7.0M)"
+    },
+    {
+      "time": "2026-09-16T19:02:49.101Z",
+      "type": "INFO",
+      "msg": "Top signal: FPS (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T19:02:49.101Z",
+      "type": "BUY",
+      "msg": "Placing 42× FPS @ ~$35.22",
+      "detail": "gap 12.3% | risk $21.42 | SL $34.71 | TP $36.57 | R:R 2.6 | "
+    },
+    {
+      "time": "2026-09-16T19:02:49.738Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 42× FPS",
+      "detail": "ID 1b560463-1ecf-4e58-963d-088c31aa19d2 | R:R 2.6:1 | risk $21.42"
+    },
+    {
+      "time": "2026-09-16T19:02:50.365Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "JBHT, BULL, BLSH, PLSE, ON, CRCL, SYNA, CRK, TLX, ELVN"
+    },
+    {
+      "time": "2026-09-16T19:03:02.864Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "JBHT: avgVol 0.9M < 1M  •  BULL: price $7.74 < $20 (short floor)  •  BLSH: relVol 1.2× < 2.5× (todayVol 1.9M)  •  PLSE: avgVol 0.6M < 1M  •  ON: relVol 1.2× < 2.5× (todayVol 10.3M)  •  CRCL: relVol 1.2× < 2.5× (todayVol 19.7M)  •  SYNA: avgVol 0.7M < 1M  •  CRK: price $13.16 < $20 (short floor)  •  TLX: price $11.81 < $20 (short floor)  •  ELVN: avgVol 1.0M < 1M  •  MTDR: relVol 0.6× < 2.5× (todayVol 1.1M)  •  FANG: above VWAP (price $195.49 > VWAP $195.21) — not holding breakdown"
+    },
+    {
+      "time": "2026-09-16T19:03:02.864Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [],
+  "tradedToday": [
+    "FPS"
+  ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
