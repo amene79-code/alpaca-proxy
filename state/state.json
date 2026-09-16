@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-16T19:24:50.585Z",
+  "lastRun": "2026-09-16T19:35:02.381Z",
   "log": [
-    {
-      "time": "2026-09-15T18:09:53.494Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "FPS, SWKS, RIG, TLX, KRMN, TENB, QRVO, ILMN, RVTY, WGS"
-    },
-    {
-      "time": "2026-09-15T18:09:53.495Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-15T18:09:53.778Z",
-      "type": "SIGNAL",
-      "msg": "FPS — score 10 | gap 11.8% | relVol 3.5× | RSI 56",
-      "detail": ""
-    },
     {
       "time": "2026-09-15T18:10:10.570Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-16T19:24:50.584Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T19:35:02.068Z",
+      "type": "INFO",
+      "msg": "Account: $99953.95 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T19:35:02.381Z",
+      "type": "INFO",
+      "msg": "EOD review (25 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T19:35:02.381Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
