@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-16T20:06:34.234Z",
+  "lastRun": "2026-09-16T20:16:47.392Z",
   "log": [
-    {
-      "time": "2026-09-15T18:20:42.711Z",
-      "type": "SIGNAL",
-      "msg": "FPS — score 10 | gap 13.5% | relVol 3.6× | RSI 70",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-15T18:20:59.497Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "SWKS: relVol 1.2× < 2× (todayVol 8.0M)  •  RIG: price $5.84 < $15  •  TENB: relVol 0.8× < 2× (todayVol 4.3M)  •  KRMN: relVol 0.9× < 2× (todayVol 2.4M)  •  QRVO: relVol 1.1× < 2× (todayVol 1.3M)  •  TLX: price $12.89 < $15  •  ILMN: relVol 0.9× < 2× (todayVol 1.8M)  •  RVTY: relVol 0.9× < 2× (todayVol 1.4M)  •  WGS: avgVol 0.5M < 1M  •  CAI: relVol 1.2× < 2× (todayVol 5.9M)  •  MRCY: avgVol 0.9M < 1M  •  CVI: relVol 0.4× < 2× (todayVol 0.5M)"
-    },
-    {
-      "time": "2026-09-15T18:20:59.497Z",
-      "type": "INFO",
-      "msg": "Top signal: FPS (score 10)",
-      "detail": ""
-    },
     {
       "time": "2026-09-15T18:20:59.497Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-16T20:06:34.234Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T20:16:47.237Z",
+      "type": "INFO",
+      "msg": "Account: $99953.95 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T20:16:47.250Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T20:16:47.392Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
