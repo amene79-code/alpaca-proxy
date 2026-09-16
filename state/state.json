@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-16T20:16:47.392Z",
+  "lastRun": "2026-09-16T20:26:58.893Z",
   "log": [
-    {
-      "time": "2026-09-15T18:20:59.497Z",
-      "type": "INFO",
-      "msg": "SKIP FPS — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-15T18:20:59.675Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ENVA, ALHC, WING, RML, ASND, CRCL, BOOT, ARWR, CAVA, CAKE"
-    },
-    {
-      "time": "2026-09-15T18:21:16.045Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "ENVA: avgVol 0.3M < 1M  •  ALHC: price $10.35 < $20 (short floor)  •  WING: relVol 1.6× < 2.5× (todayVol 1.8M)  •  RML: price $6.67 < $20 (short floor)  •  ASND: avgVol 0.6M < 1M  •  CRCL: relVol 0.7× < 2.5× (todayVol 10.7M)  •  BOOT: avgVol 0.6M < 1M  •  ARWR: relVol 1.7× < 2.5× (todayVol 2.4M)  •  CAVA: relVol 1.7× < 2.5× (todayVol 4.5M)  •  CAKE: relVol 0.7× < 2.5× (todayVol 1.0M)  •  SRRK: relVol 2.1× < 2.5× (todayVol 2.9M)  •  AXON: avgVol 0.8M < 1M"
-    },
     {
       "time": "2026-09-15T18:21:16.045Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-16T20:16:47.392Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T20:26:58.726Z",
+      "type": "INFO",
+      "msg": "Account: $99953.95 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T20:26:58.753Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T20:26:58.893Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
