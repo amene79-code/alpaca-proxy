@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-16T19:55:37.822Z",
+  "lastRun": "2026-09-16T20:06:34.234Z",
   "log": [
-    {
-      "time": "2026-09-15T18:20:41.700Z",
-      "type": "INFO",
-      "msg": "Account: $99977.38 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-15T18:20:42.485Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "FPS, SWKS, RIG, TENB, KRMN, QRVO, TLX, ILMN, RVTY, WGS"
-    },
-    {
-      "time": "2026-09-15T18:20:42.485Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-09-15T18:20:42.711Z",
       "type": "SIGNAL",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-16T19:55:37.821Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T20:06:33.664Z",
+      "type": "INFO",
+      "msg": "Account: $99953.95 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T20:06:33.723Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-16T20:06:34.234Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
