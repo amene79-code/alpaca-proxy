@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-17T19:33:37.036Z",
+  "lastRun": "2026-09-17T19:43:53.960Z",
   "log": [
-    {
-      "time": "2026-09-16T17:58:29.593Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "CIFR: relVol 1.3× < 2× (todayVol 43.6M)  •  FPS: relVol 1.6× < 2× (todayVol 11.5M)  •  WULF: relVol 0.7× < 2× (todayVol 19.0M)  •  SMTC: relVol 0.7× < 2× (todayVol 2.4M)  •  AXTI: relVol 0.8× < 2× (todayVol 6.4M)  •  INTC: relVol 0.8× < 2× (todayVol 69.0M)  •  SPCX: relVol 1.0× < 2× (todayVol 74.7M)  •  WOR: avgVol 0.3M < 1M  •  LITE: relVol 0.8× < 2× (todayVol 3.3M)  •  BRKR: relVol 1.2× < 2× (todayVol 2.4M)  •  COAG: avgVol 0.4M < 1M  •  AMRX: relVol 1.0× < 2× (todayVol 1.6M)"
-    },
-    {
-      "time": "2026-09-16T17:58:29.593Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-16T17:58:29.681Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "JBHT, BULL, PLSE, BLSH, ELVN, FANG, TLX, MTDR, SM, CRK"
-    },
     {
       "time": "2026-09-16T17:58:40.767Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-17T19:33:37.035Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-17T19:43:53.471Z",
+      "type": "INFO",
+      "msg": "Account: $100001.57 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-17T19:43:53.960Z",
+      "type": "INFO",
+      "msg": "EOD review (17 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-17T19:43:53.960Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
