@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-17T20:35:11.908Z",
+  "lastRun": "2026-09-17T22:59:51.106Z",
   "log": [
-    {
-      "time": "2026-09-16T18:19:56.265Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "JBHT, BULL, BLSH, PLSE, ELVN, TLX, FANG, CRK, MTDR, GPCR"
-    },
-    {
-      "time": "2026-09-16T18:20:10.924Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "JBHT: avgVol 0.9M < 1M  •  BULL: price $7.86 < $20 (short floor)  •  BLSH: relVol 0.7× < 2.5× (todayVol 1.2M)  •  PLSE: avgVol 0.6M < 1M  •  ELVN: avgVol 0.9M < 1M  •  TLX: price $11.89 < $20 (short floor)  •  FANG: above VWAP (price $196.93 > VWAP $195.10) — not holding breakdown  •  CRK: price $13.32 < $20 (short floor)  •  MTDR: relVol 0.5× < 2.5× (todayVol 0.9M)  •  GPCR: relVol 0.5× < 2.5× (todayVol 0.6M)  •  SM: net up over ~5d ($37.98→$38.76) — no short into uptrend  •  MGY: relVol 0.8× < 2.5× (todayVol 2.8M)"
-    },
-    {
-      "time": "2026-09-16T18:20:10.924Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-16T18:30:25.082Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-17T20:35:11.907Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-17T22:59:50.895Z",
+      "type": "INFO",
+      "msg": "Account: $100001.57 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-17T22:59:50.925Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-17T22:59:51.106Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
