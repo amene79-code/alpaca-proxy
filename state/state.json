@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-18T19:56:53.657Z",
+  "lastRun": "2026-09-18T20:07:07.589Z",
   "log": [
-    {
-      "time": "2026-09-17T18:51:21.593Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SDGR, VICR, GNRC, PURR, SMR, TEM, SMCI, INTC, XE, OKLO"
-    },
-    {
-      "time": "2026-09-17T18:51:21.593Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-17T18:51:34.794Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "VICR: avgVol 0.7M < 1M  •  GNRC: below VWAP (price $205.87 < VWAP $212.06)  •  PURR: price $12.57 < $15  •  SMR: price $9.11 < $15  •  TEM: relVol 1.7× < 2× (todayVol 14.0M)  •  SMCI: relVol 1.4× < 2× (todayVol 51.5M)  •  INTC: relVol 1.2× < 2× (todayVol 108.5M)  •  XE: relVol 1.0× < 2× (todayVol 6.5M)  •  OKLO: relVol 1.3× < 2× (todayVol 13.3M)  •  APLD: relVol 1.2× < 2× (todayVol 18.0M)  •  WULF: relVol 0.8× < 2× (todayVol 23.5M)  •  BFLY: price $8.08 < $15"
-    },
     {
       "time": "2026-09-17T18:51:34.794Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-18T19:56:53.657Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T20:07:07.428Z",
+      "type": "INFO",
+      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T20:07:07.449Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T20:07:07.589Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
