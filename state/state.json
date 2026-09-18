@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-18T17:06:10.585Z",
+  "lastRun": "2026-09-18T17:16:50.058Z",
   "log": [
-    {
-      "time": "2026-09-16T18:52:16.851Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "JBHT: avgVol 0.9M < 1M  •  BULL: price $7.84 < $20 (short floor)  •  BLSH: relVol 1.1× < 2.5× (todayVol 1.8M)  •  PLSE: avgVol 0.6M < 1M  •  ON: relVol 1.1× < 2.5× (todayVol 8.9M)  •  MTDR: relVol 0.6× < 2.5× (todayVol 1.0M)  •  FANG: above VWAP (price $195.63 > VWAP $195.19) — not holding breakdown  •  TLX: price $11.87 < $20 (short floor)  •  CRCL: relVol 1.1× < 2.5× (todayVol 18.7M)  •  CRK: price $13.26 < $20 (short floor)  •  SYNA: avgVol 0.7M < 1M  •  SM: net up over ~5d ($37.98→$38.42) — no short into uptrend"
-    },
-    {
-      "time": "2026-09-16T18:52:16.852Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-16T19:02:34.936Z",
-      "type": "INFO",
-      "msg": "Account: $99977.38 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-16T19:02:36.046Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CIFR, FPS, SMTC, AXTI, WULF, SPCX, AMRX, INTC, BRKR, WOR"
-    },
-    {
-      "time": "2026-09-16T19:02:36.046Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-16T19:02:36.563Z",
-      "type": "SIGNAL",
-      "msg": "FPS — score 8 | gap 12.3% | relVol 2.1× | RSI 43",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-16T19:02:49.100Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "CIFR: relVol 1.5× < 2× (todayVol 52.4M)  •  SMTC: relVol 0.9× < 2× (todayVol 3.2M)  •  AXTI: relVol 1.1× < 2× (todayVol 8.9M)  •  WULF: relVol 0.8× < 2× (todayVol 23.7M)  •  SPCX: relVol 1.2× < 2× (todayVol 88.3M)  •  AMRX: relVol 1.7× < 2× (todayVol 2.8M)  •  INTC: relVol 1.0× < 2× (todayVol 85.9M)  •  BRKR: relVol 1.4× < 2× (todayVol 2.9M)  •  WOR: avgVol 0.3M < 1M  •  LITE: relVol 1.2× < 2× (todayVol 4.8M)  •  ALAB: relVol 0.7× < 2× (todayVol 2.4M)  •  CRDO: relVol 0.9× < 2× (todayVol 7.0M)"
-    },
-    {
-      "time": "2026-09-16T19:02:49.101Z",
-      "type": "INFO",
-      "msg": "Top signal: FPS (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-16T19:02:49.101Z",
-      "type": "BUY",
-      "msg": "Placing 42× FPS @ ~$35.22",
-      "detail": "gap 12.3% | risk $21.42 | SL $34.71 | TP $36.57 | R:R 2.6 | "
-    },
-    {
-      "time": "2026-09-16T19:02:49.738Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 42× FPS",
-      "detail": "ID 1b560463-1ecf-4e58-963d-088c31aa19d2 | R:R 2.6:1 | risk $21.42"
-    },
     {
       "time": "2026-09-16T19:02:50.365Z",
       "type": "INFO",
@@ -1268,6 +1208,66 @@
     },
     {
       "time": "2026-09-18T17:06:10.585Z",
+      "type": "INFO",
+      "msg": "SKIP XENE — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T17:16:21.803Z",
+      "type": "INFO",
+      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T17:16:22.464Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MSTR, MARA, HOOD, BMNR, COIN, PURR, ALVO, BTDR, CIFR, PS"
+    },
+    {
+      "time": "2026-09-18T17:16:22.464Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-18T17:16:36.168Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MSTR: relVol 1.1× < 2× (todayVol 29.0M)  •  MARA: price $12.94 < $15  •  HOOD: relVol 1.0× < 2× (todayVol 23.8M)  •  BMNR: relVol 0.7× < 2× (todayVol 31.2M)  •  COIN: relVol 1.2× < 2× (todayVol 13.1M)  •  PURR: price $13.56 < $15  •  ALVO: price $5.89 < $15  •  BTDR: price $12.39 < $15  •  CIFR: relVol 0.6× < 2× (todayVol 19.4M)  •  PS: avgVol 0.4M < 1M  •  IMOS: avgVol 0.1M < 1M  •  ALMR: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-09-18T17:16:36.168Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T17:16:36.297Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "XENE, SMR, INFQ, ASTS, RDW, SYM, LFTO, NUE, TNGX, AMR"
+    },
+    {
+      "time": "2026-09-18T17:16:36.540Z",
+      "type": "SIGNAL",
+      "msg": "XENE — SHORT score 10 | gap -29.7% | relVol 9.7× | RSI 67",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T17:16:50.058Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "SMR: price $8.27 < $20 (short floor)  •  INFQ: price $12.88 < $20 (short floor)  •  ASTS: relVol 0.9× < 2.5× (todayVol 7.9M)  •  RDW: price $10.75 < $20 (short floor)  •  SYM: relVol 0.7× < 2.5× (todayVol 1.1M)  •  LFTO: price $16.31 < $20 (short floor)  •  NUE: relVol 1.1× < 2.5× (todayVol 1.2M)  •  TNGX: relVol 0.4× < 2.5× (todayVol 0.9M)  •  AMR: avgVol 0.3M < 1M  •  LUNR: price $13.90 < $20 (short floor)  •  IONQ: net up over ~5d ($36.75→$37.91) — no short into uptrend  •  BTU: relVol 0.9× < 2.5× (todayVol 2.0M)"
+    },
+    {
+      "time": "2026-09-18T17:16:50.058Z",
+      "type": "INFO",
+      "msg": "Top short: XENE (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T17:16:50.058Z",
       "type": "INFO",
       "msg": "SKIP XENE — already traded today",
       "detail": ""
