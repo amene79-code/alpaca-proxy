@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-18T18:10:56.098Z",
+  "lastRun": "2026-09-18T18:21:44.041Z",
   "log": [
-    {
-      "time": "2026-09-17T17:26:21.398Z",
-      "type": "SIGNAL",
-      "msg": "SDGR — score 9 | gap 18.3% | relVol 3.2× | RSI 68",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-17T17:26:36.021Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "PURR: price $12.64 < $15  •  SMCI: relVol 1.3× < 2× (todayVol 47.1M)  •  GNRC: below VWAP (price $207.30 < VWAP $212.57)  •  VICR: avgVol 0.7M < 1M  •  INTC: relVol 1.1× < 2× (todayVol 96.7M)  •  APLD: relVol 1.1× < 2× (todayVol 15.8M)  •  IONQ: relVol 0.8× < 2× (todayVol 14.8M)  •  SMR: price $9.04 < $15  •  TEM: relVol 1.5× < 2× (todayVol 12.3M)  •  OKLO: relVol 1.2× < 2× (todayVol 11.7M)  •  WULF: relVol 0.7× < 2× (todayVol 20.6M)  •  AMD: relVol 1.0× < 2× (todayVol 18.1M)"
-    },
-    {
-      "time": "2026-09-17T17:26:36.021Z",
-      "type": "INFO",
-      "msg": "Top signal: SDGR (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-17T17:26:36.021Z",
-      "type": "BUY",
-      "msg": "Placing 52× SDGR @ ~$28.32",
-      "detail": "gap 18.3% | risk $19.76 | SL $27.94 | TP $29.34 | R:R 2.7 | "
-    },
-    {
-      "time": "2026-09-17T17:26:36.210Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 52× SDGR",
-      "detail": "ID 92afa6be-455a-4000-a23a-ab3b3c8db343 | R:R 2.7:1 | risk $19.76"
-    },
-    {
-      "time": "2026-09-17T17:26:36.880Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 15",
-      "detail": "AN, TTAN, ARQT, SAH, MTZ, JXN, DKNG, LAD, CRWV, TMUS"
-    },
-    {
-      "time": "2026-09-17T17:26:43.249Z",
-      "type": "INFO",
-      "msg": "Short rejections (15)",
-      "detail": "AN: avgVol 0.4M < 1M  •  TTAN: relVol 1.0× < 2.5× (todayVol 3.4M)  •  ARQT: net up over ~5d ($23.38→$24.50) — no short into uptrend  •  SAH: avgVol 0.2M < 1M  •  MTZ: relVol 1.5× < 2.5× (todayVol 2.1M)  •  JXN: avgVol 0.6M < 1M  •  DKNG: relVol 0.6× < 2.5× (todayVol 5.3M)  •  LAD: avgVol 0.2M < 1M  •  CRWV: relVol 2.3× < 2.5× (todayVol 50.9M)  •  TMUS: relVol 0.7× < 2.5× (todayVol 2.9M)  •  CPRT: relVol 0.4× < 2.5× (todayVol 3.5M)  •  KVYO: price $15.53 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-17T17:26:43.249Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-17T17:36:56.843Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-18T18:10:56.097Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T18:21:14.737Z",
+      "type": "INFO",
+      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T18:21:15.901Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MSTR, MARA, COIN, PURR, BMNR, HOOD, CLSK, BTDR, SBET, CIFR"
+    },
+    {
+      "time": "2026-09-18T18:21:15.901Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-18T18:21:29.726Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MSTR: relVol 1.2× < 2× (todayVol 33.0M)  •  MARA: price $13.17 < $15  •  COIN: relVol 1.4× < 2× (todayVol 15.5M)  •  PURR: price $14.01 < $15  •  BMNR: relVol 0.8× < 2× (todayVol 35.0M)  •  HOOD: relVol 1.1× < 2× (todayVol 27.3M)  •  CLSK: price $14.41 < $15  •  BTDR: price $12.66 < $15  •  SBET: price $9.23 < $15  •  CIFR: relVol 0.7× < 2× (todayVol 23.3M)  •  IREN: relVol 0.6× < 2× (todayVol 25.6M)  •  ALVO: price $5.91 < $15"
+    },
+    {
+      "time": "2026-09-18T18:21:29.726Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T18:21:29.952Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "XENE, SMR, ASTS, INFQ, CEPU, RDW, FIVN, LFTO, ALKS, NUE"
+    },
+    {
+      "time": "2026-09-18T18:21:44.041Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "XENE: ATR 0.45% < 0.5%  •  SMR: price $8.30 < $20 (short floor)  •  ASTS: relVol 1.0× < 2.5× (todayVol 9.0M)  •  INFQ: price $12.90 < $20 (short floor)  •  CEPU: price $13.48 < $20 (short floor)  •  RDW: price $10.78 < $20 (short floor)  •  FIVN: net up over ~5d ($30.66→$32.29) — no short into uptrend  •  LFTO: price $16.31 < $20 (short floor)  •  ALKS: relVol 0.9× < 2.5× (todayVol 1.3M)  •  NUE: relVol 1.2× < 2.5× (todayVol 1.4M)  •  LUNR: price $13.90 < $20 (short floor)  •  SYM: relVol 0.8× < 2.5× (todayVol 1.2M)"
+    },
+    {
+      "time": "2026-09-18T18:21:44.041Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
