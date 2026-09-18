@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-18T19:46:41.666Z",
+  "lastRun": "2026-09-18T19:56:53.657Z",
   "log": [
-    {
-      "time": "2026-09-17T18:41:02.762Z",
-      "type": "INFO",
-      "msg": "Short rejections (19)",
-      "detail": "AN: avgVol 0.5M < 1M  •  SAH: avgVol 0.2M < 1M  •  TTAN: relVol 1.2× < 2.5× (todayVol 4.1M)  •  DKNG: relVol 1.0× < 2.5× (todayVol 8.8M)  •  MTZ: relVol 1.6× < 2.5× (todayVol 2.3M)  •  KRMN: net up over ~5d ($34.39→$34.69) — no short into uptrend  •  SRAD: price $12.48 < $20 (short floor)  •  RML: price $6.07 < $20 (short floor)  •  JXN: avgVol 0.6M < 1M  •  FLUT: relVol 0.8× < 2.5× (todayVol 1.9M)  •  TMUS: relVol 1.0× < 2.5× (todayVol 3.8M)  •  DCO: avgVol 0.2M < 1M"
-    },
-    {
-      "time": "2026-09-17T18:41:02.762Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-17T18:51:20.666Z",
-      "type": "INFO",
-      "msg": "Account: $99980.99 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-17T18:51:21.593Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-18T19:46:41.666Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T19:56:53.353Z",
+      "type": "INFO",
+      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T19:56:53.657Z",
+      "type": "INFO",
+      "msg": "EOD review (4 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-18T19:56:53.657Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
