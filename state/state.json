@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-21T20:22:09.468Z",
+  "lastRun": "2026-09-21T22:07:08.770Z",
   "log": [
-    {
-      "time": "2026-09-18T17:16:36.297Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "XENE, SMR, INFQ, ASTS, RDW, SYM, LFTO, NUE, TNGX, AMR"
-    },
-    {
-      "time": "2026-09-18T17:16:36.540Z",
-      "type": "SIGNAL",
-      "msg": "XENE — SHORT score 10 | gap -29.7% | relVol 9.7× | RSI 67",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T17:16:50.058Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "SMR: price $8.27 < $20 (short floor)  •  INFQ: price $12.88 < $20 (short floor)  •  ASTS: relVol 0.9× < 2.5× (todayVol 7.9M)  •  RDW: price $10.75 < $20 (short floor)  •  SYM: relVol 0.7× < 2.5× (todayVol 1.1M)  •  LFTO: price $16.31 < $20 (short floor)  •  NUE: relVol 1.1× < 2.5× (todayVol 1.2M)  •  TNGX: relVol 0.4× < 2.5× (todayVol 0.9M)  •  AMR: avgVol 0.3M < 1M  •  LUNR: price $13.90 < $20 (short floor)  •  IONQ: net up over ~5d ($36.75→$37.91) — no short into uptrend  •  BTU: relVol 0.9× < 2.5× (todayVol 2.0M)"
-    },
     {
       "time": "2026-09-18T17:16:50.058Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-21T20:22:09.468Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-21T22:07:08.638Z",
+      "type": "INFO",
+      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-21T22:07:08.645Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-21T22:07:08.770Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
