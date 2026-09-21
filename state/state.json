@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-21T20:01:35.367Z",
+  "lastRun": "2026-09-21T20:11:50.861Z",
   "log": [
-    {
-      "time": "2026-09-18T17:06:10.585Z",
-      "type": "INFO",
-      "msg": "SKIP XENE — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T17:16:21.803Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T17:16:22.464Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MSTR, MARA, HOOD, BMNR, COIN, PURR, ALVO, BTDR, CIFR, PS"
-    },
     {
       "time": "2026-09-18T17:16:22.464Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-21T20:01:35.367Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-21T20:11:50.517Z",
+      "type": "INFO",
+      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-21T20:11:50.530Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-21T20:11:50.861Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
