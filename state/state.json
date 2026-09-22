@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-22T19:28:45.474Z",
+  "lastRun": "2026-09-22T19:38:57.875Z",
   "log": [
-    {
-      "time": "2026-09-21T19:09:06.591Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 34",
-      "detail": "BRVE, PBLS, TLX, ZTO, NVO, CXW, RSI, SSMR, MHK, SMMT"
-    },
-    {
-      "time": "2026-09-21T19:09:17.676Z",
-      "type": "INFO",
-      "msg": "Short rejections (34)",
-      "detail": "BRVE: avgVol 0.4M < 1M  •  PBLS: avgVol 1.0M < 1M  •  TLX: price $11.26 < $20 (short floor)  •  ZTO: price $19.23 < $20 (short floor)  •  NVO: ATR 0.17% < 0.5%  •  CXW: relVol 0.6× < 2.5× (todayVol 1.0M)  •  RSI: relVol 1.2× < 2.5× (todayVol 3.0M)  •  SSMR: price $16.16 < $20 (short floor)  •  MHK: avgVol 1.0M < 1M  •  SMMT: price $16.80 < $20 (short floor)  •  SIND: price $14.31 < $20 (short floor)  •  PBF: net up over ~5d ($70.40→$73.07) — no short into uptrend"
-    },
-    {
-      "time": "2026-09-21T19:09:17.676Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-21T19:19:30.383Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-22T19:28:45.474Z",
       "type": "INFO",
       "msg": "SKIP CLDX — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:38:57.552Z",
+      "type": "INFO",
+      "msg": "Account: $99919.05 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:38:57.875Z",
+      "type": "INFO",
+      "msg": "EOD review (22 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:38:57.875Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
