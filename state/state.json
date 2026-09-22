@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-22T19:59:30.830Z",
+  "lastRun": "2026-09-22T20:09:57.191Z",
   "log": [
-    {
-      "time": "2026-09-21T19:19:47.888Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 33",
-      "detail": "BRVE, PBLS, TLX, ZTO, NVO, CXW, RSI, SIND, MHK, SSMR"
-    },
-    {
-      "time": "2026-09-21T19:20:01.018Z",
-      "type": "INFO",
-      "msg": "Short rejections (33)",
-      "detail": "BRVE: avgVol 0.4M < 1M  •  PBLS: avgVol 1.0M < 1M  •  TLX: price $11.31 < $20 (short floor)  •  ZTO: price $19.24 < $20 (short floor)  •  NVO: ATR 0.19% < 0.5%  •  CXW: relVol 0.6× < 2.5× (todayVol 1.1M)  •  RSI: relVol 1.3× < 2.5× (todayVol 3.1M)  •  SIND: price $14.18 < $20 (short floor)  •  MHK: avgVol 1.0M < 1M  •  SSMR: price $16.18 < $20 (short floor)  •  FPS: net up over ~5d ($28.64→$37.30) — no short into uptrend  •  SMMT: price $16.90 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-21T19:20:01.018Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-21T19:30:14.840Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-22T19:59:30.829Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T20:09:56.354Z",
+      "type": "INFO",
+      "msg": "Account: $99919.05 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T20:09:56.390Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T20:09:57.190Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
