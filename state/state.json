@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "INOD": {
-      "side": "long",
-      "entry": 71.83000183105469,
-      "high": 71.83000183105469,
-      "low": 71.83000183105469,
-      "initialSl": 70.33,
-      "sl": 70.33,
-      "tp": 75.83,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 3,
   "dailyDate": "2026-09-22",
   "openPositions": [
@@ -83,104 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-22T18:56:37.645Z",
+  "lastRun": "2026-09-22T19:07:18.348Z",
   "log": [
-    {
-      "time": "2026-09-18T19:46:41.666Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T19:56:53.353Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T19:56:53.657Z",
-      "type": "INFO",
-      "msg": "EOD review (4 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T19:56:53.657Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T20:07:07.428Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T20:07:07.449Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T20:07:07.589Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T20:17:32.499Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T20:17:32.512Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T20:17:32.625Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T20:27:48.525Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T20:27:48.538Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T20:27:48.948Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T21:46:15.946Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T21:46:15.978Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-18T21:46:16.183Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-09-21T18:26:31.860Z",
       "type": "INFO",
@@ -1281,6 +1172,102 @@
     },
     {
       "time": "2026-09-22T18:56:37.645Z",
+      "type": "INFO",
+      "msg": "SKIP CLDX — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:06:50.172Z",
+      "type": "INFO",
+      "msg": "Account: $99925.03 | 0 positions | 3 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:06:50.730Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "VKTX, BFLY, VICR, INOD, SGRY, ONON, BLLN, TNGX, IBRX, SRAD"
+    },
+    {
+      "time": "2026-09-22T19:06:50.730Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-22T19:06:51.104Z",
+      "type": "SIGNAL",
+      "msg": "VKTX — score 13 | gap 36.4% | relVol 9.5× | RSI 85",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-09-22T19:06:52.084Z",
+      "type": "SIGNAL",
+      "msg": "INOD — score 9 | gap 15.9% | relVol 2.8× | RSI 74",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:06:52.421Z",
+      "type": "SIGNAL",
+      "msg": "SGRY — score 9 | gap 14.6% | relVol 2.3× | RSI 63",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:07:04.679Z",
+      "type": "INFO",
+      "msg": "Rejections (37)",
+      "detail": "BFLY: price $9.87 < $15  •  VICR: avgVol 0.8M < 1M  •  ONON: below VWAP (price $29.69 < VWAP $30.37)  •  BLLN: avgVol 0.6M < 1M  •  TNGX: relVol 1.2× < 2× (todayVol 2.9M)  •  IBRX: price $9.35 < $15  •  SRAD: price $13.81 < $15  •  DKS: relVol 0.6× < 2× (todayVol 3.4M)  •  RMBS: relVol 1.2× < 2× (todayVol 3.2M)  •  MPWR: avgVol 0.7M < 1M  •  TRLV: price $12.41 < $15  •  ERO: relVol 1.0× < 2× (todayVol 1.4M)"
+    },
+    {
+      "time": "2026-09-22T19:07:04.679Z",
+      "type": "INFO",
+      "msg": "Top signal: VKTX (score 13)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:07:04.679Z",
+      "type": "INFO",
+      "msg": "SKIP VKTX — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:07:04.679Z",
+      "type": "INFO",
+      "msg": "SKIP INOD — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:07:04.679Z",
+      "type": "INFO",
+      "msg": "SKIP SGRY — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:07:04.823Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PLNT, WGS, NKTR, CLDX, GEN, PLBL, NYT, BSP, RCL, LPLA"
+    },
+    {
+      "time": "2026-09-22T19:07:06.081Z",
+      "type": "SIGNAL",
+      "msg": "CLDX — SHORT score 9 | gap -8.6% | relVol 8.4× | RSI 41",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:07:18.348Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "PLNT: relVol 2.5× < 2.5× (todayVol 4.9M)  •  WGS: avgVol 0.6M < 1M  •  NKTR: avgVol 0.9M < 1M  •  GEN: relVol 1.1× < 2.5× (todayVol 7.0M)  •  PLBL: price $5.89 < $20 (short floor)  •  NYT: relVol 2.2× < 2.5× (todayVol 5.7M)  •  BSP: relVol 2.0× < 2.5× (todayVol 3.3M)  •  RCL: relVol 2.1× < 2.5× (todayVol 4.5M)  •  LPLA: avgVol 0.7M < 1M  •  LFTO: price $16.56 < $20 (short floor)  •  ALMR: avgVol 0.4M < 1M  •  ECO: avgVol 0.7M < 1M"
+    },
+    {
+      "time": "2026-09-22T19:07:18.348Z",
+      "type": "INFO",
+      "msg": "Top short: CLDX (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-22T19:07:18.348Z",
       "type": "INFO",
       "msg": "SKIP CLDX — already traded today",
       "detail": ""
