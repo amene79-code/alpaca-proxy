@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 3,
-  "dailyDate": "2026-09-22",
+  "dailyTrades": 0,
+  "dailyDate": "2026-09-23",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-22T23:08:43.088Z",
+  "lastRun": "2026-09-23T17:40:46.568Z",
   "log": [
-    {
-      "time": "2026-09-21T19:41:00.202Z",
-      "type": "INFO",
-      "msg": "EOD review (19 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T19:41:00.203Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T19:51:17.307Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T19:51:17.751Z",
-      "type": "INFO",
-      "msg": "EOD review (9 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T19:51:17.751Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T20:01:35.080Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T20:01:35.138Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T20:01:35.367Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T20:11:50.517Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-21T20:11:50.530Z",
       "type": "INFO",
@@ -1271,16 +1217,63 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-09-23T17:40:28.822Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T17:40:29.403Z",
+      "type": "INFO",
+      "msg": "Account: $99919.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T17:40:30.037Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 32, actives 50, kept 21",
+      "detail": "SECZ, IONQ, AAON, MAAS, ACMR, VG, VIA, SMCI, PLTR, TSLA"
+    },
+    {
+      "time": "2026-09-23T17:40:30.038Z",
+      "type": "INFO",
+      "msg": "Scanning 21 candidates",
+      "detail": "21 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-23T17:40:35.954Z",
+      "type": "INFO",
+      "msg": "Rejections (21)",
+      "detail": "SECZ: price $14.56 < $15  •  IONQ: below VWAP (price $42.70 < VWAP $42.99)  •  AAON: relVol 0.8× < 2× (todayVol 0.9M)  •  MAAS: avgVol 0.3M < 1M  •  ACMR: avgVol 0.9M < 1M  •  VG: price $13.58 < $15  •  VIA: avgVol 0.8M < 1M  •  SMCI: gap 1.0% < 4% (price $41.60 vs priorClose $41.20)  •  PLTR: relVol 0.9× < 2× (todayVol 23.9M)  •  TSLA: gap 1.0% < 4% (price $379.20 vs priorClose $375.30)  •  CRWV: gap 2.4% < 4% (price $87.48 vs priorClose $85.43)  •  T: gap 0.5% < 4% (price $25.57 vs priorClose $25.45)"
+    },
+    {
+      "time": "2026-09-23T17:40:35.954Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T17:40:36.047Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "EXK, PBLS, SSMR, EWTX, RLAY, VERA, ERAS, MLYS, BHVN, W"
+    },
+    {
+      "time": "2026-09-23T17:40:46.567Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "EXK: price $9.15 < $20 (short floor)  •  PBLS: relVol 0.5× < 2.5× (todayVol 0.5M)  •  SSMR: price $15.21 < $20 (short floor)  •  EWTX: relVol 0.9× < 2.5× (todayVol 1.1M)  •  RLAY: price $17.45 < $20 (short floor)  •  VERA: relVol 0.3× < 2.5× (todayVol 0.8M)  •  ERAS: price $14.18 < $20 (short floor)  •  MLYS: relVol 0.6× < 2.5× (todayVol 0.8M)  •  BHVN: price $13.60 < $20 (short floor)  •  W: relVol 1.1× < 2.5× (todayVol 2.4M)  •  KNF: avgVol 1.0M < 1M  •  SRPT: price $19.13 < $20 (short floor)"
+    },
+    {
+      "time": "2026-09-23T17:40:46.568Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "VKTX",
-    "SGRY",
-    "INOD"
-  ],
-  "shortDailyTrades": 2,
-  "shortTradedToday": [
-    "CLDX",
-    "PLNT"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
