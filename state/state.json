@@ -3,7 +3,7 @@
     "FSLY": {
       "side": "long",
       "entry": 29.377599716186523,
-      "high": 30.67,
+      "high": 30.83,
       "low": 29.377599716186523,
       "initialSl": 28.31,
       "sl": 29.45,
@@ -83,50 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-23T19:16:09.886Z",
+  "lastRun": "2026-09-23T19:26:32.818Z",
   "log": [
-    {
-      "time": "2026-09-22T18:34:36.651Z",
-      "type": "SIGNAL",
-      "msg": "SGRY — score 8 | gap 14.4% | relVol 2.0× | RSI 78",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:34:47.715Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "BFLY: price $9.78 < $15  •  VICR: avgVol 0.8M < 1M  •  INOD: RSI 91 > 88  •  ONON: below VWAP (price $29.67 < VWAP $30.39)  •  BLLN: avgVol 0.6M < 1M  •  IBRX: price $9.40 < $15  •  TNGX: relVol 1.0× < 2× (todayVol 2.6M)  •  SRAD: price $13.70 < $15  •  DKS: relVol 0.5× < 2× (todayVol 3.1M)  •  ARQT: relVol 0.5× < 2× (todayVol 1.5M)  •  CE: relVol 0.8× < 2× (todayVol 1.3M)  •  RMBS: relVol 1.2× < 2× (todayVol 3.0M)"
-    },
-    {
-      "time": "2026-09-22T18:34:47.715Z",
-      "type": "INFO",
-      "msg": "Top signal: VKTX (score 12)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:34:47.715Z",
-      "type": "INFO",
-      "msg": "SKIP VKTX — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:34:47.715Z",
-      "type": "BUY",
-      "msg": "Placing 95× SGRY @ ~$15.63",
-      "detail": "gap 14.4% | risk $13.30 | SL $15.49 | TP $16 | R:R 2.6 | "
-    },
-    {
-      "time": "2026-09-22T18:34:47.754Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 95× SGRY",
-      "detail": "ID 680b6b29-d61d-4fe7-8557-d2593f20df38 | R:R 2.6:1 | risk $13.30"
-    },
-    {
-      "time": "2026-09-22T18:34:48.356Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PLNT, WGS, NYT, GEN, CLDX, LFTO, PLBL, LPLA, ALL, ECO"
-    },
     {
       "time": "2026-09-22T18:34:49.652Z",
       "type": "SIGNAL",
@@ -1281,6 +1239,48 @@
     },
     {
       "time": "2026-09-23T19:16:09.886Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T19:26:25.495Z",
+      "type": "INFO",
+      "msg": "Account: $99983.91 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T19:26:26.234Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 37, actives 50, kept 21",
+      "detail": "FSLY, IONQ, SECZ, ACMR, KVYO, VICR, HUBS, GRAB, SMCI, PLTR"
+    },
+    {
+      "time": "2026-09-23T19:26:26.234Z",
+      "type": "INFO",
+      "msg": "Scanning 20 candidates",
+      "detail": "21 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-23T19:26:32.568Z",
+      "type": "INFO",
+      "msg": "Rejections (20)",
+      "detail": "IONQ: below VWAP (price $42.87 < VWAP $42.97)  •  SECZ: price $14.30 < $15  •  ACMR: avgVol 1.0M < 1M  •  KVYO: relVol 0.8× < 2× (todayVol 4.9M)  •  VICR: avgVol 0.8M < 1M  •  HUBS: relVol 0.6× < 2× (todayVol 1.0M)  •  GRAB: price $3.17 < $15  •  SMCI: gap 1.1% < 4% (price $41.65 vs priorClose $41.20)  •  PLTR: relVol 1.0× < 2× (todayVol 28.2M)  •  T: gap -0.0% < 4% (price $25.44 vs priorClose $25.45)  •  TSLA: gap 1.3% < 4% (price $380.30 vs priorClose $375.30)  •  CRWV: gap 3.3% < 4% (price $88.27 vs priorClose $85.43)"
+    },
+    {
+      "time": "2026-09-23T19:26:32.568Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T19:26:32.686Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 0, kept 0",
+      "detail": "(none returned)"
+    },
+    {
+      "time": "2026-09-23T19:26:32.818Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
