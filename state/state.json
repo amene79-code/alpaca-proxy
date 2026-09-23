@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-23T20:08:10.107Z",
+  "lastRun": "2026-09-23T20:18:28.539Z",
   "log": [
-    {
-      "time": "2026-09-22T18:45:25.582Z",
-      "type": "INFO",
-      "msg": "SKIP SGRY — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:45:25.691Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PLNT, WGS, CLDX, GEN, PLBL, NYT, LFTO, LPLA, ALL, FSLY"
-    },
-    {
-      "time": "2026-09-22T18:45:26.439Z",
-      "type": "SIGNAL",
-      "msg": "CLDX — SHORT score 9 | gap -8.1% | relVol 8.3× | RSI 65",
-      "detail": ""
-    },
     {
       "time": "2026-09-22T18:45:37.391Z",
       "type": "INFO",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-09-23T20:08:10.107Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T20:18:27.833Z",
+      "type": "INFO",
+      "msg": "Account: $99923.19 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T20:18:27.889Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T20:18:28.539Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
