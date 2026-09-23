@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-23T17:40:46.568Z",
+  "lastRun": "2026-09-23T17:51:18.688Z",
   "log": [
-    {
-      "time": "2026-09-21T20:11:50.530Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T20:11:50.861Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T20:22:09.152Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T20:22:09.211Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T20:22:09.468Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T22:07:08.638Z",
-      "type": "INFO",
-      "msg": "Account: $99995.05 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T22:07:08.645Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-21T22:07:08.770Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-09-22T17:30:04.045Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-23T17:40:46.568Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T17:51:00.404Z",
+      "type": "INFO",
+      "msg": "Account: $99919.05 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T17:51:00.857Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 40, actives 50, kept 20",
+      "detail": "SECZ, IONQ, MAAS, AAON, VIA, ACMR, GRAB, SMCI, PLTR, TSLA"
+    },
+    {
+      "time": "2026-09-23T17:51:00.857Z",
+      "type": "INFO",
+      "msg": "Scanning 20 candidates",
+      "detail": "20 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-23T17:51:06.896Z",
+      "type": "INFO",
+      "msg": "Rejections (20)",
+      "detail": "SECZ: price $14.52 < $15  •  IONQ: below VWAP (price $42.87 < VWAP $42.99)  •  MAAS: avgVol 0.3M < 1M  •  AAON: relVol 0.9× < 2× (todayVol 1.0M)  •  VIA: avgVol 0.8M < 1M  •  ACMR: avgVol 0.9M < 1M  •  GRAB: price $3.17 < $15  •  SMCI: gap 0.9% < 4% (price $41.56 vs priorClose $41.20)  •  PLTR: relVol 0.9× < 2× (todayVol 24.2M)  •  TSLA: gap 1.0% < 4% (price $379.23 vs priorClose $375.30)  •  CRWV: gap 2.7% < 4% (price $87.75 vs priorClose $85.43)  •  T: gap 0.3% < 4% (price $25.51 vs priorClose $25.45)"
+    },
+    {
+      "time": "2026-09-23T17:51:06.896Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T17:51:07.016Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "EXK, PBLS, SSMR, RLAY, EWTX, VERA, ERAS, BHVN, KNF, MLYS"
+    },
+    {
+      "time": "2026-09-23T17:51:18.688Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "EXK: price $9.19 < $20 (short floor)  •  PBLS: relVol 0.5× < 2.5× (todayVol 0.5M)  •  SSMR: price $15.31 < $20 (short floor)  •  RLAY: price $17.48 < $20 (short floor)  •  EWTX: relVol 0.9× < 2.5× (todayVol 1.2M)  •  VERA: gap -3.3% > -4% (not gapping down enough)  •  ERAS: price $14.24 < $20 (short floor)  •  BHVN: price $13.62 < $20 (short floor)  •  KNF: avgVol 1.0M < 1M  •  MLYS: relVol 0.6× < 2.5× (todayVol 0.8M)  •  SRPT: price $19.17 < $20 (short floor)  •  DAVE: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-09-23T17:51:18.688Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
