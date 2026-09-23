@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "FSLY": {
-      "side": "long",
-      "entry": 29.377599716186523,
-      "high": 30.83,
-      "low": 29.377599716186523,
-      "initialSl": 28.31,
-      "sl": 29.45,
-      "tp": 32.24,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-09-23",
   "openPositions": [
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-23T20:18:28.539Z",
+  "lastRun": "2026-09-23T20:28:46.060Z",
   "log": [
-    {
-      "time": "2026-09-22T18:45:37.391Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "PLNT: relVol 2.3× < 2.5× (todayVol 4.5M)  •  WGS: avgVol 0.6M < 1M  •  GEN: relVol 1.0× < 2.5× (todayVol 6.6M)  •  PLBL: price $5.89 < $20 (short floor)  •  NYT: relVol 2.1× < 2.5× (todayVol 5.4M)  •  LFTO: price $16.38 < $20 (short floor)  •  LPLA: avgVol 0.7M < 1M  •  ALL: relVol 1.9× < 2.5× (todayVol 3.3M)  •  FSLY: net up over ~5d ($24.30→$25.75) — no short into uptrend  •  ECO: avgVol 0.7M < 1M  •  PAY: relVol 0.8× < 2.5× (todayVol 0.8M)  •  BSP: relVol 1.8× < 2.5× (todayVol 2.9M)"
-    },
-    {
-      "time": "2026-09-22T18:45:37.391Z",
-      "type": "INFO",
-      "msg": "Top short: CLDX (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:45:37.391Z",
-      "type": "INFO",
-      "msg": "SKIP CLDX — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:55:59.700Z",
-      "type": "INFO",
-      "msg": "Account: $99943.03 | 1 positions | 3 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-22T18:56:00.814Z",
       "type": "INFO",
@@ -1281,6 +1244,30 @@
     },
     {
       "time": "2026-09-23T20:18:28.539Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T20:28:43.847Z",
+      "type": "INFO",
+      "msg": "Account: $99913.53 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T20:28:43.905Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T20:28:45.909Z",
+      "type": "SELL",
+      "msg": "✓ Closed FSLY (ext-hours stop)",
+      "detail": "Side long | P&L $-5.52"
+    },
+    {
+      "time": "2026-09-23T20:28:46.059Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
