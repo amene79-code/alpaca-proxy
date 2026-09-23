@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-23T19:05:15.971Z",
+  "lastRun": "2026-09-23T19:16:09.886Z",
   "log": [
-    {
-      "time": "2026-09-22T18:24:08.392Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 38× VKTX",
-      "detail": "ID 52b01e6c-234e-4bfd-9296-1cfa635ea5e4 | R:R 2.7:1 | risk $15.29"
-    },
-    {
-      "time": "2026-09-22T18:24:09.010Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PLNT, WGS, NYT, GEN, LFTO, LPLA, DBX, PLBL, CLDX, FSLY"
-    },
-    {
-      "time": "2026-09-22T18:24:21.141Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PLNT: relVol 2.2× < 2.5× (todayVol 4.2M)  •  WGS: avgVol 0.6M < 1M  •  NYT: relVol 2.0× < 2.5× (todayVol 5.1M)  •  GEN: relVol 1.0× < 2.5× (todayVol 6.2M)  •  LFTO: price $16.36 < $20 (short floor)  •  LPLA: avgVol 0.7M < 1M  •  DBX: relVol 1.2× < 2.5× (todayVol 4.9M)  •  PLBL: price $5.93 < $20 (short floor)  •  CLDX: above VWAP (price $35.29 > VWAP $35.03) — not holding breakdown  •  FSLY: net up over ~5d ($24.30→$25.75) — no short into uptrend  •  CAR: avgVol 0.4M < 1M  •  ALL: relVol 1.8× < 2.5× (todayVol 3.1M)"
-    },
-    {
-      "time": "2026-09-22T18:24:21.141Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:34:34.896Z",
-      "type": "INFO",
-      "msg": "Account: $99975.43 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:34:35.355Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "VKTX, BFLY, VICR, INOD, SGRY, ONON, BLLN, IBRX, TNGX, SRAD"
-    },
-    {
-      "time": "2026-09-22T18:34:35.355Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-22T18:34:35.471Z",
-      "type": "SIGNAL",
-      "msg": "VKTX — score 12 | gap 30.4% | relVol 9.2× | RSI 66",
-      "detail": "Volume Breakout"
-    },
     {
       "time": "2026-09-22T18:34:36.651Z",
       "type": "SIGNAL",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-09-23T19:05:15.971Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T19:15:50.425Z",
+      "type": "INFO",
+      "msg": "Account: $99964.59 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T19:15:51.318Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 38, actives 50, kept 22",
+      "detail": "FSLY, SECZ, IONQ, ACMR, KVYO, PLTR, T, TSLA, CRWV, META"
+    },
+    {
+      "time": "2026-09-23T19:15:51.319Z",
+      "type": "INFO",
+      "msg": "Scanning 21 candidates",
+      "detail": "22 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-23T19:15:58.033Z",
+      "type": "INFO",
+      "msg": "Rejections (21)",
+      "detail": "SECZ: price $14.29 < $15  •  IONQ: below VWAP (price $42.75 < VWAP $42.97)  •  ACMR: avgVol 1.0M < 1M  •  KVYO: relVol 0.7× < 2× (todayVol 4.8M)  •  PLTR: relVol 1.0× < 2× (todayVol 27.8M)  •  T: gap 0.5% < 4% (price $25.58 vs priorClose $25.45)  •  TSLA: gap 1.2% < 4% (price $379.94 vs priorClose $375.30)  •  CRWV: gap 2.9% < 4% (price $87.89 vs priorClose $85.43)  •  META: gap 0.8% < 4% (price $747.52 vs priorClose $741.25)  •  PFE: gap 0.9% < 4% (price $27.99 vs priorClose $27.74)  •  VICR: avgVol 0.8M < 1M  •  HUBS: relVol 0.6× < 2× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-09-23T19:15:58.033Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T19:15:58.133Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "EXK, PBLS, VERA, RLAY, ERAS, MLYS, SRPT, CLDX, BHVN, KNF"
+    },
+    {
+      "time": "2026-09-23T19:16:09.886Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "EXK: price $9.27 < $20 (short floor)  •  PBLS: relVol 0.7× < 2.5× (todayVol 0.8M)  •  VERA: gap -3.8% > -4% (not gapping down enough)  •  RLAY: price $17.63 < $20 (short floor)  •  ERAS: price $14.19 < $20 (short floor)  •  MLYS: relVol 0.8× < 2.5× (todayVol 1.0M)  •  SRPT: price $19.05 < $20 (short floor)  •  CLDX: avgVol 0.9M < 1M  •  BHVN: price $13.66 < $20 (short floor)  •  KNF: avgVol 1.0M < 1M  •  SSMR: price $15.69 < $20 (short floor)  •  SHAZ: gap -2.5% > -4% (not gapping down enough)"
+    },
+    {
+      "time": "2026-09-23T19:16:09.886Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
