@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-23T20:42:08.348Z",
+  "lastRun": "2026-09-23T23:13:07.280Z",
   "log": [
-    {
-      "time": "2026-09-22T18:56:02.459Z",
-      "type": "SIGNAL",
-      "msg": "SGRY — score 9 | gap 14.6% | relVol 2.1× | RSI 68",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:56:19.213Z",
-      "type": "INFO",
-      "msg": "Rejections (37)",
-      "detail": "BFLY: price $9.85 < $15  •  VICR: avgVol 0.8M < 1M  •  ONON: below VWAP (price $29.70 < VWAP $30.38)  •  BLLN: avgVol 0.6M < 1M  •  SRAD: price $13.83 < $15  •  IBRX: price $9.31 < $15  •  TNGX: relVol 1.1× < 2× (todayVol 2.8M)  •  RMBS: relVol 1.2× < 2× (todayVol 3.1M)  •  DKS: relVol 0.5× < 2× (todayVol 3.3M)  •  MPWR: avgVol 0.7M < 1M  •  ERO: relVol 1.0× < 2× (todayVol 1.4M)  •  ARQT: relVol 0.5× < 2× (todayVol 1.7M)"
-    },
-    {
-      "time": "2026-09-22T18:56:19.213Z",
-      "type": "INFO",
-      "msg": "Top signal: VKTX (score 10)",
-      "detail": ""
-    },
     {
       "time": "2026-09-22T18:56:19.213Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-23T20:42:08.348Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T23:13:07.136Z",
+      "type": "INFO",
+      "msg": "Account: $99913.53 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T23:13:07.144Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-23T23:13:07.280Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
