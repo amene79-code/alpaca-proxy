@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-24T20:48:06.760Z",
+  "lastRun": "2026-09-24T23:33:17.439Z",
   "log": [
-    {
-      "time": "2026-09-23T19:05:01.644Z",
-      "type": "INFO",
-      "msg": "Rejections (19)",
-      "detail": "IONQ: below VWAP (price $42.55 < VWAP $42.98)  •  SECZ: price $14.14 < $15  •  ACMR: avgVol 1.0M < 1M  •  KVYO: relVol 0.7× < 2× (todayVol 4.6M)  •  PLTR: relVol 1.0× < 2× (todayVol 27.1M)  •  T: gap 0.3% < 4% (price $25.51 vs priorClose $25.45)  •  TSLA: gap 1.1% < 4% (price $379.61 vs priorClose $375.30)  •  CRWV: gap 3.0% < 4% (price $87.97 vs priorClose $85.43)  •  META: gap 1.0% < 4% (price $748.52 vs priorClose $741.25)  •  PFE: gap 0.8% < 4% (price $27.97 vs priorClose $27.74)  •  CRWD: relVol 0.8× < 2× (todayVol 9.9M)  •  HUBS: relVol 0.6× < 2× (todayVol 1.0M)"
-    },
-    {
-      "time": "2026-09-23T19:05:01.644Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T19:05:01.863Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "EXK, PBLS, RLAY, ERAS, VERA, MLYS, SRPT, CLDX, BHVN, EWTX"
-    },
     {
       "time": "2026-09-23T19:05:15.971Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-24T20:48:06.760Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T23:33:17.065Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T23:33:17.143Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T23:33:17.439Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
