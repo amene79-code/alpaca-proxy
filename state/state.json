@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-24T20:11:58.477Z",
+  "lastRun": "2026-09-24T20:22:16.684Z",
   "log": [
-    {
-      "time": "2026-09-23T18:54:22.520Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "PBLS, EXK, VERA, RLAY, ERAS, KNF, MLYS, EWTX, BHVN, SSMR"
-    },
-    {
-      "time": "2026-09-23T18:54:37.271Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "PBLS: relVol 0.7× < 2.5× (todayVol 0.7M)  •  EXK: price $9.30 < $20 (short floor)  •  VERA: relVol 0.4× < 2.5× (todayVol 1.2M)  •  RLAY: price $17.52 < $20 (short floor)  •  ERAS: price $14.10 < $20 (short floor)  •  KNF: avgVol 1.0M < 1M  •  MLYS: relVol 0.7× < 2.5× (todayVol 0.9M)  •  EWTX: relVol 1.4× < 2.5× (todayVol 1.8M)  •  BHVN: price $13.61 < $20 (short floor)  •  SSMR: price $15.61 < $20 (short floor)  •  CLDX: avgVol 0.9M < 1M  •  DAVE: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-09-23T18:54:37.271Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-23T19:04:52.775Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-24T20:11:58.477Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T20:22:16.049Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T20:22:16.111Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T20:22:16.684Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
