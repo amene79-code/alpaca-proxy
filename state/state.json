@@ -1,30 +1,5 @@
 {
-  "trailingStops": {
-    "QURE": {
-      "side": "short",
-      "entry": 38.6150016784668,
-      "high": 38.6150016784668,
-      "low": 38.295,
-      "initialSl": 38.86,
-      "sl": 38.86,
-      "tp": 37.89,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "ACAD": {
-      "side": "short",
-      "entry": 22.100000381469727,
-      "high": 22.100000381469727,
-      "low": 22.100000381469727,
-      "initialSl": 22.23,
-      "sl": 22.23,
-      "tp": 21.7,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-09-24",
   "openPositions": [
@@ -95,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-24T19:31:01.227Z",
+  "lastRun": "2026-09-24T19:41:18.751Z",
   "log": [
-    {
-      "time": "2026-09-23T18:43:40.574Z",
-      "type": "INFO",
-      "msg": "Account: $99910.31 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T18:43:41.442Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 35, actives 50, kept 20",
-      "detail": "FSLY, SECZ, IONQ, MAAS, ACMR, PLTR, TSLA, T, RIG, CRWV"
-    },
-    {
-      "time": "2026-09-23T18:43:41.443Z",
-      "type": "INFO",
-      "msg": "Scanning 19 candidates",
-      "detail": "20 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-23T18:43:47.307Z",
-      "type": "INFO",
-      "msg": "Rejections (19)",
-      "detail": "SECZ: price $14.47 < $15  •  IONQ: below VWAP (price $42.73 < VWAP $42.98)  •  MAAS: avgVol 0.3M < 1M  •  ACMR: avgVol 0.9M < 1M  •  PLTR: relVol 1.0× < 2× (todayVol 26.2M)  •  TSLA: gap 1.3% < 4% (price $380.20 vs priorClose $375.30)  •  T: gap 0.3% < 4% (price $25.52 vs priorClose $25.45)  •  RIG: price $5.49 < $15  •  CRWV: gap 2.8% < 4% (price $87.78 vs priorClose $85.43)  •  META: gap 0.9% < 4% (price $747.81 vs priorClose $741.25)  •  PFE: gap 0.7% < 4% (price $27.94 vs priorClose $27.74)  •  DPC: gap 3.4% < 4% (price $42.60 vs priorClose $41.18)"
-    },
     {
       "time": "2026-09-23T18:43:47.307Z",
       "type": "INFO",
@@ -1296,6 +1247,30 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 45× ACAD",
       "detail": "ID 219af32d-3914-43b3-8c0c-33224cfa1fa5 | R:R 3.1:1 | risk $5.85 | real bracket stop @ $22.23"
+    },
+    {
+      "time": "2026-09-24T19:41:16.549Z",
+      "type": "INFO",
+      "msg": "Account: $99942.98 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T19:41:16.841Z",
+      "type": "INFO",
+      "msg": "EOD review (19 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T19:41:18.550Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut (SHORT) QURE",
+      "detail": "Side short | Weak into close | P&L +$1.25"
+    },
+    {
+      "time": "2026-09-24T19:41:18.751Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
     }
   ],
   "tradedToday": [
