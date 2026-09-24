@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-24T18:37:09.871Z",
+  "lastRun": "2026-09-24T18:47:51.270Z",
   "log": [
-    {
-      "time": "2026-09-22T20:09:56.354Z",
-      "type": "INFO",
-      "msg": "Account: $99919.05 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T20:09:56.390Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T20:09:57.190Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T20:20:22.989Z",
-      "type": "INFO",
-      "msg": "Account: $99919.05 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T20:20:23.056Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T20:20:23.572Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T20:30:40.562Z",
-      "type": "INFO",
-      "msg": "Account: $99919.05 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T20:30:40.590Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T20:30:40.789Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T23:08:42.940Z",
-      "type": "INFO",
-      "msg": "Account: $99919.05 | 0 positions | 3 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-22T23:08:42.948Z",
       "type": "INFO",
@@ -1268,6 +1208,66 @@
     },
     {
       "time": "2026-09-24T18:37:09.871Z",
+      "type": "INFO",
+      "msg": "SKIP GEN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T18:47:25.829Z",
+      "type": "INFO",
+      "msg": "Account: $99948.93 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T18:47:26.496Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "CDNA, GRAL, P, NBIS, WRBY, TWST, IONQ, TXG, BLLN, RKLB"
+    },
+    {
+      "time": "2026-09-24T18:47:26.496Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-24T18:47:39.001Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "CDNA: relVol 1.4× < 2× (todayVol 1.6M)  •  GRAL: RSI 96 > 88  •  P: relVol 1.2× < 2× (todayVol 8.8M)  •  NBIS: relVol 1.3× < 2× (todayVol 19.9M)  •  WRBY: relVol 1.7× < 2× (todayVol 4.7M)  •  TWST: relVol 1.2× < 2× (todayVol 2.2M)  •  IONQ: relVol 1.5× < 2× (todayVol 33.2M)  •  TXG: relVol 0.9× < 2× (todayVol 2.3M)  •  BLLN: avgVol 0.6M < 1M  •  RKLB: relVol 1.0× < 2× (todayVol 19.6M)  •  LIFE: relVol 1.1× < 2× (todayVol 1.7M)  •  SECZ: below opening-range high (price $15.80 < ORH $16.56, 65 today-candles)"
+    },
+    {
+      "time": "2026-09-24T18:47:39.001Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T18:47:39.100Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "KGC, GIL, VKTX, MGM, FSLY, ACAD, FSLR, GEN, SNX, MAAS"
+    },
+    {
+      "time": "2026-09-24T18:47:41.840Z",
+      "type": "SIGNAL",
+      "msg": "GEN — SHORT score 8 | gap -9.4% | relVol 3.2× | RSI 52",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T18:47:51.270Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "KGC: relVol 2.0× < 2.5× (todayVol 15.0M)  •  GIL: ATR 0.42% < 0.5%  •  VKTX: net up over ~5d ($29.36→$37.02) — no short into uptrend  •  MGM: ATR 0.26% < 0.5%  •  FSLY: net up over ~5d ($24.57→$26.66) — no short into uptrend  •  ACAD: above opening-range low (price $22.87 > ORL $22.00)  •  FSLR: relVol 1.9× < 2.5× (todayVol 4.2M)  •  SNX: avgVol 0.9M < 1M  •  MAAS: price $13.68 < $20 (short floor)  •  PTRN: price $17.58 < $20 (short floor)  •  EQPT: price $16.51 < $20 (short floor)  •  QURE: above VWAP (price $39.27 > VWAP $38.79) — not holding breakdown"
+    },
+    {
+      "time": "2026-09-24T18:47:51.270Z",
+      "type": "INFO",
+      "msg": "Top short: GEN (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T18:47:51.270Z",
       "type": "INFO",
       "msg": "SKIP GEN — already traded today",
       "detail": ""
