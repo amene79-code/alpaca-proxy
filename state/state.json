@@ -1,7 +1,32 @@
 {
-  "trailingStops": {},
+  "trailingStops": {
+    "GRAL": {
+      "side": "long",
+      "entry": 119.0177001953125,
+      "high": 119.0177001953125,
+      "low": 119.0177001953125,
+      "initialSl": 117.84,
+      "sl": 117.84,
+      "tp": 122.15,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "GEN": {
+      "side": "short",
+      "entry": 23.79010009765625,
+      "high": 23.79010009765625,
+      "low": 23.79010009765625,
+      "initialSl": 23.91,
+      "sl": 23.91,
+      "tp": 23.42,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
   "dailyTrades": 1,
-  "dailyDate": "2026-09-23",
+  "dailyDate": "2026-09-24",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,98 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-23T23:13:07.280Z",
+  "lastRun": "2026-09-24T17:43:42.578Z",
   "log": [
-    {
-      "time": "2026-09-22T18:56:19.213Z",
-      "type": "INFO",
-      "msg": "SKIP VKTX — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:56:19.213Z",
-      "type": "INFO",
-      "msg": "SKIP SGRY — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:56:19.409Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "NKTR, PLNT, WGS, CLDX, GEN, PLBL, LFTO, NYT, BSP, LPLA"
-    },
-    {
-      "time": "2026-09-22T18:56:21.312Z",
-      "type": "SIGNAL",
-      "msg": "CLDX — SHORT score 9 | gap -8.7% | relVol 8.4× | RSI 55",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:56:37.645Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "NKTR: avgVol 0.8M < 1M  •  PLNT: relVol 2.4× < 2.5× (todayVol 4.7M)  •  WGS: avgVol 0.6M < 1M  •  GEN: relVol 1.0× < 2.5× (todayVol 6.8M)  •  PLBL: price $5.89 < $20 (short floor)  •  LFTO: price $16.37 < $20 (short floor)  •  NYT: relVol 2.1× < 2.5× (todayVol 5.6M)  •  BSP: relVol 2.0× < 2.5× (todayVol 3.2M)  •  LPLA: avgVol 0.7M < 1M  •  ALL: relVol 1.9× < 2.5× (todayVol 3.3M)  •  FSLY: net up over ~5d ($24.30→$25.74) — no short into uptrend  •  PAY: relVol 0.8× < 2.5× (todayVol 0.8M)"
-    },
-    {
-      "time": "2026-09-22T18:56:37.645Z",
-      "type": "INFO",
-      "msg": "Top short: CLDX (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T18:56:37.645Z",
-      "type": "INFO",
-      "msg": "SKIP CLDX — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T19:06:50.172Z",
-      "type": "INFO",
-      "msg": "Account: $99925.03 | 0 positions | 3 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T19:06:50.730Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "VKTX, BFLY, VICR, INOD, SGRY, ONON, BLLN, TNGX, IBRX, SRAD"
-    },
-    {
-      "time": "2026-09-22T19:06:50.730Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-22T19:06:51.104Z",
-      "type": "SIGNAL",
-      "msg": "VKTX — score 13 | gap 36.4% | relVol 9.5× | RSI 85",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-09-22T19:06:52.084Z",
-      "type": "SIGNAL",
-      "msg": "INOD — score 9 | gap 15.9% | relVol 2.8× | RSI 74",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T19:06:52.421Z",
-      "type": "SIGNAL",
-      "msg": "SGRY — score 9 | gap 14.6% | relVol 2.3× | RSI 63",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-22T19:07:04.679Z",
-      "type": "INFO",
-      "msg": "Rejections (37)",
-      "detail": "BFLY: price $9.87 < $15  •  VICR: avgVol 0.8M < 1M  •  ONON: below VWAP (price $29.69 < VWAP $30.37)  •  BLLN: avgVol 0.6M < 1M  •  TNGX: relVol 1.2× < 2× (todayVol 2.9M)  •  IBRX: price $9.35 < $15  •  SRAD: price $13.81 < $15  •  DKS: relVol 0.6× < 2× (todayVol 3.4M)  •  RMBS: relVol 1.2× < 2× (todayVol 3.2M)  •  MPWR: avgVol 0.7M < 1M  •  TRLV: price $12.41 < $15  •  ERO: relVol 1.0× < 2× (todayVol 1.4M)"
-    },
-    {
-      "time": "2026-09-22T19:07:04.679Z",
-      "type": "INFO",
-      "msg": "Top signal: VKTX (score 13)",
-      "detail": ""
-    },
     {
       "time": "2026-09-22T19:07:04.679Z",
       "type": "INFO",
@@ -1271,11 +1206,103 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-09-24T17:43:12.059Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T17:43:12.292Z",
+      "type": "INFO",
+      "msg": "Account: $99913.53 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T17:43:13.201Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "P, CDNA, NBIS, WRBY, RKLB, TWST, LIFE, GRAL, IONQ, TXG"
+    },
+    {
+      "time": "2026-09-24T17:43:13.201Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-24T17:43:15.847Z",
+      "type": "SIGNAL",
+      "msg": "GRAL — score 9 | gap 9.7% | relVol 2.0× | RSI 78",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-09-24T17:43:27.148Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "P: relVol 1.1× < 2× (todayVol 7.7M)  •  CDNA: relVol 1.2× < 2× (todayVol 1.3M)  •  NBIS: relVol 1.2× < 2× (todayVol 18.0M)  •  WRBY: relVol 1.2× < 2× (todayVol 3.2M)  •  RKLB: relVol 0.9× < 2× (todayVol 17.2M)  •  TWST: relVol 1.1× < 2× (todayVol 2.0M)  •  LIFE: relVol 0.9× < 2× (todayVol 1.4M)  •  IONQ: relVol 1.1× < 2× (todayVol 25.6M)  •  TXG: relVol 0.8× < 2× (todayVol 2.0M)  •  CHRN: avgVol 0.1M < 1M  •  BLLN: avgVol 0.6M < 1M  •  PRGO: price $14.88 < $15"
+    },
+    {
+      "time": "2026-09-24T17:43:27.148Z",
+      "type": "INFO",
+      "msg": "Top signal: GRAL (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T17:43:27.148Z",
+      "type": "BUY",
+      "msg": "Placing 12× GRAL @ ~$119.02",
+      "detail": "gap 9.7% | risk $14.13 | SL $117.84 | TP $122.15 | R:R 2.7 | Hammer"
+    },
+    {
+      "time": "2026-09-24T17:43:27.332Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 12× GRAL",
+      "detail": "ID 450fb6e2-ccb7-47c0-ab3e-7023654ac4a1 | R:R 2.7:1 | risk $14.13"
+    },
+    {
+      "time": "2026-09-24T17:43:27.975Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "VKTX, KGC, QURE, MGM, GIL, SNX, ACAD, MAAS, FSLY, GEN"
+    },
+    {
+      "time": "2026-09-24T17:43:31.454Z",
+      "type": "SIGNAL",
+      "msg": "GEN — SHORT score 8 | gap -9.3% | relVol 2.8× | RSI 27",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T17:43:41.900Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "VKTX: net up over ~5d ($29.36→$35.91) — no short into uptrend  •  KGC: relVol 1.8× < 2.5× (todayVol 13.3M)  •  QURE: relVol 2.3× < 2.5× (todayVol 3.0M)  •  MGM: ATR 0.30% < 0.5%  •  GIL: above VWAP (price $41.13 > VWAP $41.13) — not holding breakdown  •  SNX: avgVol 0.9M < 1M  •  ACAD: relVol 2.3× < 2.5× (todayVol 3.7M)  •  MAAS: price $13.53 < $20 (short floor)  •  FSLY: net up over ~5d ($24.57→$26.65) — no short into uptrend  •  EQPT: price $16.57 < $20 (short floor)  •  ALM: price $12.49 < $20 (short floor)  •  PTRN: price $17.81 < $20 (short floor)"
+    },
+    {
+      "time": "2026-09-24T17:43:41.900Z",
+      "type": "INFO",
+      "msg": "Top short: GEN (score 8)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-24T17:43:41.900Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 42× GEN @ ~$23.79",
+      "detail": "gap -9.3% | risk $5.04 | SL $23.91 | TP $23.42 | R:R 3.1"
+    },
+    {
+      "time": "2026-09-24T17:43:42.077Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 42× GEN",
+      "detail": "ID 41dfc00c-c04f-4807-9ed8-f70074e96c0b | R:R 3.1:1 | risk $5.04 | real bracket stop @ $23.91"
     }
   ],
   "tradedToday": [
-    "FSLY"
+    "GRAL"
   ],
-  "shortDailyTrades": 0,
-  "shortTradedToday": []
+  "shortDailyTrades": 1,
+  "shortTradedToday": [
+    "GEN"
+  ]
 }
