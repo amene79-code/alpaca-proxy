@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-25T19:00:01.812Z",
+  "lastRun": "2026-09-25T19:10:37.647Z",
   "log": [
-    {
-      "time": "2026-09-24T17:54:17.119Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "VKTX, KGC, GIL, MGM, MAAS, QURE, ACAD, FSLY, GEN, SNX"
-    },
-    {
-      "time": "2026-09-24T17:54:30.816Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "VKTX: net up over ~5d ($29.36→$35.95) — no short into uptrend  •  KGC: relVol 1.8× < 2.5× (todayVol 13.6M)  •  GIL: ATR 0.45% < 0.5%  •  MGM: ATR 0.30% < 0.5%  •  MAAS: price $13.44 < $20 (short floor)  •  QURE: relVol 2.4× < 2.5× (todayVol 3.1M)  •  ACAD: relVol 2.3× < 2.5× (todayVol 3.8M)  •  FSLY: net up over ~5d ($24.57→$26.68) — no short into uptrend  •  SNX: avgVol 0.9M < 1M  •  EQPT: price $16.50 < $20 (short floor)  •  PTRN: price $17.75 < $20 (short floor)  •  ALM: price $12.51 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-24T17:54:30.816Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:04:46.870Z",
-      "type": "INFO",
-      "msg": "Account: $99924.87 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:04:47.548Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "NBIS, P, CDNA, IONQ, LIFE, WRBY, GRAL, RKLB, TWST, BLLN"
-    },
-    {
-      "time": "2026-09-24T18:04:47.548Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-24T18:04:59.389Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "NBIS: relVol 1.2× < 2× (todayVol 18.7M)  •  P: relVol 1.1× < 2× (todayVol 8.1M)  •  CDNA: relVol 1.2× < 2× (todayVol 1.4M)  •  IONQ: relVol 1.3× < 2× (todayVol 29.0M)  •  LIFE: relVol 1.0× < 2× (todayVol 1.5M)  •  WRBY: relVol 1.4× < 2× (todayVol 3.8M)  •  RKLB: relVol 0.9× < 2× (todayVol 18.3M)  •  TWST: relVol 1.2× < 2× (todayVol 2.1M)  •  BLLN: avgVol 0.6M < 1M  •  TXG: relVol 0.8× < 2× (todayVol 2.0M)  •  VCYT: relVol 1.1× < 2× (todayVol 1.5M)  •  CHRN: avgVol 0.1M < 1M"
-    },
-    {
-      "time": "2026-09-24T18:04:59.389Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-24T18:04:59.529Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-25T19:00:01.812Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T19:10:15.375Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T19:10:15.829Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MAAS, ALM, PPLI, MXL, AKAM, BE, VECO, VIAV, CRDO, FLY"
+    },
+    {
+      "time": "2026-09-25T19:10:15.829Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-25T19:10:27.155Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MAAS: avgVol 0.5M < 1M  •  ALM: price $14.02 < $15  •  PPLI: relVol 1.8× < 2× (todayVol 2.1M)  •  MXL: relVol 1.2× < 2× (todayVol 3.3M)  •  AKAM: below VWAP (price $115.50 < VWAP $119.83)  •  BE: relVol 0.9× < 2× (todayVol 14.3M)  •  VECO: avgVol 0.6M < 1M  •  VIAV: relVol 1.1× < 2× (todayVol 5.4M)  •  CRDO: relVol 1.0× < 2× (todayVol 9.4M)  •  FLY: relVol 1.3× < 2× (todayVol 3.7M)  •  PS: avgVol 0.7M < 1M  •  SIM: no 5m candles"
+    },
+    {
+      "time": "2026-09-25T19:10:27.155Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T19:10:27.268Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 37",
+      "detail": "ZS, FRVO, PURR, CHRN, TWLO, MH, GME, FSLY, GEN, ACAD"
+    },
+    {
+      "time": "2026-09-25T19:10:37.647Z",
+      "type": "INFO",
+      "msg": "Short rejections (37)",
+      "detail": "ZS: relVol 1.3× < 2.5× (todayVol 4.9M)  •  FRVO: price $15.22 < $20 (short floor)  •  PURR: price $12.84 < $20 (short floor)  •  CHRN: avgVol 0.1M < 1M  •  TWLO: net up over ~5d ($243.84→$276.75) — no short into uptrend  •  MH: price $12.74 < $20 (short floor)  •  GME: net up over ~5d ($22.64→$23.41) — no short into uptrend  •  FSLY: net up over ~5d ($23.86→$25.02) — no short into uptrend  •  GEN: relVol 2.3× < 2.5× (todayVol 20.7M)  •  ACAD: relVol 1.2× < 2.5× (todayVol 2.2M)  •  S: net up over ~5d ($22.51→$22.53) — no short into uptrend  •  BKV: relVol 0.4× < 2.5× (todayVol 1.1M)"
+    },
+    {
+      "time": "2026-09-25T19:10:37.647Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
