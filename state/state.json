@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-25T18:17:09.845Z",
+  "lastRun": "2026-09-25T18:27:49.196Z",
   "log": [
-    {
-      "time": "2026-09-23T20:18:27.889Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T20:18:28.539Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T20:28:43.847Z",
-      "type": "INFO",
-      "msg": "Account: $99913.53 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T20:28:43.905Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T20:28:45.909Z",
-      "type": "SELL",
-      "msg": "✓ Closed FSLY (ext-hours stop)",
-      "detail": "Side long | P&L $-5.52"
-    },
-    {
-      "time": "2026-09-23T20:28:46.059Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T20:42:08.055Z",
-      "type": "INFO",
-      "msg": "Account: $99913.53 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T20:42:08.115Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-09-23T20:42:08.348Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-25T18:17:09.844Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T18:27:25.660Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T18:27:26.607Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MAAS, ALM, PPLI, AKAM, MXL, SMCI, FLY, BE, CRDO, VECO"
+    },
+    {
+      "time": "2026-09-25T18:27:26.607Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-25T18:27:38.708Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MAAS: avgVol 0.5M < 1M  •  ALM: price $13.91 < $15  •  PPLI: relVol 1.5× < 2× (todayVol 1.8M)  •  AKAM: below VWAP (price $117.08 < VWAP $120.00)  •  MXL: relVol 1.1× < 2× (todayVol 3.1M)  •  SMCI: relVol 1.1× < 2× (todayVol 39.7M)  •  FLY: relVol 1.2× < 2× (todayVol 3.3M)  •  BE: relVol 0.8× < 2× (todayVol 13.4M)  •  CRDO: relVol 0.9× < 2× (todayVol 8.7M)  •  VECO: avgVol 0.6M < 1M  •  VIAV: relVol 1.0× < 2× (todayVol 4.8M)  •  DELL: relVol 0.6× < 2× (todayVol 6.8M)"
+    },
+    {
+      "time": "2026-09-25T18:27:38.708Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T18:27:38.825Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 35",
+      "detail": "PURR, ZS, FRVO, TWLO, MH, ACAD, BB, CHRN, PBLS, GME"
+    },
+    {
+      "time": "2026-09-25T18:27:49.196Z",
+      "type": "INFO",
+      "msg": "Short rejections (35)",
+      "detail": "PURR: price $12.78 < $20 (short floor)  •  ZS: relVol 1.2× < 2.5× (todayVol 4.5M)  •  FRVO: price $15.34 < $20 (short floor)  •  TWLO: net up over ~5d ($243.84→$277.64) — no short into uptrend  •  MH: price $12.74 < $20 (short floor)  •  ACAD: relVol 1.1× < 2.5× (todayVol 2.0M)  •  BB: price $8.16 < $20 (short floor)  •  CHRN: avgVol 0.1M < 1M  •  PBLS: relVol 0.6× < 2.5× (todayVol 0.7M)  •  GME: net up over ~5d ($22.64→$23.42) — no short into uptrend  •  BKV: relVol 0.4× < 2.5× (todayVol 0.9M)  •  FSLY: net up over ~5d ($23.86→$25.13) — no short into uptrend"
+    },
+    {
+      "time": "2026-09-25T18:27:49.196Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
