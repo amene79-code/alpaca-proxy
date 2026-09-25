@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-25T18:27:49.196Z",
+  "lastRun": "2026-09-25T18:38:32.082Z",
   "log": [
-    {
-      "time": "2026-09-23T20:42:08.348Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T23:13:07.136Z",
-      "type": "INFO",
-      "msg": "Account: $99913.53 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T23:13:07.144Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T23:13:07.280Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T17:43:12.059Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T17:43:12.292Z",
-      "type": "INFO",
-      "msg": "Account: $99913.53 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T17:43:13.201Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "P, CDNA, NBIS, WRBY, RKLB, TWST, LIFE, GRAL, IONQ, TXG"
-    },
-    {
-      "time": "2026-09-24T17:43:13.201Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-09-24T17:43:15.847Z",
       "type": "SIGNAL",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-25T18:27:49.196Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T18:38:07.557Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T18:38:08.330Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ALM, MAAS, PPLI, AKAM, MXL, SIM, VIAV, VECO, BE, CRDO"
+    },
+    {
+      "time": "2026-09-25T18:38:08.330Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-25T18:38:20.806Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "ALM: price $13.95 < $15  •  MAAS: avgVol 0.5M < 1M  •  PPLI: relVol 1.6× < 2× (todayVol 1.9M)  •  AKAM: below VWAP (price $116.41 < VWAP $119.95)  •  MXL: relVol 1.1× < 2× (todayVol 3.1M)  •  SIM: no 5m candles  •  VIAV: relVol 1.0× < 2× (todayVol 4.9M)  •  VECO: avgVol 0.6M < 1M  •  BE: relVol 0.8× < 2× (todayVol 13.6M)  •  CRDO: relVol 0.9× < 2× (todayVol 8.9M)  •  FLY: relVol 1.2× < 2× (todayVol 3.5M)  •  SYNA: avgVol 0.6M < 1M"
+    },
+    {
+      "time": "2026-09-25T18:38:20.806Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T18:38:20.917Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 38",
+      "detail": "FRVO, PURR, ZS, CHRN, TWLO, MH, PBLS, ACAD, BB, GME"
+    },
+    {
+      "time": "2026-09-25T18:38:32.082Z",
+      "type": "INFO",
+      "msg": "Short rejections (38)",
+      "detail": "FRVO: price $15.18 < $20 (short floor)  •  PURR: price $12.82 < $20 (short floor)  •  ZS: relVol 1.2× < 2.5× (todayVol 4.6M)  •  CHRN: avgVol 0.1M < 1M  •  TWLO: net up over ~5d ($243.84→$277.35) — no short into uptrend  •  MH: price $12.72 < $20 (short floor)  •  PBLS: relVol 0.6× < 2.5× (todayVol 0.7M)  •  ACAD: relVol 1.1× < 2.5× (todayVol 2.1M)  •  BB: price $8.18 < $20 (short floor)  •  GME: net up over ~5d ($22.64→$23.46) — no short into uptrend  •  BKV: relVol 0.4× < 2.5× (todayVol 0.9M)  •  FSLY: net up over ~5d ($23.86→$25.10) — no short into uptrend"
+    },
+    {
+      "time": "2026-09-25T18:38:32.082Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
