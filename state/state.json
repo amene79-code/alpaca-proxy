@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-25T17:44:59.743Z",
+  "lastRun": "2026-09-25T17:55:46.167Z",
   "log": [
-    {
-      "time": "2026-09-23T19:16:09.886Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T19:26:25.495Z",
-      "type": "INFO",
-      "msg": "Account: $99983.91 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T19:26:26.234Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 37, actives 50, kept 21",
-      "detail": "FSLY, IONQ, SECZ, ACMR, KVYO, VICR, HUBS, GRAB, SMCI, PLTR"
-    },
-    {
-      "time": "2026-09-23T19:26:26.234Z",
-      "type": "INFO",
-      "msg": "Scanning 20 candidates",
-      "detail": "21 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-23T19:26:32.568Z",
-      "type": "INFO",
-      "msg": "Rejections (20)",
-      "detail": "IONQ: below VWAP (price $42.87 < VWAP $42.97)  •  SECZ: price $14.30 < $15  •  ACMR: avgVol 1.0M < 1M  •  KVYO: relVol 0.8× < 2× (todayVol 4.9M)  •  VICR: avgVol 0.8M < 1M  •  HUBS: relVol 0.6× < 2× (todayVol 1.0M)  •  GRAB: price $3.17 < $15  •  SMCI: gap 1.1% < 4% (price $41.65 vs priorClose $41.20)  •  PLTR: relVol 1.0× < 2× (todayVol 28.2M)  •  T: gap -0.0% < 4% (price $25.44 vs priorClose $25.45)  •  TSLA: gap 1.3% < 4% (price $380.30 vs priorClose $375.30)  •  CRWV: gap 3.3% < 4% (price $88.27 vs priorClose $85.43)"
-    },
-    {
-      "time": "2026-09-23T19:26:32.568Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T19:26:32.686Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 0, kept 0",
-      "detail": "(none returned)"
-    },
-    {
-      "time": "2026-09-23T19:26:32.818Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-23T19:36:47.147Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-09-25T17:44:59.742Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T17:55:20.720Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T17:55:21.775Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ALM, MAAS, PPLI, AKAM, MXL, SMCI, FLY, CRDO, BE, VIAV"
+    },
+    {
+      "time": "2026-09-25T17:55:21.775Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-25T17:55:33.776Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "ALM: price $13.91 < $15  •  MAAS: avgVol 0.5M < 1M  •  PPLI: relVol 1.4× < 2× (todayVol 1.6M)  •  AKAM: below VWAP (price $116.65 < VWAP $120.10)  •  MXL: relVol 1.1× < 2× (todayVol 2.9M)  •  SMCI: relVol 1.0× < 2× (todayVol 37.4M)  •  FLY: relVol 1.1× < 2× (todayVol 3.0M)  •  CRDO: relVol 0.9× < 2× (todayVol 8.2M)  •  BE: relVol 0.8× < 2× (todayVol 12.9M)  •  VIAV: relVol 0.9× < 2× (todayVol 4.6M)  •  VECO: avgVol 0.6M < 1M  •  SIM: no 5m candles"
+    },
+    {
+      "time": "2026-09-25T17:55:33.776Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T17:55:33.900Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "PURR, ZS, PBLS, FRVO, BB, TWLO, GME, UGP, ACAD, FSLY"
+    },
+    {
+      "time": "2026-09-25T17:55:46.167Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "PURR: price $12.81 < $20 (short floor)  •  ZS: relVol 1.2× < 2.5× (todayVol 4.4M)  •  PBLS: relVol 0.4× < 2.5× (todayVol 0.5M)  •  FRVO: price $15.42 < $20 (short floor)  •  BB: price $8.06 < $20 (short floor)  •  TWLO: net up over ~5d ($243.84→$277.75) — no short into uptrend  •  GME: net up over ~5d ($22.64→$23.36) — no short into uptrend  •  UGP: price $6.99 < $20 (short floor)  •  ACAD: relVol 1.0× < 2.5× (todayVol 1.9M)  •  FSLY: net up over ~5d ($23.86→$24.96) — no short into uptrend  •  CHRN: avgVol 0.1M < 1M  •  BKV: relVol 0.3× < 2.5× (todayVol 0.8M)"
+    },
+    {
+      "time": "2026-09-25T17:55:46.167Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
