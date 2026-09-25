@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-09-24",
+  "dailyTrades": 0,
+  "dailyDate": "2026-09-25",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-24T23:33:17.439Z",
+  "lastRun": "2026-09-25T17:44:59.743Z",
   "log": [
-    {
-      "time": "2026-09-23T19:05:15.971Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "EXK: price $9.29 < $20 (short floor)  •  PBLS: relVol 0.7× < 2.5× (todayVol 0.7M)  •  RLAY: price $17.50 < $20 (short floor)  •  ERAS: price $14.07 < $20 (short floor)  •  VERA: gap -3.9% > -4% (not gapping down enough)  •  MLYS: relVol 0.7× < 2.5× (todayVol 1.0M)  •  SRPT: price $18.99 < $20 (short floor)  •  CLDX: avgVol 0.9M < 1M  •  BHVN: price $13.61 < $20 (short floor)  •  EWTX: relVol 1.4× < 2.5× (todayVol 1.8M)  •  SSMR: price $15.65 < $20 (short floor)  •  KNF: avgVol 1.0M < 1M"
-    },
-    {
-      "time": "2026-09-23T19:05:15.971Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T19:15:50.425Z",
-      "type": "INFO",
-      "msg": "Account: $99964.59 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T19:15:51.318Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 38, actives 50, kept 22",
-      "detail": "FSLY, SECZ, IONQ, ACMR, KVYO, PLTR, T, TSLA, CRWV, META"
-    },
-    {
-      "time": "2026-09-23T19:15:51.319Z",
-      "type": "INFO",
-      "msg": "Scanning 21 candidates",
-      "detail": "22 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-23T19:15:58.033Z",
-      "type": "INFO",
-      "msg": "Rejections (21)",
-      "detail": "SECZ: price $14.29 < $15  •  IONQ: below VWAP (price $42.75 < VWAP $42.97)  •  ACMR: avgVol 1.0M < 1M  •  KVYO: relVol 0.7× < 2× (todayVol 4.8M)  •  PLTR: relVol 1.0× < 2× (todayVol 27.8M)  •  T: gap 0.5% < 4% (price $25.58 vs priorClose $25.45)  •  TSLA: gap 1.2% < 4% (price $379.94 vs priorClose $375.30)  •  CRWV: gap 2.9% < 4% (price $87.89 vs priorClose $85.43)  •  META: gap 0.8% < 4% (price $747.52 vs priorClose $741.25)  •  PFE: gap 0.9% < 4% (price $27.99 vs priorClose $27.74)  •  VICR: avgVol 0.8M < 1M  •  HUBS: relVol 0.6× < 2× (todayVol 1.0M)"
-    },
-    {
-      "time": "2026-09-23T19:15:58.033Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-23T19:15:58.133Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "EXK, PBLS, VERA, RLAY, ERAS, MLYS, SRPT, CLDX, BHVN, KNF"
-    },
-    {
-      "time": "2026-09-23T19:16:09.886Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "EXK: price $9.27 < $20 (short floor)  •  PBLS: relVol 0.7× < 2.5× (todayVol 0.8M)  •  VERA: gap -3.8% > -4% (not gapping down enough)  •  RLAY: price $17.63 < $20 (short floor)  •  ERAS: price $14.19 < $20 (short floor)  •  MLYS: relVol 0.8× < 2.5× (todayVol 1.0M)  •  SRPT: price $19.05 < $20 (short floor)  •  CLDX: avgVol 0.9M < 1M  •  BHVN: price $13.66 < $20 (short floor)  •  KNF: avgVol 1.0M < 1M  •  SSMR: price $15.69 < $20 (short floor)  •  SHAZ: gap -2.5% > -4% (not gapping down enough)"
-    },
     {
       "time": "2026-09-23T19:16:09.886Z",
       "type": "INFO",
@@ -1271,15 +1217,63 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-09-25T17:44:35.620Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T17:44:35.882Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T17:44:36.818Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ALM, MAAS, PPLI, MXL, AKAM, FLY, CRDO, VIAV, BE, VECO"
+    },
+    {
+      "time": "2026-09-25T17:44:36.818Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-25T17:44:49.225Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "ALM: price $13.95 < $15  •  MAAS: avgVol 0.5M < 1M  •  PPLI: relVol 1.3× < 2× (todayVol 1.5M)  •  MXL: relVol 1.0× < 2× (todayVol 2.9M)  •  AKAM: below VWAP (price $116.45 < VWAP $120.15)  •  FLY: relVol 1.1× < 2× (todayVol 3.0M)  •  CRDO: relVol 0.8× < 2× (todayVol 8.0M)  •  VIAV: relVol 0.9× < 2× (todayVol 4.5M)  •  BE: relVol 0.8× < 2× (todayVol 12.7M)  •  VECO: avgVol 0.6M < 1M  •  TSEM: relVol 0.6× < 2× (todayVol 1.2M)  •  DELL: relVol 0.6× < 2× (todayVol 6.4M)"
+    },
+    {
+      "time": "2026-09-25T17:44:49.226Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-25T17:44:49.332Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 36",
+      "detail": "PURR, ZS, PBLS, BB, FRVO, TWLO, GME, FSLY, CHRN, ACAD"
+    },
+    {
+      "time": "2026-09-25T17:44:59.742Z",
+      "type": "INFO",
+      "msg": "Short rejections (36)",
+      "detail": "PURR: price $12.84 < $20 (short floor)  •  ZS: relVol 1.1× < 2.5× (todayVol 4.3M)  •  PBLS: relVol 0.4× < 2.5× (todayVol 0.5M)  •  BB: price $8.06 < $20 (short floor)  •  FRVO: price $15.48 < $20 (short floor)  •  TWLO: net up over ~5d ($243.84→$278.11) — no short into uptrend  •  GME: net up over ~5d ($22.64→$23.34) — no short into uptrend  •  FSLY: net up over ~5d ($23.86→$24.92) — no short into uptrend  •  CHRN: avgVol 0.1M < 1M  •  ACAD: relVol 1.0× < 2.5× (todayVol 1.9M)  •  BKV: relVol 0.3× < 2.5× (todayVol 0.8M)  •  UGP: price $7.05 < $20 (short floor)"
+    },
+    {
+      "time": "2026-09-25T17:44:59.742Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "GRAL"
-  ],
-  "shortDailyTrades": 3,
-  "shortTradedToday": [
-    "GEN",
-    "QURE",
-    "ACAD"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
