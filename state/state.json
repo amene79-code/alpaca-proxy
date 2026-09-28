@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-28T19:58:08.392Z",
+  "lastRun": "2026-09-28T20:08:24.561Z",
   "log": [
-    {
-      "time": "2026-09-24T18:36:57.562Z",
-      "type": "INFO",
-      "msg": "Top signal: GRAL (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:36:57.562Z",
-      "type": "INFO",
-      "msg": "SKIP GRAL — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:36:57.664Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "KGC, MGM, VKTX, GIL, FSLY, ACAD, GEN, FSLR, EQPT, MAAS"
-    },
     {
       "time": "2026-09-24T18:37:00.035Z",
       "type": "SIGNAL",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-28T19:58:08.392Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-28T20:08:24.023Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-28T20:08:24.096Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-28T20:08:24.561Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
