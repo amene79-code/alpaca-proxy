@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-09-25",
+  "dailyDate": "2026-09-28",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-25T23:36:32.319Z",
+  "lastRun": "2026-09-28T19:58:08.392Z",
   "log": [
-    {
-      "time": "2026-09-24T18:36:45.420Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-24T18:36:45.891Z",
-      "type": "SIGNAL",
-      "msg": "GRAL — score 8 | gap 14.9% | relVol 2.2× | RSI 87",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:36:57.562Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "CDNA: relVol 1.3× < 2× (todayVol 1.5M)  •  P: relVol 1.2× < 2× (todayVol 8.6M)  •  NBIS: relVol 1.3× < 2× (todayVol 19.6M)  •  TWST: relVol 1.2× < 2× (todayVol 2.2M)  •  WRBY: relVol 1.7× < 2× (todayVol 4.5M)  •  IONQ: relVol 1.4× < 2× (todayVol 32.2M)  •  LIFE: relVol 1.1× < 2× (todayVol 1.7M)  •  RKLB: relVol 1.0× < 2× (todayVol 19.3M)  •  BLLN: avgVol 0.6M < 1M  •  TXG: relVol 0.8× < 2× (todayVol 2.2M)  •  VCYT: relVol 1.2× < 2× (todayVol 1.7M)  •  META: relVol 1.2× < 2× (todayVol 26.7M)"
-    },
     {
       "time": "2026-09-24T18:36:57.562Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-25T23:36:32.318Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-28T19:58:07.732Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-28T19:58:08.012Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-28T19:58:08.392Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
