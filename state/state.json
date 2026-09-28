@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-28T20:08:24.561Z",
+  "lastRun": "2026-09-28T20:18:40.640Z",
   "log": [
-    {
-      "time": "2026-09-24T18:37:00.035Z",
-      "type": "SIGNAL",
-      "msg": "GEN — SHORT score 8 | gap -9.8% | relVol 3.1× | RSI 44",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:37:09.871Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "KGC: relVol 1.9× < 2.5× (todayVol 14.6M)  •  MGM: ATR 0.22% < 0.5%  •  VKTX: net up over ~5d ($29.36→$36.91) — no short into uptrend  •  GIL: ATR 0.40% < 0.5%  •  FSLY: net up over ~5d ($24.57→$26.60) — no short into uptrend  •  ACAD: relVol 2.5× < 2.5× (todayVol 4.2M)  •  FSLR: relVol 1.8× < 2.5× (todayVol 4.1M)  •  EQPT: price $16.49 < $20 (short floor)  •  MAAS: price $13.74 < $20 (short floor)  •  SNX: avgVol 0.9M < 1M  •  ALM: price $12.51 < $20 (short floor)  •  PTRN: price $17.79 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-24T18:37:09.871Z",
-      "type": "INFO",
-      "msg": "Top short: GEN (score 8)",
-      "detail": ""
-    },
     {
       "time": "2026-09-24T18:37:09.871Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-09-28T20:08:24.561Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-28T20:18:40.350Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-28T20:18:40.409Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-28T20:18:40.640Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
