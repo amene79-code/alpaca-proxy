@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-29T00:16:29.128Z",
+  "lastRun": "2026-09-29T18:26:33.678Z",
   "log": [
-    {
-      "time": "2026-09-24T18:47:41.840Z",
-      "type": "SIGNAL",
-      "msg": "GEN — SHORT score 8 | gap -9.4% | relVol 3.2× | RSI 52",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:47:51.270Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "KGC: relVol 2.0× < 2.5× (todayVol 15.0M)  •  GIL: ATR 0.42% < 0.5%  •  VKTX: net up over ~5d ($29.36→$37.02) — no short into uptrend  •  MGM: ATR 0.26% < 0.5%  •  FSLY: net up over ~5d ($24.57→$26.66) — no short into uptrend  •  ACAD: above opening-range low (price $22.87 > ORL $22.00)  •  FSLR: relVol 1.9× < 2.5× (todayVol 4.2M)  •  SNX: avgVol 0.9M < 1M  •  MAAS: price $13.68 < $20 (short floor)  •  PTRN: price $17.58 < $20 (short floor)  •  EQPT: price $16.51 < $20 (short floor)  •  QURE: above VWAP (price $39.27 > VWAP $38.79) — not holding breakdown"
-    },
-    {
-      "time": "2026-09-24T18:47:51.270Z",
-      "type": "INFO",
-      "msg": "Top short: GEN (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:47:51.270Z",
-      "type": "INFO",
-      "msg": "SKIP GEN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:58:09.857Z",
-      "type": "INFO",
-      "msg": "Account: $99948.93 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:58:10.928Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CDNA, P, NBIS, GRAL, WRBY, TWST, TXG, SECZ, BLLN, IONQ"
-    },
-    {
-      "time": "2026-09-24T18:58:10.929Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-24T18:58:12.146Z",
-      "type": "SIGNAL",
-      "msg": "GRAL — score 8 | gap 14.6% | relVol 2.3× | RSI 83",
-      "detail": ""
-    },
     {
       "time": "2026-09-24T18:58:24.612Z",
       "type": "INFO",
@@ -1270,6 +1222,54 @@
       "time": "2026-09-29T00:16:29.128Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-29T18:26:11.475Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-29T18:26:11.923Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "IOVA, CCL, BE, SMMT, WRBY, ORCL, MGNI, RCL, AGX, ABCL"
+    },
+    {
+      "time": "2026-09-29T18:26:11.923Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-29T18:26:23.613Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "IOVA: price $14.89 < $15  •  CCL: below opening-range high (price $24.95 < ORH $25.16, 61 today-candles)  •  BE: relVol 1.1× < 2× (todayVol 19.5M)  •  SMMT: below VWAP (price $16.45 < VWAP $16.76)  •  WRBY: relVol 1.1× < 2× (todayVol 3.6M)  •  ORCL: relVol 1.0× < 2× (todayVol 35.3M)  •  MGNI: relVol 0.7× < 2× (todayVol 1.7M)  •  RCL: relVol 0.8× < 2× (todayVol 2.4M)  •  AGX: avgVol 0.4M < 1M  •  ABCL: price $14.86 < $15  •  CAMT: avgVol 0.4M < 1M  •  WING: relVol 0.7× < 2× (todayVol 0.9M)"
+    },
+    {
+      "time": "2026-09-29T18:26:23.613Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-29T18:26:23.788Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 34",
+      "detail": "FICO, MAAS, WGS, NESR, PS, SECZ, AIR, PIPR, AMR, SRAD"
+    },
+    {
+      "time": "2026-09-29T18:26:33.678Z",
+      "type": "INFO",
+      "msg": "Short rejections (34)",
+      "detail": "FICO: avgVol 0.6M < 1M  •  MAAS: price $15.70 < $20 (short floor)  •  WGS: avgVol 0.7M < 1M  •  NESR: relVol 1.9× < 2.5× (todayVol 3.3M)  •  PS: avgVol 0.8M < 1M  •  SECZ: price $15.37 < $20 (short floor)  •  AIR: avgVol 0.5M < 1M  •  PIPR: avgVol 0.7M < 1M  •  AMR: avgVol 0.3M < 1M  •  SRAD: price $11.74 < $20 (short floor)  •  MNDY: relVol 1.1× < 2.5× (todayVol 1.3M)  •  NEOG: price $12.94 < $20 (short floor)"
+    },
+    {
+      "time": "2026-09-29T18:26:33.678Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
       "detail": ""
     }
   ],
