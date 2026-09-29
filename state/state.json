@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-09-28",
+  "dailyDate": "2026-09-29",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-28T20:28:58.740Z",
+  "lastRun": "2026-09-29T00:16:29.128Z",
   "log": [
-    {
-      "time": "2026-09-24T18:47:26.496Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-24T18:47:39.001Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "CDNA: relVol 1.4× < 2× (todayVol 1.6M)  •  GRAL: RSI 96 > 88  •  P: relVol 1.2× < 2× (todayVol 8.8M)  •  NBIS: relVol 1.3× < 2× (todayVol 19.9M)  •  WRBY: relVol 1.7× < 2× (todayVol 4.7M)  •  TWST: relVol 1.2× < 2× (todayVol 2.2M)  •  IONQ: relVol 1.5× < 2× (todayVol 33.2M)  •  TXG: relVol 0.9× < 2× (todayVol 2.3M)  •  BLLN: avgVol 0.6M < 1M  •  RKLB: relVol 1.0× < 2× (todayVol 19.6M)  •  LIFE: relVol 1.1× < 2× (todayVol 1.7M)  •  SECZ: below opening-range high (price $15.80 < ORH $16.56, 65 today-candles)"
-    },
-    {
-      "time": "2026-09-24T18:47:39.001Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T18:47:39.100Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "KGC, GIL, VKTX, MGM, FSLY, ACAD, FSLR, GEN, SNX, MAAS"
-    },
     {
       "time": "2026-09-24T18:47:41.840Z",
       "type": "SIGNAL",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-09-28T20:28:58.740Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-29T00:16:28.026Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-29T00:16:28.777Z",
+      "type": "INFO",
+      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-29T00:16:28.855Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-29T00:16:29.128Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
