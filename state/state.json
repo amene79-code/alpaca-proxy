@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-30T19:30:12.476Z",
+  "lastRun": "2026-09-30T19:40:27.703Z",
   "log": [
-    {
-      "time": "2026-09-25T19:21:13.263Z",
-      "type": "INFO",
-      "msg": "Short rejections (38)",
-      "detail": "FRVO: price $15.14 < $20 (short floor)  •  ZS: relVol 1.3× < 2.5× (todayVol 5.0M)  •  CHRN: price $19.91 < $20 (short floor)  •  PURR: price $12.85 < $20 (short floor)  •  TWLO: net up over ~5d ($243.84→$276.10) — no short into uptrend  •  MH: price $12.75 < $20 (short floor)  •  ACAD: relVol 1.2× < 2.5× (todayVol 2.3M)  •  GME: net up over ~5d ($22.64→$23.45) — no short into uptrend  •  S: relVol 0.8× < 2.5× (todayVol 7.2M)  •  GEN: relVol 2.4× < 2.5× (todayVol 21.5M)  •  VCYT: net up over ~5d ($39.79→$45.65) — no short into uptrend  •  SAIL: net up over ~5d ($19.83→$20.81) — no short into uptrend"
-    },
-    {
-      "time": "2026-09-25T19:21:13.264Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T19:31:26.085Z",
-      "type": "INFO",
-      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-25T19:31:26.384Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-09-30T19:30:12.476Z",
       "type": "INFO",
       "msg": "SKIP LQDA — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-30T19:40:27.544Z",
+      "type": "INFO",
+      "msg": "Account: $99936.89 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-30T19:40:27.702Z",
+      "type": "INFO",
+      "msg": "EOD review (20 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-30T19:40:27.703Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
