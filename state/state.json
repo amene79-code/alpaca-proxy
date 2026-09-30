@@ -1,7 +1,20 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 1,
-  "dailyDate": "2026-09-29",
+  "trailingStops": {
+    "LQDA": {
+      "side": "short",
+      "entry": 36.849998474121094,
+      "high": 36.849998474121094,
+      "low": 36.849998474121094,
+      "initialSl": 41.92,
+      "sl": 41.92,
+      "tp": 21.63,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 0,
+  "dailyDate": "2026-09-30",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,80 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-29T22:30:18.235Z",
+  "lastRun": "2026-09-30T18:15:36.431Z",
   "log": [
-    {
-      "time": "2026-09-24T23:33:17.143Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-24T23:33:17.439Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T17:44:35.620Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T17:44:35.882Z",
-      "type": "INFO",
-      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T17:44:36.818Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ALM, MAAS, PPLI, MXL, AKAM, FLY, CRDO, VIAV, BE, VECO"
-    },
-    {
-      "time": "2026-09-25T17:44:36.818Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-25T17:44:49.225Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "ALM: price $13.95 < $15  •  MAAS: avgVol 0.5M < 1M  •  PPLI: relVol 1.3× < 2× (todayVol 1.5M)  •  MXL: relVol 1.0× < 2× (todayVol 2.9M)  •  AKAM: below VWAP (price $116.45 < VWAP $120.15)  •  FLY: relVol 1.1× < 2× (todayVol 3.0M)  •  CRDO: relVol 0.8× < 2× (todayVol 8.0M)  •  VIAV: relVol 0.9× < 2× (todayVol 4.5M)  •  BE: relVol 0.8× < 2× (todayVol 12.7M)  •  VECO: avgVol 0.6M < 1M  •  TSEM: relVol 0.6× < 2× (todayVol 1.2M)  •  DELL: relVol 0.6× < 2× (todayVol 6.4M)"
-    },
-    {
-      "time": "2026-09-25T17:44:49.226Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T17:44:49.332Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 36",
-      "detail": "PURR, ZS, PBLS, BB, FRVO, TWLO, GME, FSLY, CHRN, ACAD"
-    },
-    {
-      "time": "2026-09-25T17:44:59.742Z",
-      "type": "INFO",
-      "msg": "Short rejections (36)",
-      "detail": "PURR: price $12.84 < $20 (short floor)  •  ZS: relVol 1.1× < 2.5× (todayVol 4.3M)  •  PBLS: relVol 0.4× < 2.5× (todayVol 0.5M)  •  BB: price $8.06 < $20 (short floor)  •  FRVO: price $15.48 < $20 (short floor)  •  TWLO: net up over ~5d ($243.84→$278.11) — no short into uptrend  •  GME: net up over ~5d ($22.64→$23.34) — no short into uptrend  •  FSLY: net up over ~5d ($23.86→$24.92) — no short into uptrend  •  CHRN: avgVol 0.1M < 1M  •  ACAD: relVol 1.0× < 2.5× (todayVol 1.9M)  •  BKV: relVol 0.3× < 2.5× (todayVol 0.8M)  •  UGP: price $7.05 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-25T17:44:59.742Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T17:55:20.720Z",
-      "type": "INFO",
-      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-25T17:55:21.775Z",
       "type": "INFO",
@@ -1271,11 +1212,83 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-09-30T18:15:13.437Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-30T18:15:13.528Z",
+      "type": "INFO",
+      "msg": "Account: $99941.39 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-30T18:15:14.433Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "IBRX, NWCL, UTHR, ROG, ITUB, HPE, PGEN, BB, ZETA, BRZE"
+    },
+    {
+      "time": "2026-09-30T18:15:14.433Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-09-30T18:15:26.644Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "IBRX: price $9.70 < $15  •  NWCL: price $8.23 < $15  •  UTHR: avgVol 0.8M < 1M  •  ROG: avgVol 0.2M < 1M  •  ITUB: price $8.59 < $15  •  HPE: relVol 0.8× < 2× (todayVol 21.1M)  •  PGEN: price $8.87 < $15  •  BB: price $9.11 < $15  •  ZETA: relVol 1.0× < 2× (todayVol 5.5M)  •  BRZE: relVol 0.6× < 2× (todayVol 1.5M)  •  FORM: relVol 1.0× < 2× (todayVol 1.1M)  •  ALMR: avgVol 0.5M < 1M"
+    },
+    {
+      "time": "2026-09-30T18:15:26.644Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-30T18:15:26.758Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 29",
+      "detail": "LQDA, JBL, BLLN, NMIH, CBRS, MTG, SANM, WF, SHG, MRNA"
+    },
+    {
+      "time": "2026-09-30T18:15:26.924Z",
+      "type": "SIGNAL",
+      "msg": "LQDA — SHORT score 10 | gap -47.9% | relVol 6.1× | RSI 19",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-30T18:15:35.874Z",
+      "type": "INFO",
+      "msg": "Short rejections (28)",
+      "detail": "JBL: relVol 2.4× < 2.5× (todayVol 3.2M)  •  BLLN: avgVol 0.6M < 1M  •  NMIH: avgVol 0.6M < 1M  •  CBRS: relVol 1.6× < 2.5× (todayVol 10.0M)  •  MTG: relVol 0.8× < 2.5× (todayVol 1.7M)  •  SANM: avgVol 0.6M < 1M  •  WF: avgVol 0.1M < 1M  •  SHG: avgVol 0.2M < 1M  •  MRNA: net up over ~5d ($182.11→$191.84) — no short into uptrend  •  SECZ: price $14.94 < $20 (short floor)  •  ESNT: avgVol 0.8M < 1M  •  FNF: relVol 0.4× < 2.5× (todayVol 1.0M)"
+    },
+    {
+      "time": "2026-09-30T18:15:35.874Z",
+      "type": "INFO",
+      "msg": "Top short: LQDA (score 10)",
+      "detail": ""
+    },
+    {
+      "time": "2026-09-30T18:15:35.874Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 3× LQDA @ ~$36.85",
+      "detail": "gap -47.9% | risk $15.21 | SL $41.92 | TP $21.63 | R:R 3.0"
+    },
+    {
+      "time": "2026-09-30T18:15:35.930Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 3× LQDA",
+      "detail": "ID 71215e64-2940-4fd7-8a54-768c390cb595 | R:R 3.0:1 | risk $15.21 | real bracket stop @ $41.92"
     }
   ],
-  "tradedToday": [
-    "GFI"
-  ],
-  "shortDailyTrades": 0,
-  "shortTradedToday": []
+  "tradedToday": [],
+  "shortDailyTrades": 1,
+  "shortTradedToday": [
+    "LQDA"
+  ]
 }
