@@ -83,20 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-01T19:23:43.186Z",
+  "lastRun": "2026-10-01T19:34:04.253Z",
   "log": [
-    {
-      "time": "2026-09-29T18:47:36.361Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 32",
-      "detail": "FICO, MAAS, NESR, WGS, PS, SECZ, PIPR, AIR, DKNG, SRAD"
-    },
-    {
-      "time": "2026-09-29T18:47:47.267Z",
-      "type": "INFO",
-      "msg": "Short rejections (32)",
-      "detail": "FICO: avgVol 0.6M < 1M  •  MAAS: price $15.85 < $20 (short floor)  •  NESR: relVol 2.0× < 2.5× (todayVol 3.4M)  •  WGS: avgVol 0.7M < 1M  •  PS: avgVol 0.8M < 1M  •  SECZ: price $15.36 < $20 (short floor)  •  PIPR: avgVol 0.7M < 1M  •  AIR: avgVol 0.5M < 1M  •  DKNG: price $19.79 < $20 (short floor)  •  SRAD: price $11.70 < $20 (short floor)  •  WLK: avgVol 0.7M < 1M  •  AMR: avgVol 0.3M < 1M"
-    },
     {
       "time": "2026-09-29T18:47:47.267Z",
       "type": "INFO",
@@ -1283,6 +1271,18 @@
       "time": "2026-10-01T19:23:43.186Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T19:34:03.956Z",
+      "type": "INFO",
+      "msg": "Account: $99904.74 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T19:34:04.253Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
