@@ -1,18 +1,5 @@
 {
-  "trailingStops": {
-    "MAT": {
-      "side": "long",
-      "entry": 15.545000076293945,
-      "high": 15.545000076293945,
-      "low": 15.545000076293945,
-      "initialSl": 14.76,
-      "sl": 14.76,
-      "tp": 17.63,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 1,
   "dailyDate": "2026-10-01",
   "openPositions": [
@@ -83,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-01T19:34:04.253Z",
+  "lastRun": "2026-10-01T19:44:18.928Z",
   "log": [
-    {
-      "time": "2026-09-29T18:47:47.267Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-29T18:58:01.086Z",
-      "type": "INFO",
-      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-29T18:58:01.736Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "IOVA, CCL, BE, SMMT, MGNI, WRBY, NCLH, AGX, CAMT, VEON"
-    },
     {
       "time": "2026-09-29T18:58:01.736Z",
       "type": "INFO",
@@ -1281,6 +1250,24 @@
     },
     {
       "time": "2026-10-01T19:34:04.253Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T19:44:18.678Z",
+      "type": "INFO",
+      "msg": "Account: $99889.32 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T19:44:18.928Z",
+      "type": "INFO",
+      "msg": "EOD review (16 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T19:44:18.928Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
