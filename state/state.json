@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-09-30",
+  "dailyDate": "2026-10-01",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-09-30T22:20:39.989Z",
+  "lastRun": "2026-10-01T18:40:56.824Z",
   "log": [
-    {
-      "time": "2026-09-25T20:22:49.129Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T20:45:36.927Z",
-      "type": "INFO",
-      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T20:45:36.950Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T20:45:37.496Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T23:36:31.842Z",
-      "type": "INFO",
-      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T23:36:31.853Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-25T23:36:32.318Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-28T19:58:07.732Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-28T19:58:08.012Z",
-      "type": "INFO",
-      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-28T19:58:08.392Z",
       "type": "INFO",
@@ -1271,11 +1217,63 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-10-01T18:40:31.448Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T18:40:31.694Z",
+      "type": "INFO",
+      "msg": "Account: $99936.87 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T18:40:32.627Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "ACN, MAT, FICO, SNPS, INFY, INOD, EFXT, VICR, GWRE, COHR"
+    },
+    {
+      "time": "2026-10-01T18:40:32.627Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-01T18:40:45.216Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "ACN: below VWAP (price $214.77 < VWAP $220.32)  •  MAT: RSI 92 > 88  •  FICO: avgVol 0.9M < 1M  •  SNPS: ATR 0.44% < 0.5%  •  INFY: price $11.44 < $15  •  INOD: relVol 1.2× < 2× (todayVol 1.8M)  •  EFXT: avgVol 0.6M < 1M  •  VICR: avgVol 0.9M < 1M  •  GWRE: relVol 0.6× < 2× (todayVol 1.0M)  •  COHR: relVol 1.4× < 2× (todayVol 9.1M)  •  KD: price $12.24 < $15  •  ASAN: price $9.13 < $15"
+    },
+    {
+      "time": "2026-10-01T18:40:45.217Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T18:40:45.320Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "CTVA, LQDA, PSKY, SLS, GRND, STVN, RGEN, TMDX, SPHR, AERO"
+    },
+    {
+      "time": "2026-10-01T18:40:56.823Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "CTVA: price $12.11 < $20 (short floor)  •  LQDA: above VWAP (price $26.64 > VWAP $25.58) — not holding breakdown  •  PSKY: price $9.45 < $20 (short floor)  •  SLS: price $11.39 < $20 (short floor)  •  GRND: price $14.34 < $20 (short floor)  •  STVN: price $19.57 < $20 (short floor)  •  RGEN: relVol 1.1× < 2.5× (todayVol 1.2M)  •  TMDX: avgVol 0.7M < 1M  •  SPHR: avgVol 0.5M < 1M  •  AERO: price $14.81 < $20 (short floor)  •  TGB: price $8.36 < $20 (short floor)  •  ENLT: avgVol 0.2M < 1M"
+    },
+    {
+      "time": "2026-10-01T18:40:56.824Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "LQDA"
-  ]
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
