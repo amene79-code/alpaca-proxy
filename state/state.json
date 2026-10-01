@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-01T20:25:18.216Z",
+  "lastRun": "2026-10-01T22:55:28.904Z",
   "log": [
-    {
-      "time": "2026-09-29T19:09:04.913Z",
-      "type": "INFO",
-      "msg": "Short rejections (30)",
-      "detail": "FICO: avgVol 0.6M < 1M  •  MAAS: price $15.69 < $20 (short floor)  •  NESR: relVol 2.0× < 2.5× (todayVol 3.6M)  •  WGS: avgVol 0.7M < 1M  •  PIPR: avgVol 0.7M < 1M  •  PS: avgVol 0.8M < 1M  •  AIR: avgVol 0.5M < 1M  •  DKNG: price $19.70 < $20 (short floor)  •  GPCR: relVol 0.5× < 2.5× (todayVol 0.6M)  •  SECZ: price $15.65 < $20 (short floor)  •  FLY: relVol 0.6× < 2.5× (todayVol 1.7M)  •  NEOG: price $12.97 < $20 (short floor)"
-    },
-    {
-      "time": "2026-09-29T19:09:04.914Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-29T19:19:18.532Z",
-      "type": "INFO",
-      "msg": "Account: $99942.23 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-29T19:19:19.018Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-01T20:25:18.216Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T22:55:28.774Z",
+      "type": "INFO",
+      "msg": "Account: $99889.32 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T22:55:28.786Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-01T22:55:28.904Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
