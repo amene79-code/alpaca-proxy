@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-02T20:27:23.817Z",
+  "lastRun": "2026-10-02T22:18:23.608Z",
   "log": [
-    {
-      "time": "2026-09-30T18:57:59.600Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 32",
-      "detail": "LQDA, TRLV, JBL, NMIH, BLLN, MTG, ESNT, CBRS, ACT, MRNA"
-    },
-    {
-      "time": "2026-09-30T18:57:59.972Z",
-      "type": "SIGNAL",
-      "msg": "LQDA — SHORT score 11 | gap -49.0% | relVol 7.2× | RSI 46",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T18:58:12.749Z",
-      "type": "INFO",
-      "msg": "Short rejections (31)",
-      "detail": "TRLV: price $10.68 < $20 (short floor)  •  JBL: ATR 0.40% < 0.5%  •  NMIH: avgVol 0.6M < 1M  •  BLLN: avgVol 0.6M < 1M  •  MTG: relVol 1.1× < 2.5× (todayVol 2.3M)  •  ESNT: avgVol 0.8M < 1M  •  CBRS: relVol 1.7× < 2.5× (todayVol 10.8M)  •  ACT: avgVol 0.4M < 1M  •  MRNA: net up over ~5d ($182.11→$189.40) — no short into uptrend  •  FNF: relVol 0.6× < 2.5× (todayVol 1.7M)  •  SECZ: price $14.90 < $20 (short floor)  •  SHG: avgVol 0.2M < 1M"
-    },
     {
       "time": "2026-09-30T18:58:12.749Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-02T20:27:23.817Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-02T22:18:22.975Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-02T22:18:23.033Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-02T22:18:23.608Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
