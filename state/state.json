@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-02T18:11:33.761Z",
+  "lastRun": "2026-10-02T18:22:11.490Z",
   "log": [
-    {
-      "time": "2026-09-29T19:29:59.206Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-29T19:30:06.896Z",
-      "type": "SIGNAL",
-      "msg": "GFI — score 10 | gap 5.2% | relVol 2.3× | RSI 71",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-09-29T19:30:11.413Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "IOVA: price $14.91 < $15  •  CCL: ATR 0.35% < 0.5%  •  BE: relVol 1.2× < 2× (todayVol 21.3M)  •  SMMT: below VWAP (price $16.51 < VWAP $16.74)  •  MGNI: relVol 1.2× < 2× (todayVol 3.0M)  •  WRBY: relVol 1.2× < 2× (todayVol 4.1M)  •  ORCL: relVol 1.1× < 2× (todayVol 38.7M)  •  NCLH: price $14.89 < $15  •  RCL: relVol 0.9× < 2× (todayVol 2.8M)  •  CAMT: avgVol 0.4M < 1M  •  AGX: avgVol 0.5M < 1M  •  ABCL: price $14.91 < $15"
-    },
-    {
-      "time": "2026-09-29T19:30:11.413Z",
-      "type": "INFO",
-      "msg": "Top signal: GFI (score 10)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-29T19:30:11.413Z",
-      "type": "BUY",
-      "msg": "Placing 40× GFI @ ~$37.01",
-      "detail": "gap 5.2% | risk $12.20 | SL $36.7 | TP $37.81 | R:R 2.6 | Volume Breakout"
-    },
-    {
-      "time": "2026-09-29T19:30:11.442Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 40× GFI",
-      "detail": "ID c70442c3-d8b7-47e4-b6c5-549a144e6411 | R:R 2.6:1 | risk $12.20"
-    },
-    {
-      "time": "2026-09-29T19:30:12.059Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 29",
-      "detail": "FICO, MAAS, NESR, WGS, PS, PIPR, AIR, DKNG, GPCR, SRAD"
-    },
-    {
-      "time": "2026-09-29T19:30:20.533Z",
-      "type": "INFO",
-      "msg": "Short rejections (29)",
-      "detail": "FICO: avgVol 0.6M < 1M  •  MAAS: price $15.71 < $20 (short floor)  •  NESR: relVol 2.2× < 2.5× (todayVol 3.9M)  •  WGS: avgVol 0.7M < 1M  •  PS: avgVol 0.8M < 1M  •  PIPR: avgVol 0.7M < 1M  •  AIR: avgVol 0.5M < 1M  •  DKNG: price $19.70 < $20 (short floor)  •  GPCR: relVol 0.5× < 2.5× (todayVol 0.7M)  •  SRAD: price $11.66 < $20 (short floor)  •  HRI: avgVol 0.9M < 1M  •  NEOG: price $12.90 < $20 (short floor)"
-    },
     {
       "time": "2026-09-29T19:30:20.533Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-10-02T18:11:33.761Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-02T18:21:47.588Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-02T18:21:48.450Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "IMOS, IBRX, MXL, SYNA, HPE, RGC, VSH, SPCX, PENG, RXO"
+    },
+    {
+      "time": "2026-10-02T18:21:48.450Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-02T18:22:02.504Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "IMOS: avgVol 0.1M < 1M  •  IBRX: price $10.10 < $15  •  MXL: relVol 1.1× < 2× (todayVol 3.3M)  •  SYNA: avgVol 0.9M < 1M  •  HPE: relVol 0.8× < 2× (todayVol 19.3M)  •  RGC: price $7.16 < $15  •  VSH: relVol 1.6× < 2× (todayVol 5.1M)  •  SPCX: relVol 1.0× < 2× (todayVol 91.1M)  •  PENG: relVol 1.2× < 2× (todayVol 1.7M)  •  RXO: relVol 1.0× < 2× (todayVol 1.8M)  •  VECO: avgVol 0.7M < 1M  •  ALGM: relVol 1.5× < 2× (todayVol 3.6M)"
+    },
+    {
+      "time": "2026-10-02T18:22:02.504Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-02T18:22:02.662Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 25",
+      "detail": "MAAS, STX, WDC, KOD, GDS, MMYT, SECZ, UCTT, AXGN, ACN"
+    },
+    {
+      "time": "2026-10-02T18:22:11.490Z",
+      "type": "INFO",
+      "msg": "Short rejections (25)",
+      "detail": "MAAS: price $13.58 < $20 (short floor)  •  STX: above VWAP (price $849.00 > VWAP $820.45) — not holding breakdown  •  WDC: above VWAP (price $420.00 > VWAP $410.81) — not holding breakdown  •  KOD: net up over ~5d ($32.35→$90.50) — no short into uptrend  •  GDS: relVol 1.7× < 2.5× (todayVol 2.1M)  •  MMYT: avgVol 0.9M < 1M  •  SECZ: price $12.86 < $20 (short floor)  •  UCTT: avgVol 0.9M < 1M  •  AXGN: relVol 1.2× < 2.5× (todayVol 1.7M)  •  ACN: net up over ~5d ($176.11→$199.68) — no short into uptrend  •  ZLAB: avgVol 0.8M < 1M  •  TNGX: relVol 0.9× < 2.5× (todayVol 2.7M)"
+    },
+    {
+      "time": "2026-10-02T18:22:11.490Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
