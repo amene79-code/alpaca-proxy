@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-02T19:04:38.485Z",
+  "lastRun": "2026-10-02T19:15:16.317Z",
   "log": [
-    {
-      "time": "2026-09-30T18:25:49.585Z",
-      "type": "INFO",
-      "msg": "Account: $99940.36 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T18:25:50.275Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "IBRX, NWCL, ROG, UTHR, ITUB, HPE, PGEN, BB, ZETA, FORM"
-    },
-    {
-      "time": "2026-09-30T18:25:50.275Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-09-30T18:26:02.170Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "IBRX: price $9.67 < $15  •  NWCL: price $8.07 < $15  •  ROG: avgVol 0.2M < 1M  •  UTHR: avgVol 0.8M < 1M  •  ITUB: price $8.56 < $15  •  HPE: relVol 0.8× < 2× (todayVol 21.4M)  •  PGEN: price $8.84 < $15  •  BB: price $9.13 < $15  •  ZETA: relVol 1.0× < 2× (todayVol 5.6M)  •  FORM: relVol 1.0× < 2× (todayVol 1.2M)  •  BRZE: relVol 0.6× < 2× (todayVol 1.6M)  •  PARR: avgVol 0.9M < 1M"
-    },
-    {
-      "time": "2026-09-30T18:26:02.170Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T18:26:02.270Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 32",
-      "detail": "LQDA, TRLV, JBL, NMIH, BLLN, CBRS, MTG, ESNT, SECZ, SANM"
-    },
-    {
-      "time": "2026-09-30T18:26:12.206Z",
-      "type": "INFO",
-      "msg": "Short rejections (31)",
-      "detail": "TRLV: price $10.48 < $20 (short floor)  •  JBL: relVol 2.5× < 2.5× (todayVol 3.3M)  •  NMIH: avgVol 0.6M < 1M  •  BLLN: avgVol 0.6M < 1M  •  CBRS: relVol 1.6× < 2.5× (todayVol 10.2M)  •  MTG: relVol 0.9× < 2.5× (todayVol 1.9M)  •  ESNT: avgVol 0.8M < 1M  •  SECZ: price $14.84 < $20 (short floor)  •  SANM: avgVol 0.6M < 1M  •  SHG: avgVol 0.2M < 1M  •  FNF: relVol 0.4× < 2.5× (todayVol 1.1M)  •  MRNA: net up over ~5d ($182.11→$191.63) — no short into uptrend"
-    },
-    {
-      "time": "2026-09-30T18:26:12.206Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-09-30T18:36:25.511Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-10-02T19:04:38.485Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-02T19:14:55.184Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-02T19:14:56.138Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "IMOS, SYNA, MXL, IBRX, HPE, VSH, SPCX, RXO, PENG, MTRN"
+    },
+    {
+      "time": "2026-10-02T19:14:56.138Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-02T19:15:08.469Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "IMOS: avgVol 0.1M < 1M  •  SYNA: avgVol 0.9M < 1M  •  MXL: relVol 1.2× < 2× (todayVol 3.7M)  •  IBRX: price $10.13 < $15  •  HPE: relVol 0.9× < 2× (todayVol 21.7M)  •  VSH: relVol 1.8× < 2× (todayVol 5.7M)  •  SPCX: relVol 1.1× < 2× (todayVol 101.0M)  •  RXO: relVol 1.2× < 2× (todayVol 2.1M)  •  PENG: relVol 1.4× < 2× (todayVol 2.0M)  •  MTRN: avgVol 0.2M < 1M  •  PL: relVol 0.9× < 2× (todayVol 11.2M)  •  INIO: relVol 0.6× < 2× (todayVol 3.5M)"
+    },
+    {
+      "time": "2026-10-02T19:15:08.469Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-02T19:15:08.583Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 24",
+      "detail": "MAAS, STX, WDC, UCTT, SECZ, GDS, MMYT, AXGN, ACN, KOD"
+    },
+    {
+      "time": "2026-10-02T19:15:16.317Z",
+      "type": "INFO",
+      "msg": "Short rejections (24)",
+      "detail": "MAAS: price $13.31 < $20 (short floor)  •  STX: above VWAP (price $843.01 > VWAP $822.26) — not holding breakdown  •  WDC: above VWAP (price $415.00 > VWAP $411.38) — not holding breakdown  •  UCTT: avgVol 0.9M < 1M  •  SECZ: price $12.69 < $20 (short floor)  •  GDS: relVol 1.9× < 2.5× (todayVol 2.4M)  •  MMYT: avgVol 0.9M < 1M  •  AXGN: relVol 1.5× < 2.5× (todayVol 2.1M)  •  ACN: net up over ~5d ($176.11→$199.55) — no short into uptrend  •  KOD: net up over ~5d ($32.35→$92.56) — no short into uptrend  •  NAMS: net up over ~5d ($22.58→$22.76) — no short into uptrend  •  ZLAB: avgVol 0.8M < 1M"
+    },
+    {
+      "time": "2026-10-02T19:15:16.317Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
