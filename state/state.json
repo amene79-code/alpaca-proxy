@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-10-02",
+  "dailyDate": "2026-10-05",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-02T22:18:23.608Z",
+  "lastRun": "2026-10-05T21:06:20.202Z",
   "log": [
-    {
-      "time": "2026-09-30T18:58:12.749Z",
-      "type": "INFO",
-      "msg": "Top short: LQDA (score 11)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T18:58:12.749Z",
-      "type": "INFO",
-      "msg": "SKIP LQDA — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T19:08:28.379Z",
-      "type": "INFO",
-      "msg": "Account: $99936.89 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T19:08:29.159Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "IBRX, UTHR, ROG, NWCL, ITUB, HPE, ZETA, BB, PATH, PGEN"
-    },
     {
       "time": "2026-09-30T19:08:29.159Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-10-02T22:18:23.608Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-05T21:06:18.654Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-05T21:06:18.991Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-05T21:06:19.048Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-05T21:06:20.201Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
