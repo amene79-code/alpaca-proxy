@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-06T19:17:20.932Z",
+  "lastRun": "2026-10-06T19:28:01.111Z",
   "log": [
-    {
-      "time": "2026-09-30T19:50:39.054Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T20:00:56.048Z",
-      "type": "INFO",
-      "msg": "Account: $99936.89 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T20:00:56.120Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T20:00:56.366Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T20:11:14.150Z",
-      "type": "INFO",
-      "msg": "Account: $99936.89 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T20:11:14.176Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T20:11:14.321Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T20:21:30.080Z",
-      "type": "INFO",
-      "msg": "Account: $99936.89 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-09-30T20:21:30.136Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-10-06T19:17:20.932Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T19:27:34.721Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T19:27:35.220Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "OPCH, CTVA, CIEN, NOK, INIO, CEG, TLN, STDN, MRVL, VST"
+    },
+    {
+      "time": "2026-10-06T19:27:35.220Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-06T19:27:48.318Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "OPCH: below VWAP (price $31.05 < VWAP $31.05)  •  CTVA: price $14.00 < $15  •  CIEN: relVol 1.8× < 2× (todayVol 4.7M)  •  NOK: price $10.94 < $15  •  INIO: relVol 1.0× < 2× (todayVol 6.2M)  •  CEG: below VWAP (price $298.16 < VWAP $302.84)  •  TLN: avgVol 1.0M < 1M  •  STDN: price $14.47 < $15  •  MRVL: below VWAP (price $287.77 < VWAP $288.88)  •  VST: ATR 0.34% < 0.5%  •  SECZ: price $12.78 < $15  •  MIR: relVol 0.7× < 2× (todayVol 2.7M)"
+    },
+    {
+      "time": "2026-10-06T19:27:48.318Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T19:27:48.462Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "TXG, TWST, ALMR, TEM, SYRE, NEO, SDGR, GRAL, PCVX, STX"
+    },
+    {
+      "time": "2026-10-06T19:28:01.110Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "TXG: relVol 2.2× < 2.5× (todayVol 7.5M)  •  TWST: relVol 2.3× < 2.5× (todayVol 6.1M)  •  ALMR: avgVol 0.6M < 1M  •  TEM: relVol 1.7× < 2.5× (todayVol 13.0M)  •  SYRE: relVol 2.4× < 2.5× (todayVol 3.3M)  •  NEO: price $16.73 < $20 (short floor)  •  SDGR: relVol 1.4× < 2.5× (todayVol 4.2M)  •  GRAL: net up over ~5d ($136.57→$137.12) — no short into uptrend  •  PCVX: net up over ~5d ($56.69→$65.97) — no short into uptrend  •  STX: relVol 1.4× < 2.5× (todayVol 6.2M)  •  ADPT: relVol 0.7× < 2.5× (todayVol 1.7M)  •  CAI: relVol 0.7× < 2.5× (todayVol 3.4M)"
+    },
+    {
+      "time": "2026-10-06T19:28:01.111Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
