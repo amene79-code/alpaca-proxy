@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-06T20:09:10.614Z",
+  "lastRun": "2026-10-06T20:19:22.171Z",
   "log": [
-    {
-      "time": "2026-10-01T18:40:45.320Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "CTVA, LQDA, PSKY, SLS, GRND, STVN, RGEN, TMDX, SPHR, AERO"
-    },
-    {
-      "time": "2026-10-01T18:40:56.823Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "CTVA: price $12.11 < $20 (short floor)  •  LQDA: above VWAP (price $26.64 > VWAP $25.58) — not holding breakdown  •  PSKY: price $9.45 < $20 (short floor)  •  SLS: price $11.39 < $20 (short floor)  •  GRND: price $14.34 < $20 (short floor)  •  STVN: price $19.57 < $20 (short floor)  •  RGEN: relVol 1.1× < 2.5× (todayVol 1.2M)  •  TMDX: avgVol 0.7M < 1M  •  SPHR: avgVol 0.5M < 1M  •  AERO: price $14.81 < $20 (short floor)  •  TGB: price $8.36 < $20 (short floor)  •  ENLT: avgVol 0.2M < 1M"
-    },
-    {
-      "time": "2026-10-01T18:40:56.824Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-10-01T18:51:10.362Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-06T20:09:10.614Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T20:19:21.987Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T20:19:22.017Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T20:19:22.171Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
