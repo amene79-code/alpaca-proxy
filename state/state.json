@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-06T19:58:59.249Z",
+  "lastRun": "2026-10-06T20:09:10.614Z",
   "log": [
-    {
-      "time": "2026-10-01T18:40:32.627Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-01T18:40:45.216Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "ACN: below VWAP (price $214.77 < VWAP $220.32)  •  MAT: RSI 92 > 88  •  FICO: avgVol 0.9M < 1M  •  SNPS: ATR 0.44% < 0.5%  •  INFY: price $11.44 < $15  •  INOD: relVol 1.2× < 2× (todayVol 1.8M)  •  EFXT: avgVol 0.6M < 1M  •  VICR: avgVol 0.9M < 1M  •  GWRE: relVol 0.6× < 2× (todayVol 1.0M)  •  COHR: relVol 1.4× < 2× (todayVol 9.1M)  •  KD: price $12.24 < $15  •  ASAN: price $9.13 < $15"
-    },
-    {
-      "time": "2026-10-01T18:40:45.217Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-10-01T18:40:45.320Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-10-06T19:58:59.249Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T20:09:10.481Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T20:09:10.493Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T20:09:10.614Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
