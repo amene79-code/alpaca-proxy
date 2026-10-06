@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-06T19:06:39.015Z",
+  "lastRun": "2026-10-06T19:17:20.932Z",
   "log": [
-    {
-      "time": "2026-09-30T19:30:12.476Z",
-      "type": "INFO",
-      "msg": "Short rejections (32)",
-      "detail": "TRLV: price $10.49 < $20 (short floor)  •  JBL: ATR 0.33% < 0.5%  •  BLLN: avgVol 0.6M < 1M  •  NMIH: avgVol 0.6M < 1M  •  CBRS: relVol 1.8× < 2.5× (todayVol 11.5M)  •  ESNT: avgVol 0.8M < 1M  •  MTG: relVol 1.3× < 2.5× (todayVol 2.8M)  •  SECZ: price $14.71 < $20 (short floor)  •  ACT: avgVol 0.4M < 1M  •  FNF: relVol 0.7× < 2.5× (todayVol 2.1M)  •  MRNA: net up over ~5d ($182.11→$191.66) — no short into uptrend  •  RDN: relVol 1.9× < 2.5× (todayVol 2.5M)"
-    },
-    {
-      "time": "2026-09-30T19:30:12.476Z",
-      "type": "INFO",
-      "msg": "Top short: LQDA (score 10)",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T19:30:12.476Z",
-      "type": "INFO",
-      "msg": "SKIP LQDA — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T19:40:27.544Z",
-      "type": "INFO",
-      "msg": "Account: $99936.89 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T19:40:27.702Z",
-      "type": "INFO",
-      "msg": "EOD review (20 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T19:40:27.703Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T19:50:38.826Z",
-      "type": "INFO",
-      "msg": "Account: $99936.89 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-09-30T19:50:39.053Z",
-      "type": "INFO",
-      "msg": "EOD review (10 min to close) — cutting weak positions",
-      "detail": ""
-    },
     {
       "time": "2026-09-30T19:50:39.054Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-10-06T19:06:39.015Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T19:16:53.312Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T19:16:53.872Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "OPCH, CTVA, CIEN, MRVL, NOK, CEG, TLN, INIO, BB, CRWV"
+    },
+    {
+      "time": "2026-10-06T19:16:53.872Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-06T19:17:08.146Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "OPCH: below VWAP (price $31.04 < VWAP $31.05)  •  CTVA: price $14.01 < $15  •  CIEN: relVol 1.7× < 2× (todayVol 4.5M)  •  MRVL: below opening-range high (price $291.27 < ORH $301.27, 71 today-candles)  •  NOK: price $10.90 < $15  •  CEG: below VWAP (price $298.85 < VWAP $302.90)  •  TLN: avgVol 1.0M < 1M  •  INIO: relVol 1.0× < 2× (todayVol 6.0M)  •  BB: price $9.61 < $15  •  CRWV: relVol 0.9× < 2× (todayVol 25.0M)  •  STDN: price $14.31 < $15  •  VST: ATR 0.33% < 0.5%"
+    },
+    {
+      "time": "2026-10-06T19:17:08.146Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-06T19:17:08.304Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "TXG, TWST, ALMR, NEO, TEM, SYRE, GRAL, PCVX, SDGR, MIAX"
+    },
+    {
+      "time": "2026-10-06T19:17:20.931Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "TXG: relVol 2.1× < 2.5× (todayVol 7.3M)  •  TWST: relVol 2.3× < 2.5× (todayVol 6.0M)  •  ALMR: avgVol 0.6M < 1M  •  NEO: price $16.59 < $20 (short floor)  •  TEM: relVol 1.7× < 2.5× (todayVol 12.6M)  •  SYRE: relVol 2.3× < 2.5× (todayVol 3.2M)  •  GRAL: relVol 1.1× < 2.5× (todayVol 1.7M)  •  PCVX: net up over ~5d ($56.69→$65.25) — no short into uptrend  •  SDGR: relVol 1.3× < 2.5× (todayVol 4.1M)  •  MIAX: relVol 1.8× < 2.5× (todayVol 3.3M)  •  STX: relVol 1.4× < 2.5× (todayVol 6.1M)  •  CAI: relVol 0.7× < 2.5× (todayVol 3.3M)"
+    },
+    {
+      "time": "2026-10-06T19:17:20.932Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
