@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-08T20:30:47.119Z",
+  "lastRun": "2026-10-08T23:43:32.570Z",
   "log": [
-    {
-      "time": "2026-10-02T18:43:22.523Z",
-      "type": "INFO",
-      "msg": "Short rejections (24)",
-      "detail": "MAAS: price $13.39 < $20 (short floor)  •  STX: above VWAP (price $844.00 > VWAP $821.39) — not holding breakdown  •  WDC: above VWAP (price $417.18 > VWAP $411.20) — not holding breakdown  •  UCTT: avgVol 0.9M < 1M  •  SECZ: price $12.77 < $20 (short floor)  •  GDS: relVol 1.8× < 2.5× (todayVol 2.2M)  •  AXGN: relVol 1.3× < 2.5× (todayVol 1.8M)  •  ACN: net up over ~5d ($176.11→$199.65) — no short into uptrend  •  MMYT: avgVol 0.9M < 1M  •  ZLAB: avgVol 0.8M < 1M  •  NAMS: net up over ~5d ($22.58→$22.85) — no short into uptrend  •  KD: price $11.47 < $20 (short floor)"
-    },
-    {
-      "time": "2026-10-02T18:43:22.523Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T18:53:38.043Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-10-02T18:53:39.086Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-08T20:30:47.119Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-08T23:43:32.316Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-08T23:43:32.359Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-08T23:43:32.569Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
