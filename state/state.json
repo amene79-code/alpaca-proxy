@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-08T19:07:52.421Z",
+  "lastRun": "2026-10-08T19:18:37.316Z",
   "log": [
-    {
-      "time": "2026-10-01T22:55:28.774Z",
-      "type": "INFO",
-      "msg": "Account: $99889.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-01T22:55:28.786Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-01T22:55:28.904Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T18:11:11.921Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T18:11:12.093Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T18:11:12.842Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "IBRX, IMOS, SYNA, MXL, HPE, VSH, SPCX, RXO, PENG, VECO"
-    },
-    {
-      "time": "2026-10-02T18:11:12.843Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-02T18:11:26.227Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "IBRX: price $10.13 < $15  •  IMOS: avgVol 0.1M < 1M  •  SYNA: avgVol 0.9M < 1M  •  MXL: relVol 1.1× < 2× (todayVol 3.2M)  •  HPE: relVol 0.8× < 2× (todayVol 18.8M)  •  VSH: relVol 1.5× < 2× (todayVol 4.8M)  •  SPCX: relVol 1.0× < 2× (todayVol 89.1M)  •  RXO: relVol 1.0× < 2× (todayVol 1.7M)  •  PENG: relVol 1.2× < 2× (todayVol 1.7M)  •  VECO: avgVol 0.7M < 1M  •  ALGM: relVol 1.4× < 2× (todayVol 3.4M)  •  INIO: relVol 0.4× < 2× (todayVol 2.5M)"
-    },
     {
       "time": "2026-10-02T18:11:26.227Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-10-08T19:07:52.421Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-08T19:18:06.958Z",
+      "type": "INFO",
+      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-08T19:18:07.678Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "HAE, MANE, CMG, SKYD, COCO, SECZ, ERAS, ECO, JMKE, CSGP"
+    },
+    {
+      "time": "2026-10-08T19:18:07.678Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-08T19:18:22.447Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "HAE: avgVol 0.6M < 1M  •  MANE: avgVol 0.9M < 1M  •  CMG: ATR 0.49% < 0.5%  •  SKYD: price $9.47 < $15  •  COCO: relVol 1.0× < 2× (todayVol 1.5M)  •  SECZ: price $12.61 < $15  •  ERAS: relVol 1.1× < 2× (todayVol 5.2M)  •  ECO: avgVol 0.9M < 1M  •  JMKE: relVol 0.8× < 2× (todayVol 3.0M)  •  CSGP: relVol 0.7× < 2× (todayVol 3.9M)  •  HURN: avgVol 0.3M < 1M  •  SSL: relVol 1.0× < 2× (todayVol 1.8M)"
+    },
+    {
+      "time": "2026-10-08T19:18:22.447Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-08T19:18:22.597Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "AAOI, EQPT, HUT, MXL, ARGX, AXTI, COHR, SIMO, BSP, ALAB"
+    },
+    {
+      "time": "2026-10-08T19:18:37.316Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "AAOI: relVol 1.8× < 2.5× (todayVol 14.8M)  •  EQPT: price $15.49 < $20 (short floor)  •  HUT: relVol 1.5× < 2.5× (todayVol 7.4M)  •  MXL: net up over ~5d ($92.12→$95.54) — no short into uptrend  •  ARGX: avgVol 0.4M < 1M  •  AXTI: relVol 0.9× < 2.5× (todayVol 7.6M)  •  COHR: relVol 0.9× < 2.5× (todayVol 6.3M)  •  SIMO: avgVol 0.7M < 1M  •  BSP: net up over ~5d ($32.50→$37.28) — no short into uptrend  •  ALAB: relVol 0.9× < 2.5× (todayVol 3.9M)  •  RUM: price $6.84 < $20 (short floor)  •  CECO: avgVol 0.8M < 1M"
+    },
+    {
+      "time": "2026-10-08T19:18:37.316Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
