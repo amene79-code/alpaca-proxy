@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-09T20:22:06.026Z",
+  "lastRun": "2026-10-09T22:53:21.229Z",
   "log": [
-    {
-      "time": "2026-10-06T18:55:43.344Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-06T18:55:43.474Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "TWST, TXG, SYRE, NEO, ALMR, TEM, SDGR, GRAL, PCVX, MIAX"
-    },
-    {
-      "time": "2026-10-06T18:55:56.709Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "TWST: relVol 2.2× < 2.5× (todayVol 5.8M)  •  TXG: relVol 2.0× < 2.5× (todayVol 6.8M)  •  SYRE: relVol 2.2× < 2.5× (todayVol 3.1M)  •  NEO: price $16.61 < $20 (short floor)  •  ALMR: avgVol 0.6M < 1M  •  TEM: relVol 1.6× < 2.5× (todayVol 11.9M)  •  SDGR: relVol 1.3× < 2.5× (todayVol 4.0M)  •  GRAL: relVol 1.0× < 2.5× (todayVol 1.6M)  •  PCVX: net up over ~5d ($56.69→$65.39) — no short into uptrend  •  MIAX: relVol 1.7× < 2.5× (todayVol 3.1M)  •  CAI: relVol 0.6× < 2.5× (todayVol 3.0M)  •  STX: relVol 1.3× < 2.5× (todayVol 5.8M)"
-    },
     {
       "time": "2026-10-06T18:55:56.709Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-09T20:22:06.026Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T22:53:20.921Z",
+      "type": "INFO",
+      "msg": "Account: $99881.89 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T22:53:20.990Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T22:53:21.228Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
