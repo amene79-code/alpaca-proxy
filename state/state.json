@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-09T19:10:11.422Z",
+  "lastRun": "2026-10-09T19:20:46.764Z",
   "log": [
-    {
-      "time": "2026-10-02T20:06:47.801Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T20:17:06.285Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T20:17:06.347Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T20:17:06.954Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T20:27:23.325Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T20:27:23.348Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T20:27:23.817Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T22:18:22.975Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T22:18:23.033Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-02T22:18:23.608Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-10-05T21:06:18.654Z",
       "type": "INFO",
@@ -1268,6 +1208,66 @@
     },
     {
       "time": "2026-10-09T19:10:11.422Z",
+      "type": "INFO",
+      "msg": "SKIP ASTS — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:20:22.594Z",
+      "type": "INFO",
+      "msg": "Account: $99881.89 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:20:23.198Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "MRNA, NVAX, FSLY, CCI, HUM, AUGO, SNAP, CLF, HIMS, IOVA"
+    },
+    {
+      "time": "2026-10-09T19:20:23.198Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-09T19:20:36.073Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "MRNA: relVol 1.4× < 2× (todayVol 23.9M)  •  NVAX: price $12.97 < $15  •  FSLY: relVol 1.5× < 2× (todayVol 12.1M)  •  CCI: below opening-range high (price $78.31 < ORH $79.42, 71 today-candles)  •  HUM: below VWAP (price $437.27 < VWAP $439.38)  •  AUGO: relVol 0.7× < 2× (todayVol 0.8M)  •  SNAP: price $6.24 < $15  •  CLF: price $12.97 < $15  •  HIMS: relVol 1.1× < 2× (todayVol 11.3M)  •  IOVA: price $14.73 < $15  •  DFTX: relVol 0.8× < 2× (todayVol 2.0M)  •  PCVX: relVol 0.7× < 2× (todayVol 2.5M)"
+    },
+    {
+      "time": "2026-10-09T19:20:36.073Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:20:36.189Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 30",
+      "detail": "TMUS, ASTS, T, VZ, TIGO, HPQ, JOBY, AVNT, PARR, BKD"
+    },
+    {
+      "time": "2026-10-09T19:20:37.337Z",
+      "type": "SIGNAL",
+      "msg": "ASTS — SHORT score 9 | gap -12.0% | relVol 3.5× | RSI 74",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:20:46.764Z",
+      "type": "INFO",
+      "msg": "Short rejections (29)",
+      "detail": "TMUS: ATR 0.30% < 0.5%  •  T: ATR 0.29% < 0.5%  •  VZ: ATR 0.28% < 0.5%  •  TIGO: avgVol 0.8M < 1M  •  HPQ: relVol 0.8× < 2.5× (todayVol 10.9M)  •  JOBY: price $5.36 < $20 (short floor)  •  AVNT: avgVol 0.8M < 1M  •  PARR: avgVol 1.0M < 1M  •  BKD: price $10.24 < $20 (short floor)  •  MAAS: price $11.59 < $20 (short floor)  •  VOD: price $15.56 < $20 (short floor)  •  CHTR: relVol 1.3× < 2.5× (todayVol 4.0M)"
+    },
+    {
+      "time": "2026-10-09T19:20:46.764Z",
+      "type": "INFO",
+      "msg": "Top short: ASTS (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:20:46.764Z",
       "type": "INFO",
       "msg": "SKIP ASTS — already traded today",
       "detail": ""
