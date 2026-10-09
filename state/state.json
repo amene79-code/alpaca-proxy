@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-09T19:20:46.764Z",
+  "lastRun": "2026-10-09T19:31:00.910Z",
   "log": [
-    {
-      "time": "2026-10-05T21:06:18.654Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-05T21:06:18.991Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-10-05T21:06:19.048Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-10-09T19:20:46.764Z",
       "type": "INFO",
       "msg": "SKIP ASTS — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:31:00.551Z",
+      "type": "INFO",
+      "msg": "Account: $99881.89 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:31:00.910Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
