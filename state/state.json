@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-09T19:31:00.910Z",
+  "lastRun": "2026-10-09T19:41:14.380Z",
   "log": [
-    {
-      "time": "2026-10-05T21:06:19.048Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-05T21:06:20.201Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-06T18:44:48.073Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
     {
       "time": "2026-10-06T18:44:48.318Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-09T19:31:00.910Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:41:14.154Z",
+      "type": "INFO",
+      "msg": "Account: $99881.89 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:41:14.379Z",
+      "type": "INFO",
+      "msg": "EOD review (19 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-09T19:41:14.380Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
