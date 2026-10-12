@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-10-09",
+  "dailyDate": "2026-10-12",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-09T22:53:21.229Z",
+  "lastRun": "2026-10-12T21:31:47.609Z",
   "log": [
-    {
-      "time": "2026-10-06T18:55:56.709Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-06T19:06:09.908Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-06T19:06:10.373Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "OPCH, CTVA, CIEN, MRVL, CEG, NOK, TLN, CRWV, BB, INIO"
-    },
-    {
-      "time": "2026-10-06T19:06:10.373Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-10-06T19:06:26.041Z",
       "type": "INFO",
@@ -1271,11 +1247,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-10-12T21:31:47.074Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-12T21:31:47.306Z",
+      "type": "INFO",
+      "msg": "Account: $99881.85 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-12T21:31:47.365Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-12T21:31:47.609Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
   "tradedToday": [],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "ASTS"
-  ]
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
