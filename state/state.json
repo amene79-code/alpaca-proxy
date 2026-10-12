@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-12T21:31:47.609Z",
+  "lastRun": "2026-10-12T21:41:59.949Z",
   "log": [
-    {
-      "time": "2026-10-06T19:06:26.041Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "OPCH: below VWAP (price $31.05 < VWAP $31.05)  •  CTVA: price $14.01 < $15  •  CIEN: relVol 1.6× < 2× (todayVol 4.3M)  •  MRVL: below opening-range high (price $289.97 < ORH $301.27, 69 today-candles)  •  CEG: below VWAP (price $299.15 < VWAP $302.95)  •  NOK: price $10.88 < $15  •  TLN: avgVol 1.0M < 1M  •  CRWV: relVol 0.8× < 2× (todayVol 24.6M)  •  BB: price $9.63 < $15  •  INIO: relVol 1.0× < 2× (todayVol 5.8M)  •  SECZ: price $12.88 < $15  •  VST: ATR 0.36% < 0.5%"
-    },
-    {
-      "time": "2026-10-06T19:06:26.041Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-06T19:06:26.224Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "TXG, TWST, ALMR, NEO, TEM, SYRE, SDGR, PCVX, GRAL, MIAX"
-    },
     {
       "time": "2026-10-06T19:06:39.015Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-12T21:31:47.609Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-12T21:41:59.736Z",
+      "type": "INFO",
+      "msg": "Account: $99881.85 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-12T21:41:59.744Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-12T21:41:59.949Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
