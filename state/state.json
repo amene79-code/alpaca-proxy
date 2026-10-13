@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-10-12",
+  "dailyDate": "2026-10-13",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-12T21:41:59.949Z",
+  "lastRun": "2026-10-13T19:43:19.252Z",
   "log": [
-    {
-      "time": "2026-10-06T19:06:39.015Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "TXG: relVol 2.1× < 2.5× (todayVol 7.1M)  •  TWST: relVol 2.2× < 2.5× (todayVol 5.9M)  •  ALMR: avgVol 0.6M < 1M  •  NEO: price $16.57 < $20 (short floor)  •  TEM: relVol 1.6× < 2.5× (todayVol 12.2M)  •  SYRE: relVol 2.3× < 2.5× (todayVol 3.1M)  •  SDGR: relVol 1.3× < 2.5× (todayVol 4.0M)  •  PCVX: net up over ~5d ($56.69→$65.29) — no short into uptrend  •  GRAL: net up over ~5d ($136.57→$136.71) — no short into uptrend  •  MIAX: relVol 1.8× < 2.5× (todayVol 3.1M)  •  STX: relVol 1.3× < 2.5× (todayVol 5.9M)  •  CAI: relVol 0.6× < 2.5× (todayVol 3.1M)"
-    },
-    {
-      "time": "2026-10-06T19:06:39.015Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-06T19:16:53.312Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-06T19:16:53.872Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "OPCH, CTVA, CIEN, MRVL, NOK, CEG, TLN, INIO, BB, CRWV"
-    },
     {
       "time": "2026-10-06T19:16:53.872Z",
       "type": "INFO",
@@ -1270,6 +1246,30 @@
       "time": "2026-10-12T21:41:59.949Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-13T19:43:19.036Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-13T19:43:19.106Z",
+      "type": "INFO",
+      "msg": "Account: $99881.85 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-13T19:43:19.252Z",
+      "type": "INFO",
+      "msg": "EOD review (17 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-13T19:43:19.252Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
