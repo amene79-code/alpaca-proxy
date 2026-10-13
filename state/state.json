@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-13T19:43:19.252Z",
+  "lastRun": "2026-10-13T19:53:35.622Z",
   "log": [
-    {
-      "time": "2026-10-06T19:16:53.872Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-06T19:17:08.146Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "OPCH: below VWAP (price $31.04 < VWAP $31.05)  •  CTVA: price $14.01 < $15  •  CIEN: relVol 1.7× < 2× (todayVol 4.5M)  •  MRVL: below opening-range high (price $291.27 < ORH $301.27, 71 today-candles)  •  NOK: price $10.90 < $15  •  CEG: below VWAP (price $298.85 < VWAP $302.90)  •  TLN: avgVol 1.0M < 1M  •  INIO: relVol 1.0× < 2× (todayVol 6.0M)  •  BB: price $9.61 < $15  •  CRWV: relVol 0.9× < 2× (todayVol 25.0M)  •  STDN: price $14.31 < $15  •  VST: ATR 0.33% < 0.5%"
-    },
-    {
-      "time": "2026-10-06T19:17:08.146Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-10-06T19:17:08.304Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-13T19:43:19.252Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-13T19:53:35.113Z",
+      "type": "INFO",
+      "msg": "Account: $99881.85 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-13T19:53:35.622Z",
+      "type": "INFO",
+      "msg": "EOD review (7 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-13T19:53:35.622Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
