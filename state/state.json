@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-14T18:39:20.688Z",
+  "lastRun": "2026-10-14T18:50:05.854Z",
   "log": [
-    {
-      "time": "2026-10-07T20:23:34.693Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-07T23:36:00.111Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-07T23:36:00.141Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-07T23:36:01.336Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-08T19:07:19.685Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-08T19:07:19.911Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-08T19:07:20.919Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "HAE, SKYD, MANE, CMG, SECZ, COCO, JMKE, ERAS, RGC, ECO"
-    },
-    {
-      "time": "2026-10-08T19:07:20.919Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-10-08T19:07:37.084Z",
       "type": "INFO",
@@ -1284,6 +1236,54 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 15× CRWV",
       "detail": "ID e015c336-76ab-4b57-abbb-8d3b3a0fcb7c | R:R 3.0:1 | risk $6.15 | real bracket stop @ $65.19"
+    },
+    {
+      "time": "2026-10-14T18:49:39.342Z",
+      "type": "INFO",
+      "msg": "Account: $99877.50 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-14T18:49:40.369Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 46, actives 50, kept 23",
+      "detail": "BSP, LQDA, LEGN, HALO, NRIX, ESLT, AAPL, T, PFE, IBRX"
+    },
+    {
+      "time": "2026-10-14T18:49:40.369Z",
+      "type": "INFO",
+      "msg": "Scanning 23 candidates",
+      "detail": "23 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-14T18:49:49.973Z",
+      "type": "INFO",
+      "msg": "Rejections (23)",
+      "detail": "BSP: below VWAP (price $52.69 < VWAP $53.22)  •  LQDA: below VWAP (price $33.75 < VWAP $35.09)  •  LEGN: relVol 1.2× < 2× (todayVol 2.6M)  •  HALO: relVol 0.9× < 2× (todayVol 2.5M)  •  NRIX: relVol 0.8× < 2× (todayVol 1.5M)  •  ESLT: avgVol 0.1M < 1M  •  AAPL: gap 0.5% < 4% (price $343.08 vs priorClose $341.27)  •  T: gap 1.1% < 4% (price $23.09 vs priorClose $22.85)  •  PFE: gap 3.3% < 4% (price $29.31 vs priorClose $28.37)  •  IBRX: price $9.91 < $15  •  BTE: price $5.11 < $15  •  WGS: avgVol 0.8M < 1M"
+    },
+    {
+      "time": "2026-10-14T18:49:49.974Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-14T18:49:50.181Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "SKYD, CRWV, BTDR, GDS, DOCN, WULF, CORZ, CIFR, PENG, IREN"
+    },
+    {
+      "time": "2026-10-14T18:50:05.853Z",
+      "type": "INFO",
+      "msg": "Short rejections (39)",
+      "detail": "SKYD: price $6.75 < $20 (short floor)  •  BTDR: price $7.84 < $20 (short floor)  •  GDS: relVol 1.4× < 2.5× (todayVol 2.6M)  •  DOCN: relVol 1.2× < 2.5× (todayVol 3.1M)  •  WULF: price $11.48 < $20 (short floor)  •  CORZ: price $13.45 < $20 (short floor)  •  CIFR: price $9.90 < $20 (short floor)  •  PENG: relVol 0.9× < 2.5× (todayVol 3.7M)  •  IREN: relVol 1.4× < 2.5× (todayVol 56.5M)  •  PPTA: price $17.04 < $20 (short floor)  •  IOND: avgVol 0.6M < 1M  •  HUT: relVol 1.6× < 2.5× (todayVol 8.4M)"
+    },
+    {
+      "time": "2026-10-14T18:50:05.854Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [],
