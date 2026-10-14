@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-14T19:22:06.131Z",
+  "lastRun": "2026-10-14T19:32:21.959Z",
   "log": [
-    {
-      "time": "2026-10-08T20:10:15.946Z",
-      "type": "INFO",
-      "msg": "Account: $99889.29 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-08T20:10:16.002Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-10-08T20:10:16.236Z",
       "type": "INFO",
@@ -1270,6 +1258,18 @@
       "time": "2026-10-14T19:22:06.131Z",
       "type": "INFO",
       "msg": "SKIP CRWV — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-14T19:32:21.640Z",
+      "type": "INFO",
+      "msg": "Account: $99876.45 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-14T19:32:21.959Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
