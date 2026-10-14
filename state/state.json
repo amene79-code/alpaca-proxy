@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-14T20:23:42.816Z",
+  "lastRun": "2026-10-14T20:58:50.133Z",
   "log": [
-    {
-      "time": "2026-10-09T18:38:11.794Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-09T18:38:11.918Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 32",
-      "detail": "ASTS, TMUS, T, VZ, LUMN, JOBY, HPQ, TIGO, AVNT, SITM"
-    },
-    {
-      "time": "2026-10-09T18:38:12.454Z",
-      "type": "SIGNAL",
-      "msg": "ASTS — SHORT score 8 | gap -13.5% | relVol 3.4× | RSI 64",
-      "detail": ""
-    },
     {
       "time": "2026-10-09T18:38:23.068Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-14T20:23:42.816Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-14T20:58:49.998Z",
+      "type": "INFO",
+      "msg": "Account: $99876.45 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-14T20:58:50.007Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-14T20:58:50.133Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
