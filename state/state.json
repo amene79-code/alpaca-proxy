@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-15T19:42:20.161Z",
+  "lastRun": "2026-10-15T19:52:31.181Z",
   "log": [
-    {
-      "time": "2026-10-14T17:45:38.673Z",
-      "type": "INFO",
-      "msg": "Rejections (17)",
-      "detail": "LQDA: below VWAP (price $33.88 < VWAP $35.16)  •  BSP: below opening-range high (price $55.66 < ORH $58.56, 52 today-candles)  •  IBRX: price $10.40 < $15  •  LEGN: relVol 1.1× < 2× (todayVol 2.3M)  •  HALO: relVol 0.8× < 2× (todayVol 2.2M)  •  NRIX: relVol 0.7× < 2× (todayVol 1.3M)  •  RIG: price $5.67 < $15  •  AAPL: gap 0.3% < 4% (price $342.20 vs priorClose $341.27)  •  PFE: gap 3.9% < 4% (price $29.48 vs priorClose $28.37)  •  T: gap 1.2% < 4% (price $23.13 vs priorClose $22.85)  •  BTE: price $5.07 < $15  •  ESLT: avgVol 0.1M < 1M"
-    },
-    {
-      "time": "2026-10-14T17:45:38.673Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-14T17:45:38.868Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SKYD, CRWV, DOCN, BTDR, HUT, GDS, CIFR, XMTR, DELL, CORZ"
-    },
     {
       "time": "2026-10-14T17:45:55.419Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-15T19:42:20.161Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T19:52:31.037Z",
+      "type": "INFO",
+      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T19:52:31.181Z",
+      "type": "INFO",
+      "msg": "EOD review (8 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T19:52:31.181Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
