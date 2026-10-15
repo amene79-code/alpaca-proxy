@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-15T17:34:30.092Z",
+  "lastRun": "2026-10-15T17:45:13.528Z",
   "log": [
-    {
-      "time": "2026-10-09T18:48:50.462Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 33",
-      "detail": "ASTS, TMUS, T, VZ, LUMN, TIGO, HPQ, JOBY, AVNT, SITM"
-    },
-    {
-      "time": "2026-10-09T18:48:50.702Z",
-      "type": "SIGNAL",
-      "msg": "ASTS — SHORT score 8 | gap -12.8% | relVol 3.4× | RSI 79",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-09T18:49:02.319Z",
-      "type": "INFO",
-      "msg": "Short rejections (32)",
-      "detail": "TMUS: relVol 2.5× < 2.5× (todayVol 14.0M)  •  T: ATR 0.29% < 0.5%  •  VZ: ATR 0.32% < 0.5%  •  LUMN: price $5.16 < $20 (short floor)  •  TIGO: avgVol 0.8M < 1M  •  HPQ: relVol 0.7× < 2.5× (todayVol 10.1M)  •  JOBY: price $5.36 < $20 (short floor)  •  AVNT: avgVol 0.7M < 1M  •  SITM: avgVol 0.5M < 1M  •  PARR: avgVol 1.0M < 1M  •  BCE: price $18.82 < $20 (short floor)  •  VOD: price $15.54 < $20 (short floor)"
-    },
-    {
-      "time": "2026-10-09T18:49:02.319Z",
-      "type": "INFO",
-      "msg": "Top short: ASTS (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-09T18:49:02.319Z",
-      "type": "INFO",
-      "msg": "SKIP ASTS — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-09T18:59:13.137Z",
-      "type": "INFO",
-      "msg": "Account: $99881.89 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-09T18:59:13.544Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, FSLY, NVAX, CCI, HUM, AUGO, SNAP, CLF, DFTX, IOVA"
-    },
-    {
-      "time": "2026-10-09T18:59:13.544Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-10-09T18:59:26.649Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-10-15T17:34:30.092Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T17:44:42.629Z",
+      "type": "INFO",
+      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T17:44:43.434Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RGC, ERIC, NKE, APPN, KRMN, Z, ZG, COMP, PAG, TRU"
+    },
+    {
+      "time": "2026-10-15T17:44:43.434Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-15T17:44:58.202Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "RGC: price $10.43 < $15  •  ERIC: price $10.52 < $15  •  NKE: relVol 0.6× < 2× (todayVol 28.6M)  •  APPN: avgVol 0.8M < 1M  •  KRMN: relVol 0.7× < 2× (todayVol 2.7M)  •  Z: relVol 0.7× < 2× (todayVol 3.1M)  •  ZG: relVol 0.6× < 2× (todayVol 0.6M)  •  COMP: price $9.54 < $15  •  PAG: avgVol 0.6M < 1M  •  TRU: relVol 0.6× < 2× (todayVol 1.8M)  •  ETSY: relVol 1.0× < 2× (todayVol 3.2M)  •  ARQT: relVol 0.7× < 2× (todayVol 2.1M)"
+    },
+    {
+      "time": "2026-10-15T17:44:58.202Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T17:44:58.358Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MAN, SMTC, VICR, PENG, SEI, RKLB, LBRT, MTSI, AXTI, DELL"
+    },
+    {
+      "time": "2026-10-15T17:45:13.528Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MAN: avgVol 1.0M < 1M  •  SMTC: relVol 1.7× < 2.5× (todayVol 6.1M)  •  VICR: relVol 1.2× < 2.5× (todayVol 1.2M)  •  PENG: relVol 1.0× < 2.5× (todayVol 4.4M)  •  SEI: relVol 1.2× < 2.5× (todayVol 3.1M)  •  RKLB: relVol 1.6× < 2.5× (todayVol 35.3M)  •  LBRT: price $16.43 < $20 (short floor)  •  MTSI: relVol 0.9× < 2.5× (todayVol 1.2M)  •  AXTI: relVol 1.2× < 2.5× (todayVol 10.1M)  •  DELL: relVol 1.5× < 2.5× (todayVol 10.6M)  •  VIAV: relVol 0.9× < 2.5× (todayVol 5.0M)  •  SITM: avgVol 0.5M < 1M"
+    },
+    {
+      "time": "2026-10-15T17:45:13.528Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
