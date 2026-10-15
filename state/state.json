@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-15T17:55:54.801Z",
+  "lastRun": "2026-10-15T18:06:46.141Z",
   "log": [
-    {
-      "time": "2026-10-09T19:09:47.560Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "MRNA, FSLY, NVAX, CCI, HUM, AUGO, SNAP, CLF, DFTX, IOVA"
-    },
-    {
-      "time": "2026-10-09T19:09:47.560Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-09T19:10:00.724Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "MRNA: relVol 1.4× < 2× (todayVol 23.6M)  •  FSLY: relVol 1.5× < 2× (todayVol 11.8M)  •  NVAX: price $12.93 < $15  •  CCI: below opening-range high (price $78.31 < ORH $79.42, 69 today-candles)  •  HUM: below VWAP (price $435.03 < VWAP $439.46)  •  AUGO: relVol 0.7× < 2× (todayVol 0.7M)  •  SNAP: price $6.26 < $15  •  CLF: price $12.94 < $15  •  DFTX: relVol 0.7× < 2× (todayVol 1.9M)  •  IOVA: price $14.74 < $15  •  HIMS: relVol 1.1× < 2× (todayVol 10.6M)  •  PCVX: relVol 0.7× < 2× (todayVol 2.4M)"
-    },
-    {
-      "time": "2026-10-09T19:10:00.724Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-09T19:10:00.853Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 31",
-      "detail": "ASTS, TMUS, T, VZ, TIGO, HPQ, AVNT, JOBY, PARR, LUMN"
-    },
-    {
-      "time": "2026-10-09T19:10:01.074Z",
-      "type": "SIGNAL",
-      "msg": "ASTS — SHORT score 8 | gap -12.7% | relVol 3.5× | RSI 70",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-09T19:10:11.422Z",
-      "type": "INFO",
-      "msg": "Short rejections (30)",
-      "detail": "TMUS: ATR 0.34% < 0.5%  •  T: ATR 0.30% < 0.5%  •  VZ: ATR 0.32% < 0.5%  •  TIGO: avgVol 0.8M < 1M  •  HPQ: relVol 0.7× < 2.5× (todayVol 10.6M)  •  AVNT: avgVol 0.8M < 1M  •  JOBY: price $5.36 < $20 (short floor)  •  PARR: avgVol 1.0M < 1M  •  LUMN: price $5.22 < $20 (short floor)  •  BKD: price $10.25 < $20 (short floor)  •  MAAS: price $11.58 < $20 (short floor)  •  CHTR: relVol 1.2× < 2.5× (todayVol 3.9M)"
-    },
-    {
-      "time": "2026-10-09T19:10:11.422Z",
-      "type": "INFO",
-      "msg": "Top short: ASTS (score 8)",
-      "detail": ""
-    },
     {
       "time": "2026-10-09T19:10:11.422Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-10-15T17:55:54.801Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T18:06:10.563Z",
+      "type": "INFO",
+      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T18:06:11.659Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RGC, ERIC, NKE, APPN, Z, KRMN, ZG, BBWI, ARQT, PAG"
+    },
+    {
+      "time": "2026-10-15T18:06:11.659Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-15T18:06:28.140Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "RGC: price $10.30 < $15  •  ERIC: price $10.53 < $15  •  NKE: relVol 0.7× < 2× (todayVol 30.5M)  •  APPN: avgVol 0.8M < 1M  •  Z: relVol 0.7× < 2× (todayVol 3.3M)  •  KRMN: relVol 0.8× < 2× (todayVol 2.8M)  •  ZG: relVol 0.6× < 2× (todayVol 0.7M)  •  BBWI: relVol 0.9× < 2× (todayVol 6.4M)  •  ARQT: relVol 0.7× < 2× (todayVol 2.2M)  •  PAG: avgVol 0.6M < 1M  •  TRU: relVol 0.6× < 2× (todayVol 2.0M)  •  KD: price $12.77 < $15"
+    },
+    {
+      "time": "2026-10-15T18:06:28.140Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T18:06:28.318Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "MAN, SMTC, VICR, PENG, AXTI, RKLB, MTSI, SEI, DELL, LBRT"
+    },
+    {
+      "time": "2026-10-15T18:06:46.141Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "MAN: avgVol 1.0M < 1M  •  SMTC: relVol 1.9× < 2.5× (todayVol 6.8M)  •  VICR: relVol 1.2× < 2.5× (todayVol 1.3M)  •  PENG: relVol 1.0× < 2.5× (todayVol 4.7M)  •  AXTI: relVol 1.2× < 2.5× (todayVol 10.5M)  •  RKLB: relVol 1.6× < 2.5× (todayVol 36.3M)  •  MTSI: relVol 0.9× < 2.5× (todayVol 1.3M)  •  SEI: relVol 1.3× < 2.5× (todayVol 3.3M)  •  DELL: relVol 1.6× < 2.5× (todayVol 11.0M)  •  LBRT: price $16.46 < $20 (short floor)  •  VIAV: relVol 0.9× < 2.5× (todayVol 5.5M)  •  SITM: avgVol 0.5M < 1M"
+    },
+    {
+      "time": "2026-10-15T18:06:46.141Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
