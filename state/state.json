@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-15T20:13:17.909Z",
+  "lastRun": "2026-10-15T20:23:30.519Z",
   "log": [
-    {
-      "time": "2026-10-14T17:56:17.163Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-14T17:56:17.404Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SKYD, CRWV, DOCN, BTDR, GDS, HUT, CIFR, WULF, SEI, CORZ"
-    },
-    {
-      "time": "2026-10-14T17:56:30.696Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "SKYD: price $6.75 < $20 (short floor)  •  CRWV: relVol 2.3× < 2.5× (todayVol 78.8M)  •  DOCN: relVol 1.1× < 2.5× (todayVol 2.7M)  •  BTDR: price $7.88 < $20 (short floor)  •  GDS: relVol 1.2× < 2.5× (todayVol 2.2M)  •  HUT: relVol 1.4× < 2.5× (todayVol 7.2M)  •  CIFR: price $9.85 < $20 (short floor)  •  WULF: price $11.53 < $20 (short floor)  •  SEI: relVol 1.0× < 2.5× (todayVol 2.5M)  •  CORZ: price $13.53 < $20 (short floor)  •  DELL: relVol 1.2× < 2.5× (todayVol 8.0M)  •  CLSK: price $8.95 < $20 (short floor)"
-    },
     {
       "time": "2026-10-14T17:56:30.696Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-15T20:13:17.909Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T20:23:30.170Z",
+      "type": "INFO",
+      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T20:23:30.231Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T20:23:30.519Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
