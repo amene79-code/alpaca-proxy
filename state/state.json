@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-15T20:02:47.355Z",
+  "lastRun": "2026-10-15T20:13:17.909Z",
   "log": [
-    {
-      "time": "2026-10-14T17:56:11.287Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 36, actives 50, kept 16",
-      "detail": "LQDA, BSP, IBRX, LEGN, NRIX, HALO, DAO, AAPL, PFE, T"
-    },
-    {
-      "time": "2026-10-14T17:56:11.287Z",
-      "type": "INFO",
-      "msg": "Scanning 16 candidates",
-      "detail": "16 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-14T17:56:17.163Z",
-      "type": "INFO",
-      "msg": "Rejections (16)",
-      "detail": "LQDA: below VWAP (price $33.74 < VWAP $35.15)  •  BSP: below opening-range high (price $55.21 < ORH $58.56, 55 today-candles)  •  IBRX: price $10.22 < $15  •  LEGN: relVol 1.1× < 2× (todayVol 2.4M)  •  NRIX: relVol 0.7× < 2× (todayVol 1.3M)  •  HALO: relVol 0.8× < 2× (todayVol 2.3M)  •  DAO: avgVol 0.0M < 1M  •  AAPL: gap 0.2% < 4% (price $341.86 vs priorClose $341.27)  •  PFE: gap 3.5% < 4% (price $29.38 vs priorClose $28.37)  •  T: gap 1.2% < 4% (price $23.13 vs priorClose $22.85)  •  BTE: price $5.07 < $15  •  ESLT: avgVol 0.1M < 1M"
-    },
     {
       "time": "2026-10-14T17:56:17.163Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-15T20:02:47.354Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T20:13:17.739Z",
+      "type": "INFO",
+      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T20:13:17.752Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-15T20:13:17.909Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
