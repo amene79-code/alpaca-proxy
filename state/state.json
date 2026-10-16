@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-16T17:40:53.774Z",
+  "lastRun": "2026-10-16T17:51:26.973Z",
   "log": [
-    {
-      "time": "2026-10-14T18:49:49.973Z",
-      "type": "INFO",
-      "msg": "Rejections (23)",
-      "detail": "BSP: below VWAP (price $52.69 < VWAP $53.22)  •  LQDA: below VWAP (price $33.75 < VWAP $35.09)  •  LEGN: relVol 1.2× < 2× (todayVol 2.6M)  •  HALO: relVol 0.9× < 2× (todayVol 2.5M)  •  NRIX: relVol 0.8× < 2× (todayVol 1.5M)  •  ESLT: avgVol 0.1M < 1M  •  AAPL: gap 0.5% < 4% (price $343.08 vs priorClose $341.27)  •  T: gap 1.1% < 4% (price $23.09 vs priorClose $22.85)  •  PFE: gap 3.3% < 4% (price $29.31 vs priorClose $28.37)  •  IBRX: price $9.91 < $15  •  BTE: price $5.11 < $15  •  WGS: avgVol 0.8M < 1M"
-    },
-    {
-      "time": "2026-10-14T18:49:49.974Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-14T18:49:50.181Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "SKYD, CRWV, BTDR, GDS, DOCN, WULF, CORZ, CIFR, PENG, IREN"
-    },
-    {
-      "time": "2026-10-14T18:50:05.853Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "SKYD: price $6.75 < $20 (short floor)  •  BTDR: price $7.84 < $20 (short floor)  •  GDS: relVol 1.4× < 2.5× (todayVol 2.6M)  •  DOCN: relVol 1.2× < 2.5× (todayVol 3.1M)  •  WULF: price $11.48 < $20 (short floor)  •  CORZ: price $13.45 < $20 (short floor)  •  CIFR: price $9.90 < $20 (short floor)  •  PENG: relVol 0.9× < 2.5× (todayVol 3.7M)  •  IREN: relVol 1.4× < 2.5× (todayVol 56.5M)  •  PPTA: price $17.04 < $20 (short floor)  •  IOND: avgVol 0.6M < 1M  •  HUT: relVol 1.6× < 2.5× (todayVol 8.4M)"
-    },
-    {
-      "time": "2026-10-14T18:50:05.854Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-14T19:00:19.850Z",
-      "type": "INFO",
-      "msg": "Account: $99876.45 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-14T19:00:20.748Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 43, actives 50, kept 23",
-      "detail": "BSP, LQDA, LEGN, HALO, NRIX, ESLT, AAPL, T, PFE, BTE"
-    },
-    {
-      "time": "2026-10-14T19:00:20.748Z",
-      "type": "INFO",
-      "msg": "Scanning 23 candidates",
-      "detail": "23 screener + 0 watchlist"
-    },
     {
       "time": "2026-10-14T19:00:30.216Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-10-16T17:40:53.774Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-16T17:51:06.114Z",
+      "type": "INFO",
+      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-16T17:51:06.773Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 41, actives 50, kept 20",
+      "detail": "PAYP, MTDR, CRGY, AAPL, F, VRNS, RIG, T, STLA, NKE"
+    },
+    {
+      "time": "2026-10-16T17:51:06.773Z",
+      "type": "INFO",
+      "msg": "Scanning 20 candidates",
+      "detail": "20 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-16T17:51:13.799Z",
+      "type": "INFO",
+      "msg": "Rejections (20)",
+      "detail": "PAYP: avgVol 0.6M < 1M  •  MTDR: relVol 0.5× < 2× (todayVol 0.7M)  •  CRGY: price $13.18 < $15  •  AAPL: gap 0.2% < 4% (price $342.65 vs priorClose $342.00)  •  F: price $12.56 < $15  •  VRNS: gap 2.8% < 4% (price $48.67 vs priorClose $47.34)  •  RIG: price $5.64 < $15  •  T: gap 0.4% < 4% (price $23.59 vs priorClose $23.50)  •  STLA: price $4.38 < $15  •  NKE: gap -0.0% < 4% (price $37.13 vs priorClose $37.14)  •  CDE: gap 0.4% < 4% (price $15.47 vs priorClose $15.41)  •  VALE: price $13.06 < $15"
+    },
+    {
+      "time": "2026-10-16T17:51:13.799Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-16T17:51:13.934Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "BSP, TLK, TWLO, FSLY, SLS, CRWV, DOCN, GRAL, NBIS, OKTA"
+    },
+    {
+      "time": "2026-10-16T17:51:26.973Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "BSP: net up over ~5d ($38.01→$48.01) — no short into uptrend  •  TLK: price $11.17 < $20 (short floor)  •  TWLO: relVol 0.6× < 2.5× (todayVol 2.7M)  •  FSLY: relVol 0.5× < 2.5× (todayVol 4.0M)  •  SLS: price $10.02 < $20 (short floor)  •  CRWV: relVol 1.6× < 2.5× (todayVol 59.7M)  •  DOCN: relVol 1.0× < 2.5× (todayVol 2.5M)  •  GRAL: relVol 0.5× < 2.5× (todayVol 0.6M)  •  NBIS: relVol 1.2× < 2.5× (todayVol 21.1M)  •  OKTA: relVol 1.3× < 2.5× (todayVol 4.7M)  •  VICR: relVol 1.1× < 2.5× (todayVol 1.1M)  •  FROG: relVol 1.3× < 2.5× (todayVol 2.1M)"
+    },
+    {
+      "time": "2026-10-16T17:51:26.973Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
