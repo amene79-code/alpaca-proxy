@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-19T19:40:04.714Z",
+  "lastRun": "2026-10-19T19:50:18.119Z",
   "log": [
-    {
-      "time": "2026-10-15T19:21:25.419Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "WULF, ERIC, RGC, IONQ, AUR, KRMN, APPN, KD, ARQT, Z"
-    },
-    {
-      "time": "2026-10-15T19:21:25.420Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-15T19:21:38.525Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "WULF: price $12.80 < $15  •  ERIC: price $10.60 < $15  •  RGC: price $9.96 < $15  •  IONQ: relVol 1.4× < 2× (todayVol 38.8M)  •  AUR: price $5.41 < $15  •  KRMN: relVol 0.9× < 2× (todayVol 3.3M)  •  APPN: avgVol 0.8M < 1M  •  KD: price $13.05 < $15  •  ARQT: relVol 0.8× < 2× (todayVol 2.5M)  •  Z: relVol 0.9× < 2× (todayVol 4.2M)  •  ZG: relVol 0.8× < 2× (todayVol 0.9M)  •  TRU: relVol 0.8× < 2× (todayVol 2.6M)"
-    },
     {
       "time": "2026-10-15T19:21:38.525Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-19T19:40:04.714Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-19T19:50:17.815Z",
+      "type": "INFO",
+      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-19T19:50:18.118Z",
+      "type": "INFO",
+      "msg": "EOD review (10 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-19T19:50:18.119Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
