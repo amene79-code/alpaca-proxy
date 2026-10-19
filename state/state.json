@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-19T19:50:18.119Z",
+  "lastRun": "2026-10-19T20:00:31.764Z",
   "log": [
-    {
-      "time": "2026-10-15T19:21:38.525Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-15T19:21:38.638Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "MAN, VICR, SMTC, PENG, LBRT, DELL, MTSI, IMOS, RKLB, FRO"
-    },
-    {
-      "time": "2026-10-15T19:21:52.656Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "MAN: avgVol 1.0M < 1M  •  VICR: relVol 1.5× < 2.5× (todayVol 1.5M)  •  SMTC: relVol 2.3× < 2.5× (todayVol 8.3M)  •  PENG: relVol 1.3× < 2.5× (todayVol 5.8M)  •  LBRT: price $16.60 < $20 (short floor)  •  DELL: relVol 1.8× < 2.5× (todayVol 12.9M)  •  MTSI: relVol 1.1× < 2.5× (todayVol 1.6M)  •  IMOS: avgVol 0.1M < 1M  •  RKLB: relVol 1.8× < 2.5× (todayVol 40.6M)  •  FRO: relVol 1.1× < 2.5× (todayVol 4.6M)  •  ECO: avgVol 0.9M < 1M  •  LSCC: relVol 1.2× < 2.5× (todayVol 2.2M)"
-    },
     {
       "time": "2026-10-15T19:21:52.656Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-10-19T19:50:18.119Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-19T20:00:31.379Z",
+      "type": "INFO",
+      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-19T20:00:31.426Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-19T20:00:31.763Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
