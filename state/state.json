@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-20T20:12:06.833Z",
+  "lastRun": "2026-10-20T20:22:21.042Z",
   "log": [
-    {
-      "time": "2026-10-16T19:05:26.420Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 44, actives 50, kept 19",
-      "detail": "PAYP, CRGY, MTDR, AR, FMX, MUR, NOG, F, VRNS, RIG"
-    },
-    {
-      "time": "2026-10-16T19:05:26.421Z",
-      "type": "INFO",
-      "msg": "Scanning 19 candidates",
-      "detail": "19 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-16T19:05:33.061Z",
-      "type": "INFO",
-      "msg": "Rejections (19)",
-      "detail": "PAYP: avgVol 0.6M < 1M  •  CRGY: price $13.31 < $15  •  MTDR: relVol 0.7× < 2× (todayVol 0.9M)  •  AR: relVol 0.7× < 2× (todayVol 2.8M)  •  FMX: avgVol 0.5M < 1M  •  MUR: relVol 0.5× < 2× (todayVol 0.8M)  •  NOG: relVol 0.5× < 2× (todayVol 0.9M)  •  F: price $12.44 < $15  •  VRNS: gap 2.9% < 4% (price $48.69 vs priorClose $47.34)  •  RIG: price $5.64 < $15  •  T: gap 0.4% < 4% (price $23.58 vs priorClose $23.50)  •  STLA: price $4.37 < $15"
-    },
     {
       "time": "2026-10-16T19:05:33.061Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-20T20:12:06.833Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-20T20:22:20.757Z",
+      "type": "INFO",
+      "msg": "Account: $99871.45 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-20T20:22:20.816Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-20T20:22:21.042Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
