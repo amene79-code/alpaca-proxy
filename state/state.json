@@ -3,7 +3,7 @@
     "RCUS": {
       "side": "long",
       "entry": 24.145000457763672,
-      "high": 24.145000457763672,
+      "high": 24.25,
       "low": 24.145000457763672,
       "initialSl": 23.89,
       "sl": 23.89,
@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-20T17:45:04.940Z",
+  "lastRun": "2026-10-20T17:55:42.055Z",
   "log": [
-    {
-      "time": "2026-10-15T23:15:22.296Z",
-      "type": "INFO",
-      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-15T23:15:22.306Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-15T23:15:22.468Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-16T17:08:54.686Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-16T17:08:54.909Z",
-      "type": "INFO",
-      "msg": "Account: $99876.41 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-16T17:08:55.842Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 32, actives 50, kept 18",
-      "detail": "PAYP, MTDR, CRGY, AR, AAPL, VRNS, F, T, RIG, NKE"
-    },
-    {
-      "time": "2026-10-16T17:08:55.842Z",
-      "type": "INFO",
-      "msg": "Scanning 18 candidates",
-      "detail": "18 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-16T17:09:02.205Z",
-      "type": "INFO",
-      "msg": "Rejections (18)",
-      "detail": "PAYP: avgVol 0.6M < 1M  •  MTDR: relVol 0.4× < 2× (todayVol 0.6M)  •  CRGY: price $13.19 < $15  •  AR: relVol 0.4× < 2× (todayVol 1.7M)  •  AAPL: gap 0.3% < 4% (price $343.05 vs priorClose $342.00)  •  VRNS: gap 2.9% < 4% (price $48.71 vs priorClose $47.34)  •  F: price $12.52 < $15  •  T: gap 0.3% < 4% (price $23.57 vs priorClose $23.50)  •  RIG: price $5.66 < $15  •  NKE: gap 0.3% < 4% (price $37.26 vs priorClose $37.14)  •  STLA: price $4.38 < $15  •  VALE: price $13.10 < $15"
-    },
     {
       "time": "2026-10-16T17:09:02.206Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-10-20T17:45:04.940Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-20T17:55:21.187Z",
+      "type": "INFO",
+      "msg": "Account: $99878.89 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-20T17:55:22.255Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BRZE, LION, BMNR, KVYO, TLK, EFX, SLS, HAS, SYRE, RCUS"
+    },
+    {
+      "time": "2026-10-20T17:55:22.255Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-20T17:55:36.086Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "BRZE: ATR 0.09% < 0.5%  •  LION: price $12.28 < $15  •  BMNR: relVol 0.7× < 2× (todayVol 20.3M)  •  KVYO: relVol 1.3× < 2× (todayVol 7.3M)  •  TLK: price $11.63 < $15  •  EFX: relVol 1.2× < 2× (todayVol 2.4M)  •  SLS: price $11.58 < $15  •  HAS: ATR 0.45% < 0.5%  •  SYRE: relVol 0.5× < 2× (todayVol 0.7M)  •  EQPT: relVol 0.5× < 2× (todayVol 1.9M)  •  SRPT: relVol 0.5× < 2× (todayVol 1.5M)  •  HSAI: price $14.07 < $15"
+    },
+    {
+      "time": "2026-10-20T17:55:36.086Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-20T17:55:36.223Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 48, kept 15",
+      "detail": "DPC, TSEM, MLI, GM, SE, AERO, HWM, LGN, DVA, BTU"
+    },
+    {
+      "time": "2026-10-20T17:55:42.054Z",
+      "type": "INFO",
+      "msg": "Short rejections (15)",
+      "detail": "DPC: relVol 0.5× < 2.5× (todayVol 0.7M)  •  TSEM: relVol 1.4× < 2.5× (todayVol 2.8M)  •  MLI: relVol 1.7× < 2.5× (todayVol 2.4M)  •  GM: relVol 1.9× < 2.5× (todayVol 13.8M)  •  SE: relVol 2.2× < 2.5× (todayVol 10.6M)  •  AERO: price $14.63 < $20 (short floor)  •  HWM: relVol 1.1× < 2.5× (todayVol 2.8M)  •  LGN: relVol 0.5× < 2.5× (todayVol 0.6M)  •  DVA: avgVol 0.6M < 1M  •  BTU: relVol 0.7× < 2.5× (todayVol 1.4M)  •  FIX: avgVol 0.3M < 1M  •  PTEN: price $11.52 < $20 (short floor)"
+    },
+    {
+      "time": "2026-10-20T17:55:42.054Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
