@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-21T20:20:17.481Z",
+  "lastRun": "2026-10-21T20:30:30.825Z",
   "log": [
-    {
-      "time": "2026-10-20T17:44:58.627Z",
-      "type": "INFO",
-      "msg": "Top signal: RCUS (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-20T17:44:58.627Z",
-      "type": "BUY",
-      "msg": "Placing 62× RCUS @ ~$24.15",
-      "detail": "gap 9.1% | risk $15.81 | SL $23.89 | TP $24.82 | R:R 2.6 | "
-    },
-    {
-      "time": "2026-10-20T17:44:58.823Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 62× RCUS",
-      "detail": "ID c0e608b8-015a-4b9e-a64f-61680bcda1d7 | R:R 2.6:1 | risk $15.81"
-    },
     {
       "time": "2026-10-20T17:44:59.474Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-21T20:20:17.481Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-21T20:30:30.561Z",
+      "type": "INFO",
+      "msg": "Account: $99871.40 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-21T20:30:30.607Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-21T20:30:30.824Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
