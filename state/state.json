@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-22T19:58:46.144Z",
+  "lastRun": "2026-10-22T20:09:05.806Z",
   "log": [
-    {
-      "time": "2026-10-21T18:13:56.980Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 28",
-      "detail": "RCUS, TLX, TAL, WING, TDS, LAD, T, CLMT, GRDN, HSAI"
-    },
-    {
-      "time": "2026-10-21T18:14:06.861Z",
-      "type": "INFO",
-      "msg": "Short rejections (28)",
-      "detail": "RCUS: price $19.74 < $20 (short floor)  •  TLX: price $10.07 < $20 (short floor)  •  TAL: price $10.59 < $20 (short floor)  •  WING: relVol 0.5× < 2.5× (todayVol 0.6M)  •  TDS: relVol 0.5× < 2.5× (todayVol 0.9M)  •  LAD: avgVol 0.3M < 1M  •  T: relVol 1.2× < 2.5× (todayVol 54.6M)  •  CLMT: relVol 0.7× < 2.5× (todayVol 1.0M)  •  GRDN: avgVol 0.5M < 1M  •  HSAI: price $13.20 < $20 (short floor)  •  GPI: avgVol 0.3M < 1M  •  MHO: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-10-21T18:14:06.861Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-10-21T18:24:22.563Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-10-22T19:58:46.144Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T20:09:05.418Z",
+      "type": "INFO",
+      "msg": "Account: $99855.33 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T20:09:05.427Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T20:09:05.806Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
