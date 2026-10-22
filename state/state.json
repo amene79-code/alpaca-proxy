@@ -4,7 +4,7 @@
       "side": "short",
       "entry": 72.75,
       "high": 72.75,
-      "low": 72.75,
+      "low": 72.24,
       "initialSl": 73.25,
       "sl": 73.25,
       "tp": 71.25,
@@ -95,56 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-22T17:50:33.763Z",
+  "lastRun": "2026-10-22T18:01:19.221Z",
   "log": [
-    {
-      "time": "2026-10-20T18:06:20.673Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-20T18:16:32.942Z",
-      "type": "INFO",
-      "msg": "Account: $99877.65 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-20T18:16:33.599Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BRZE, LION, KVYO, SLS, BMNR, TLK, SRPT, EFX, HAS, SPHR"
-    },
-    {
-      "time": "2026-10-20T18:16:33.599Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-20T18:16:46.092Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "BRZE: ATR 0.08% < 0.5%  •  LION: price $12.24 < $15  •  KVYO: relVol 1.4× < 2× (todayVol 7.5M)  •  SLS: price $11.74 < $15  •  BMNR: relVol 0.7× < 2× (todayVol 21.1M)  •  TLK: price $11.64 < $15  •  SRPT: relVol 0.5× < 2× (todayVol 1.6M)  •  EFX: relVol 1.2× < 2× (todayVol 2.5M)  •  HAS: ATR 0.43% < 0.5%  •  SPHR: avgVol 1.0M < 1M  •  SYRE: relVol 0.6× < 2× (todayVol 0.8M)  •  EQPT: relVol 0.5× < 2× (todayVol 2.0M)"
-    },
-    {
-      "time": "2026-10-20T18:16:46.092Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-20T18:16:46.214Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 42, kept 14",
-      "detail": "DPC, MLI, GM, SE, AERO, TSEM, DVA, LGN, HWM, BTU"
-    },
-    {
-      "time": "2026-10-20T18:16:50.906Z",
-      "type": "INFO",
-      "msg": "Short rejections (14)",
-      "detail": "DPC: relVol 0.6× < 2.5× (todayVol 0.8M)  •  MLI: relVol 1.8× < 2.5× (todayVol 2.5M)  •  GM: relVol 2.0× < 2.5× (todayVol 14.6M)  •  SE: relVol 2.3× < 2.5× (todayVol 11.1M)  •  AERO: price $14.65 < $20 (short floor)  •  TSEM: relVol 1.5× < 2.5× (todayVol 2.9M)  •  DVA: avgVol 0.6M < 1M  •  LGN: relVol 0.5× < 2.5× (todayVol 0.6M)  •  HWM: relVol 1.2× < 2.5× (todayVol 3.0M)  •  BTU: relVol 0.8× < 2.5× (todayVol 1.4M)  •  FIX: avgVol 0.3M < 1M  •  MWH: relVol 0.9× < 2.5× (todayVol 1.2M)"
-    },
     {
       "time": "2026-10-20T18:16:50.906Z",
       "type": "INFO",
@@ -1296,6 +1248,54 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 42× FPS",
       "detail": "ID 1fea1d94-dc81-4caa-a3e9-829af76af8ba | R:R 3.1:1 | risk $7.56 | real bracket stop @ $23.76"
+    },
+    {
+      "time": "2026-10-22T18:00:48.945Z",
+      "type": "INFO",
+      "msg": "Account: $99873.05 | 2 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T18:00:49.762Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "BHVN, KSS, RKT, CNXC, Z, WCN, SPOT, POOL, ZG, ROP"
+    },
+    {
+      "time": "2026-10-22T18:00:49.762Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-22T18:01:04.974Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "BHVN: price $14.76 < $15  •  KSS: relVol 1.2× < 2× (todayVol 5.2M)  •  RKT: price $11.79 < $15  •  CNXC: relVol 0.3× < 2× (todayVol 0.6M)  •  Z: relVol 0.7× < 2× (todayVol 3.2M)  •  WCN: relVol 1.7× < 2× (todayVol 3.2M)  •  SPOT: below opening-range high (price $579.10 < ORH $588.88, 55 today-candles)  •  POOL: avgVol 0.8M < 1M  •  ZG: relVol 0.5× < 2× (todayVol 0.6M)  •  ROP: avgVol 0.7M < 1M  •  BOBS: avgVol 0.7M < 1M  •  ALLE: relVol 1.2× < 2× (todayVol 1.2M)"
+    },
+    {
+      "time": "2026-10-22T18:01:04.974Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T18:01:05.131Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "TTMI, MRNA, FPS, CRS, OII, SIMO, COHU, SEI, VICR, GGG"
+    },
+    {
+      "time": "2026-10-22T18:01:19.221Z",
+      "type": "INFO",
+      "msg": "Short rejections (38)",
+      "detail": "MRNA: relVol 1.5× < 2.5× (todayVol 28.5M)  •  CRS: avgVol 0.7M < 1M  •  OII: avgVol 0.8M < 1M  •  SIMO: avgVol 0.7M < 1M  •  COHU: relVol 1.2× < 2.5× (todayVol 1.4M)  •  SEI: relVol 0.7× < 2.5× (todayVol 2.1M)  •  VICR: relVol 0.7× < 2.5× (todayVol 0.8M)  •  GGG: relVol 1.7× < 2.5× (todayVol 2.6M)  •  VIAV: relVol 0.7× < 2.5× (todayVol 3.7M)  •  FORM: relVol 0.4× < 2.5× (todayVol 0.8M)  •  MSM: avgVol 0.8M < 1M  •  FCFS: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-10-22T18:01:19.221Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [],
