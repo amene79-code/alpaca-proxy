@@ -70,20 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-22T19:48:23.215Z",
+  "lastRun": "2026-10-22T19:58:46.144Z",
   "log": [
-    {
-      "time": "2026-10-21T18:13:56.831Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "ASST: relVol 1.1× < 2× (todayVol 9.4M)  •  APLD: relVol 0.7× < 2× (todayVol 18.4M)  •  SMCI: relVol 1.8× < 2× (todayVol 62.7M)  •  SKYD: price $7.72 < $15  •  MSTR: relVol 0.8× < 2× (todayVol 14.4M)  •  WULF: price $12.95 < $15  •  BMNR: relVol 0.8× < 2× (todayVol 23.3M)  •  MARA: price $7.97 < $15  •  SPCX: relVol 1.9× < 2× (todayVol 170.1M)  •  INOD: relVol 0.6× < 2× (todayVol 0.7M)  •  SEI: relVol 0.7× < 2× (todayVol 2.0M)  •  CDLR: avgVol 0.1M < 1M"
-    },
-    {
-      "time": "2026-10-21T18:13:56.831Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-10-21T18:13:56.980Z",
       "type": "INFO",
@@ -1268,6 +1256,18 @@
     },
     {
       "time": "2026-10-22T19:48:23.215Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T19:58:45.713Z",
+      "type": "INFO",
+      "msg": "Account: $99855.33 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T19:58:46.144Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
