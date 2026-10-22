@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-22T19:27:52.579Z",
+  "lastRun": "2026-10-22T19:38:09.822Z",
   "log": [
-    {
-      "time": "2026-10-21T18:03:15.811Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 31",
-      "detail": "RCUS, TLX, TAL, WING, TDS, LAD, T, CLMT, GPI, DXCM"
-    },
-    {
-      "time": "2026-10-21T18:03:25.766Z",
-      "type": "INFO",
-      "msg": "Short rejections (31)",
-      "detail": "RCUS: relVol 1.2× < 2.5× (todayVol 2.0M)  •  TLX: price $10.06 < $20 (short floor)  •  TAL: price $10.59 < $20 (short floor)  •  WING: relVol 0.5× < 2.5× (todayVol 0.6M)  •  TDS: relVol 0.5× < 2.5× (todayVol 0.9M)  •  LAD: avgVol 0.3M < 1M  •  T: relVol 1.2× < 2.5× (todayVol 53.7M)  •  CLMT: relVol 0.7× < 2.5× (todayVol 0.9M)  •  GPI: avgVol 0.3M < 1M  •  DXCM: relVol 1.2× < 2.5× (todayVol 3.8M)  •  GRDN: avgVol 0.5M < 1M  •  DY: avgVol 0.6M < 1M"
-    },
-    {
-      "time": "2026-10-21T18:03:25.766Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-10-21T18:13:41.690Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-10-22T19:27:52.579Z",
       "type": "INFO",
       "msg": "SKIP FPS — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T19:38:09.320Z",
+      "type": "INFO",
+      "msg": "Account: $99855.33 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T19:38:09.821Z",
+      "type": "INFO",
+      "msg": "EOD review (22 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-22T19:38:09.822Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
