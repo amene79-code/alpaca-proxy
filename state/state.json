@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-23T19:06:14.079Z",
+  "lastRun": "2026-10-23T19:16:56.414Z",
   "log": [
-    {
-      "time": "2026-10-22T18:00:48.945Z",
-      "type": "INFO",
-      "msg": "Account: $99873.05 | 2 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-22T18:00:49.762Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BHVN, KSS, RKT, CNXC, Z, WCN, SPOT, POOL, ZG, ROP"
-    },
-    {
-      "time": "2026-10-22T18:00:49.762Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-22T18:01:04.974Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "BHVN: price $14.76 < $15  •  KSS: relVol 1.2× < 2× (todayVol 5.2M)  •  RKT: price $11.79 < $15  •  CNXC: relVol 0.3× < 2× (todayVol 0.6M)  •  Z: relVol 0.7× < 2× (todayVol 3.2M)  •  WCN: relVol 1.7× < 2× (todayVol 3.2M)  •  SPOT: below opening-range high (price $579.10 < ORH $588.88, 55 today-candles)  •  POOL: avgVol 0.8M < 1M  •  ZG: relVol 0.5× < 2× (todayVol 0.6M)  •  ROP: avgVol 0.7M < 1M  •  BOBS: avgVol 0.7M < 1M  •  ALLE: relVol 1.2× < 2× (todayVol 1.2M)"
-    },
-    {
-      "time": "2026-10-22T18:01:04.974Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-22T18:01:05.131Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "TTMI, MRNA, FPS, CRS, OII, SIMO, COHU, SEI, VICR, GGG"
-    },
-    {
-      "time": "2026-10-22T18:01:19.221Z",
-      "type": "INFO",
-      "msg": "Short rejections (38)",
-      "detail": "MRNA: relVol 1.5× < 2.5× (todayVol 28.5M)  •  CRS: avgVol 0.7M < 1M  •  OII: avgVol 0.8M < 1M  •  SIMO: avgVol 0.7M < 1M  •  COHU: relVol 1.2× < 2.5× (todayVol 1.4M)  •  SEI: relVol 0.7× < 2.5× (todayVol 2.1M)  •  VICR: relVol 0.7× < 2.5× (todayVol 0.8M)  •  GGG: relVol 1.7× < 2.5× (todayVol 2.6M)  •  VIAV: relVol 0.7× < 2.5× (todayVol 3.7M)  •  FORM: relVol 0.4× < 2.5× (todayVol 0.8M)  •  MSM: avgVol 0.8M < 1M  •  FCFS: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-10-22T18:01:19.221Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-22T18:11:43.022Z",
-      "type": "INFO",
-      "msg": "Account: $99863.07 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-22T18:11:44.218Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BHVN, KSS, CNXC, RKT, SPOT, WCN, Z, ROP, ZG, POOL"
-    },
     {
       "time": "2026-10-22T18:11:44.218Z",
       "type": "INFO",
@@ -1268,6 +1208,66 @@
     },
     {
       "time": "2026-10-23T19:06:14.079Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T19:16:26.385Z",
+      "type": "INFO",
+      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T19:16:27.148Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RHI, CLF, RIG, GMAB, FCNCA, VG, SAIL, ZLAB, TTMI, NTSK"
+    },
+    {
+      "time": "2026-10-23T19:16:27.148Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-23T19:16:27.376Z",
+      "type": "SIGNAL",
+      "msg": "RHI — score 9 | gap 22.3% | relVol 2.3× | RSI 46",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T19:16:41.681Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "CLF: price $14.02 < $15  •  RIG: price $6.45 < $15  •  GMAB: relVol 2.0× < 2× (todayVol 9.3M)  •  FCNCA: avgVol 0.1M < 1M  •  VG: price $13.96 < $15  •  SAIL: relVol 0.9× < 2× (todayVol 4.3M)  •  ZLAB: avgVol 0.9M < 1M  •  TTMI: relVol 1.5× < 2× (todayVol 6.2M)  •  NTSK: relVol 0.9× < 2× (todayVol 5.8M)  •  CCI: below VWAP (price $85.58 < VWAP $87.37)  •  CUBI: avgVol 0.3M < 1M  •  NE: relVol 1.1× < 2× (todayVol 1.2M)"
+    },
+    {
+      "time": "2026-10-23T19:16:41.681Z",
+      "type": "INFO",
+      "msg": "Top signal: RHI (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T19:16:41.681Z",
+      "type": "INFO",
+      "msg": "SKIP RHI — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T19:16:41.834Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "LKQ, CORT, RGC, TNGX, BE, PBLS, NAMS, FLG, SLM, FIX"
+    },
+    {
+      "time": "2026-10-23T19:16:56.413Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "LKQ: price $17.57 < $20 (short floor)  •  CORT: avgVol 0.8M < 1M  •  RGC: price $7.89 < $20 (short floor)  •  TNGX: net up over ~5d ($22.04→$23.18) — no short into uptrend  •  BE: relVol 2.1× < 2.5× (todayVol 31.2M)  •  PBLS: net up over ~5d ($22.75→$24.09) — no short into uptrend  •  NAMS: price $19.37 < $20 (short floor)  •  FLG: price $10.38 < $20 (short floor)  •  SLM: price $19.78 < $20 (short floor)  •  FIX: avgVol 0.4M < 1M  •  CRDO: relVol 1.2× < 2.5× (todayVol 10.6M)  •  GPGI: price $11.48 < $20 (short floor)"
+    },
+    {
+      "time": "2026-10-23T19:16:56.413Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
