@@ -70,68 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-23T18:44:47.906Z",
+  "lastRun": "2026-10-23T18:55:32.527Z",
   "log": [
-    {
-      "time": "2026-10-21T20:30:30.607Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-21T20:30:30.824Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-21T21:11:45.275Z",
-      "type": "INFO",
-      "msg": "Account: $99871.40 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-21T21:11:45.303Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-21T21:11:45.536Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-22T17:49:58.657Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-22T17:49:58.813Z",
-      "type": "INFO",
-      "msg": "Account: $99871.40 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-22T17:49:59.382Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "BHVN, KSS, RKT, POOL, Z, WCN, SPOT, ZG, ALLE, ROP"
-    },
-    {
-      "time": "2026-10-22T17:49:59.382Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-22T17:50:17.585Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "BHVN: price $14.85 < $15  •  KSS: relVol 1.2× < 2× (todayVol 5.0M)  •  RKT: price $11.81 < $15  •  POOL: avgVol 0.8M < 1M  •  Z: relVol 0.7× < 2× (todayVol 3.1M)  •  WCN: relVol 1.6× < 2× (todayVol 3.1M)  •  SPOT: below opening-range high (price $577.51 < ORH $588.88, 53 today-candles)  •  ZG: relVol 0.5× < 2× (todayVol 0.6M)  •  ALLE: relVol 1.2× < 2× (todayVol 1.2M)  •  ROP: avgVol 0.7M < 1M  •  BOBS: avgVol 0.7M < 1M  •  CNXC: relVol 0.3× < 2× (todayVol 0.5M)"
-    },
     {
       "time": "2026-10-22T17:50:17.585Z",
       "type": "INFO",
@@ -1268,6 +1208,66 @@
     },
     {
       "time": "2026-10-23T18:44:47.906Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T18:55:04.032Z",
+      "type": "INFO",
+      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T18:55:04.655Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "RHI, CLF, RIG, CCI, GMAB, FCNCA, CUBI, ZLAB, SAIL, HSAI"
+    },
+    {
+      "time": "2026-10-23T18:55:04.655Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-23T18:55:04.860Z",
+      "type": "SIGNAL",
+      "msg": "RHI — score 9 | gap 22.3% | relVol 2.1× | RSI 53",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T18:55:19.320Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "CLF: price $13.95 < $15  •  RIG: price $6.48 < $15  •  CCI: below VWAP (price $86.87 < VWAP $87.63)  •  GMAB: relVol 1.8× < 2× (todayVol 8.6M)  •  FCNCA: avgVol 0.1M < 1M  •  CUBI: avgVol 0.3M < 1M  •  ZLAB: avgVol 0.9M < 1M  •  SAIL: relVol 0.9× < 2× (todayVol 4.2M)  •  HSAI: price $13.19 < $15  •  NE: relVol 1.1× < 2× (todayVol 1.2M)  •  TTMI: relVol 1.5× < 2× (todayVol 5.8M)  •  VG: price $13.89 < $15"
+    },
+    {
+      "time": "2026-10-23T18:55:19.320Z",
+      "type": "INFO",
+      "msg": "Top signal: RHI (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T18:55:19.320Z",
+      "type": "INFO",
+      "msg": "SKIP RHI — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T18:55:19.426Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "LKQ, RGC, CORT, TNGX, BE, NAMS, PBLS, FLG, SLM, GPGI"
+    },
+    {
+      "time": "2026-10-23T18:55:32.527Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "LKQ: price $17.64 < $20 (short floor)  •  RGC: price $7.85 < $20 (short floor)  •  CORT: avgVol 0.8M < 1M  •  TNGX: net up over ~5d ($22.04→$23.81) — no short into uptrend  •  BE: relVol 2.0× < 2.5× (todayVol 30.1M)  •  NAMS: price $19.35 < $20 (short floor)  •  PBLS: net up over ~5d ($22.75→$24.21) — no short into uptrend  •  FLG: price $10.32 < $20 (short floor)  •  SLM: price $19.68 < $20 (short floor)  •  GPGI: price $11.45 < $20 (short floor)  •  FIX: avgVol 0.4M < 1M  •  CRDO: relVol 1.2× < 2.5× (todayVol 10.2M)"
+    },
+    {
+      "time": "2026-10-23T18:55:32.527Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
