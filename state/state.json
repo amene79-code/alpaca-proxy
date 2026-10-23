@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-23T19:27:51.546Z",
+  "lastRun": "2026-10-23T19:38:05.514Z",
   "log": [
-    {
-      "time": "2026-10-22T18:22:27.952Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-22T18:22:44.998Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "BHVN: price $14.72 < $15  •  KSS: relVol 1.3× < 2× (todayVol 5.5M)  •  RKT: price $11.84 < $15  •  CNXC: relVol 0.4× < 2× (todayVol 0.7M)  •  SPOT: below opening-range high (price $582.98 < ORH $588.88, 60 today-candles)  •  WCN: relVol 1.7× < 2× (todayVol 3.3M)  •  POOL: avgVol 0.8M < 1M  •  Z: relVol 0.7× < 2× (todayVol 3.4M)  •  BMI: avgVol 0.4M < 1M  •  ZG: relVol 0.6× < 2× (todayVol 0.6M)  •  ROP: avgVol 0.7M < 1M  •  RTO: relVol 1.5× < 2× (todayVol 3.2M)"
-    },
-    {
-      "time": "2026-10-22T18:22:44.998Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-10-22T18:22:45.180Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-10-23T19:27:51.546Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T19:38:05.249Z",
+      "type": "INFO",
+      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T19:38:05.514Z",
+      "type": "INFO",
+      "msg": "EOD review (22 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T19:38:05.514Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
