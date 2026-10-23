@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-23T20:19:05.098Z",
+  "lastRun": "2026-10-23T20:29:18.521Z",
   "log": [
-    {
-      "time": "2026-10-22T18:33:46.128Z",
-      "type": "SIGNAL",
-      "msg": "FPS — SHORT score 8 | gap -25.3% | relVol 3.4× | RSI 49",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-22T18:34:01.727Z",
-      "type": "INFO",
-      "msg": "Short rejections (38)",
-      "detail": "MRNA: relVol 1.7× < 2.5× (todayVol 32.5M)  •  CRS: avgVol 0.8M < 1M  •  OII: avgVol 0.8M < 1M  •  COHU: relVol 1.3× < 2.5× (todayVol 1.4M)  •  VICR: relVol 0.8× < 2.5× (todayVol 0.9M)  •  SEI: relVol 0.8× < 2.5× (todayVol 2.4M)  •  GGG: relVol 2.0× < 2.5× (todayVol 3.1M)  •  UCTT: relVol 1.0× < 2.5× (todayVol 1.3M)  •  VIAV: relVol 0.8× < 2.5× (todayVol 4.2M)  •  SIMO: avgVol 0.7M < 1M  •  NOK: price $7.88 < $20 (short floor)  •  MTSI: relVol 0.7× < 2.5× (todayVol 0.9M)"
-    },
-    {
-      "time": "2026-10-22T18:34:01.727Z",
-      "type": "INFO",
-      "msg": "Top short: FPS (score 8)",
-      "detail": ""
-    },
     {
       "time": "2026-10-22T18:34:01.727Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-23T20:19:05.098Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T20:29:18.250Z",
+      "type": "INFO",
+      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T20:29:18.295Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-23T20:29:18.521Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
