@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-27T20:06:57.024Z",
+  "lastRun": "2026-10-27T20:17:11.844Z",
   "log": [
-    {
-      "time": "2026-10-23T18:23:10.075Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T18:23:10.166Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "LKQ, CORT, RGC, TNGX, BE, SLM, PBLS, NAMS, FLG, FIX"
-    },
-    {
-      "time": "2026-10-23T18:23:22.622Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "LKQ: price $17.75 < $20 (short floor)  •  CORT: avgVol 0.8M < 1M  •  RGC: price $8.14 < $20 (short floor)  •  TNGX: net up over ~5d ($22.04→$23.92) — no short into uptrend  •  BE: relVol 1.9× < 2.5× (todayVol 27.7M)  •  SLM: price $19.43 < $20 (short floor)  •  PBLS: net up over ~5d ($22.75→$24.15) — no short into uptrend  •  NAMS: price $19.57 < $20 (short floor)  •  FLG: price $10.40 < $20 (short floor)  •  FIX: avgVol 0.4M < 1M  •  GPGI: price $11.52 < $20 (short floor)  •  CRDO: relVol 1.2× < 2.5× (todayVol 9.8M)"
-    },
     {
       "time": "2026-10-23T18:23:22.622Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-27T20:06:57.024Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-27T20:17:11.372Z",
+      "type": "INFO",
+      "msg": "Account: $99834.60 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-27T20:17:11.432Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-27T20:17:11.844Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
