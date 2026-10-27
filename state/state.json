@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-27T19:25:52.305Z",
+  "lastRun": "2026-10-27T19:36:12.375Z",
   "log": [
-    {
-      "time": "2026-10-23T18:12:08.613Z",
-      "type": "INFO",
-      "msg": "Account: $99855.28 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T18:12:09.593Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "RHI, RIG, CLF, CCI, SAIL, FSLY, GMAB, FCNCA, NE, NTSK"
-    },
-    {
-      "time": "2026-10-23T18:12:09.593Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-10-23T18:12:26.067Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-10-27T19:25:52.305Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-27T19:36:12.125Z",
+      "type": "INFO",
+      "msg": "Account: $99834.60 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-27T19:36:12.374Z",
+      "type": "INFO",
+      "msg": "EOD review (24 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-27T19:36:12.375Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
