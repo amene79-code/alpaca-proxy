@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-27T19:46:25.286Z",
+  "lastRun": "2026-10-27T19:56:41.983Z",
   "log": [
-    {
-      "time": "2026-10-23T18:12:42.917Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "LKQ: price $17.75 < $20 (short floor)  •  CORT: avgVol 0.8M < 1M  •  RGC: price $8.21 < $20 (short floor)  •  TNGX: net up over ~5d ($22.04→$24.00) — no short into uptrend  •  BE: relVol 1.8× < 2.5× (todayVol 27.0M)  •  SLM: price $19.43 < $20 (short floor)  •  PBLS: net up over ~5d ($22.75→$24.10) — no short into uptrend  •  FLG: price $10.37 < $20 (short floor)  •  NAMS: price $19.61 < $20 (short floor)  •  FIX: avgVol 0.4M < 1M  •  GPGI: price $11.49 < $20 (short floor)  •  CRDO: relVol 1.1× < 2.5× (todayVol 9.7M)"
-    },
-    {
-      "time": "2026-10-23T18:12:42.917Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T18:22:56.054Z",
-      "type": "INFO",
-      "msg": "Account: $99855.28 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-10-23T18:22:56.793Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-27T19:46:25.286Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-27T19:56:41.364Z",
+      "type": "INFO",
+      "msg": "Account: $99834.60 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-27T19:56:41.982Z",
+      "type": "INFO",
+      "msg": "EOD review (4 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-27T19:56:41.983Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
