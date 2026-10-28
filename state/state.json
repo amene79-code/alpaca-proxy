@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-28T19:53:00.455Z",
+  "lastRun": "2026-10-28T20:03:40.625Z",
   "log": [
-    {
-      "time": "2026-10-26T19:00:04.313Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-26T19:00:04.553Z",
-      "type": "INFO",
-      "msg": "Account: $99838.27 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-26T19:00:05.515Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SGRY, RRC, NN, XNCR, WULF, NOK, INIO, VICR, ORKA, TSLA"
-    },
     {
       "time": "2026-10-26T19:00:05.515Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-10-28T19:53:00.455Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T20:03:38.464Z",
+      "type": "INFO",
+      "msg": "Account: $99734.41 | 0 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T20:03:38.475Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T20:03:40.625Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
