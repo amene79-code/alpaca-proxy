@@ -1,7 +1,32 @@
 {
-  "trailingStops": {},
-  "dailyTrades": 0,
-  "dailyDate": "2026-10-27",
+  "trailingStops": {
+    "AXGN": {
+      "side": "long",
+      "entry": 49.810001373291016,
+      "high": 49.810001373291016,
+      "low": 49.810001373291016,
+      "initialSl": 49.31,
+      "sl": 49.31,
+      "tp": 51.14,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "WING": {
+      "side": "long",
+      "entry": 139.11000061035156,
+      "high": 139.11000061035156,
+      "low": 139.11000061035156,
+      "initialSl": 137.55,
+      "sl": 137.55,
+      "tp": 143.27,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
+  "dailyTrades": 2,
+  "dailyDate": "2026-10-28",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,98 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-27T22:34:31.017Z",
+  "lastRun": "2026-10-28T18:38:34.297Z",
   "log": [
-    {
-      "time": "2026-10-23T18:33:52.435Z",
-      "type": "INFO",
-      "msg": "Top signal: RHI (score 11)",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T18:33:52.435Z",
-      "type": "BUY",
-      "msg": "Placing 32× RHI @ ~$46.61",
-      "detail": "gap 23.7% | risk $12.50 | SL $46.22 | TP $47.66 | R:R 2.7 | Bullish Engulfing"
-    },
-    {
-      "time": "2026-10-23T18:33:52.577Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 32× RHI",
-      "detail": "ID 9b2f200a-1a71-4339-b948-4c71d30ab515 | R:R 2.7:1 | risk $12.50"
-    },
-    {
-      "time": "2026-10-23T18:33:53.248Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "LKQ, RGC, CORT, TNGX, BE, SLM, PBLS, NAMS, FLG, FIX"
-    },
-    {
-      "time": "2026-10-23T18:34:09.187Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "LKQ: price $17.69 < $20 (short floor)  •  RGC: price $7.91 < $20 (short floor)  •  CORT: avgVol 0.8M < 1M  •  TNGX: net up over ~5d ($22.04→$23.70) — no short into uptrend  •  BE: relVol 1.9× < 2.5× (todayVol 28.7M)  •  SLM: price $19.50 < $20 (short floor)  •  PBLS: net up over ~5d ($22.75→$24.16) — no short into uptrend  •  NAMS: price $19.41 < $20 (short floor)  •  FLG: price $10.40 < $20 (short floor)  •  FIX: avgVol 0.4M < 1M  •  GPGI: price $11.55 < $20 (short floor)  •  CRDO: relVol 1.2× < 2.5× (todayVol 9.9M)"
-    },
-    {
-      "time": "2026-10-23T18:34:09.188Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T18:44:21.436Z",
-      "type": "INFO",
-      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T18:44:22.073Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "RHI, CLF, RIG, ZLAB, CCI, FCNCA, FSLY, CUBI, SAIL, NE"
-    },
-    {
-      "time": "2026-10-23T18:44:22.073Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-23T18:44:22.288Z",
-      "type": "SIGNAL",
-      "msg": "RHI — score 8 | gap 20.8% | relVol 2.1× | RSI 47",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T18:44:35.050Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "CLF: price $14.02 < $15  •  RIG: price $6.47 < $15  •  ZLAB: avgVol 0.9M < 1M  •  CCI: below VWAP (price $86.72 < VWAP $87.75)  •  FCNCA: avgVol 0.1M < 1M  •  FSLY: relVol 0.5× < 2× (todayVol 2.6M)  •  CUBI: avgVol 0.3M < 1M  •  SAIL: relVol 0.9× < 2× (todayVol 4.1M)  •  NE: relVol 1.1× < 2× (todayVol 1.2M)  •  HSAI: price $13.16 < $15  •  GMAB: relVol 1.8× < 2× (todayVol 8.5M)  •  TTMI: relVol 1.4× < 2× (todayVol 5.7M)"
-    },
-    {
-      "time": "2026-10-23T18:44:35.050Z",
-      "type": "INFO",
-      "msg": "Top signal: RHI (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T18:44:35.050Z",
-      "type": "INFO",
-      "msg": "SKIP RHI — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T18:44:35.171Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "LKQ, CORT, RGC, TNGX, BE, NAMS, PBLS, SLM, FLG, FIX"
-    },
-    {
-      "time": "2026-10-23T18:44:47.906Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "LKQ: price $17.65 < $20 (short floor)  •  CORT: avgVol 0.8M < 1M  •  RGC: price $7.84 < $20 (short floor)  •  TNGX: net up over ~5d ($22.04→$23.55) — no short into uptrend  •  BE: relVol 2.0× < 2.5× (todayVol 29.3M)  •  NAMS: price $19.17 < $20 (short floor)  •  PBLS: net up over ~5d ($22.75→$24.08) — no short into uptrend  •  SLM: price $19.66 < $20 (short floor)  •  FLG: price $10.37 < $20 (short floor)  •  FIX: avgVol 0.4M < 1M  •  CRDO: relVol 1.2× < 2.5× (todayVol 10.1M)  •  GPGI: price $11.52 < $20 (short floor)"
-    },
     {
       "time": "2026-10-23T18:44:47.906Z",
       "type": "INFO",
@@ -1271,9 +1206,102 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:38:01.257Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:38:01.510Z",
+      "type": "INFO",
+      "msg": "Account: $99834.60 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:38:02.914Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "GMAB, SKHY, ORCL, AXGN, VRT, BEAM, EAT, SDGR, ADT, EVR"
+    },
+    {
+      "time": "2026-10-28T18:38:02.914Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-28T18:38:04.319Z",
+      "type": "SIGNAL",
+      "msg": "AXGN — score 12 | gap 33.0% | relVol 3.9× | RSI 88",
+      "detail": "Volume Breakout"
+    },
+    {
+      "time": "2026-10-28T18:38:07.010Z",
+      "type": "SIGNAL",
+      "msg": "WING — score 8 | gap 12.6% | relVol 2.2× | RSI 46",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:38:18.008Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "GMAB: RSI 92 > 88  •  SKHY: relVol 1.9× < 2× (todayVol 38.7M)  •  ORCL: relVol 1.2× < 2× (todayVol 33.0M)  •  VRT: RSI 91 > 88  •  BEAM: relVol 1.9× < 2× (todayVol 3.4M)  •  EAT: relVol 1.9× < 2× (todayVol 2.5M)  •  SDGR: relVol 0.9× < 2× (todayVol 2.3M)  •  ADT: price $7.45 < $15  •  EVR: avgVol 0.6M < 1M  •  FLEX: relVol 1.6× < 2× (todayVol 8.9M)  •  HAYW: price $14.56 < $15  •  CRWV: relVol 0.6× < 2× (todayVol 36.5M)"
+    },
+    {
+      "time": "2026-10-28T18:38:18.008Z",
+      "type": "INFO",
+      "msg": "Top signal: AXGN (score 12)",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:38:18.008Z",
+      "type": "BUY",
+      "msg": "Placing 30× AXGN @ ~$49.81",
+      "detail": "gap 33.0% | risk $15.00 | SL $49.31 | TP $51.14 | R:R 2.7 | Volume Breakout"
+    },
+    {
+      "time": "2026-10-28T18:38:18.195Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 30× AXGN",
+      "detail": "ID ae045e31-0341-404d-a7bf-c702c4f047b4 | R:R 2.7:1 | risk $15.00"
+    },
+    {
+      "time": "2026-10-28T18:38:18.696Z",
+      "type": "BUY",
+      "msg": "Placing 10× WING @ ~$139.11",
+      "detail": "gap 12.6% | risk $15.60 | SL $137.55 | TP $143.27 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-10-28T18:38:18.752Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 10× WING",
+      "detail": "ID 914ebd0e-50a7-49d7-ba97-5a65cf104cce | R:R 2.7:1 | risk $15.60"
+    },
+    {
+      "time": "2026-10-28T18:38:19.420Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "FFIV, LSTR, ENPH, SLS, CSGP, LPLA, EDU, LOGI, ZWS, CHRW"
+    },
+    {
+      "time": "2026-10-28T18:38:34.296Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "FFIV: avgVol 0.7M < 1M  •  LSTR: avgVol 0.3M < 1M  •  ENPH: above opening-range low (price $24.91 > ORL $23.83)  •  SLS: price $10.45 < $20 (short floor)  •  CSGP: relVol 2.0× < 2.5× (todayVol 11.6M)  •  LPLA: avgVol 0.9M < 1M  •  EDU: avgVol 0.7M < 1M  •  LOGI: relVol 2.1× < 2.5× (todayVol 2.2M)  •  ZWS: avgVol 0.9M < 1M  •  CHRW: relVol 1.1× < 2.5× (todayVol 2.4M)  •  LII: avgVol 0.6M < 1M  •  RUSHB: avgVol 0.1M < 1M"
+    },
+    {
+      "time": "2026-10-28T18:38:34.297Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
-  "tradedToday": [],
+  "tradedToday": [
+    "AXGN",
+    "WING"
+  ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
 }
