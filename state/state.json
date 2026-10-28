@@ -3,7 +3,7 @@
     "VRT": {
       "side": "long",
       "entry": 243.6649932861328,
-      "high": 244.73,
+      "high": 244.75,
       "low": 243.6649932861328,
       "initialSl": 241.36,
       "sl": 241.36,
@@ -11,9 +11,21 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": false
+    },
+    "EAT": {
+      "side": "long",
+      "entry": 222,
+      "high": 222,
+      "low": 222,
+      "initialSl": 220.21,
+      "sl": 220.21,
+      "tp": 226.78,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
     }
   },
-  "dailyTrades": 4,
+  "dailyTrades": 5,
   "dailyDate": "2026-10-28",
   "openPositions": [
     "FIVE",
@@ -83,98 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-28T19:10:55.310Z",
+  "lastRun": "2026-10-28T19:21:52.474Z",
   "log": [
-    {
-      "time": "2026-10-23T19:27:51.546Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:38:05.249Z",
-      "type": "INFO",
-      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:38:05.514Z",
-      "type": "INFO",
-      "msg": "EOD review (22 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:38:05.514Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:48:20.657Z",
-      "type": "INFO",
-      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:48:21.194Z",
-      "type": "INFO",
-      "msg": "EOD review (12 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:48:21.195Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:58:37.876Z",
-      "type": "INFO",
-      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:58:38.378Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:08:49.534Z",
-      "type": "INFO",
-      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:08:49.543Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:08:49.651Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:19:04.739Z",
-      "type": "INFO",
-      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:19:04.796Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:19:05.098Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-10-23T20:29:18.250Z",
       "type": "INFO",
@@ -1284,13 +1206,104 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:21:13.391Z",
+      "type": "INFO",
+      "msg": "Account: $99765.13 | 1 positions | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:21:14.704Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "GMAB, SKHY, ORCL, AXGN, VRT, BEAM, EAT, BLCO, ICLR, SDGR"
+    },
+    {
+      "time": "2026-10-28T19:21:14.704Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-28T19:21:15.013Z",
+      "type": "SIGNAL",
+      "msg": "GMAB — score 12 | gap 29.2% | relVol 4.1× | RSI 28",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-10-28T19:21:16.517Z",
+      "type": "SIGNAL",
+      "msg": "AXGN — score 9 | gap 31.3% | relVol 4.1× | RSI 57",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:21:17.633Z",
+      "type": "SIGNAL",
+      "msg": "EAT — score 8 | gap 12.9% | relVol 2.1× | RSI 38",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:21:33.016Z",
+      "type": "INFO",
+      "msg": "Rejections (36)",
+      "detail": "SKHY: relVol 2.0× < 2× (todayVol 42.0M)  •  ORCL: relVol 1.9× < 2× (todayVol 56.6M)  •  BEAM: relVol 2.0× < 2× (todayVol 3.7M)  •  BLCO: avgVol 0.7M < 1M  •  ICLR: avgVol 1.0M < 1M  •  SDGR: relVol 1.1× < 2× (todayVol 2.7M)  •  FLEX: relVol 1.8× < 2× (todayVol 9.8M)  •  EVR: avgVol 0.6M < 1M  •  HAYW: price $14.56 < $15  •  CECO: avgVol 0.8M < 1M  •  AXTI: relVol 1.0× < 2× (todayVol 8.7M)  •  MU: relVol 0.8× < 2× (todayVol 21.4M)"
+    },
+    {
+      "time": "2026-10-28T19:21:33.017Z",
+      "type": "INFO",
+      "msg": "Top signal: GMAB (score 12)",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:21:33.017Z",
+      "type": "INFO",
+      "msg": "SKIP GMAB — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:21:33.017Z",
+      "type": "INFO",
+      "msg": "SKIP AXGN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:21:33.017Z",
+      "type": "BUY",
+      "msg": "Placing 6× EAT @ ~$222.00",
+      "detail": "gap 12.9% | risk $10.74 | SL $220.21 | TP $226.78 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-10-28T19:21:33.204Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 6× EAT",
+      "detail": "ID 61235330-3c67-4f20-afcb-b16818f795ae | R:R 2.7:1 | risk $10.74"
+    },
+    {
+      "time": "2026-10-28T19:21:33.933Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "FFIV, LSTR, ENPH, SLS, CSGP, LPLA, EDU, ZWS, CHRW, LII"
+    },
+    {
+      "time": "2026-10-28T19:21:52.473Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "FFIV: avgVol 0.7M < 1M  •  LSTR: avgVol 0.3M < 1M  •  ENPH: above opening-range low (price $24.70 > ORL $23.83)  •  SLS: price $10.31 < $20 (short floor)  •  CSGP: relVol 2.3× < 2.5× (todayVol 13.2M)  •  LPLA: avgVol 0.9M < 1M  •  EDU: avgVol 0.7M < 1M  •  ZWS: avgVol 0.9M < 1M  •  CHRW: relVol 1.4× < 2.5× (todayVol 3.2M)  •  LII: avgVol 0.6M < 1M  •  LOGI: relVol 2.3× < 2.5× (todayVol 2.5M)  •  RUSHA: avgVol 0.7M < 1M"
+    },
+    {
+      "time": "2026-10-28T19:21:52.474Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
     }
   ],
   "tradedToday": [
     "AXGN",
     "WING",
     "GMAB",
-    "VRT"
+    "VRT",
+    "EAT"
   ],
   "shortDailyTrades": 0,
   "shortTradedToday": []
