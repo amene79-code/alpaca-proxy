@@ -1,30 +1,5 @@
 {
-  "trailingStops": {
-    "VRT": {
-      "side": "long",
-      "entry": 243.6649932861328,
-      "high": 244.75,
-      "low": 243.6649932861328,
-      "initialSl": 241.36,
-      "sl": 241.36,
-      "tp": 249.82,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "EAT": {
-      "side": "long",
-      "entry": 222,
-      "high": 222,
-      "low": 222,
-      "initialSl": 220.21,
-      "sl": 220.21,
-      "tp": 226.78,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 5,
   "dailyDate": "2026-10-28",
   "openPositions": [
@@ -95,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-28T19:32:19.749Z",
+  "lastRun": "2026-10-28T19:42:45.022Z",
   "log": [
-    {
-      "time": "2026-10-23T20:29:18.521Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:39:30.192Z",
-      "type": "INFO",
-      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:39:30.251Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:39:30.545Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
     {
       "time": "2026-10-23T23:29:19.293Z",
       "type": "INFO",
@@ -1293,6 +1244,30 @@
     },
     {
       "time": "2026-10-28T19:32:19.749Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:42:42.095Z",
+      "type": "INFO",
+      "msg": "Account: $99735.46 | 1 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:42:42.797Z",
+      "type": "INFO",
+      "msg": "EOD review (18 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:42:44.820Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut EAT",
+      "detail": "Side long | Weak into close | P&L $-9.03"
+    },
+    {
+      "time": "2026-10-28T19:42:45.021Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
