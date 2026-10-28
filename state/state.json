@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-28T20:13:52.457Z",
+  "lastRun": "2026-10-28T20:24:08.150Z",
   "log": [
-    {
-      "time": "2026-10-26T19:00:19.518Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "XP, PAGS, EGIEY, ITUB, ELPC, NU, UGP, FICO, PBR, RGC"
-    },
-    {
-      "time": "2026-10-26T19:00:27.085Z",
-      "type": "SIGNAL",
-      "msg": "AMKR — SHORT score 7 | gap -5.5% | relVol 2.8× | RSI 35",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-26T19:00:32.155Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "XP: price $15.38 < $20 (short floor)  •  PAGS: price $8.41 < $20 (short floor)  •  EGIEY: price $5.13 < $20 (short floor)  •  ITUB: price $7.64 < $20 (short floor)  •  ELPC: price $11.13 < $20 (short floor)  •  NU: price $12.56 < $20 (short floor)  •  UGP: price $6.50 < $20 (short floor)  •  FICO: relVol 1.4× < 2.5× (todayVol 2.0M)  •  PBR: above VWAP (price $22.52 > VWAP $21.94) — not holding breakdown  •  RGC: price $6.60 < $20 (short floor)  •  TIMB: price $16.57 < $20 (short floor)  •  VIV: price $11.23 < $20 (short floor)"
-    },
     {
       "time": "2026-10-26T19:00:32.155Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-28T20:13:52.457Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T20:24:07.642Z",
+      "type": "INFO",
+      "msg": "Account: $99734.41 | 0 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T20:24:07.675Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T20:24:08.150Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
