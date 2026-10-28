@@ -1,45 +1,9 @@
 {
   "trailingStops": {
-    "AXGN": {
-      "side": "long",
-      "entry": 49.810001373291016,
-      "high": 49.810001373291016,
-      "low": 49.810001373291016,
-      "initialSl": 49.31,
-      "sl": 49.31,
-      "tp": 51.14,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "WING": {
-      "side": "long",
-      "entry": 139.11000061035156,
-      "high": 139.11000061035156,
-      "low": 139.11000061035156,
-      "initialSl": 137.55,
-      "sl": 137.55,
-      "tp": 143.27,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "GMAB": {
-      "side": "long",
-      "entry": 58.84000015258789,
-      "high": 58.84000015258789,
-      "low": 58.84000015258789,
-      "initialSl": 58.26,
-      "sl": 58.26,
-      "tp": 60.39,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
     "VRT": {
       "side": "long",
       "entry": 243.6649932861328,
-      "high": 243.6649932861328,
+      "high": 244.73,
       "low": 243.6649932861328,
       "initialSl": 241.36,
       "sl": 241.36,
@@ -119,92 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-28T18:49:22.638Z",
+  "lastRun": "2026-10-28T19:00:04.400Z",
   "log": [
-    {
-      "time": "2026-10-23T19:05:49.359Z",
-      "type": "SIGNAL",
-      "msg": "RHI — score 12 | gap 22.5% | relVol 2.2× | RSI 49",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-10-23T19:06:01.759Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "VG: price $13.92 < $15  •  CLF: price $14.02 < $15  •  RIG: price $6.49 < $15  •  CCI: below VWAP (price $86.90 < VWAP $87.61)  •  GMAB: relVol 1.9× < 2× (todayVol 9.1M)  •  FCNCA: avgVol 0.1M < 1M  •  SAIL: relVol 0.9× < 2× (todayVol 4.3M)  •  CUBI: avgVol 0.3M < 1M  •  NE: relVol 1.1× < 2× (todayVol 1.2M)  •  TTMI: relVol 1.5× < 2× (todayVol 6.0M)  •  NTSK: relVol 0.9× < 2× (todayVol 5.7M)  •  HSAI: price $13.15 < $15"
-    },
-    {
-      "time": "2026-10-23T19:06:01.759Z",
-      "type": "INFO",
-      "msg": "Top signal: RHI (score 12)",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:06:01.759Z",
-      "type": "INFO",
-      "msg": "SKIP RHI — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:06:01.914Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "LKQ, CORT, RGC, TNGX, BE, NAMS, PBLS, FLG, SLM, CRDO"
-    },
-    {
-      "time": "2026-10-23T19:06:14.078Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "LKQ: price $17.54 < $20 (short floor)  •  CORT: avgVol 0.8M < 1M  •  RGC: price $7.91 < $20 (short floor)  •  TNGX: net up over ~5d ($22.04→$23.73) — no short into uptrend  •  BE: relVol 2.1× < 2.5× (todayVol 30.7M)  •  NAMS: price $19.14 < $20 (short floor)  •  PBLS: net up over ~5d ($22.75→$24.13) — no short into uptrend  •  FLG: price $10.35 < $20 (short floor)  •  SLM: price $19.76 < $20 (short floor)  •  CRDO: relVol 1.2× < 2.5× (todayVol 10.4M)  •  FIX: avgVol 0.4M < 1M  •  GPGI: price $11.49 < $20 (short floor)"
-    },
-    {
-      "time": "2026-10-23T19:06:14.079Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:16:26.385Z",
-      "type": "INFO",
-      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:16:27.148Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "RHI, CLF, RIG, GMAB, FCNCA, VG, SAIL, ZLAB, TTMI, NTSK"
-    },
-    {
-      "time": "2026-10-23T19:16:27.148Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-23T19:16:27.376Z",
-      "type": "SIGNAL",
-      "msg": "RHI — score 9 | gap 22.3% | relVol 2.3× | RSI 46",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:16:41.681Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "CLF: price $14.02 < $15  •  RIG: price $6.45 < $15  •  GMAB: relVol 2.0× < 2× (todayVol 9.3M)  •  FCNCA: avgVol 0.1M < 1M  •  VG: price $13.96 < $15  •  SAIL: relVol 0.9× < 2× (todayVol 4.3M)  •  ZLAB: avgVol 0.9M < 1M  •  TTMI: relVol 1.5× < 2× (todayVol 6.2M)  •  NTSK: relVol 0.9× < 2× (todayVol 5.8M)  •  CCI: below VWAP (price $85.58 < VWAP $87.37)  •  CUBI: avgVol 0.3M < 1M  •  NE: relVol 1.1× < 2× (todayVol 1.2M)"
-    },
-    {
-      "time": "2026-10-23T19:16:41.681Z",
-      "type": "INFO",
-      "msg": "Top signal: RHI (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T19:16:41.681Z",
-      "type": "INFO",
-      "msg": "SKIP RHI — already traded today",
-      "detail": ""
-    },
     {
       "time": "2026-10-23T19:16:41.834Z",
       "type": "INFO",
@@ -1317,6 +1197,90 @@
     },
     {
       "time": "2026-10-28T18:49:22.638Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:59:36.348Z",
+      "type": "INFO",
+      "msg": "Account: $99765.01 | 1 positions | 4 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:59:36.964Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "GMAB, ORCL, SKHY, AXGN, VRT, BLCO, BEAM, EAT, SDGR, ADT"
+    },
+    {
+      "time": "2026-10-28T18:59:36.964Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-10-28T18:59:37.167Z",
+      "type": "SIGNAL",
+      "msg": "GMAB — score 11 | gap 29.0% | relVol 3.9× | RSI 41",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-10-28T18:59:38.178Z",
+      "type": "SIGNAL",
+      "msg": "AXGN — score 10 | gap 31.8% | relVol 4.0× | RSI 66",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:59:40.906Z",
+      "type": "SIGNAL",
+      "msg": "WING — score 10 | gap 11.6% | relVol 2.3× | RSI 43",
+      "detail": "Hammer"
+    },
+    {
+      "time": "2026-10-28T18:59:50.594Z",
+      "type": "INFO",
+      "msg": "Rejections (36)",
+      "detail": "ORCL: relVol 1.7× < 2× (todayVol 49.3M)  •  SKHY: relVol 1.9× < 2× (todayVol 40.6M)  •  BLCO: avgVol 0.7M < 1M  •  BEAM: relVol 1.9× < 2× (todayVol 3.6M)  •  EAT: relVol 2.0× < 2× (todayVol 2.6M)  •  SDGR: relVol 1.0× < 2× (todayVol 2.5M)  •  ADT: price $7.36 < $15  •  EVR: avgVol 0.6M < 1M  •  ICLR: avgVol 0.9M < 1M  •  HAYW: price $14.55 < $15  •  FLEX: relVol 1.7× < 2× (todayVol 9.3M)  •  CRWV: relVol 0.8× < 2× (todayVol 43.0M)"
+    },
+    {
+      "time": "2026-10-28T18:59:50.595Z",
+      "type": "INFO",
+      "msg": "Top signal: GMAB (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:59:50.595Z",
+      "type": "INFO",
+      "msg": "SKIP GMAB — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:59:50.595Z",
+      "type": "INFO",
+      "msg": "SKIP AXGN — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:59:50.595Z",
+      "type": "INFO",
+      "msg": "SKIP WING — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T18:59:50.701Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "FFIV, ENPH, LSTR, SLS, CSGP, LPLA, EDU, ZWS, LOGI, LII"
+    },
+    {
+      "time": "2026-10-28T19:00:04.400Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "FFIV: avgVol 0.7M < 1M  •  ENPH: above opening-range low (price $24.78 > ORL $23.83)  •  LSTR: avgVol 0.3M < 1M  •  SLS: price $10.31 < $20 (short floor)  •  CSGP: relVol 2.1× < 2.5× (todayVol 12.3M)  •  LPLA: avgVol 0.9M < 1M  •  EDU: avgVol 0.7M < 1M  •  ZWS: avgVol 0.9M < 1M  •  LOGI: relVol 2.2× < 2.5× (todayVol 2.3M)  •  LII: avgVol 0.6M < 1M  •  CHRW: relVol 1.2× < 2.5× (todayVol 2.8M)  •  DBD: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-10-28T19:00:04.400Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
