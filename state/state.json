@@ -95,20 +95,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-28T19:21:52.474Z",
+  "lastRun": "2026-10-28T19:32:19.749Z",
   "log": [
-    {
-      "time": "2026-10-23T20:29:18.250Z",
-      "type": "INFO",
-      "msg": "Account: $99838.32 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-23T20:29:18.295Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-10-23T20:29:18.521Z",
       "type": "INFO",
@@ -1295,6 +1283,18 @@
       "time": "2026-10-28T19:21:52.474Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:32:18.385Z",
+      "type": "INFO",
+      "msg": "Account: $99746.68 | 2 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T19:32:19.749Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
