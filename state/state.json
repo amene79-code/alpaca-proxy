@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-28T20:24:08.150Z",
+  "lastRun": "2026-10-28T22:50:32.546Z",
   "log": [
-    {
-      "time": "2026-10-26T19:00:32.155Z",
-      "type": "INFO",
-      "msg": "Top short: AMKR (score 7)",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-26T19:00:32.156Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 26× AMKR @ ~$37.14",
-      "detail": "gap -5.5% | risk $10.92 | SL $37.56 | TP $35.88 | R:R 3.0"
-    },
-    {
-      "time": "2026-10-26T19:00:32.405Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 26× AMKR",
-      "detail": "ID 3a3d768f-a858-4448-87e0-f60f872eb57e | R:R 3.0:1 | risk $10.92 | real bracket stop @ $37.56"
-    },
     {
       "time": "2026-10-26T19:10:44.499Z",
       "type": "INFO",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-10-28T20:24:08.150Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T22:50:32.183Z",
+      "type": "INFO",
+      "msg": "Account: $99734.41 | 0 positions | 5 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T22:50:32.255Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-28T22:50:32.546Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
