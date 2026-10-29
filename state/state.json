@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-29T19:49:55.375Z",
+  "lastRun": "2026-10-29T20:00:07.978Z",
   "log": [
-    {
-      "time": "2026-10-27T18:43:02.307Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-27T18:53:15.580Z",
-      "type": "INFO",
-      "msg": "Account: $99834.60 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-27T18:53:16.173Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "SOFI, USAR, NBIS, HRI, KNSA, CHRN, HWKN, CTOS, CRWV, RKLB"
-    },
     {
       "time": "2026-10-27T18:53:16.173Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-10-29T19:49:55.374Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-29T20:00:07.699Z",
+      "type": "INFO",
+      "msg": "Account: $99750.50 | 0 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-29T20:00:07.743Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-29T20:00:07.977Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
