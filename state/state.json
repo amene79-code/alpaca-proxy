@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-30T19:58:46.205Z",
+  "lastRun": "2026-10-30T20:09:01.279Z",
   "log": [
-    {
-      "time": "2026-10-28T18:59:50.595Z",
-      "type": "INFO",
-      "msg": "SKIP AXGN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T18:59:50.595Z",
-      "type": "INFO",
-      "msg": "SKIP WING — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T18:59:50.701Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FFIV, ENPH, LSTR, SLS, CSGP, LPLA, EDU, ZWS, LOGI, LII"
-    },
     {
       "time": "2026-10-28T19:00:04.400Z",
       "type": "INFO",
@@ -1283,6 +1265,24 @@
       "time": "2026-10-30T19:58:46.205Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T20:09:00.829Z",
+      "type": "INFO",
+      "msg": "Account: $99753.58 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T20:09:00.899Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T20:09:01.278Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
