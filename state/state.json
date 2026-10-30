@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-30T19:38:16.559Z",
+  "lastRun": "2026-10-30T19:48:30.504Z",
   "log": [
-    {
-      "time": "2026-10-28T18:59:37.167Z",
-      "type": "SIGNAL",
-      "msg": "GMAB — score 11 | gap 29.0% | relVol 3.9× | RSI 41",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-10-28T18:59:38.178Z",
-      "type": "SIGNAL",
-      "msg": "AXGN — score 10 | gap 31.8% | relVol 4.0× | RSI 66",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T18:59:40.906Z",
-      "type": "SIGNAL",
-      "msg": "WING — score 10 | gap 11.6% | relVol 2.3× | RSI 43",
-      "detail": "Hammer"
-    },
-    {
-      "time": "2026-10-28T18:59:50.594Z",
-      "type": "INFO",
-      "msg": "Rejections (36)",
-      "detail": "ORCL: relVol 1.7× < 2× (todayVol 49.3M)  •  SKHY: relVol 1.9× < 2× (todayVol 40.6M)  •  BLCO: avgVol 0.7M < 1M  •  BEAM: relVol 1.9× < 2× (todayVol 3.6M)  •  EAT: relVol 2.0× < 2× (todayVol 2.6M)  •  SDGR: relVol 1.0× < 2× (todayVol 2.5M)  •  ADT: price $7.36 < $15  •  EVR: avgVol 0.6M < 1M  •  ICLR: avgVol 0.9M < 1M  •  HAYW: price $14.55 < $15  •  FLEX: relVol 1.7× < 2× (todayVol 9.3M)  •  CRWV: relVol 0.8× < 2× (todayVol 43.0M)"
-    },
     {
       "time": "2026-10-28T18:59:50.595Z",
       "type": "INFO",
@@ -1281,6 +1257,30 @@
     },
     {
       "time": "2026-10-30T19:38:16.558Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T19:48:29.752Z",
+      "type": "INFO",
+      "msg": "Account: $99748.33 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T19:48:30.156Z",
+      "type": "INFO",
+      "msg": "EOD review (12 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T19:48:30.303Z",
+      "type": "INFO",
+      "msg": "GPN held overnight",
+      "detail": "Side long | Strong close | P&L +$9.00 | above VWAP"
+    },
+    {
+      "time": "2026-10-30T19:48:30.504Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
