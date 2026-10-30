@@ -3,7 +3,7 @@
     "GPN": {
       "side": "long",
       "entry": 95.44999694824219,
-      "high": 95.745,
+      "high": 96.17,
       "low": 95.44999694824219,
       "initialSl": 94.16,
       "sl": 94.16,
@@ -83,32 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-30T19:28:03.034Z",
+  "lastRun": "2026-10-30T19:38:16.559Z",
   "log": [
-    {
-      "time": "2026-10-28T18:49:22.638Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T18:59:36.348Z",
-      "type": "INFO",
-      "msg": "Account: $99765.01 | 1 positions | 4 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T18:59:36.964Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "GMAB, ORCL, SKHY, AXGN, VRT, BLCO, BEAM, EAT, SDGR, ADT"
-    },
-    {
-      "time": "2026-10-28T18:59:36.964Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-10-28T18:59:37.167Z",
       "type": "SIGNAL",
@@ -1283,6 +1259,30 @@
       "time": "2026-10-30T19:28:03.034Z",
       "type": "INFO",
       "msg": "SKIP RDDT — already traded today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T19:38:15.680Z",
+      "type": "INFO",
+      "msg": "Account: $99748.63 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T19:38:16.199Z",
+      "type": "INFO",
+      "msg": "EOD review (22 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T19:38:16.359Z",
+      "type": "INFO",
+      "msg": "GPN held overnight",
+      "detail": "Side long | Strong close | P&L +$9.30 | above VWAP"
+    },
+    {
+      "time": "2026-10-30T19:38:16.558Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
