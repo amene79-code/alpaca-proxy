@@ -83,26 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-30T20:19:14.456Z",
+  "lastRun": "2026-10-30T20:29:24.933Z",
   "log": [
-    {
-      "time": "2026-10-28T19:10:26.489Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "GMAB, SKHY, ORCL, AXGN, VRT, BEAM, BLCO, EAT, SDGR, EVR"
-    },
-    {
-      "time": "2026-10-28T19:10:26.489Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-28T19:10:26.682Z",
-      "type": "SIGNAL",
-      "msg": "GMAB — score 11 | gap 28.8% | relVol 4.0× | RSI 32",
-      "detail": "Hammer"
-    },
     {
       "time": "2026-10-28T19:10:27.885Z",
       "type": "SIGNAL",
@@ -1281,6 +1263,24 @@
     },
     {
       "time": "2026-10-30T20:19:14.456Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T20:29:24.532Z",
+      "type": "INFO",
+      "msg": "Account: $99748.58 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T20:29:24.577Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T20:29:24.933Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
