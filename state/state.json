@@ -3,14 +3,14 @@
     "GPN": {
       "side": "long",
       "entry": 95.44999694824219,
-      "high": 96.17,
+      "high": 97.05,
       "low": 95.44999694824219,
       "initialSl": 94.16,
-      "sl": 94.16,
+      "sl": 95.65,
       "tp": 98.89,
       "slOrderId": null,
       "tpOrderId": null,
-      "movedToBreakeven": false
+      "movedToBreakeven": true
     }
   },
   "dailyTrades": 1,
@@ -83,20 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-30T19:48:30.504Z",
+  "lastRun": "2026-10-30T19:58:46.205Z",
   "log": [
-    {
-      "time": "2026-10-28T18:59:50.595Z",
-      "type": "INFO",
-      "msg": "Top signal: GMAB (score 11)",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T18:59:50.595Z",
-      "type": "INFO",
-      "msg": "SKIP GMAB — already traded today",
-      "detail": ""
-    },
     {
       "time": "2026-10-28T18:59:50.595Z",
       "type": "INFO",
@@ -1281,6 +1269,18 @@
     },
     {
       "time": "2026-10-30T19:48:30.504Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T19:58:45.460Z",
+      "type": "INFO",
+      "msg": "Account: $99761.83 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-10-30T19:58:46.205Z",
       "type": "INFO",
       "msg": "Skip new entries — last 30 min",
       "detail": ""
