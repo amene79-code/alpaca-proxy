@@ -1,20 +1,7 @@
 {
-  "trailingStops": {
-    "GPN": {
-      "side": "long",
-      "entry": 95.44999694824219,
-      "high": 97.05,
-      "low": 95.44999694824219,
-      "initialSl": 94.16,
-      "sl": 95.65,
-      "tp": 98.89,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
-  "dailyTrades": 1,
-  "dailyDate": "2026-10-30",
+  "trailingStops": {},
+  "dailyTrades": 0,
+  "dailyDate": "2026-11-02",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-10-30T22:32:53.978Z",
+  "lastRun": "2026-11-02T22:05:29.988Z",
   "log": [
-    {
-      "time": "2026-10-28T19:10:40.792Z",
-      "type": "INFO",
-      "msg": "SKIP GMAB — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T19:10:40.792Z",
-      "type": "INFO",
-      "msg": "SKIP AXGN — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T19:10:40.942Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "FFIV, ENPH, LSTR, CSGP, SLS, LPLA, EDU, ZWS, LOGI, CHRW"
-    },
-    {
-      "time": "2026-10-28T19:10:55.310Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "FFIV: avgVol 0.7M < 1M  •  ENPH: above opening-range low (price $24.59 > ORL $23.83)  •  LSTR: avgVol 0.3M < 1M  •  CSGP: relVol 2.2× < 2.5× (todayVol 12.7M)  •  SLS: price $10.28 < $20 (short floor)  •  LPLA: avgVol 0.9M < 1M  •  EDU: avgVol 0.7M < 1M  •  ZWS: avgVol 0.9M < 1M  •  LOGI: relVol 2.2× < 2.5× (todayVol 2.4M)  •  CHRW: relVol 1.3× < 2.5× (todayVol 3.0M)  •  LII: avgVol 0.6M < 1M  •  DBD: avgVol 0.3M < 1M"
-    },
     {
       "time": "2026-10-28T19:10:55.310Z",
       "type": "INFO",
@@ -1284,13 +1247,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-11-02T22:05:29.730Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-02T22:05:29.827Z",
+      "type": "INFO",
+      "msg": "Account: $99789.39 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-02T22:05:29.841Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-02T22:05:29.988Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "GPN"
-  ],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "RDDT"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
