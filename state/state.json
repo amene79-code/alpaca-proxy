@@ -83,56 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-03T19:57:07.961Z",
+  "lastRun": "2026-11-03T20:07:58.006Z",
   "log": [
-    {
-      "time": "2026-10-28T19:21:52.474Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T19:32:18.385Z",
-      "type": "INFO",
-      "msg": "Account: $99746.68 | 2 positions | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T19:32:19.749Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T19:42:42.095Z",
-      "type": "INFO",
-      "msg": "Account: $99735.46 | 1 positions | 5 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T19:42:42.797Z",
-      "type": "INFO",
-      "msg": "EOD review (18 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T19:42:44.820Z",
-      "type": "SELL",
-      "msg": "✓ EOD cut EAT",
-      "detail": "Side long | Weak into close | P&L $-9.03"
-    },
-    {
-      "time": "2026-10-28T19:42:45.021Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-28T19:53:00.233Z",
-      "type": "INFO",
-      "msg": "Account: $99734.41 | 0 positions | 5 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-10-28T19:53:00.455Z",
       "type": "INFO",
@@ -1281,6 +1233,54 @@
     },
     {
       "time": "2026-11-03T19:57:07.961Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-03T20:07:30.298Z",
+      "type": "INFO",
+      "msg": "Account: $99786.12 | 1 positions | 1 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-03T20:07:32.204Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "CIFR, RIOT, WULF, MARA, IREN, AEHR, GPK, FN, XMTR, HUT"
+    },
+    {
+      "time": "2026-11-03T20:07:32.204Z",
+      "type": "INFO",
+      "msg": "Scanning 39 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-11-03T20:07:44.495Z",
+      "type": "INFO",
+      "msg": "Rejections (39)",
+      "detail": "CIFR: price $8.02 < $15  •  RIOT: price $13.61 < $15  •  WULF: price $12.36 < $15  •  MARA: price $7.11 < $15  •  IREN: relVol 0.7× < 2× (todayVol 38.2M)  •  GPK: price $11.07 < $15  •  FN: relVol 1.7× < 2× (todayVol 1.8M)  •  XMTR: avgVol 0.8M < 1M  •  HUT: relVol 0.8× < 2× (todayVol 5.5M)  •  NBIX: ATR 0.33% < 0.5%  •  BETA: relVol 1.8× < 2× (todayVol 3.0M)  •  SRAD: price $14.59 < $15"
+    },
+    {
+      "time": "2026-11-03T20:07:44.495Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-03T20:07:44.686Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "STVN, CVI, IT, DT, ADEA, LIND, PAY, ZBRA, SHC, SYY"
+    },
+    {
+      "time": "2026-11-03T20:07:58.006Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "STVN: price $14.41 < $20 (short floor)  •  CVI: avgVol 0.8M < 1M  •  IT: relVol 2.1× < 2.5× (todayVol 2.2M)  •  DT: relVol 2.0× < 2.5× (todayVol 16.4M)  •  ADEA: price $18.47 < $20 (short floor)  •  LIND: avgVol 0.8M < 1M  •  PAY: avgVol 0.8M < 1M  •  ZBRA: avgVol 0.6M < 1M  •  SHC: price $16.20 < $20 (short floor)  •  SYY: relVol 2.0× < 2.5× (todayVol 5.9M)  •  MTCH: relVol 1.4× < 2.5× (todayVol 5.2M)  •  OTTR: avgVol 0.2M < 1M"
+    },
+    {
+      "time": "2026-11-03T20:07:58.006Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
