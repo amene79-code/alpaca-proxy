@@ -11,34 +11,10 @@
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": false
-    },
-    "FLYW": {
-      "side": "long",
-      "entry": 21.940000534057617,
-      "high": 21.940000534057617,
-      "low": 21.940000534057617,
-      "initialSl": 21.77,
-      "sl": 21.77,
-      "tp": 22.39,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "KD": {
-      "side": "long",
-      "entry": 17.4950008392334,
-      "high": 17.4950008392334,
-      "low": 17.4950008392334,
-      "initialSl": 17.35,
-      "sl": 17.35,
-      "tp": 17.88,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
     }
   },
-  "dailyTrades": 2,
-  "dailyDate": "2026-11-04",
+  "dailyTrades": 0,
+  "dailyDate": "2026-11-05",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -107,38 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-04T20:25:30.068Z",
+  "lastRun": "2026-11-05T00:55:30.324Z",
   "log": [
-    {
-      "time": "2026-10-29T19:18:43.592Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "IOVA: price $9.65 < $20 (short floor)  •  NOW: ATR 0.34% < 0.5%  •  FTNT: above VWAP (price $135.43 > VWAP $134.71) — not holding breakdown  •  SFM: above opening-range low (price $48.31 > ORL $47.35)  •  HLN: price $8.52 < $20 (short floor)  •  MRVL: relVol 1.5× < 2.5× (todayVol 32.3M)  •  GOOGL: above opening-range low (price $282.50 > ORL $280.36)  •  GOOG: above opening-range low (price $280.46 > ORL $278.30)  •  FORM: net up over ~5d ($95.03→$97.50) — no short into uptrend  •  ALGM: relVol 1.2× < 2.5× (todayVol 3.9M)  •  FTRE: relVol 1.8× < 2.5× (todayVol 3.7M)  •  HONA: relVol 1.8× < 2.5× (todayVol 5.1M)"
-    },
-    {
-      "time": "2026-10-29T19:18:43.592Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T19:28:59.242Z",
-      "type": "INFO",
-      "msg": "Account: $99757.56 | 2 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T19:29:00.181Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "ADT, PURR, NCLH, GKOS, BHC, PRCH, CROX, CVNA, MESO, FTAI"
-    },
-    {
-      "time": "2026-10-29T19:29:00.181Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-10-29T19:29:12.709Z",
       "type": "INFO",
@@ -1308,17 +1254,39 @@
       "type": "BUY",
       "msg": "✓ ORDER PLACED: 85× KD",
       "detail": "ID 3e0567b5-4cbc-47f5-8335-3ed2f3e5322b | R:R 2.7:1 | risk $12.33"
+    },
+    {
+      "time": "2026-11-05T00:55:28.515Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T00:55:28.781Z",
+      "type": "INFO",
+      "msg": "Account: $99662.14 | 2 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T00:55:28.793Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T00:55:30.173Z",
+      "type": "SELL",
+      "msg": "✓ Closed FLYW (ext-hours stop)",
+      "detail": "Side long | P&L $-55.76"
+    },
+    {
+      "time": "2026-11-05T00:55:30.324Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "FLYW",
-    "KD"
-  ],
-  "shortDailyTrades": 4,
-  "shortTradedToday": [
-    "CVI",
-    "MOD",
-    "FIS",
-    "DDOG"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
