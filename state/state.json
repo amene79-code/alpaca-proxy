@@ -1,19 +1,79 @@
 {
   "trailingStops": {
-    "FIS": {
+    "FLYW": {
+      "side": "long",
+      "entry": 22.02,
+      "high": 22.02,
+      "low": 21.155,
+      "initialSl": null,
+      "sl": null,
+      "tp": null,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "WRBY": {
+      "side": "long",
+      "entry": 26.78499984741211,
+      "high": 26.78499984741211,
+      "low": 26.78499984741211,
+      "initialSl": 26.42,
+      "sl": 26.42,
+      "tp": 27.75,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "U": {
+      "side": "long",
+      "entry": 48.9900016784668,
+      "high": 48.9900016784668,
+      "low": 48.9900016784668,
+      "initialSl": 48.51,
+      "sl": 48.51,
+      "tp": 50.28,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "SHOO": {
       "side": "short",
-      "entry": 29.8700008392334,
-      "high": 29.8700008392334,
-      "low": 29.695,
-      "initialSl": 30.06,
-      "sl": 30.06,
-      "tp": 29.29,
+      "entry": 38.689998626708984,
+      "high": 38.689998626708984,
+      "low": 38.689998626708984,
+      "initialSl": 38.89,
+      "sl": 38.89,
+      "tp": 38.08,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "RELY": {
+      "side": "short",
+      "entry": 21.43000030517578,
+      "high": 21.43000030517578,
+      "low": 21.43000030517578,
+      "initialSl": 21.58,
+      "sl": 21.58,
+      "tp": 20.98,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    },
+    "SNDK": {
+      "side": "short",
+      "entry": 844.2100219726562,
+      "high": 844.2100219726562,
+      "low": 844.2100219726562,
+      "initialSl": 851.78,
+      "sl": 851.78,
+      "tp": 821.5,
       "slOrderId": null,
       "tpOrderId": null,
       "movedToBreakeven": false
     }
   },
-  "dailyTrades": 0,
+  "dailyTrades": 2,
   "dailyDate": "2026-11-05",
   "openPositions": [
     "FIVE",
@@ -83,146 +143,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-05T00:55:30.324Z",
+  "lastRun": "2026-11-05T20:27:39.462Z",
   "log": [
-    {
-      "time": "2026-10-29T19:29:12.709Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "ADT: price $9.91 < $15  •  PURR: price $12.06 < $15  •  NCLH: ATR 0.34% < 0.5%  •  BHC: price $8.85 < $15  •  PRCH: below opening-range high (price $20.75 < ORH $21.15, 73 today-candles)  •  CROX: ATR 0.40% < 0.5%  •  CVNA: relVol 2.0× < 2× (todayVol 17.5M)  •  MESO: avgVol 0.3M < 1M  •  FTAI: relVol 1.3× < 2× (todayVol 2.5M)  •  BOOT: avgVol 0.9M < 1M  •  CMG: relVol 1.3× < 2× (todayVol 30.4M)  •  GEN: relVol 1.0× < 2× (todayVol 7.7M)"
-    },
-    {
-      "time": "2026-10-29T19:29:12.709Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T19:29:12.816Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "IOVA, NOW, ALNY, SFM, FTNT, HLN, MRVL, GOOGL, GOOG, FORM"
-    },
-    {
-      "time": "2026-10-29T19:29:25.242Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "IOVA: price $9.66 < $20 (short floor)  •  NOW: ATR 0.41% < 0.5%  •  SFM: above opening-range low (price $48.14 > ORL $47.35)  •  FTNT: above VWAP (price $136.13 > VWAP $134.73) — not holding breakdown  •  HLN: price $8.56 < $20 (short floor)  •  MRVL: relVol 1.6× < 2.5× (todayVol 33.0M)  •  GOOGL: above opening-range low (price $283.12 > ORL $280.36)  •  GOOG: above opening-range low (price $281.19 > ORL $278.30)  •  FORM: net up over ~5d ($95.03→$97.82) — no short into uptrend  •  ALGM: relVol 1.2× < 2.5× (todayVol 4.1M)  •  FTRE: relVol 1.9× < 2.5× (todayVol 3.8M)  •  HONA: relVol 1.9× < 2.5× (todayVol 5.3M)"
-    },
-    {
-      "time": "2026-10-29T19:29:25.242Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T19:39:39.727Z",
-      "type": "INFO",
-      "msg": "Account: $99770.66 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T19:39:40.199Z",
-      "type": "INFO",
-      "msg": "EOD review (21 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T19:39:40.399Z",
-      "type": "INFO",
-      "msg": "GKOS held overnight",
-      "detail": "Side long | Strong close | P&L +$9.18 | above VWAP"
-    },
-    {
-      "time": "2026-10-29T19:39:40.599Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T19:49:53.089Z",
-      "type": "INFO",
-      "msg": "Account: $99750.50 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T19:49:53.499Z",
-      "type": "INFO",
-      "msg": "EOD review (11 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T19:49:55.174Z",
-      "type": "SELL",
-      "msg": "✓ EOD cut GKOS",
-      "detail": "Side long | Weak into close | P&L $-9.06"
-    },
-    {
-      "time": "2026-10-29T19:49:55.374Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:00:07.699Z",
-      "type": "INFO",
-      "msg": "Account: $99750.50 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:00:07.743Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:00:07.977Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:10:20.476Z",
-      "type": "INFO",
-      "msg": "Account: $99750.50 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:10:20.522Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:10:20.740Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:20:35.128Z",
-      "type": "INFO",
-      "msg": "Account: $99750.50 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:20:35.197Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:20:35.937Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:30:51.931Z",
-      "type": "INFO",
-      "msg": "Account: $99750.50 | 0 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-10-29T20:30:51.961Z",
       "type": "INFO",
@@ -1284,9 +1206,154 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:27:07.081Z",
+      "type": "INFO",
+      "msg": "Account: $99680.88 | 1 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:27:08.503Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "U, APP, WRBY, ADMA, ECPG, XERS, MGNI, EPAM, ARDT, SEZL"
+    },
+    {
+      "time": "2026-11-05T20:27:08.504Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-11-05T20:27:08.680Z",
+      "type": "SIGNAL",
+      "msg": "U — score 10 | gap 15.4% | relVol 3.7× | RSI 63",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:27:09.557Z",
+      "type": "SIGNAL",
+      "msg": "WRBY — score 11 | gap 25.8% | relVol 2.6× | RSI 39",
+      "detail": "Bullish Engulfing"
+    },
+    {
+      "time": "2026-11-05T20:27:22.284Z",
+      "type": "INFO",
+      "msg": "Rejections (38)",
+      "detail": "APP: below VWAP (price $353.33 < VWAP $354.47)  •  ADMA: price $13.14 < $15  •  ECPG: avgVol 0.2M < 1M  •  XERS: price $12.96 < $15  •  MGNI: below opening-range high (price $27.97 < ORH $28.11, 73 today-candles)  •  EPAM: ATR 0.47% < 0.5%  •  ARDT: avgVol 0.6M < 1M  •  SEZL: avgVol 0.6M < 1M  •  VCEL: avgVol 0.7M < 1M  •  PGNY: avgVol 0.9M < 1M  •  RUN: price $9.94 < $15  •  TM: avgVol 0.3M < 1M"
+    },
+    {
+      "time": "2026-11-05T20:27:22.284Z",
+      "type": "INFO",
+      "msg": "Top signal: WRBY (score 11)",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:27:22.284Z",
+      "type": "BUY",
+      "msg": "Placing 56× WRBY @ ~$26.78",
+      "detail": "gap 25.8% | risk $20.44 | SL $26.42 | TP $27.75 | R:R 2.6 | Bullish Engulfing"
+    },
+    {
+      "time": "2026-11-05T20:27:22.521Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 56× WRBY",
+      "detail": "ID 27dc87bd-8aff-4c2b-8b7f-c3710528e587 | R:R 2.6:1 | risk $20.44"
+    },
+    {
+      "time": "2026-11-05T20:27:23.021Z",
+      "type": "BUY",
+      "msg": "Placing 30× U @ ~$48.99",
+      "detail": "gap 15.4% | risk $14.40 | SL $48.51 | TP $50.28 | R:R 2.7 | "
+    },
+    {
+      "time": "2026-11-05T20:27:23.107Z",
+      "type": "BUY",
+      "msg": "✓ ORDER PLACED: 30× U",
+      "detail": "ID 8608de4e-b308-437d-8ecb-64e8894be026 | R:R 2.7:1 | risk $14.40"
+    },
+    {
+      "time": "2026-11-05T20:27:23.747Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "FSLY, BROS, RELY, CAI, MXL, ARQT, AXTI, ROAD, DAVE, AAOI"
+    },
+    {
+      "time": "2026-11-05T20:27:24.609Z",
+      "type": "SIGNAL",
+      "msg": "RELY — SHORT score 8 | gap -20.9% | relVol 3.0× | RSI 78",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:27:27.711Z",
+      "type": "SIGNAL",
+      "msg": "SNDK — SHORT score 8 | gap -18.6% | relVol 2.6× | RSI 62",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:27:29.177Z",
+      "type": "SIGNAL",
+      "msg": "SHOO — SHORT score 9 | gap -17.6% | relVol 2.9× | RSI 26",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:27:37.582Z",
+      "type": "INFO",
+      "msg": "Short rejections (37)",
+      "detail": "FSLY: price $15.40 < $20 (short floor)  •  BROS: relVol 2.4× < 2.5× (todayVol 11.8M)  •  CAI: relVol 1.8× < 2.5× (todayVol 6.5M)  •  MXL: relVol 1.6× < 2.5× (todayVol 6.1M)  •  ARQT: relVol 2.3× < 2.5× (todayVol 5.6M)  •  AXTI: relVol 1.3× < 2.5× (todayVol 15.1M)  •  ROAD: avgVol 0.7M < 1M  •  DAVE: avgVol 0.3M < 1M  •  AAOI: relVol 1.6× < 2.5× (todayVol 20.2M)  •  ASX: relVol 1.7× < 2.5× (todayVol 16.8M)  •  LOPE: avgVol 0.3M < 1M  •  LGN: relVol 2.1× < 2.5× (todayVol 3.6M)"
+    },
+    {
+      "time": "2026-11-05T20:27:37.582Z",
+      "type": "INFO",
+      "msg": "Top short: SHOO (score 9)",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:27:37.582Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 25× SHOO @ ~$38.69",
+      "detail": "gap -17.6% | risk $5.00 | SL $38.89 | TP $38.08 | R:R 3.0"
+    },
+    {
+      "time": "2026-11-05T20:27:37.802Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 25× SHOO",
+      "detail": "ID a405ca98-04f4-4280-ad6a-e182f714750b | R:R 3.0:1 | risk $5.00 | real bracket stop @ $38.89"
+    },
+    {
+      "time": "2026-11-05T20:27:38.302Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 46× RELY @ ~$21.43",
+      "detail": "gap -20.9% | risk $6.90 | SL $21.58 | TP $20.98 | R:R 3.0"
+    },
+    {
+      "time": "2026-11-05T20:27:38.385Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 46× RELY",
+      "detail": "ID 73b2a7b1-f23e-4bdd-bfa6-cee46ffc0aa5 | R:R 3.0:1 | risk $6.90 | real bracket stop @ $21.58"
+    },
+    {
+      "time": "2026-11-05T20:27:38.885Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 1× SNDK @ ~$844.21",
+      "detail": "gap -18.6% | risk $7.57 | SL $851.78 | TP $821.5 | R:R 3.0"
+    },
+    {
+      "time": "2026-11-05T20:27:38.962Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 1× SNDK",
+      "detail": "ID d72c6ef7-e524-4c59-8ca1-57bcd2a4c8db | R:R 3.0:1 | risk $7.57 | real bracket stop @ $851.78"
     }
   ],
-  "tradedToday": [],
-  "shortDailyTrades": 0,
-  "shortTradedToday": []
+  "tradedToday": [
+    "WRBY",
+    "U"
+  ],
+  "shortDailyTrades": 3,
+  "shortTradedToday": [
+    "SHOO",
+    "RELY",
+    "SNDK"
+  ]
 }
