@@ -1,78 +1,5 @@
 {
-  "trailingStops": {
-    "FLYW": {
-      "side": "long",
-      "entry": 22.02,
-      "high": 22.02,
-      "low": 21.155,
-      "initialSl": null,
-      "sl": null,
-      "tp": null,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "WRBY": {
-      "side": "long",
-      "entry": 26.78499984741211,
-      "high": 26.78499984741211,
-      "low": 26.78499984741211,
-      "initialSl": 26.42,
-      "sl": 26.42,
-      "tp": 27.75,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "U": {
-      "side": "long",
-      "entry": 48.9900016784668,
-      "high": 48.9900016784668,
-      "low": 48.9900016784668,
-      "initialSl": 48.51,
-      "sl": 48.51,
-      "tp": 50.28,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "SHOO": {
-      "side": "short",
-      "entry": 38.689998626708984,
-      "high": 38.689998626708984,
-      "low": 38.689998626708984,
-      "initialSl": 38.89,
-      "sl": 38.89,
-      "tp": 38.08,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "RELY": {
-      "side": "short",
-      "entry": 21.43000030517578,
-      "high": 21.43000030517578,
-      "low": 21.43000030517578,
-      "initialSl": 21.58,
-      "sl": 21.58,
-      "tp": 20.98,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    },
-    "SNDK": {
-      "side": "short",
-      "entry": 844.2100219726562,
-      "high": 844.2100219726562,
-      "low": 844.2100219726562,
-      "initialSl": 851.78,
-      "sl": 851.78,
-      "tp": 821.5,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 2,
   "dailyDate": "2026-11-05",
   "openPositions": [
@@ -143,50 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-05T20:27:39.462Z",
+  "lastRun": "2026-11-05T20:37:59.683Z",
   "log": [
-    {
-      "time": "2026-10-29T20:30:51.961Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T20:30:52.130Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T23:00:09.815Z",
-      "type": "INFO",
-      "msg": "Account: $99750.50 | 0 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T23:00:09.863Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-29T23:00:10.104Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T18:23:05.053Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T18:23:05.337Z",
-      "type": "INFO",
-      "msg": "Account: $99750.44 | 0 positions | 0 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-10-30T18:23:06.424Z",
       "type": "INFO",
@@ -1344,6 +1229,48 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 1× SNDK",
       "detail": "ID d72c6ef7-e524-4c59-8ca1-57bcd2a4c8db | R:R 3.0:1 | risk $7.57 | real bracket stop @ $851.78"
+    },
+    {
+      "time": "2026-11-05T20:37:52.894Z",
+      "type": "INFO",
+      "msg": "Account: $99660.14 | 4 positions | 2 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:37:53.342Z",
+      "type": "INFO",
+      "msg": "EOD review (23 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-05T20:37:53.696Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut FLYW",
+      "detail": "Side long | Weak into close | P&L $-53.38"
+    },
+    {
+      "time": "2026-11-05T20:37:55.556Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut (SHORT) RELY",
+      "detail": "Side short | Weak into close | P&L +$0.00"
+    },
+    {
+      "time": "2026-11-05T20:37:57.510Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut (SHORT) SHOO",
+      "detail": "Side short | Weak into close | P&L $-0.25"
+    },
+    {
+      "time": "2026-11-05T20:37:59.481Z",
+      "type": "SELL",
+      "msg": "✓ EOD cut (SHORT) SNDK",
+      "detail": "Side short | Weak into close | P&L +$13.03"
+    },
+    {
+      "time": "2026-11-05T20:37:59.683Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
+      "detail": ""
     }
   ],
   "tradedToday": [
