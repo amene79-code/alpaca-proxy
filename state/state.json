@@ -1,20 +1,7 @@
 {
-  "trailingStops": {
-    "FLY": {
-      "side": "long",
-      "entry": 20.489999771118164,
-      "high": 20.7656,
-      "low": 20.489999771118164,
-      "initialSl": 20.23,
-      "sl": 20.51,
-      "tp": 21.18,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": true
-    }
-  },
-  "dailyTrades": 3,
-  "dailyDate": "2026-11-06",
+  "trailingStops": {},
+  "dailyTrades": 0,
+  "dailyDate": "2026-11-09",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-06T23:50:05.902Z",
+  "lastRun": "2026-11-09T22:50:54.904Z",
   "log": [
-    {
-      "time": "2026-10-30T19:27:35.864Z",
-      "type": "INFO",
-      "msg": "Account: $99742.26 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T19:27:36.771Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CDNA, FDXF, CPRI, MEOH, REGN, RKT, CVCO, GPN, GDDY, BTSG"
-    },
-    {
-      "time": "2026-10-30T19:27:36.771Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-10-30T19:27:49.654Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "CDNA: relVol 1.9× < 2× (todayVol 2.6M)  •  FDXF: relVol 1.8× < 2× (todayVol 2.6M)  •  CPRI: relVol 1.9× < 2× (todayVol 6.3M)  •  MEOH: avgVol 0.6M < 1M  •  REGN: avgVol 0.7M < 1M  •  RKT: price $12.75 < $15  •  CVCO: avgVol 0.1M < 1M  •  GDDY: relVol 1.3× < 2× (todayVol 2.0M)  •  BTSG: relVol 1.9× < 2× (todayVol 4.0M)  •  CBOE: relVol 0.9× < 2× (todayVol 1.2M)  •  VLTO: relVol 1.3× < 2× (todayVol 2.3M)  •  AZN: relVol 1.4× < 2× (todayVol 4.3M)"
-    },
     {
       "time": "2026-10-30T19:27:49.655Z",
       "type": "INFO",
@@ -1284,15 +1247,33 @@
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
+    },
+    {
+      "time": "2026-11-09T22:50:54.179Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-09T22:50:54.346Z",
+      "type": "INFO",
+      "msg": "Account: $99717.25 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-09T22:50:54.378Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-09T22:50:54.904Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
-  "tradedToday": [
-    "FROG",
-    "FLY",
-    "OKLO"
-  ],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "GMED"
-  ]
+  "tradedToday": [],
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
