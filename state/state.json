@@ -70,56 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-10T20:11:34.996Z",
+  "lastRun": "2026-11-10T20:22:17.372Z",
   "log": [
-    {
-      "time": "2026-10-30T19:48:30.303Z",
-      "type": "INFO",
-      "msg": "GPN held overnight",
-      "detail": "Side long | Strong close | P&L +$9.00 | above VWAP"
-    },
-    {
-      "time": "2026-10-30T19:48:30.504Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T19:58:45.460Z",
-      "type": "INFO",
-      "msg": "Account: $99761.83 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T19:58:46.205Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T20:09:00.829Z",
-      "type": "INFO",
-      "msg": "Account: $99753.58 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T20:09:00.899Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T20:09:01.278Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T20:19:13.860Z",
-      "type": "INFO",
-      "msg": "Account: $99748.58 | 1 positions | 1 trades today",
-      "detail": ""
-    },
     {
       "time": "2026-10-30T20:19:13.873Z",
       "type": "INFO",
@@ -1268,6 +1220,54 @@
     },
     {
       "time": "2026-11-10T20:11:34.996Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-10T20:21:51.099Z",
+      "type": "INFO",
+      "msg": "Account: $99717.20 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-10T20:21:52.065Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AAON, CSQR, MARA, CHTR, AKAM, ACAD, TTWO, EMBJ, TNGX, LQDA"
+    },
+    {
+      "time": "2026-11-10T20:21:52.065Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-11-10T20:22:05.055Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "AAON: below VWAP (price $74.81 < VWAP $77.12)  •  CSQR: below VWAP (price $17.61 < VWAP $17.76)  •  MARA: price $7.22 < $15  •  CHTR: relVol 1.0× < 2× (todayVol 2.9M)  •  AKAM: ATR 0.33% < 0.5%  •  ACAD: relVol 1.8× < 2× (todayVol 4.7M)  •  TTWO: below opening-range high (price $224.40 < ORH $229.46, 72 today-candles)  •  EMBJ: relVol 1.8× < 2× (todayVol 2.9M)  •  TNGX: relVol 0.7× < 2× (todayVol 2.9M)  •  LQDA: relVol 0.5× < 2× (todayVol 1.9M)  •  MRCY: avgVol 0.7M < 1M  •  PRCH: relVol 1.1× < 2× (todayVol 2.5M)"
+    },
+    {
+      "time": "2026-11-10T20:22:05.056Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-10T20:22:05.155Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "EQPT, LEGN, HIMS, NOVT, PS, QLYS, RUN, LINE, USAR, QBTS"
+    },
+    {
+      "time": "2026-11-10T20:22:17.372Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "EQPT: price $13.05 < $20 (short floor)  •  LEGN: relVol 2.0× < 2.5× (todayVol 4.3M)  •  HIMS: price $18.94 < $20 (short floor)  •  NOVT: avgVol 0.4M < 1M  •  PS: avgVol 0.4M < 1M  •  QLYS: avgVol 0.8M < 1M  •  RUN: price $8.60 < $20 (short floor)  •  LINE: relVol 2.3× < 2.5× (todayVol 2.5M)  •  USAR: price $7.84 < $20 (short floor)  •  QBTS: price $10.36 < $20 (short floor)  •  CRSP: relVol 1.8× < 2.5× (todayVol 2.6M)  •  NG: price $6.26 < $20 (short floor)"
+    },
+    {
+      "time": "2026-11-10T20:22:17.372Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
