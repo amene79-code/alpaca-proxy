@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-11-09",
+  "dailyDate": "2026-11-10",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,62 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-09T23:01:07.324Z",
+  "lastRun": "2026-11-10T20:11:34.996Z",
   "log": [
-    {
-      "time": "2026-10-30T19:28:03.034Z",
-      "type": "INFO",
-      "msg": "Short rejections (39)",
-      "detail": "INTC: ATR 0.47% < 0.5%  •  RBLX: relVol 2.2× < 2.5× (todayVol 22.6M)  •  CACC: avgVol 0.1M < 1M  •  ILMN: relVol 1.6× < 2.5× (todayVol 3.9M)  •  BFAM: above opening-range low (price $54.47 > ORL $52.10)  •  AAOI: relVol 1.0× < 2.5× (todayVol 12.4M)  •  TWLO: relVol 1.2× < 2.5× (todayVol 5.2M)  •  TFII: avgVol 0.4M < 1M  •  SNDK: relVol 1.5× < 2.5× (todayVol 12.4M)  •  AUGO: avgVol 0.9M < 1M  •  TXG: relVol 1.0× < 2.5× (todayVol 3.8M)  •  SKYW: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-10-30T19:28:03.034Z",
-      "type": "INFO",
-      "msg": "Top short: RDDT (score 9)",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T19:28:03.034Z",
-      "type": "INFO",
-      "msg": "SKIP RDDT — already traded today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T19:38:15.680Z",
-      "type": "INFO",
-      "msg": "Account: $99748.63 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T19:38:16.199Z",
-      "type": "INFO",
-      "msg": "EOD review (22 min to close) — cutting weak positions",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T19:38:16.359Z",
-      "type": "INFO",
-      "msg": "GPN held overnight",
-      "detail": "Side long | Strong close | P&L +$9.30 | above VWAP"
-    },
-    {
-      "time": "2026-10-30T19:38:16.558Z",
-      "type": "INFO",
-      "msg": "Skip new entries — last 30 min",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T19:48:29.752Z",
-      "type": "INFO",
-      "msg": "Account: $99748.33 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T19:48:30.156Z",
-      "type": "INFO",
-      "msg": "EOD review (12 min to close) — cutting weak positions",
-      "detail": ""
-    },
     {
       "time": "2026-10-30T19:48:30.303Z",
       "type": "INFO",
@@ -1270,6 +1216,60 @@
       "time": "2026-11-09T23:01:07.324Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-10T20:11:10.972Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-10T20:11:11.253Z",
+      "type": "INFO",
+      "msg": "Account: $99717.20 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-10T20:11:12.198Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "AAON, CSQR, MARA, CHTR, AKAM, ACAD, TTWO, EMBJ, TNGX, MRCY"
+    },
+    {
+      "time": "2026-11-10T20:11:12.198Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-11-10T20:11:23.751Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "AAON: below VWAP (price $75.11 < VWAP $77.15)  •  CSQR: ATR 0.47% < 0.5%  •  MARA: price $7.12 < $15  •  CHTR: relVol 1.0× < 2× (todayVol 2.8M)  •  AKAM: ATR 0.38% < 0.5%  •  ACAD: relVol 1.8× < 2× (todayVol 4.6M)  •  TTWO: below opening-range high (price $223.98 < ORH $229.46, 70 today-candles)  •  EMBJ: relVol 1.8× < 2× (todayVol 2.9M)  •  TNGX: relVol 0.7× < 2× (todayVol 2.9M)  •  MRCY: avgVol 0.7M < 1M  •  ZETA: relVol 1.6× < 2× (todayVol 8.6M)  •  LQDA: relVol 0.5× < 2× (todayVol 1.9M)"
+    },
+    {
+      "time": "2026-11-10T20:11:23.752Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-10T20:11:23.846Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 40",
+      "detail": "EQPT, HIMS, LEGN, NOVT, PS, QLYS, RUN, LINE, USAR, QBTS"
+    },
+    {
+      "time": "2026-11-10T20:11:34.996Z",
+      "type": "INFO",
+      "msg": "Short rejections (40)",
+      "detail": "EQPT: price $13.01 < $20 (short floor)  •  HIMS: price $18.88 < $20 (short floor)  •  LEGN: relVol 1.8× < 2.5× (todayVol 4.0M)  •  NOVT: avgVol 0.4M < 1M  •  PS: avgVol 0.4M < 1M  •  QLYS: avgVol 0.8M < 1M  •  RUN: price $8.60 < $20 (short floor)  •  LINE: relVol 2.2× < 2.5× (todayVol 2.4M)  •  USAR: price $7.84 < $20 (short floor)  •  QBTS: price $10.32 < $20 (short floor)  •  ASTS: relVol 1.1× < 2.5× (todayVol 19.9M)  •  CRSP: relVol 1.8× < 2.5× (todayVol 2.5M)"
+    },
+    {
+      "time": "2026-11-10T20:11:34.996Z",
+      "type": "INFO",
+      "msg": "No short signals meeting criteria",
       "detail": ""
     }
   ],
