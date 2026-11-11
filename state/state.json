@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-11-10",
+  "dailyDate": "2026-11-11",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-10T20:22:17.372Z",
+  "lastRun": "2026-11-11T00:41:18.717Z",
   "log": [
-    {
-      "time": "2026-10-30T20:19:13.873Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T20:19:14.456Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T20:29:24.532Z",
-      "type": "INFO",
-      "msg": "Account: $99748.58 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-10-30T20:29:24.577Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-10-30T20:29:24.933Z",
       "type": "INFO",
@@ -1270,6 +1246,30 @@
       "time": "2026-11-10T20:22:17.372Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-11T00:41:18.288Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-11T00:41:18.436Z",
+      "type": "INFO",
+      "msg": "Account: $99717.20 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-11T00:41:18.481Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-11T00:41:18.716Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
