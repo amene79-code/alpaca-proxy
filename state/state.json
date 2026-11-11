@@ -1,5 +1,18 @@
 {
-  "trailingStops": {},
+  "trailingStops": {
+    "TTEK": {
+      "side": "short",
+      "entry": 37.81999969482422,
+      "high": 37.81999969482422,
+      "low": 37.81999969482422,
+      "initialSl": 38.12,
+      "sl": 38.12,
+      "tp": 36.92,
+      "slOrderId": null,
+      "tpOrderId": null,
+      "movedToBreakeven": false
+    }
+  },
   "dailyTrades": 0,
   "dailyDate": "2026-11-11",
   "openPositions": [
@@ -70,74 +83,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-11T19:59:15.164Z",
+  "lastRun": "2026-11-11T20:09:47.901Z",
   "log": [
-    {
-      "time": "2026-11-02T22:15:40.282Z",
-      "type": "INFO",
-      "msg": "Account: $99789.39 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-02T22:15:40.293Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-02T22:15:40.407Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-03T19:56:34.274Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-03T19:56:34.541Z",
-      "type": "INFO",
-      "msg": "Account: $99789.34 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-03T19:56:36.174Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CIFR, RIOT, WULF, AEHR, GPK, XMTR, FN, NBIX, HUT, IREN"
-    },
-    {
-      "time": "2026-11-03T19:56:36.174Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-11-03T19:56:37.219Z",
-      "type": "SIGNAL",
-      "msg": "AEHR — score 8 | gap 24.6% | relVol 2.4× | RSI 41",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-03T19:56:51.280Z",
-      "type": "INFO",
-      "msg": "Rejections (39)",
-      "detail": "CIFR: price $7.95 < $15  •  RIOT: price $13.60 < $15  •  WULF: price $12.40 < $15  •  GPK: price $11.15 < $15  •  XMTR: avgVol 0.8M < 1M  •  FN: relVol 1.7× < 2× (todayVol 1.7M)  •  NBIX: ATR 0.29% < 0.5%  •  HUT: relVol 0.8× < 2× (todayVol 5.2M)  •  IREN: relVol 0.7× < 2× (todayVol 37.5M)  •  MARA: price $7.05 < $15  •  BETA: relVol 1.7× < 2× (todayVol 2.9M)  •  SRAD: price $14.67 < $15"
-    },
-    {
-      "time": "2026-11-03T19:56:51.281Z",
-      "type": "INFO",
-      "msg": "Top signal: AEHR (score 8)",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-03T19:56:51.281Z",
-      "type": "BUY",
-      "msg": "Placing 23× AEHR @ ~$64.15",
-      "detail": "gap 24.6% | risk $17.48 | SL $63.39 | TP $66.18 | R:R 2.7 | "
-    },
     {
       "time": "2026-11-03T19:56:51.483Z",
       "type": "BUY",
@@ -1271,9 +1218,77 @@
       "type": "INFO",
       "msg": "No short signals meeting criteria",
       "detail": ""
+    },
+    {
+      "time": "2026-11-11T20:09:26.683Z",
+      "type": "INFO",
+      "msg": "Account: $99717.20 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-11T20:09:27.195Z",
+      "type": "INFO",
+      "msg": "Screener raw — gainers 50, actives 50, kept 40",
+      "detail": "CRWV, NBIS, MU, AZTA, AXTI, AAOI, RUM, SNDK, REZI, MRVL"
+    },
+    {
+      "time": "2026-11-11T20:09:27.196Z",
+      "type": "INFO",
+      "msg": "Scanning 40 candidates",
+      "detail": "40 screener + 0 watchlist"
+    },
+    {
+      "time": "2026-11-11T20:09:40.415Z",
+      "type": "INFO",
+      "msg": "Rejections (40)",
+      "detail": "CRWV: relVol 1.8× < 2× (todayVol 132.4M)  •  NBIS: relVol 1.1× < 2× (todayVol 29.0M)  •  MU: relVol 0.9× < 2× (todayVol 28.8M)  •  AZTA: avgVol 0.9M < 1M  •  AXTI: relVol 1.0× < 2× (todayVol 11.5M)  •  AAOI: relVol 0.9× < 2× (todayVol 12.0M)  •  RUM: price $5.92 < $15  •  SNDK: relVol 1.1× < 2× (todayVol 13.1M)  •  REZI: ATR 0.42% < 0.5%  •  MRVL: relVol 0.9× < 2× (todayVol 25.6M)  •  FRVO: price $13.03 < $15  •  CIFR: price $7.16 < $15"
+    },
+    {
+      "time": "2026-11-11T20:09:40.415Z",
+      "type": "INFO",
+      "msg": "No signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-11T20:09:40.546Z",
+      "type": "INFO",
+      "msg": "Short screener — losers 50, kept 21",
+      "detail": "BGSI, MIR, SEPN, ZYME, TTEK, RGTI, LEGN, RVMD, SMMT, COGT"
+    },
+    {
+      "time": "2026-11-11T20:09:41.965Z",
+      "type": "SIGNAL",
+      "msg": "TTEK — SHORT score 7 | gap -7.0% | relVol 2.6× | RSI 53",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-11T20:09:47.373Z",
+      "type": "INFO",
+      "msg": "Short rejections (20)",
+      "detail": "BGSI: avgVol 0.0M < 1M  •  MIR: price $17.69 < $20 (short floor)  •  SEPN: avgVol 0.4M < 1M  •  ZYME: relVol 0.4× < 2.5× (todayVol 0.5M)  •  RGTI: price $11.30 < $20 (short floor)  •  LEGN: price $19.01 < $20 (short floor)  •  RVMD: relVol 1.0× < 2.5× (todayVol 2.2M)  •  SMMT: price $16.76 < $20 (short floor)  •  COGT: relVol 1.4× < 2.5× (todayVol 3.0M)  •  EGO: net up over ~5d ($33.54→$33.56) — no short into uptrend  •  TRAX: avgVol 0.8M < 1M  •  KBR: relVol 1.1× < 2.5× (todayVol 2.2M)"
+    },
+    {
+      "time": "2026-11-11T20:09:47.373Z",
+      "type": "INFO",
+      "msg": "Top short: TTEK (score 7)",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-11T20:09:47.373Z",
+      "type": "SHORT",
+      "msg": "Placing SHORT 26× TTEK @ ~$37.82",
+      "detail": "gap -7.0% | risk $7.80 | SL $38.12 | TP $36.92 | R:R 3.0"
+    },
+    {
+      "time": "2026-11-11T20:09:47.400Z",
+      "type": "SHORT",
+      "msg": "✓ SHORT PLACED: 26× TTEK",
+      "detail": "ID fdb04918-9dfb-48ff-86e5-acc7fafbffa2 | R:R 3.0:1 | risk $7.80 | real bracket stop @ $38.12"
     }
   ],
   "tradedToday": [],
-  "shortDailyTrades": 0,
-  "shortTradedToday": []
+  "shortDailyTrades": 1,
+  "shortTradedToday": [
+    "TTEK"
+  ]
 }
