@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-12T01:51:21.761Z",
+  "lastRun": "2026-11-12T20:37:24.060Z",
   "log": [
-    {
-      "time": "2026-11-03T20:07:30.298Z",
-      "type": "INFO",
-      "msg": "Account: $99786.12 | 1 positions | 1 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-03T20:07:32.204Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "CIFR, RIOT, WULF, MARA, IREN, AEHR, GPK, FN, XMTR, HUT"
-    },
-    {
-      "time": "2026-11-03T20:07:32.204Z",
-      "type": "INFO",
-      "msg": "Scanning 39 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-11-03T20:07:44.495Z",
       "type": "INFO",
@@ -1270,6 +1252,24 @@
       "time": "2026-11-12T01:51:21.761Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-12T20:37:23.912Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-12T20:37:24.059Z",
+      "type": "INFO",
+      "msg": "EOD review (23 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-12T20:37:24.060Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
