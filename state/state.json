@@ -1,20 +1,7 @@
 {
-  "trailingStops": {
-    "TTEK": {
-      "side": "short",
-      "entry": 37.81999969482422,
-      "high": 37.81999969482422,
-      "low": 37.81999969482422,
-      "initialSl": 38.12,
-      "sl": 38.12,
-      "tp": 36.92,
-      "slOrderId": null,
-      "tpOrderId": null,
-      "movedToBreakeven": false
-    }
-  },
+  "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-11-11",
+  "dailyDate": "2026-11-12",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -83,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-11T20:09:47.901Z",
+  "lastRun": "2026-11-12T01:51:21.761Z",
   "log": [
-    {
-      "time": "2026-11-03T19:56:51.483Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 23× AEHR",
-      "detail": "ID a7dce5fe-a2a5-4774-97bd-c9808db20231 | R:R 2.7:1 | risk $17.48"
-    },
-    {
-      "time": "2026-11-03T19:56:52.150Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "STVN, CVI, IT, DT, ADEA, LIND, PAY, ZBRA, SHC, SYY"
-    },
-    {
-      "time": "2026-11-03T19:57:07.960Z",
-      "type": "INFO",
-      "msg": "Short rejections (40)",
-      "detail": "STVN: price $14.35 < $20 (short floor)  •  CVI: avgVol 0.8M < 1M  •  IT: relVol 2.0× < 2.5× (todayVol 2.2M)  •  DT: relVol 1.9× < 2.5× (todayVol 16.0M)  •  ADEA: price $18.57 < $20 (short floor)  •  LIND: avgVol 0.8M < 1M  •  PAY: avgVol 0.8M < 1M  •  ZBRA: avgVol 0.6M < 1M  •  SHC: price $16.20 < $20 (short floor)  •  SYY: relVol 1.9× < 2.5× (todayVol 5.7M)  •  CALX: relVol 1.4× < 2.5× (todayVol 1.4M)  •  MTCH: relVol 1.4× < 2.5× (todayVol 4.9M)"
-    },
-    {
-      "time": "2026-11-03T19:57:07.961Z",
-      "type": "INFO",
-      "msg": "No short signals meeting criteria",
-      "detail": ""
-    },
     {
       "time": "2026-11-03T20:07:30.298Z",
       "type": "INFO",
@@ -1284,11 +1247,33 @@
       "type": "SHORT",
       "msg": "✓ SHORT PLACED: 26× TTEK",
       "detail": "ID fdb04918-9dfb-48ff-86e5-acc7fafbffa2 | R:R 3.0:1 | risk $7.80 | real bracket stop @ $38.12"
+    },
+    {
+      "time": "2026-11-12T01:51:21.343Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-12T01:51:21.490Z",
+      "type": "INFO",
+      "msg": "Account: $99707.58 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-12T01:51:21.538Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-12T01:51:21.761Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
     }
   ],
   "tradedToday": [],
-  "shortDailyTrades": 1,
-  "shortTradedToday": [
-    "TTEK"
-  ]
+  "shortDailyTrades": 0,
+  "shortTradedToday": []
 }
