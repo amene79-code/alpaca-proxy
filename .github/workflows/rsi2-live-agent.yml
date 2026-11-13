@@ -1,0 +1,74 @@
+# .github/workflows/rsi2-live-agent.yml
+#
+# Runs the RSI(2) live cost-measurement agent once per trading day, in the
+# cloud — no laptop required. GitHub Actions is both the scheduler and the host.
+#
+# WHY TWO SCHEDULE LINES:
+#   GitHub's cron is UTC and does NOT follow US daylight saving. We fire at both
+#   19:30 and 20:30 UTC on weekdays. The script only acts in the final ~45 min
+#   before the US close, so exactly ONE of the two runs trades each day and the
+#   other harmlessly no-ops (and a once-per-day guard in the script blocks any
+#   double-trade even if GitHub runs a job late):
+#     Winter (EST, UTC-5):  20:30 UTC = 15:30 ET -> ACTS  | 19:30 = 14:30 ET -> skips
+#     Summer (EDT, UTC-4):  19:30 UTC = 15:30 ET -> ACTS  | 20:30 = 16:30 ET -> closed
+#   ~30 min of buffer before the close absorbs normal GitHub scheduler lateness.
+#
+# STATE PERSISTENCE:
+#   Actions runners are wiped after every run. So the job commits the two output
+#   files (state/rsi2_live_state.json, state/rsi2_live_fills.csv) back to the
+#   repo — same state/ folder the Pro Agent already uses. Your fills log
+#   therefore lives in the repo, version-controlled and visible.
+
+name: RSI2 Live Cost Agent
+
+on:
+  schedule:
+    - cron: '30 19 * * 1-5'
+    - cron: '30 20 * * 1-5'
+  workflow_dispatch: {}        # also lets you trigger it by hand from the Actions tab
+
+permissions:
+  contents: write              # needed so the run can commit state + fills back
+
+concurrency:
+  group: rsi2-live             # never let two runs overlap
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo (restores prior state + fills log)
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install alpaca-py pandas numpy
+
+      - name: Run the agent
+        env:
+          # NEW paper account's keys — distinct secret names so this never
+          # clobbers the Pro Agent's ALPACA_API_KEY / ALPACA_SECRET_KEY secrets.
+          ALPACA_API_KEY:    ${{ secrets.RSI2_ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.RSI2_ALPACA_SECRET_KEY }}
+          # SAFETY: starts in dry run (no orders). When a dry run in the Actions
+          # log looks right, change this to "false" to go live on PAPER.
+          RSI2_DRY_RUN: "true"
+        run: python rsi2_live_agent.py
+
+      - name: Commit state + fills back to the repo
+        if: ${{ always() }}
+        run: |
+          git config user.name  "rsi2-agent"
+          git config user.email "actions@users.noreply.github.com"
+          git add state/rsi2_live_state.json state/rsi2_live_fills.csv 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No state/fills change this run (dry run or no-op) — nothing to commit."
+          else
+            git commit -m "agent run $(date -u +%FT%TZ)"
+            git push
+          fi
