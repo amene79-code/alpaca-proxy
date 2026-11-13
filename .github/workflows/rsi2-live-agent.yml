@@ -40,6 +40,8 @@ jobs:
     steps:
       - name: Check out repo (restores prior state + fills log)
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}   # reuse the Pro Agent's PAT so the commit-back push works
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -51,12 +53,14 @@ jobs:
 
       - name: Run the agent
         env:
-          # NEW paper account's keys — distinct secret names so this never
-          # clobbers the Pro Agent's ALPACA_API_KEY / ALPACA_SECRET_KEY secrets.
+          # NEW paper account's keys — distinct secret names (matching your
+          # ALPACA_KEY / ALPACA_SECRET house style) so this never clobbers the
+          # Pro Agent's existing secrets. The script reads ALPACA_API_KEY /
+          # ALPACA_SECRET_KEY from the environment; only the SOURCE secret differs.
           ALPACA_API_KEY:    ${{ secrets.RSI2_ALPACA_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.RSI2_ALPACA_SECRET }}
-          # SAFETY: starts in dry run (no orders). When a dry run in the Actions
-          # log looks right, change this to "false" to go live on PAPER.
+          # LIVE on PAPER (RSI2_DRY_RUN "false"). Set to "true" to pause into a
+          # dry run (no orders) without deleting anything.
           RSI2_DRY_RUN: "false"
         run: python rsi2_live_agent.py
 
