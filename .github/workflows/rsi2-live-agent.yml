@@ -53,8 +53,8 @@ jobs:
         env:
           # NEW paper account's keys — distinct secret names so this never
           # clobbers the Pro Agent's ALPACA_API_KEY / ALPACA_SECRET_KEY secrets.
-          ALPACA_API_KEY:    ${{ secrets.RSI2_ALPACA_API_KEY }}
-          ALPACA_SECRET_KEY: ${{ secrets.RSI2_ALPACA_SECRET_KEY }}
+          ALPACA_API_KEY:    ${{ secrets.RSI2_ALPACA_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.RSI2_ALPACA_SECRET }}
           # SAFETY: starts in dry run (no orders). When a dry run in the Actions
           # log looks right, change this to "false" to go live on PAPER.
           RSI2_DRY_RUN: "true"
