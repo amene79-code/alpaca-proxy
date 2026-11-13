@@ -57,7 +57,7 @@ jobs:
           ALPACA_SECRET_KEY: ${{ secrets.RSI2_ALPACA_SECRET }}
           # SAFETY: starts in dry run (no orders). When a dry run in the Actions
           # log looks right, change this to "false" to go live on PAPER.
-          RSI2_DRY_RUN: "true"
+          RSI2_DRY_RUN: "false"
         run: python rsi2_live_agent.py
 
       - name: Commit state + fills back to the repo
