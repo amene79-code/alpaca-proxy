@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-11-13",
+  "dailyDate": "2026-11-14",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-13T20:27:52.762Z",
+  "lastRun": "2026-11-14T00:54:42.305Z",
   "log": [
-    {
-      "time": "2026-11-04T00:23:59.737Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-04T00:23:59.968Z",
-      "type": "INFO",
-      "msg": "Market closed or outside hours — no new entries",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-04T20:14:21.247Z",
-      "type": "INFO",
-      "msg": "Account: $99765.38 | 0 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-04T20:14:22.097Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "HL, RIOT, KD, DUOL, YOU, LIVN, PCOR, UFPT, MDLN, MOS"
-    },
     {
       "time": "2026-11-04T20:14:22.097Z",
       "type": "INFO",
@@ -1270,6 +1246,30 @@
       "time": "2026-11-13T20:27:52.761Z",
       "type": "INFO",
       "msg": "No short signals meeting criteria",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-14T00:54:41.778Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-14T00:54:41.982Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-14T00:54:42.043Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-14T00:54:42.305Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
       "detail": ""
     }
   ],
