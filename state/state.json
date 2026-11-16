@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-11-14",
+  "dailyDate": "2026-11-16",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-14T00:54:42.305Z",
+  "lastRun": "2026-11-16T22:42:42.713Z",
   "log": [
-    {
-      "time": "2026-11-04T20:14:22.097Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
-    {
-      "time": "2026-11-04T20:14:37.412Z",
-      "type": "INFO",
-      "msg": "Rejections (40)",
-      "detail": "HL: price $14.98 < $15  •  RIOT: below VWAP (price $15.76 < VWAP $15.80)  •  KD: ATR 0.48% < 0.5%  •  DUOL: below VWAP (price $160.74 < VWAP $168.01)  •  YOU: below VWAP (price $60.06 < VWAP $62.34)  •  LIVN: avgVol 0.7M < 1M  •  PCOR: relVol 1.9× < 2× (todayVol 6.3M)  •  UFPT: avgVol 0.1M < 1M  •  MDLN: relVol 1.9× < 2× (todayVol 17.6M)  •  MOS: relVol 1.4× < 2× (todayVol 15.1M)  •  XYZ: ATR 0.27% < 0.5%  •  OUST: relVol 1.6× < 2× (todayVol 4.4M)"
-    },
-    {
-      "time": "2026-11-04T20:14:37.412Z",
-      "type": "INFO",
-      "msg": "No signals meeting criteria",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-04T20:14:37.550Z",
-      "type": "INFO",
-      "msg": "Short screener — losers 50, kept 40",
-      "detail": "ECG, DOX, MOD, FIS, HUT, STRL, CIFR, MTRN, INIO, UNM"
-    },
     {
       "time": "2026-11-04T20:14:38.787Z",
       "type": "SIGNAL",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-11-14T00:54:42.305Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-16T22:42:42.396Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-16T22:42:42.522Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-16T22:42:42.535Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-16T22:42:42.713Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
