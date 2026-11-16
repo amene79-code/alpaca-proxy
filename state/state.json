@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-16T22:42:42.713Z",
+  "lastRun": "2026-11-16T22:52:52.503Z",
   "log": [
-    {
-      "time": "2026-11-04T20:14:38.787Z",
-      "type": "SIGNAL",
-      "msg": "MOD — SHORT score 9 | gap -26.3% | relVol 3.9× | RSI 46",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-04T20:14:39.185Z",
-      "type": "SIGNAL",
-      "msg": "FIS — SHORT score 9 | gap -23.4% | relVol 3.8× | RSI 55",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-04T20:14:47.526Z",
-      "type": "SIGNAL",
-      "msg": "DDOG — SHORT score 6 | gap -14.2% | relVol 2.7× | RSI 52",
-      "detail": ""
-    },
     {
       "time": "2026-11-04T20:14:49.753Z",
       "type": "SIGNAL",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-11-16T22:42:42.713Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-16T22:52:52.361Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-16T22:52:52.371Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-16T22:52:52.503Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
