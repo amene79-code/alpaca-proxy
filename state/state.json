@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-17T21:29:00.384Z",
+  "lastRun": "2026-11-17T21:39:12.248Z",
   "log": [
-    {
-      "time": "2026-11-04T20:14:52.873Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 23× CVI",
-      "detail": "ID 797a05eb-d75e-44e6-9704-ff26d9a21098 | R:R 3.0:1 | risk $5.18 | real bracket stop @ $42.2"
-    },
-    {
-      "time": "2026-11-04T20:14:53.374Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 10× MOD @ ~$92.49",
-      "detail": "gap -26.3% | risk $7.15 | SL $93.2 | TP $90.33 | R:R 3.0"
-    },
-    {
-      "time": "2026-11-04T20:14:53.438Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 10× MOD",
-      "detail": "ID 271b80f7-a4ad-4fa6-94bc-424742e95a74 | R:R 3.0:1 | risk $7.15 | real bracket stop @ $93.2"
-    },
     {
       "time": "2026-11-04T20:14:53.938Z",
       "type": "SHORT",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-11-17T21:29:00.383Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-17T21:39:11.964Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-17T21:39:12.007Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-17T21:39:12.248Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
