@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-11-17",
+  "dailyDate": "2026-11-18",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-17T21:39:12.248Z",
+  "lastRun": "2026-11-18T21:03:41.639Z",
   "log": [
-    {
-      "time": "2026-11-04T20:14:53.938Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 33× FIS @ ~$29.87",
-      "detail": "gap -23.4% | risk $6.27 | SL $30.06 | TP $29.29 | R:R 3.1"
-    },
-    {
-      "time": "2026-11-04T20:14:54.000Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 33× FIS",
-      "detail": "ID 3d7f4a6a-e7f2-48fc-b85b-204737d8a816 | R:R 3.1:1 | risk $6.27 | real bracket stop @ $30.06"
-    },
-    {
-      "time": "2026-11-04T20:14:54.501Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 5× DDOG @ ~$189.15",
-      "detail": "gap -14.2% | risk $5.25 | SL $190.2 | TP $186 | R:R 3.0"
-    },
-    {
-      "time": "2026-11-04T20:14:54.638Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 5× DDOG",
-      "detail": "ID a2d7bf37-c695-4fc6-b66a-7d55d2bd92d0 | R:R 3.0:1 | risk $5.25 | real bracket stop @ $190.2"
-    },
     {
       "time": "2026-11-04T20:25:14.201Z",
       "type": "INFO",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-11-17T21:39:12.248Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-18T21:03:41.055Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-18T21:03:41.272Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-18T21:03:41.340Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-18T21:03:41.639Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
