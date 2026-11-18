@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-18T21:03:41.639Z",
+  "lastRun": "2026-11-18T21:13:54.480Z",
   "log": [
-    {
-      "time": "2026-11-04T20:25:14.201Z",
-      "type": "INFO",
-      "msg": "Account: $99740.62 | 1 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-04T20:25:15.196Z",
-      "type": "INFO",
-      "msg": "Screener raw — gainers 50, actives 50, kept 40",
-      "detail": "HL, RIOT, KD, DUOL, YOU, PCOR, UFPT, LIVN, MDLN, MOS"
-    },
-    {
-      "time": "2026-11-04T20:25:15.196Z",
-      "type": "INFO",
-      "msg": "Scanning 40 candidates",
-      "detail": "40 screener + 0 watchlist"
-    },
     {
       "time": "2026-11-04T20:25:16.096Z",
       "type": "SIGNAL",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-11-18T21:03:41.639Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-18T21:13:54.112Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-18T21:13:54.186Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-18T21:13:54.480Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
