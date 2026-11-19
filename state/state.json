@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-11-18",
+  "dailyDate": "2026-11-19",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-18T21:13:54.480Z",
+  "lastRun": "2026-11-19T21:09:10.242Z",
   "log": [
-    {
-      "time": "2026-11-04T20:25:16.096Z",
-      "type": "SIGNAL",
-      "msg": "KD — score 8 | gap 35.2% | relVol 2.7× | RSI 36",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-04T20:25:19.907Z",
-      "type": "SIGNAL",
-      "msg": "FLYW — score 12 | gap 14.6% | relVol 3.0× | RSI 64",
-      "detail": "Volume Breakout"
-    },
-    {
-      "time": "2026-11-04T20:25:28.954Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "HL: price $14.95 < $15  •  RIOT: below opening-range high (price $15.71 < ORH $16.18, 72 today-candles)  •  DUOL: below VWAP (price $162.88 < VWAP $167.89)  •  YOU: below VWAP (price $59.58 < VWAP $60.99)  •  PCOR: relVol 2.0× < 2× (todayVol 6.4M)  •  UFPT: avgVol 0.1M < 1M  •  LIVN: avgVol 0.7M < 1M  •  MDLN: relVol 1.9× < 2× (todayVol 18.3M)  •  MOS: relVol 1.4× < 2× (todayVol 15.7M)  •  XYZ: ATR 0.28% < 0.5%  •  TREX: relVol 2.0× < 2× (todayVol 3.9M)  •  OUST: relVol 1.7× < 2× (todayVol 4.7M)"
-    },
-    {
-      "time": "2026-11-04T20:25:28.954Z",
-      "type": "INFO",
-      "msg": "Top signal: FLYW (score 12)",
-      "detail": ""
-    },
     {
       "time": "2026-11-04T20:25:28.955Z",
       "type": "BUY",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-11-18T21:13:54.480Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-19T21:09:09.601Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-19T21:09:09.636Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-19T21:09:09.644Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-19T21:09:10.242Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
