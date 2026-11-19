@@ -63,10 +63,23 @@ jobs:
         run: |
           git config user.name  "rsi2-agent"
           git config user.email "actions@users.noreply.github.com"
-          git add state/rsi2_live_state.json state/rsi2_live_fills.csv 2>/dev/null || true
+          # add each file separately: a single `git add a b` with one missing
+          # file aborts fatally and stages NEITHER, so before the first trade
+          # (no fills.csv yet) nothing was committed, not even the state file.
+          git add state/rsi2_live_state.json 2>/dev/null || true
+          git add state/rsi2_live_fills.csv  2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No state/fills change this run (dry run or no-op) — nothing to commit."
+            echo "No state/fills change this run (dry run, market closed, or no-op) — nothing to commit."
           else
-            git commit -m "agent run $(date -u +%FT%TZ)"
-            git push
+            git commit -m "rsi2 agent run $(date -u +%FT%TZ)"
+            # The Pro Agent commits to this same repo, so our push can be rejected
+            # if it pushed first. Rebase onto the latest and retry rather than fail.
+            pushed=""
+            for i in 1 2 3 4 5; do
+              if git push; then pushed=yes; echo "pushed on attempt $i"; break; fi
+              echo "push rejected (attempt $i) — rebasing onto origin/main and retrying"
+              git pull --rebase --autostash origin main || true
+              sleep 3
+            done
+            if [ -z "$pushed" ]; then echo "::error::could not push state after 5 attempts"; exit 1; fi
           fi
