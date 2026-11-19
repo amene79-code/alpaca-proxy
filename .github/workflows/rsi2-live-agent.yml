@@ -1,41 +1,46 @@
 # .github/workflows/rsi2-live-agent.yml
 #
-# Runs the RSI(2) live cost-measurement agent once per trading day, in the cloud.
+# RSI(2) live cost-measurement agent — triggered the SAME proven way as your
+# Pro Agent (pro-agent.yml), which already runs reliably on this repo daily.
 #
-# TRIGGERING — by EXTERNAL scheduler, not GitHub's own cron.
-#   GitHub's `schedule:` is best-effort and, during peak load (US-market
-#   afternoon IS peak), delays jobs by HOURS — ours fired ~6h late, overnight,
-#   after the US close, so the agent no-op'd every day. `workflow_dispatch`
-#   (API/manual) runs IMMEDIATELY, with no such delay. So an external scheduler
-#   (cron-job.org / Google Cloud Scheduler) calls the GitHub dispatch API at
-#   15:30 ET each weekday and the workflow runs on time. The script's own
-#   "within 45 min of close" + "once-per-day" guards still apply.
-#
-# STATE PERSISTENCE:
-#   Actions runners are wiped after every run, so the job commits its two output
-#   files (state/rsi2_live_state.json, state/rsi2_live_fills.csv) back to the repo.
+# WHY THIS SHAPE (copied from the Pro Agent): GitHub's schedule: is delayed by
+# hours under load, so a few fixed crons near the close all missed (ours fired
+# ~6h late, overnight). The Pro Agent beats this two ways at once, so we do too:
+#   1. BROAD seed crons across the whole session (13:00-20:00 UTC). Spread wide,
+#      even a cron delayed hours still lands in market hours; an early one
+#      delayed ~6h lands right in the pre-close window.
+#   2. A SELF-DISPATCH chain: each run re-dispatches the next via the API
+#      (workflow_dispatch fires IMMEDIATELY, no delay) until the agent has acted
+#      for the day, then stops. One seed landing anywhere in the session is
+#      enough; the chain carries it to the close on time.
+# The agent's own guards (act only within 45 min of the close, once per day)
+# make every extra run a harmless no-op.
 
 name: RSI2 Live Cost Agent
 
 on:
-  workflow_dispatch: {}        # triggered on time by an external scheduler via the GitHub API
-                               # (schedule: removed — GitHub delayed it past the close every day)
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 13 * * 1-5'         # warmup: seed the chain each morning
+    - cron: '*/10 13-20 * * 1-5'   # re-seed every 10 min across the session
 
 permissions:
-  contents: write              # needed so the run can commit state + fills back
+  contents: write
+  actions: write                   # needed to self-dispatch the next cycle
 
 concurrency:
-  group: rsi2-live             # never let two runs overlap
+  group: rsi2-live                 # one runner at a time; a second trigger waits, never parallel
   cancel-in-progress: false
 
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Check out repo (restores prior state + fills log)
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_TOKEN }}   # reuse the Pro Agent's PAT so the commit-back push works
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -47,14 +52,8 @@ jobs:
 
       - name: Run the agent
         env:
-          # NEW paper account's keys — distinct secret names (matching your
-          # ALPACA_KEY / ALPACA_SECRET house style) so this never clobbers the
-          # Pro Agent's existing secrets. The script reads ALPACA_API_KEY /
-          # ALPACA_SECRET_KEY from the environment; only the SOURCE secret differs.
           ALPACA_API_KEY:    ${{ secrets.RSI2_ALPACA_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.RSI2_ALPACA_SECRET }}
-          # LIVE on PAPER (RSI2_DRY_RUN "false"). Set to "true" to pause into a
-          # dry run (no orders) without deleting anything.
           RSI2_DRY_RUN: "false"
         run: python rsi2_live_agent.py
 
@@ -63,17 +62,16 @@ jobs:
         run: |
           git config user.name  "rsi2-agent"
           git config user.email "actions@users.noreply.github.com"
-          # add each file separately: a single `git add a b` with one missing
-          # file aborts fatally and stages NEITHER, so before the first trade
-          # (no fills.csv yet) nothing was committed, not even the state file.
+          # add each file separately: `git add a b` with one missing file aborts
+          # and stages NEITHER, so before the first trade nothing committed.
           git add state/rsi2_live_state.json 2>/dev/null || true
           git add state/rsi2_live_fills.csv  2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No state/fills change this run (dry run, market closed, or no-op) — nothing to commit."
+            echo "No state/fills change this run (market closed / no-op) — nothing to commit."
           else
             git commit -m "rsi2 agent run $(date -u +%FT%TZ)"
-            # The Pro Agent commits to this same repo, so our push can be rejected
-            # if it pushed first. Rebase onto the latest and retry rather than fail.
+            # the Pro Agent commits to this repo too, so our push can be rejected;
+            # rebase onto latest and retry rather than fail.
             pushed=""
             for i in 1 2 3 4 5; do
               if git push; then pushed=yes; echo "pushed on attempt $i"; break; fi
@@ -83,3 +81,20 @@ jobs:
             done
             if [ -z "$pushed" ]; then echo "::error::could not push state after 5 attempts"; exit 1; fi
           fi
+
+      - name: Self-dispatch the next cycle (the keep-alive chain)
+        if: ${{ always() }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NOW=$(date -u +%H%M); DOW=$(date -u +%u); TODAY=$(date -u +%F)
+          if [ "$DOW" -gt 5 ]; then echo "Weekend — chain stops."; exit 0; fi
+          if [ "$NOW" -lt 1300 ] || [ "$NOW" -gt 2055 ]; then
+            echo "Outside run window ($NOW UTC) — chain stops until tomorrow's seed."; exit 0
+          fi
+          if grep -q "\"last_action_date\": \"$TODAY\"" state/rsi2_live_state.json 2>/dev/null; then
+            echo "Already acted today ($TODAY) — chain stops."; exit 0
+          fi
+          echo "Not acted yet ($NOW UTC) — sleeping 10 min, then re-dispatching."
+          sleep 600
+          gh workflow run rsi2-live-agent.yml --ref main
