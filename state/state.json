@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-11-19",
+  "dailyDate": "2026-11-20",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-19T21:19:20.400Z",
+  "lastRun": "2026-11-20T20:54:04.232Z",
   "log": [
-    {
-      "time": "2026-11-04T20:25:29.568Z",
-      "type": "BUY",
-      "msg": "✓ ORDER PLACED: 85× KD",
-      "detail": "ID 3e0567b5-4cbc-47f5-8335-3ed2f3e5322b | R:R 2.7:1 | risk $12.33"
-    },
-    {
-      "time": "2026-11-05T00:55:28.515Z",
-      "type": "INFO",
-      "msg": "New trading day — counter reset",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-05T00:55:28.781Z",
-      "type": "INFO",
-      "msg": "Account: $99662.14 | 2 positions | 0 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-05T00:55:28.793Z",
-      "type": "INFO",
-      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
-      "detail": ""
-    },
     {
       "time": "2026-11-05T00:55:30.173Z",
       "type": "SELL",
@@ -1270,6 +1246,30 @@
       "time": "2026-11-19T21:19:20.400Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-20T20:54:03.531Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-20T20:54:03.581Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-20T20:54:04.232Z",
+      "type": "INFO",
+      "msg": "EOD review (6 min to close) — cutting weak positions",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-20T20:54:04.232Z",
+      "type": "INFO",
+      "msg": "Skip new entries — last 30 min",
       "detail": ""
     }
   ],
