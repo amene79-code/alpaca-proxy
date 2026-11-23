@@ -55,6 +55,10 @@ jobs:
           ALPACA_API_KEY:    ${{ secrets.RSI2_ALPACA_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.RSI2_ALPACA_SECRET }}
           RSI2_DRY_RUN: "false"
+          # Regime filter OFF so we collect fill-cost data now, in a down market
+          # (longs still require price > its own 200MA; only the SPY gate is off).
+          # Change back to "true" to restore the real strategy once we have data.
+          RSI2_USE_REGIME: "false"
         run: python rsi2_live_agent.py
 
       - name: Commit state + fills back to the repo
