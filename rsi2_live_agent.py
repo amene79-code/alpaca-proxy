@@ -91,7 +91,11 @@ MAX_HOLD_DAYS   = 10      # time stop, counted in daily runs
 STOP_LOSS_PCT   = 0.08    # hard stop from actual fill price
 
 # --- Market-regime filter (must match the backtest) ---
-USE_REGIME_FILTER = True
+# Default ON (buy dips only when SPY > its 200MA). Set env RSI2_USE_REGIME=false
+# to turn it OFF temporarily — e.g. to collect fill-cost data in a down market
+# where the filter would otherwise keep the agent dormant. Only an explicit
+# false/0/no/off disables it; anything else stays safe (ON).
+USE_REGIME_FILTER = os.getenv("RSI2_USE_REGIME", "true").strip().lower() not in ("false", "0", "no", "off")
 REGIME_SYMBOL     = "SPY"
 REGIME_MA_LEN     = 200
 
