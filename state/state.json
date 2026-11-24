@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-24T00:33:20.677Z",
+  "lastRun": "2026-11-24T00:43:36.356Z",
   "log": [
-    {
-      "time": "2026-11-05T20:27:22.284Z",
-      "type": "INFO",
-      "msg": "Rejections (38)",
-      "detail": "APP: below VWAP (price $353.33 < VWAP $354.47)  •  ADMA: price $13.14 < $15  •  ECPG: avgVol 0.2M < 1M  •  XERS: price $12.96 < $15  •  MGNI: below opening-range high (price $27.97 < ORH $28.11, 73 today-candles)  •  EPAM: ATR 0.47% < 0.5%  •  ARDT: avgVol 0.6M < 1M  •  SEZL: avgVol 0.6M < 1M  •  VCEL: avgVol 0.7M < 1M  •  PGNY: avgVol 0.9M < 1M  •  RUN: price $9.94 < $15  •  TM: avgVol 0.3M < 1M"
-    },
-    {
-      "time": "2026-11-05T20:27:22.284Z",
-      "type": "INFO",
-      "msg": "Top signal: WRBY (score 11)",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-05T20:27:22.284Z",
-      "type": "BUY",
-      "msg": "Placing 56× WRBY @ ~$26.78",
-      "detail": "gap 25.8% | risk $20.44 | SL $26.42 | TP $27.75 | R:R 2.6 | Bullish Engulfing"
-    },
     {
       "time": "2026-11-05T20:27:22.521Z",
       "type": "BUY",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-11-24T00:33:20.677Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-24T00:43:35.426Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-24T00:43:35.496Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-24T00:43:36.356Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
