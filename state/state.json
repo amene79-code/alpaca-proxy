@@ -1,7 +1,7 @@
 {
   "trailingStops": {},
   "dailyTrades": 0,
-  "dailyDate": "2026-11-25",
+  "dailyDate": "2026-11-26",
   "openPositions": [
     "FIVE",
     "NVDA",
@@ -70,32 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-25T22:16:58.904Z",
+  "lastRun": "2026-11-26T22:05:01.227Z",
   "log": [
-    {
-      "time": "2026-11-05T20:27:38.885Z",
-      "type": "SHORT",
-      "msg": "Placing SHORT 1× SNDK @ ~$844.21",
-      "detail": "gap -18.6% | risk $7.57 | SL $851.78 | TP $821.5 | R:R 3.0"
-    },
-    {
-      "time": "2026-11-05T20:27:38.962Z",
-      "type": "SHORT",
-      "msg": "✓ SHORT PLACED: 1× SNDK",
-      "detail": "ID d72c6ef7-e524-4c59-8ca1-57bcd2a4c8db | R:R 3.0:1 | risk $7.57 | real bracket stop @ $851.78"
-    },
-    {
-      "time": "2026-11-05T20:37:52.894Z",
-      "type": "INFO",
-      "msg": "Account: $99660.14 | 4 positions | 2 trades today",
-      "detail": ""
-    },
-    {
-      "time": "2026-11-05T20:37:53.342Z",
-      "type": "INFO",
-      "msg": "EOD review (23 min to close) — cutting weak positions",
-      "detail": ""
-    },
     {
       "time": "2026-11-05T20:37:53.696Z",
       "type": "SELL",
@@ -1268,6 +1244,30 @@
     },
     {
       "time": "2026-11-25T22:16:58.903Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-26T22:05:00.833Z",
+      "type": "INFO",
+      "msg": "New trading day — counter reset",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-26T22:05:00.989Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-26T22:05:01.036Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-26T22:05:01.226Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
