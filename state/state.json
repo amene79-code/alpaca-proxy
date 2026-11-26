@@ -70,26 +70,8 @@
     "NRIX",
     "NRIX"
   ],
-  "lastRun": "2026-11-26T22:05:01.227Z",
+  "lastRun": "2026-11-26T22:15:11.027Z",
   "log": [
-    {
-      "time": "2026-11-05T20:37:53.696Z",
-      "type": "SELL",
-      "msg": "✓ EOD cut FLYW",
-      "detail": "Side long | Weak into close | P&L $-53.38"
-    },
-    {
-      "time": "2026-11-05T20:37:55.556Z",
-      "type": "SELL",
-      "msg": "✓ EOD cut (SHORT) RELY",
-      "detail": "Side short | Weak into close | P&L +$0.00"
-    },
-    {
-      "time": "2026-11-05T20:37:57.510Z",
-      "type": "SELL",
-      "msg": "✓ EOD cut (SHORT) SHOO",
-      "detail": "Side short | Weak into close | P&L $-0.25"
-    },
     {
       "time": "2026-11-05T20:37:59.481Z",
       "type": "SELL",
@@ -1268,6 +1250,24 @@
     },
     {
       "time": "2026-11-26T22:05:01.226Z",
+      "type": "INFO",
+      "msg": "Market closed or outside hours — no new entries",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-26T22:15:10.900Z",
+      "type": "INFO",
+      "msg": "Account: $99707.54 | 0 positions | 0 trades today",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-26T22:15:10.916Z",
+      "type": "INFO",
+      "msg": "🛌 Market closed today (holiday/weekend per Alpaca clock) — will manage positions only, no scan or new entries.",
+      "detail": ""
+    },
+    {
+      "time": "2026-11-26T22:15:11.027Z",
       "type": "INFO",
       "msg": "Market closed or outside hours — no new entries",
       "detail": ""
